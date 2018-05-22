@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+dependencies {
+    compile 'org.kyojo.minion:minion:0.7.0'
+    compile project(':schemaOrgWork')
+    compile project(':schemaOrgImpl')
+}
+
+archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-gson'
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'schemaOrg'
+
+include "schemaOrgWork", "schemaOrgImpl", "schemaOrgGson", "schemaOrgDomaConv", "schemaOrgDoma"

@@ -1,0 +1,27 @@
+subprojects {
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    version = '0.4'
+    group = 'org.kyojo.schemaOrg.m3n3'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+    }
+
+}
+

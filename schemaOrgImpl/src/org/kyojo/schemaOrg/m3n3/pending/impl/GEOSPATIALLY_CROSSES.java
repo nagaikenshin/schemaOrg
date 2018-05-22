@@ -1,0 +1,154 @@
+package org.kyojo.schemaOrg.m3n3.pending.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.m3n3.core.Clazz.Place;
+import org.kyojo.schemaOrg.m3n3.core.Container.Name;
+import org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry;
+import org.kyojo.schemaOrg.m3n3.pending.Container;
+import org.kyojo.schemaOrg.m3n3.pending.impl.GEOSPATIAL_GEOMETRY;
+
+public class GEOSPATIALLY_CROSSES implements Container.GeospatiallyCrosses {
+
+	private static final long serialVersionUID = 1L;
+
+	public List<GeospatialGeometry> geospatialGeometryList;
+	public List<Place> placeList;
+
+	public GEOSPATIALLY_CROSSES() {
+	}
+
+	public GEOSPATIALLY_CROSSES(String string) {
+		this(new GEOSPATIAL_GEOMETRY(string));
+	}
+
+	public String getString() {
+		if(geospatialGeometryList == null || geospatialGeometryList.size() == 0 || geospatialGeometryList.get(0) == null) {
+			return null;
+		} else {
+			Name name = geospatialGeometryList.get(0).getName();
+			if(name == null || name.getTextList() == null || name.getTextList().size() == 0 || name.getTextList().get(0) == null) {
+				return null;
+			} else {
+				return name.getTextList().get(0).getString();
+			}
+		}
+	}
+
+	public void setString(String string) {
+		if(geospatialGeometryList == null) {
+			geospatialGeometryList = new ArrayList<GeospatialGeometry>();
+		}
+		if(geospatialGeometryList.size() == 0) {
+			geospatialGeometryList.add(new GEOSPATIAL_GEOMETRY(string));
+		} else {
+			geospatialGeometryList.set(0, new GEOSPATIAL_GEOMETRY(string));
+		}
+	}
+
+	public GEOSPATIALLY_CROSSES(GeospatialGeometry geospatialGeometry) {
+		geospatialGeometryList = new ArrayList<GeospatialGeometry>();
+		geospatialGeometryList.add(geospatialGeometry);
+	}
+
+	@Override
+	public GeospatialGeometry getGeospatialGeometry() {
+		if(geospatialGeometryList != null && geospatialGeometryList.size() > 0) {
+			return geospatialGeometryList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setGeospatialGeometry(GeospatialGeometry geospatialGeometry) {
+		if(geospatialGeometryList == null) {
+			geospatialGeometryList = new ArrayList<>();
+		}
+		if(geospatialGeometryList.size() == 0) {
+			geospatialGeometryList.add(geospatialGeometry);
+		} else {
+			geospatialGeometryList.set(0, geospatialGeometry);
+		}
+	}
+
+	@Override
+	public List<GeospatialGeometry> getGeospatialGeometryList() {
+		return geospatialGeometryList;
+	}
+
+	@Override
+	public void setGeospatialGeometryList(List<GeospatialGeometry> geospatialGeometryList) {
+		this.geospatialGeometryList = geospatialGeometryList;
+	}
+
+	@Override
+	public boolean hasGeospatialGeometry() {
+		return geospatialGeometryList != null && geospatialGeometryList.size() > 0 && geospatialGeometryList.get(0) != null;
+	}
+
+	public GEOSPATIALLY_CROSSES(Place place) {
+		placeList = new ArrayList<Place>();
+		placeList.add(place);
+	}
+
+	@Override
+	public Place getPlace() {
+		if(placeList != null && placeList.size() > 0) {
+			return placeList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPlace(Place place) {
+		if(placeList == null) {
+			placeList = new ArrayList<>();
+		}
+		if(placeList.size() == 0) {
+			placeList.add(place);
+		} else {
+			placeList.set(0, place);
+		}
+	}
+
+	@Override
+	public List<Place> getPlaceList() {
+		return placeList;
+	}
+
+	@Override
+	public void setPlaceList(List<Place> placeList) {
+		this.placeList = placeList;
+	}
+
+	@Override
+	public boolean hasPlace() {
+		return placeList != null && placeList.size() > 0 && placeList.get(0) != null;
+	}
+
+	public GEOSPATIALLY_CROSSES(List<GeospatialGeometry> geospatialGeometryList,
+			List<Place> placeList) {
+		setGeospatialGeometryList(geospatialGeometryList);
+		setPlaceList(placeList);
+	}
+
+	public void copy(Container.GeospatiallyCrosses org) {
+		setGeospatialGeometryList(org.getGeospatialGeometryList());
+		setPlaceList(org.getPlaceList());
+	}
+
+	@Override
+	public String getNativeValue() {
+		return getString();
+	}
+
+	@Override
+	public String toString() {
+		return SimpleJsonBuilder.toJson(this);
+	}
+
+}
