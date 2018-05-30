@@ -63,7 +63,7 @@ General class type's entity classes has at least 2 constructors, no arguments an
 Dedicated JSON builder
 ----------------------
 
-`org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder` is the JSON builder for JSONizing schemeOrg objects. It is added functions no other general JSON builders provide, but enough available as a simple JSON builder for any purpose.
+`org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder` is the JSON builder for JSONizing schemeOrg objects. It is added functions internally no other general JSON builders provide, but enough available as a simple JSON builder for any purpose.
 ```
 CreativeWork creativeWork = new CREATIVE_WORK();
 Author author = new AUTHOR(new PERSON("誰か"));

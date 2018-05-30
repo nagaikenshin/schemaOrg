@@ -2,9 +2,9 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    compile 'org.seasar.doma:doma:2.17.0'
-    compile project(':schemaOrgWork')
-    compile project(':schemaOrgDoma')
+    implementation 'org.seasar.doma:doma:2.17.0'
+    compileOnly project(':schemaOrgWork')
+    implementation project(':schemaOrgDoma')
 }
 
 archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-domaConv'

@@ -796,16 +796,16 @@ public class SimpleJsonBuilder {
 			return valStr1;
 		}
 
-		Map<String, String> jsonLdMap = new HashMap<>();
+		Map<String, String> jsonLdStrMap = new HashMap<>();
 		if(isJsonLd) {
 			JsonLdContext jsonLdContext = cls.getAnnotation(JsonLdContext.class);
 			if(jsonLdContext != null) {
-				jsonLdMap.put("@context", jsonLdContext.value());
+				jsonLdStrMap.put("@context", jsonLdContext.value());
 			}
 
 			SchemaOrgLabel schemaOrgLabel = cls.getAnnotation(SchemaOrgLabel.class);
 			if(schemaOrgLabel != null) {
-				jsonLdMap.put("@type", schemaOrgLabel.value());
+				jsonLdStrMap.put("@type", schemaOrgLabel.value());
 			}
 		}
 
@@ -1067,20 +1067,37 @@ public class SimpleJsonBuilder {
 				for(String name : names) {
 					Object sv;
 					Class<?> sc;
+					boolean isList = false;
 					if(lcGetMtdNameMap.containsKey(name)) {
 						Method mtd = lcGetMtdNameMap.get(name);
 						sv = mtd.invoke(obj);
+						if(sv == null) {
+							continue;
+						}
 						sc = mtd.getReturnType();
+						if(List.class.isAssignableFrom(sc)) {
+							Type type = mtd.getGenericReturnType();
+							ParameterizedType gType = (ParameterizedType)type;
+							Type[] aTypes = gType.getActualTypeArguments();
+							sc = (Class<?>)aTypes[0];
+							isList = true;
+						}
 					} else {
 						Field fld = lcDclFldNameMap.get(name);
 						fld.setAccessible(true);
 						sv = fld.get(obj);
+						if(sv == null) {
+							continue;
+						}
 						sc = fld.getType();
+						if(List.class.isAssignableFrom(sc)) {
+							ParameterizedType gType = (ParameterizedType)fld.getGenericType();
+							Type[] aTypes = gType.getActualTypeArguments();
+							sc = (Class<?>)aTypes[0];
+							isList = true;
+						}
 					}
-					if(sv == null) {
-						continue;
-					}
-					if(sv instanceof List) {
+					if(isList) {
 						List<?> tmpList = (List<?>)sv;
 						valList.addAll(tmpList);
 						for(int ti = 0; ti < tmpList.size(); ti++) {
@@ -1174,29 +1191,18 @@ public class SimpleJsonBuilder {
 			}
 		}
 
+		HashMap<String, Method> jsonLdMtdMap = new HashMap<>();
+		HashMap<String, Field> jsonLdFldMap = new HashMap<>();
 		if(isJsonLd) {
-			try {
-				if(prmMtdNameMap.containsKey("identifier")) {
-					Method mtd = prmMtdNameMap.get("identifier");
-					Object rv = mtd.invoke(obj);
-					if(rv != null) {
-						Class<?> rc = mtd.getReturnType();
-						String valStr = toValStr(rv, rc);
-						jsonLdMap.put("@id", valStr);
-					}
-				} else if(prmFldNameMap.containsKey("identifier")) {
-					Field fld = prmFldNameMap.get("identifier");
-					fld.setAccessible(true);
-					Object rv = fld.get(obj);
-					if(rv != null) {
-						Class<?> rc = fld.getType();
-						String valStr = toValStr(rv, rc);
-						jsonLdMap.put("@id", valStr);
-					}
-				}
-			} catch(IllegalArgumentException iae) {
-			} catch(IllegalAccessException iae) {
-			} catch(InvocationTargetException ite) {
+			// identifierは@idと解釈する
+			if(prmMtdNameMap.containsKey("identifier")) {
+				Method mtd = prmMtdNameMap.get("identifier");
+				jsonLdMtdMap.put("@id", mtd);
+				prmMtdNameMap.remove("identifier");
+			} else if(prmFldNameMap.containsKey("identifier")) {
+				Field fld = prmFldNameMap.get("identifier");
+				jsonLdFldMap.put("@id", fld);
+				prmFldNameMap.remove("identifier");
 			}
 		}
 
@@ -1208,8 +1214,16 @@ public class SimpleJsonBuilder {
 		for(Map.Entry<String, Field> ent : prmFldNameMap.entrySet()) {
 			prmNameList.add(ent.getKey());
 		}
-		for(Map.Entry<String, String> ent : jsonLdMap.entrySet()) {
-			prmNameList.add(ent.getKey());
+		if(isJsonLd) {
+			for(Map.Entry<String, Method> ent : jsonLdMtdMap.entrySet()) {
+				prmNameList.add(ent.getKey());
+			}
+			for(Map.Entry<String, Field> ent : jsonLdFldMap.entrySet()) {
+				prmNameList.add(ent.getKey());
+			}
+			for(Map.Entry<String, String> ent : jsonLdStrMap.entrySet()) {
+				prmNameList.add(ent.getKey());
+			}
 		}
 		Collections.sort(prmNameList);
 		sb = new StringBuilder("{");
@@ -1233,8 +1247,21 @@ public class SimpleJsonBuilder {
 					rv = fld.get(obj);
 					rc = fld.getType();
 				} else {
-					rv = jsonLdMap.get(prmName);
-					rc = String.class;
+					if(jsonLdMtdMap.containsKey(prmName)) {
+						Method mtd = jsonLdMtdMap.get(prmName);
+						logger.trace("method: " + mtd);
+						rv = mtd.invoke(obj);
+						rc = mtd.getReturnType();
+					} else if(prmFldNameMap.containsKey(prmName)) {
+						Field fld = prmFldNameMap.get(prmName);
+						logger.trace("field: " + fld);
+						fld.setAccessible(true);
+						rv = fld.get(obj);
+						rc = fld.getType();
+					} else {
+						rv = jsonLdStrMap.get(prmName);
+						rc = String.class;
+					}
 				}
 				if(rv == null) {
 					// sb.append("null");

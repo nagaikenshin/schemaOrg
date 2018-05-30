@@ -197,16 +197,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface PublishedBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
-		 */
-		public Person getPerson();
-		public void setPerson(Person person);
-		public List<Person> getPersonList();
-		public void setPersonList(List<Person> personList);
-		public boolean hasPerson();
-
-		/**
 		 * uri: http://schema.org/Organization
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
 		 */
@@ -215,6 +205,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Organization> getOrganizationList();
 		public void setOrganizationList(List<Organization> organizationList);
 		public boolean hasOrganization();
+
+		/**
+		 * uri: http://schema.org/Person
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 */
+		public Person getPerson();
+		public void setPerson(Person person);
+		public List<Person> getPersonList();
+		public void setPersonList(List<Person> personList);
+		public boolean hasPerson();
 
 		public String getNativeValue();
 

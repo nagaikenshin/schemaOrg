@@ -104,16 +104,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface SupersededBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Enumeration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration
-		 */
-		public Enumeration getEnumeration();
-		public void setEnumeration(Enumeration enumeration);
-		public List<Enumeration> getEnumerationList();
-		public void setEnumerationList(List<Enumeration> enumerationList);
-		public boolean hasEnumeration();
-
-		/**
 		 * uri: http://schema.org/Property
 		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
 		 */
@@ -122,6 +112,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.Property> getPropertyList();
 		public void setPropertyList(List<Clazz.Property> propertyList);
 		public boolean hasProperty();
+
+		/**
+		 * uri: http://schema.org/Enumeration
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration
+		 */
+		public Enumeration getEnumeration();
+		public void setEnumeration(Enumeration enumeration);
+		public List<Enumeration> getEnumerationList();
+		public void setEnumerationList(List<Enumeration> enumerationList);
+		public boolean hasEnumeration();
 
 		/**
 		 * uri: http://schema.org/Class

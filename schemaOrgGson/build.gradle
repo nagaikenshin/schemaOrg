@@ -2,9 +2,9 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    compile 'org.kyojo.minion:minion:0.7.0'
-    compile project(':schemaOrgWork')
-    compile project(':schemaOrgImpl')
+    implementation 'org.kyojo.minion:minion:0.7.0'
+    compileOnly project(':schemaOrgWork')
+    implementation project(':schemaOrgImpl')
 }
 
 archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-gson'

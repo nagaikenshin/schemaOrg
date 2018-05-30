@@ -2,8 +2,8 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    compile 'commons-logging:commons-logging:1.2'
-    compile project(':schemaOrgWork')
+    implementation 'commons-logging:commons-logging:1.2'
+    compileOnly project(':schemaOrgWork')
 }
 
 archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-impl'
