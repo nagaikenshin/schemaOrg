@@ -104,14 +104,14 @@ public interface Container extends SchemaOrgProperty {
 	public interface SupersededBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Class
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
+		 * uri: http://schema.org/Property
+		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
 		 */
-		public Clazz.Class getClazz();
-		public void setClazz(Clazz.Class clazz);
-		public List<Clazz.Class> getClazzList();
-		public void setClazzList(List<Clazz.Class> clazzList);
-		public boolean hasClazz();
+		public Clazz.Property getProperty();
+		public void setProperty(Clazz.Property property);
+		public List<Clazz.Property> getPropertyList();
+		public void setPropertyList(List<Clazz.Property> propertyList);
+		public boolean hasProperty();
 
 		/**
 		 * uri: http://schema.org/Enumeration
@@ -124,14 +124,14 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasEnumeration();
 
 		/**
-		 * uri: http://schema.org/Property
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
+		 * uri: http://schema.org/Class
+		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
 		 */
-		public Clazz.Property getProperty();
-		public void setProperty(Clazz.Property property);
-		public List<Clazz.Property> getPropertyList();
-		public void setPropertyList(List<Clazz.Property> propertyList);
-		public boolean hasProperty();
+		public Clazz.Class getClazz();
+		public void setClazz(Clazz.Class clazz);
+		public List<Clazz.Class> getClazzList();
+		public void setClazzList(List<Clazz.Class> clazzList);
+		public boolean hasClazz();
 
 		public String getNativeValue();
 

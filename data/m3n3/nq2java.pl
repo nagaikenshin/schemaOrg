@@ -11,8 +11,8 @@ use Data::Dumper;
 binmode (STDOUT, ':utf8');
 binmode (STDERR, ':utf8');
 
-my $url = 'file://home/nagai/kyojo/schemaOrg201804/all-layers.nq';
-my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaOrg/m3n3/';
+my $url = 'file://home/nagai/kyojo/schemaOrg201804/data/m3n3/all-layers.nq';
+my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaOrg/';
 my $out2_dpath = $out1_dpath . 'm3n3/';
 my $pkg1_base = 'org.kyojo.schemaOrg';
 my $pkg2_base = $pkg1_base . '.m3n3';

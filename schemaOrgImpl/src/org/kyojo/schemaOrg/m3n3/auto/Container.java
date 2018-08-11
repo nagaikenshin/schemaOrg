@@ -93,16 +93,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface BodyType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -121,6 +111,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/QualitativeValue
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
 
 		public String getNativeValue();
 
@@ -226,6 +226,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface EngineType extends SchemaOrgProperty {
 
 		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
+
+		/**
 		 * uri: http://schema.org/QualitativeValue
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
 		 */
@@ -244,16 +254,6 @@ public interface Container extends SchemaOrgProperty {
 		public List<URL> getURLList();
 		public void setURLList(List<URL> urlList);
 		public boolean hasURL();
-
-		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -296,16 +296,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface MeetsEmissionStandard extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -324,6 +314,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<QualitativeValue> getQualitativeValueList();
 		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
 		public boolean hasQualitativeValue();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 

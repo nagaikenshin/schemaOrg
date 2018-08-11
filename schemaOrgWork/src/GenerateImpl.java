@@ -30,7 +30,7 @@ public class GenerateImpl {
 	private static String basePath = "..";
 	private static String defDPath = basePath + "/schemaOrgWork/src/";
 	private static String implDPath = basePath + "/schemaOrgImpl/src/";
-	private static String sqlDPath = basePath + "/sql/";
+	private static String sqlDPath = basePath + "/sql/m3n3/";
 	private static String domaDPath = basePath + "/schemaOrgDoma/src/";
 	private static String domaConvDPath = basePath + "/schemaOrgDomaConv/src/";
 	private static String gsonDPath = basePath + "/schemaOrgGson/src/";
