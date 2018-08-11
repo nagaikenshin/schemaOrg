@@ -2,13 +2,13 @@ package org.kyojo.schemaOrg.m3n3.auto;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.JsonLdContext;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgComment;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgLabel;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgProperty;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgURI;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.JsonLdContext;
+import org.kyojo.schemaOrg.SchemaOrgComment;
+import org.kyojo.schemaOrg.SchemaOrgLabel;
+import org.kyojo.schemaOrg.SchemaOrgProperty;
+import org.kyojo.schemaOrg.SchemaOrgURI;
 import org.kyojo.schemaOrg.m3n3.auto.Clazz;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue;
@@ -103,16 +103,6 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -121,6 +111,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<URL> getURLList();
 		public void setURLList(List<URL> urlList);
 		public boolean hasURL();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -226,6 +226,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface EngineType extends SchemaOrgProperty {
 
 		/**
+		 * uri: http://schema.org/QualitativeValue
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
+
+		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -244,16 +254,6 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
 
 		public String getNativeValue();
 
@@ -296,6 +296,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface MeetsEmissionStandard extends SchemaOrgProperty {
 
 		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
+
+		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -314,16 +324,6 @@ public interface Container extends SchemaOrgProperty {
 		public List<QualitativeValue> getQualitativeValueList();
 		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
 		public boolean hasQualitativeValue();
-
-		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -440,16 +440,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface SeatingCapacity extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
-		 */
-		public Number getNumber();
-		public void setNumber(Number number);
-		public List<Number> getNumberList();
-		public void setNumberList(List<Number> numberList);
-		public boolean hasNumber();
-
-		/**
 		 * uri: http://schema.org/QuantitativeValue
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
 		 */
@@ -458,6 +448,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * uri: http://schema.org/Number
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 */
+		public Number getNumber();
+		public void setNumber(Number number);
+		public List<Number> getNumberList();
+		public void setNumberList(List<Number> numberList);
+		public boolean hasNumber();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -612,16 +612,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface VehicleSpecialUsage extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/CarUsageType
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Clazz.CarUsageType
-		 */
-		public Clazz.CarUsageType getCarUsageType();
-		public void setCarUsageType(Clazz.CarUsageType carUsageType);
-		public List<Clazz.CarUsageType> getCarUsageTypeList();
-		public void setCarUsageTypeList(List<Clazz.CarUsageType> carUsageTypeList);
-		public boolean hasCarUsageType();
-
-		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -630,6 +620,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/CarUsageType
+		 * class: org.kyojo.schemaOrg.m3n3.auto.Clazz.CarUsageType
+		 */
+		public Clazz.CarUsageType getCarUsageType();
+		public void setCarUsageType(Clazz.CarUsageType carUsageType);
+		public List<Clazz.CarUsageType> getCarUsageTypeList();
+		public void setCarUsageTypeList(List<Clazz.CarUsageType> carUsageTypeList);
+		public boolean hasCarUsageType();
 
 		public String getNativeValue();
 

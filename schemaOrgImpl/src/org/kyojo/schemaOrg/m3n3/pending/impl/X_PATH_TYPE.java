@@ -1,7 +1,7 @@
 package org.kyojo.schemaOrg.m3n3.pending.impl;
 
-import org.kyojo.schemaOrg.m3n3.SampleValue;
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SampleValue;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.pending.Clazz;
 
 public class X_PATH_TYPE implements Clazz.XPathType {

@@ -1,8 +1,8 @@
 package org.kyojo.schemaOrg.m3n3.core.impl;
 
 import java.time.LocalDate;
-import org.kyojo.schemaOrg.m3n3.SampleValue;
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SampleValue;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.DataType;
 
 public class DATE implements DataType.Date {

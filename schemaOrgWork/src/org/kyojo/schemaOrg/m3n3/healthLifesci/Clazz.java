@@ -1,12 +1,12 @@
 package org.kyojo.schemaOrg.m3n3.healthLifesci;
 
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.JsonLdContext;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgClass;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgComment;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgLabel;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgURI;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.JsonLdContext;
+import org.kyojo.schemaOrg.SchemaOrgClass;
+import org.kyojo.schemaOrg.SchemaOrgComment;
+import org.kyojo.schemaOrg.SchemaOrgLabel;
+import org.kyojo.schemaOrg.SchemaOrgURI;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Audience;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;

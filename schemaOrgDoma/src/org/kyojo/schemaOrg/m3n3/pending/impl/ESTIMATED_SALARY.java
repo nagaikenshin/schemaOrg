@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.pending.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.PriceSpecification;
 import org.kyojo.schemaOrg.m3n3.core.DataType.Number;

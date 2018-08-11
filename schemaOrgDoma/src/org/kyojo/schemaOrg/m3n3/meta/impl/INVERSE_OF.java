@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.meta.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.Container.Name;
 import org.kyojo.schemaOrg.m3n3.meta.Clazz.Property;
 import org.kyojo.schemaOrg.m3n3.meta.Container;

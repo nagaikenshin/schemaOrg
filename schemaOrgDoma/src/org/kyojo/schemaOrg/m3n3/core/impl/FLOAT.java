@@ -1,6 +1,6 @@
 package org.kyojo.schemaOrg.m3n3.core.impl;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.Clazz;
 
 public class FLOAT implements Clazz.Float {

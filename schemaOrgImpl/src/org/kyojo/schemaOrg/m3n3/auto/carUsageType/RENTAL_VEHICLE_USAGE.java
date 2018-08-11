@@ -3,8 +3,8 @@ package org.kyojo.schemaOrg.m3n3.auto.carUsageType;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SampleValue;
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SampleValue;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.auto.CarUsageType;
 import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty;
 import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;

@@ -2,13 +2,13 @@ package org.kyojo.schemaOrg.m3n3.meta;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.JsonLdContext;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgComment;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgLabel;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgProperty;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgURI;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.JsonLdContext;
+import org.kyojo.schemaOrg.SchemaOrgComment;
+import org.kyojo.schemaOrg.SchemaOrgLabel;
+import org.kyojo.schemaOrg.SchemaOrgProperty;
+import org.kyojo.schemaOrg.SchemaOrgURI;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;
 import org.kyojo.schemaOrg.m3n3.meta.Clazz;
 
@@ -104,14 +104,14 @@ public interface Container extends SchemaOrgProperty {
 	public interface SupersededBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Property
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
+		 * uri: http://schema.org/Class
+		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
 		 */
-		public Clazz.Property getProperty();
-		public void setProperty(Clazz.Property property);
-		public List<Clazz.Property> getPropertyList();
-		public void setPropertyList(List<Clazz.Property> propertyList);
-		public boolean hasProperty();
+		public Clazz.Class getClazz();
+		public void setClazz(Clazz.Class clazz);
+		public List<Clazz.Class> getClazzList();
+		public void setClazzList(List<Clazz.Class> clazzList);
+		public boolean hasClazz();
 
 		/**
 		 * uri: http://schema.org/Enumeration
@@ -124,14 +124,14 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasEnumeration();
 
 		/**
-		 * uri: http://schema.org/Class
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
+		 * uri: http://schema.org/Property
+		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
 		 */
-		public Clazz.Class getClazz();
-		public void setClazz(Clazz.Class clazz);
-		public List<Clazz.Class> getClazzList();
-		public void setClazzList(List<Clazz.Class> clazzList);
-		public boolean hasClazz();
+		public Clazz.Property getProperty();
+		public void setProperty(Clazz.Property property);
+		public List<Clazz.Property> getPropertyList();
+		public void setPropertyList(List<Clazz.Property> propertyList);
+		public boolean hasProperty();
 
 		public String getNativeValue();
 

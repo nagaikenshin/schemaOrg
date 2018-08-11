@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.bib.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.bib.Clazz;
 import org.kyojo.schemaOrg.m3n3.bib.Container.Abridged;
 import org.kyojo.schemaOrg.m3n3.bib.Container.PublisherImprint;

@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.pending.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
 import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
 import org.kyojo.schemaOrg.m3n3.core.Container.Currency;

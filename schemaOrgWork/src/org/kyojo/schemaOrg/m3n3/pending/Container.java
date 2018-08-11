@@ -2,13 +2,13 @@ package org.kyojo.schemaOrg.m3n3.pending;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.JsonLdContext;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgComment;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgLabel;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgProperty;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgURI;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.JsonLdContext;
+import org.kyojo.schemaOrg.SchemaOrgComment;
+import org.kyojo.schemaOrg.SchemaOrgLabel;
+import org.kyojo.schemaOrg.SchemaOrgProperty;
+import org.kyojo.schemaOrg.SchemaOrgURI;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.BankOrCreditUnion;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.BroadcastChannel;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
@@ -112,16 +112,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface ActionableFeedbackPolicy extends PublishingPrinciples, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/CreativeWork
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
 		 */
@@ -130,6 +120,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<CreativeWork> getCreativeWorkList();
 		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
 		public boolean hasCreativeWork();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -179,16 +179,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface BeneficiaryBank extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/BankOrCreditUnion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.BankOrCreditUnion
-		 */
-		public BankOrCreditUnion getBankOrCreditUnion();
-		public void setBankOrCreditUnion(BankOrCreditUnion bankOrCreditUnion);
-		public List<BankOrCreditUnion> getBankOrCreditUnionList();
-		public void setBankOrCreditUnionList(List<BankOrCreditUnion> bankOrCreditUnionList);
-		public boolean hasBankOrCreditUnion();
-
-		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -197,6 +187,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/BankOrCreditUnion
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.BankOrCreditUnion
+		 */
+		public BankOrCreditUnion getBankOrCreditUnion();
+		public void setBankOrCreditUnion(BankOrCreditUnion bankOrCreditUnion);
+		public List<BankOrCreditUnion> getBankOrCreditUnionList();
+		public void setBankOrCreditUnionList(List<BankOrCreditUnion> bankOrCreditUnionList);
+		public boolean hasBankOrCreditUnion();
 
 		public String getNativeValue();
 
@@ -238,16 +238,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface BroadcastFrequency extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/BroadcastFrequencySpecification
 		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.BroadcastFrequencySpecification
 		 */
@@ -256,6 +246,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.BroadcastFrequencySpecification> getBroadcastFrequencySpecificationList();
 		public void setBroadcastFrequencySpecificationList(List<Clazz.BroadcastFrequencySpecification> broadcastFrequencySpecificationList);
 		public boolean hasBroadcastFrequencySpecification();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -381,16 +381,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface CashBack extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Boolean
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Boolean
-		 */
-		public Boolean getB00lean();
-		public void setB00lean(Boolean b00lean);
-		public List<Boolean> getB00leanList();
-		public void setB00leanList(List<Boolean> b00leanList);
-		public boolean hasB00lean();
-
-		/**
 		 * uri: http://schema.org/Number
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
 		 */
@@ -399,6 +389,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * uri: http://schema.org/Boolean
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Boolean
+		 */
+		public Boolean getB00lean();
+		public void setB00lean(Boolean b00lean);
+		public List<Boolean> getB00leanList();
+		public void setB00leanList(List<Boolean> b00leanList);
+		public boolean hasB00lean();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -574,16 +574,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface DiversityPolicy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/CreativeWork
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
-		 */
-		public CreativeWork getCreativeWork();
-		public void setCreativeWork(CreativeWork creativeWork);
-		public List<CreativeWork> getCreativeWorkList();
-		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
-		public boolean hasCreativeWork();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -592,6 +582,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<URL> getURLList();
 		public void setURLList(List<URL> urlList);
 		public boolean hasURL();
+
+		/**
+		 * uri: http://schema.org/CreativeWork
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
+		 */
+		public CreativeWork getCreativeWork();
+		public void setCreativeWork(CreativeWork creativeWork);
+		public List<CreativeWork> getCreativeWorkList();
+		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
+		public boolean hasCreativeWork();
 
 		public String getNativeValue();
 
@@ -607,16 +607,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Documentation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/CreativeWork
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
 		 */
@@ -625,6 +615,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<CreativeWork> getCreativeWorkList();
 		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
 		public boolean hasCreativeWork();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -666,16 +666,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface DownPayment extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MonetaryAmount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
-		 */
-		public MonetaryAmount getMonetaryAmount();
-		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
-		public List<MonetaryAmount> getMonetaryAmountList();
-		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
-		public boolean hasMonetaryAmount();
-
-		/**
 		 * uri: http://schema.org/Number
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
 		 */
@@ -684,6 +674,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * uri: http://schema.org/MonetaryAmount
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
+		 */
+		public MonetaryAmount getMonetaryAmount();
+		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
+		public List<MonetaryAmount> getMonetaryAmountList();
+		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
+		public boolean hasMonetaryAmount();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -760,16 +760,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface EstimatedSalary extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MonetaryAmount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
-		 */
-		public MonetaryAmount getMonetaryAmount();
-		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
-		public List<MonetaryAmount> getMonetaryAmountList();
-		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
-		public boolean hasMonetaryAmount();
-
-		/**
 		 * uri: http://schema.org/Number
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
 		 */
@@ -788,6 +778,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<PriceSpecification> getPriceSpecificationList();
 		public void setPriceSpecificationList(List<PriceSpecification> priceSpecificationList);
 		public boolean hasPriceSpecification();
+
+		/**
+		 * uri: http://schema.org/MonetaryAmount
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
+		 */
+		public MonetaryAmount getMonetaryAmount();
+		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
+		public List<MonetaryAmount> getMonetaryAmountList();
+		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
+		public boolean hasMonetaryAmount();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -928,16 +928,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExchangeRate extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/UnitPriceSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.UnitPriceSpecification
-		 */
-		public UnitPriceSpecification getUnitPriceSpecification();
-		public void setUnitPriceSpecification(UnitPriceSpecification unitPriceSpecification);
-		public List<UnitPriceSpecification> getUnitPriceSpecificationList();
-		public void setUnitPriceSpecificationList(List<UnitPriceSpecification> unitPriceSpecificationList);
-		public boolean hasUnitPriceSpecification();
-
-		/**
 		 * uri: http://schema.org/ExchangeRateSpecification
 		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.ExchangeRateSpecification
 		 */
@@ -946,6 +936,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.ExchangeRateSpecification> getExchangeRateSpecificationList();
 		public void setExchangeRateSpecificationList(List<Clazz.ExchangeRateSpecification> exchangeRateSpecificationList);
 		public boolean hasExchangeRateSpecification();
+
+		/**
+		 * uri: http://schema.org/UnitPriceSpecification
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.UnitPriceSpecification
+		 */
+		public UnitPriceSpecification getUnitPriceSpecification();
+		public void setUnitPriceSpecification(UnitPriceSpecification unitPriceSpecification);
+		public List<UnitPriceSpecification> getUnitPriceSpecificationList();
+		public void setUnitPriceSpecificationList(List<UnitPriceSpecification> unitPriceSpecificationList);
+		public boolean hasUnitPriceSpecification();
 
 		public String getNativeValue();
 
@@ -1094,16 +1094,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface GeospatiallyCovers extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/GeospatialGeometry
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
-		 */
-		public Clazz.GeospatialGeometry getGeospatialGeometry();
-		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
-		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
-		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
-		public boolean hasGeospatialGeometry();
-
-		/**
 		 * uri: http://schema.org/Place
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
 		 */
@@ -1112,6 +1102,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Place> getPlaceList();
 		public void setPlaceList(List<Place> placeList);
 		public boolean hasPlace();
+
+		/**
+		 * uri: http://schema.org/GeospatialGeometry
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
+		 */
+		public Clazz.GeospatialGeometry getGeospatialGeometry();
+		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
+		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
+		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
+		public boolean hasGeospatialGeometry();
 
 		public String getNativeValue();
 
@@ -1131,16 +1131,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface GeospatiallyCrosses extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/GeospatialGeometry
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
-		 */
-		public Clazz.GeospatialGeometry getGeospatialGeometry();
-		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
-		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
-		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
-		public boolean hasGeospatialGeometry();
-
-		/**
 		 * uri: http://schema.org/Place
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
 		 */
@@ -1149,6 +1139,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Place> getPlaceList();
 		public void setPlaceList(List<Place> placeList);
 		public boolean hasPlace();
+
+		/**
+		 * uri: http://schema.org/GeospatialGeometry
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
+		 */
+		public Clazz.GeospatialGeometry getGeospatialGeometry();
+		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
+		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
+		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
+		public boolean hasGeospatialGeometry();
 
 		public String getNativeValue();
 
@@ -1167,16 +1167,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface GeospatiallyDisjoint extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/GeospatialGeometry
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
-		 */
-		public Clazz.GeospatialGeometry getGeospatialGeometry();
-		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
-		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
-		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
-		public boolean hasGeospatialGeometry();
-
-		/**
 		 * uri: http://schema.org/Place
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
 		 */
@@ -1185,6 +1175,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Place> getPlaceList();
 		public void setPlaceList(List<Place> placeList);
 		public boolean hasPlace();
+
+		/**
+		 * uri: http://schema.org/GeospatialGeometry
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
+		 */
+		public Clazz.GeospatialGeometry getGeospatialGeometry();
+		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
+		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
+		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
+		public boolean hasGeospatialGeometry();
 
 		public String getNativeValue();
 
@@ -1312,16 +1312,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface GeospatiallyTouches extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Place
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
-		 */
-		public Place getPlace();
-		public void setPlace(Place place);
-		public List<Place> getPlaceList();
-		public void setPlaceList(List<Place> placeList);
-		public boolean hasPlace();
-
-		/**
 		 * uri: http://schema.org/GeospatialGeometry
 		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
 		 */
@@ -1330,6 +1320,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
 		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
 		public boolean hasGeospatialGeometry();
+
+		/**
+		 * uri: http://schema.org/Place
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
+		 */
+		public Place getPlace();
+		public void setPlace(Place place);
+		public List<Place> getPlaceList();
+		public void setPlaceList(List<Place> placeList);
+		public boolean hasPlace();
 
 		public String getNativeValue();
 
@@ -1348,16 +1348,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface GeospatiallyWithin extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/GeospatialGeometry
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
-		 */
-		public Clazz.GeospatialGeometry getGeospatialGeometry();
-		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
-		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
-		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
-		public boolean hasGeospatialGeometry();
-
-		/**
 		 * uri: http://schema.org/Place
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Place
 		 */
@@ -1366,6 +1356,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Place> getPlaceList();
 		public void setPlaceList(List<Place> placeList);
 		public boolean hasPlace();
+
+		/**
+		 * uri: http://schema.org/GeospatialGeometry
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.GeospatialGeometry
+		 */
+		public Clazz.GeospatialGeometry getGeospatialGeometry();
+		public void setGeospatialGeometry(Clazz.GeospatialGeometry geospatialGeometry);
+		public List<Clazz.GeospatialGeometry> getGeospatialGeometryList();
+		public void setGeospatialGeometryList(List<Clazz.GeospatialGeometry> geospatialGeometryList);
+		public boolean hasGeospatialGeometry();
 
 		public String getNativeValue();
 
@@ -2151,16 +2151,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface LegislationPassedBy extends Creator, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
-		 */
-		public Organization getOrganization();
-		public void setOrganization(Organization organization);
-		public List<Organization> getOrganizationList();
-		public void setOrganizationList(List<Organization> organizationList);
-		public boolean hasOrganization();
-
-		/**
 		 * uri: http://schema.org/Person
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
 		 */
@@ -2169,6 +2159,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Person> getPersonList();
 		public void setPersonList(List<Person> personList);
 		public boolean hasPerson();
+
+		/**
+		 * uri: http://schema.org/Organization
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 */
+		public Organization getOrganization();
+		public void setOrganization(Organization organization);
+		public List<Organization> getOrganizationList();
+		public void setOrganizationList(List<Organization> organizationList);
+		public boolean hasOrganization();
 
 		public String getNativeValue();
 
@@ -2187,16 +2187,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface LegislationResponsible extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
-		 */
-		public Organization getOrganization();
-		public void setOrganization(Organization organization);
-		public List<Organization> getOrganizationList();
-		public void setOrganizationList(List<Organization> organizationList);
-		public boolean hasOrganization();
-
-		/**
 		 * uri: http://schema.org/Person
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
 		 */
@@ -2205,6 +2195,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Person> getPersonList();
 		public void setPersonList(List<Person> personList);
 		public boolean hasPerson();
+
+		/**
+		 * uri: http://schema.org/Organization
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 */
+		public Organization getOrganization();
+		public void setOrganization(Organization organization);
+		public List<Organization> getOrganizationList();
+		public void setOrganizationList(List<Organization> organizationList);
+		public boolean hasOrganization();
 
 		public String getNativeValue();
 
@@ -2276,16 +2276,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface LegislationType extends Genre, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/CategoryCode
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.CategoryCode
-		 */
-		public Clazz.CategoryCode getCategoryCode();
-		public void setCategoryCode(Clazz.CategoryCode categoryCode);
-		public List<Clazz.CategoryCode> getCategoryCodeList();
-		public void setCategoryCodeList(List<Clazz.CategoryCode> categoryCodeList);
-		public boolean hasCategoryCode();
-
-		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -2294,6 +2284,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/CategoryCode
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.CategoryCode
+		 */
+		public Clazz.CategoryCode getCategoryCode();
+		public void setCategoryCode(Clazz.CategoryCode categoryCode);
+		public List<Clazz.CategoryCode> getCategoryCodeList();
+		public void setCategoryCodeList(List<Clazz.CategoryCode> categoryCodeList);
+		public boolean hasCategoryCode();
 
 		public String getNativeValue();
 
@@ -2462,16 +2462,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Masthead extends PublishingPrinciples, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/CreativeWork
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
 		 */
@@ -2480,6 +2470,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<CreativeWork> getCreativeWorkList();
 		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
 		public boolean hasCreativeWork();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -2523,16 +2523,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface MeasurementTechnique extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -2541,6 +2531,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<URL> getURLList();
 		public void setURLList(List<URL> urlList);
 		public boolean hasURL();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -2558,16 +2558,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface MenuAddOn extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MenuSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MenuSection
-		 */
-		public MenuSection getMenuSection();
-		public void setMenuSection(MenuSection menuSection);
-		public List<MenuSection> getMenuSectionList();
-		public void setMenuSectionList(List<MenuSection> menuSectionList);
-		public boolean hasMenuSection();
-
-		/**
 		 * uri: http://schema.org/MenuItem
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MenuItem
 		 */
@@ -2576,6 +2566,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<MenuItem> getMenuItemList();
 		public void setMenuItemList(List<MenuItem> menuItemList);
 		public boolean hasMenuItem();
+
+		/**
+		 * uri: http://schema.org/MenuSection
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MenuSection
+		 */
+		public MenuSection getMenuSection();
+		public void setMenuSection(MenuSection menuSection);
+		public List<MenuSection> getMenuSectionList();
+		public void setMenuSectionList(List<MenuSection> menuSectionList);
+		public boolean hasMenuSection();
 
 		public String getNativeValue();
 
@@ -2628,16 +2628,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface MonthlyMinimumRepaymentAmount extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MonetaryAmount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
-		 */
-		public MonetaryAmount getMonetaryAmount();
-		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
-		public List<MonetaryAmount> getMonetaryAmountList();
-		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
-		public boolean hasMonetaryAmount();
-
-		/**
 		 * uri: http://schema.org/Number
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
 		 */
@@ -2646,6 +2636,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * uri: http://schema.org/MonetaryAmount
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.MonetaryAmount
+		 */
+		public MonetaryAmount getMonetaryAmount();
+		public void setMonetaryAmount(MonetaryAmount monetaryAmount);
+		public List<MonetaryAmount> getMonetaryAmountList();
+		public void setMonetaryAmountList(List<MonetaryAmount> monetaryAmountList);
+		public boolean hasMonetaryAmount();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -2861,16 +2861,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Speakable extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/SpeakableSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.SpeakableSpecification
-		 */
-		public Clazz.SpeakableSpecification getSpeakableSpecification();
-		public void setSpeakableSpecification(Clazz.SpeakableSpecification speakableSpecification);
-		public List<Clazz.SpeakableSpecification> getSpeakableSpecificationList();
-		public void setSpeakableSpecificationList(List<Clazz.SpeakableSpecification> speakableSpecificationList);
-		public boolean hasSpeakableSpecification();
-
-		/**
 		 * uri: http://schema.org/URL
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
 		 */
@@ -2879,6 +2869,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<URL> getURLList();
 		public void setURLList(List<URL> urlList);
 		public boolean hasURL();
+
+		/**
+		 * uri: http://schema.org/SpeakableSpecification
+		 * class: org.kyojo.schemaOrg.m3n3.pending.Clazz.SpeakableSpecification
+		 */
+		public Clazz.SpeakableSpecification getSpeakableSpecification();
+		public void setSpeakableSpecification(Clazz.SpeakableSpecification speakableSpecification);
+		public List<Clazz.SpeakableSpecification> getSpeakableSpecificationList();
+		public void setSpeakableSpecificationList(List<Clazz.SpeakableSpecification> speakableSpecificationList);
+		public boolean hasSpeakableSpecification();
 
 		public String getNativeValue();
 
@@ -2928,16 +2928,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface TermsOfService extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -2946,6 +2936,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -2966,16 +2966,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface UnnamedSourcesPolicy extends PublishingPrinciples, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/CreativeWork
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
 		 */
@@ -2984,6 +2974,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<CreativeWork> getCreativeWorkList();
 		public void setCreativeWorkList(List<CreativeWork> creativeWorkList);
 		public boolean hasCreativeWork();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -3000,16 +3000,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface UsesHealthPlanIdStandard extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -3018,6 +3008,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * uri: http://schema.org/URL
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 

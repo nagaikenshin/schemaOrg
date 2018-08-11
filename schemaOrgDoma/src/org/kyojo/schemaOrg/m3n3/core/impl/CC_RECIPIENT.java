@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.core.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Audience;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.ContactPoint;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Organization;

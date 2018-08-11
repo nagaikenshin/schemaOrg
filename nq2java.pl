@@ -12,8 +12,10 @@ binmode (STDOUT, ':utf8');
 binmode (STDERR, ':utf8');
 
 my $url = 'file://home/nagai/kyojo/schemaOrg201804/all-layers.nq';
-my $out_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaOrg/m3n3/';
-my $pkg_base = 'org.kyojo.schemaOrg.m3n3';
+my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaOrg/m3n3/';
+my $out2_dpath = $out1_dpath . 'm3n3/';
+my $pkg1_base = 'org.kyojo.schemaOrg';
+my $pkg2_base = $pkg1_base . '.m3n3';
 my $wrn_fpath = 'warn.txt';
 my $tpi_fpath = 'type_value_in.tsv';
 my $tpo_fpath = 'type_value_out.tsv';
@@ -209,7 +211,7 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 	my $domain = $domain_uris->{$domain_uri};
 	$domain->{this_uri} = $domain_uri;
 	$domain->{extension} = 'core';
-	$domain->{this_pkg} = $pkg_base . '.core';
+	$domain->{this_pkg} = $pkg2_base . '.core';
 
 	if ($domain_uri =~ /\/\/[a-z0-9\-\.]*schema\.org\/(\w+)$/ || $domain_uri =~ /\/\/kyojo\.org\/schemaSpl\/(\w+)$/) {
 		my $this_name = ucfirst ($1);
@@ -240,7 +242,7 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 			if ($domain->{$property} =~ /\/\/([\w\-]+)\.schema\.org\/?$/) {
 				my $extension = camelize ($1);
 				$domain->{extension} = $extension;
-				$domain->{this_pkg} = $pkg_base . '.' . $extension;
+				$domain->{this_pkg} = $pkg2_base . '.' . $extension;
 			} else {
 				print "isPartOf is not schema.org.\n";
 				die Dumper $domain;
@@ -372,13 +374,13 @@ sub add_type {
 }
 
 eval {
-	mkpath $out_dpath;
+	mkpath $out2_dpath;
 };
-my $out_fpath = $out_dpath . 'Jsonizable.java';
+my $out_fpath = $out1_dpath . 'Jsonizable.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 import java.io.Serializable;
 
@@ -386,22 +388,22 @@ public interface Jsonizable extends Serializable {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgType.java';
+$out_fpath = $out1_dpath . 'SchemaOrgType.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 \@SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
 public interface SchemaOrgType extends Jsonizable {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgClass.java';
+$out_fpath = $out1_dpath . 'SchemaOrgClass.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 \@SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
 public interface SchemaOrgClass extends SchemaOrgType {
@@ -428,21 +430,21 @@ public interface SchemaOrgClass extends SchemaOrgType {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgProperty.java';
+$out_fpath = $out1_dpath . 'SchemaOrgProperty.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 \@SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
 public interface SchemaOrgProperty extends SchemaOrgType {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgURI.java';
+$out_fpath = $out1_dpath . 'SchemaOrgURI.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -459,10 +461,10 @@ public @interface SchemaOrgURI {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgLabel.java';
+$out_fpath = $out1_dpath . 'SchemaOrgLabel.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -479,10 +481,10 @@ public @interface SchemaOrgLabel {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SchemaOrgComment.java';
+$out_fpath = $out1_dpath . 'SchemaOrgComment.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -499,10 +501,10 @@ public @interface SchemaOrgComment {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SampleValue.java';
+$out_fpath = $out1_dpath . 'SampleValue.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -519,10 +521,10 @@ public @interface SampleValue {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'JsonLdContext.java';
+$out_fpath = $out1_dpath . 'JsonLdContext.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -539,10 +541,10 @@ public @interface JsonLdContext {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'CamelizedName.java';
+$out_fpath = $out1_dpath . 'CamelizedName.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -559,10 +561,10 @@ public @interface CamelizedName {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'ConstantizedName.java';
+$out_fpath = $out1_dpath . 'ConstantizedName.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
-print FOUT "package $pkg_base;\n";
+print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
 import java.lang.annotation.ElementType;
@@ -579,11 +581,45 @@ public @interface ConstantizedName {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'NativeValueDataType.java';
+$out_fpath = $out1_dpath . 'JsonListIndex.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
+public @interface JsonListIndex {
+}
+EoS
+close FOUT;
+$out_fpath = $out1_dpath . 'JsonListNo.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
+public @interface JsonListNo {
+}
+EoS
+close FOUT;
+$out_fpath = $out1_dpath . 'NativeValueDataType.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -591,8 +627,8 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
-import $pkg_base.core.Clazz;
-import $pkg_base.core.DataType;
+import $pkg2_base.core.Clazz;
+import $pkg2_base.core.DataType;
 
 public enum NativeValueDataType {
 
@@ -709,11 +745,11 @@ public enum NativeValueDataType {
 }
 EoS
 close FOUT;
-$out_fpath = $out_dpath . 'SimpleJsonBuilder.java';
+$out_fpath = $out1_dpath . 'SimpleJsonBuilder.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
 print FOUT << "EoS";
-package $pkg_base;
+package $pkg1_base;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -742,8 +778,10 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import $pkg_base.core.Clazz;
-import $pkg_base.core.DataType;
+import $pkg1_base.JsonListIndex;
+import $pkg1_base.JsonListNo;
+import $pkg2_base.core.Clazz;
+import $pkg2_base.core.DataType;
 EoS
 print FOUT << 'EoS';
 
@@ -771,7 +809,7 @@ public class SimpleJsonBuilder {
 	// ジェネリクスやインターフェース指定は型ありのこちらを使用
 	public static String toJson(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
-		String json = toJson(obj, cls, 0, new LinkedList<>(), false);
+		String json = toJson(obj, cls, null, 0, new LinkedList<>(), false);
 		logger.debug("json: " + json);
 		return json;
 	}
@@ -782,12 +820,12 @@ public class SimpleJsonBuilder {
 
 	public static String toJsonLd(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
-		String jsonLd = toJson(obj, cls, 0, new LinkedList<>(), true);
+		String jsonLd = toJson(obj, cls, null, 0, new LinkedList<>(), true);
 		logger.debug("jsonLd: " + jsonLd);
 		return jsonLd;
 	}
 
-	private static String toJson(Object obj, Class<?> cls,
+	private static String toJson(Object obj, Class<?> cls, Integer idx,
 			int depth, LinkedList<Object> stack, boolean isJsonLd) {
 		stack.addFirst(obj);
 		String valStr1 = toValStr(obj, cls);
@@ -843,7 +881,7 @@ public class SimpleJsonBuilder {
 						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
 					} else {
 						// ToDo: le.getClass()は意図した型が取れないかもしれないがしかたないか
-						sb.append(toJson(le, le.getClass(), depth + 1, new LinkedList<>(stack), isJsonLd));
+						sb.append(toJson(le, le.getClass(), li, depth + 1, new LinkedList<>(stack), isJsonLd));
 					}
 				}
 				if(li < list.size() - 1) {
@@ -881,7 +919,7 @@ public class SimpleJsonBuilder {
 						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
 					} else {
 						// ToDo: val.getClass()は意図した型が取れないかもしれないがしかたないか
-						sb.append(toJson(val, val.getClass(), depth + 1, new LinkedList<>(stack), isJsonLd));
+						sb.append(toJson(val, val.getClass(), null, depth + 1, new LinkedList<>(stack), isJsonLd));
 					}
 				}
 
@@ -898,6 +936,10 @@ public class SimpleJsonBuilder {
 		List<Field> dclFlds = getAllFields(cls);
 		HashMap<String, Field> lcDclFldNameMap = new HashMap<>();
 		HashMap<String, Field> lcExcldFldNameMap = new HashMap<>(); // Groovyのget/set自動生成のため必要
+		Field listIndexFld = null;
+		Field listNoFld = null;
+		Object listIndexVal = null;
+		Object listNoVal = null;
 		for(Field dclFld : dclFlds) {
 			String dfn = dclFld.getName().toLowerCase();
 			if(lcDclFldNameMap.containsKey(dfn)) {
@@ -921,11 +963,43 @@ public class SimpleJsonBuilder {
 			} else {
 				lcExcldFldNameMap.put(dfn, dclFld);
 			}
+
+			if(idx != null) {
+				if(dclFld.isAnnotationPresent(JsonListIndex.class)) {
+					if(Integer.class.isAssignableFrom(dclFld.getType())
+							|| int.class.isAssignableFrom(dclFld.getType())) {
+						listIndexFld = dclFld;
+						listIndexVal = idx;
+					} else if(Long.class.isAssignableFrom(dclFld.getType())
+							|| long.class.isAssignableFrom(dclFld.getType())) {
+						listIndexFld = dclFld;
+						listIndexVal = idx.longValue();
+					} else if(String.class.isAssignableFrom(dclFld.getType())) {
+						listIndexFld = dclFld;
+						listIndexVal = "" + idx;
+					}
+				} else if(dclFld.isAnnotationPresent(JsonListNo.class)) {
+					if(Integer.class.isAssignableFrom(dclFld.getType())
+							|| int.class.isAssignableFrom(dclFld.getType())) {
+						listNoFld = dclFld;
+						listNoVal = new Integer(idx + 1);
+					} else if(Long.class.isAssignableFrom(dclFld.getType())
+							|| long.class.isAssignableFrom(dclFld.getType())) {
+						listNoFld = dclFld;
+						listNoVal = new Long(idx.longValue() + 1L);
+					} else if(String.class.isAssignableFrom(dclFld.getType())) {
+						listNoFld = dclFld;
+						listNoVal = "" + (idx + 1);
+					}
+				}
+			}
 		}
-		// Method[] mtds = cls.getMethods();
+
 		Method[] mtds = cls.getMethods();
 		HashMap<String, Method> lcGetMtdNameMap = new HashMap<>();
 		HashMap<String, Method> tmpMtdMap = new HashMap<>();
+		Method listIndexMtd = null;
+		Method listNoMtd = null;
 		for(Method mtd : mtds) {
 			int modifier = mtd.getModifiers();
 			if(Modifier.isFinal(modifier)
@@ -948,6 +1022,46 @@ public class SimpleJsonBuilder {
 					String lcGetMtdName = prmName.toLowerCase();
 					if(!lcExcldFldNameMap.containsKey(lcGetMtdName)) {
 						lcGetMtdNameMap.put(lcGetMtdName, mtd);
+					}
+
+					if(idx != null) {
+						if((mtd.isAnnotationPresent(JsonListIndex.class)
+									|| (listIndexFld != null
+										&& listIndexFld.getName().equalsIgnoreCase(prmName)))) {
+							if(Integer.class.isAssignableFrom(mtd.getReturnType())
+									|| int.class.isAssignableFrom(mtd.getReturnType())) {
+								listIndexMtd = mtd;
+								listIndexVal = idx;
+								listIndexFld = null;
+							} else if(Long.class.isAssignableFrom(mtd.getReturnType())
+									|| long.class.isAssignableFrom(mtd.getReturnType())) {
+								listIndexMtd = mtd;
+								listIndexVal = idx.longValue();
+								listIndexFld = null;
+							} else if(String.class.isAssignableFrom(mtd.getReturnType())) {
+								listIndexMtd = mtd;
+								listIndexVal = "" + idx;
+								listIndexFld = null;
+							}
+						} else if((mtd.isAnnotationPresent(JsonListNo.class)
+									|| (listNoFld != null
+										&& listNoFld.getName().equalsIgnoreCase(prmName)))) {
+							if(Integer.class.isAssignableFrom(mtd.getReturnType())
+									|| int.class.isAssignableFrom(mtd.getReturnType())) {
+								listNoMtd = mtd;
+								listNoVal = new Integer(idx + 1);
+								listNoFld = null;
+							} else if(Long.class.isAssignableFrom(mtd.getReturnType())
+									|| long.class.isAssignableFrom(mtd.getReturnType())) {
+								listNoMtd = mtd;
+								listNoVal = new Long(idx.longValue() + 1L);
+								listNoFld = null;
+							} else if(String.class.isAssignableFrom(mtd.getReturnType())) {
+								listNoMtd = mtd;
+								listNoVal = "" + (idx + 1);
+								listNoFld = null;
+							}
+						}
 					}
 				}
 			}
@@ -1079,8 +1193,10 @@ public class SimpleJsonBuilder {
 							Type type = mtd.getGenericReturnType();
 							ParameterizedType gType = (ParameterizedType)type;
 							Type[] aTypes = gType.getActualTypeArguments();
-							sc = (Class<?>)aTypes[0];
-							isList = true;
+							if(aTypes.length > 0 && aTypes[0] instanceof Class) {
+								sc = (Class<?>)aTypes[0];
+								isList = true;
+							}
 						}
 					} else {
 						Field fld = lcDclFldNameMap.get(name);
@@ -1093,8 +1209,10 @@ public class SimpleJsonBuilder {
 						if(List.class.isAssignableFrom(sc)) {
 							ParameterizedType gType = (ParameterizedType)fld.getGenericType();
 							Type[] aTypes = gType.getActualTypeArguments();
-							sc = (Class<?>)aTypes[0];
-							isList = true;
+							if(aTypes.length > 0 && aTypes[0] instanceof Class) {
+								sc = (Class<?>)aTypes[0];
+								isList = true;
+							}
 						}
 					}
 					if(isList) {
@@ -1121,7 +1239,7 @@ public class SimpleJsonBuilder {
 						Object rv = valList.get(ri);
 						Class<?> rc = clsList.get(ri);
 						String valStr = toValStr(rv, rc);
-						appendWithCheck(rv, rc, valStr, sb, depth, stack, isJsonLd);
+						appendWithCheck(rv, rc, ri, valStr, sb, depth, stack, isJsonLd);
 						if(ri < valList.size() - 1) {
 							sb.append(",");
 						}
@@ -1153,11 +1271,13 @@ public class SimpleJsonBuilder {
 				Type type = mtd.getGenericReturnType();
 				ParameterizedType gType = (ParameterizedType)type;
 				Type[] aTypes = gType.getActualTypeArguments();
-				Class<?> rtnCls = (Class<?>)aTypes[0];
-				CamelizedName cmlName = rtnCls.getAnnotation(CamelizedName.class);
-				if(cmlName != null) {
-					prmMtdNameMap.put(cmlName.value() + "List", mtd);
-					continue;
+				if(aTypes.length > 0 && aTypes[0] instanceof Class) {
+					Class<?> rtnCls = (Class<?>)aTypes[0];
+					CamelizedName cmlName = rtnCls.getAnnotation(CamelizedName.class);
+					if(cmlName != null) {
+						prmMtdNameMap.put(cmlName.value() + "List", mtd);
+						continue;
+					}
 				}
 			} else {
 				CamelizedName cmlName = mtd.getReturnType().getAnnotation(CamelizedName.class);
@@ -1238,13 +1358,25 @@ public class SimpleJsonBuilder {
 				if(prmMtdNameMap.containsKey(prmName)) {
 					Method mtd = prmMtdNameMap.get(prmName);
 					logger.trace("method: " + mtd);
-					rv = mtd.invoke(obj);
+					if(idx != null && listIndexMtd != null && listIndexMtd.equals(mtd)) {
+						rv = listIndexVal;
+					} else if(idx != null && listNoMtd != null && listNoMtd.equals(mtd)) {
+						rv = listNoVal;
+					} else {
+						rv = mtd.invoke(obj);
+					}
 					rc = mtd.getReturnType();
 				} else if(prmFldNameMap.containsKey(prmName)) {
 					Field fld = prmFldNameMap.get(prmName);
 					logger.trace("field: " + fld);
 					fld.setAccessible(true);
-					rv = fld.get(obj);
+					if(idx != null && listIndexFld != null && listIndexFld.equals(fld)) {
+						rv = listIndexVal;
+					} else if(idx != null && listNoFld != null && listNoFld.equals(fld)) {
+						rv = listNoVal;
+					} else {
+						rv = fld.get(obj);
+					}
 					rc = fld.getType();
 				} else {
 					if(jsonLdMtdMap.containsKey(prmName)) {
@@ -1252,8 +1384,8 @@ public class SimpleJsonBuilder {
 						logger.trace("method: " + mtd);
 						rv = mtd.invoke(obj);
 						rc = mtd.getReturnType();
-					} else if(prmFldNameMap.containsKey(prmName)) {
-						Field fld = prmFldNameMap.get(prmName);
+					} else if(jsonLdFldMap.containsKey(prmName)) {
+						Field fld = jsonLdFldMap.get(prmName);
 						logger.trace("field: " + fld);
 						fld.setAccessible(true);
 						rv = fld.get(obj);
@@ -1281,7 +1413,7 @@ public class SimpleJsonBuilder {
 				sb.append(escapeJson(prmName));
 				sb.append("\"");
 				sb.append(":");
-				appendWithCheck(rv, rc, valStr2, sb, depth, stack, isJsonLd);
+				appendWithCheck(rv, rc, null, valStr2, sb, depth, stack, isJsonLd);
 			} catch(Exception ex) {
 				// sb.append("\"");
 				// sb.append(escapeJson(ex.toString()));
@@ -1296,7 +1428,7 @@ public class SimpleJsonBuilder {
 		return sb.toString();
 	}
 
-	private static void appendWithCheck(Object rv, Class<?> rc, String valStr, StringBuilder sb,
+	private static void appendWithCheck(Object rv, Class<?> rc, Integer ri, String valStr, StringBuilder sb,
 			int depth, LinkedList<Object> stack, boolean isJsonLd) {
 		if(valStr == null) {
 			boolean loop = false;
@@ -1315,7 +1447,7 @@ public class SimpleJsonBuilder {
 				logger.warn("depth limit over:");
 				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
 			} else {
-				sb.append(toJson(rv, rc, depth + 1, new LinkedList<>(stack), isJsonLd));
+				sb.append(toJson(rv, rc, ri, depth + 1, new LinkedList<>(stack), isJsonLd));
 			}
 		} else {
 			sb.append(valStr);
@@ -1732,41 +1864,41 @@ foreach my $type_full (sort keys %type_fulls) {
 	}
 
 	if ($has_class) {
-		$imports->{$pkg_base . '.SchemaOrgClass'} = 1;
+		$imports->{$pkg1_base . '.SchemaOrgClass'} = 1;
 	}
 	if ($has_property) {
-		$imports->{$pkg_base . '.SchemaOrgProperty'} = 1;
+		$imports->{$pkg1_base . '.SchemaOrgProperty'} = 1;
 	}
 	if ($has_type) {
-		$imports->{$pkg_base . '.SchemaOrgType'} = 1;
+		$imports->{$pkg1_base . '.SchemaOrgType'} = 1;
 	}
-	$imports->{$pkg_base . '.JsonLdContext'} = 1;
-	$imports->{$pkg_base . '.SchemaOrgURI'} = 1;
-	$imports->{$pkg_base . '.SchemaOrgLabel'} = 1;
-	$imports->{$pkg_base . '.SchemaOrgComment'} = 1;
-	$imports->{$pkg_base . '.CamelizedName'} = 1;
-	$imports->{$pkg_base . '.ConstantizedName'} = 1;
+	$imports->{$pkg1_base . '.JsonLdContext'} = 1;
+	$imports->{$pkg1_base . '.SchemaOrgURI'} = 1;
+	$imports->{$pkg1_base . '.SchemaOrgLabel'} = 1;
+	$imports->{$pkg1_base . '.SchemaOrgComment'} = 1;
+	$imports->{$pkg1_base . '.CamelizedName'} = 1;
+	$imports->{$pkg1_base . '.ConstantizedName'} = 1;
 	if ($type_name ne 'Clazz' && $type_name ne 'Container') {
-		$imports->{$pkg_base . '.SampleValue'} = 1;
+		$imports->{$pkg1_base . '.SampleValue'} = 1;
 	}
 
 	# [個別対応]
 	if ($extension eq 'pending' && $type_name eq 'Clazz') {
 		# 継承元と被るのでインポートせず直接指定
-		# delete $imports->{$pkg_base . '.core.Container.ContactPoint'};
+		# delete $imports->{$pkg2_base . '.core.Container.ContactPoint'};
 	} elsif ($extension eq 'bib' && $type_name eq 'Clazz') {
 		# 継承元に同じメソッドがあるので追加しない
-		delete $imports->{$pkg_base . '.core.Container.Duration'};
+		delete $imports->{$pkg2_base . '.core.Container.Duration'};
 	} elsif ($extension eq 'healthLifesci' && $type_name eq 'MedicalSpecialty') {
 		# 継承元から見えるのでインポート不要
-		# delete $imports->{$pkg_base . '.healthLifesci.Clazz.MedicalBusiness'};
-		# delete $imports->{$pkg_base . '.healthLifesci.Clazz.MedicalTherapy'};
+		# delete $imports->{$pkg2_base . '.healthLifesci.Clazz.MedicalBusiness'};
+		# delete $imports->{$pkg2_base . '.healthLifesci.Clazz.MedicalTherapy'};
 	}
 
 	eval {
-		mkpath $out_dpath . $extension;
+		mkpath $out2_dpath . $extension;
 	};
-	$out_fpath = $out_dpath . $extension . '/' . $type_name . '.java';
+	$out_fpath = $out2_dpath . $extension . '/' . $type_name . '.java';
 	open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 	binmode (FOUT, ':utf8');
 	print FOUT "package $type_pkg;\n";
@@ -2151,12 +2283,12 @@ foreach my $type_full (sort keys %type_fulls) {
 						&& $domain->{this_name} eq 'Physician'
 						&& $p_domain->{this_name} eq 'MedicalSpecialty') {
 					# クラス検索で継承元のものが先に見えてしまうので直接指定
-					# $pre = $pkg_base . '.healthLifesci.Container.';
+					# $pre = $pkg2_base . '.healthLifesci.Container.';
 				} elsif ($extension eq 'pending' && $type_name eq 'Clazz'
 						&& $domain->{this_name} eq 'HealthInsurancePlan'
 						&& $p_domain->{this_name} eq 'ContactPoint') {
 					# クラス検索で継承元のものが先に見えてしまうので直接指定
-					# $pre = $pkg_base . '.core.Container.';
+					# $pre = $pkg2_base . '.core.Container.';
 				} elsif ($extension eq 'bib' && $type_name eq 'Clazz'
 						&& $domain->{this_name} eq 'Audiobook'
 						&& $p_domain->{this_name} eq 'Duration') {

@@ -8,7 +8,7 @@ subprojects {
     }
 
     version = '0.4.1'
-    group = 'org.kyojo.schemaOrg.m3n3'
+    group = 'org.kyojo'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
     tasks.withType(JavaCompile) {

@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.core.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.auto.Container.EngineDisplacement;
 import org.kyojo.schemaOrg.m3n3.auto.Container.EnginePower;
 import org.kyojo.schemaOrg.m3n3.auto.Container.EngineType;

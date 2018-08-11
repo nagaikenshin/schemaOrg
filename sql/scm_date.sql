@@ -7,8 +7,8 @@ CREATE TABLE scm_date(
   *        java.lang.Class
   *        java.time.DayOfWeek
   *        java.time.Month
+  *        java.time.chrono.Chronology
   *        java.time.chrono.Era
-  *        java.time.chrono.IsoChronology
   *        long
   */
 

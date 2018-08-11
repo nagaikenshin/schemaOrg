@@ -2,13 +2,13 @@ package org.kyojo.schemaOrg.m3n3.healthLifesci;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.JsonLdContext;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgComment;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgLabel;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgProperty;
-import org.kyojo.schemaOrg.m3n3.SchemaOrgURI;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.JsonLdContext;
+import org.kyojo.schemaOrg.SchemaOrgComment;
+import org.kyojo.schemaOrg.SchemaOrgLabel;
+import org.kyojo.schemaOrg.SchemaOrgProperty;
+import org.kyojo.schemaOrg.SchemaOrgURI;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.AdministrativeArea;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Duration;
 import org.kyojo.schemaOrg.m3n3.core.Clazz.Energy;
@@ -371,14 +371,14 @@ public interface Container extends SchemaOrgProperty {
 	public interface AssociatedAnatomy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * uri: http://schema.org/AnatomicalSystem
+		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
 		 */
-		public Clazz.AnatomicalStructure getAnatomicalStructure();
-		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
-		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
-		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
-		public boolean hasAnatomicalStructure();
+		public Clazz.AnatomicalSystem getAnatomicalSystem();
+		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
+		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
+		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
+		public boolean hasAnatomicalSystem();
 
 		/**
 		 * uri: http://schema.org/SuperficialAnatomy
@@ -391,14 +391,14 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasSuperficialAnatomy();
 
 		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
+		 * uri: http://schema.org/AnatomicalStructure
+		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
 		 */
-		public Clazz.AnatomicalSystem getAnatomicalSystem();
-		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
-		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
-		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
-		public boolean hasAnatomicalSystem();
+		public Clazz.AnatomicalStructure getAnatomicalStructure();
+		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
+		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
+		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
+		public boolean hasAnatomicalStructure();
 
 		public String getNativeValue();
 
@@ -462,6 +462,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface AvailableService extends SchemaOrgProperty {
 
 		/**
+		 * uri: http://schema.org/MedicalProcedure
+		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalProcedure
+		 */
+		public Clazz.MedicalProcedure getMedicalProcedure();
+		public void setMedicalProcedure(Clazz.MedicalProcedure medicalProcedure);
+		public List<Clazz.MedicalProcedure> getMedicalProcedureList();
+		public void setMedicalProcedureList(List<Clazz.MedicalProcedure> medicalProcedureList);
+		public boolean hasMedicalProcedure();
+
+		/**
 		 * uri: http://schema.org/MedicalTest
 		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
 		 */
@@ -480,16 +490,6 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.MedicalTherapy> getMedicalTherapyList();
 		public void setMedicalTherapyList(List<Clazz.MedicalTherapy> medicalTherapyList);
 		public boolean hasMedicalTherapy();
-
-		/**
-		 * uri: http://schema.org/MedicalProcedure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalProcedure
-		 */
-		public Clazz.MedicalProcedure getMedicalProcedure();
-		public void setMedicalProcedure(Clazz.MedicalProcedure medicalProcedure);
-		public List<Clazz.MedicalProcedure> getMedicalProcedureList();
-		public void setMedicalProcedureList(List<Clazz.MedicalProcedure> medicalProcedureList);
-		public boolean hasMedicalProcedure();
 
 		public String getNativeValue();
 
@@ -971,6 +971,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface CostPerUnit extends SchemaOrgProperty {
 
 		/**
+		 * uri: http://schema.org/QualitativeValue
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
+
+		/**
 		 * uri: http://schema.org/Text
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
 		 */
@@ -989,16 +999,6 @@ public interface Container extends SchemaOrgProperty {
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
-
-		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
 
 		public String getNativeValue();
 
@@ -1231,16 +1231,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface DoseValue extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
-
-		/**
 		 * uri: http://schema.org/Number
 		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
 		 */
@@ -1249,6 +1239,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * uri: http://schema.org/QualitativeValue
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -1379,16 +1379,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Endorsers extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
-		 */
-		public Person getPerson();
-		public void setPerson(Person person);
-		public List<Person> getPersonList();
-		public void setPersonList(List<Person> personList);
-		public boolean hasPerson();
-
-		/**
 		 * uri: http://schema.org/Organization
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
 		 */
@@ -1397,6 +1387,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Organization> getOrganizationList();
 		public void setOrganizationList(List<Organization> organizationList);
 		public boolean hasOrganization();
+
+		/**
+		 * uri: http://schema.org/Person
+		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 */
+		public Person getPerson();
+		public void setPerson(Person person);
+		public List<Person> getPersonList();
+		public void setPersonList(List<Person> personList);
+		public boolean hasPerson();
 
 		public String getNativeValue();
 
@@ -2096,16 +2096,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Intensity extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/QualitativeValue
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
 		 */
@@ -2114,6 +2104,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<QualitativeValue> getQualitativeValueList();
 		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
 		public boolean hasQualitativeValue();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -2223,16 +2223,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface LegalStatus extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
 		 * uri: http://schema.org/DrugLegalStatus
 		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugLegalStatus
 		 */
@@ -2251,6 +2241,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.MedicalEnumeration> getMedicalEnumerationList();
 		public void setMedicalEnumerationList(List<Clazz.MedicalEnumeration> medicalEnumerationList);
 		public boolean hasMedicalEnumeration();
+
+		/**
+		 * uri: http://schema.org/Text
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -3241,16 +3241,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedAnatomy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
-		 */
-		public Clazz.AnatomicalStructure getAnatomicalStructure();
-		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
-		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
-		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
-		public boolean hasAnatomicalStructure();
-
-		/**
 		 * uri: http://schema.org/AnatomicalSystem
 		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
 		 */
@@ -3259,6 +3249,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
 		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
 		public boolean hasAnatomicalSystem();
+
+		/**
+		 * uri: http://schema.org/AnatomicalStructure
+		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 */
+		public Clazz.AnatomicalStructure getAnatomicalStructure();
+		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
+		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
+		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
+		public boolean hasAnatomicalStructure();
 
 		public String getNativeValue();
 
@@ -3391,16 +3391,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Repetitions extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
-		 */
-		public Number getNumber();
-		public void setNumber(Number number);
-		public List<Number> getNumberList();
-		public void setNumberList(List<Number> numberList);
-		public boolean hasNumber();
-
-		/**
 		 * uri: http://schema.org/QualitativeValue
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
 		 */
@@ -3409,6 +3399,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<QualitativeValue> getQualitativeValueList();
 		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
 		public boolean hasQualitativeValue();
+
+		/**
+		 * uri: http://schema.org/Number
+		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 */
+		public Number getNumber();
+		public void setNumber(Number number);
+		public List<Number> getNumberList();
+		public void setNumberList(List<Number> numberList);
+		public boolean hasNumber();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -3801,16 +3801,6 @@ public interface Container extends SchemaOrgProperty {
 	public interface Status extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalStudyStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalStudyStatus
-		 */
-		public Clazz.MedicalStudyStatus getMedicalStudyStatus();
-		public void setMedicalStudyStatus(Clazz.MedicalStudyStatus medicalStudyStatus);
-		public List<Clazz.MedicalStudyStatus> getMedicalStudyStatusList();
-		public void setMedicalStudyStatusList(List<Clazz.MedicalStudyStatus> medicalStudyStatusList);
-		public boolean hasMedicalStudyStatus();
-
-		/**
 		 * uri: http://schema.org/EventStatusType
 		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.EventStatusType
 		 */
@@ -3819,6 +3809,16 @@ public interface Container extends SchemaOrgProperty {
 		public List<EventStatusType> getEventStatusTypeList();
 		public void setEventStatusTypeList(List<EventStatusType> eventStatusTypeList);
 		public boolean hasEventStatusType();
+
+		/**
+		 * uri: http://schema.org/MedicalStudyStatus
+		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalStudyStatus
+		 */
+		public Clazz.MedicalStudyStatus getMedicalStudyStatus();
+		public void setMedicalStudyStatus(Clazz.MedicalStudyStatus medicalStudyStatus);
+		public List<Clazz.MedicalStudyStatus> getMedicalStudyStatusList();
+		public void setMedicalStudyStatusList(List<Clazz.MedicalStudyStatus> medicalStudyStatusList);
+		public boolean hasMedicalStudyStatus();
 
 		/**
 		 * uri: http://schema.org/Text

@@ -21,9 +21,9 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.kyojo.schemaOrg.m3n3.CamelizedName;
-import org.kyojo.schemaOrg.m3n3.ConstantizedName;
-import org.kyojo.schemaOrg.m3n3.SampleValue;
+import org.kyojo.schemaOrg.CamelizedName;
+import org.kyojo.schemaOrg.ConstantizedName;
+import org.kyojo.schemaOrg.SampleValue;
 
 public class GenerateImpl {
 
@@ -34,9 +34,10 @@ public class GenerateImpl {
 	private static String domaDPath = basePath + "/schemaOrgDoma/src/";
 	private static String domaConvDPath = basePath + "/schemaOrgDomaConv/src/";
 	private static String gsonDPath = basePath + "/schemaOrgGson/src/";
-	private static String pkgBase = "org.kyojo.schemaOrg.m3n3";
+	private static String pkg1Base = "org.kyojo.schemaOrg";
+	private static String pkg2Base = pkg1Base + ".m3n3";
 	private static Pattern cfpt = Pattern.compile("(org/kyojo/schemaOrg/m3n3)/(\\w+)/(\\w+)\\.java$");
-	private static Pattern expt = Pattern.compile("^(" + pkgBase.replaceAll("\\.", "\\\\.") + "\\.\\w+)\\.");
+	private static Pattern expt = Pattern.compile("^(" + pkg2Base.replaceAll("\\.", "\\\\.") + "\\.\\w+)\\.");
 
 	public static void main(String[] args) {
 		File pd = new File(defDPath);
@@ -87,12 +88,12 @@ public class GenerateImpl {
 			PrintWriter pw = null;
 			try {
 				StringBuilder domaFPath = new StringBuilder(domaConvDPath);
-				domaFPath.append(pkgBase.replaceAll("\\.", "/"));
+				domaFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				domaFPath.append(File.separator);
 				domaFPath.append("doma");
 				domaFPath.append(File.separator);
 				domaFPath.append("DomainConvertersProvider.java");
-				StringBuilder domaPkg = new StringBuilder(pkgBase);
+				StringBuilder domaPkg = new StringBuilder(pkg2Base);
 				domaPkg.append(".doma");
 				Collections.sort(domaConvNameList);
 
@@ -119,17 +120,21 @@ public class GenerateImpl {
 
 				//--
 				StringBuilder gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
 				gsonFPath.append("GsonTypeAdapters.properties");
-				StringBuilder gsonPkg = new StringBuilder(pkgBase);
+				StringBuilder gsonPkg = new StringBuilder(pkg2Base);
 				gsonPkg.append(".gson");
 				gsonTypeNameMap.put("java.lang.Boolean", gsonPkg.toString() + ".BooleanDeserializer");
 				gsonTypeNameList.add("java.lang.Boolean");
-				gsonTypeNameMap.put("java.util.Date", gsonPkg.toString() + ".DateDeserializer");
+				gsonTypeNameMap.put("java.util.Date", gsonPkg.toString() + ".DateTimeDeserializer");
 				gsonTypeNameList.add("java.util.Date");
+				gsonTypeNameMap.put("java.sql.Date", gsonPkg.toString() + ".DateDeserializer");
+				gsonTypeNameList.add("java.sql.Date");
+				gsonTypeNameMap.put("java.sql.Time", gsonPkg.toString() + ".TimeDeserializer");
+				gsonTypeNameList.add("java.sql.Time");
 				gsonTypeNameMap.put("java.time.OffsetDateTime", gsonPkg.toString() + ".OffsetDateTimeDeserializer");
 				gsonTypeNameList.add("java.time.OffsetDateTime");
 				gsonTypeNameMap.put("java.time.LocalDate", gsonPkg.toString() + ".LocalDateDeserializer");
@@ -153,7 +158,7 @@ public class GenerateImpl {
 
 				//--
 				gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
@@ -193,11 +198,11 @@ public class GenerateImpl {
 
 				//--
 				gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
-				gsonFPath.append("DateDeserializer.java");
+				gsonFPath.append("DateTimeDeserializer.java");
 
 				cf = new File(gsonFPath.toString());
 				cd = cf.getParentFile();
@@ -216,7 +221,7 @@ public class GenerateImpl {
 				pw.println("import org.kyojo.gson.JsonElement;");
 				pw.println("import org.kyojo.gson.JsonParseException;");
 				pw.println("");
-				pw.println("public class DateDeserializer implements JsonDeserializer<Date> {");
+				pw.println("public class DateTimeDeserializer implements JsonDeserializer<Date> {");
 				pw.println("");
 				pw.println("	@Override");
 				pw.println("	public Date deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)");
@@ -225,7 +230,7 @@ public class GenerateImpl {
 				pw.println("			return null;");
 				pw.println("		}");
 				pw.println("");
-				pw.println("		SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");");
+				pw.println("		SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd'T'HH:mm:ss\");");
 				pw.println("		try {");
 				pw.println("			return sdf.parse(jsonElement.getAsString());");
 				pw.println("		} catch(ParseException pe1) {");
@@ -233,7 +238,7 @@ public class GenerateImpl {
 				pw.println("			try {");
 				pw.println("				return sdf.parse(jsonElement.getAsString());");
 				pw.println("			} catch(ParseException pe2) {");
-				pw.println("				sdf = new SimpleDateFormat(\"yyyy-MM-dd'T'HH:mm:ss'Z'\");");
+				pw.println("				sdf = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");");
 				pw.println("				try {");
 				pw.println("					return sdf.parse(jsonElement.getAsString());");
 				pw.println("				} catch(ParseException pe3) {");
@@ -241,17 +246,7 @@ public class GenerateImpl {
 				pw.println("					try {");
 				pw.println("						return sdf.parse(jsonElement.getAsString());");
 				pw.println("					} catch(ParseException pe4) {");
-				pw.println("						sdf = new SimpleDateFormat(\"HH:mm:ss\");");
-				pw.println("						try {");
-				pw.println("							return sdf.parse(jsonElement.getAsString());");
-				pw.println("						} catch(ParseException pe5) {");
-				pw.println("							sdf = new SimpleDateFormat(\"HH:mm:ssXXX\");");
-				pw.println("							try {");
-				pw.println("								return sdf.parse(jsonElement.getAsString());");
-				pw.println("							} catch(ParseException pe6) {");
-				pw.println("								return null;");
-				pw.println("							}");
-				pw.println("						}");
+				pw.println("						return null;");
 				pw.println("					}");
 				pw.println("				}");
 				pw.println("			}");
@@ -265,7 +260,93 @@ public class GenerateImpl {
 
 				//--
 				gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
+				gsonFPath.append(File.separator);
+				gsonFPath.append("gson");
+				gsonFPath.append(File.separator);
+				gsonFPath.append("DateDeserializer.java");
+
+				cf = new File(gsonFPath.toString());
+				cd = cf.getParentFile();
+				if(!cd.exists()) {
+					cd.mkdirs();
+				}
+				pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
+				pw.printf("package %s;\n", gsonPkg.toString());
+				pw.println("");
+				pw.println("import java.lang.reflect.Type;");
+				pw.println("import org.kyojo.gson.JsonDeserializationContext;");
+				pw.println("import org.kyojo.gson.JsonDeserializer;");
+				pw.println("import org.kyojo.gson.JsonElement;");
+				pw.println("import org.kyojo.gson.JsonParseException;");
+				pw.println("");
+				pw.println("public class DateDeserializer implements JsonDeserializer<java.sql.Date> {");
+				pw.println("");
+				pw.println("	@Override");
+				pw.println("	public java.sql.Date deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)");
+				pw.println("			throws JsonParseException {");
+				pw.println("		if(jsonElement.isJsonNull() || jsonElement.getAsString().equals(\"\")) {");
+				pw.println("			return null;");
+				pw.println("		}");
+				pw.println("");
+				pw.println("		try {");
+				pw.println("			return java.sql.Date.valueOf(jsonElement.getAsString());");
+				pw.println("		} catch(IllegalArgumentException iae) {");
+				pw.println("			return null;");
+				pw.println("		}");
+				pw.println("	}");
+				pw.println("");
+				pw.println("}");
+
+				pw.close();
+				pw = null;
+
+				//--
+				gsonFPath = new StringBuilder(gsonDPath);
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
+				gsonFPath.append(File.separator);
+				gsonFPath.append("gson");
+				gsonFPath.append(File.separator);
+				gsonFPath.append("TimeDeserializer.java");
+
+				cf = new File(gsonFPath.toString());
+				cd = cf.getParentFile();
+				if(!cd.exists()) {
+					cd.mkdirs();
+				}
+				pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
+				pw.printf("package %s;\n", gsonPkg.toString());
+				pw.println("");
+				pw.println("import java.lang.reflect.Type;");
+				pw.println("import org.kyojo.gson.JsonDeserializationContext;");
+				pw.println("import org.kyojo.gson.JsonDeserializer;");
+				pw.println("import org.kyojo.gson.JsonElement;");
+				pw.println("import org.kyojo.gson.JsonParseException;");
+				pw.println("");
+				pw.println("public class TimeDeserializer implements JsonDeserializer<java.sql.Time> {");
+				pw.println("");
+				pw.println("	@Override");
+				pw.println("	public java.sql.Time deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)");
+				pw.println("			throws JsonParseException {");
+				pw.println("		if(jsonElement.isJsonNull() || jsonElement.getAsString().equals(\"\")) {");
+				pw.println("			return null;");
+				pw.println("		}");
+				pw.println("");
+				pw.println("		try {");
+				pw.println("			return java.sql.Time.valueOf(jsonElement.getAsString());");
+				pw.println("		} catch(IllegalArgumentException iae) {");
+				pw.println("			return null;");
+				pw.println("		}");
+				pw.println("	}");
+				pw.println("");
+				pw.println("}");
+
+				pw.close();
+				pw = null;
+
+				//--
+				gsonFPath = new StringBuilder(gsonDPath);
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
@@ -340,7 +421,7 @@ public class GenerateImpl {
 
 				//--
 				gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
@@ -387,7 +468,7 @@ public class GenerateImpl {
 
 				//--
 				gsonFPath = new StringBuilder(gsonDPath);
-				gsonFPath.append(pkgBase.replaceAll("\\.", "/"));
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
 				gsonFPath.append(File.separator);
 				gsonFPath.append("gson");
 				gsonFPath.append(File.separator);
@@ -601,16 +682,16 @@ public class GenerateImpl {
 
 			// インポート文の作成
 			List<String> imptList = new ArrayList<String>();
-			imptList.add(pkgBase + ".SimpleJsonBuilder");
+			imptList.add(pkg1Base + ".SimpleJsonBuilder");
 			if(gsMap.containsKey("name")) {
-				imptList.add(pkgBase + ".core.impl.NAME");
+				imptList.add(pkg2Base + ".core.impl.NAME");
 				// imptList.add(pkgBase + ".core.dataType.TEXT");
-				imptList.add(pkgBase + ".core.impl.TEXT");
+				imptList.add(pkg2Base + ".core.impl.TEXT");
 			} else if(gsMap.containsKey("text")) {
 				if(!extension.equals("core") || !orgTypes.contains("Container")
 						|| !icSmplName.equals("Text")) {
 					// imptList.add(pkgBase + ".core.dataType.TEXT");
-					imptList.add(pkgBase + ".core.impl.TEXT");
+					imptList.add(pkg2Base + ".core.impl.TEXT");
 				}
 			}
 			boolean hasList = false;
@@ -659,7 +740,7 @@ public class GenerateImpl {
 			String ntvGSNtvName = null;
 			String ntvGSNtvCml = null;
 			String ntvGSIfcExt = null;
-			ntvGSIfcExt = pkgBase + ".core";
+			ntvGSIfcExt = pkg2Base + ".core";
 			if(gsNameList.size() == 0 || (extension.equals("core")
 			// if(!gsMap.containsKey("seq") || extension.equals("core")
 			// if(extension.equals("core")
@@ -672,9 +753,9 @@ public class GenerateImpl {
 				ntvAtMap.put(typeName + "." + icSmplName, "");
 			} else if(gsMap.containsKey("name")) {
 				if(!extension.equals("core")) {
-					imptList.add(pkgBase + ".core.impl.NAME");
+					imptList.add(pkg2Base + ".core.impl.NAME");
 				}
-				imptList.add(pkgBase + ".core.DataType");
+				imptList.add(pkg2Base + ".core.DataType");
 				ntvGSIfcCase = 1;
 				ntvGSIfcSmpl = "Name";
 				ntvGSIfcCml = "name";
@@ -683,9 +764,9 @@ public class GenerateImpl {
 				ntvGSNtvName = ntvGSNtvSmpl;
 				ntvGSNtvCml = "string";
 			} else if(gsMap.containsKey("organizationList".toLowerCase())) {
-				imptList.add(pkgBase + ".core.Container.Name");
+				imptList.add(pkg2Base + ".core.Container.Name");
 				if(!extension.equals("core")) {
-					imptList.add(pkgBase + ".core.impl.ORGANIZATION");
+					imptList.add(pkg2Base + ".core.impl.ORGANIZATION");
 				}
 				ntvGSIfcCase = 3;
 				ntvGSIfcSmpl = "Organization";
@@ -695,9 +776,9 @@ public class GenerateImpl {
 				ntvGSNtvName = ntvGSNtvSmpl;
 				ntvGSNtvCml = "string";
 			} else if(gsMap.containsKey("personList".toLowerCase())) {
-				imptList.add(pkgBase + ".core.Container.Name");
+				imptList.add(pkg2Base + ".core.Container.Name");
 				if(!extension.equals("core")) {
-					imptList.add(pkgBase + ".core.impl.PERSON");
+					imptList.add(pkg2Base + ".core.impl.PERSON");
 				}
 				ntvGSIfcCase = 3;
 				ntvGSIfcSmpl = "Person";
@@ -757,12 +838,12 @@ public class GenerateImpl {
 								} else {
 									implSmplName2 = smc.getAnnotation(ConstantizedName.class).value().toString();
 								}
-								imptList.add(pkgBase + ".core.Container.Name");
+								imptList.add(pkg2Base + ".core.Container.Name");
 								Matcher exmc = expt.matcher(smc.getName());
 								exmc.find();
 								ntvGSIfcExt = exmc.group(1);
 								if(!implSmplName2.equals("URL")) {
-									if(!ent2.getValue().getName().startsWith(pkgBase + "." + extension)) {
+									if(!ent2.getValue().getName().startsWith(pkg2Base + "." + extension)) {
 										imptList.add(ntvGSIfcExt + ".impl." + implSmplName2);
 									}
 								}
@@ -777,7 +858,7 @@ public class GenerateImpl {
 								} else if(implSmplName2.equals("URL")) {
 									ntvGSIfcSmpl = "URL";
 									ntvGSIfcCml = "url";
-									ntvGSIfcImpl = pkgBase + ".core.impl.URL";
+									ntvGSIfcImpl = pkg2Base + ".core.impl.URL";
 									ntvGSNtvSmpl = "String";
 									ntvGSNtvName = ntvGSNtvSmpl;
 									ntvGSNtvCml = "string";
@@ -811,7 +892,7 @@ public class GenerateImpl {
 					ntvGSIfcCase = 2;
 					ntvGSIfcSmpl = "URL";
 					ntvGSIfcCml = "url";
-					ntvGSIfcImpl = pkgBase + ".core.impl.URL";
+					ntvGSIfcImpl = pkg2Base + ".core.impl.URL";
 					ntvGSNtvSmpl = "String";
 					ntvGSNtvName = ntvGSNtvSmpl;
 					ntvGSNtvCml = "string";
@@ -893,28 +974,28 @@ public class GenerateImpl {
 
 			if(!extension.equals("core")) {
 				if(gsMap.containsKey("b00lean") || gsMap.containsKey("b00leanlist")) {
-					imptList.add(pkgBase + ".core.impl.BOOLEAN");
+					imptList.add(pkg2Base + ".core.impl.BOOLEAN");
 				}
 				if(gsMap.containsKey("text") || gsMap.containsKey("textlist")) {
-					imptList.add(pkgBase + ".core.impl.TEXT");
+					imptList.add(pkg2Base + ".core.impl.TEXT");
 				}
 				if(gsMap.containsKey("datetime") || gsMap.containsKey("datetimelist")) {
-					imptList.add(pkgBase + ".core.impl.DATE_TIME");
+					imptList.add(pkg2Base + ".core.impl.DATE_TIME");
 				}
 				if(gsMap.containsKey("date") || gsMap.containsKey("datelist")) {
-					imptList.add(pkgBase + ".core.impl.DATE");
+					imptList.add(pkg2Base + ".core.impl.DATE");
 				}
 				if(gsMap.containsKey("time") || gsMap.containsKey("timelist")) {
-					imptList.add(pkgBase + ".core.impl.TIME");
+					imptList.add(pkg2Base + ".core.impl.TIME");
 				}
 				if(gsMap.containsKey("integer") || gsMap.containsKey("integerlist")) {
-					imptList.add(pkgBase + ".core.impl.INTEGER");
+					imptList.add(pkg2Base + ".core.impl.INTEGER");
 				}
 				if(gsMap.containsKey("fl0at") || gsMap.containsKey("fl0atlist")) {
-					imptList.add(pkgBase + ".core.impl.FLOAT");
+					imptList.add(pkg2Base + ".core.impl.FLOAT");
 				}
 				if(gsMap.containsKey("number") || gsMap.containsKey("numberlist")) {
-					imptList.add(pkgBase + ".core.impl.NUMBER");
+					imptList.add(pkg2Base + ".core.impl.NUMBER");
 				}
 			}
 

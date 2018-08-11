@@ -3,7 +3,7 @@ package org.kyojo.schemaOrg.m3n3.core.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder;
+import org.kyojo.schemaOrg.SimpleJsonBuilder;
 import org.kyojo.schemaOrg.m3n3.auto.Container.AccelerationTime;
 import org.kyojo.schemaOrg.m3n3.auto.Container.AcrissCode;
 import org.kyojo.schemaOrg.m3n3.auto.Container.BodyType;
