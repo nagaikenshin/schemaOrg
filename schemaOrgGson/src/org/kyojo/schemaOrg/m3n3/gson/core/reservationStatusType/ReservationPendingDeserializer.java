@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.reservationStatusType;
+package org.kyojo.schemaorg.m3n3.gson.core.reservationStatusType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.reservationStatusType.RESERVATION_PENDING;
-import org.kyojo.schemaOrg.m3n3.core.ReservationStatusType.ReservationPending;
+import org.kyojo.schemaorg.m3n3.core.reservationStatusType.RESERVATION_PENDING;
+import org.kyojo.schemaorg.m3n3.core.ReservationStatusType.ReservationPending;
 
 public class ReservationPendingDeserializer implements JsonDeserializer<ReservationPending> {
 

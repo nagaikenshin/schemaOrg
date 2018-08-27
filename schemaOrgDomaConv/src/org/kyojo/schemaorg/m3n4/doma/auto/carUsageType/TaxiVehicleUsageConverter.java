@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.auto.carUsageType;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.auto.carUsageType.TAXI_VEHICLE_USAGE;
+import org.kyojo.schemaorg.m3n4.auto.CarUsageType.TaxiVehicleUsage;
+
+@ExternalDomain
+public class TaxiVehicleUsageConverter implements DomainConverter<TaxiVehicleUsage, String> {
+
+	@Override
+	public String fromDomainToValue(TaxiVehicleUsage domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public TaxiVehicleUsage fromValueToDomain(String value) {
+		return new TAXI_VEHICLE_USAGE(value);
+	}
+
+}

@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.core.clazz;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.core.impl.RENT_ACTION;
+import org.kyojo.schemaorg.m3n4.core.Clazz.RentAction;
+
+@ExternalDomain
+public class RentActionConverter implements DomainConverter<RentAction, String> {
+
+	@Override
+	public String fromDomainToValue(RentAction domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public RentAction fromValueToDomain(String value) {
+		return new RENT_ACTION(value);
+	}
+
+}

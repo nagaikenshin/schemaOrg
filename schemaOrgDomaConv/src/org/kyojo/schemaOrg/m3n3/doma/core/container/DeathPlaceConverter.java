@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DEATH_PLACE;
-import org.kyojo.schemaOrg.m3n3.core.Container.DeathPlace;
+import org.kyojo.schemaorg.m3n3.core.impl.DEATH_PLACE;
+import org.kyojo.schemaorg.m3n3.core.Container.DeathPlace;
 
 @ExternalDomain
 public class DeathPlaceConverter implements DomainConverter<DeathPlace, String> {

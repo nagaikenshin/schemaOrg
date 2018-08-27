@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.util.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.MODIFIED_TIME;
-import org.kyojo.schemaOrg.m3n3.core.Container.ModifiedTime;
+import org.kyojo.schemaorg.m3n3.core.impl.MODIFIED_TIME;
+import org.kyojo.schemaorg.m3n3.core.Container.ModifiedTime;
 
 @ExternalDomain
 public class ModifiedTimeConverter implements DomainConverter<ModifiedTime, Date> {

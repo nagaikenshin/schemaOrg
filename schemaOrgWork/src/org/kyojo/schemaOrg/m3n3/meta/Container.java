@@ -1,16 +1,16 @@
-package org.kyojo.schemaOrg.m3n3.meta;
+package org.kyojo.schemaorg.m3n3.meta;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgProperty;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;
-import org.kyojo.schemaOrg.m3n3.meta.Clazz;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgProperty;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Enumeration;
+import org.kyojo.schemaorg.m3n3.meta.Clazz;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
@@ -29,8 +29,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DomainIncludes extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Class
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
+		 * @see <a href="http://schema.org/Class">http://schema.org/Class</a>
 		 */
 		public Clazz.Class getClazz();
 		public void setClazz(Clazz.Class clazz);
@@ -56,8 +55,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface InverseOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Property
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
+		 * @see <a href="http://schema.org/Property">http://schema.org/Property</a>
 		 */
 		public Clazz.Property getProperty();
 		public void setProperty(Clazz.Property property);
@@ -80,8 +78,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RangeIncludes extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Class
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
+		 * @see <a href="http://schema.org/Class">http://schema.org/Class</a>
 		 */
 		public Clazz.Class getClazz();
 		public void setClazz(Clazz.Class clazz);
@@ -104,18 +101,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface SupersededBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Property
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Property
+		 * @see <a href="http://schema.org/Class">http://schema.org/Class</a>
 		 */
-		public Clazz.Property getProperty();
-		public void setProperty(Clazz.Property property);
-		public List<Clazz.Property> getPropertyList();
-		public void setPropertyList(List<Clazz.Property> propertyList);
-		public boolean hasProperty();
+		public Clazz.Class getClazz();
+		public void setClazz(Clazz.Class clazz);
+		public List<Clazz.Class> getClazzList();
+		public void setClazzList(List<Clazz.Class> clazzList);
+		public boolean hasClazz();
 
 		/**
-		 * uri: http://schema.org/Enumeration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration
+		 * @see <a href="http://schema.org/Enumeration">http://schema.org/Enumeration</a>
 		 */
 		public Enumeration getEnumeration();
 		public void setEnumeration(Enumeration enumeration);
@@ -124,14 +119,13 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasEnumeration();
 
 		/**
-		 * uri: http://schema.org/Class
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Clazz.Class
+		 * @see <a href="http://schema.org/Property">http://schema.org/Property</a>
 		 */
-		public Clazz.Class getClazz();
-		public void setClazz(Clazz.Class clazz);
-		public List<Clazz.Class> getClazzList();
-		public void setClazzList(List<Clazz.Class> clazzList);
-		public boolean hasClazz();
+		public Clazz.Property getProperty();
+		public void setProperty(Clazz.Property property);
+		public List<Clazz.Property> getPropertyList();
+		public void setPropertyList(List<Clazz.Property> propertyList);
+		public boolean hasProperty();
 
 		public String getNativeValue();
 

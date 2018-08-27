@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.ADDITIONAL_TYPE;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.impl.ADDITIONAL_TYPE;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
 
 @ExternalDomain
 public class AdditionalTypeConverter implements DomainConverter<AdditionalType, String> {

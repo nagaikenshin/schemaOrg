@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.meta.container;
+package org.kyojo.schemaorg.m3n3.gson.meta.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.meta.impl.INVERSE_OF;
-import org.kyojo.schemaOrg.m3n3.meta.Container.InverseOf;
+import org.kyojo.schemaorg.m3n3.meta.impl.INVERSE_OF;
+import org.kyojo.schemaorg.m3n3.meta.Container.InverseOf;
 
 public class InverseOfDeserializer implements JsonDeserializer<InverseOf> {
 

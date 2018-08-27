@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.PRIMARY_PREVENTION;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PrimaryPrevention;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.PRIMARY_PREVENTION;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.PrimaryPrevention;
 
 public class PrimaryPreventionDeserializer implements JsonDeserializer<PrimaryPrevention> {
 

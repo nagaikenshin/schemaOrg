@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalImagingTechnique;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalImagingTechnique;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalImagingTechnique.X_RAY;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalImagingTechnique.XRay;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalImagingTechnique.X_RAY;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalImagingTechnique.XRay;
 
 @ExternalDomain
 public class XRayConverter implements DomainConverter<XRay, String> {

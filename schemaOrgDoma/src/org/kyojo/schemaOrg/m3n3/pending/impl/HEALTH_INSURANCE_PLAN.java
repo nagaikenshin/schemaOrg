@@ -1,35 +1,35 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
-import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
-import org.kyojo.schemaOrg.m3n3.core.Container.ContactPoint;
-import org.kyojo.schemaOrg.m3n3.core.Container.Description;
-import org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription;
-import org.kyojo.schemaOrg.m3n3.core.Container.Identifier;
-import org.kyojo.schemaOrg.m3n3.core.Container.Image;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameRuby;
-import org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.SameAs;
-import org.kyojo.schemaOrg.m3n3.core.Container.Url;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
-import org.kyojo.schemaOrg.m3n3.core.impl.NAME;
-import org.kyojo.schemaOrg.m3n3.core.impl.TEXT;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz;
-import org.kyojo.schemaOrg.m3n3.pending.Container.BenefitsSummaryUrl;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanDrugOption;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanDrugTier;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanId;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanMarketingUrl;
-import org.kyojo.schemaOrg.m3n3.pending.Container.IncludesHealthPlanFormulary;
-import org.kyojo.schemaOrg.m3n3.pending.Container.IncludesHealthPlanNetwork;
-import org.kyojo.schemaOrg.m3n3.pending.Container.UsesHealthPlanIdStandard;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.Container.AlternateName;
+import org.kyojo.schemaorg.m3n3.core.Container.ContactPoint;
+import org.kyojo.schemaorg.m3n3.core.Container.Description;
+import org.kyojo.schemaorg.m3n3.core.Container.DisambiguatingDescription;
+import org.kyojo.schemaorg.m3n3.core.Container.Identifier;
+import org.kyojo.schemaorg.m3n3.core.Container.Image;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.Container.NameFuzzy;
+import org.kyojo.schemaorg.m3n3.core.Container.NameRuby;
+import org.kyojo.schemaorg.m3n3.core.Container.PotentialAction;
+import org.kyojo.schemaorg.m3n3.core.Container.SameAs;
+import org.kyojo.schemaorg.m3n3.core.Container.Url;
+import org.kyojo.schemaorg.m3n3.core.DataType;
+import org.kyojo.schemaorg.m3n3.core.impl.NAME;
+import org.kyojo.schemaorg.m3n3.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n3.pending.Clazz;
+import org.kyojo.schemaorg.m3n3.pending.Container.BenefitsSummaryUrl;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanDrugOption;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanDrugTier;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanId;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanMarketingUrl;
+import org.kyojo.schemaorg.m3n3.pending.Container.IncludesHealthPlanFormulary;
+import org.kyojo.schemaorg.m3n3.pending.Container.IncludesHealthPlanNetwork;
+import org.kyojo.schemaorg.m3n3.pending.Container.UsesHealthPlanIdStandard;
 
 
 public class HEALTH_INSURANCE_PLAN implements Clazz.HealthInsurancePlan {

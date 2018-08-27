@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.SERIES;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Series;
+import org.kyojo.schemaorg.m3n3.core.impl.SERIES;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Series;
 
 @ExternalDomain
 public class SeriesConverter implements DomainConverter<Series, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.bib.container;
+package org.kyojo.schemaorg.m3n3.doma.bib.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.bib.impl.IN_SUPPORT_OF;
-import org.kyojo.schemaOrg.m3n3.bib.Container.InSupportOf;
+import org.kyojo.schemaorg.m3n3.bib.impl.IN_SUPPORT_OF;
+import org.kyojo.schemaorg.m3n3.bib.Container.InSupportOf;
 
 @ExternalDomain
 public class InSupportOfConverter implements DomainConverter<InSupportOf, String> {

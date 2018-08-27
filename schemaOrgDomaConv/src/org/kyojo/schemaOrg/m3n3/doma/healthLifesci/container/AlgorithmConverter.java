@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.ALGORITHM;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Algorithm;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.ALGORITHM;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Algorithm;
 
 @ExternalDomain
 public class AlgorithmConverter implements DomainConverter<Algorithm, String> {

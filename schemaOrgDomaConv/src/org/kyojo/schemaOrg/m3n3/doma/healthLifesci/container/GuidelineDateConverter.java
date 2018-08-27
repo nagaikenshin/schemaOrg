@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import java.sql.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.GUIDELINE_DATE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.GuidelineDate;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.GUIDELINE_DATE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.GuidelineDate;
 
 @ExternalDomain
 public class GuidelineDateConverter implements DomainConverter<GuidelineDate, Date> {

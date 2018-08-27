@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.physicalExam;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.physicalExam;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.physicalExam.HEAD;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.PhysicalExam.Head;
+import org.kyojo.schemaorg.m3n3.healthLifesci.physicalExam.HEAD;
+import org.kyojo.schemaorg.m3n3.healthLifesci.PhysicalExam.Head;
 
 @ExternalDomain
 public class HeadConverter implements DomainConverter<Head, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.legalForceStatus;
+package org.kyojo.schemaorg.m3n3.doma.pending.legalForceStatus;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.legalForceStatus.NOT_IN_FORCE;
-import org.kyojo.schemaOrg.m3n3.pending.LegalForceStatus.NotInForce;
+import org.kyojo.schemaorg.m3n3.pending.legalForceStatus.NOT_IN_FORCE;
+import org.kyojo.schemaorg.m3n3.pending.LegalForceStatus.NotInForce;
 
 @ExternalDomain
 public class NotInForceConverter implements DomainConverter<NotInForce, String> {

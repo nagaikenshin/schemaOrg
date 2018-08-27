@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.boardingPolicyType;
+package org.kyojo.schemaorg.m3n3.doma.core.boardingPolicyType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.boardingPolicyType.GROUP_BOARDING_POLICY;
-import org.kyojo.schemaOrg.m3n3.core.BoardingPolicyType.GroupBoardingPolicy;
+import org.kyojo.schemaorg.m3n3.core.boardingPolicyType.GROUP_BOARDING_POLICY;
+import org.kyojo.schemaorg.m3n3.core.BoardingPolicyType.GroupBoardingPolicy;
 
 @ExternalDomain
 public class GroupBoardingPolicyConverter implements DomainConverter<GroupBoardingPolicy, String> {

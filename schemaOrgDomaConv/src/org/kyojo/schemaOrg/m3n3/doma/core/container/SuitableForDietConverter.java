@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.SUITABLE_FOR_DIET;
-import org.kyojo.schemaOrg.m3n3.core.Container.SuitableForDiet;
+import org.kyojo.schemaorg.m3n3.core.impl.SUITABLE_FOR_DIET;
+import org.kyojo.schemaorg.m3n3.core.Container.SuitableForDiet;
 
 @ExternalDomain
 public class SuitableForDietConverter implements DomainConverter<SuitableForDiet, String> {

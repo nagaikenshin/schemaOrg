@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.core.clazz;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.core.impl.IGNORE_ACTION;
+import org.kyojo.schemaorg.m3n4.core.Clazz.IgnoreAction;
+
+@ExternalDomain
+public class IgnoreActionConverter implements DomainConverter<IgnoreAction, String> {
+
+	@Override
+	public String fromDomainToValue(IgnoreAction domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public IgnoreAction fromValueToDomain(String value) {
+		return new IGNORE_ACTION(value);
+	}
+
+}

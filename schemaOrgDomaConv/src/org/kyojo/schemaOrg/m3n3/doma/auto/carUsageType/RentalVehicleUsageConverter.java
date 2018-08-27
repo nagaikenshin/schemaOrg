@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.carUsageType;
+package org.kyojo.schemaorg.m3n3.doma.auto.carUsageType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.carUsageType.RENTAL_VEHICLE_USAGE;
-import org.kyojo.schemaOrg.m3n3.auto.CarUsageType.RentalVehicleUsage;
+import org.kyojo.schemaorg.m3n3.auto.carUsageType.RENTAL_VEHICLE_USAGE;
+import org.kyojo.schemaorg.m3n3.auto.CarUsageType.RentalVehicleUsage;
 
 @ExternalDomain
 public class RentalVehicleUsageConverter implements DomainConverter<RentalVehicleUsage, String> {

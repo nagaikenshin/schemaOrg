@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalImagingTechnique;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalImagingTechnique;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalImagingTechnique.CT;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalImagingTechnique;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalImagingTechnique.CT;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalImagingTechnique;
 
 @ExternalDomain
 public class CTConverter implements DomainConverter<MedicalImagingTechnique.CT, String> {

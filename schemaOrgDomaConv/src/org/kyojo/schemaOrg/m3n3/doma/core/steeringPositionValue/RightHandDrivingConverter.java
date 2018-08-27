@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.steeringPositionValue;
+package org.kyojo.schemaorg.m3n3.doma.core.steeringPositionValue;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.steeringPositionValue.RIGHT_HAND_DRIVING;
-import org.kyojo.schemaOrg.m3n3.core.SteeringPositionValue.RightHandDriving;
+import org.kyojo.schemaorg.m3n3.core.steeringPositionValue.RIGHT_HAND_DRIVING;
+import org.kyojo.schemaorg.m3n3.core.SteeringPositionValue.RightHandDriving;
 
 @ExternalDomain
 public class RightHandDrivingConverter implements DomainConverter<RightHandDriving, String> {

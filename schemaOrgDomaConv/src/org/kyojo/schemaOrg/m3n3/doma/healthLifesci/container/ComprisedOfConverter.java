@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.COMPRISED_OF;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ComprisedOf;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.COMPRISED_OF;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ComprisedOf;
 
 @ExternalDomain
 public class ComprisedOfConverter implements DomainConverter<ComprisedOf, String> {

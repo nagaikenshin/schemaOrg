@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.clazz;
+package org.kyojo.schemaorg.m3n3.doma.auto.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.MOTORIZED_BICYCLE;
-import org.kyojo.schemaOrg.m3n3.auto.Clazz.MotorizedBicycle;
+import org.kyojo.schemaorg.m3n3.auto.impl.MOTORIZED_BICYCLE;
+import org.kyojo.schemaorg.m3n3.auto.Clazz.MotorizedBicycle;
 
 @ExternalDomain
 public class MotorizedBicycleConverter implements DomainConverter<MotorizedBicycle, String> {

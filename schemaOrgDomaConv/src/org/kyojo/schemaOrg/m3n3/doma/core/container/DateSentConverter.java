@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.util.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DATE_SENT;
-import org.kyojo.schemaOrg.m3n3.core.Container.DateSent;
+import org.kyojo.schemaorg.m3n3.core.impl.DATE_SENT;
+import org.kyojo.schemaorg.m3n3.core.Container.DateSent;
 
 @ExternalDomain
 public class DateSentConverter implements DomainConverter<DateSent, Date> {

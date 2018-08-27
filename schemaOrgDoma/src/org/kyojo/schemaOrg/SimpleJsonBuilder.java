@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg;
+package org.kyojo.schemaorg;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -27,11 +27,14 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.kyojo.schemaOrg.JsonListIndex;
-import org.kyojo.schemaOrg.JsonListNo;
-import org.kyojo.schemaOrg.m3n3.core.Clazz;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
+import org.kyojo.schemaorg.JsonListIndex;
+import org.kyojo.schemaorg.JsonListNo;
 
+/**
+ * This class is the JSON builder for JSONizing schemeOrg objects.
+ * It is added functions internally no other general JSON builders provide,
+ * but enough available as a simple JSON builder for any purpose.
+ */
 public class SimpleJsonBuilder {
 
 	private static final Log logger = LogFactory.getLog(SimpleJsonBuilder.class);
@@ -49,11 +52,23 @@ public class SimpleJsonBuilder {
 		return flds;
 	}
 
+	/**
+	 * Serializes the given object to JSON
+	 *
+	 * @param obj the object to serialize
+	 * @return JSON string
+	 */
 	public static String toJson(Object obj) {
 		return toJson(obj, obj.getClass());
 	}
 
-	// ジェネリクスやインターフェース指定は型ありのこちらを使用
+	/**
+	 * Serializes the given object to JSON
+	 *
+	 * @param obj the object to serialize
+	 * @param cls the specified object class
+	 * @return JSON string
+	 */
 	public static String toJson(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
 		String json = toJson(obj, cls, null, 0, new LinkedList<>(), false);
@@ -61,10 +76,23 @@ public class SimpleJsonBuilder {
 		return json;
 	}
 
+	/**
+	 * Serializes the given object to JSON-LD
+	 *
+	 * @param obj the object to serialize
+	 * @return JSON string
+	 */
 	public static String toJsonLd(Object obj) {
 		return toJsonLd(obj, obj.getClass());
 	}
 
+	/**
+	 * Serializes the given object to JSON-LD
+	 *
+	 * @param obj the object to serialize
+	 * @param cls the specified object class
+	 * @return JSON string
+	 */
 	public static String toJsonLd(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
 		String jsonLd = toJson(obj, cls, null, 0, new LinkedList<>(), true);
@@ -773,14 +801,20 @@ public class SimpleJsonBuilder {
 			sb.append("\"");
 			sb.append(ymdhmsSdf.format(date));
 			sb.append("\"");
-		} else if(DataType.Text.class.isAssignableFrom(rc)) {
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Text.class.isAssignableFrom(rc)) {
 			sb.append("\"");
-			sb.append(escapeJson(((DataType.Text)rv).getString()));
+			sb.append(escapeJson(((org.kyojo.schemaorg.m3n4.core.DataType.Text)rv).getString()));
 			sb.append("\"");
-		} else if(DataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append(((DataType.Boolean)rv).getB00lean().toString());
-		} else if(DataType.DateTime.class.isAssignableFrom(rc)) {
-			DataType.DateTime dateTime = (DataType.DateTime)rv;
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(rc)) {
+			sb.append("\"");
+			sb.append(escapeJson(((org.kyojo.schemaorg.m3n3.core.DataType.Text)rv).getString()));
+			sb.append("\"");
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Boolean.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n4.core.DataType.Boolean)rv).getB00lean().toString());
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Boolean.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Boolean)rv).getB00lean().toString());
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.DateTime.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n4.core.DataType.DateTime dateTime = (org.kyojo.schemaorg.m3n4.core.DataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
 			if(odt == null) {
 				sb.append("null");
@@ -790,8 +824,19 @@ public class SimpleJsonBuilder {
 				sb.append(odt.format(ymdhmszDtf));
 				sb.append("\"");
 			}
-		} else if(DataType.Date.class.isAssignableFrom(rc)) {
-			DataType.Date date = (DataType.Date)rv;
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.DateTime.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n3.core.DataType.DateTime dateTime = (org.kyojo.schemaorg.m3n3.core.DataType.DateTime)rv;
+			OffsetDateTime odt = dateTime.getDateTime();
+			if(odt == null) {
+				sb.append("null");
+			} else {
+				DateTimeFormatter ymdhmszDtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
+				sb.append("\"");
+				sb.append(odt.format(ymdhmszDtf));
+				sb.append("\"");
+			}
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Date.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n4.core.DataType.Date date = (org.kyojo.schemaorg.m3n4.core.DataType.Date)rv;
 			LocalDate ld = date.getDate();
 			if(ld == null) {
 				sb.append("null");
@@ -801,8 +846,19 @@ public class SimpleJsonBuilder {
 				sb.append(ld.format(ymdDtf));
 				sb.append("\"");
 			}
-		} else if(DataType.Time.class.isAssignableFrom(rc)) {
-			DataType.Time time = (DataType.Time)rv;
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Date.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n3.core.DataType.Date date = (org.kyojo.schemaorg.m3n3.core.DataType.Date)rv;
+			LocalDate ld = date.getDate();
+			if(ld == null) {
+				sb.append("null");
+			} else {
+				DateTimeFormatter ymdDtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				sb.append("\"");
+				sb.append(ld.format(ymdDtf));
+				sb.append("\"");
+			}
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Time.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n4.core.DataType.Time time = (org.kyojo.schemaorg.m3n4.core.DataType.Time)rv;
 			LocalTime lt = time.getTime();
 			if(lt == null) {
 				sb.append("null");
@@ -812,12 +868,29 @@ public class SimpleJsonBuilder {
 				sb.append(lt.format(hmsDtf));
 				sb.append("\"");
 			}
-		} else if(DataType.Number.class.isAssignableFrom(rc)) {
-			sb.append(((DataType.Number)rv).getNumber().toString());
-		} else if(Clazz.Integer.class.isAssignableFrom(rc)) {
-			sb.append(((Clazz.Integer)rv).getL0ng().toString());
-		} else if(Clazz.Float.class.isAssignableFrom(rc)) {
-			sb.append(((Clazz.Float)rv).getD0uble().toString());
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Time.class.isAssignableFrom(rc)) {
+			org.kyojo.schemaorg.m3n3.core.DataType.Time time = (org.kyojo.schemaorg.m3n3.core.DataType.Time)rv;
+			LocalTime lt = time.getTime();
+			if(lt == null) {
+				sb.append("null");
+			} else {
+				DateTimeFormatter hmsDtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+				sb.append("\"");
+				sb.append(lt.format(hmsDtf));
+				sb.append("\"");
+			}
+		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Number.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n4.core.DataType.Number)rv).getNumber().toString());
+		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Number.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Number)rv).getNumber().toString());
+		} else if(org.kyojo.schemaorg.m3n4.core.Clazz.Integer.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n4.core.Clazz.Integer)rv).getL0ng().toString());
+		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Integer.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Integer)rv).getL0ng().toString());
+		} else if(org.kyojo.schemaorg.m3n4.core.Clazz.Float.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n4.core.Clazz.Float)rv).getD0uble().toString());
+		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Float.class.isAssignableFrom(rc)) {
+			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Float)rv).getD0uble().toString());
 		} else {
 			return null;
 		}
@@ -846,6 +919,12 @@ public class SimpleJsonBuilder {
 		}
 	}
 
+	/**
+	 * Escapes a string for JSON value.
+	 *
+	 * @param str a string to escape
+	 * @return the escaped string
+	 */
 	public static String escapeJson(String str) {
 		if(str == null) {
 			return "(null)";

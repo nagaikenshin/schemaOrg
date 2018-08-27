@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.physicalExam;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.physicalExam;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.physicalExam.EAR;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.PhysicalExam.Ear;
+import org.kyojo.schemaorg.m3n3.healthLifesci.physicalExam.EAR;
+import org.kyojo.schemaorg.m3n3.healthLifesci.PhysicalExam.Ear;
 
 @ExternalDomain
 public class EarConverter implements DomainConverter<Ear, String> {

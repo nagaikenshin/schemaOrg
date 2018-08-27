@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.IS_ACCESSORY_OR_SPARE_PART_FOR;
-import org.kyojo.schemaOrg.m3n3.core.Container.IsAccessoryOrSparePartFor;
+import org.kyojo.schemaorg.m3n3.core.impl.IS_ACCESSORY_OR_SPARE_PART_FOR;
+import org.kyojo.schemaorg.m3n3.core.Container.IsAccessoryOrSparePartFor;
 
 @ExternalDomain
 public class IsAccessoryOrSparePartForConverter implements DomainConverter<IsAccessoryOrSparePartFor, String> {

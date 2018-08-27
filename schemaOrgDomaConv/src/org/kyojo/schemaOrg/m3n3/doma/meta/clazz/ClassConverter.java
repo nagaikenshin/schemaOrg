@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.meta.clazz;
+package org.kyojo.schemaorg.m3n3.doma.meta.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.meta.impl.CLASS;
-import org.kyojo.schemaOrg.m3n3.meta.Clazz.Class;
+import org.kyojo.schemaorg.m3n3.meta.impl.CLASS;
+import org.kyojo.schemaorg.m3n3.meta.Clazz.Class;
 
 @ExternalDomain
 public class ClassConverter implements DomainConverter<Class, String> {

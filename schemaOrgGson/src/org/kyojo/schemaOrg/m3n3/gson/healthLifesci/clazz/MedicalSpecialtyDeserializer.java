@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.clazz;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.MEDICAL_SPECIALTY;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSpecialty;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.MEDICAL_SPECIALTY;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.MedicalSpecialty;
 
 public class MedicalSpecialtyDeserializer implements JsonDeserializer<MedicalSpecialty> {
 

@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.sql.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DATE_VEHICLE_FIRST_REGISTERED;
-import org.kyojo.schemaOrg.m3n3.core.Container.DateVehicleFirstRegistered;
+import org.kyojo.schemaorg.m3n3.core.impl.DATE_VEHICLE_FIRST_REGISTERED;
+import org.kyojo.schemaorg.m3n3.core.Container.DateVehicleFirstRegistered;
 
 @ExternalDomain
 public class DateVehicleFirstRegisteredConverter implements DomainConverter<DateVehicleFirstRegistered, Date> {

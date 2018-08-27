@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.container;
+package org.kyojo.schemaorg.m3n3.doma.auto.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.ACRISS_CODE;
-import org.kyojo.schemaOrg.m3n3.auto.Container.AcrissCode;
+import org.kyojo.schemaorg.m3n3.auto.impl.ACRISS_CODE;
+import org.kyojo.schemaorg.m3n3.auto.Container.AcrissCode;
 
 @ExternalDomain
 public class AcrissCodeConverter implements DomainConverter<AcrissCode, String> {

@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.sql.Time;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.CLOSES;
-import org.kyojo.schemaOrg.m3n3.core.Container.Closes;
+import org.kyojo.schemaorg.m3n3.core.impl.CLOSES;
+import org.kyojo.schemaorg.m3n3.core.Container.Closes;
 
 @ExternalDomain
 public class ClosesConverter implements DomainConverter<Closes, Time> {

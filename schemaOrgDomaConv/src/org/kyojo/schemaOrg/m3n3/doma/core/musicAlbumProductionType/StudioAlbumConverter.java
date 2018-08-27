@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.musicAlbumProductionType;
+package org.kyojo.schemaorg.m3n3.doma.core.musicAlbumProductionType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.musicAlbumProductionType.STUDIO_ALBUM;
-import org.kyojo.schemaOrg.m3n3.core.MusicAlbumProductionType.StudioAlbum;
+import org.kyojo.schemaorg.m3n3.core.musicAlbumProductionType.STUDIO_ALBUM;
+import org.kyojo.schemaorg.m3n3.core.MusicAlbumProductionType.StudioAlbum;
 
 @ExternalDomain
 public class StudioAlbumConverter implements DomainConverter<StudioAlbum, String> {

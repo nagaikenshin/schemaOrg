@@ -1,12 +1,12 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MusicRelease;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MusicRelease;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
 
 public class ALBUM_RELEASE implements Container.AlbumRelease {
 

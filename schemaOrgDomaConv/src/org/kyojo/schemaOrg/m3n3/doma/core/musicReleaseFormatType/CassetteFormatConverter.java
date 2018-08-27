@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.musicReleaseFormatType;
+package org.kyojo.schemaorg.m3n3.doma.core.musicReleaseFormatType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.musicReleaseFormatType.CASSETTE_FORMAT;
-import org.kyojo.schemaOrg.m3n3.core.MusicReleaseFormatType.CassetteFormat;
+import org.kyojo.schemaorg.m3n3.core.musicReleaseFormatType.CASSETTE_FORMAT;
+import org.kyojo.schemaorg.m3n3.core.MusicReleaseFormatType.CassetteFormat;
 
 @ExternalDomain
 public class CassetteFormatConverter implements DomainConverter<CassetteFormat, String> {

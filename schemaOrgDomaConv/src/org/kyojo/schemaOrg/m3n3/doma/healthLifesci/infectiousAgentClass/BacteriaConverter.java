@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.infectiousAgentClass;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.infectiousAgentClass;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.infectiousAgentClass.BACTERIA;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.InfectiousAgentClass.Bacteria;
+import org.kyojo.schemaorg.m3n3.healthLifesci.infectiousAgentClass.BACTERIA;
+import org.kyojo.schemaorg.m3n3.healthLifesci.InfectiousAgentClass.Bacteria;
 
 @ExternalDomain
 public class BacteriaConverter implements DomainConverter<Bacteria, String> {

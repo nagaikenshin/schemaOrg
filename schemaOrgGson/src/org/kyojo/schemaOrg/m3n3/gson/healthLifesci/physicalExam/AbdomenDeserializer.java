@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.physicalExam;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.physicalExam;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.physicalExam.ABDOMEN;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.PhysicalExam.Abdomen;
+import org.kyojo.schemaorg.m3n3.healthLifesci.physicalExam.ABDOMEN;
+import org.kyojo.schemaorg.m3n3.healthLifesci.PhysicalExam.Abdomen;
 
 public class AbdomenDeserializer implements JsonDeserializer<Abdomen> {
 

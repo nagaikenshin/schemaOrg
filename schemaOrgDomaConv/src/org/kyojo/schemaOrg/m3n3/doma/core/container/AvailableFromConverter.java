@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.util.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.AVAILABLE_FROM;
-import org.kyojo.schemaOrg.m3n3.core.Container.AvailableFrom;
+import org.kyojo.schemaorg.m3n3.core.impl.AVAILABLE_FROM;
+import org.kyojo.schemaorg.m3n3.core.Container.AvailableFrom;
 
 @ExternalDomain
 public class AvailableFromConverter implements DomainConverter<AvailableFrom, Date> {

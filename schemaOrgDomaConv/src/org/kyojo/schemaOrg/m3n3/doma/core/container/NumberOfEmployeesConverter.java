@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.NUMBER_OF_EMPLOYEES;
-import org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEmployees;
+import org.kyojo.schemaorg.m3n3.core.impl.NUMBER_OF_EMPLOYEES;
+import org.kyojo.schemaorg.m3n3.core.Container.NumberOfEmployees;
 
 @ExternalDomain
 public class NumberOfEmployeesConverter implements DomainConverter<NumberOfEmployees, String> {

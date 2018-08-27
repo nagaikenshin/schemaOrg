@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.medicalObservationalStudyDesign;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.medicalObservationalStudyDesign;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalObservationalStudyDesign.REGISTRY;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalObservationalStudyDesign.Registry;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalObservationalStudyDesign.REGISTRY;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalObservationalStudyDesign.Registry;
 
 public class RegistryDeserializer implements JsonDeserializer<Registry> {
 

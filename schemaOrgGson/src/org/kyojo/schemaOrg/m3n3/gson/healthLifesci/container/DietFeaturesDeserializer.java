@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.DIET_FEATURES;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DietFeatures;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.DIET_FEATURES;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.DietFeatures;
 
 public class DietFeaturesDeserializer implements JsonDeserializer<DietFeatures> {
 

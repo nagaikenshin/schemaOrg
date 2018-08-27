@@ -1,14 +1,14 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MenuItem;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MenuSection;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.impl.MENU_ITEM;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MenuItem;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MenuSection;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.impl.MENU_ITEM;
+import org.kyojo.schemaorg.m3n3.pending.Container;
 
 public class MENU_ADD_ON implements Container.MenuAddOn {
 

@@ -11,11 +11,12 @@ use Data::Dumper;
 binmode (STDOUT, ':utf8');
 binmode (STDERR, ':utf8');
 
-my $url = 'file://home/nagai/kyojo/schemaOrg201804/data/m3n3/all-layers.nq';
-my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaOrg/';
-my $out2_dpath = $out1_dpath . 'm3n3/';
-my $pkg1_base = 'org.kyojo.schemaOrg';
-my $pkg2_base = $pkg1_base . '.m3n3';
+my $cur_ver_str = 'm3n3';
+my $url = "file://home/nagai/kyojo/schemaOrg201804/data/$cur_ver_str/all-layers.nq";
+my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaorg/';
+my $out2_dpath = $out1_dpath . $cur_ver_str . '/';
+my $pkg1_base = 'org.kyojo.schemaorg';
+my $pkg2_base = $pkg1_base . '.' . $cur_ver_str;
 my $wrn_fpath = 'warn.txt';
 my $tpi_fpath = 'type_value_in.tsv';
 my $tpo_fpath = 'type_value_out.tsv';
@@ -309,13 +310,13 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 	my $domain_type_fulls = $domain->{type_fulls};
 	my $domain_type_full_cnt = 0 + keys %$domain_type_fulls;
 	if ($domain_type_full_cnt == 1) {
-		foreach my $type_full (keys %$domain_type_fulls) {
+		foreach my $type_full (sort keys %$domain_type_fulls) {
 			$domain->{type_pri} = $type_full;
 		}
 	} elsif ($domain_type_full_cnt == 2) {
 		my $class_cnt = 0;
 		my $data_type_cnt = 0;
-		foreach my $type_full (keys %$domain_type_fulls) {
+		foreach my $type_full (sort keys %$domain_type_fulls) {
 			# print "$type_fulls{$type_full}{$domain_uri}\n";
 			if ($type_fulls{$type_full}{$domain_uri} eq 'Clazz') {
 				delete $type_fulls{$type_full}{$domain_uri};
@@ -447,11 +448,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SchemaOrgURI {
@@ -467,11 +470,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SchemaOrgLabel {
@@ -487,11 +492,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SchemaOrgComment {
@@ -507,11 +514,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SampleValue {
@@ -527,11 +536,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JsonLdContext {
@@ -547,11 +558,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CamelizedName {
@@ -567,11 +580,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ConstantizedName {
@@ -587,11 +602,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface JsonListIndex {
@@ -604,11 +621,13 @@ binmode (FOUT, ':utf8');
 print FOUT "package $pkg1_base;\n";
 print FOUT << 'EoS';
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface JsonListNo {
@@ -630,6 +649,9 @@ import java.time.format.DateTimeFormatter;
 import $pkg2_base.core.Clazz;
 import $pkg2_base.core.DataType;
 
+/**
+ * This is the enum for providing schemaOrg data type mappings to Java native classes.
+ */
 public enum NativeValueDataType {
 
 	TEXT("text", String.class, DataType.Text.class),
@@ -785,6 +807,11 @@ import $pkg2_base.core.DataType;
 EoS
 print FOUT << 'EoS';
 
+/**
+ * This class is the JSON builder for JSONizing schemeOrg objects.
+ * It is added functions internally no other general JSON builders provide,
+ * but enough available as a simple JSON builder for any purpose.
+ */
 public class SimpleJsonBuilder {
 
 	private static final Log logger = LogFactory.getLog(SimpleJsonBuilder.class);
@@ -802,11 +829,23 @@ public class SimpleJsonBuilder {
 		return flds;
 	}
 
+	/**
+	 * Serializes the given object to JSON
+	 *
+	 * @param obj the object to serialize
+	 * @return JSON string
+	 */
 	public static String toJson(Object obj) {
 		return toJson(obj, obj.getClass());
 	}
 
-	// ジェネリクスやインターフェース指定は型ありのこちらを使用
+	/**
+	 * Serializes the given object to JSON
+	 *
+	 * @param obj the object to serialize
+	 * @param cls the specified object class
+	 * @return JSON string
+	 */
 	public static String toJson(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
 		String json = toJson(obj, cls, null, 0, new LinkedList<>(), false);
@@ -814,10 +853,23 @@ public class SimpleJsonBuilder {
 		return json;
 	}
 
+	/**
+	 * Serializes the given object to JSON-LD
+	 *
+	 * @param obj the object to serialize
+	 * @return JSON string
+	 */
 	public static String toJsonLd(Object obj) {
 		return toJsonLd(obj, obj.getClass());
 	}
 
+	/**
+	 * Serializes the given object to JSON-LD
+	 *
+	 * @param obj the object to serialize
+	 * @param cls the specified object class
+	 * @return JSON string
+	 */
 	public static String toJsonLd(Object obj, Class<?> cls) {
 		logger.debug("class: " + cls.getName());
 		String jsonLd = toJson(obj, cls, null, 0, new LinkedList<>(), true);
@@ -1599,6 +1651,12 @@ public class SimpleJsonBuilder {
 		}
 	}
 
+	/**
+	 * Escapes a string for JSON value.
+	 *
+	 * @param str a string to escape
+	 * @return the escaped string
+	 */
 	public static String escapeJson(String str) {
 		if(str == null) {
 			return "(null)";
@@ -1660,7 +1718,7 @@ foreach my $type_full (sort keys %type_fulls) {
 		$clazz_inners = $type_fulls{"$type_pkg.Clazz"};
 		if (exists $domain->{super_uris}) {
 			my $super_uris = $domain->{super_uris};
-			foreach my $super_uri (keys %$super_uris) {
+			foreach my $super_uri (sort keys %$super_uris) {
 				my $s_domain = '';
 				if (exists $domain_uris->{$super_uri}) {
 					$s_domain = $domain_uris->{$super_uri};
@@ -1826,7 +1884,7 @@ foreach my $type_full (sort keys %type_fulls) {
 		$type_domain = $domain_uris->{$type2uris{$type_full}};
 		if (exists $type_domain->{super_uris}) {
 			my $super_uris = $type_domain->{super_uris};
-			foreach my $super_uri (keys %$super_uris) {
+			foreach my $super_uri (sort keys %$super_uris) {
 				my $s_domain = '';
 				if (exists $domain_uris->{$super_uri}) {
 					$s_domain = $domain_uris->{$super_uri};
@@ -1934,7 +1992,7 @@ foreach my $type_full (sort keys %type_fulls) {
 	if ($type_domain) {
 		if (exists $type_domain->{super_uris}) {
 			my $super_uris = $type_domain->{super_uris};
-			foreach my $super_uri (keys %$super_uris) {
+			foreach my $super_uri (sort keys %$super_uris) {
 				my $s_domain = $domain_uris->{$super_uri};
 				$extd_names{$s_domain->{this_name}} = 1;
 			}
@@ -2025,7 +2083,7 @@ foreach my $type_full (sort keys %type_fulls) {
 		%extd_names = ();
 		if (exists $domain->{super_uris}) {
 			my $super_uris = $domain->{super_uris};
-			foreach my $super_uri (keys %$super_uris) {
+			foreach my $super_uri (sort keys %$super_uris) {
 				my $s_domain = '';
 				if (exists $domain_uris->{$super_uri}) {
 					$s_domain = $domain_uris->{$super_uri};
@@ -2141,7 +2199,7 @@ foreach my $type_full (sort keys %type_fulls) {
 		my $list_native_pkg = '';
 		if (exists $domain->{'http://schema.org/rangeIncludes'}) {
 			my $rng_incs = $domain->{'http://schema.org/rangeIncludes'};
-			my @rng_inc_keys = keys %$rng_incs;
+			my @rng_inc_keys = sort keys %$rng_incs;
 			foreach my $rng_inc (@rng_inc_keys) {
 				my $p_domain = $domain_uris->{$rng_inc};
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
@@ -2177,9 +2235,9 @@ foreach my $type_full (sort keys %type_fulls) {
 				} elsif ($msd_name eq 'Long') {
 					$msd_name = 'L0ng';
 				}
+
 				print FOUT "		/**\n";
-				print FOUT "		 * uri: $rng_inc\n";
-				print FOUT "		 * class: $p_domain->{type_pri}.$p_domain->{this_name}\n";
+				print FOUT "		 * \@see <a href=\"$rng_inc\">$rng_inc</a>\n";
 				print FOUT "		 */\n";
 				print FOUT "		public $pre$p_domain->{this_name} get${msd_name}();\n";
 				print FOUT "		public void set${msd_name}($pre$p_domain->{this_name} ${var_name});\n";
@@ -2298,8 +2356,7 @@ foreach my $type_full (sort keys %type_fulls) {
 
 				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
 				print FOUT "		/**\n";
-				print FOUT "		 * uri: $dom_inc\n";
-				print FOUT "		 * class: $p_domain->{type_pri}.$p_domain->{this_name}\n";
+				print FOUT "		 * \@see <a href=\"$dom_inc\">$dom_inc</a>\n";
 				print FOUT "		 */\n";
 				print FOUT "		public $pre$p_domain->{this_name} get$p_domain->{this_name}();\n";
 				print FOUT "		public void set$p_domain->{this_name}($pre$p_domain->{this_name} $var_name);\n";

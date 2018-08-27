@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.CHARACTER_ATTRIBUTE;
-import org.kyojo.schemaOrg.m3n3.core.Container.CharacterAttribute;
+import org.kyojo.schemaorg.m3n3.core.impl.CHARACTER_ATTRIBUTE;
+import org.kyojo.schemaorg.m3n3.core.Container.CharacterAttribute;
 
 @ExternalDomain
 public class CharacterAttributeConverter implements DomainConverter<CharacterAttribute, String> {

@@ -1,31 +1,31 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci;
+package org.kyojo.schemaorg.m3n3.healthLifesci;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Audience;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.LocalBusiness;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MedicalOrganization;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.PeopleAudience;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Person;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.ScholarlyArticle;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Specialty;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Thing;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.WebPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.Category;
-import org.kyojo.schemaOrg.m3n3.core.Container.Manufacturer;
-import org.kyojo.schemaOrg.m3n3.core.Container.Sponsor;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.CategoryCode;
-import org.kyojo.schemaOrg.m3n3.pending.Container.CodeValue;
-import org.kyojo.schemaOrg.m3n3.pending.Container.IncludedInHealthInsurancePlan;
-import org.kyojo.schemaOrg.m3n3.pending.Container.Rxcui;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Audience;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Enumeration;
+import org.kyojo.schemaorg.m3n3.core.Clazz.LocalBusiness;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MedicalOrganization;
+import org.kyojo.schemaorg.m3n3.core.Clazz.PeopleAudience;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Person;
+import org.kyojo.schemaorg.m3n3.core.Clazz.ScholarlyArticle;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Specialty;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Thing;
+import org.kyojo.schemaorg.m3n3.core.Clazz.WebPage;
+import org.kyojo.schemaorg.m3n3.core.Container.Category;
+import org.kyojo.schemaorg.m3n3.core.Container.Manufacturer;
+import org.kyojo.schemaorg.m3n3.core.Container.Sponsor;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.CategoryCode;
+import org.kyojo.schemaorg.m3n3.pending.Container.CodeValue;
+import org.kyojo.schemaorg.m3n3.pending.Container.IncludedInHealthInsurancePlan;
+import org.kyojo.schemaorg.m3n3.pending.Container.Rxcui;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -44,64 +44,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AnatomicalStructure extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedPathophysiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AssociatedPathophysiology
+		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
 		 */
 		public Container.AssociatedPathophysiology getAssociatedPathophysiology();
 		public void setAssociatedPathophysiology(Container.AssociatedPathophysiology associatedPathophysiology);
 
 		/**
-		 * uri: http://schema.org/bodyLocation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.BodyLocation
+		 * @see <a href="http://schema.org/bodyLocation">http://schema.org/bodyLocation</a>
 		 */
 		public Container.BodyLocation getBodyLocation();
 		public void setBodyLocation(Container.BodyLocation bodyLocation);
 
 		/**
-		 * uri: http://schema.org/connectedTo
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ConnectedTo
+		 * @see <a href="http://schema.org/connectedTo">http://schema.org/connectedTo</a>
 		 */
 		public Container.ConnectedTo getConnectedTo();
 		public void setConnectedTo(Container.ConnectedTo connectedTo);
 
 		/**
-		 * uri: http://schema.org/diagram
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Diagram
+		 * @see <a href="http://schema.org/diagram">http://schema.org/diagram</a>
 		 */
 		public Container.Diagram getDiagram();
 		public void setDiagram(Container.Diagram diagram);
 
 		/**
-		 * uri: http://schema.org/function
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Function
+		 * @see <a href="http://schema.org/function">http://schema.org/function</a>
 		 */
 		public Container.Function getFunction();
 		public void setFunction(Container.Function function);
 
 		/**
-		 * uri: http://schema.org/partOfSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PartOfSystem
+		 * @see <a href="http://schema.org/partOfSystem">http://schema.org/partOfSystem</a>
 		 */
 		public Container.PartOfSystem getPartOfSystem();
 		public void setPartOfSystem(Container.PartOfSystem partOfSystem);
 
 		/**
-		 * uri: http://schema.org/relatedCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedCondition
+		 * @see <a href="http://schema.org/relatedCondition">http://schema.org/relatedCondition</a>
 		 */
 		public Container.RelatedCondition getRelatedCondition();
 		public void setRelatedCondition(Container.RelatedCondition relatedCondition);
 
 		/**
-		 * uri: http://schema.org/relatedTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedTherapy
+		 * @see <a href="http://schema.org/relatedTherapy">http://schema.org/relatedTherapy</a>
 		 */
 		public Container.RelatedTherapy getRelatedTherapy();
 		public void setRelatedTherapy(Container.RelatedTherapy relatedTherapy);
 
 		/**
-		 * uri: http://schema.org/subStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SubStructure
+		 * @see <a href="http://schema.org/subStructure">http://schema.org/subStructure</a>
 		 */
 		public Container.SubStructure getSubStructure();
 		public void setSubStructure(Container.SubStructure subStructure);
@@ -126,36 +117,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AnatomicalSystem extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedPathophysiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AssociatedPathophysiology
+		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
 		 */
 		public Container.AssociatedPathophysiology getAssociatedPathophysiology();
 		public void setAssociatedPathophysiology(Container.AssociatedPathophysiology associatedPathophysiology);
 
 		/**
-		 * uri: http://schema.org/comprisedOf
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ComprisedOf
+		 * @see <a href="http://schema.org/comprisedOf">http://schema.org/comprisedOf</a>
 		 */
 		public Container.ComprisedOf getComprisedOf();
 		public void setComprisedOf(Container.ComprisedOf comprisedOf);
 
 		/**
-		 * uri: http://schema.org/relatedCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedCondition
+		 * @see <a href="http://schema.org/relatedCondition">http://schema.org/relatedCondition</a>
 		 */
 		public Container.RelatedCondition getRelatedCondition();
 		public void setRelatedCondition(Container.RelatedCondition relatedCondition);
 
 		/**
-		 * uri: http://schema.org/relatedStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedStructure
+		 * @see <a href="http://schema.org/relatedStructure">http://schema.org/relatedStructure</a>
 		 */
 		public Container.RelatedStructure getRelatedStructure();
 		public void setRelatedStructure(Container.RelatedStructure relatedStructure);
 
 		/**
-		 * uri: http://schema.org/relatedTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedTherapy
+		 * @see <a href="http://schema.org/relatedTherapy">http://schema.org/relatedTherapy</a>
 		 */
 		public Container.RelatedTherapy getRelatedTherapy();
 		public void setRelatedTherapy(Container.RelatedTherapy relatedTherapy);
@@ -193,22 +179,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Artery extends SchemaOrgClass, Vessel {
 
 		/**
-		 * uri: http://schema.org/arterialBranch
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ArterialBranch
+		 * @see <a href="http://schema.org/arterialBranch">http://schema.org/arterialBranch</a>
 		 */
 		public Container.ArterialBranch getArterialBranch();
 		public void setArterialBranch(Container.ArterialBranch arterialBranch);
 
 		/**
-		 * uri: http://schema.org/source
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Source
+		 * @see <a href="http://schema.org/source">http://schema.org/source</a>
 		 */
 		public Container.Source getSource();
 		public void setSource(Container.Source source);
 
 		/**
-		 * uri: http://schema.org/supplyTo
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SupplyTo
+		 * @see <a href="http://schema.org/supplyTo">http://schema.org/supplyTo</a>
 		 */
 		public Container.SupplyTo getSupplyTo();
 		public void setSupplyTo(Container.SupplyTo supplyTo);
@@ -278,15 +261,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DDxElement extends MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/diagnosis
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Diagnosis
+		 * @see <a href="http://schema.org/diagnosis">http://schema.org/diagnosis</a>
 		 */
 		public Container.Diagnosis getDiagnosis();
 		public void setDiagnosis(Container.Diagnosis diagnosis);
 
 		/**
-		 * uri: http://schema.org/distinguishingSign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DistinguishingSign
+		 * @see <a href="http://schema.org/distinguishingSign">http://schema.org/distinguishingSign</a>
 		 */
 		public Container.DistinguishingSign getDistinguishingSign();
 		public void setDistinguishingSign(Container.DistinguishingSign distinguishingSign);
@@ -307,8 +288,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DiagnosticLab extends MedicalOrganization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableTest
+		 * @see <a href="http://schema.org/availableTest">http://schema.org/availableTest</a>
 		 */
 		public Container.AvailableTest getAvailableTest();
 		public void setAvailableTest(Container.AvailableTest availableTest);
@@ -346,43 +326,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Diet extends CreativeWork, LifestyleModification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dietFeatures
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DietFeatures
+		 * @see <a href="http://schema.org/dietFeatures">http://schema.org/dietFeatures</a>
 		 */
 		public Container.DietFeatures getDietFeatures();
 		public void setDietFeatures(Container.DietFeatures dietFeatures);
 
 		/**
-		 * uri: http://schema.org/endorsers
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Endorsers
+		 * @see <a href="http://schema.org/endorsers">http://schema.org/endorsers</a>
 		 */
 		public Container.Endorsers getEndorsers();
 		public void setEndorsers(Container.Endorsers endorsers);
 
 		/**
-		 * uri: http://schema.org/expertConsiderations
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExpertConsiderations
+		 * @see <a href="http://schema.org/expertConsiderations">http://schema.org/expertConsiderations</a>
 		 */
 		public Container.ExpertConsiderations getExpertConsiderations();
 		public void setExpertConsiderations(Container.ExpertConsiderations expertConsiderations);
 
 		/**
-		 * uri: http://schema.org/overview
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Overview
+		 * @see <a href="http://schema.org/overview">http://schema.org/overview</a>
 		 */
 		public Container.Overview getOverview();
 		public void setOverview(Container.Overview overview);
 
 		/**
-		 * uri: http://schema.org/physiologicalBenefits
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PhysiologicalBenefits
+		 * @see <a href="http://schema.org/physiologicalBenefits">http://schema.org/physiologicalBenefits</a>
 		 */
 		public Container.PhysiologicalBenefits getPhysiologicalBenefits();
 		public void setPhysiologicalBenefits(Container.PhysiologicalBenefits physiologicalBenefits);
 
 		/**
-		 * uri: http://schema.org/risks
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Risks
+		 * @see <a href="http://schema.org/risks">http://schema.org/risks</a>
 		 */
 		public Container.Risks getRisks();
 		public void setRisks(Container.Risks risks);
@@ -406,85 +380,73 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DietarySupplement extends SchemaOrgClass, Substance {
 
 		/**
-		 * uri: http://schema.org/activeIngredient
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActiveIngredient
+		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
 		 */
 		public Container.ActiveIngredient getActiveIngredient();
 		public void setActiveIngredient(Container.ActiveIngredient activeIngredient);
 
 		/**
-		 * uri: http://schema.org/background
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Background
+		 * @see <a href="http://schema.org/background">http://schema.org/background</a>
 		 */
 		public Container.Background getBackground();
 		public void setBackground(Container.Background background);
 
 		/**
-		 * uri: http://schema.org/isProprietary
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IsProprietary
+		 * @see <a href="http://schema.org/isProprietary">http://schema.org/isProprietary</a>
 		 */
 		public Container.IsProprietary getIsProprietary();
 		public void setIsProprietary(Container.IsProprietary isProprietary);
 
 		/**
-		 * uri: http://schema.org/legalStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.LegalStatus
+		 * @see <a href="http://schema.org/legalStatus">http://schema.org/legalStatus</a>
 		 */
 		public Container.LegalStatus getLegalStatus();
 		public void setLegalStatus(Container.LegalStatus legalStatus);
 
 		/**
-		 * uri: http://schema.org/manufacturer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Manufacturer
+		 * @see <a href="http://schema.org/manufacturer">http://schema.org/manufacturer</a>
 		 */
 		public Manufacturer getManufacturer();
 		public void setManufacturer(Manufacturer manufacturer);
 
 		/**
-		 * uri: http://schema.org/maximumIntake
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MaximumIntake
+		 * @see <a href="http://schema.org/maximumIntake">http://schema.org/maximumIntake</a>
 		 */
 		public Container.MaximumIntake getMaximumIntake();
 		public void setMaximumIntake(Container.MaximumIntake maximumIntake);
 
 		/**
-		 * uri: http://schema.org/mechanismOfAction
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MechanismOfAction
+		 * @see <a href="http://schema.org/mechanismOfAction">http://schema.org/mechanismOfAction</a>
 		 */
 		public Container.MechanismOfAction getMechanismOfAction();
 		public void setMechanismOfAction(Container.MechanismOfAction mechanismOfAction);
 
 		/**
-		 * uri: http://schema.org/nonProprietaryName
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NonProprietaryName
+		 * @see <a href="http://schema.org/nonProprietaryName">http://schema.org/nonProprietaryName</a>
 		 */
 		public Container.NonProprietaryName getNonProprietaryName();
 		public void setNonProprietaryName(Container.NonProprietaryName nonProprietaryName);
 
 		/**
-		 * uri: http://schema.org/proprietaryName
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ProprietaryName
+		 * @see <a href="http://schema.org/proprietaryName">http://schema.org/proprietaryName</a>
 		 */
 		public Container.ProprietaryName getProprietaryName();
 		public void setProprietaryName(Container.ProprietaryName proprietaryName);
 
 		/**
-		 * uri: http://schema.org/recommendedIntake
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RecommendedIntake
+		 * @see <a href="http://schema.org/recommendedIntake">http://schema.org/recommendedIntake</a>
 		 */
 		public Container.RecommendedIntake getRecommendedIntake();
 		public void setRecommendedIntake(Container.RecommendedIntake recommendedIntake);
 
 		/**
-		 * uri: http://schema.org/safetyConsideration
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SafetyConsideration
+		 * @see <a href="http://schema.org/safetyConsideration">http://schema.org/safetyConsideration</a>
 		 */
 		public Container.SafetyConsideration getSafetyConsideration();
 		public void setSafetyConsideration(Container.SafetyConsideration safetyConsideration);
 
 		/**
-		 * uri: http://schema.org/targetPopulation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TargetPopulation
+		 * @see <a href="http://schema.org/targetPopulation">http://schema.org/targetPopulation</a>
 		 */
 		public Container.TargetPopulation getTargetPopulation();
 		public void setTargetPopulation(Container.TargetPopulation targetPopulation);
@@ -505,29 +467,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DoseSchedule extends MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/doseUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DoseUnit
+		 * @see <a href="http://schema.org/doseUnit">http://schema.org/doseUnit</a>
 		 */
 		public Container.DoseUnit getDoseUnit();
 		public void setDoseUnit(Container.DoseUnit doseUnit);
 
 		/**
-		 * uri: http://schema.org/doseValue
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DoseValue
+		 * @see <a href="http://schema.org/doseValue">http://schema.org/doseValue</a>
 		 */
 		public Container.DoseValue getDoseValue();
 		public void setDoseValue(Container.DoseValue doseValue);
 
 		/**
-		 * uri: http://schema.org/frequency
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Frequency
+		 * @see <a href="http://schema.org/frequency">http://schema.org/frequency</a>
 		 */
 		public Container.Frequency getFrequency();
 		public void setFrequency(Container.Frequency frequency);
 
 		/**
-		 * uri: http://schema.org/targetPopulation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TargetPopulation
+		 * @see <a href="http://schema.org/targetPopulation">http://schema.org/targetPopulation</a>
 		 */
 		public Container.TargetPopulation getTargetPopulation();
 		public void setTargetPopulation(Container.TargetPopulation targetPopulation);
@@ -551,218 +509,187 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Drug extends SchemaOrgClass, Substance {
 
 		/**
-		 * uri: http://schema.org/activeIngredient
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActiveIngredient
+		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
 		 */
 		public Container.ActiveIngredient getActiveIngredient();
 		public void setActiveIngredient(Container.ActiveIngredient activeIngredient);
 
 		/**
-		 * uri: http://schema.org/administrationRoute
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AdministrationRoute
+		 * @see <a href="http://schema.org/administrationRoute">http://schema.org/administrationRoute</a>
 		 */
 		public Container.AdministrationRoute getAdministrationRoute();
 		public void setAdministrationRoute(Container.AdministrationRoute administrationRoute);
 
 		/**
-		 * uri: http://schema.org/alcoholWarning
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AlcoholWarning
+		 * @see <a href="http://schema.org/alcoholWarning">http://schema.org/alcoholWarning</a>
 		 */
 		public Container.AlcoholWarning getAlcoholWarning();
 		public void setAlcoholWarning(Container.AlcoholWarning alcoholWarning);
 
 		/**
-		 * uri: http://schema.org/availableStrength
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableStrength
+		 * @see <a href="http://schema.org/availableStrength">http://schema.org/availableStrength</a>
 		 */
 		public Container.AvailableStrength getAvailableStrength();
 		public void setAvailableStrength(Container.AvailableStrength availableStrength);
 
 		/**
-		 * uri: http://schema.org/breastfeedingWarning
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.BreastfeedingWarning
+		 * @see <a href="http://schema.org/breastfeedingWarning">http://schema.org/breastfeedingWarning</a>
 		 */
 		public Container.BreastfeedingWarning getBreastfeedingWarning();
 		public void setBreastfeedingWarning(Container.BreastfeedingWarning breastfeedingWarning);
 
 		/**
-		 * uri: http://schema.org/clinicalPharmacology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ClinicalPharmacology
+		 * @see <a href="http://schema.org/clinicalPharmacology">http://schema.org/clinicalPharmacology</a>
 		 */
 		public Container.ClinicalPharmacology getClinicalPharmacology();
 		public void setClinicalPharmacology(Container.ClinicalPharmacology clinicalPharmacology);
 
 		/**
-		 * uri: http://schema.org/cost
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Cost
+		 * @see <a href="http://schema.org/cost">http://schema.org/cost</a>
 		 */
 		public Container.Cost getCost();
 		public void setCost(Container.Cost cost);
 
 		/**
-		 * uri: http://schema.org/dosageForm
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DosageForm
+		 * @see <a href="http://schema.org/dosageForm">http://schema.org/dosageForm</a>
 		 */
 		public Container.DosageForm getDosageForm();
 		public void setDosageForm(Container.DosageForm dosageForm);
 
 		/**
-		 * uri: http://schema.org/doseSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DoseSchedule
+		 * @see <a href="http://schema.org/doseSchedule">http://schema.org/doseSchedule</a>
 		 */
 		public Container.DoseSchedule getDoseSchedule();
 		public void setDoseSchedule(Container.DoseSchedule doseSchedule);
 
 		/**
-		 * uri: http://schema.org/drugClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DrugClass
+		 * @see <a href="http://schema.org/drugClass">http://schema.org/drugClass</a>
 		 */
 		public Container.DrugClass getDrugClass();
 		public void setDrugClass(Container.DrugClass drugClass);
 
 		/**
-		 * uri: http://schema.org/drugUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DrugUnit
+		 * @see <a href="http://schema.org/drugUnit">http://schema.org/drugUnit</a>
 		 */
 		public Container.DrugUnit getDrugUnit();
 		public void setDrugUnit(Container.DrugUnit drugUnit);
 
 		/**
-		 * uri: http://schema.org/foodWarning
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.FoodWarning
+		 * @see <a href="http://schema.org/foodWarning">http://schema.org/foodWarning</a>
 		 */
 		public Container.FoodWarning getFoodWarning();
 		public void setFoodWarning(Container.FoodWarning foodWarning);
 
 		/**
-		 * uri: http://schema.org/includedInHealthInsurancePlan
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.IncludedInHealthInsurancePlan
+		 * @see <a href="http://schema.org/includedInHealthInsurancePlan">http://schema.org/includedInHealthInsurancePlan</a>
 		 */
 		public IncludedInHealthInsurancePlan getIncludedInHealthInsurancePlan();
 		public void setIncludedInHealthInsurancePlan(IncludedInHealthInsurancePlan includedInHealthInsurancePlan);
 
 		/**
-		 * uri: http://schema.org/interactingDrug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.InteractingDrug
+		 * @see <a href="http://schema.org/interactingDrug">http://schema.org/interactingDrug</a>
 		 */
 		public Container.InteractingDrug getInteractingDrug();
 		public void setInteractingDrug(Container.InteractingDrug interactingDrug);
 
 		/**
-		 * uri: http://schema.org/isAvailableGenerically
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IsAvailableGenerically
+		 * @see <a href="http://schema.org/isAvailableGenerically">http://schema.org/isAvailableGenerically</a>
 		 */
 		public Container.IsAvailableGenerically getIsAvailableGenerically();
 		public void setIsAvailableGenerically(Container.IsAvailableGenerically isAvailableGenerically);
 
 		/**
-		 * uri: http://schema.org/isProprietary
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IsProprietary
+		 * @see <a href="http://schema.org/isProprietary">http://schema.org/isProprietary</a>
 		 */
 		public Container.IsProprietary getIsProprietary();
 		public void setIsProprietary(Container.IsProprietary isProprietary);
 
 		/**
-		 * uri: http://schema.org/labelDetails
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.LabelDetails
+		 * @see <a href="http://schema.org/labelDetails">http://schema.org/labelDetails</a>
 		 */
 		public Container.LabelDetails getLabelDetails();
 		public void setLabelDetails(Container.LabelDetails labelDetails);
 
 		/**
-		 * uri: http://schema.org/legalStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.LegalStatus
+		 * @see <a href="http://schema.org/legalStatus">http://schema.org/legalStatus</a>
 		 */
 		public Container.LegalStatus getLegalStatus();
 		public void setLegalStatus(Container.LegalStatus legalStatus);
 
 		/**
-		 * uri: http://schema.org/manufacturer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Manufacturer
+		 * @see <a href="http://schema.org/manufacturer">http://schema.org/manufacturer</a>
 		 */
 		public Manufacturer getManufacturer();
 		public void setManufacturer(Manufacturer manufacturer);
 
 		/**
-		 * uri: http://schema.org/maximumIntake
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MaximumIntake
+		 * @see <a href="http://schema.org/maximumIntake">http://schema.org/maximumIntake</a>
 		 */
 		public Container.MaximumIntake getMaximumIntake();
 		public void setMaximumIntake(Container.MaximumIntake maximumIntake);
 
 		/**
-		 * uri: http://schema.org/mechanismOfAction
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MechanismOfAction
+		 * @see <a href="http://schema.org/mechanismOfAction">http://schema.org/mechanismOfAction</a>
 		 */
 		public Container.MechanismOfAction getMechanismOfAction();
 		public void setMechanismOfAction(Container.MechanismOfAction mechanismOfAction);
 
 		/**
-		 * uri: http://schema.org/nonProprietaryName
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NonProprietaryName
+		 * @see <a href="http://schema.org/nonProprietaryName">http://schema.org/nonProprietaryName</a>
 		 */
 		public Container.NonProprietaryName getNonProprietaryName();
 		public void setNonProprietaryName(Container.NonProprietaryName nonProprietaryName);
 
 		/**
-		 * uri: http://schema.org/overdosage
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Overdosage
+		 * @see <a href="http://schema.org/overdosage">http://schema.org/overdosage</a>
 		 */
 		public Container.Overdosage getOverdosage();
 		public void setOverdosage(Container.Overdosage overdosage);
 
 		/**
-		 * uri: http://schema.org/pregnancyCategory
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PregnancyCategory
+		 * @see <a href="http://schema.org/pregnancyCategory">http://schema.org/pregnancyCategory</a>
 		 */
 		public Container.PregnancyCategory getPregnancyCategory();
 		public void setPregnancyCategory(Container.PregnancyCategory pregnancyCategory);
 
 		/**
-		 * uri: http://schema.org/pregnancyWarning
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PregnancyWarning
+		 * @see <a href="http://schema.org/pregnancyWarning">http://schema.org/pregnancyWarning</a>
 		 */
 		public Container.PregnancyWarning getPregnancyWarning();
 		public void setPregnancyWarning(Container.PregnancyWarning pregnancyWarning);
 
 		/**
-		 * uri: http://schema.org/prescribingInfo
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PrescribingInfo
+		 * @see <a href="http://schema.org/prescribingInfo">http://schema.org/prescribingInfo</a>
 		 */
 		public Container.PrescribingInfo getPrescribingInfo();
 		public void setPrescribingInfo(Container.PrescribingInfo prescribingInfo);
 
 		/**
-		 * uri: http://schema.org/prescriptionStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PrescriptionStatus
+		 * @see <a href="http://schema.org/prescriptionStatus">http://schema.org/prescriptionStatus</a>
 		 */
 		public Container.PrescriptionStatus getPrescriptionStatus();
 		public void setPrescriptionStatus(Container.PrescriptionStatus prescriptionStatus);
 
 		/**
-		 * uri: http://schema.org/proprietaryName
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ProprietaryName
+		 * @see <a href="http://schema.org/proprietaryName">http://schema.org/proprietaryName</a>
 		 */
 		public Container.ProprietaryName getProprietaryName();
 		public void setProprietaryName(Container.ProprietaryName proprietaryName);
 
 		/**
-		 * uri: http://schema.org/relatedDrug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedDrug
+		 * @see <a href="http://schema.org/relatedDrug">http://schema.org/relatedDrug</a>
 		 */
 		public Container.RelatedDrug getRelatedDrug();
 		public void setRelatedDrug(Container.RelatedDrug relatedDrug);
 
 		/**
-		 * uri: http://schema.org/rxcui
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Rxcui
+		 * @see <a href="http://schema.org/rxcui">http://schema.org/rxcui</a>
 		 */
 		public Rxcui getRxcui();
 		public void setRxcui(Rxcui rxcui);
 
 		/**
-		 * uri: http://schema.org/warning
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Warning
+		 * @see <a href="http://schema.org/warning">http://schema.org/warning</a>
 		 */
 		public Container.Warning getWarning();
 		public void setWarning(Container.Warning warning);
@@ -785,8 +712,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DrugClass extends MedicalEnumeration, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Drug
+		 * @see <a href="http://schema.org/drug">http://schema.org/drug</a>
 		 */
 		public Container.Drug getDrug();
 		public void setDrug(Container.Drug drug);
@@ -813,43 +739,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DrugCost extends MedicalEnumeration, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/applicableLocation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ApplicableLocation
+		 * @see <a href="http://schema.org/applicableLocation">http://schema.org/applicableLocation</a>
 		 */
 		public Container.ApplicableLocation getApplicableLocation();
 		public void setApplicableLocation(Container.ApplicableLocation applicableLocation);
 
 		/**
-		 * uri: http://schema.org/costCategory
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CostCategory
+		 * @see <a href="http://schema.org/costCategory">http://schema.org/costCategory</a>
 		 */
 		public Container.CostCategory getCostCategory();
 		public void setCostCategory(Container.CostCategory costCategory);
 
 		/**
-		 * uri: http://schema.org/costCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CostCurrency
+		 * @see <a href="http://schema.org/costCurrency">http://schema.org/costCurrency</a>
 		 */
 		public Container.CostCurrency getCostCurrency();
 		public void setCostCurrency(Container.CostCurrency costCurrency);
 
 		/**
-		 * uri: http://schema.org/costOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CostOrigin
+		 * @see <a href="http://schema.org/costOrigin">http://schema.org/costOrigin</a>
 		 */
 		public Container.CostOrigin getCostOrigin();
 		public void setCostOrigin(Container.CostOrigin costOrigin);
 
 		/**
-		 * uri: http://schema.org/costPerUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CostPerUnit
+		 * @see <a href="http://schema.org/costPerUnit">http://schema.org/costPerUnit</a>
 		 */
 		public Container.CostPerUnit getCostPerUnit();
 		public void setCostPerUnit(Container.CostPerUnit costPerUnit);
 
 		/**
-		 * uri: http://schema.org/drugUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DrugUnit
+		 * @see <a href="http://schema.org/drugUnit">http://schema.org/drugUnit</a>
 		 */
 		public Container.DrugUnit getDrugUnit();
 		public void setDrugUnit(Container.DrugUnit drugUnit);
@@ -885,8 +805,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DrugLegalStatus extends MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/applicableLocation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ApplicableLocation
+		 * @see <a href="http://schema.org/applicableLocation">http://schema.org/applicableLocation</a>
 		 */
 		public Container.ApplicableLocation getApplicableLocation();
 		public void setApplicableLocation(Container.ApplicableLocation applicableLocation);
@@ -938,36 +857,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DrugStrength extends MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/activeIngredient
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActiveIngredient
+		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
 		 */
 		public Container.ActiveIngredient getActiveIngredient();
 		public void setActiveIngredient(Container.ActiveIngredient activeIngredient);
 
 		/**
-		 * uri: http://schema.org/availableIn
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableIn
+		 * @see <a href="http://schema.org/availableIn">http://schema.org/availableIn</a>
 		 */
 		public Container.AvailableIn getAvailableIn();
 		public void setAvailableIn(Container.AvailableIn availableIn);
 
 		/**
-		 * uri: http://schema.org/maximumIntake
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MaximumIntake
+		 * @see <a href="http://schema.org/maximumIntake">http://schema.org/maximumIntake</a>
 		 */
 		public Container.MaximumIntake getMaximumIntake();
 		public void setMaximumIntake(Container.MaximumIntake maximumIntake);
 
 		/**
-		 * uri: http://schema.org/strengthUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StrengthUnit
+		 * @see <a href="http://schema.org/strengthUnit">http://schema.org/strengthUnit</a>
 		 */
 		public Container.StrengthUnit getStrengthUnit();
 		public void setStrengthUnit(Container.StrengthUnit strengthUnit);
 
 		/**
-		 * uri: http://schema.org/strengthValue
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StrengthValue
+		 * @see <a href="http://schema.org/strengthValue">http://schema.org/strengthValue</a>
 		 */
 		public Container.StrengthValue getStrengthValue();
 		public void setStrengthValue(Container.StrengthValue strengthValue);
@@ -990,57 +904,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ExercisePlan extends CreativeWork, PhysicalActivity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/activityDuration
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActivityDuration
+		 * @see <a href="http://schema.org/activityDuration">http://schema.org/activityDuration</a>
 		 */
 		public Container.ActivityDuration getActivityDuration();
 		public void setActivityDuration(Container.ActivityDuration activityDuration);
 
 		/**
-		 * uri: http://schema.org/activityFrequency
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActivityFrequency
+		 * @see <a href="http://schema.org/activityFrequency">http://schema.org/activityFrequency</a>
 		 */
 		public Container.ActivityFrequency getActivityFrequency();
 		public void setActivityFrequency(Container.ActivityFrequency activityFrequency);
 
 		/**
-		 * uri: http://schema.org/additionalVariable
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AdditionalVariable
+		 * @see <a href="http://schema.org/additionalVariable">http://schema.org/additionalVariable</a>
 		 */
 		public Container.AdditionalVariable getAdditionalVariable();
 		public void setAdditionalVariable(Container.AdditionalVariable additionalVariable);
 
 		/**
-		 * uri: http://schema.org/exerciseType
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseType
+		 * @see <a href="http://schema.org/exerciseType">http://schema.org/exerciseType</a>
 		 */
 		public Container.ExerciseType getExerciseType();
 		public void setExerciseType(Container.ExerciseType exerciseType);
 
 		/**
-		 * uri: http://schema.org/intensity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Intensity
+		 * @see <a href="http://schema.org/intensity">http://schema.org/intensity</a>
 		 */
 		public Container.Intensity getIntensity();
 		public void setIntensity(Container.Intensity intensity);
 
 		/**
-		 * uri: http://schema.org/repetitions
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Repetitions
+		 * @see <a href="http://schema.org/repetitions">http://schema.org/repetitions</a>
 		 */
 		public Container.Repetitions getRepetitions();
 		public void setRepetitions(Container.Repetitions repetitions);
 
 		/**
-		 * uri: http://schema.org/restPeriods
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RestPeriods
+		 * @see <a href="http://schema.org/restPeriods">http://schema.org/restPeriods</a>
 		 */
 		public Container.RestPeriods getRestPeriods();
 		public void setRestPeriods(Container.RestPeriods restPeriods);
 
 		/**
-		 * uri: http://schema.org/workload
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Workload
+		 * @see <a href="http://schema.org/workload">http://schema.org/workload</a>
 		 */
 		public Container.Workload getWorkload();
 		public void setWorkload(Container.Workload workload);
@@ -1061,8 +967,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ImagingTest extends MedicalTest, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/imagingTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ImagingTechnique
+		 * @see <a href="http://schema.org/imagingTechnique">http://schema.org/imagingTechnique</a>
 		 */
 		public Container.ImagingTechnique getImagingTechnique();
 		public void setImagingTechnique(Container.ImagingTechnique imagingTechnique);
@@ -1103,22 +1008,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InfectiousDisease extends MedicalCondition, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/infectiousAgent
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.InfectiousAgent
+		 * @see <a href="http://schema.org/infectiousAgent">http://schema.org/infectiousAgent</a>
 		 */
 		public Container.InfectiousAgent getInfectiousAgent();
 		public void setInfectiousAgent(Container.InfectiousAgent infectiousAgent);
 
 		/**
-		 * uri: http://schema.org/infectiousAgentClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.InfectiousAgentClass
+		 * @see <a href="http://schema.org/infectiousAgentClass">http://schema.org/infectiousAgentClass</a>
 		 */
 		public Container.InfectiousAgentClass getInfectiousAgentClass();
 		public void setInfectiousAgentClass(Container.InfectiousAgentClass infectiousAgentClass);
 
 		/**
-		 * uri: http://schema.org/transmissionMethod
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TransmissionMethod
+		 * @see <a href="http://schema.org/transmissionMethod">http://schema.org/transmissionMethod</a>
 		 */
 		public Container.TransmissionMethod getTransmissionMethod();
 		public void setTransmissionMethod(Container.TransmissionMethod transmissionMethod);
@@ -1139,22 +1041,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Joint extends AnatomicalStructure, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/biomechnicalClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.BiomechnicalClass
+		 * @see <a href="http://schema.org/biomechnicalClass">http://schema.org/biomechnicalClass</a>
 		 */
 		public Container.BiomechnicalClass getBiomechnicalClass();
 		public void setBiomechnicalClass(Container.BiomechnicalClass biomechnicalClass);
 
 		/**
-		 * uri: http://schema.org/functionalClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.FunctionalClass
+		 * @see <a href="http://schema.org/functionalClass">http://schema.org/functionalClass</a>
 		 */
 		public Container.FunctionalClass getFunctionalClass();
 		public void setFunctionalClass(Container.FunctionalClass functionalClass);
 
 		/**
-		 * uri: http://schema.org/structuralClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StructuralClass
+		 * @see <a href="http://schema.org/structuralClass">http://schema.org/structuralClass</a>
 		 */
 		public Container.StructuralClass getStructuralClass();
 		public void setStructuralClass(Container.StructuralClass structuralClass);
@@ -1208,22 +1107,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LymphaticVessel extends SchemaOrgClass, Vessel {
 
 		/**
-		 * uri: http://schema.org/originatesFrom
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.OriginatesFrom
+		 * @see <a href="http://schema.org/originatesFrom">http://schema.org/originatesFrom</a>
 		 */
 		public Container.OriginatesFrom getOriginatesFrom();
 		public void setOriginatesFrom(Container.OriginatesFrom originatesFrom);
 
 		/**
-		 * uri: http://schema.org/regionDrained
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RegionDrained
+		 * @see <a href="http://schema.org/regionDrained">http://schema.org/regionDrained</a>
 		 */
 		public Container.RegionDrained getRegionDrained();
 		public void setRegionDrained(Container.RegionDrained regionDrained);
 
 		/**
-		 * uri: http://schema.org/runsTo
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RunsTo
+		 * @see <a href="http://schema.org/runsTo">http://schema.org/runsTo</a>
 		 */
 		public Container.RunsTo getRunsTo();
 		public void setRunsTo(Container.RunsTo runsTo);
@@ -1308,8 +1204,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalCause extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/causeOf
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CauseOf
+		 * @see <a href="http://schema.org/causeOf">http://schema.org/causeOf</a>
 		 */
 		public Container.CauseOf getCauseOf();
 		public void setCauseOf(Container.CauseOf causeOf);
@@ -1332,15 +1227,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalClinic extends MedicalBusiness, MedicalOrganization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableService
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableService
+		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
 		 */
 		public Container.AvailableService getAvailableService();
 		public void setAvailableService(Container.AvailableService availableService);
 
 		/**
-		 * uri: http://schema.org/medicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicalSpecialty
+		 * @see <a href="http://schema.org/medicalSpecialty">http://schema.org/medicalSpecialty</a>
 		 */
 		public Container.MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(Container.MedicalSpecialty medicalSpecialty);
@@ -1360,15 +1253,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalCode extends CategoryCode, MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/codeValue
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CodeValue
+		 * @see <a href="http://schema.org/codeValue">http://schema.org/codeValue</a>
 		 */
 		public CodeValue getCodeValue();
 		public void setCodeValue(CodeValue codeValue);
 
 		/**
-		 * uri: http://schema.org/codingSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.CodingSystem
+		 * @see <a href="http://schema.org/codingSystem">http://schema.org/codingSystem</a>
 		 */
 		public Container.CodingSystem getCodingSystem();
 		public void setCodingSystem(Container.CodingSystem codingSystem);
@@ -1391,127 +1282,109 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalCondition extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedAnatomy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AssociatedAnatomy
+		 * @see <a href="http://schema.org/associatedAnatomy">http://schema.org/associatedAnatomy</a>
 		 */
 		public Container.AssociatedAnatomy getAssociatedAnatomy();
 		public void setAssociatedAnatomy(Container.AssociatedAnatomy associatedAnatomy);
 
 		/**
-		 * uri: http://schema.org/cause
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Cause
+		 * @see <a href="http://schema.org/cause">http://schema.org/cause</a>
 		 */
 		public Container.Cause getCause();
 		public void setCause(Container.Cause cause);
 
 		/**
-		 * uri: http://schema.org/differentialDiagnosis
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DifferentialDiagnosis
+		 * @see <a href="http://schema.org/differentialDiagnosis">http://schema.org/differentialDiagnosis</a>
 		 */
 		public Container.DifferentialDiagnosis getDifferentialDiagnosis();
 		public void setDifferentialDiagnosis(Container.DifferentialDiagnosis differentialDiagnosis);
 
 		/**
-		 * uri: http://schema.org/drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Drug
+		 * @see <a href="http://schema.org/drug">http://schema.org/drug</a>
 		 */
 		public Container.Drug getDrug();
 		public void setDrug(Container.Drug drug);
 
 		/**
-		 * uri: http://schema.org/epidemiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Epidemiology
+		 * @see <a href="http://schema.org/epidemiology">http://schema.org/epidemiology</a>
 		 */
 		public Container.Epidemiology getEpidemiology();
 		public void setEpidemiology(Container.Epidemiology epidemiology);
 
 		/**
-		 * uri: http://schema.org/expectedPrognosis
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExpectedPrognosis
+		 * @see <a href="http://schema.org/expectedPrognosis">http://schema.org/expectedPrognosis</a>
 		 */
 		public Container.ExpectedPrognosis getExpectedPrognosis();
 		public void setExpectedPrognosis(Container.ExpectedPrognosis expectedPrognosis);
 
 		/**
-		 * uri: http://schema.org/naturalProgression
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NaturalProgression
+		 * @see <a href="http://schema.org/naturalProgression">http://schema.org/naturalProgression</a>
 		 */
 		public Container.NaturalProgression getNaturalProgression();
 		public void setNaturalProgression(Container.NaturalProgression naturalProgression);
 
 		/**
-		 * uri: http://schema.org/pathophysiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Pathophysiology
+		 * @see <a href="http://schema.org/pathophysiology">http://schema.org/pathophysiology</a>
 		 */
 		public Container.Pathophysiology getPathophysiology();
 		public void setPathophysiology(Container.Pathophysiology pathophysiology);
 
 		/**
-		 * uri: http://schema.org/possibleComplication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PossibleComplication
+		 * @see <a href="http://schema.org/possibleComplication">http://schema.org/possibleComplication</a>
 		 */
 		public Container.PossibleComplication getPossibleComplication();
 		public void setPossibleComplication(Container.PossibleComplication possibleComplication);
 
 		/**
-		 * uri: http://schema.org/possibleTreatment
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PossibleTreatment
+		 * @see <a href="http://schema.org/possibleTreatment">http://schema.org/possibleTreatment</a>
 		 */
 		public Container.PossibleTreatment getPossibleTreatment();
 		public void setPossibleTreatment(Container.PossibleTreatment possibleTreatment);
 
 		/**
-		 * uri: http://schema.org/primaryPrevention
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PrimaryPrevention
+		 * @see <a href="http://schema.org/primaryPrevention">http://schema.org/primaryPrevention</a>
 		 */
 		public Container.PrimaryPrevention getPrimaryPrevention();
 		public void setPrimaryPrevention(Container.PrimaryPrevention primaryPrevention);
 
 		/**
-		 * uri: http://schema.org/riskFactor
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RiskFactor
+		 * @see <a href="http://schema.org/riskFactor">http://schema.org/riskFactor</a>
 		 */
 		public Container.RiskFactor getRiskFactor();
 		public void setRiskFactor(Container.RiskFactor riskFactor);
 
 		/**
-		 * uri: http://schema.org/secondaryPrevention
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SecondaryPrevention
+		 * @see <a href="http://schema.org/secondaryPrevention">http://schema.org/secondaryPrevention</a>
 		 */
 		public Container.SecondaryPrevention getSecondaryPrevention();
 		public void setSecondaryPrevention(Container.SecondaryPrevention secondaryPrevention);
 
 		/**
-		 * uri: http://schema.org/signOrSymptom
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SignOrSymptom
+		 * @see <a href="http://schema.org/signOrSymptom">http://schema.org/signOrSymptom</a>
 		 */
 		public Container.SignOrSymptom getSignOrSymptom();
 		public void setSignOrSymptom(Container.SignOrSymptom signOrSymptom);
 
 		/**
-		 * uri: http://schema.org/stage
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Stage
+		 * @see <a href="http://schema.org/stage">http://schema.org/stage</a>
 		 */
 		public Container.Stage getStage();
 		public void setStage(Container.Stage stage);
 
 		/**
-		 * uri: http://schema.org/status
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Status
+		 * @see <a href="http://schema.org/status">http://schema.org/status</a>
 		 */
 		public Container.Status getStatus();
 		public void setStatus(Container.Status status);
 
 		/**
-		 * uri: http://schema.org/subtype
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Subtype
+		 * @see <a href="http://schema.org/subtype">http://schema.org/subtype</a>
 		 */
 		public Container.Subtype getSubtype();
 		public void setSubtype(Container.Subtype subtype);
 
 		/**
-		 * uri: http://schema.org/typicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TypicalTest
+		 * @see <a href="http://schema.org/typicalTest">http://schema.org/typicalTest</a>
 		 */
 		public Container.TypicalTest getTypicalTest();
 		public void setTypicalTest(Container.TypicalTest typicalTest);
@@ -1532,15 +1405,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalConditionStage extends MedicalIntangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/stageAsNumber
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StageAsNumber
+		 * @see <a href="http://schema.org/stageAsNumber">http://schema.org/stageAsNumber</a>
 		 */
 		public Container.StageAsNumber getStageAsNumber();
 		public void setStageAsNumber(Container.StageAsNumber stageAsNumber);
 
 		/**
-		 * uri: http://schema.org/subStageSuffix
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SubStageSuffix
+		 * @see <a href="http://schema.org/subStageSuffix">http://schema.org/subStageSuffix</a>
 		 */
 		public Container.SubStageSuffix getSubStageSuffix();
 		public void setSubStageSuffix(Container.SubStageSuffix subStageSuffix);
@@ -1580,57 +1451,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalDevice extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/adverseOutcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AdverseOutcome
+		 * @see <a href="http://schema.org/adverseOutcome">http://schema.org/adverseOutcome</a>
 		 */
 		public Container.AdverseOutcome getAdverseOutcome();
 		public void setAdverseOutcome(Container.AdverseOutcome adverseOutcome);
 
 		/**
-		 * uri: http://schema.org/contraindication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Contraindication
+		 * @see <a href="http://schema.org/contraindication">http://schema.org/contraindication</a>
 		 */
 		public Container.Contraindication getContraindication();
 		public void setContraindication(Container.Contraindication contraindication);
 
 		/**
-		 * uri: http://schema.org/indication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Indication
+		 * @see <a href="http://schema.org/indication">http://schema.org/indication</a>
 		 */
 		public Container.Indication getIndication();
 		public void setIndication(Container.Indication indication);
 
 		/**
-		 * uri: http://schema.org/postOp
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PostOp
+		 * @see <a href="http://schema.org/postOp">http://schema.org/postOp</a>
 		 */
 		public Container.PostOp getPostOp();
 		public void setPostOp(Container.PostOp postOp);
 
 		/**
-		 * uri: http://schema.org/preOp
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PreOp
+		 * @see <a href="http://schema.org/preOp">http://schema.org/preOp</a>
 		 */
 		public Container.PreOp getPreOp();
 		public void setPreOp(Container.PreOp preOp);
 
 		/**
-		 * uri: http://schema.org/procedure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Procedure
+		 * @see <a href="http://schema.org/procedure">http://schema.org/procedure</a>
 		 */
 		public Container.Procedure getProcedure();
 		public void setProcedure(Container.Procedure procedure);
 
 		/**
-		 * uri: http://schema.org/purpose
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Purpose
+		 * @see <a href="http://schema.org/purpose">http://schema.org/purpose</a>
 		 */
 		public Container.Purpose getPurpose();
 		public void setPurpose(Container.Purpose purpose);
 
 		/**
-		 * uri: http://schema.org/seriousAdverseOutcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SeriousAdverseOutcome
+		 * @see <a href="http://schema.org/seriousAdverseOutcome">http://schema.org/seriousAdverseOutcome</a>
 		 */
 		public Container.SeriousAdverseOutcome getSeriousAdverseOutcome();
 		public void setSeriousAdverseOutcome(Container.SeriousAdverseOutcome seriousAdverseOutcome);
@@ -1667,50 +1530,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalEntity extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/code
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Code
+		 * @see <a href="http://schema.org/code">http://schema.org/code</a>
 		 */
 		public Container.Code getCode();
 		public void setCode(Container.Code code);
 
 		/**
-		 * uri: http://schema.org/guideline
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Guideline
+		 * @see <a href="http://schema.org/guideline">http://schema.org/guideline</a>
 		 */
 		public Container.Guideline getGuideline();
 		public void setGuideline(Container.Guideline guideline);
 
 		/**
-		 * uri: http://schema.org/legalStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.LegalStatus
+		 * @see <a href="http://schema.org/legalStatus">http://schema.org/legalStatus</a>
 		 */
 		public Container.LegalStatus getLegalStatus();
 		public void setLegalStatus(Container.LegalStatus legalStatus);
 
 		/**
-		 * uri: http://schema.org/medicineSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicineSystem
+		 * @see <a href="http://schema.org/medicineSystem">http://schema.org/medicineSystem</a>
 		 */
 		public Container.MedicineSystem getMedicineSystem();
 		public void setMedicineSystem(Container.MedicineSystem medicineSystem);
 
 		/**
-		 * uri: http://schema.org/recognizingAuthority
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RecognizingAuthority
+		 * @see <a href="http://schema.org/recognizingAuthority">http://schema.org/recognizingAuthority</a>
 		 */
 		public Container.RecognizingAuthority getRecognizingAuthority();
 		public void setRecognizingAuthority(Container.RecognizingAuthority recognizingAuthority);
 
 		/**
-		 * uri: http://schema.org/relevantSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelevantSpecialty
+		 * @see <a href="http://schema.org/relevantSpecialty">http://schema.org/relevantSpecialty</a>
 		 */
 		public Container.RelevantSpecialty getRelevantSpecialty();
 		public void setRelevantSpecialty(Container.RelevantSpecialty relevantSpecialty);
 
 		/**
-		 * uri: http://schema.org/study
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Study
+		 * @see <a href="http://schema.org/study">http://schema.org/study</a>
 		 */
 		public Container.Study getStudy();
 		public void setStudy(Container.Study study);
@@ -1769,29 +1625,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalGuideline extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/evidenceLevel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.EvidenceLevel
+		 * @see <a href="http://schema.org/evidenceLevel">http://schema.org/evidenceLevel</a>
 		 */
 		public Container.EvidenceLevel getEvidenceLevel();
 		public void setEvidenceLevel(Container.EvidenceLevel evidenceLevel);
 
 		/**
-		 * uri: http://schema.org/evidenceOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.EvidenceOrigin
+		 * @see <a href="http://schema.org/evidenceOrigin">http://schema.org/evidenceOrigin</a>
 		 */
 		public Container.EvidenceOrigin getEvidenceOrigin();
 		public void setEvidenceOrigin(Container.EvidenceOrigin evidenceOrigin);
 
 		/**
-		 * uri: http://schema.org/guidelineDate
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.GuidelineDate
+		 * @see <a href="http://schema.org/guidelineDate">http://schema.org/guidelineDate</a>
 		 */
 		public Container.GuidelineDate getGuidelineDate();
 		public void setGuidelineDate(Container.GuidelineDate guidelineDate);
 
 		/**
-		 * uri: http://schema.org/guidelineSubject
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.GuidelineSubject
+		 * @see <a href="http://schema.org/guidelineSubject">http://schema.org/guidelineSubject</a>
 		 */
 		public Container.GuidelineSubject getGuidelineSubject();
 		public void setGuidelineSubject(Container.GuidelineSubject guidelineSubject);
@@ -1829,8 +1681,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalGuidelineRecommendation extends MedicalGuideline, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/recommendationStrength
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RecommendationStrength
+		 * @see <a href="http://schema.org/recommendationStrength">http://schema.org/recommendationStrength</a>
 		 */
 		public Container.RecommendationStrength getRecommendationStrength();
 		public void setRecommendationStrength(Container.RecommendationStrength recommendationStrength);
@@ -1906,8 +1757,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalObservationalStudy extends MedicalStudy, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/studyDesign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StudyDesign
+		 * @see <a href="http://schema.org/studyDesign">http://schema.org/studyDesign</a>
 		 */
 		public Container.StudyDesign getStudyDesign();
 		public void setStudyDesign(Container.StudyDesign studyDesign);
@@ -1945,57 +1795,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalProcedure extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/bodyLocation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.BodyLocation
+		 * @see <a href="http://schema.org/bodyLocation">http://schema.org/bodyLocation</a>
 		 */
 		public Container.BodyLocation getBodyLocation();
 		public void setBodyLocation(Container.BodyLocation bodyLocation);
 
 		/**
-		 * uri: http://schema.org/followup
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Followup
+		 * @see <a href="http://schema.org/followup">http://schema.org/followup</a>
 		 */
 		public Container.Followup getFollowup();
 		public void setFollowup(Container.Followup followup);
 
 		/**
-		 * uri: http://schema.org/howPerformed
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HowPerformed
+		 * @see <a href="http://schema.org/howPerformed">http://schema.org/howPerformed</a>
 		 */
 		public Container.HowPerformed getHowPerformed();
 		public void setHowPerformed(Container.HowPerformed howPerformed);
 
 		/**
-		 * uri: http://schema.org/indication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Indication
+		 * @see <a href="http://schema.org/indication">http://schema.org/indication</a>
 		 */
 		public Container.Indication getIndication();
 		public void setIndication(Container.Indication indication);
 
 		/**
-		 * uri: http://schema.org/outcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Outcome
+		 * @see <a href="http://schema.org/outcome">http://schema.org/outcome</a>
 		 */
 		public Container.Outcome getOutcome();
 		public void setOutcome(Container.Outcome outcome);
 
 		/**
-		 * uri: http://schema.org/preparation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Preparation
+		 * @see <a href="http://schema.org/preparation">http://schema.org/preparation</a>
 		 */
 		public Container.Preparation getPreparation();
 		public void setPreparation(Container.Preparation preparation);
 
 		/**
-		 * uri: http://schema.org/procedureType
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ProcedureType
+		 * @see <a href="http://schema.org/procedureType">http://schema.org/procedureType</a>
 		 */
 		public Container.ProcedureType getProcedureType();
 		public void setProcedureType(Container.ProcedureType procedureType);
 
 		/**
-		 * uri: http://schema.org/status
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Status
+		 * @see <a href="http://schema.org/status">http://schema.org/status</a>
 		 */
 		public Container.Status getStatus();
 		public void setStatus(Container.Status status);
@@ -2049,15 +1891,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalRiskEstimator extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/estimatesRiskOf
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.EstimatesRiskOf
+		 * @see <a href="http://schema.org/estimatesRiskOf">http://schema.org/estimatesRiskOf</a>
 		 */
 		public Container.EstimatesRiskOf getEstimatesRiskOf();
 		public void setEstimatesRiskOf(Container.EstimatesRiskOf estimatesRiskOf);
 
 		/**
-		 * uri: http://schema.org/includedRiskFactor
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IncludedRiskFactor
+		 * @see <a href="http://schema.org/includedRiskFactor">http://schema.org/includedRiskFactor</a>
 		 */
 		public Container.IncludedRiskFactor getIncludedRiskFactor();
 		public void setIncludedRiskFactor(Container.IncludedRiskFactor includedRiskFactor);
@@ -2079,8 +1919,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalRiskFactor extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/increasesRiskOf
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IncreasesRiskOf
+		 * @see <a href="http://schema.org/increasesRiskOf">http://schema.org/increasesRiskOf</a>
 		 */
 		public Container.IncreasesRiskOf getIncreasesRiskOf();
 		public void setIncreasesRiskOf(Container.IncreasesRiskOf increasesRiskOf);
@@ -2102,8 +1941,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalRiskScore extends MedicalRiskEstimator, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/algorithm
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Algorithm
+		 * @see <a href="http://schema.org/algorithm">http://schema.org/algorithm</a>
 		 */
 		public Container.Algorithm getAlgorithm();
 		public void setAlgorithm(Container.Algorithm algorithm);
@@ -2124,8 +1962,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalScholarlyArticle extends SchemaOrgClass, ScholarlyArticle {
 
 		/**
-		 * uri: http://schema.org/publicationType
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PublicationType
+		 * @see <a href="http://schema.org/publicationType">http://schema.org/publicationType</a>
 		 */
 		public Container.PublicationType getPublicationType();
 		public void setPublicationType(Container.PublicationType publicationType);
@@ -2147,15 +1984,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalSign extends MedicalSignOrSymptom, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/identifyingExam
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IdentifyingExam
+		 * @see <a href="http://schema.org/identifyingExam">http://schema.org/identifyingExam</a>
 		 */
 		public Container.IdentifyingExam getIdentifyingExam();
 		public void setIdentifyingExam(Container.IdentifyingExam identifyingExam);
 
 		/**
-		 * uri: http://schema.org/identifyingTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IdentifyingTest
+		 * @see <a href="http://schema.org/identifyingTest">http://schema.org/identifyingTest</a>
 		 */
 		public Container.IdentifyingTest getIdentifyingTest();
 		public void setIdentifyingTest(Container.IdentifyingTest identifyingTest);
@@ -2177,15 +2012,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalSignOrSymptom extends MedicalCondition, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/cause
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Cause
+		 * @see <a href="http://schema.org/cause">http://schema.org/cause</a>
 		 */
 		public Container.Cause getCause();
 		public void setCause(Container.Cause cause);
 
 		/**
-		 * uri: http://schema.org/possibleTreatment
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PossibleTreatment
+		 * @see <a href="http://schema.org/possibleTreatment">http://schema.org/possibleTreatment</a>
 		 */
 		public Container.PossibleTreatment getPossibleTreatment();
 		public void setPossibleTreatment(Container.PossibleTreatment possibleTreatment);
@@ -2231,50 +2064,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalStudy extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HealthCondition
+		 * @see <a href="http://schema.org/healthCondition">http://schema.org/healthCondition</a>
 		 */
 		public Container.HealthCondition getHealthCondition();
 		public void setHealthCondition(Container.HealthCondition healthCondition);
 
 		/**
-		 * uri: http://schema.org/outcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Outcome
+		 * @see <a href="http://schema.org/outcome">http://schema.org/outcome</a>
 		 */
 		public Container.Outcome getOutcome();
 		public void setOutcome(Container.Outcome outcome);
 
 		/**
-		 * uri: http://schema.org/population
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Population
+		 * @see <a href="http://schema.org/population">http://schema.org/population</a>
 		 */
 		public Container.Population getPopulation();
 		public void setPopulation(Container.Population population);
 
 		/**
-		 * uri: http://schema.org/sponsor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sponsor
+		 * @see <a href="http://schema.org/sponsor">http://schema.org/sponsor</a>
 		 */
 		public Sponsor getSponsor();
 		public void setSponsor(Sponsor sponsor);
 
 		/**
-		 * uri: http://schema.org/status
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Status
+		 * @see <a href="http://schema.org/status">http://schema.org/status</a>
 		 */
 		public Container.Status getStatus();
 		public void setStatus(Container.Status status);
 
 		/**
-		 * uri: http://schema.org/studyLocation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StudyLocation
+		 * @see <a href="http://schema.org/studyLocation">http://schema.org/studyLocation</a>
 		 */
 		public Container.StudyLocation getStudyLocation();
 		public void setStudyLocation(Container.StudyLocation studyLocation);
 
 		/**
-		 * uri: http://schema.org/studySubject
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.StudySubject
+		 * @see <a href="http://schema.org/studySubject">http://schema.org/studySubject</a>
 		 */
 		public Container.StudySubject getStudySubject();
 		public void setStudySubject(Container.StudySubject studySubject);
@@ -2326,36 +2152,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalTest extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/affectedBy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AffectedBy
+		 * @see <a href="http://schema.org/affectedBy">http://schema.org/affectedBy</a>
 		 */
 		public Container.AffectedBy getAffectedBy();
 		public void setAffectedBy(Container.AffectedBy affectedBy);
 
 		/**
-		 * uri: http://schema.org/normalRange
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NormalRange
+		 * @see <a href="http://schema.org/normalRange">http://schema.org/normalRange</a>
 		 */
 		public Container.NormalRange getNormalRange();
 		public void setNormalRange(Container.NormalRange normalRange);
 
 		/**
-		 * uri: http://schema.org/signDetected
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SignDetected
+		 * @see <a href="http://schema.org/signDetected">http://schema.org/signDetected</a>
 		 */
 		public Container.SignDetected getSignDetected();
 		public void setSignDetected(Container.SignDetected signDetected);
 
 		/**
-		 * uri: http://schema.org/usedToDiagnose
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.UsedToDiagnose
+		 * @see <a href="http://schema.org/usedToDiagnose">http://schema.org/usedToDiagnose</a>
 		 */
 		public Container.UsedToDiagnose getUsedToDiagnose();
 		public void setUsedToDiagnose(Container.UsedToDiagnose usedToDiagnose);
 
 		/**
-		 * uri: http://schema.org/usesDevice
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.UsesDevice
+		 * @see <a href="http://schema.org/usesDevice">http://schema.org/usesDevice</a>
 		 */
 		public Container.UsesDevice getUsesDevice();
 		public void setUsesDevice(Container.UsesDevice usesDevice);
@@ -2376,8 +2197,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalTestPanel extends MedicalTest, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/subTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SubTest
+		 * @see <a href="http://schema.org/subTest">http://schema.org/subTest</a>
 		 */
 		public Container.SubTest getSubTest();
 		public void setSubTest(Container.SubTest subTest);
@@ -2403,22 +2223,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalTherapy extends SchemaOrgClass, TherapeuticProcedure {
 
 		/**
-		 * uri: http://schema.org/contraindication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Contraindication
+		 * @see <a href="http://schema.org/contraindication">http://schema.org/contraindication</a>
 		 */
 		public Container.Contraindication getContraindication();
 		public void setContraindication(Container.Contraindication contraindication);
 
 		/**
-		 * uri: http://schema.org/duplicateTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DuplicateTherapy
+		 * @see <a href="http://schema.org/duplicateTherapy">http://schema.org/duplicateTherapy</a>
 		 */
 		public Container.DuplicateTherapy getDuplicateTherapy();
 		public void setDuplicateTherapy(Container.DuplicateTherapy duplicateTherapy);
 
 		/**
-		 * uri: http://schema.org/seriousAdverseOutcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SeriousAdverseOutcome
+		 * @see <a href="http://schema.org/seriousAdverseOutcome">http://schema.org/seriousAdverseOutcome</a>
 		 */
 		public Container.SeriousAdverseOutcome getSeriousAdverseOutcome();
 		public void setSeriousAdverseOutcome(Container.SeriousAdverseOutcome seriousAdverseOutcome);
@@ -2442,15 +2259,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalTrial extends MedicalStudy, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/phase
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Phase
+		 * @see <a href="http://schema.org/phase">http://schema.org/phase</a>
 		 */
 		public Container.Phase getPhase();
 		public void setPhase(Container.Phase phase);
 
 		/**
-		 * uri: http://schema.org/trialDesign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TrialDesign
+		 * @see <a href="http://schema.org/trialDesign">http://schema.org/trialDesign</a>
 		 */
 		public Container.TrialDesign getTrialDesign();
 		public void setTrialDesign(Container.TrialDesign trialDesign);
@@ -2516,50 +2331,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Muscle extends AnatomicalStructure, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/action
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Action
+		 * @see <a href="http://schema.org/action">http://schema.org/action</a>
 		 */
 		public Container.Action getAction();
 		public void setAction(Container.Action action);
 
 		/**
-		 * uri: http://schema.org/antagonist
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Antagonist
+		 * @see <a href="http://schema.org/antagonist">http://schema.org/antagonist</a>
 		 */
 		public Container.Antagonist getAntagonist();
 		public void setAntagonist(Container.Antagonist antagonist);
 
 		/**
-		 * uri: http://schema.org/bloodSupply
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.BloodSupply
+		 * @see <a href="http://schema.org/bloodSupply">http://schema.org/bloodSupply</a>
 		 */
 		public Container.BloodSupply getBloodSupply();
 		public void setBloodSupply(Container.BloodSupply bloodSupply);
 
 		/**
-		 * uri: http://schema.org/insertion
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Insertion
+		 * @see <a href="http://schema.org/insertion">http://schema.org/insertion</a>
 		 */
 		public Container.Insertion getInsertion();
 		public void setInsertion(Container.Insertion insertion);
 
 		/**
-		 * uri: http://schema.org/muscleAction
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MuscleAction
+		 * @see <a href="http://schema.org/muscleAction">http://schema.org/muscleAction</a>
 		 */
 		public Container.MuscleAction getMuscleAction();
 		public void setMuscleAction(Container.MuscleAction muscleAction);
 
 		/**
-		 * uri: http://schema.org/nerve
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Nerve
+		 * @see <a href="http://schema.org/nerve">http://schema.org/nerve</a>
 		 */
 		public Container.Nerve getNerve();
 		public void setNerve(Container.Nerve nerve);
 
 		/**
-		 * uri: http://schema.org/origin
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Origin
+		 * @see <a href="http://schema.org/origin">http://schema.org/origin</a>
 		 */
 		public Container.Origin getOrigin();
 		public void setOrigin(Container.Origin origin);
@@ -2581,22 +2389,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Nerve extends AnatomicalStructure, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/nerveMotor
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NerveMotor
+		 * @see <a href="http://schema.org/nerveMotor">http://schema.org/nerveMotor</a>
 		 */
 		public Container.NerveMotor getNerveMotor();
 		public void setNerveMotor(Container.NerveMotor nerveMotor);
 
 		/**
-		 * uri: http://schema.org/sensoryUnit
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SensoryUnit
+		 * @see <a href="http://schema.org/sensoryUnit">http://schema.org/sensoryUnit</a>
 		 */
 		public Container.SensoryUnit getSensoryUnit();
 		public void setSensoryUnit(Container.SensoryUnit sensoryUnit);
 
 		/**
-		 * uri: http://schema.org/sourcedFrom
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SourcedFrom
+		 * @see <a href="http://schema.org/sourcedFrom">http://schema.org/sourcedFrom</a>
 		 */
 		public Container.SourcedFrom getSourcedFrom();
 		public void setSourcedFrom(Container.SourcedFrom sourcedFrom);
@@ -2649,8 +2454,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PathologyTest extends MedicalTest, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/tissueSample
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TissueSample
+		 * @see <a href="http://schema.org/tissueSample">http://schema.org/tissueSample</a>
 		 */
 		public Container.TissueSample getTissueSample();
 		public void setTissueSample(Container.TissueSample tissueSample);
@@ -2671,22 +2475,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Patient extends MedicalAudience, Person, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/diagnosis
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Diagnosis
+		 * @see <a href="http://schema.org/diagnosis">http://schema.org/diagnosis</a>
 		 */
 		public Container.Diagnosis getDiagnosis();
 		public void setDiagnosis(Container.Diagnosis diagnosis);
 
 		/**
-		 * uri: http://schema.org/drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Drug
+		 * @see <a href="http://schema.org/drug">http://schema.org/drug</a>
 		 */
 		public Container.Drug getDrug();
 		public void setDrug(Container.Drug drug);
 
 		/**
-		 * uri: http://schema.org/healthCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HealthCondition
+		 * @see <a href="http://schema.org/healthCondition">http://schema.org/healthCondition</a>
 		 */
 		public Container.HealthCondition getHealthCondition();
 		public void setHealthCondition(Container.HealthCondition healthCondition);
@@ -2710,29 +2511,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PhysicalActivity extends LifestyleModification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedAnatomy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AssociatedAnatomy
+		 * @see <a href="http://schema.org/associatedAnatomy">http://schema.org/associatedAnatomy</a>
 		 */
 		public Container.AssociatedAnatomy getAssociatedAnatomy();
 		public void setAssociatedAnatomy(Container.AssociatedAnatomy associatedAnatomy);
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Category getCategory();
 		public void setCategory(Category category);
 
 		/**
-		 * uri: http://schema.org/epidemiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Epidemiology
+		 * @see <a href="http://schema.org/epidemiology">http://schema.org/epidemiology</a>
 		 */
 		public Container.Epidemiology getEpidemiology();
 		public void setEpidemiology(Container.Epidemiology epidemiology);
 
 		/**
-		 * uri: http://schema.org/pathophysiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Pathophysiology
+		 * @see <a href="http://schema.org/pathophysiology">http://schema.org/pathophysiology</a>
 		 */
 		public Container.Pathophysiology getPathophysiology();
 		public void setPathophysiology(Container.Pathophysiology pathophysiology);
@@ -2879,15 +2676,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Substance extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/activeIngredient
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ActiveIngredient
+		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
 		 */
 		public Container.ActiveIngredient getActiveIngredient();
 		public void setActiveIngredient(Container.ActiveIngredient activeIngredient);
 
 		/**
-		 * uri: http://schema.org/maximumIntake
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MaximumIntake
+		 * @see <a href="http://schema.org/maximumIntake">http://schema.org/maximumIntake</a>
 		 */
 		public Container.MaximumIntake getMaximumIntake();
 		public void setMaximumIntake(Container.MaximumIntake maximumIntake);
@@ -2925,36 +2720,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SuperficialAnatomy extends MedicalEntity, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedPathophysiology
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AssociatedPathophysiology
+		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
 		 */
 		public Container.AssociatedPathophysiology getAssociatedPathophysiology();
 		public void setAssociatedPathophysiology(Container.AssociatedPathophysiology associatedPathophysiology);
 
 		/**
-		 * uri: http://schema.org/relatedAnatomy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedAnatomy
+		 * @see <a href="http://schema.org/relatedAnatomy">http://schema.org/relatedAnatomy</a>
 		 */
 		public Container.RelatedAnatomy getRelatedAnatomy();
 		public void setRelatedAnatomy(Container.RelatedAnatomy relatedAnatomy);
 
 		/**
-		 * uri: http://schema.org/relatedCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedCondition
+		 * @see <a href="http://schema.org/relatedCondition">http://schema.org/relatedCondition</a>
 		 */
 		public Container.RelatedCondition getRelatedCondition();
 		public void setRelatedCondition(Container.RelatedCondition relatedCondition);
 
 		/**
-		 * uri: http://schema.org/relatedTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelatedTherapy
+		 * @see <a href="http://schema.org/relatedTherapy">http://schema.org/relatedTherapy</a>
 		 */
 		public Container.RelatedTherapy getRelatedTherapy();
 		public void setRelatedTherapy(Container.RelatedTherapy relatedTherapy);
 
 		/**
-		 * uri: http://schema.org/significance
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Significance
+		 * @see <a href="http://schema.org/significance">http://schema.org/significance</a>
 		 */
 		public Container.Significance getSignificance();
 		public void setSignificance(Container.Significance significance);
@@ -2976,29 +2766,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TherapeuticProcedure extends MedicalProcedure, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/adverseOutcome
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AdverseOutcome
+		 * @see <a href="http://schema.org/adverseOutcome">http://schema.org/adverseOutcome</a>
 		 */
 		public Container.AdverseOutcome getAdverseOutcome();
 		public void setAdverseOutcome(Container.AdverseOutcome adverseOutcome);
 
 		/**
-		 * uri: http://schema.org/doseSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DoseSchedule
+		 * @see <a href="http://schema.org/doseSchedule">http://schema.org/doseSchedule</a>
 		 */
 		public Container.DoseSchedule getDoseSchedule();
 		public void setDoseSchedule(Container.DoseSchedule doseSchedule);
 
 		/**
-		 * uri: http://schema.org/drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Drug
+		 * @see <a href="http://schema.org/drug">http://schema.org/drug</a>
 		 */
 		public Container.Drug getDrug();
 		public void setDrug(Container.Drug drug);
 
 		/**
-		 * uri: http://schema.org/indication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Indication
+		 * @see <a href="http://schema.org/indication">http://schema.org/indication</a>
 		 */
 		public Container.Indication getIndication();
 		public void setIndication(Container.Indication indication);
@@ -3034,22 +2820,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Vein extends SchemaOrgClass, Vessel {
 
 		/**
-		 * uri: http://schema.org/drainsTo
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.DrainsTo
+		 * @see <a href="http://schema.org/drainsTo">http://schema.org/drainsTo</a>
 		 */
 		public Container.DrainsTo getDrainsTo();
 		public void setDrainsTo(Container.DrainsTo drainsTo);
 
 		/**
-		 * uri: http://schema.org/regionDrained
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RegionDrained
+		 * @see <a href="http://schema.org/regionDrained">http://schema.org/regionDrained</a>
 		 */
 		public Container.RegionDrained getRegionDrained();
 		public void setRegionDrained(Container.RegionDrained regionDrained);
 
 		/**
-		 * uri: http://schema.org/tributary
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Tributary
+		 * @see <a href="http://schema.org/tributary">http://schema.org/tributary</a>
 		 */
 		public Container.Tributary getTributary();
 		public void setTributary(Container.Tributary tributary);

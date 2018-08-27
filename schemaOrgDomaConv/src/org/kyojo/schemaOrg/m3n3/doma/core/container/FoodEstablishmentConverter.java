@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.FOOD_ESTABLISHMENT;
-import org.kyojo.schemaOrg.m3n3.core.Container.FoodEstablishment;
+import org.kyojo.schemaorg.m3n3.core.impl.FOOD_ESTABLISHMENT;
+import org.kyojo.schemaorg.m3n3.core.Container.FoodEstablishment;
 
 @ExternalDomain
 public class FoodEstablishmentConverter implements DomainConverter<FoodEstablishment, String> {

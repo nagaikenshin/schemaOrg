@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.REPETITIONS;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Repetitions;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.REPETITIONS;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Repetitions;
 
 @ExternalDomain
 public class RepetitionsConverter implements DomainConverter<Repetitions, BigDecimal> {

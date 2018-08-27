@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.SCHOLARLY_ARTICLE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.ScholarlyArticle;
+import org.kyojo.schemaorg.m3n3.core.impl.SCHOLARLY_ARTICLE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.ScholarlyArticle;
 
 @ExternalDomain
 public class ScholarlyArticleConverter implements DomainConverter<ScholarlyArticle, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.INSURANCE_AGENCY;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.InsuranceAgency;
+import org.kyojo.schemaorg.m3n3.core.impl.INSURANCE_AGENCY;
+import org.kyojo.schemaorg.m3n3.core.Clazz.InsuranceAgency;
 
 @ExternalDomain
 public class InsuranceAgencyConverter implements DomainConverter<InsuranceAgency, String> {

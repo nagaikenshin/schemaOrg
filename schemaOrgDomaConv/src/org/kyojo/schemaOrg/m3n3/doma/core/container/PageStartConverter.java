@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.PAGE_START;
-import org.kyojo.schemaOrg.m3n3.core.Container.PageStart;
+import org.kyojo.schemaorg.m3n3.core.impl.PAGE_START;
+import org.kyojo.schemaorg.m3n3.core.Container.PageStart;
 
 @ExternalDomain
 public class PageStartConverter implements DomainConverter<PageStart, String> {

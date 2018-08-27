@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.HEALTH_PLAN_COINSURANCE_OPTION;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCoinsuranceOption;
+import org.kyojo.schemaorg.m3n3.pending.impl.HEALTH_PLAN_COINSURANCE_OPTION;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanCoinsuranceOption;
 
 @ExternalDomain
 public class HealthPlanCoinsuranceOptionConverter implements DomainConverter<HealthPlanCoinsuranceOption, String> {

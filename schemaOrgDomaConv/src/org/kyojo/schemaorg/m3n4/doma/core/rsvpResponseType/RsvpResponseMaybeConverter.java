@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.core.rsvpResponseType;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.core.rsvpResponseType.RSVP_RESPONSE_MAYBE;
+import org.kyojo.schemaorg.m3n4.core.RsvpResponseType.RsvpResponseMaybe;
+
+@ExternalDomain
+public class RsvpResponseMaybeConverter implements DomainConverter<RsvpResponseMaybe, String> {
+
+	@Override
+	public String fromDomainToValue(RsvpResponseMaybe domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public RsvpResponseMaybe fromValueToDomain(String value) {
+		return new RSVP_RESPONSE_MAYBE(value);
+	}
+
+}

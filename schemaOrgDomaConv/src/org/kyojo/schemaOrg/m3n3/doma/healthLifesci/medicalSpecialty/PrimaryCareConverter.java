@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalSpecialty;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalSpecialty;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalSpecialty.PRIMARY_CARE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalSpecialty.PrimaryCare;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalSpecialty.PRIMARY_CARE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalSpecialty.PrimaryCare;
 
 @ExternalDomain
 public class PrimaryCareConverter implements DomainConverter<PrimaryCare, String> {

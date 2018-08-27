@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.container;
+package org.kyojo.schemaorg.m3n3.doma.auto.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.SEATING_CAPACITY;
-import org.kyojo.schemaOrg.m3n3.auto.Container.SeatingCapacity;
+import org.kyojo.schemaorg.m3n3.auto.impl.SEATING_CAPACITY;
+import org.kyojo.schemaorg.m3n3.auto.Container.SeatingCapacity;
 
 @ExternalDomain
 public class SeatingCapacityConverter implements DomainConverter<SeatingCapacity, BigDecimal> {

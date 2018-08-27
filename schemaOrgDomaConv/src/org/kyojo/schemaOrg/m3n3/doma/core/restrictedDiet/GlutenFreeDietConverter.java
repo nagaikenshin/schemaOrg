@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.restrictedDiet;
+package org.kyojo.schemaorg.m3n3.doma.core.restrictedDiet;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.restrictedDiet.GLUTEN_FREE_DIET;
-import org.kyojo.schemaOrg.m3n3.core.RestrictedDiet.GlutenFreeDiet;
+import org.kyojo.schemaorg.m3n3.core.restrictedDiet.GLUTEN_FREE_DIET;
+import org.kyojo.schemaorg.m3n3.core.RestrictedDiet.GlutenFreeDiet;
 
 @ExternalDomain
 public class GlutenFreeDietConverter implements DomainConverter<GlutenFreeDiet, String> {

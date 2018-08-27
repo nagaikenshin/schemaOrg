@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.auto.container;
+package org.kyojo.schemaorg.m3n3.gson.auto.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.auto.impl.WEIGHT_TOTAL;
-import org.kyojo.schemaOrg.m3n3.auto.Container.WeightTotal;
+import org.kyojo.schemaorg.m3n3.auto.impl.WEIGHT_TOTAL;
+import org.kyojo.schemaorg.m3n3.auto.Container.WeightTotal;
 
 public class WeightTotalDeserializer implements JsonDeserializer<WeightTotal> {
 

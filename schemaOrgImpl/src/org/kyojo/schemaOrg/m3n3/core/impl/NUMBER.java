@@ -1,8 +1,8 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
-import org.kyojo.schemaOrg.SampleValue;
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
+import org.kyojo.schemaorg.SampleValue;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.DataType;
 
 public class NUMBER implements DataType.Number {
 

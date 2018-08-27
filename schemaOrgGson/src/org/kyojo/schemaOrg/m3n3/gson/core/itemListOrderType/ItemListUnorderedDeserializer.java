@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.itemListOrderType;
+package org.kyojo.schemaorg.m3n3.gson.core.itemListOrderType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.itemListOrderType.ITEM_LIST_UNORDERED;
-import org.kyojo.schemaOrg.m3n3.core.ItemListOrderType.ItemListUnordered;
+import org.kyojo.schemaorg.m3n3.core.itemListOrderType.ITEM_LIST_UNORDERED;
+import org.kyojo.schemaorg.m3n3.core.ItemListOrderType.ItemListUnordered;
 
 public class ItemListUnorderedDeserializer implements JsonDeserializer<ItemListUnordered> {
 

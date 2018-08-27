@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.HAS_DIGITAL_DOCUMENT_PERMISSION;
-import org.kyojo.schemaOrg.m3n3.core.Container.HasDigitalDocumentPermission;
+import org.kyojo.schemaorg.m3n3.core.impl.HAS_DIGITAL_DOCUMENT_PERMISSION;
+import org.kyojo.schemaorg.m3n3.core.Container.HasDigitalDocumentPermission;
 
 @ExternalDomain
 public class HasDigitalDocumentPermissionConverter implements DomainConverter<HasDigitalDocumentPermission, String> {

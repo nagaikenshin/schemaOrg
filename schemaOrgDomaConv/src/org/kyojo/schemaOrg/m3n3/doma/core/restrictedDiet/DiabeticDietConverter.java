@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.restrictedDiet;
+package org.kyojo.schemaorg.m3n3.doma.core.restrictedDiet;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.restrictedDiet.DIABETIC_DIET;
-import org.kyojo.schemaOrg.m3n3.core.RestrictedDiet.DiabeticDiet;
+import org.kyojo.schemaorg.m3n3.core.restrictedDiet.DIABETIC_DIET;
+import org.kyojo.schemaorg.m3n3.core.RestrictedDiet.DiabeticDiet;
 
 @ExternalDomain
 public class DiabeticDietConverter implements DomainConverter<DiabeticDiet, String> {

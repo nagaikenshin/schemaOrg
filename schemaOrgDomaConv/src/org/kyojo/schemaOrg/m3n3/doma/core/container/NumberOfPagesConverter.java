@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.NUMBER_OF_PAGES;
-import org.kyojo.schemaOrg.m3n3.core.Container.NumberOfPages;
+import org.kyojo.schemaorg.m3n3.core.impl.NUMBER_OF_PAGES;
+import org.kyojo.schemaorg.m3n3.core.Container.NumberOfPages;
 
 @ExternalDomain
 public class NumberOfPagesConverter implements DomainConverter<NumberOfPages, Long> {

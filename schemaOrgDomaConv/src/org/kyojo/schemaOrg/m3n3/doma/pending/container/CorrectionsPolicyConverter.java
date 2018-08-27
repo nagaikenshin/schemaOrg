@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.CORRECTIONS_POLICY;
-import org.kyojo.schemaOrg.m3n3.pending.Container.CorrectionsPolicy;
+import org.kyojo.schemaorg.m3n3.pending.impl.CORRECTIONS_POLICY;
+import org.kyojo.schemaorg.m3n3.pending.Container.CorrectionsPolicy;
 
 @ExternalDomain
 public class CorrectionsPolicyConverter implements DomainConverter<CorrectionsPolicy, String> {

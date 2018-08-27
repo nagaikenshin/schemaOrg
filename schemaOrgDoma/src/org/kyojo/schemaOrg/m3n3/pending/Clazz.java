@@ -1,40 +1,40 @@
-package org.kyojo.schemaOrg.m3n3.pending;
+package org.kyojo.schemaorg.m3n3.pending;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Article;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CivicStructure;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.DataFeed;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Event;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.FoodEstablishment;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Intangible;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.InvestmentOrDeposit;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.LoanOrCredit;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MediaObject;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.NewsArticle;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Organization;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.RadioChannel;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Rating;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Review;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Role;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Service;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.StructuredValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.TradeAction;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.TransferAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.Amount;
-import org.kyojo.schemaOrg.m3n3.core.Container.ContactPoint;
-import org.kyojo.schemaOrg.m3n3.core.Container.Currency;
-import org.kyojo.schemaOrg.m3n3.core.Container.InLanguage;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Article;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CivicStructure;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Clazz.DataFeed;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Enumeration;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Event;
+import org.kyojo.schemaorg.m3n3.core.Clazz.FoodEstablishment;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Intangible;
+import org.kyojo.schemaorg.m3n3.core.Clazz.InvestmentOrDeposit;
+import org.kyojo.schemaorg.m3n3.core.Clazz.LoanOrCredit;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MediaObject;
+import org.kyojo.schemaorg.m3n3.core.Clazz.NewsArticle;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Organization;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QualitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.RadioChannel;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Rating;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Review;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Role;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Service;
+import org.kyojo.schemaorg.m3n3.core.Clazz.StructuredValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.TradeAction;
+import org.kyojo.schemaorg.m3n3.core.Clazz.TransferAction;
+import org.kyojo.schemaorg.m3n3.core.Container.Amount;
+import org.kyojo.schemaorg.m3n3.core.Container.ContactPoint;
+import org.kyojo.schemaorg.m3n3.core.Container.Currency;
+import org.kyojo.schemaorg.m3n3.core.Container.InLanguage;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.m3n3.pending.Container;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -145,8 +145,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BroadcastFrequencySpecification extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/broadcastFrequencyValue
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BroadcastFrequencyValue
+		 * @see <a href="http://schema.org/broadcastFrequencyValue">http://schema.org/broadcastFrequencyValue</a>
 		 */
 		public Container.BroadcastFrequencyValue getBroadcastFrequencyValue();
 		public void setBroadcastFrequencyValue(Container.BroadcastFrequencyValue broadcastFrequencyValue);
@@ -182,15 +181,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CategoryCode extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/codeValue
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CodeValue
+		 * @see <a href="http://schema.org/codeValue">http://schema.org/codeValue</a>
 		 */
 		public Container.CodeValue getCodeValue();
 		public void setCodeValue(Container.CodeValue codeValue);
 
 		/**
-		 * uri: http://schema.org/inCodeSet
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.InCodeSet
+		 * @see <a href="http://schema.org/inCodeSet">http://schema.org/inCodeSet</a>
 		 */
 		public Container.InCodeSet getInCodeSet();
 		public void setInCodeSet(Container.InCodeSet inCodeSet);
@@ -210,8 +207,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CategoryCodeSet extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hasCategoryCode
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HasCategoryCode
+		 * @see <a href="http://schema.org/hasCategoryCode">http://schema.org/hasCategoryCode</a>
 		 */
 		public Container.HasCategoryCode getHasCategoryCode();
 		public void setHasCategoryCode(Container.HasCategoryCode hasCategoryCode);
@@ -413,22 +409,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ExchangeRateSpecification extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/currency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Currency
+		 * @see <a href="http://schema.org/currency">http://schema.org/currency</a>
 		 */
 		public Currency getCurrency();
 		public void setCurrency(Currency currency);
 
 		/**
-		 * uri: http://schema.org/currentExchangeRate
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CurrentExchangeRate
+		 * @see <a href="http://schema.org/currentExchangeRate">http://schema.org/currentExchangeRate</a>
 		 */
 		public Container.CurrentExchangeRate getCurrentExchangeRate();
 		public void setCurrentExchangeRate(Container.CurrentExchangeRate currentExchangeRate);
 
 		/**
-		 * uri: http://schema.org/exchangeRateSpread
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ExchangeRateSpread
+		 * @see <a href="http://schema.org/exchangeRateSpread">http://schema.org/exchangeRateSpread</a>
 		 */
 		public Container.ExchangeRateSpread getExchangeRateSpread();
 		public void setExchangeRateSpread(Container.ExchangeRateSpread exchangeRateSpread);
@@ -464,71 +457,61 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GeospatialGeometry extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/geospatiallyContains
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyContains
+		 * @see <a href="http://schema.org/geospatiallyContains">http://schema.org/geospatiallyContains</a>
 		 */
 		public Container.GeospatiallyContains getGeospatiallyContains();
 		public void setGeospatiallyContains(Container.GeospatiallyContains geospatiallyContains);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCoveredBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCoveredBy
+		 * @see <a href="http://schema.org/geospatiallyCoveredBy">http://schema.org/geospatiallyCoveredBy</a>
 		 */
 		public Container.GeospatiallyCoveredBy getGeospatiallyCoveredBy();
 		public void setGeospatiallyCoveredBy(Container.GeospatiallyCoveredBy geospatiallyCoveredBy);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCovers
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCovers
+		 * @see <a href="http://schema.org/geospatiallyCovers">http://schema.org/geospatiallyCovers</a>
 		 */
 		public Container.GeospatiallyCovers getGeospatiallyCovers();
 		public void setGeospatiallyCovers(Container.GeospatiallyCovers geospatiallyCovers);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCrosses
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCrosses
+		 * @see <a href="http://schema.org/geospatiallyCrosses">http://schema.org/geospatiallyCrosses</a>
 		 */
 		public Container.GeospatiallyCrosses getGeospatiallyCrosses();
 		public void setGeospatiallyCrosses(Container.GeospatiallyCrosses geospatiallyCrosses);
 
 		/**
-		 * uri: http://schema.org/geospatiallyDisjoint
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyDisjoint
+		 * @see <a href="http://schema.org/geospatiallyDisjoint">http://schema.org/geospatiallyDisjoint</a>
 		 */
 		public Container.GeospatiallyDisjoint getGeospatiallyDisjoint();
 		public void setGeospatiallyDisjoint(Container.GeospatiallyDisjoint geospatiallyDisjoint);
 
 		/**
-		 * uri: http://schema.org/geospatiallyEquals
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyEquals
+		 * @see <a href="http://schema.org/geospatiallyEquals">http://schema.org/geospatiallyEquals</a>
 		 */
 		public Container.GeospatiallyEquals getGeospatiallyEquals();
 		public void setGeospatiallyEquals(Container.GeospatiallyEquals geospatiallyEquals);
 
 		/**
-		 * uri: http://schema.org/geospatiallyIntersects
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyIntersects
+		 * @see <a href="http://schema.org/geospatiallyIntersects">http://schema.org/geospatiallyIntersects</a>
 		 */
 		public Container.GeospatiallyIntersects getGeospatiallyIntersects();
 		public void setGeospatiallyIntersects(Container.GeospatiallyIntersects geospatiallyIntersects);
 
 		/**
-		 * uri: http://schema.org/geospatiallyOverlaps
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyOverlaps
+		 * @see <a href="http://schema.org/geospatiallyOverlaps">http://schema.org/geospatiallyOverlaps</a>
 		 */
 		public Container.GeospatiallyOverlaps getGeospatiallyOverlaps();
 		public void setGeospatiallyOverlaps(Container.GeospatiallyOverlaps geospatiallyOverlaps);
 
 		/**
-		 * uri: http://schema.org/geospatiallyTouches
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyTouches
+		 * @see <a href="http://schema.org/geospatiallyTouches">http://schema.org/geospatiallyTouches</a>
 		 */
 		public Container.GeospatiallyTouches getGeospatiallyTouches();
 		public void setGeospatiallyTouches(Container.GeospatiallyTouches geospatiallyTouches);
 
 		/**
-		 * uri: http://schema.org/geospatiallyWithin
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyWithin
+		 * @see <a href="http://schema.org/geospatiallyWithin">http://schema.org/geospatiallyWithin</a>
 		 */
 		public Container.GeospatiallyWithin getGeospatiallyWithin();
 		public void setGeospatiallyWithin(Container.GeospatiallyWithin geospatiallyWithin);
@@ -549,64 +532,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HealthInsurancePlan extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/benefitsSummaryUrl
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BenefitsSummaryUrl
+		 * @see <a href="http://schema.org/benefitsSummaryUrl">http://schema.org/benefitsSummaryUrl</a>
 		 */
 		public Container.BenefitsSummaryUrl getBenefitsSummaryUrl();
 		public void setBenefitsSummaryUrl(Container.BenefitsSummaryUrl benefitsSummaryUrl);
 
 		/**
-		 * uri: http://schema.org/contactPoint
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContactPoint
+		 * @see <a href="http://schema.org/contactPoint">http://schema.org/contactPoint</a>
 		 */
 		public ContactPoint getContactPoint();
 		public void setContactPoint(ContactPoint contactPoint);
 
 		/**
-		 * uri: http://schema.org/healthPlanDrugOption
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanDrugOption
+		 * @see <a href="http://schema.org/healthPlanDrugOption">http://schema.org/healthPlanDrugOption</a>
 		 */
 		public Container.HealthPlanDrugOption getHealthPlanDrugOption();
 		public void setHealthPlanDrugOption(Container.HealthPlanDrugOption healthPlanDrugOption);
 
 		/**
-		 * uri: http://schema.org/healthPlanDrugTier
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanDrugTier
+		 * @see <a href="http://schema.org/healthPlanDrugTier">http://schema.org/healthPlanDrugTier</a>
 		 */
 		public Container.HealthPlanDrugTier getHealthPlanDrugTier();
 		public void setHealthPlanDrugTier(Container.HealthPlanDrugTier healthPlanDrugTier);
 
 		/**
-		 * uri: http://schema.org/healthPlanId
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanId
+		 * @see <a href="http://schema.org/healthPlanId">http://schema.org/healthPlanId</a>
 		 */
 		public Container.HealthPlanId getHealthPlanId();
 		public void setHealthPlanId(Container.HealthPlanId healthPlanId);
 
 		/**
-		 * uri: http://schema.org/healthPlanMarketingUrl
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanMarketingUrl
+		 * @see <a href="http://schema.org/healthPlanMarketingUrl">http://schema.org/healthPlanMarketingUrl</a>
 		 */
 		public Container.HealthPlanMarketingUrl getHealthPlanMarketingUrl();
 		public void setHealthPlanMarketingUrl(Container.HealthPlanMarketingUrl healthPlanMarketingUrl);
 
 		/**
-		 * uri: http://schema.org/includesHealthPlanFormulary
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.IncludesHealthPlanFormulary
+		 * @see <a href="http://schema.org/includesHealthPlanFormulary">http://schema.org/includesHealthPlanFormulary</a>
 		 */
 		public Container.IncludesHealthPlanFormulary getIncludesHealthPlanFormulary();
 		public void setIncludesHealthPlanFormulary(Container.IncludesHealthPlanFormulary includesHealthPlanFormulary);
 
 		/**
-		 * uri: http://schema.org/includesHealthPlanNetwork
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.IncludesHealthPlanNetwork
+		 * @see <a href="http://schema.org/includesHealthPlanNetwork">http://schema.org/includesHealthPlanNetwork</a>
 		 */
 		public Container.IncludesHealthPlanNetwork getIncludesHealthPlanNetwork();
 		public void setIncludesHealthPlanNetwork(Container.IncludesHealthPlanNetwork includesHealthPlanNetwork);
 
 		/**
-		 * uri: http://schema.org/usesHealthPlanIdStandard
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.UsesHealthPlanIdStandard
+		 * @see <a href="http://schema.org/usesHealthPlanIdStandard">http://schema.org/usesHealthPlanIdStandard</a>
 		 */
 		public Container.UsesHealthPlanIdStandard getUsesHealthPlanIdStandard();
 		public void setUsesHealthPlanIdStandard(Container.UsesHealthPlanIdStandard usesHealthPlanIdStandard);
@@ -627,36 +601,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HealthPlanCostSharingSpecification extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthPlanCoinsuranceOption
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCoinsuranceOption
+		 * @see <a href="http://schema.org/healthPlanCoinsuranceOption">http://schema.org/healthPlanCoinsuranceOption</a>
 		 */
 		public Container.HealthPlanCoinsuranceOption getHealthPlanCoinsuranceOption();
 		public void setHealthPlanCoinsuranceOption(Container.HealthPlanCoinsuranceOption healthPlanCoinsuranceOption);
 
 		/**
-		 * uri: http://schema.org/healthPlanCoinsuranceRate
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCoinsuranceRate
+		 * @see <a href="http://schema.org/healthPlanCoinsuranceRate">http://schema.org/healthPlanCoinsuranceRate</a>
 		 */
 		public Container.HealthPlanCoinsuranceRate getHealthPlanCoinsuranceRate();
 		public void setHealthPlanCoinsuranceRate(Container.HealthPlanCoinsuranceRate healthPlanCoinsuranceRate);
 
 		/**
-		 * uri: http://schema.org/healthPlanCopay
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCopay
+		 * @see <a href="http://schema.org/healthPlanCopay">http://schema.org/healthPlanCopay</a>
 		 */
 		public Container.HealthPlanCopay getHealthPlanCopay();
 		public void setHealthPlanCopay(Container.HealthPlanCopay healthPlanCopay);
 
 		/**
-		 * uri: http://schema.org/healthPlanCopayOption
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCopayOption
+		 * @see <a href="http://schema.org/healthPlanCopayOption">http://schema.org/healthPlanCopayOption</a>
 		 */
 		public Container.HealthPlanCopayOption getHealthPlanCopayOption();
 		public void setHealthPlanCopayOption(Container.HealthPlanCopayOption healthPlanCopayOption);
 
 		/**
-		 * uri: http://schema.org/healthPlanPharmacyCategory
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanPharmacyCategory
+		 * @see <a href="http://schema.org/healthPlanPharmacyCategory">http://schema.org/healthPlanPharmacyCategory</a>
 		 */
 		public Container.HealthPlanPharmacyCategory getHealthPlanPharmacyCategory();
 		public void setHealthPlanPharmacyCategory(Container.HealthPlanPharmacyCategory healthPlanPharmacyCategory);
@@ -678,22 +647,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HealthPlanFormulary extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthPlanCostSharing
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCostSharing
+		 * @see <a href="http://schema.org/healthPlanCostSharing">http://schema.org/healthPlanCostSharing</a>
 		 */
 		public Container.HealthPlanCostSharing getHealthPlanCostSharing();
 		public void setHealthPlanCostSharing(Container.HealthPlanCostSharing healthPlanCostSharing);
 
 		/**
-		 * uri: http://schema.org/healthPlanDrugTier
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanDrugTier
+		 * @see <a href="http://schema.org/healthPlanDrugTier">http://schema.org/healthPlanDrugTier</a>
 		 */
 		public Container.HealthPlanDrugTier getHealthPlanDrugTier();
 		public void setHealthPlanDrugTier(Container.HealthPlanDrugTier healthPlanDrugTier);
 
 		/**
-		 * uri: http://schema.org/offersPrescriptionByMail
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.OffersPrescriptionByMail
+		 * @see <a href="http://schema.org/offersPrescriptionByMail">http://schema.org/offersPrescriptionByMail</a>
 		 */
 		public Container.OffersPrescriptionByMail getOffersPrescriptionByMail();
 		public void setOffersPrescriptionByMail(Container.OffersPrescriptionByMail offersPrescriptionByMail);
@@ -714,22 +680,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HealthPlanNetwork extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthPlanCostSharing
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCostSharing
+		 * @see <a href="http://schema.org/healthPlanCostSharing">http://schema.org/healthPlanCostSharing</a>
 		 */
 		public Container.HealthPlanCostSharing getHealthPlanCostSharing();
 		public void setHealthPlanCostSharing(Container.HealthPlanCostSharing healthPlanCostSharing);
 
 		/**
-		 * uri: http://schema.org/healthPlanNetworkId
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanNetworkId
+		 * @see <a href="http://schema.org/healthPlanNetworkId">http://schema.org/healthPlanNetworkId</a>
 		 */
 		public Container.HealthPlanNetworkId getHealthPlanNetworkId();
 		public void setHealthPlanNetworkId(Container.HealthPlanNetworkId healthPlanNetworkId);
 
 		/**
-		 * uri: http://schema.org/healthPlanNetworkTier
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanNetworkTier
+		 * @see <a href="http://schema.org/healthPlanNetworkTier">http://schema.org/healthPlanNetworkTier</a>
 		 */
 		public Container.HealthPlanNetworkTier getHealthPlanNetworkTier();
 		public void setHealthPlanNetworkTier(Container.HealthPlanNetworkTier healthPlanNetworkTier);
@@ -797,106 +760,91 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Legislation extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/legislationAppliedBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationAppliedBy
+		 * @see <a href="http://schema.org/legislationAppliedBy">http://schema.org/legislationAppliedBy</a>
 		 */
 		public Container.LegislationAppliedBy getLegislationAppliedBy();
 		public void setLegislationAppliedBy(Container.LegislationAppliedBy legislationAppliedBy);
 
 		/**
-		 * uri: http://schema.org/legislationApplies
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationApplies
+		 * @see <a href="http://schema.org/legislationApplies">http://schema.org/legislationApplies</a>
 		 */
 		public Container.LegislationApplies getLegislationApplies();
 		public void setLegislationApplies(Container.LegislationApplies legislationApplies);
 
 		/**
-		 * uri: http://schema.org/legislationChangedBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationChangedBy
+		 * @see <a href="http://schema.org/legislationChangedBy">http://schema.org/legislationChangedBy</a>
 		 */
 		public Container.LegislationChangedBy getLegislationChangedBy();
 		public void setLegislationChangedBy(Container.LegislationChangedBy legislationChangedBy);
 
 		/**
-		 * uri: http://schema.org/legislationChanges
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationChanges
+		 * @see <a href="http://schema.org/legislationChanges">http://schema.org/legislationChanges</a>
 		 */
 		public Container.LegislationChanges getLegislationChanges();
 		public void setLegislationChanges(Container.LegislationChanges legislationChanges);
 
 		/**
-		 * uri: http://schema.org/legislationConsolidatedBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationConsolidatedBy
+		 * @see <a href="http://schema.org/legislationConsolidatedBy">http://schema.org/legislationConsolidatedBy</a>
 		 */
 		public Container.LegislationConsolidatedBy getLegislationConsolidatedBy();
 		public void setLegislationConsolidatedBy(Container.LegislationConsolidatedBy legislationConsolidatedBy);
 
 		/**
-		 * uri: http://schema.org/legislationConsolidates
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationConsolidates
+		 * @see <a href="http://schema.org/legislationConsolidates">http://schema.org/legislationConsolidates</a>
 		 */
 		public Container.LegislationConsolidates getLegislationConsolidates();
 		public void setLegislationConsolidates(Container.LegislationConsolidates legislationConsolidates);
 
 		/**
-		 * uri: http://schema.org/legislationDate
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationDate
+		 * @see <a href="http://schema.org/legislationDate">http://schema.org/legislationDate</a>
 		 */
 		public Container.LegislationDate getLegislationDate();
 		public void setLegislationDate(Container.LegislationDate legislationDate);
 
 		/**
-		 * uri: http://schema.org/legislationDateVersion
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationDateVersion
+		 * @see <a href="http://schema.org/legislationDateVersion">http://schema.org/legislationDateVersion</a>
 		 */
 		public Container.LegislationDateVersion getLegislationDateVersion();
 		public void setLegislationDateVersion(Container.LegislationDateVersion legislationDateVersion);
 
 		/**
-		 * uri: http://schema.org/legislationIdentifier
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationIdentifier
+		 * @see <a href="http://schema.org/legislationIdentifier">http://schema.org/legislationIdentifier</a>
 		 */
 		public Container.LegislationIdentifier getLegislationIdentifier();
 		public void setLegislationIdentifier(Container.LegislationIdentifier legislationIdentifier);
 
 		/**
-		 * uri: http://schema.org/legislationLegalForce
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationLegalForce
+		 * @see <a href="http://schema.org/legislationLegalForce">http://schema.org/legislationLegalForce</a>
 		 */
 		public Container.LegislationLegalForce getLegislationLegalForce();
 		public void setLegislationLegalForce(Container.LegislationLegalForce legislationLegalForce);
 
 		/**
-		 * uri: http://schema.org/legislationPassedBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationPassedBy
+		 * @see <a href="http://schema.org/legislationPassedBy">http://schema.org/legislationPassedBy</a>
 		 */
 		public Container.LegislationPassedBy getLegislationPassedBy();
 		public void setLegislationPassedBy(Container.LegislationPassedBy legislationPassedBy);
 
 		/**
-		 * uri: http://schema.org/legislationResponsible
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationResponsible
+		 * @see <a href="http://schema.org/legislationResponsible">http://schema.org/legislationResponsible</a>
 		 */
 		public Container.LegislationResponsible getLegislationResponsible();
 		public void setLegislationResponsible(Container.LegislationResponsible legislationResponsible);
 
 		/**
-		 * uri: http://schema.org/legislationTransposedBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationTransposedBy
+		 * @see <a href="http://schema.org/legislationTransposedBy">http://schema.org/legislationTransposedBy</a>
 		 */
 		public Container.LegislationTransposedBy getLegislationTransposedBy();
 		public void setLegislationTransposedBy(Container.LegislationTransposedBy legislationTransposedBy);
 
 		/**
-		 * uri: http://schema.org/legislationTransposes
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationTransposes
+		 * @see <a href="http://schema.org/legislationTransposes">http://schema.org/legislationTransposes</a>
 		 */
 		public Container.LegislationTransposes getLegislationTransposes();
 		public void setLegislationTransposes(Container.LegislationTransposes legislationTransposes);
 
 		/**
-		 * uri: http://schema.org/legislationType
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationType
+		 * @see <a href="http://schema.org/legislationType">http://schema.org/legislationType</a>
 		 */
 		public Container.LegislationType getLegislationType();
 		public void setLegislationType(Container.LegislationType legislationType);
@@ -919,8 +867,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LegislationObject extends Legislation, MediaObject, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/legislationLegalValue
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LegislationLegalValue
+		 * @see <a href="http://schema.org/legislationLegalValue">http://schema.org/legislationLegalValue</a>
 		 */
 		public Container.LegislationLegalValue getLegislationLegalValue();
 		public void setLegislationLegalValue(Container.LegislationLegalValue legislationLegalValue);
@@ -962,15 +909,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LinkRole extends Role, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/inLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InLanguage
+		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
 		 */
 		public InLanguage getInLanguage();
 		public void setInLanguage(InLanguage inLanguage);
 
 		/**
-		 * uri: http://schema.org/linkRelationship
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LinkRelationship
+		 * @see <a href="http://schema.org/linkRelationship">http://schema.org/linkRelationship</a>
 		 */
 		public Container.LinkRelationship getLinkRelationship();
 		public void setLinkRelationship(Container.LinkRelationship linkRelationship);
@@ -992,15 +937,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MoneyTransfer extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/amount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Amount
+		 * @see <a href="http://schema.org/amount">http://schema.org/amount</a>
 		 */
 		public Amount getAmount();
 		public void setAmount(Amount amount);
 
 		/**
-		 * uri: http://schema.org/beneficiaryBank
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BeneficiaryBank
+		 * @see <a href="http://schema.org/beneficiaryBank">http://schema.org/beneficiaryBank</a>
 		 */
 		public Container.BeneficiaryBank getBeneficiaryBank();
 		public void setBeneficiaryBank(Container.BeneficiaryBank beneficiaryBank);
@@ -1022,15 +965,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MortgageLoan extends LoanOrCredit, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/domiciledMortgage
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.DomiciledMortgage
+		 * @see <a href="http://schema.org/domiciledMortgage">http://schema.org/domiciledMortgage</a>
 		 */
 		public Container.DomiciledMortgage getDomiciledMortgage();
 		public void setDomiciledMortgage(Container.DomiciledMortgage domiciledMortgage);
 
 		/**
-		 * uri: http://schema.org/loanMortgageMandateAmount
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LoanMortgageMandateAmount
+		 * @see <a href="http://schema.org/loanMortgageMandateAmount">http://schema.org/loanMortgageMandateAmount</a>
 		 */
 		public Container.LoanMortgageMandateAmount getLoanMortgageMandateAmount();
 		public void setLoanMortgageMandateAmount(Container.LoanMortgageMandateAmount loanMortgageMandateAmount);
@@ -1051,57 +992,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface NewsMediaOrganization extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actionableFeedbackPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ActionableFeedbackPolicy
+		 * @see <a href="http://schema.org/actionableFeedbackPolicy">http://schema.org/actionableFeedbackPolicy</a>
 		 */
 		public Container.ActionableFeedbackPolicy getActionableFeedbackPolicy();
 		public void setActionableFeedbackPolicy(Container.ActionableFeedbackPolicy actionableFeedbackPolicy);
 
 		/**
-		 * uri: http://schema.org/correctionsPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CorrectionsPolicy
+		 * @see <a href="http://schema.org/correctionsPolicy">http://schema.org/correctionsPolicy</a>
 		 */
 		public Container.CorrectionsPolicy getCorrectionsPolicy();
 		public void setCorrectionsPolicy(Container.CorrectionsPolicy correctionsPolicy);
 
 		/**
-		 * uri: http://schema.org/diversityPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.DiversityPolicy
+		 * @see <a href="http://schema.org/diversityPolicy">http://schema.org/diversityPolicy</a>
 		 */
 		public Container.DiversityPolicy getDiversityPolicy();
 		public void setDiversityPolicy(Container.DiversityPolicy diversityPolicy);
 
 		/**
-		 * uri: http://schema.org/ethicsPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EthicsPolicy
+		 * @see <a href="http://schema.org/ethicsPolicy">http://schema.org/ethicsPolicy</a>
 		 */
 		public Container.EthicsPolicy getEthicsPolicy();
 		public void setEthicsPolicy(Container.EthicsPolicy ethicsPolicy);
 
 		/**
-		 * uri: http://schema.org/masthead
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Masthead
+		 * @see <a href="http://schema.org/masthead">http://schema.org/masthead</a>
 		 */
 		public Container.Masthead getMasthead();
 		public void setMasthead(Container.Masthead masthead);
 
 		/**
-		 * uri: http://schema.org/missionCoveragePrioritiesPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MissionCoveragePrioritiesPolicy
+		 * @see <a href="http://schema.org/missionCoveragePrioritiesPolicy">http://schema.org/missionCoveragePrioritiesPolicy</a>
 		 */
 		public Container.MissionCoveragePrioritiesPolicy getMissionCoveragePrioritiesPolicy();
 		public void setMissionCoveragePrioritiesPolicy(Container.MissionCoveragePrioritiesPolicy missionCoveragePrioritiesPolicy);
 
 		/**
-		 * uri: http://schema.org/unnamedSourcesPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.UnnamedSourcesPolicy
+		 * @see <a href="http://schema.org/unnamedSourcesPolicy">http://schema.org/unnamedSourcesPolicy</a>
 		 */
 		public Container.UnnamedSourcesPolicy getUnnamedSourcesPolicy();
 		public void setUnnamedSourcesPolicy(Container.UnnamedSourcesPolicy unnamedSourcesPolicy);
 
 		/**
-		 * uri: http://schema.org/verificationFactCheckingPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.VerificationFactCheckingPolicy
+		 * @see <a href="http://schema.org/verificationFactCheckingPolicy">http://schema.org/verificationFactCheckingPolicy</a>
 		 */
 		public Container.VerificationFactCheckingPolicy getVerificationFactCheckingPolicy();
 		public void setVerificationFactCheckingPolicy(Container.VerificationFactCheckingPolicy verificationFactCheckingPolicy);
@@ -1184,8 +1117,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Quotation extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/spokenByCharacter
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.SpokenByCharacter
+		 * @see <a href="http://schema.org/spokenByCharacter">http://schema.org/spokenByCharacter</a>
 		 */
 		public Container.SpokenByCharacter getSpokenByCharacter();
 		public void setSpokenByCharacter(Container.SpokenByCharacter spokenByCharacter);
@@ -1206,36 +1138,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface RepaymentSpecification extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/downPayment
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.DownPayment
+		 * @see <a href="http://schema.org/downPayment">http://schema.org/downPayment</a>
 		 */
 		public Container.DownPayment getDownPayment();
 		public void setDownPayment(Container.DownPayment downPayment);
 
 		/**
-		 * uri: http://schema.org/earlyPrepaymentPenalty
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EarlyPrepaymentPenalty
+		 * @see <a href="http://schema.org/earlyPrepaymentPenalty">http://schema.org/earlyPrepaymentPenalty</a>
 		 */
 		public Container.EarlyPrepaymentPenalty getEarlyPrepaymentPenalty();
 		public void setEarlyPrepaymentPenalty(Container.EarlyPrepaymentPenalty earlyPrepaymentPenalty);
 
 		/**
-		 * uri: http://schema.org/loanPaymentAmount
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LoanPaymentAmount
+		 * @see <a href="http://schema.org/loanPaymentAmount">http://schema.org/loanPaymentAmount</a>
 		 */
 		public Container.LoanPaymentAmount getLoanPaymentAmount();
 		public void setLoanPaymentAmount(Container.LoanPaymentAmount loanPaymentAmount);
 
 		/**
-		 * uri: http://schema.org/loanPaymentFrequency
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LoanPaymentFrequency
+		 * @see <a href="http://schema.org/loanPaymentFrequency">http://schema.org/loanPaymentFrequency</a>
 		 */
 		public Container.LoanPaymentFrequency getLoanPaymentFrequency();
 		public void setLoanPaymentFrequency(Container.LoanPaymentFrequency loanPaymentFrequency);
 
 		/**
-		 * uri: http://schema.org/numberOfLoanPayments
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.NumberOfLoanPayments
+		 * @see <a href="http://schema.org/numberOfLoanPayments">http://schema.org/numberOfLoanPayments</a>
 		 */
 		public Container.NumberOfLoanPayments getNumberOfLoanPayments();
 		public void setNumberOfLoanPayments(Container.NumberOfLoanPayments numberOfLoanPayments);
@@ -1347,50 +1274,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Schedule extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/byDay
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ByDay
+		 * @see <a href="http://schema.org/byDay">http://schema.org/byDay</a>
 		 */
 		public Container.ByDay getByDay();
 		public void setByDay(Container.ByDay byDay);
 
 		/**
-		 * uri: http://schema.org/byMonth
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ByMonth
+		 * @see <a href="http://schema.org/byMonth">http://schema.org/byMonth</a>
 		 */
 		public Container.ByMonth getByMonth();
 		public void setByMonth(Container.ByMonth byMonth);
 
 		/**
-		 * uri: http://schema.org/byMonthDay
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ByMonthDay
+		 * @see <a href="http://schema.org/byMonthDay">http://schema.org/byMonthDay</a>
 		 */
 		public Container.ByMonthDay getByMonthDay();
 		public void setByMonthDay(Container.ByMonthDay byMonthDay);
 
 		/**
-		 * uri: http://schema.org/eventSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EventSchedule
+		 * @see <a href="http://schema.org/eventSchedule">http://schema.org/eventSchedule</a>
 		 */
 		public Container.EventSchedule getEventSchedule();
 		public void setEventSchedule(Container.EventSchedule eventSchedule);
 
 		/**
-		 * uri: http://schema.org/exceptDate
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ExceptDate
+		 * @see <a href="http://schema.org/exceptDate">http://schema.org/exceptDate</a>
 		 */
 		public Container.ExceptDate getExceptDate();
 		public void setExceptDate(Container.ExceptDate exceptDate);
 
 		/**
-		 * uri: http://schema.org/repeatCount
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.RepeatCount
+		 * @see <a href="http://schema.org/repeatCount">http://schema.org/repeatCount</a>
 		 */
 		public Container.RepeatCount getRepeatCount();
 		public void setRepeatCount(Container.RepeatCount repeatCount);
 
 		/**
-		 * uri: http://schema.org/repeatFrequency
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.RepeatFrequency
+		 * @see <a href="http://schema.org/repeatFrequency">http://schema.org/repeatFrequency</a>
 		 */
 		public Container.RepeatFrequency getRepeatFrequency();
 		public void setRepeatFrequency(Container.RepeatFrequency repeatFrequency);
@@ -1417,15 +1337,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SpeakableSpecification extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/cssSelector
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CssSelector
+		 * @see <a href="http://schema.org/cssSelector">http://schema.org/cssSelector</a>
 		 */
 		public Container.CssSelector getCssSelector();
 		public void setCssSelector(Container.CssSelector cssSelector);
 
 		/**
-		 * uri: http://schema.org/xpath
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Xpath
+		 * @see <a href="http://schema.org/xpath">http://schema.org/xpath</a>
 		 */
 		public Container.Xpath getXpath();
 		public void setXpath(Container.Xpath xpath);
@@ -1463,8 +1381,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WebAPI extends SchemaOrgClass, Service {
 
 		/**
-		 * uri: http://schema.org/documentation
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Documentation
+		 * @see <a href="http://schema.org/documentation">http://schema.org/documentation</a>
 		 */
 		public Container.Documentation getDocumentation();
 		public void setDocumentation(Container.Documentation documentation);

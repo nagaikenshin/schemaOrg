@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.restrictedDiet;
+package org.kyojo.schemaorg.m3n3.gson.core.restrictedDiet;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.restrictedDiet.KOSHER_DIET;
-import org.kyojo.schemaOrg.m3n3.core.RestrictedDiet.KosherDiet;
+import org.kyojo.schemaorg.m3n3.core.restrictedDiet.KOSHER_DIET;
+import org.kyojo.schemaorg.m3n3.core.RestrictedDiet.KosherDiet;
 
 public class KosherDietDeserializer implements JsonDeserializer<KosherDiet> {
 

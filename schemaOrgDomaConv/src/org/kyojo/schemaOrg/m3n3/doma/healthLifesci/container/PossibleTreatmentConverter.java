@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.POSSIBLE_TREATMENT;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.PossibleTreatment;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.POSSIBLE_TREATMENT;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.PossibleTreatment;
 
 @ExternalDomain
 public class PossibleTreatmentConverter implements DomainConverter<PossibleTreatment, String> {

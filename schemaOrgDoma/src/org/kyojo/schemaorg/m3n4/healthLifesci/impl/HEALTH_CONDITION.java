@@ -1,0 +1,103 @@
+package org.kyojo.schemaorg.m3n4.healthLifesci.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalCondition;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
+import org.kyojo.schemaorg.m3n4.healthLifesci.impl.MEDICAL_CONDITION;
+
+import org.seasar.doma.Transient;
+
+public class HEALTH_CONDITION implements Container.HealthCondition {
+
+	private static final long serialVersionUID = 1L;
+
+	@Transient
+	public List<MedicalCondition> medicalConditionList;
+
+	public HEALTH_CONDITION() {
+	}
+
+	public HEALTH_CONDITION(String string) {
+		this(new MEDICAL_CONDITION(string));
+	}
+
+	public String getString() {
+		if(medicalConditionList == null || medicalConditionList.size() == 0 || medicalConditionList.get(0) == null) {
+			return null;
+		} else {
+			Name name = medicalConditionList.get(0).getName();
+			if(name == null || name.getTextList() == null || name.getTextList().size() == 0 || name.getTextList().get(0) == null) {
+				return null;
+			} else {
+				return name.getTextList().get(0).getString();
+			}
+		}
+	}
+
+	public void setString(String string) {
+		if(medicalConditionList == null) {
+			medicalConditionList = new ArrayList<MedicalCondition>();
+		}
+		if(medicalConditionList.size() == 0) {
+			medicalConditionList.add(new MEDICAL_CONDITION(string));
+		} else {
+			medicalConditionList.set(0, new MEDICAL_CONDITION(string));
+		}
+	}
+
+	public HEALTH_CONDITION(MedicalCondition medicalCondition) {
+		medicalConditionList = new ArrayList<MedicalCondition>();
+		medicalConditionList.add(medicalCondition);
+	}
+
+	@Override
+	public MedicalCondition getMedicalCondition() {
+		if(medicalConditionList != null && medicalConditionList.size() > 0) {
+			return medicalConditionList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalCondition(MedicalCondition medicalCondition) {
+		if(medicalConditionList == null) {
+			medicalConditionList = new ArrayList<>();
+		}
+		if(medicalConditionList.size() == 0) {
+			medicalConditionList.add(medicalCondition);
+		} else {
+			medicalConditionList.set(0, medicalCondition);
+		}
+	}
+
+	@Override
+	public List<MedicalCondition> getMedicalConditionList() {
+		return medicalConditionList;
+	}
+
+	@Override
+	public void setMedicalConditionList(List<MedicalCondition> medicalConditionList) {
+		this.medicalConditionList = medicalConditionList;
+	}
+
+	@Override
+	public boolean hasMedicalCondition() {
+		return medicalConditionList != null && medicalConditionList.size() > 0 && medicalConditionList.get(0) != null;
+	}
+
+	@Override
+	public String getNativeValue() {
+		return getString();
+	}
+
+	@Override
+	public String toString() {
+		return SimpleJsonBuilder.toJson(this);
+	}
+
+}

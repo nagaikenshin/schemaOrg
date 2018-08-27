@@ -1,37 +1,37 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz;
-import org.kyojo.schemaOrg.m3n3.core.Container.ActionStatus;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
-import org.kyojo.schemaOrg.m3n3.core.Container.Agent;
-import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
-import org.kyojo.schemaOrg.m3n3.core.Container.Description;
-import org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription;
-import org.kyojo.schemaOrg.m3n3.core.Container.EndTime;
-import org.kyojo.schemaOrg.m3n3.core.Container.Error;
-import org.kyojo.schemaOrg.m3n3.core.Container.Identifier;
-import org.kyojo.schemaOrg.m3n3.core.Container.Image;
-import org.kyojo.schemaOrg.m3n3.core.Container.Instrument;
-import org.kyojo.schemaOrg.m3n3.core.Container.Location;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameRuby;
-import org.kyojo.schemaOrg.m3n3.core.Container.Object;
-import org.kyojo.schemaOrg.m3n3.core.Container.Participant;
-import org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.Result;
-import org.kyojo.schemaOrg.m3n3.core.Container.SameAs;
-import org.kyojo.schemaOrg.m3n3.core.Container.StartTime;
-import org.kyojo.schemaOrg.m3n3.core.Container.Target;
-import org.kyojo.schemaOrg.m3n3.core.Container.Url;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
-import org.kyojo.schemaOrg.m3n3.core.impl.NAME;
-import org.kyojo.schemaOrg.m3n3.core.impl.TEXT;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz;
+import org.kyojo.schemaorg.m3n3.core.Container.ActionStatus;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.Container.Agent;
+import org.kyojo.schemaorg.m3n3.core.Container.AlternateName;
+import org.kyojo.schemaorg.m3n3.core.Container.Description;
+import org.kyojo.schemaorg.m3n3.core.Container.DisambiguatingDescription;
+import org.kyojo.schemaorg.m3n3.core.Container.EndTime;
+import org.kyojo.schemaorg.m3n3.core.Container.Error;
+import org.kyojo.schemaorg.m3n3.core.Container.Identifier;
+import org.kyojo.schemaorg.m3n3.core.Container.Image;
+import org.kyojo.schemaorg.m3n3.core.Container.Instrument;
+import org.kyojo.schemaorg.m3n3.core.Container.Location;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.Container.NameFuzzy;
+import org.kyojo.schemaorg.m3n3.core.Container.NameRuby;
+import org.kyojo.schemaorg.m3n3.core.Container.Object;
+import org.kyojo.schemaorg.m3n3.core.Container.Participant;
+import org.kyojo.schemaorg.m3n3.core.Container.PotentialAction;
+import org.kyojo.schemaorg.m3n3.core.Container.Result;
+import org.kyojo.schemaorg.m3n3.core.Container.SameAs;
+import org.kyojo.schemaorg.m3n3.core.Container.StartTime;
+import org.kyojo.schemaorg.m3n3.core.Container.Target;
+import org.kyojo.schemaorg.m3n3.core.Container.Url;
+import org.kyojo.schemaorg.m3n3.core.DataType;
+import org.kyojo.schemaorg.m3n3.core.impl.NAME;
+import org.kyojo.schemaorg.m3n3.core.impl.TEXT;
 
 public class DRAW_ACTION implements Clazz.DrawAction {
 

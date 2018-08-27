@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.INCLUDES_HEALTH_PLAN_NETWORK;
-import org.kyojo.schemaOrg.m3n3.pending.Container.IncludesHealthPlanNetwork;
+import org.kyojo.schemaorg.m3n3.pending.impl.INCLUDES_HEALTH_PLAN_NETWORK;
+import org.kyojo.schemaorg.m3n3.pending.Container.IncludesHealthPlanNetwork;
 
 @ExternalDomain
 public class IncludesHealthPlanNetworkConverter implements DomainConverter<IncludesHealthPlanNetwork, String> {

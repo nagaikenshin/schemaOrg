@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.OPTICIAN;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Optician;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.OPTICIAN;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.Optician;
 
 @ExternalDomain
 public class OpticianConverter implements DomainConverter<Optician, String> {

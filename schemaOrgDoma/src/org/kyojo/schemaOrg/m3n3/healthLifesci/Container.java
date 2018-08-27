@@ -1,31 +1,31 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci;
+package org.kyojo.schemaorg.m3n3.healthLifesci;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgProperty;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.AdministrativeArea;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Duration;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Energy;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.EventStatusType;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Hospital;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.ImageObject;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Organization;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Person;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Thing;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.URL;
-import org.kyojo.schemaOrg.m3n3.core.Container.Instrument;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Boolean;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Date;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Number;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgProperty;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.AdministrativeArea;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Duration;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Energy;
+import org.kyojo.schemaorg.m3n3.core.Clazz.EventStatusType;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Hospital;
+import org.kyojo.schemaorg.m3n3.core.Clazz.ImageObject;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Organization;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Person;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QualitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Thing;
+import org.kyojo.schemaorg.m3n3.core.Clazz.URL;
+import org.kyojo.schemaorg.m3n3.core.Container.Instrument;
+import org.kyojo.schemaorg.m3n3.core.DataType.Boolean;
+import org.kyojo.schemaorg.m3n3.core.DataType.Date;
+import org.kyojo.schemaorg.m3n3.core.DataType.Number;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
@@ -46,8 +46,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Action extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -69,8 +68,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ActiveIngredient extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -92,8 +90,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ActivityDuration extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Duration
+		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
 		 */
 		public Duration getDuration();
 		public void setDuration(Duration duration);
@@ -102,8 +99,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasDuration();
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -125,8 +121,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ActivityFrequency extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -135,8 +130,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -160,8 +154,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AdditionalVariable extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -183,8 +176,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AdministrationRoute extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -209,8 +201,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AdverseOutcome extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -231,8 +222,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AffectedBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Drug
+		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
 		 */
 		public Clazz.Drug getDrug();
 		public void setDrug(Clazz.Drug drug);
@@ -255,8 +245,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AlcoholWarning extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -278,8 +267,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Algorithm extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -301,8 +289,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Antagonist extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Muscle
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Muscle
+		 * @see <a href="http://schema.org/Muscle">http://schema.org/Muscle</a>
 		 */
 		public Clazz.Muscle getMuscle();
 		public void setMuscle(Clazz.Muscle muscle);
@@ -324,8 +311,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ApplicableLocation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AdministrativeArea
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.AdministrativeArea
+		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
 		 */
 		public AdministrativeArea getAdministrativeArea();
 		public void setAdministrativeArea(AdministrativeArea administrativeArea);
@@ -347,8 +333,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ArterialBranch extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -371,8 +356,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AssociatedAnatomy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -381,24 +365,22 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasAnatomicalStructure();
 
 		/**
-		 * uri: http://schema.org/SuperficialAnatomy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.SuperficialAnatomy
-		 */
-		public Clazz.SuperficialAnatomy getSuperficialAnatomy();
-		public void setSuperficialAnatomy(Clazz.SuperficialAnatomy superficialAnatomy);
-		public List<Clazz.SuperficialAnatomy> getSuperficialAnatomyList();
-		public void setSuperficialAnatomyList(List<Clazz.SuperficialAnatomy> superficialAnatomyList);
-		public boolean hasSuperficialAnatomy();
-
-		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
+		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
 		 */
 		public Clazz.AnatomicalSystem getAnatomicalSystem();
 		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
 		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
 		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
 		public boolean hasAnatomicalSystem();
+
+		/**
+		 * @see <a href="http://schema.org/SuperficialAnatomy">http://schema.org/SuperficialAnatomy</a>
+		 */
+		public Clazz.SuperficialAnatomy getSuperficialAnatomy();
+		public void setSuperficialAnatomy(Clazz.SuperficialAnatomy superficialAnatomy);
+		public List<Clazz.SuperficialAnatomy> getSuperficialAnatomyList();
+		public void setSuperficialAnatomyList(List<Clazz.SuperficialAnatomy> superficialAnatomyList);
+		public boolean hasSuperficialAnatomy();
 
 		public String getNativeValue();
 
@@ -416,8 +398,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AssociatedPathophysiology extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -439,8 +420,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AvailableIn extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AdministrativeArea
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.AdministrativeArea
+		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
 		 */
 		public AdministrativeArea getAdministrativeArea();
 		public void setAdministrativeArea(AdministrativeArea administrativeArea);
@@ -462,8 +442,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AvailableService extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalProcedure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalProcedure
+		 * @see <a href="http://schema.org/MedicalProcedure">http://schema.org/MedicalProcedure</a>
 		 */
 		public Clazz.MedicalProcedure getMedicalProcedure();
 		public void setMedicalProcedure(Clazz.MedicalProcedure medicalProcedure);
@@ -472,8 +451,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalProcedure();
 
 		/**
-		 * uri: http://schema.org/MedicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
+		 * @see <a href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a>
 		 */
 		public Clazz.MedicalTest getMedicalTest();
 		public void setMedicalTest(Clazz.MedicalTest medicalTest);
@@ -482,8 +460,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalTest();
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -505,8 +482,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AvailableStrength extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugStrength
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugStrength
+		 * @see <a href="http://schema.org/DrugStrength">http://schema.org/DrugStrength</a>
 		 */
 		public Clazz.DrugStrength getDrugStrength();
 		public void setDrugStrength(Clazz.DrugStrength drugStrength);
@@ -528,8 +504,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AvailableTest extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
+		 * @see <a href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a>
 		 */
 		public Clazz.MedicalTest getMedicalTest();
 		public void setMedicalTest(Clazz.MedicalTest medicalTest);
@@ -553,8 +528,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Background extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -576,8 +550,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface BiomechnicalClass extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -599,8 +572,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface BloodSupply extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Vessel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Vessel
+		 * @see <a href="http://schema.org/Vessel">http://schema.org/Vessel</a>
 		 */
 		public Clazz.Vessel getVessel();
 		public void setVessel(Clazz.Vessel vessel);
@@ -622,8 +594,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface BodyLocation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -646,8 +617,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface BreastfeedingWarning extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -671,8 +641,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Cause extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCause
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCause
+		 * @see <a href="http://schema.org/MedicalCause">http://schema.org/MedicalCause</a>
 		 */
 		public Clazz.MedicalCause getMedicalCause();
 		public void setMedicalCause(Clazz.MedicalCause medicalCause);
@@ -694,8 +663,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface CauseOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -719,8 +687,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ClinicalPharmacology extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -743,8 +710,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Code extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCode
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCode
+		 * @see <a href="http://schema.org/MedicalCode">http://schema.org/MedicalCode</a>
 		 */
 		public Clazz.MedicalCode getMedicalCode();
 		public void setMedicalCode(Clazz.MedicalCode medicalCode);
@@ -765,8 +731,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface CodingSystem extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -790,8 +755,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ComprisedOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -800,8 +764,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasAnatomicalStructure();
 
 		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
+		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
 		 */
 		public Clazz.AnatomicalSystem getAnatomicalSystem();
 		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
@@ -823,8 +786,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ConnectedTo extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -845,24 +807,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Contraindication extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/MedicalContraindication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalContraindication
+		 * @see <a href="http://schema.org/MedicalContraindication">http://schema.org/MedicalContraindication</a>
 		 */
 		public Clazz.MedicalContraindication getMedicalContraindication();
 		public void setMedicalContraindication(Clazz.MedicalContraindication medicalContraindication);
 		public List<Clazz.MedicalContraindication> getMedicalContraindicationList();
 		public void setMedicalContraindicationList(List<Clazz.MedicalContraindication> medicalContraindicationList);
 		public boolean hasMedicalContraindication();
+
+		/**
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -878,8 +838,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Cost extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugCost
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugCost
+		 * @see <a href="http://schema.org/DrugCost">http://schema.org/DrugCost</a>
 		 */
 		public Clazz.DrugCost getDrugCost();
 		public void setDrugCost(Clazz.DrugCost drugCost);
@@ -901,8 +860,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface CostCategory extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugCostCategory
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugCostCategory
+		 * @see <a href="http://schema.org/DrugCostCategory">http://schema.org/DrugCostCategory</a>
 		 */
 		public Clazz.DrugCostCategory getDrugCostCategory();
 		public void setDrugCostCategory(Clazz.DrugCostCategory drugCostCategory);
@@ -925,8 +883,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface CostCurrency extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -949,8 +906,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface CostOrigin extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -971,8 +927,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface CostPerUnit extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
+		 */
+		public Number getNumber();
+		public void setNumber(Number number);
+		public List<Number> getNumberList();
+		public void setNumberList(List<Number> numberList);
+		public boolean hasNumber();
+
+		/**
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -981,24 +945,13 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
-		 */
-		public Number getNumber();
-		public void setNumber(Number number);
-		public List<Number> getNumberList();
-		public void setNumberList(List<Number> numberList);
-		public boolean hasNumber();
 
 		public String getNativeValue();
 
@@ -1015,8 +968,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Diagnosis extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCondition
+		 * @see <a href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a>
 		 */
 		public Clazz.MedicalCondition getMedicalCondition();
 		public void setMedicalCondition(Clazz.MedicalCondition medicalCondition);
@@ -1039,8 +991,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Diagram extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/ImageObject
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.ImageObject
+		 * @see <a href="http://schema.org/ImageObject">http://schema.org/ImageObject</a>
 		 */
 		public ImageObject getImageObject();
 		public void setImageObject(ImageObject imageObject);
@@ -1062,8 +1013,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Diet extends Instrument, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Diet
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Diet
+		 * @see <a href="http://schema.org/Diet">http://schema.org/Diet</a>
 		 */
 		public Clazz.Diet getDiet();
 		public void setDiet(Clazz.Diet diet);
@@ -1088,8 +1038,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DietFeatures extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1115,8 +1064,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DifferentialDiagnosis extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DDxElement
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DDxElement
+		 * @see <a href="http://schema.org/DDxElement">http://schema.org/DDxElement</a>
 		 */
 		public Clazz.DDxElement getDDxElement();
 		public void setDDxElement(Clazz.DDxElement ddxElement);
@@ -1139,8 +1087,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DistinguishingSign extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalSignOrSymptom
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSignOrSymptom
+		 * @see <a href="http://schema.org/MedicalSignOrSymptom">http://schema.org/MedicalSignOrSymptom</a>
 		 */
 		public Clazz.MedicalSignOrSymptom getMedicalSignOrSymptom();
 		public void setMedicalSignOrSymptom(Clazz.MedicalSignOrSymptom medicalSignOrSymptom);
@@ -1163,8 +1110,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DosageForm extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1187,8 +1133,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DoseSchedule extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DoseSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DoseSchedule
+		 * @see <a href="http://schema.org/DoseSchedule">http://schema.org/DoseSchedule</a>
 		 */
 		public Clazz.DoseSchedule getDoseSchedule();
 		public void setDoseSchedule(Clazz.DoseSchedule doseSchedule);
@@ -1209,8 +1154,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DoseUnit extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1231,8 +1175,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DoseValue extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
@@ -1241,8 +1184,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasNumber();
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -1264,8 +1206,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DrainsTo extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Vessel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Vessel
+		 * @see <a href="http://schema.org/Vessel">http://schema.org/Vessel</a>
 		 */
 		public Clazz.Vessel getVessel();
 		public void setVessel(Clazz.Vessel vessel);
@@ -1287,8 +1228,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Drug extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Drug
+		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
 		 */
 		public Clazz.Drug getDrug();
 		public void setDrug(Clazz.Drug drug);
@@ -1310,8 +1250,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DrugClass extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugClass
+		 * @see <a href="http://schema.org/DrugClass">http://schema.org/DrugClass</a>
 		 */
 		public Clazz.DrugClass getDrugClass();
 		public void setDrugClass(Clazz.DrugClass drugClass);
@@ -1333,8 +1272,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DrugUnit extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1356,8 +1294,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface DuplicateTherapy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -1379,24 +1316,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Endorsers extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
-		 */
-		public Person getPerson();
-		public void setPerson(Person person);
-		public List<Person> getPersonList();
-		public void setPersonList(List<Person> personList);
-		public boolean hasPerson();
-
-		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 * @see <a href="http://schema.org/Organization">http://schema.org/Organization</a>
 		 */
 		public Organization getOrganization();
 		public void setOrganization(Organization organization);
 		public List<Organization> getOrganizationList();
 		public void setOrganizationList(List<Organization> organizationList);
 		public boolean hasOrganization();
+
+		/**
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
+		 */
+		public Person getPerson();
+		public void setPerson(Person person);
+		public List<Person> getPersonList();
+		public void setPersonList(List<Person> personList);
+		public boolean hasPerson();
 
 		public String getNativeValue();
 
@@ -1412,8 +1347,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Epidemiology extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1435,8 +1369,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EstimatesRiskOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -1458,8 +1391,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EvidenceLevel extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEvidenceLevel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEvidenceLevel
+		 * @see <a href="http://schema.org/MedicalEvidenceLevel">http://schema.org/MedicalEvidenceLevel</a>
 		 */
 		public Clazz.MedicalEvidenceLevel getMedicalEvidenceLevel();
 		public void setMedicalEvidenceLevel(Clazz.MedicalEvidenceLevel medicalEvidenceLevel);
@@ -1482,8 +1414,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EvidenceOrigin extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1505,8 +1436,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExercisePlan extends Instrument, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/ExercisePlan
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.ExercisePlan
+		 * @see <a href="http://schema.org/ExercisePlan">http://schema.org/ExercisePlan</a>
 		 */
 		public Clazz.ExercisePlan getExercisePlan();
 		public void setExercisePlan(Clazz.ExercisePlan exercisePlan);
@@ -1528,8 +1458,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExerciseRelatedDiet extends Instrument, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Diet
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Diet
+		 * @see <a href="http://schema.org/Diet">http://schema.org/Diet</a>
 		 */
 		public Clazz.Diet getDiet();
 		public void setDiet(Clazz.Diet diet);
@@ -1552,8 +1481,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExerciseType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1576,8 +1504,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExpectedPrognosis extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1599,8 +1526,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ExpertConsiderations extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1622,8 +1548,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Followup extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1646,8 +1571,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface FoodWarning extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1669,8 +1593,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Frequency extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1691,8 +1614,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Function extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1714,8 +1636,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface FunctionalClass extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -1724,8 +1645,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalEntity();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1747,8 +1667,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Guideline extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalGuideline
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalGuideline
+		 * @see <a href="http://schema.org/MedicalGuideline">http://schema.org/MedicalGuideline</a>
 		 */
 		public Clazz.MedicalGuideline getMedicalGuideline();
 		public void setMedicalGuideline(Clazz.MedicalGuideline medicalGuideline);
@@ -1770,8 +1689,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface GuidelineDate extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Date
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Date
+		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
 		 */
 		public Date getDate();
 		public void setDate(Date date);
@@ -1793,8 +1711,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface GuidelineSubject extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -1817,8 +1734,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface HealthCondition extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCondition
+		 * @see <a href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a>
 		 */
 		public Clazz.MedicalCondition getMedicalCondition();
 		public void setMedicalCondition(Clazz.MedicalCondition medicalCondition);
@@ -1840,8 +1756,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface HospitalAffiliation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Hospital
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Hospital
+		 * @see <a href="http://schema.org/Hospital">http://schema.org/Hospital</a>
 		 */
 		public Hospital getHospital();
 		public void setHospital(Hospital hospital);
@@ -1862,8 +1777,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface HowPerformed extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -1885,8 +1799,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IdentifyingExam extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/PhysicalExam
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.PhysicalExam
+		 * @see <a href="http://schema.org/PhysicalExam">http://schema.org/PhysicalExam</a>
 		 */
 		public Clazz.PhysicalExam getPhysicalExam();
 		public void setPhysicalExam(Clazz.PhysicalExam physicalExam);
@@ -1908,8 +1821,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IdentifyingTest extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
+		 * @see <a href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a>
 		 */
 		public Clazz.MedicalTest getMedicalTest();
 		public void setMedicalTest(Clazz.MedicalTest medicalTest);
@@ -1930,8 +1842,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ImagingTechnique extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalImagingTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalImagingTechnique
+		 * @see <a href="http://schema.org/MedicalImagingTechnique">http://schema.org/MedicalImagingTechnique</a>
 		 */
 		public Clazz.MedicalImagingTechnique getMedicalImagingTechnique();
 		public void setMedicalImagingTechnique(Clazz.MedicalImagingTechnique medicalImagingTechnique);
@@ -1954,8 +1865,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IncludedRiskFactor extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalRiskFactor
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalRiskFactor
+		 * @see <a href="http://schema.org/MedicalRiskFactor">http://schema.org/MedicalRiskFactor</a>
 		 */
 		public Clazz.MedicalRiskFactor getMedicalRiskFactor();
 		public void setMedicalRiskFactor(Clazz.MedicalRiskFactor medicalRiskFactor);
@@ -1977,8 +1887,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IncreasesRiskOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -2003,8 +1912,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Indication extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalIndication
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalIndication
+		 * @see <a href="http://schema.org/MedicalIndication">http://schema.org/MedicalIndication</a>
 		 */
 		public Clazz.MedicalIndication getMedicalIndication();
 		public void setMedicalIndication(Clazz.MedicalIndication medicalIndication);
@@ -2026,8 +1934,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface InfectiousAgent extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2049,8 +1956,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface InfectiousAgentClass extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/InfectiousAgentClass
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.InfectiousAgentClass
+		 * @see <a href="http://schema.org/InfectiousAgentClass">http://schema.org/InfectiousAgentClass</a>
 		 */
 		public Clazz.InfectiousAgentClass getInfectiousAgentClass();
 		public void setInfectiousAgentClass(Clazz.InfectiousAgentClass infectiousAgentClass);
@@ -2072,8 +1978,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Insertion extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -2096,24 +2001,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Intensity extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
 		public List<QualitativeValue> getQualitativeValueList();
 		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
 		public boolean hasQualitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -2131,8 +2034,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface InteractingDrug extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Drug
+		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
 		 */
 		public Clazz.Drug getDrug();
 		public void setDrug(Clazz.Drug drug);
@@ -2154,8 +2056,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IsAvailableGenerically extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Boolean
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Boolean
+		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
 		 */
 		public Boolean getB00lean();
 		public void setB00lean(Boolean b00lean);
@@ -2177,8 +2078,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface IsProprietary extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Boolean
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Boolean
+		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
 		 */
 		public Boolean getB00lean();
 		public void setB00lean(Boolean b00lean);
@@ -2199,8 +2099,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface LabelDetails extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
 		 */
 		public URL getURL();
 		public void setURL(URL url);
@@ -2223,8 +2122,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface LegalStatus extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugLegalStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugLegalStatus
+		 * @see <a href="http://schema.org/DrugLegalStatus">http://schema.org/DrugLegalStatus</a>
 		 */
 		public Clazz.DrugLegalStatus getDrugLegalStatus();
 		public void setDrugLegalStatus(Clazz.DrugLegalStatus drugLegalStatus);
@@ -2233,8 +2131,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasDrugLegalStatus();
 
 		/**
-		 * uri: http://schema.org/MedicalEnumeration
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEnumeration
+		 * @see <a href="http://schema.org/MedicalEnumeration">http://schema.org/MedicalEnumeration</a>
 		 */
 		public Clazz.MedicalEnumeration getMedicalEnumeration();
 		public void setMedicalEnumeration(Clazz.MedicalEnumeration medicalEnumeration);
@@ -2243,8 +2140,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalEnumeration();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2267,8 +2163,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MaximumIntake extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MaximumDoseSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MaximumDoseSchedule
+		 * @see <a href="http://schema.org/MaximumDoseSchedule">http://schema.org/MaximumDoseSchedule</a>
 		 */
 		public Clazz.MaximumDoseSchedule getMaximumDoseSchedule();
 		public void setMaximumDoseSchedule(Clazz.MaximumDoseSchedule maximumDoseSchedule);
@@ -2291,8 +2186,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MechanismOfAction extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2313,8 +2207,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MedicalSpecialty extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSpecialty
+		 * @see <a href="http://schema.org/MedicalSpecialty">http://schema.org/MedicalSpecialty</a>
 		 */
 		public Clazz.MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(Clazz.MedicalSpecialty medicalSpecialty);
@@ -2337,8 +2230,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MedicineSystem extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicineSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicineSystem
+		 * @see <a href="http://schema.org/MedicineSystem">http://schema.org/MedicineSystem</a>
 		 */
 		public Clazz.MedicineSystem getMedicineSystem();
 		public void setMedicineSystem(Clazz.MedicineSystem medicineSystem);
@@ -2359,8 +2251,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MuscleAction extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2383,8 +2274,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface NaturalProgression extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2406,8 +2296,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Nerve extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Nerve
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Nerve
+		 * @see <a href="http://schema.org/Nerve">http://schema.org/Nerve</a>
 		 */
 		public Clazz.Nerve getNerve();
 		public void setNerve(Clazz.Nerve nerve);
@@ -2429,8 +2318,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface NerveMotor extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Muscle
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Muscle
+		 * @see <a href="http://schema.org/Muscle">http://schema.org/Muscle</a>
 		 */
 		public Clazz.Muscle getMuscle();
 		public void setMuscle(Clazz.Muscle muscle);
@@ -2452,8 +2340,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface NonProprietaryName extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2475,8 +2362,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface NormalRange extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEnumeration
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEnumeration
+		 * @see <a href="http://schema.org/MedicalEnumeration">http://schema.org/MedicalEnumeration</a>
 		 */
 		public Clazz.MedicalEnumeration getMedicalEnumeration();
 		public void setMedicalEnumeration(Clazz.MedicalEnumeration medicalEnumeration);
@@ -2485,8 +2371,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalEnumeration();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2508,8 +2393,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Origin extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -2531,8 +2415,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface OriginatesFrom extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Vessel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Vessel
+		 * @see <a href="http://schema.org/Vessel">http://schema.org/Vessel</a>
 		 */
 		public Clazz.Vessel getVessel();
 		public void setVessel(Clazz.Vessel vessel);
@@ -2554,8 +2437,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Outcome extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -2564,8 +2446,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalEntity();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2588,8 +2469,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Overdosage extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2613,8 +2493,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Overview extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2636,8 +2515,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PartOfSystem extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
+		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
 		 */
 		public Clazz.AnatomicalSystem getAnatomicalSystem();
 		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
@@ -2660,8 +2538,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Pathophysiology extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2682,8 +2559,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Phase extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2705,8 +2581,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PhysiologicalBenefits extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2728,8 +2603,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Population extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2753,8 +2627,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PossibleComplication extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2776,8 +2649,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PossibleTreatment extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -2800,8 +2672,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PostOp extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2824,8 +2695,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PreOp extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2846,8 +2716,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PregnancyCategory extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugPregnancyCategory
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugPregnancyCategory
+		 * @see <a href="http://schema.org/DrugPregnancyCategory">http://schema.org/DrugPregnancyCategory</a>
 		 */
 		public Clazz.DrugPregnancyCategory getDrugPregnancyCategory();
 		public void setDrugPregnancyCategory(Clazz.DrugPregnancyCategory drugPregnancyCategory);
@@ -2870,8 +2739,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PregnancyWarning extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2894,8 +2762,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Preparation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -2904,8 +2771,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasMedicalEntity();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2927,8 +2793,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PrescribingInfo extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
 		 */
 		public URL getURL();
 		public void setURL(URL url);
@@ -2951,8 +2816,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PrescriptionStatus extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/DrugPrescriptionStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DrugPrescriptionStatus
+		 * @see <a href="http://schema.org/DrugPrescriptionStatus">http://schema.org/DrugPrescriptionStatus</a>
 		 */
 		public Clazz.DrugPrescriptionStatus getDrugPrescriptionStatus();
 		public void setDrugPrescriptionStatus(Clazz.DrugPrescriptionStatus drugPrescriptionStatus);
@@ -2961,8 +2825,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasDrugPrescriptionStatus();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -2985,8 +2848,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PrimaryPrevention extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -3009,8 +2871,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Procedure extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3032,8 +2893,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ProcedureType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalProcedureType
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalProcedureType
+		 * @see <a href="http://schema.org/MedicalProcedureType">http://schema.org/MedicalProcedureType</a>
 		 */
 		public Clazz.MedicalProcedureType getMedicalProcedureType();
 		public void setMedicalProcedureType(Clazz.MedicalProcedureType medicalProcedureType);
@@ -3055,8 +2915,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ProprietaryName extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3080,8 +2939,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PublicationType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3103,24 +2961,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Purpose extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Thing
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Thing
-		 */
-		public Thing getThing();
-		public void setThing(Thing thing);
-		public List<Thing> getThingList();
-		public void setThingList(List<Thing> thingList);
-		public boolean hasThing();
-
-		/**
-		 * uri: http://schema.org/MedicalDevicePurpose
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalDevicePurpose
+		 * @see <a href="http://schema.org/MedicalDevicePurpose">http://schema.org/MedicalDevicePurpose</a>
 		 */
 		public Clazz.MedicalDevicePurpose getMedicalDevicePurpose();
 		public void setMedicalDevicePurpose(Clazz.MedicalDevicePurpose medicalDevicePurpose);
 		public List<Clazz.MedicalDevicePurpose> getMedicalDevicePurposeList();
 		public void setMedicalDevicePurposeList(List<Clazz.MedicalDevicePurpose> medicalDevicePurposeList);
 		public boolean hasMedicalDevicePurpose();
+
+		/**
+		 * @see <a href="http://schema.org/Thing">http://schema.org/Thing</a>
+		 */
+		public Thing getThing();
+		public void setThing(Thing thing);
+		public List<Thing> getThingList();
+		public void setThingList(List<Thing> thingList);
+		public boolean hasThing();
 
 		public String getNativeValue();
 
@@ -3137,8 +2993,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RecognizingAuthority extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 * @see <a href="http://schema.org/Organization">http://schema.org/Organization</a>
 		 */
 		public Organization getOrganization();
 		public void setOrganization(Organization organization);
@@ -3160,8 +3015,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RecommendationStrength extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3184,8 +3038,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RecommendedIntake extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/RecommendedDoseSchedule
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.RecommendedDoseSchedule
+		 * @see <a href="http://schema.org/RecommendedDoseSchedule">http://schema.org/RecommendedDoseSchedule</a>
 		 */
 		public Clazz.RecommendedDoseSchedule getRecommendedDoseSchedule();
 		public void setRecommendedDoseSchedule(Clazz.RecommendedDoseSchedule recommendedDoseSchedule);
@@ -3208,8 +3061,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RegionDrained extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -3218,8 +3070,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasAnatomicalStructure();
 
 		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
+		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
 		 */
 		public Clazz.AnatomicalSystem getAnatomicalSystem();
 		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
@@ -3241,24 +3092,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedAnatomy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalSystem
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalSystem
-		 */
-		public Clazz.AnatomicalSystem getAnatomicalSystem();
-		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
-		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
-		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
-		public boolean hasAnatomicalSystem();
-
-		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
 		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
 		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
 		public boolean hasAnatomicalStructure();
+
+		/**
+		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
+		 */
+		public Clazz.AnatomicalSystem getAnatomicalSystem();
+		public void setAnatomicalSystem(Clazz.AnatomicalSystem anatomicalSystem);
+		public List<Clazz.AnatomicalSystem> getAnatomicalSystemList();
+		public void setAnatomicalSystemList(List<Clazz.AnatomicalSystem> anatomicalSystemList);
+		public boolean hasAnatomicalSystem();
 
 		public String getNativeValue();
 
@@ -3274,8 +3123,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedCondition extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCondition
+		 * @see <a href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a>
 		 */
 		public Clazz.MedicalCondition getMedicalCondition();
 		public void setMedicalCondition(Clazz.MedicalCondition medicalCondition);
@@ -3298,8 +3146,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedDrug extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Drug
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Drug
+		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
 		 */
 		public Clazz.Drug getDrug();
 		public void setDrug(Clazz.Drug drug);
@@ -3322,8 +3169,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedStructure extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -3345,8 +3191,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelatedTherapy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -3368,8 +3213,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RelevantSpecialty extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSpecialty
+		 * @see <a href="http://schema.org/MedicalSpecialty">http://schema.org/MedicalSpecialty</a>
 		 */
 		public Clazz.MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(Clazz.MedicalSpecialty medicalSpecialty);
@@ -3391,24 +3235,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Repetitions extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
-
-		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -3424,8 +3266,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RestPeriods extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -3434,8 +3275,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3458,8 +3298,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RiskFactor extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalRiskFactor
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalRiskFactor
+		 * @see <a href="http://schema.org/MedicalRiskFactor">http://schema.org/MedicalRiskFactor</a>
 		 */
 		public Clazz.MedicalRiskFactor getMedicalRiskFactor();
 		public void setMedicalRiskFactor(Clazz.MedicalRiskFactor medicalRiskFactor);
@@ -3481,8 +3320,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Risks extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3504,8 +3342,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RunsTo extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Vessel
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Vessel
+		 * @see <a href="http://schema.org/Vessel">http://schema.org/Vessel</a>
 		 */
 		public Clazz.Vessel getVessel();
 		public void setVessel(Clazz.Vessel vessel);
@@ -3529,8 +3366,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SafetyConsideration extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3553,8 +3389,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SecondaryPrevention extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTherapy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTherapy
+		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
 		 */
 		public Clazz.MedicalTherapy getMedicalTherapy();
 		public void setMedicalTherapy(Clazz.MedicalTherapy medicalTherapy);
@@ -3577,24 +3412,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface SensoryUnit extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/SuperficialAnatomy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.SuperficialAnatomy
-		 */
-		public Clazz.SuperficialAnatomy getSuperficialAnatomy();
-		public void setSuperficialAnatomy(Clazz.SuperficialAnatomy superficialAnatomy);
-		public List<Clazz.SuperficialAnatomy> getSuperficialAnatomyList();
-		public void setSuperficialAnatomyList(List<Clazz.SuperficialAnatomy> superficialAnatomyList);
-		public boolean hasSuperficialAnatomy();
-
-		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
 		public List<Clazz.AnatomicalStructure> getAnatomicalStructureList();
 		public void setAnatomicalStructureList(List<Clazz.AnatomicalStructure> anatomicalStructureList);
 		public boolean hasAnatomicalStructure();
+
+		/**
+		 * @see <a href="http://schema.org/SuperficialAnatomy">http://schema.org/SuperficialAnatomy</a>
+		 */
+		public Clazz.SuperficialAnatomy getSuperficialAnatomy();
+		public void setSuperficialAnatomy(Clazz.SuperficialAnatomy superficialAnatomy);
+		public List<Clazz.SuperficialAnatomy> getSuperficialAnatomyList();
+		public void setSuperficialAnatomyList(List<Clazz.SuperficialAnatomy> superficialAnatomyList);
+		public boolean hasSuperficialAnatomy();
 
 		public String getNativeValue();
 
@@ -3615,8 +3448,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SeriousAdverseOutcome extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -3637,8 +3469,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SignDetected extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalSign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSign
+		 * @see <a href="http://schema.org/MedicalSign">http://schema.org/MedicalSign</a>
 		 */
 		public Clazz.MedicalSign getMedicalSign();
 		public void setMedicalSign(Clazz.MedicalSign medicalSign);
@@ -3662,8 +3493,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SignOrSymptom extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalSignOrSymptom
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalSignOrSymptom
+		 * @see <a href="http://schema.org/MedicalSignOrSymptom">http://schema.org/MedicalSignOrSymptom</a>
 		 */
 		public Clazz.MedicalSignOrSymptom getMedicalSignOrSymptom();
 		public void setMedicalSignOrSymptom(Clazz.MedicalSignOrSymptom medicalSignOrSymptom);
@@ -3687,8 +3517,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Significance extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3710,8 +3539,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Source extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -3733,8 +3561,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SourcedFrom extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/BrainStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.BrainStructure
+		 * @see <a href="http://schema.org/BrainStructure">http://schema.org/BrainStructure</a>
 		 */
 		public Clazz.BrainStructure getBrainStructure();
 		public void setBrainStructure(Clazz.BrainStructure brainStructure);
@@ -3756,8 +3583,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Stage extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalConditionStage
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalConditionStage
+		 * @see <a href="http://schema.org/MedicalConditionStage">http://schema.org/MedicalConditionStage</a>
 		 */
 		public Clazz.MedicalConditionStage getMedicalConditionStage();
 		public void setMedicalConditionStage(Clazz.MedicalConditionStage medicalConditionStage);
@@ -3779,8 +3605,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StageAsNumber extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
@@ -3801,18 +3626,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Status extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/EventStatusType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.EventStatusType
+		 * @see <a href="http://schema.org/EventStatusType">http://schema.org/EventStatusType</a>
 		 */
 		public EventStatusType getEventStatusType();
 		public void setEventStatusType(EventStatusType eventStatusType);
@@ -3821,14 +3635,22 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasEventStatusType();
 
 		/**
-		 * uri: http://schema.org/MedicalStudyStatus
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalStudyStatus
+		 * @see <a href="http://schema.org/MedicalStudyStatus">http://schema.org/MedicalStudyStatus</a>
 		 */
 		public Clazz.MedicalStudyStatus getMedicalStudyStatus();
 		public void setMedicalStudyStatus(Clazz.MedicalStudyStatus medicalStudyStatus);
 		public List<Clazz.MedicalStudyStatus> getMedicalStudyStatusList();
 		public void setMedicalStudyStatusList(List<Clazz.MedicalStudyStatus> medicalStudyStatusList);
 		public boolean hasMedicalStudyStatus();
+
+		/**
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -3844,8 +3666,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StrengthUnit extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3867,8 +3688,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StrengthValue extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
@@ -3890,8 +3710,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StructuralClass extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -3913,8 +3732,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Study extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalStudy
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalStudy
+		 * @see <a href="http://schema.org/MedicalStudy">http://schema.org/MedicalStudy</a>
 		 */
 		public Clazz.MedicalStudy getMedicalStudy();
 		public void setMedicalStudy(Clazz.MedicalStudy medicalStudy);
@@ -3936,8 +3754,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StudyDesign extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalObservationalStudyDesign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalObservationalStudyDesign
+		 * @see <a href="http://schema.org/MedicalObservationalStudyDesign">http://schema.org/MedicalObservationalStudyDesign</a>
 		 */
 		public Clazz.MedicalObservationalStudyDesign getMedicalObservationalStudyDesign();
 		public void setMedicalObservationalStudyDesign(Clazz.MedicalObservationalStudyDesign medicalObservationalStudyDesign);
@@ -3959,8 +3776,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StudyLocation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AdministrativeArea
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.AdministrativeArea
+		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
 		 */
 		public AdministrativeArea getAdministrativeArea();
 		public void setAdministrativeArea(AdministrativeArea administrativeArea);
@@ -3983,8 +3799,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface StudySubject extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalEntity
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalEntity
+		 * @see <a href="http://schema.org/MedicalEntity">http://schema.org/MedicalEntity</a>
 		 */
 		public Clazz.MedicalEntity getMedicalEntity();
 		public void setMedicalEntity(Clazz.MedicalEntity medicalEntity);
@@ -4005,8 +3820,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SubStageSuffix extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -4028,8 +3842,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SubStructure extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -4050,8 +3863,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SubTest extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
+		 * @see <a href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a>
 		 */
 		public Clazz.MedicalTest getMedicalTest();
 		public void setMedicalTest(Clazz.MedicalTest medicalTest);
@@ -4074,8 +3886,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Subtype extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -4097,8 +3908,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface SupplyTo extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -4121,8 +3931,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TargetPopulation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -4144,8 +3953,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TissueSample extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -4168,8 +3976,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TransmissionMethod extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -4191,8 +3998,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TrialDesign extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTrialDesign
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTrialDesign
+		 * @see <a href="http://schema.org/MedicalTrialDesign">http://schema.org/MedicalTrialDesign</a>
 		 */
 		public Clazz.MedicalTrialDesign getMedicalTrialDesign();
 		public void setMedicalTrialDesign(Clazz.MedicalTrialDesign medicalTrialDesign);
@@ -4215,8 +4021,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Tributary extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/AnatomicalStructure
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure
+		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
 		 */
 		public Clazz.AnatomicalStructure getAnatomicalStructure();
 		public void setAnatomicalStructure(Clazz.AnatomicalStructure anatomicalStructure);
@@ -4238,8 +4043,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TypicalTest extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalTest
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTest
+		 * @see <a href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a>
 		 */
 		public Clazz.MedicalTest getMedicalTest();
 		public void setMedicalTest(Clazz.MedicalTest medicalTest);
@@ -4261,8 +4065,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface UsedToDiagnose extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalCondition
+		 * @see <a href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a>
 		 */
 		public Clazz.MedicalCondition getMedicalCondition();
 		public void setMedicalCondition(Clazz.MedicalCondition medicalCondition);
@@ -4283,8 +4086,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface UsesDevice extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/MedicalDevice
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalDevice
+		 * @see <a href="http://schema.org/MedicalDevice">http://schema.org/MedicalDevice</a>
 		 */
 		public Clazz.MedicalDevice getMedicalDevice();
 		public void setMedicalDevice(Clazz.MedicalDevice medicalDevice);
@@ -4306,24 +4108,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Warning extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -4340,24 +4140,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface Workload extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
-		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
-
-		/**
-		 * uri: http://schema.org/Energy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Energy
+		 * @see <a href="http://schema.org/Energy">http://schema.org/Energy</a>
 		 */
 		public Energy getEnergy();
 		public void setEnergy(Energy energy);
 		public List<Energy> getEnergyList();
 		public void setEnergyList(List<Energy> energyList);
 		public boolean hasEnergy();
+
+		/**
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
+		 */
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
 
 		public String getNativeValue();
 

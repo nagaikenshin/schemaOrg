@@ -1,21 +1,21 @@
-package org.kyojo.schemaOrg.m3n3.auto;
+package org.kyojo.schemaorg.m3n3.auto;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgProperty;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.auto.Clazz;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.URL;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Date;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Number;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgProperty;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.auto.Clazz;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QualitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QuantitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.URL;
+import org.kyojo.schemaorg.m3n3.core.DataType.Date;
+import org.kyojo.schemaorg.m3n3.core.DataType.Number;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
@@ -44,8 +44,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AccelerationTime extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -69,8 +68,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface AcrissCode extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -93,18 +91,16 @@ public interface Container extends SchemaOrgProperty {
 	public interface BodyType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
+		public QualitativeValue getQualitativeValue();
+		public void setQualitativeValue(QualitativeValue qualitativeValue);
+		public List<QualitativeValue> getQualitativeValueList();
+		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
+		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -113,14 +109,13 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasText();
 
 		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
 		 */
-		public QualitativeValue getQualitativeValue();
-		public void setQualitativeValue(QualitativeValue qualitativeValue);
-		public List<QualitativeValue> getQualitativeValueList();
-		public void setQualitativeValueList(List<QualitativeValue> qualitativeValueList);
-		public boolean hasQualitativeValue();
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -138,8 +133,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EmissionsCO2 extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
@@ -169,8 +163,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EngineDisplacement extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -203,8 +196,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EnginePower extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -226,18 +218,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface EngineType extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -246,8 +227,16 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
+
+		/**
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
 		 */
 		public URL getURL();
 		public void setURL(URL url);
@@ -273,8 +262,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface FuelCapacity extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -296,18 +284,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface MeetsEmissionStandard extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/URL
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.URL
-		 */
-		public URL getURL();
-		public void setURL(URL url);
-		public List<URL> getURLList();
-		public void setURLList(List<URL> urlList);
-		public boolean hasURL();
-
-		/**
-		 * uri: http://schema.org/QualitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue
+		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
 		 */
 		public QualitativeValue getQualitativeValue();
 		public void setQualitativeValue(QualitativeValue qualitativeValue);
@@ -316,14 +293,22 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasQualitativeValue();
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
 		public List<Text> getTextList();
 		public void setTextList(List<Text> textList);
 		public boolean hasText();
+
+		/**
+		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
+		 */
+		public URL getURL();
+		public void setURL(URL url);
+		public List<URL> getURLList();
+		public void setURLList(List<URL> urlList);
+		public boolean hasURL();
 
 		public String getNativeValue();
 
@@ -340,8 +325,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ModelDate extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Date
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Date
+		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
 		 */
 		public Date getDate();
 		public void setDate(Date date);
@@ -379,8 +363,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Payload extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -415,8 +398,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface RoofLoad extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -440,24 +422,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface SeatingCapacity extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
-		 */
-		public QuantitativeValue getQuantitativeValue();
-		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
-		public List<QuantitativeValue> getQuantitativeValueList();
-		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
-		public boolean hasQuantitativeValue();
-
-		/**
-		 * uri: http://schema.org/Number
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Number
+		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
 		public void setNumber(Number number);
 		public List<Number> getNumberList();
 		public void setNumberList(List<Number> numberList);
 		public boolean hasNumber();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
+		 */
+		public QuantitativeValue getQuantitativeValue();
+		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
+		public List<QuantitativeValue> getQuantitativeValueList();
+		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
+		public boolean hasQuantitativeValue();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -483,8 +463,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Speed extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -520,8 +499,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TongueWeight extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -552,8 +530,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Torque extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -586,8 +563,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TrailerWeight extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -612,24 +588,22 @@ public interface Container extends SchemaOrgProperty {
 	public interface VehicleSpecialUsage extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
-		 */
-		public Text getText();
-		public void setText(Text text);
-		public List<Text> getTextList();
-		public void setTextList(List<Text> textList);
-		public boolean hasText();
-
-		/**
-		 * uri: http://schema.org/CarUsageType
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Clazz.CarUsageType
+		 * @see <a href="http://schema.org/CarUsageType">http://schema.org/CarUsageType</a>
 		 */
 		public Clazz.CarUsageType getCarUsageType();
 		public void setCarUsageType(Clazz.CarUsageType carUsageType);
 		public List<Clazz.CarUsageType> getCarUsageTypeList();
 		public void setCarUsageTypeList(List<Clazz.CarUsageType> carUsageTypeList);
 		public boolean hasCarUsageType();
+
+		/**
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
+		 */
+		public Text getText();
+		public void setText(Text text);
+		public List<Text> getTextList();
+		public void setTextList(List<Text> textList);
+		public boolean hasText();
 
 		public String getNativeValue();
 
@@ -658,8 +632,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface WeightTotal extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);
@@ -683,8 +656,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Wheelbase extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/QuantitativeValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue
+		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
 		public void setQuantitativeValue(QuantitativeValue quantitativeValue);

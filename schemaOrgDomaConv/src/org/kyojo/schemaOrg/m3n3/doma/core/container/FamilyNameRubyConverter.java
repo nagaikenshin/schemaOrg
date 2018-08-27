@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.FAMILY_NAME_RUBY;
-import org.kyojo.schemaOrg.m3n3.core.Container.FamilyNameRuby;
+import org.kyojo.schemaorg.m3n3.core.impl.FAMILY_NAME_RUBY;
+import org.kyojo.schemaorg.m3n3.core.Container.FamilyNameRuby;
 
 @ExternalDomain
 public class FamilyNameRubyConverter implements DomainConverter<FamilyNameRuby, String> {

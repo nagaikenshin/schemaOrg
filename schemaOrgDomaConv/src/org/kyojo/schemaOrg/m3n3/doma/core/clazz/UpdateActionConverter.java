@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.UPDATE_ACTION;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.UpdateAction;
+import org.kyojo.schemaorg.m3n3.core.impl.UPDATE_ACTION;
+import org.kyojo.schemaorg.m3n3.core.Clazz.UpdateAction;
 
 @ExternalDomain
 public class UpdateActionConverter implements DomainConverter<UpdateAction, String> {

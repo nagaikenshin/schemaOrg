@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.bookFormatType;
+package org.kyojo.schemaorg.m3n3.doma.core.bookFormatType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.bookFormatType.AUDIOBOOK_FORMAT;
-import org.kyojo.schemaOrg.m3n3.core.BookFormatType.AudiobookFormat;
+import org.kyojo.schemaorg.m3n3.core.bookFormatType.AUDIOBOOK_FORMAT;
+import org.kyojo.schemaorg.m3n3.core.BookFormatType.AudiobookFormat;
 
 @ExternalDomain
 public class AudiobookFormatConverter implements DomainConverter<AudiobookFormat, String> {

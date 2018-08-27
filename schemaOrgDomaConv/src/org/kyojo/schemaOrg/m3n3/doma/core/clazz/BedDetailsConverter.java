@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.BED_DETAILS;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.BedDetails;
+import org.kyojo.schemaorg.m3n3.core.impl.BED_DETAILS;
+import org.kyojo.schemaorg.m3n3.core.Clazz.BedDetails;
 
 @ExternalDomain
 public class BedDetailsConverter implements DomainConverter<BedDetails, String> {

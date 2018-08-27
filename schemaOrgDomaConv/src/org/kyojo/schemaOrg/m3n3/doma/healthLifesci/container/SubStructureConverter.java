@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.SUB_STRUCTURE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SubStructure;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.SUB_STRUCTURE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.SubStructure;
 
 @ExternalDomain
 public class SubStructureConverter implements DomainConverter<SubStructure, String> {

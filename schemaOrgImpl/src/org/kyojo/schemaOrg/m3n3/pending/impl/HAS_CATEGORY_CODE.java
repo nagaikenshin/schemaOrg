@@ -1,14 +1,14 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.CategoryCode;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
-import org.kyojo.schemaOrg.m3n3.pending.impl.CATEGORY_CODE;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.CategoryCode;
+import org.kyojo.schemaorg.m3n3.pending.Container;
+import org.kyojo.schemaorg.m3n3.pending.impl.CATEGORY_CODE;
 
 public class HAS_CATEGORY_CODE implements Container.HasCategoryCode {
 

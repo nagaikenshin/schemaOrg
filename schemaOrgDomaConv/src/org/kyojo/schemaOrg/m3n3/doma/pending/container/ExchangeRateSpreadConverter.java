@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.EXCHANGE_RATE_SPREAD;
-import org.kyojo.schemaOrg.m3n3.pending.Container.ExchangeRateSpread;
+import org.kyojo.schemaorg.m3n3.pending.impl.EXCHANGE_RATE_SPREAD;
+import org.kyojo.schemaorg.m3n3.pending.Container.ExchangeRateSpread;
 
 @ExternalDomain
 public class ExchangeRateSpreadConverter implements DomainConverter<ExchangeRateSpread, BigDecimal> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.TREATMENT_INDICATION;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.TreatmentIndication;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.TREATMENT_INDICATION;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.TreatmentIndication;
 
 @ExternalDomain
 public class TreatmentIndicationConverter implements DomainConverter<TreatmentIndication, String> {

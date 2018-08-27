@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.EXERCISE_COURSE;
-import org.kyojo.schemaOrg.m3n3.core.Container.ExerciseCourse;
+import org.kyojo.schemaorg.m3n3.core.impl.EXERCISE_COURSE;
+import org.kyojo.schemaorg.m3n3.core.Container.ExerciseCourse;
 
 @ExternalDomain
 public class ExerciseCourseConverter implements DomainConverter<ExerciseCourse, String> {

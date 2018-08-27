@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
 
 public class BUS_NAME implements Container.BusName {
 

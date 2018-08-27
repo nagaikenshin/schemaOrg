@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.digitalDocumentPermissionType;
+package org.kyojo.schemaorg.m3n3.doma.core.digitalDocumentPermissionType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.digitalDocumentPermissionType.COMMENT_PERMISSION;
-import org.kyojo.schemaOrg.m3n3.core.DigitalDocumentPermissionType.CommentPermission;
+import org.kyojo.schemaorg.m3n3.core.digitalDocumentPermissionType.COMMENT_PERMISSION;
+import org.kyojo.schemaorg.m3n3.core.DigitalDocumentPermissionType.CommentPermission;
 
 @ExternalDomain
 public class CommentPermissionConverter implements DomainConverter<CommentPermission, String> {

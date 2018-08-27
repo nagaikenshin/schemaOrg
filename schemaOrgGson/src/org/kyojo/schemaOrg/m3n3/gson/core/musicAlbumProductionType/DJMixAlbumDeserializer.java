@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.musicAlbumProductionType;
+package org.kyojo.schemaorg.m3n3.gson.core.musicAlbumProductionType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.musicAlbumProductionType.DJ_MIX_ALBUM;
-import org.kyojo.schemaOrg.m3n3.core.MusicAlbumProductionType.DJMixAlbum;
+import org.kyojo.schemaorg.m3n3.core.musicAlbumProductionType.DJ_MIX_ALBUM;
+import org.kyojo.schemaorg.m3n3.core.MusicAlbumProductionType.DJMixAlbum;
 
 public class DJMixAlbumDeserializer implements JsonDeserializer<DJMixAlbum> {
 

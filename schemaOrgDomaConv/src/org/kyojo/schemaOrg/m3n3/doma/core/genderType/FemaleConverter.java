@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.genderType;
+package org.kyojo.schemaorg.m3n3.doma.core.genderType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.genderType.FEMALE;
-import org.kyojo.schemaOrg.m3n3.core.GenderType.Female;
+import org.kyojo.schemaorg.m3n3.core.genderType.FEMALE;
+import org.kyojo.schemaorg.m3n3.core.GenderType.Female;
 
 @ExternalDomain
 public class FemaleConverter implements DomainConverter<Female, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.FILE_SIZE;
-import org.kyojo.schemaOrg.m3n3.core.Container.FileSize;
+import org.kyojo.schemaorg.m3n3.core.impl.FILE_SIZE;
+import org.kyojo.schemaorg.m3n3.core.Container.FileSize;
 
 @ExternalDomain
 public class FileSizeConverter implements DomainConverter<FileSize, String> {

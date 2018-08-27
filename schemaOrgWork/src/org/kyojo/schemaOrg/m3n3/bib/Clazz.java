@@ -1,22 +1,22 @@
-package org.kyojo.schemaOrg.m3n3.bib;
+package org.kyojo.schemaorg.m3n3.bib;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.bib.Container;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.AudioObject;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Book;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Periodical;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.PublicationIssue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.VisualArtwork;
-import org.kyojo.schemaOrg.m3n3.core.Container.PageEnd;
-import org.kyojo.schemaOrg.m3n3.core.Container.PageStart;
-import org.kyojo.schemaOrg.m3n3.core.Container.Pagination;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.bib.Container;
+import org.kyojo.schemaorg.m3n3.core.Clazz.AudioObject;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Book;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Periodical;
+import org.kyojo.schemaorg.m3n3.core.Clazz.PublicationIssue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.VisualArtwork;
+import org.kyojo.schemaorg.m3n3.core.Container.PageEnd;
+import org.kyojo.schemaorg.m3n3.core.Container.PageStart;
+import org.kyojo.schemaorg.m3n3.core.Container.Pagination;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -49,8 +49,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Audiobook extends AudioObject, Book, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/readBy
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.ReadBy
+		 * @see <a href="http://schema.org/readBy">http://schema.org/readBy</a>
 		 */
 		public Container.ReadBy getReadBy();
 		public void setReadBy(Container.ReadBy readBy);
@@ -72,22 +71,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Chapter extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/pageEnd
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageEnd
+		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
 		 */
 		public PageEnd getPageEnd();
 		public void setPageEnd(PageEnd pageEnd);
 
 		/**
-		 * uri: http://schema.org/pageStart
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageStart
+		 * @see <a href="http://schema.org/pageStart">http://schema.org/pageStart</a>
 		 */
 		public PageStart getPageStart();
 		public void setPageStart(PageStart pageStart);
 
 		/**
-		 * uri: http://schema.org/pagination
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Pagination
+		 * @see <a href="http://schema.org/pagination">http://schema.org/pagination</a>
 		 */
 		public Pagination getPagination();
 		public void setPagination(Pagination pagination);
@@ -142,43 +138,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ComicIssue extends PublicationIssue, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/artist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Artist
+		 * @see <a href="http://schema.org/artist">http://schema.org/artist</a>
 		 */
 		public Container.Artist getArtist();
 		public void setArtist(Container.Artist artist);
 
 		/**
-		 * uri: http://schema.org/colorist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Colorist
+		 * @see <a href="http://schema.org/colorist">http://schema.org/colorist</a>
 		 */
 		public Container.Colorist getColorist();
 		public void setColorist(Container.Colorist colorist);
 
 		/**
-		 * uri: http://schema.org/inker
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Inker
+		 * @see <a href="http://schema.org/inker">http://schema.org/inker</a>
 		 */
 		public Container.Inker getInker();
 		public void setInker(Container.Inker inker);
 
 		/**
-		 * uri: http://schema.org/letterer
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Letterer
+		 * @see <a href="http://schema.org/letterer">http://schema.org/letterer</a>
 		 */
 		public Container.Letterer getLetterer();
 		public void setLetterer(Container.Letterer letterer);
 
 		/**
-		 * uri: http://schema.org/penciler
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Penciler
+		 * @see <a href="http://schema.org/penciler">http://schema.org/penciler</a>
 		 */
 		public Container.Penciler getPenciler();
 		public void setPenciler(Container.Penciler penciler);
 
 		/**
-		 * uri: http://schema.org/variantCover
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.VariantCover
+		 * @see <a href="http://schema.org/variantCover">http://schema.org/variantCover</a>
 		 */
 		public Container.VariantCover getVariantCover();
 		public void setVariantCover(Container.VariantCover variantCover);
@@ -217,36 +207,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ComicStory extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/artist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Artist
+		 * @see <a href="http://schema.org/artist">http://schema.org/artist</a>
 		 */
 		public Container.Artist getArtist();
 		public void setArtist(Container.Artist artist);
 
 		/**
-		 * uri: http://schema.org/colorist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Colorist
+		 * @see <a href="http://schema.org/colorist">http://schema.org/colorist</a>
 		 */
 		public Container.Colorist getColorist();
 		public void setColorist(Container.Colorist colorist);
 
 		/**
-		 * uri: http://schema.org/inker
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Inker
+		 * @see <a href="http://schema.org/inker">http://schema.org/inker</a>
 		 */
 		public Container.Inker getInker();
 		public void setInker(Container.Inker inker);
 
 		/**
-		 * uri: http://schema.org/letterer
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Letterer
+		 * @see <a href="http://schema.org/letterer">http://schema.org/letterer</a>
 		 */
 		public Container.Letterer getLetterer();
 		public void setLetterer(Container.Letterer letterer);
 
 		/**
-		 * uri: http://schema.org/penciler
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Penciler
+		 * @see <a href="http://schema.org/penciler">http://schema.org/penciler</a>
 		 */
 		public Container.Penciler getPenciler();
 		public void setPenciler(Container.Penciler penciler);
@@ -300,8 +285,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Thesis extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/inSupportOf
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.InSupportOf
+		 * @see <a href="http://schema.org/inSupportOf">http://schema.org/inSupportOf</a>
 		 */
 		public Container.InSupportOf getInSupportOf();
 		public void setInSupportOf(Container.InSupportOf inSupportOf);

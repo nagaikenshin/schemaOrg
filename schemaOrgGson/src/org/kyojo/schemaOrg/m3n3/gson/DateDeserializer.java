@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson;
+package org.kyojo.schemaorg.m3n3.gson;
 
 import java.lang.reflect.Type;
 import org.kyojo.gson.JsonDeserializationContext;

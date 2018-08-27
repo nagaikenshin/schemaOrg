@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.pending.clazz;
+package org.kyojo.schemaorg.m3n3.gson.pending.clazz;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.pending.impl.LINK_ROLE;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.LinkRole;
+import org.kyojo.schemaorg.m3n3.pending.impl.LINK_ROLE;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.LinkRole;
 
 public class LinkRoleDeserializer implements JsonDeserializer<LinkRole> {
 

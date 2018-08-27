@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import java.sql.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.LEGISLATION_DATE_VERSION;
-import org.kyojo.schemaOrg.m3n3.pending.Container.LegislationDateVersion;
+import org.kyojo.schemaorg.m3n3.pending.impl.LEGISLATION_DATE_VERSION;
+import org.kyojo.schemaorg.m3n3.pending.Container.LegislationDateVersion;
 
 @ExternalDomain
 public class LegislationDateVersionConverter implements DomainConverter<LegislationDateVersion, Date> {

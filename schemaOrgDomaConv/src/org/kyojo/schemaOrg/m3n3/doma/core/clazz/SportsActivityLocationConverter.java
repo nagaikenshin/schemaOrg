@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.SPORTS_ACTIVITY_LOCATION;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.SportsActivityLocation;
+import org.kyojo.schemaorg.m3n3.core.impl.SPORTS_ACTIVITY_LOCATION;
+import org.kyojo.schemaorg.m3n3.core.Clazz.SportsActivityLocation;
 
 @ExternalDomain
 public class SportsActivityLocationConverter implements DomainConverter<SportsActivityLocation, String> {

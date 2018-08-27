@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.gamePlayMode;
+package org.kyojo.schemaorg.m3n3.gson.core.gamePlayMode;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.gamePlayMode.CO_OP;
-import org.kyojo.schemaOrg.m3n3.core.GamePlayMode.CoOp;
+import org.kyojo.schemaorg.m3n3.core.gamePlayMode.CO_OP;
+import org.kyojo.schemaorg.m3n3.core.GamePlayMode.CoOp;
 
 public class CoOpDeserializer implements JsonDeserializer<CoOp> {
 

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.actionStatusType;
+package org.kyojo.schemaorg.m3n3.doma.core.actionStatusType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.actionStatusType.POTENTIAL_ACTION_STATUS;
-import org.kyojo.schemaOrg.m3n3.core.ActionStatusType.PotentialActionStatus;
+import org.kyojo.schemaorg.m3n3.core.actionStatusType.POTENTIAL_ACTION_STATUS;
+import org.kyojo.schemaorg.m3n3.core.ActionStatusType.PotentialActionStatus;
 
 @ExternalDomain
 public class PotentialActionStatusConverter implements DomainConverter<PotentialActionStatus, String> {

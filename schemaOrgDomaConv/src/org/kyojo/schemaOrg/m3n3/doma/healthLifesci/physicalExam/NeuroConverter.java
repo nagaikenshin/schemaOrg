@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.physicalExam;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.physicalExam;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.physicalExam.NEURO;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.PhysicalExam.Neuro;
+import org.kyojo.schemaorg.m3n3.healthLifesci.physicalExam.NEURO;
+import org.kyojo.schemaorg.m3n3.healthLifesci.PhysicalExam.Neuro;
 
 @ExternalDomain
 public class NeuroConverter implements DomainConverter<Neuro, String> {

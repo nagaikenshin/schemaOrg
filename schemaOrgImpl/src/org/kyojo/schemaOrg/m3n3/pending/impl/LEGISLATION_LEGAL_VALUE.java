@@ -1,13 +1,13 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.LegalValueLevel;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
-import org.kyojo.schemaOrg.m3n3.pending.impl.LEGAL_VALUE_LEVEL;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.LegalValueLevel;
+import org.kyojo.schemaorg.m3n3.pending.Container;
+import org.kyojo.schemaorg.m3n3.pending.impl.LEGAL_VALUE_LEVEL;
 
 public class LEGISLATION_LEGAL_VALUE implements Container.LegislationLegalValue {
 

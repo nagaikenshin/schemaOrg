@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.drugPregnancyCategory;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.drugPregnancyCategory;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.drugPregnancyCategory.FDA_NOT_EVALUATED;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.DrugPregnancyCategory.FDAnotEvaluated;
+import org.kyojo.schemaorg.m3n3.healthLifesci.drugPregnancyCategory.FDA_NOT_EVALUATED;
+import org.kyojo.schemaorg.m3n3.healthLifesci.DrugPregnancyCategory.FDAnotEvaluated;
 
 @ExternalDomain
 public class FDAnotEvaluatedConverter implements DomainConverter<FDAnotEvaluated, String> {

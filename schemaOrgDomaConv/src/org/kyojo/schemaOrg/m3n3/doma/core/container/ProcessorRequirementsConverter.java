@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.PROCESSOR_REQUIREMENTS;
-import org.kyojo.schemaOrg.m3n3.core.Container.ProcessorRequirements;
+import org.kyojo.schemaorg.m3n3.core.impl.PROCESSOR_REQUIREMENTS;
+import org.kyojo.schemaorg.m3n3.core.Container.ProcessorRequirements;
 
 @ExternalDomain
 public class ProcessorRequirementsConverter implements DomainConverter<ProcessorRequirements, String> {

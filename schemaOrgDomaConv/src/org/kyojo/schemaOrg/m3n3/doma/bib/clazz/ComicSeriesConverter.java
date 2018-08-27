@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.bib.clazz;
+package org.kyojo.schemaorg.m3n3.doma.bib.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.bib.impl.COMIC_SERIES;
-import org.kyojo.schemaOrg.m3n3.bib.Clazz.ComicSeries;
+import org.kyojo.schemaorg.m3n3.bib.impl.COMIC_SERIES;
+import org.kyojo.schemaorg.m3n3.bib.Clazz.ComicSeries;
 
 @ExternalDomain
 public class ComicSeriesConverter implements DomainConverter<ComicSeries, String> {

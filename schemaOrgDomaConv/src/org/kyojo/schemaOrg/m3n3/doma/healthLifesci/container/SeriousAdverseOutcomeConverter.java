@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.SERIOUS_ADVERSE_OUTCOME;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.SeriousAdverseOutcome;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.SERIOUS_ADVERSE_OUTCOME;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.SeriousAdverseOutcome;
 
 @ExternalDomain
 public class SeriousAdverseOutcomeConverter implements DomainConverter<SeriousAdverseOutcome, String> {

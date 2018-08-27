@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.reservationStatusType;
+package org.kyojo.schemaorg.m3n3.doma.core.reservationStatusType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.reservationStatusType.RESERVATION_CONFIRMED;
-import org.kyojo.schemaOrg.m3n3.core.ReservationStatusType.ReservationConfirmed;
+import org.kyojo.schemaorg.m3n3.core.reservationStatusType.RESERVATION_CONFIRMED;
+import org.kyojo.schemaorg.m3n3.core.ReservationStatusType.ReservationConfirmed;
 
 @ExternalDomain
 public class ReservationConfirmedConverter implements DomainConverter<ReservationConfirmed, String> {

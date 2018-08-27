@@ -1,35 +1,35 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci.impl;
+package org.kyojo.schemaorg.m3n3.healthLifesci.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
-import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
-import org.kyojo.schemaOrg.m3n3.core.Container.Description;
-import org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription;
-import org.kyojo.schemaOrg.m3n3.core.Container.Identifier;
-import org.kyojo.schemaOrg.m3n3.core.Container.Image;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameRuby;
-import org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.SameAs;
-import org.kyojo.schemaOrg.m3n3.core.Container.Url;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
-import org.kyojo.schemaOrg.m3n3.core.impl.NAME;
-import org.kyojo.schemaOrg.m3n3.core.impl.TEXT;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Code;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.EstimatesRiskOf;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Guideline;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IncludedRiskFactor;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.LegalStatus;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicineSystem;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RecognizingAuthority;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.RelevantSpecialty;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Study;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.Container.AlternateName;
+import org.kyojo.schemaorg.m3n3.core.Container.Description;
+import org.kyojo.schemaorg.m3n3.core.Container.DisambiguatingDescription;
+import org.kyojo.schemaorg.m3n3.core.Container.Identifier;
+import org.kyojo.schemaorg.m3n3.core.Container.Image;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.Container.NameFuzzy;
+import org.kyojo.schemaorg.m3n3.core.Container.NameRuby;
+import org.kyojo.schemaorg.m3n3.core.Container.PotentialAction;
+import org.kyojo.schemaorg.m3n3.core.Container.SameAs;
+import org.kyojo.schemaorg.m3n3.core.Container.Url;
+import org.kyojo.schemaorg.m3n3.core.DataType;
+import org.kyojo.schemaorg.m3n3.core.impl.NAME;
+import org.kyojo.schemaorg.m3n3.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Code;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.EstimatesRiskOf;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Guideline;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.IncludedRiskFactor;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.LegalStatus;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.MedicineSystem;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.RecognizingAuthority;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.RelevantSpecialty;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Study;
 
 
 public class MEDICAL_RISK_CALCULATOR implements Clazz.MedicalRiskCalculator {

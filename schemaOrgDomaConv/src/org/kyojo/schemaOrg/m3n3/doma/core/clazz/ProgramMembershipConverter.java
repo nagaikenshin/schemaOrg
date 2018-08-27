@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.PROGRAM_MEMBERSHIP;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.ProgramMembership;
+import org.kyojo.schemaorg.m3n3.core.impl.PROGRAM_MEMBERSHIP;
+import org.kyojo.schemaorg.m3n3.core.Clazz.ProgramMembership;
 
 @ExternalDomain
 public class ProgramMembershipConverter implements DomainConverter<ProgramMembership, String> {

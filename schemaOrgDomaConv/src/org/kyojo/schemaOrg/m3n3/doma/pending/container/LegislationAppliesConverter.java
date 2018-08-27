@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.LEGISLATION_APPLIES;
-import org.kyojo.schemaOrg.m3n3.pending.Container.LegislationApplies;
+import org.kyojo.schemaorg.m3n3.pending.impl.LEGISLATION_APPLIES;
+import org.kyojo.schemaorg.m3n3.pending.Container.LegislationApplies;
 
 @ExternalDomain
 public class LegislationAppliesConverter implements DomainConverter<LegislationApplies, String> {

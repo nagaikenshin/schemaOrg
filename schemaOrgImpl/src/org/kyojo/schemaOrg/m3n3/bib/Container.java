@@ -1,20 +1,20 @@
-package org.kyojo.schemaOrg.m3n3.bib;
+package org.kyojo.schemaorg.m3n3.bib;
 
 import java.util.List;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgProperty;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Organization;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Person;
-import org.kyojo.schemaOrg.m3n3.core.Container.Actor;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Boolean;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgProperty;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Organization;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Person;
+import org.kyojo.schemaorg.m3n3.core.Container.Actor;
+import org.kyojo.schemaorg.m3n3.core.DataType.Boolean;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
@@ -32,8 +32,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Abridged extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Boolean
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Boolean
+		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
 		 */
 		public Boolean getB00lean();
 		public void setB00lean(Boolean b00lean);
@@ -57,8 +56,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Artist extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -80,8 +78,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Colorist extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -103,8 +100,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface InSupportOf extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -127,8 +123,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Inker extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -151,8 +146,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Letterer extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -174,8 +168,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface Penciler extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -197,8 +190,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PublishedBy extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 * @see <a href="http://schema.org/Organization">http://schema.org/Organization</a>
 		 */
 		public Organization getOrganization();
 		public void setOrganization(Organization organization);
@@ -207,8 +199,7 @@ public interface Container extends SchemaOrgProperty {
 		public boolean hasOrganization();
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -230,8 +221,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface PublisherImprint extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Organization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Organization
+		 * @see <a href="http://schema.org/Organization">http://schema.org/Organization</a>
 		 */
 		public Organization getOrganization();
 		public void setOrganization(Organization organization);
@@ -253,8 +243,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface ReadBy extends Actor, SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Person
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.Person
+		 * @see <a href="http://schema.org/Person">http://schema.org/Person</a>
 		 */
 		public Person getPerson();
 		public void setPerson(Person person);
@@ -277,8 +266,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface TranslationOfWork extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/CreativeWork
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
+		 * @see <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a>
 		 */
 		public CreativeWork getCreativeWork();
 		public void setCreativeWork(CreativeWork creativeWork);
@@ -302,8 +290,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface VariantCover extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/Text
-		 * class: org.kyojo.schemaOrg.m3n3.core.DataType.Text
+		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
 		 */
 		public Text getText();
 		public void setText(Text text);
@@ -327,8 +314,7 @@ public interface Container extends SchemaOrgProperty {
 	public interface WorkTranslation extends SchemaOrgProperty {
 
 		/**
-		 * uri: http://schema.org/CreativeWork
-		 * class: org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork
+		 * @see <a href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a>
 		 */
 		public CreativeWork getCreativeWork();
 		public void setCreativeWork(CreativeWork creativeWork);

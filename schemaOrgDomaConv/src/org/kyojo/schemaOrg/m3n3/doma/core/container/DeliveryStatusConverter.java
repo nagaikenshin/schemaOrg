@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DELIVERY_STATUS;
-import org.kyojo.schemaOrg.m3n3.core.Container.DeliveryStatus;
+import org.kyojo.schemaorg.m3n3.core.impl.DELIVERY_STATUS;
+import org.kyojo.schemaorg.m3n3.core.Container.DeliveryStatus;
 
 @ExternalDomain
 public class DeliveryStatusConverter implements DomainConverter<DeliveryStatus, String> {

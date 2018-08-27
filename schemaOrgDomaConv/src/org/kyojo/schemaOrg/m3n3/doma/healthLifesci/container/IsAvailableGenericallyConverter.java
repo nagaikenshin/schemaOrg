@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.IS_AVAILABLE_GENERICALLY;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IsAvailableGenerically;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.IS_AVAILABLE_GENERICALLY;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.IsAvailableGenerically;
 
 @ExternalDomain
 public class IsAvailableGenericallyConverter implements DomainConverter<IsAvailableGenerically, Boolean> {

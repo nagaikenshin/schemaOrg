@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.POLICE_STATION;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.PoliceStation;
+import org.kyojo.schemaorg.m3n3.core.impl.POLICE_STATION;
+import org.kyojo.schemaorg.m3n3.core.Clazz.PoliceStation;
 
 @ExternalDomain
 public class PoliceStationConverter implements DomainConverter<PoliceStation, String> {

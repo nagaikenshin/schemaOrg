@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalTrialDesign;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalTrialDesign;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalTrialDesign.DOUBLE_BLINDED_TRIAL;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalTrialDesign.DoubleBlindedTrial;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalTrialDesign.DOUBLE_BLINDED_TRIAL;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalTrialDesign.DoubleBlindedTrial;
 
 @ExternalDomain
 public class DoubleBlindedTrialConverter implements DomainConverter<DoubleBlindedTrial, String> {

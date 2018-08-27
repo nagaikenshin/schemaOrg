@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.mapCategoryType;
+package org.kyojo.schemaorg.m3n3.doma.core.mapCategoryType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.mapCategoryType.VENUE_MAP;
-import org.kyojo.schemaOrg.m3n3.core.MapCategoryType.VenueMap;
+import org.kyojo.schemaorg.m3n3.core.mapCategoryType.VENUE_MAP;
+import org.kyojo.schemaorg.m3n3.core.MapCategoryType.VenueMap;
 
 @ExternalDomain
 public class VenueMapConverter implements DomainConverter<VenueMap, String> {

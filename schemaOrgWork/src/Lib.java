@@ -1,13 +1,98 @@
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
 
 public class Lib {
+
+	public static void retrieve(File pd, Map<String, ImplData> implDataMap,
+			Map<String, String> impl2Ifc, Map<String, String> ifc2Impl)
+			throws IOException, ClassNotFoundException {
+		File[] fl = pd.listFiles();
+		for(File f: fl) {
+			if(f.canRead()) {
+				if(f.isDirectory()) {
+					retrieve(f, implDataMap, impl2Ifc, ifc2Impl);
+				} else {
+					processFile(f, implDataMap, impl2Ifc, ifc2Impl);
+				}
+			}
+		}
+	}
+
+	private static void processFile(File inFile, Map<String, ImplData> implDataMap,
+			Map<String, String> impl2Ifc, Map<String, String> ifc2Impl)
+			throws IOException, ClassNotFoundException {
+		String tgtStr = inFile.getCanonicalPath().replaceAll(Pattern.quote(File.separator), "/");
+		Matcher cfmc = GenerateImpl.cfpt.matcher(tgtStr);
+		if(!cfmc.find()) {
+			return;
+		}
+
+		String pkg = cfmc.group(1).replaceAll("/", ".");
+		String extension = cfmc.group(2);
+		String type = cfmc.group(3);
+		String typeName = pkg + "." + extension + "." + type;
+		Class<?> cls = GenerateImpl.class.getClassLoader().loadClass(typeName);
+		String typePkg = pkg + "." + extension;
+		System.out.println(cls.getName());
+
+		String orgType = type;
+		if((type.equals("Clazz") || type.equals("Container"))
+				|| (orgType.equals("DataType") || orgType.equals("Container"))) {
+			type = "Impl";
+			typeName = pkg + "." + extension + "." + type;
+		}
+
+		Class<?>[] ifcs = cls.getClasses();
+		for(Class<?> ifc : ifcs) {
+			System.out.println(ifc.getName());
+			if(ifc.isInterface()) {
+				// インターフェースの情報取得
+				ImplData implData = null;
+				String implSmplName = ifc.getAnnotation(ConstantizedName.class).value();
+				String implName = typePkg + "." + StringUtils.uncapitalize(type)
+						+ "." + implSmplName;
+				if((orgType.equals("Clazz") || orgType.equals("Container"))
+						|| (orgType.equals("DataType") || orgType.equals("Container"))) {
+					if(implDataMap.containsKey(implName)) {
+						implData = implDataMap.get(implName);
+						implData.orgTypes.add(orgType);
+					}
+				}
+				if(implData == null) {
+					implData = new ImplData();
+					implData.extension = extension;
+					implData.typePkg = typePkg;
+					implData.type = type;
+					implData.typeName = typeName;
+					implData.orgTypes.add(orgType);
+					implData.ifcName = ifc.getName();
+					implData.ifcSmplName = ifc.getSimpleName();
+					implData.ifcSmplCml = ifc.getAnnotation(CamelizedName.class).value();
+					implData.allIfcSet.add(implData.ifcName);
+					implData.implName = implName;
+					implData.implSmplName = implSmplName;
+					implDataMap.put(implName, implData);
+
+					impl2Ifc.put(implName, implData.ifcName);
+					ifc2Impl.put(implData.ifcName, implName);
+				}
+
+				Lib.retrieveInterfaces(ifc, implData, 0, -1);
+			}
+		}
+	}
 
 	public static void retrieveInterfaces(Class<?> cls, ImplData implData, int gi, int gm)
 			throws ClassNotFoundException {
@@ -15,6 +100,7 @@ public class Lib {
 		Map<String, Method> oMap = implData.oMap;
 		Map<String, Class<?>> pMap = implData.pMap;
 		List<String> ifcTree = implData.ifcTree;
+		implData.allIfcSet.add(cls.getName());
 
 		// インデントをつけてデバッグ出力
 		String sps = StringUtils.repeat(" ", gi);
@@ -64,7 +150,8 @@ public class Lib {
 
 	private static void addPropertyList(Class<?> cls, Method mtd,
 			Map<String, Class<?>> pMap) throws ClassNotFoundException {
-		if((!Text.class.isAssignableFrom(cls)
+		if((!org.kyojo.schemaorg.m3n4.core.DataType.Text.class.isAssignableFrom(cls)
+				&& !org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(cls)
 				&& (mtd.getName().equals("getString") || mtd.getName().equals("setString")))
 			|| mtd.getName().equals("getNativeValue")) {
 		} else if(mtd.getName().equals("getNativeValue")) {
@@ -96,6 +183,22 @@ public class Lib {
 		} else {
 			Class<?> rtnCls = mtd.getReturnType();
 			pMap.put(rtnCls.getName(), rtnCls);
+		}
+	}
+
+	public static void retrieveContainedTypes(String tgt, Set<String> gsonBasicSet,
+			Map<String, ImplData> implDataMap, Map<String, String> ifc2Impl) throws ClassNotFoundException {
+		if(gsonBasicSet.contains(tgt)) return;
+
+		if(ifc2Impl.containsKey(tgt)) {
+			ImplData implData = implDataMap.get(ifc2Impl.get(tgt));
+			for(String gsonTypeName : implData.gsonTypeNameMap.keySet()) {
+				gsonBasicSet.add(gsonTypeName);
+			}
+
+			for(Map.Entry<String, Class<?>> ent : implData.pMap.entrySet()) {
+				retrieveContainedTypes(ent.getKey(), gsonBasicSet, implDataMap, ifc2Impl);
+			}
 		}
 	}
 

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.dayOfWeek;
+package org.kyojo.schemaorg.m3n3.doma.core.dayOfWeek;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.dayOfWeek.MONDAY;
-import org.kyojo.schemaOrg.m3n3.core.DayOfWeek.Monday;
+import org.kyojo.schemaorg.m3n3.core.dayOfWeek.MONDAY;
+import org.kyojo.schemaorg.m3n3.core.DayOfWeek.Monday;
 
 @ExternalDomain
 public class MondayConverter implements DomainConverter<Monday, String> {

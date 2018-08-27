@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.medicalProcedureType;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.medicalProcedureType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalProcedureType.NONINVASIVE_PROCEDURE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalProcedureType.NoninvasiveProcedure;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalProcedureType.NONINVASIVE_PROCEDURE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalProcedureType.NoninvasiveProcedure;
 
 public class NoninvasiveProcedureDeserializer implements JsonDeserializer<NoninvasiveProcedure> {
 

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.CURRENT_EXCHANGE_RATE;
-import org.kyojo.schemaOrg.m3n3.pending.Container.CurrentExchangeRate;
+import org.kyojo.schemaorg.m3n3.pending.impl.CURRENT_EXCHANGE_RATE;
+import org.kyojo.schemaorg.m3n3.pending.Container.CurrentExchangeRate;
 
 @ExternalDomain
 public class CurrentExchangeRateConverter implements DomainConverter<CurrentExchangeRate, String> {

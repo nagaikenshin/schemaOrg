@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.deliveryMethod;
+package org.kyojo.schemaorg.m3n3.doma.core.deliveryMethod;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.deliveryMethod.ON_SITE_PICKUP;
-import org.kyojo.schemaOrg.m3n3.core.DeliveryMethod.OnSitePickup;
+import org.kyojo.schemaorg.m3n3.core.deliveryMethod.ON_SITE_PICKUP;
+import org.kyojo.schemaorg.m3n3.core.DeliveryMethod.OnSitePickup;
 
 @ExternalDomain
 public class OnSitePickupConverter implements DomainConverter<OnSitePickup, String> {

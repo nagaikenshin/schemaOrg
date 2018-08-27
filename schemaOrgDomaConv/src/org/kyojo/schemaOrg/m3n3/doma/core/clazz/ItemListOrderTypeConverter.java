@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.ITEM_LIST_ORDER_TYPE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.ItemListOrderType;
+import org.kyojo.schemaorg.m3n3.core.impl.ITEM_LIST_ORDER_TYPE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.ItemListOrderType;
 
 @ExternalDomain
 public class ItemListOrderTypeConverter implements DomainConverter<ItemListOrderType, String> {

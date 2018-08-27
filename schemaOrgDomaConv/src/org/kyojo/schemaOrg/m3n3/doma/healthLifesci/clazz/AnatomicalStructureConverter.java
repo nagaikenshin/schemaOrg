@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.ANATOMICAL_STRUCTURE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.AnatomicalStructure;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.ANATOMICAL_STRUCTURE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.AnatomicalStructure;
 
 @ExternalDomain
 public class AnatomicalStructureConverter implements DomainConverter<AnatomicalStructure, String> {

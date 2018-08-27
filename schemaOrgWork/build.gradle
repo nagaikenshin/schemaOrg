@@ -3,30 +3,46 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    implementation 'commons-io:commons-io:2.5'
-    implementation 'org.apache.commons:commons-lang3:3.6'
-    implementation 'commons-logging:commons-logging:1.2'
-    implementation 'com.google.code.gson:gson:2.8.1'
+	implementation 'commons-io:commons-io:2.5'
+	implementation 'org.apache.commons:commons-lang3:3.6'
+	implementation 'commons-logging:commons-logging:1.2'
+	implementation 'com.google.code.gson:gson:2.8.1'
 }
 
 mainClassName = 'GenerateImpl'
 
 compileJava {
-    options.compilerArgs << '-parameters'
+	options.compilerArgs << '-parameters'
 }
 
-archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-cmpl'
+archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-cmn'
 
 jar {
-    include('org/kyojo/schemaOrg/**')
+	include('org/kyojo/schemaorg/*.class')
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-    include('org/kyojo/schemaOrg/**')
+	classifier = 'sources'
+	from sourceSets.main.allSource
+	include('org/kyojo/schemaorg/*.java')
+}
+
+javadoc {
+	options.locale = 'en_US'
+	include('org/kyojo/schemaorg/*.java')
+}
+
+task javadocs(type: Javadoc) {
+	source = sourceSets.main.allJava
+}
+
+task javadocsJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadocs'
+	from javadocs.destinationDir
 }
 
 artifacts {
-    archives sourcesJar
+	archives sourcesJar
+	archives javadocsJar
 }
+

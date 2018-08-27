@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.ROOFING_CONTRACTOR;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.RoofingContractor;
+import org.kyojo.schemaorg.m3n3.core.impl.ROOFING_CONTRACTOR;
+import org.kyojo.schemaorg.m3n3.core.Clazz.RoofingContractor;
 
 @ExternalDomain
 public class RoofingContractorConverter implements DomainConverter<RoofingContractor, String> {

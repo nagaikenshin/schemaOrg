@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.API_REFERENCE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.APIReference;
+import org.kyojo.schemaorg.m3n3.core.impl.API_REFERENCE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.APIReference;
 
 @ExternalDomain
 public class APIReferenceConverter implements DomainConverter<APIReference, String> {

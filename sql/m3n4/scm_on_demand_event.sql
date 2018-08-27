@@ -1,0 +1,320 @@
+CREATE TABLE scm_on_demand_event(
+ seq BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$About
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Thing
+  */
+ about VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Actor
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ actor VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$AdditionalType
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  */
+ additional_type VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$AggregateRating
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$AggregateRating
+  */
+ aggregate_rating VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$AlternateName
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ alternate_name VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Attendee
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ attendee VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Audience
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Audience
+  */
+ audience VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Composer
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ composer VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Contributor
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ contributor VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Description
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ description VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Director
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ director VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$DisambiguatingDescription
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ disambiguating_description VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$DoorTime
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$DateTime
+  */
+ door_time VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.pending.Container$Duration
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Duration
+  */
+ duration VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$EndDate
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Date
+  *        org.kyojo.schemaorg.m3n4.core.DataType$DateTime
+  */
+ end_date VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$EventStatus
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$EventStatusType
+  */
+ event_status VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Funder
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ funder VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Identifier
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$PropertyValue
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  *        org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ identifier VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Image
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$ImageObject
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  */
+ image VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$InLanguage
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Language
+  *        org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ in_language VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$IsAccessibleForFree
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Boolean
+  */
+ is_accessible_for_free VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Location
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Place
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$PostalAddress
+  *        org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ location VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$MainEntityOfPage
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  */
+ main_entity_of_page VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$MaximumAttendeeCapacity
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Integer
+  */
+ maximum_attendee_capacity VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Name
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ name VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$NameFuzzy
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ name_fuzzy VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$NameRuby
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ name_ruby VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Offers
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Offer
+  */
+ offers VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Organizer
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ organizer VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Performer
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ performer VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$PotentialAction
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Action
+  */
+ potential_action VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$PreviousStartDate
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Date
+  */
+ previous_start_date VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.bib.Container$PublishedBy
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ published_by VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$PublishedOn
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$BroadcastService
+  */
+ published_on VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$RecordedIn
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
+  */
+ recorded_in VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$RemainingAttendeeCapacity
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Integer
+  */
+ remaining_attendee_capacity VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Review
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Review
+  */
+ review VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$SameAs
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  */
+ same_as VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Sponsor
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ sponsor VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$StartDate
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Date
+  *        org.kyojo.schemaorg.m3n4.core.DataType$DateTime
+  */
+ start_date VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$SubEvent
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Event
+  */
+ sub_event VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.pending.Container$SubjectOf
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Event
+  */
+ subject_of VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$SuperEvent
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Event
+  */
+ super_event VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Translator
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n4.core.Clazz$Person
+  */
+ translator VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$TypicalAgeRange
+  * param: org.kyojo.schemaorg.m3n4.core.DataType$Text
+  */
+ typical_age_range VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$Url
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$URL
+  */
+ url VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$WorkFeatured
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
+  */
+ work_featured VARCHAR(100) NULL,
+
+ /**
+  * type:  org.kyojo.schemaorg.m3n4.core.Container$WorkPerformed
+  * param: org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
+  */
+ work_performed VARCHAR(100) NULL,
+
+ ref_seq BIGINT NULL,
+ ref_acr VARCHAR(100) NULL,
+ created_at TIMESTAMP NULL,
+ created_by BIGINT NULL,
+ updated_at TIMESTAMP NULL,
+ updated_by BIGINT NULL
+ expired_at TIMESTAMP NULL,
+ expired_by BIGINT NULL
+
+);

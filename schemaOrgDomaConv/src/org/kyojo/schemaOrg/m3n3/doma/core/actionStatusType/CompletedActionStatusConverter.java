@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.actionStatusType;
+package org.kyojo.schemaorg.m3n3.doma.core.actionStatusType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.actionStatusType.COMPLETED_ACTION_STATUS;
-import org.kyojo.schemaOrg.m3n3.core.ActionStatusType.CompletedActionStatus;
+import org.kyojo.schemaorg.m3n3.core.actionStatusType.COMPLETED_ACTION_STATUS;
+import org.kyojo.schemaorg.m3n3.core.ActionStatusType.CompletedActionStatus;
 
 @ExternalDomain
 public class CompletedActionStatusConverter implements DomainConverter<CompletedActionStatus, String> {

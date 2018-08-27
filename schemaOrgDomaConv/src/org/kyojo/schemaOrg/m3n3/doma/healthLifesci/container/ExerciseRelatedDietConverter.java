@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.EXERCISE_RELATED_DIET;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseRelatedDiet;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.EXERCISE_RELATED_DIET;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ExerciseRelatedDiet;
 
 @ExternalDomain
 public class ExerciseRelatedDietConverter implements DomainConverter<ExerciseRelatedDiet, String> {

@@ -1,13 +1,13 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.HealthPlanNetwork;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
-import org.kyojo.schemaOrg.m3n3.pending.impl.HEALTH_PLAN_NETWORK;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.HealthPlanNetwork;
+import org.kyojo.schemaorg.m3n3.pending.Container;
+import org.kyojo.schemaorg.m3n3.pending.impl.HEALTH_PLAN_NETWORK;
 
 public class INCLUDES_HEALTH_PLAN_NETWORK implements Container.IncludesHealthPlanNetwork {
 

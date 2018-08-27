@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.INCREASES_RISK_OF;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.IncreasesRiskOf;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.INCREASES_RISK_OF;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.IncreasesRiskOf;
 
 @ExternalDomain
 public class IncreasesRiskOfConverter implements DomainConverter<IncreasesRiskOf, String> {

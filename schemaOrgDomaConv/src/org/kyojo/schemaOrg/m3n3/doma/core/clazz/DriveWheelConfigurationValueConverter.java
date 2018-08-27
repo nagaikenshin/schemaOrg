@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DRIVE_WHEEL_CONFIGURATION_VALUE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.DriveWheelConfigurationValue;
+import org.kyojo.schemaorg.m3n3.core.impl.DRIVE_WHEEL_CONFIGURATION_VALUE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.DriveWheelConfigurationValue;
 
 @ExternalDomain
 public class DriveWheelConfigurationValueConverter implements DomainConverter<DriveWheelConfigurationValue, String> {

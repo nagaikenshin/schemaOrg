@@ -1,15 +1,15 @@
-package org.kyojo.schemaOrg.m3n3.meta;
+package org.kyojo.schemaorg.m3n3.meta;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Intangible;
-import org.kyojo.schemaOrg.m3n3.core.Container.Category;
-import org.kyojo.schemaOrg.m3n3.meta.Container;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Intangible;
+import org.kyojo.schemaorg.m3n3.core.Container.Category;
+import org.kyojo.schemaorg.m3n3.meta.Container;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -27,15 +27,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Class extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Category getCategory();
 		public void setCategory(Category category);
 
 		/**
-		 * uri: http://schema.org/supersededBy
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.SupersededBy
+		 * @see <a href="http://schema.org/supersededBy">http://schema.org/supersededBy</a>
 		 */
 		public Container.SupersededBy getSupersededBy();
 		public void setSupersededBy(Container.SupersededBy supersededBy);
@@ -57,36 +55,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Property extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Category getCategory();
 		public void setCategory(Category category);
 
 		/**
-		 * uri: http://schema.org/domainIncludes
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.DomainIncludes
+		 * @see <a href="http://schema.org/domainIncludes">http://schema.org/domainIncludes</a>
 		 */
 		public Container.DomainIncludes getDomainIncludes();
 		public void setDomainIncludes(Container.DomainIncludes domainIncludes);
 
 		/**
-		 * uri: http://schema.org/inverseOf
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.InverseOf
+		 * @see <a href="http://schema.org/inverseOf">http://schema.org/inverseOf</a>
 		 */
 		public Container.InverseOf getInverseOf();
 		public void setInverseOf(Container.InverseOf inverseOf);
 
 		/**
-		 * uri: http://schema.org/rangeIncludes
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.RangeIncludes
+		 * @see <a href="http://schema.org/rangeIncludes">http://schema.org/rangeIncludes</a>
 		 */
 		public Container.RangeIncludes getRangeIncludes();
 		public void setRangeIncludes(Container.RangeIncludes rangeIncludes);
 
 		/**
-		 * uri: http://schema.org/supersededBy
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.SupersededBy
+		 * @see <a href="http://schema.org/supersededBy">http://schema.org/supersededBy</a>
 		 */
 		public Container.SupersededBy getSupersededBy();
 		public void setSupersededBy(Container.SupersededBy supersededBy);

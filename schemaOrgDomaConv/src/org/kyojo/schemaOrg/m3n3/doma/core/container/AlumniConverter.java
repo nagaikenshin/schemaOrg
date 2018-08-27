@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.ALUMNI;
-import org.kyojo.schemaOrg.m3n3.core.Container.Alumni;
+import org.kyojo.schemaorg.m3n3.core.impl.ALUMNI;
+import org.kyojo.schemaorg.m3n3.core.Container.Alumni;
 
 @ExternalDomain
 public class AlumniConverter implements DomainConverter<Alumni, String> {

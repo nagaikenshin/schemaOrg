@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.core.container;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.core.impl.AMENITY_FEATURE;
+import org.kyojo.schemaorg.m3n4.core.Container.AmenityFeature;
+
+@ExternalDomain
+public class AmenityFeatureConverter implements DomainConverter<AmenityFeature, String> {
+
+	@Override
+	public String fromDomainToValue(AmenityFeature domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public AmenityFeature fromValueToDomain(String value) {
+		return new AMENITY_FEATURE(value);
+	}
+
+}

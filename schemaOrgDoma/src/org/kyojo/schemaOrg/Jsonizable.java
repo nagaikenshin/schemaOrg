@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg;
+package org.kyojo.schemaorg;
 
 import java.io.Serializable;
 

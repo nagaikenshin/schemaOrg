@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.POST_OFFICE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.PostOffice;
+import org.kyojo.schemaorg.m3n3.core.impl.POST_OFFICE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.PostOffice;
 
 @ExternalDomain
 public class PostOfficeConverter implements DomainConverter<PostOffice, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DATA_FEED;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.DataFeed;
+import org.kyojo.schemaorg.m3n3.core.impl.DATA_FEED;
+import org.kyojo.schemaorg.m3n3.core.Clazz.DataFeed;
 
 @ExternalDomain
 public class DataFeedConverter implements DomainConverter<DataFeed, String> {

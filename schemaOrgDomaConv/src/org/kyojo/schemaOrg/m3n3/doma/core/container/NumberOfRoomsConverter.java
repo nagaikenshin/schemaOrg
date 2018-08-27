@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.NUMBER_OF_ROOMS;
-import org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms;
+import org.kyojo.schemaorg.m3n3.core.impl.NUMBER_OF_ROOMS;
+import org.kyojo.schemaorg.m3n3.core.Container.NumberOfRooms;
 
 @ExternalDomain
 public class NumberOfRoomsConverter implements DomainConverter<NumberOfRooms, BigDecimal> {

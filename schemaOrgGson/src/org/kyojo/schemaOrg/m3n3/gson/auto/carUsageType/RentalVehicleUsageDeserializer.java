@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.auto.carUsageType;
+package org.kyojo.schemaorg.m3n3.gson.auto.carUsageType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.auto.carUsageType.RENTAL_VEHICLE_USAGE;
-import org.kyojo.schemaOrg.m3n3.auto.CarUsageType.RentalVehicleUsage;
+import org.kyojo.schemaorg.m3n3.auto.carUsageType.RENTAL_VEHICLE_USAGE;
+import org.kyojo.schemaorg.m3n3.auto.CarUsageType.RentalVehicleUsage;
 
 public class RentalVehicleUsageDeserializer implements JsonDeserializer<RentalVehicleUsage> {
 

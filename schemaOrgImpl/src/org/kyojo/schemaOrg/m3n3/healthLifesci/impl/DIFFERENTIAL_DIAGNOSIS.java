@@ -1,13 +1,13 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci.impl;
+package org.kyojo.schemaorg.m3n3.healthLifesci.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.DDxElement;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.DDX_ELEMENT;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.DDxElement;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.DDX_ELEMENT;
 
 public class DIFFERENTIAL_DIAGNOSIS implements Container.DifferentialDiagnosis {
 

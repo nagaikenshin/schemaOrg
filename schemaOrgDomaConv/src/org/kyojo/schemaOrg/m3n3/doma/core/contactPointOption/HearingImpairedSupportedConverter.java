@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.contactPointOption;
+package org.kyojo.schemaorg.m3n3.doma.core.contactPointOption;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.contactPointOption.HEARING_IMPAIRED_SUPPORTED;
-import org.kyojo.schemaOrg.m3n3.core.ContactPointOption.HearingImpairedSupported;
+import org.kyojo.schemaorg.m3n3.core.contactPointOption.HEARING_IMPAIRED_SUPPORTED;
+import org.kyojo.schemaorg.m3n3.core.ContactPointOption.HearingImpairedSupported;
 
 @ExternalDomain
 public class HearingImpairedSupportedConverter implements DomainConverter<HearingImpairedSupported, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.STREET_ADDRESS;
-import org.kyojo.schemaOrg.m3n3.core.Container.StreetAddress;
+import org.kyojo.schemaorg.m3n3.core.impl.STREET_ADDRESS;
+import org.kyojo.schemaorg.m3n3.core.Container.StreetAddress;
 
 @ExternalDomain
 public class StreetAddressConverter implements DomainConverter<StreetAddress, String> {

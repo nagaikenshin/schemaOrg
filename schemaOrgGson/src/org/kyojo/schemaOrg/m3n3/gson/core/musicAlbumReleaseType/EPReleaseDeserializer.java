@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.musicAlbumReleaseType;
+package org.kyojo.schemaorg.m3n3.gson.core.musicAlbumReleaseType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.musicAlbumReleaseType.EP_RELEASE;
-import org.kyojo.schemaOrg.m3n3.core.MusicAlbumReleaseType.EPRelease;
+import org.kyojo.schemaorg.m3n3.core.musicAlbumReleaseType.EP_RELEASE;
+import org.kyojo.schemaorg.m3n3.core.MusicAlbumReleaseType.EPRelease;
 
 public class EPReleaseDeserializer implements JsonDeserializer<EPRelease> {
 

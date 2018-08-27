@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.ALCOHOL_WARNING;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AlcoholWarning;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.ALCOHOL_WARNING;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.AlcoholWarning;
 
 @ExternalDomain
 public class AlcoholWarningConverter implements DomainConverter<AlcoholWarning, String> {

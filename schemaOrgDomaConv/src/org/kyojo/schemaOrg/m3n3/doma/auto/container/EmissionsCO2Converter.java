@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.container;
+package org.kyojo.schemaorg.m3n3.doma.auto.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.EMISSIONS_CO2;
-import org.kyojo.schemaOrg.m3n3.auto.Container.EmissionsCO2;
+import org.kyojo.schemaorg.m3n3.auto.impl.EMISSIONS_CO2;
+import org.kyojo.schemaorg.m3n3.auto.Container.EmissionsCO2;
 
 @ExternalDomain
 public class EmissionsCO2Converter implements DomainConverter<EmissionsCO2, BigDecimal> {

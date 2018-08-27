@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.orderStatus;
+package org.kyojo.schemaorg.m3n3.doma.core.orderStatus;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.orderStatus.ORDER_IN_TRANSIT;
-import org.kyojo.schemaOrg.m3n3.core.OrderStatus.OrderInTransit;
+import org.kyojo.schemaorg.m3n3.core.orderStatus.ORDER_IN_TRANSIT;
+import org.kyojo.schemaorg.m3n3.core.OrderStatus.OrderInTransit;
 
 @ExternalDomain
 public class OrderInTransitConverter implements DomainConverter<OrderInTransit, String> {

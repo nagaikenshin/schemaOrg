@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.MEDICAL_TRIAL_DESIGN;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTrialDesign;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.MEDICAL_TRIAL_DESIGN;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.MedicalTrialDesign;
 
 @ExternalDomain
 public class MedicalTrialDesignConverter implements DomainConverter<MedicalTrialDesign, String> {

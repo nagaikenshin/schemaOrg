@@ -1,33 +1,33 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
-import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
-import org.kyojo.schemaOrg.m3n3.core.Container.Description;
-import org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription;
-import org.kyojo.schemaOrg.m3n3.core.Container.Identifier;
-import org.kyojo.schemaOrg.m3n3.core.Container.Image;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.MaxValue;
-import org.kyojo.schemaOrg.m3n3.core.Container.MinValue;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameRuby;
-import org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.SameAs;
-import org.kyojo.schemaOrg.m3n3.core.Container.UnitCode;
-import org.kyojo.schemaOrg.m3n3.core.Container.UnitText;
-import org.kyojo.schemaOrg.m3n3.core.Container.Url;
-import org.kyojo.schemaOrg.m3n3.core.Container.Value;
-import org.kyojo.schemaOrg.m3n3.core.Container.ValueReference;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
-import org.kyojo.schemaOrg.m3n3.core.impl.NAME;
-import org.kyojo.schemaOrg.m3n3.core.impl.TEXT;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalProperty;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.Container.AlternateName;
+import org.kyojo.schemaorg.m3n3.core.Container.Description;
+import org.kyojo.schemaorg.m3n3.core.Container.DisambiguatingDescription;
+import org.kyojo.schemaorg.m3n3.core.Container.Identifier;
+import org.kyojo.schemaorg.m3n3.core.Container.Image;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.Container.MaxValue;
+import org.kyojo.schemaorg.m3n3.core.Container.MinValue;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.Container.NameFuzzy;
+import org.kyojo.schemaorg.m3n3.core.Container.NameRuby;
+import org.kyojo.schemaorg.m3n3.core.Container.PotentialAction;
+import org.kyojo.schemaorg.m3n3.core.Container.SameAs;
+import org.kyojo.schemaorg.m3n3.core.Container.UnitCode;
+import org.kyojo.schemaorg.m3n3.core.Container.UnitText;
+import org.kyojo.schemaorg.m3n3.core.Container.Url;
+import org.kyojo.schemaorg.m3n3.core.Container.Value;
+import org.kyojo.schemaorg.m3n3.core.Container.ValueReference;
+import org.kyojo.schemaorg.m3n3.core.DataType;
+import org.kyojo.schemaorg.m3n3.core.impl.NAME;
+import org.kyojo.schemaorg.m3n3.core.impl.TEXT;
 
 public class QUANTITATIVE_VALUE implements Clazz.QuantitativeValue {
 

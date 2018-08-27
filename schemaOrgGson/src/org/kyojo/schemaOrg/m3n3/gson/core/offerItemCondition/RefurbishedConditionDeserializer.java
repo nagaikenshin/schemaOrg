@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.offerItemCondition;
+package org.kyojo.schemaorg.m3n3.gson.core.offerItemCondition;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.offerItemCondition.REFURBISHED_CONDITION;
-import org.kyojo.schemaOrg.m3n3.core.OfferItemCondition.RefurbishedCondition;
+import org.kyojo.schemaorg.m3n3.core.offerItemCondition.REFURBISHED_CONDITION;
+import org.kyojo.schemaorg.m3n3.core.OfferItemCondition.RefurbishedCondition;
 
 public class RefurbishedConditionDeserializer implements JsonDeserializer<RefurbishedCondition> {
 

@@ -2,180 +2,180 @@ CREATE TABLE scm_taxi_reservation(
  seq BIGINT AUTO_INCREMENT PRIMARY KEY,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$AdditionalType
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$URL
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$AdditionalType
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$URL
   */
  additional_type VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$AlternateName
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$AlternateName
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  alternate_name VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$BookingTime
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$DateTime
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$BookingTime
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$DateTime
   */
  booking_time VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Broker
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Organization
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$Person
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Broker
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$Person
   */
  broker VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Description
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Description
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  description VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$DisambiguatingDescription
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$DisambiguatingDescription
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  disambiguating_description VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Identifier
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$PropertyValue
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$URL
-  *        org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Identifier
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$PropertyValue
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$URL
+  *        org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  identifier VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Image
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$ImageObject
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$URL
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Image
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$ImageObject
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$URL
   */
  image VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$MainEntityOfPage
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$CreativeWork
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$URL
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$MainEntityOfPage
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$CreativeWork
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$URL
   */
  main_entity_of_page VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ModifiedTime
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$DateTime
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ModifiedTime
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$DateTime
   */
  modified_time VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Name
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Name
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  name VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$NameFuzzy
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$NameFuzzy
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  name_fuzzy VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$NameRuby
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$NameRuby
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  name_ruby VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$PartySize
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Integer
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$QuantitativeValue
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$PartySize
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Integer
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$QuantitativeValue
   */
  party_size VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$PickupLocation
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Place
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$PickupLocation
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Place
   */
  pickup_location VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$PickupTime
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$DateTime
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$PickupTime
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$DateTime
   */
  pickup_time VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$PotentialAction
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Action
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$PotentialAction
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Action
   */
  potential_action VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$PriceCurrency
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$PriceCurrency
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  price_currency VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ProgramMembershipUsed
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$ProgramMembership
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ProgramMembershipUsed
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$ProgramMembership
   */
  program_membership_used VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Provider
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Organization
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$Person
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Provider
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$Person
   */
  provider VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ReservationFor
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Thing
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ReservationFor
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Thing
   */
  reservation_for VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ReservationId
-  * param: org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ReservationId
+  * param: org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  reservation_id VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ReservationStatus
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$ReservationStatusType
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ReservationStatus
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$ReservationStatusType
   */
  reservation_status VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$ReservedTicket
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Ticket
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$ReservedTicket
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Ticket
   */
  reserved_ticket VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$SameAs
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$URL
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$SameAs
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$URL
   */
  same_as VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$TotalPrice
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$PriceSpecification
-  *        org.kyojo.schemaOrg.m3n3.core.DataType$Number
-  *        org.kyojo.schemaOrg.m3n3.core.DataType$Text
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$TotalPrice
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$PriceSpecification
+  *        org.kyojo.schemaorg.m3n3.core.DataType$Number
+  *        org.kyojo.schemaorg.m3n3.core.DataType$Text
   */
  total_price VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$UnderName
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$Organization
-  *        org.kyojo.schemaOrg.m3n3.core.Clazz$Person
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$UnderName
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$Organization
+  *        org.kyojo.schemaorg.m3n3.core.Clazz$Person
   */
  under_name VARCHAR(100) NULL,
 
  /**
-  * type:  org.kyojo.schemaOrg.m3n3.core.Container$Url
-  * param: org.kyojo.schemaOrg.m3n3.core.Clazz$URL
+  * type:  org.kyojo.schemaorg.m3n3.core.Container$Url
+  * param: org.kyojo.schemaorg.m3n3.core.Clazz$URL
   */
  url VARCHAR(100) NULL,
 

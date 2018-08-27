@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg;
+package org.kyojo.schemaorg;
 
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
 public interface SchemaOrgClass extends SchemaOrgType {

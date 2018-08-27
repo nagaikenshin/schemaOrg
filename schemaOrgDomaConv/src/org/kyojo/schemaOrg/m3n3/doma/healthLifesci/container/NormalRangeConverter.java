@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.NORMAL_RANGE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.NormalRange;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.NORMAL_RANGE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.NormalRange;
 
 @ExternalDomain
 public class NormalRangeConverter implements DomainConverter<NormalRange, String> {

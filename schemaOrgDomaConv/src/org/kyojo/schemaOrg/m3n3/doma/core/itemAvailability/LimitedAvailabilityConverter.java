@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.itemAvailability;
+package org.kyojo.schemaorg.m3n3.doma.core.itemAvailability;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.itemAvailability.LIMITED_AVAILABILITY;
-import org.kyojo.schemaOrg.m3n3.core.ItemAvailability.LimitedAvailability;
+import org.kyojo.schemaorg.m3n3.core.itemAvailability.LIMITED_AVAILABILITY;
+import org.kyojo.schemaorg.m3n3.core.ItemAvailability.LimitedAvailability;
 
 @ExternalDomain
 public class LimitedAvailabilityConverter implements DomainConverter<LimitedAvailability, String> {

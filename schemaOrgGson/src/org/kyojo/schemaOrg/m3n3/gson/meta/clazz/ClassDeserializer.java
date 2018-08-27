@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.meta.clazz;
+package org.kyojo.schemaorg.m3n3.gson.meta.clazz;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.meta.impl.CLASS;
-import org.kyojo.schemaOrg.m3n3.meta.Clazz;
+import org.kyojo.schemaorg.m3n3.meta.impl.CLASS;
+import org.kyojo.schemaorg.m3n3.meta.Clazz;
 
 public class ClassDeserializer implements JsonDeserializer<Clazz.Class> {
 

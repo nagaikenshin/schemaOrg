@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.MUSIC_RELEASE_FORMAT;
-import org.kyojo.schemaOrg.m3n3.core.Container.MusicReleaseFormat;
+import org.kyojo.schemaorg.m3n3.core.impl.MUSIC_RELEASE_FORMAT;
+import org.kyojo.schemaorg.m3n3.core.Container.MusicReleaseFormat;
 
 @ExternalDomain
 public class MusicReleaseFormatConverter implements DomainConverter<MusicReleaseFormat, String> {

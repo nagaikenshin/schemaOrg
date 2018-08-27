@@ -1,12 +1,12 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Number;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.DataType.Number;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
 
 public class NUMBER_OF_AIRBAGS implements Container.NumberOfAirbags {
 

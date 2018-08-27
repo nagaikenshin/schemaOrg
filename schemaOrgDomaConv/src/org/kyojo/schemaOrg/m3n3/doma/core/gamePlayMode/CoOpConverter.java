@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.gamePlayMode;
+package org.kyojo.schemaorg.m3n3.doma.core.gamePlayMode;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.gamePlayMode.CO_OP;
-import org.kyojo.schemaOrg.m3n3.core.GamePlayMode.CoOp;
+import org.kyojo.schemaorg.m3n3.core.gamePlayMode.CO_OP;
+import org.kyojo.schemaorg.m3n3.core.GamePlayMode.CoOp;
 
 @ExternalDomain
 public class CoOpConverter implements DomainConverter<CoOp, String> {

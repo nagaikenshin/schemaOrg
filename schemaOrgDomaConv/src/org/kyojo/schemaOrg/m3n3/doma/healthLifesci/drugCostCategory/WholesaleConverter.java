@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.drugCostCategory;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.drugCostCategory;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.drugCostCategory.WHOLESALE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.DrugCostCategory.Wholesale;
+import org.kyojo.schemaorg.m3n3.healthLifesci.drugCostCategory.WHOLESALE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.DrugCostCategory.Wholesale;
 
 @ExternalDomain
 public class WholesaleConverter implements DomainConverter<Wholesale, String> {

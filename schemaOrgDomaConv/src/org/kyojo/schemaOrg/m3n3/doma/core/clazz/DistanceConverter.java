@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DISTANCE;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Distance;
+import org.kyojo.schemaorg.m3n3.core.impl.DISTANCE;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Distance;
 
 @ExternalDomain
 public class DistanceConverter implements DomainConverter<Distance, String> {

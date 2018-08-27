@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.SERVING_SIZE;
-import org.kyojo.schemaOrg.m3n3.core.Container.ServingSize;
+import org.kyojo.schemaorg.m3n3.core.impl.SERVING_SIZE;
+import org.kyojo.schemaorg.m3n3.core.Container.ServingSize;
 
 @ExternalDomain
 public class ServingSizeConverter implements DomainConverter<ServingSize, String> {

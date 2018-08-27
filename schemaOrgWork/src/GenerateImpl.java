@@ -21,57 +21,63 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.SampleValue;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.SampleValue;
 
 public class GenerateImpl {
 
-	private static String basePath = "..";
-	private static String defDPath = basePath + "/schemaOrgWork/src/";
-	private static String implDPath = basePath + "/schemaOrgImpl/src/";
-	private static String sqlDPath = basePath + "/sql/m3n3/";
-	private static String domaDPath = basePath + "/schemaOrgDoma/src/";
-	private static String domaConvDPath = basePath + "/schemaOrgDomaConv/src/";
-	private static String gsonDPath = basePath + "/schemaOrgGson/src/";
-	private static String pkg1Base = "org.kyojo.schemaOrg";
-	private static String pkg2Base = pkg1Base + ".m3n3";
-	private static Pattern cfpt = Pattern.compile("(org/kyojo/schemaOrg/m3n3)/(\\w+)/(\\w+)\\.java$");
-	private static Pattern expt = Pattern.compile("^(" + pkg2Base.replaceAll("\\.", "\\\\.") + "\\.\\w+)\\.");
+	public static String basePath = "..";
+	public static String verStr = "m3n4"; // Libにもバージョンを見ているところあり
+	public static String defDPath = basePath + "/schemaOrgWork/src/";
+	public static String implDPath = basePath + "/schemaOrgImpl/src/";
+	public static String sqlDPath = basePath + "/sql/" + verStr + "/";
+	public static String domaDPath = basePath + "/schemaOrgDoma/src/";
+	public static String domaConvDPath = basePath + "/schemaOrgDomaConv/src/";
+	public static String gsonDPath = basePath + "/schemaOrgGson/src/";
+	public static String pkg1Base = "org.kyojo.schemaorg";
+	public static String pkg2Base = pkg1Base + "." + verStr;
+	public static String verSrcMPath = pkg2Base.replaceAll("\\.", "/") + "/";
+	public static Pattern cfpt = Pattern.compile("(org/kyojo/schemaorg/" + verStr + ")/(\\w+)/(\\w+)\\.java$");
+	public static Pattern expt = Pattern.compile("^(" + pkg2Base.replaceAll("\\.", "\\\\.") + "\\.\\w+)\\.");
 
 	public static void main(String[] args) {
 		File pd = new File(defDPath);
-		Map<String, ImplData> implDataMap = new HashMap<String, ImplData>();
+		Map<String, ImplData> implDataMap = new HashMap<>();
+		Map<String, String> impl2Ifc = new HashMap<>();
+		Map<String, String> ifc2Impl = new HashMap<>();
 		try {
 			// 古いソースファイルを削除
-			File implDir = new File(implDPath);
+			File implDir = new File(implDPath + verSrcMPath);
 			FileUtils.deleteDirectory(implDir);
 			implDir.mkdir();
+			implDir = new File(implDPath);
 			File sqlDir = new File(sqlDPath);
 			FileUtils.deleteDirectory(sqlDir);
 			sqlDir.mkdir();
-			File domaDir = new File(domaDPath);
+			File domaDir = new File(domaDPath + verSrcMPath);
 			FileUtils.deleteDirectory(domaDir);
 			domaDir.mkdir();
-			File domaConvDir = new File(domaConvDPath);
+			domaDir = new File(domaDPath);
+			File domaConvDir = new File(domaConvDPath + verSrcMPath);
 			FileUtils.deleteDirectory(domaConvDir);
 			domaConvDir.mkdir();
-			File gsonDir = new File(gsonDPath);
+			domaConvDir = new File(domaConvDPath);
+			File gsonDir = new File(gsonDPath + verSrcMPath);
 			FileUtils.deleteDirectory(gsonDir);
 			gsonDir.mkdir();
+			gsonDir = new File(gsonDPath);
 
 			// intarfaceをコピー
 			File defDir = new File(defDPath);
 			for(File f : defDir.listFiles()) {
 				if(f.isDirectory()) {
-					File tgtImplDir = new File(implDir, f.getName());
-					FileUtils.copyDirectory(f, tgtImplDir);
-					File tgtDomaDir = new File(domaDir, f.getName());
-					FileUtils.copyDirectory(f, tgtDomaDir);
+					FileUtils.copyDirectoryToDirectory(f, implDir);
+					FileUtils.copyDirectoryToDirectory(f, domaDir);
 				}
 			}
 
-			retrieve(pd, implDataMap);
+			Lib.retrieve(pd, implDataMap, impl2Ifc, ifc2Impl);
 
 			List<String> domaConvNameList = new ArrayList<>();
 			List<String> gsonTypeNameList = new ArrayList<>();
@@ -82,6 +88,35 @@ public class GenerateImpl {
 				gsonTypeNameMap.putAll(implData.gsonTypeNameMap);
 				for(String gsonTypeName : implData.gsonTypeNameMap.keySet()) {
 					gsonTypeNameList.add(gsonTypeName);
+				}
+			}
+
+			// デフォルトで有効にするインターフェースを内包するクラスを検索
+			Set<String> gsonBasicSet = new HashSet<>();
+			List<String> basicRootList = new ArrayList<>();
+			basicRootList.add(pkg2Base + ".core.Clazz$Person");
+			basicRootList.add(pkg2Base + ".core.Clazz$DataType");
+			basicRootList.add(pkg2Base + ".core.Clazz$DayOfWeek");
+			basicRootList.add(pkg2Base + ".core.Clazz$Float");
+			basicRootList.add(pkg2Base + ".core.Clazz$Integer");
+			basicRootList.add(pkg2Base + ".core.Clazz$Action");
+			basicRootList.add(pkg2Base + ".core.Clazz$Event");
+			basicRootList.add(pkg2Base + ".core.Clazz$LocalBusiness");
+			for(String basicRoot : basicRootList) {
+				Lib.retrieveContainedTypes(basicRoot, gsonBasicSet, implDataMap, ifc2Impl);
+			}
+
+			// デフォルトで有効にするインターフェースをインプリメントするクラスを検索
+			Set<String> basicSuperSet = new HashSet<>();
+			basicSuperSet.add(pkg2Base + ".core.Clazz$Action");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$Event");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$DayOfWeek");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$LocalBusiness");
+			for(String basicSuper : basicSuperSet) {
+				for(ImplData implData : implDataMap.values()) {
+					if(implData.allIfcSet.contains(basicSuper)) {
+						gsonBasicSet.add(implData.ifcName);
+					}
 				}
 			}
 
@@ -150,7 +185,11 @@ public class GenerateImpl {
 				}
 				pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
 				for(String gsonTypeName : gsonTypeNameList) {
-					pw.printf("%s=%s\n", gsonTypeName, gsonTypeNameMap.get(gsonTypeName));
+					String cmnt = "# ";
+					if(gsonTypeName.startsWith("java.") || gsonBasicSet.contains(gsonTypeName)) {
+						cmnt = "";
+					}
+					pw.printf("%s%s=%s\n", cmnt, gsonTypeName, gsonTypeNameMap.get(gsonTypeName));
 				}
 
 				pw.close();
@@ -531,86 +570,14 @@ public class GenerateImpl {
 		}
 	}
 
-	private static void retrieve(File pd, Map<String, ImplData> implDataMap)
-			throws IOException, ClassNotFoundException {
-		File[] fl = pd.listFiles();
-		for(File f: fl) {
-			if(f.canRead()) {
-				if(f.isDirectory()) {
-					retrieve(f, implDataMap);
-				} else {
-					processFile(f, implDataMap);
-				}
-			}
-		}
-	}
-
-	private static void processFile(File inFile, Map<String, ImplData> implDataMap)
-			throws IOException, ClassNotFoundException {
-		String tgtStr = inFile.getCanonicalPath().replaceAll(Pattern.quote(File.separator), "/");
-		Matcher cfmc = cfpt.matcher(tgtStr);
-		if(!cfmc.find()) {
-			return;
-		}
-
-		String pkg = cfmc.group(1).replaceAll("/", ".");
-		String extension = cfmc.group(2);
-		String type = cfmc.group(3);
-		String typeName = pkg + "." + extension + "." + type;
-		Class<?> cls = GenerateImpl.class.getClassLoader().loadClass(typeName);
-		String typePkg = pkg + "." + extension;
-		System.out.println(cls.getName());
-
-		String orgType = type;
-		if((type.equals("Clazz") || type.equals("Container"))
-				|| (orgType.equals("DataType") || orgType.equals("Container"))) {
-			type = "Impl";
-			typeName = pkg + "." + extension + "." + type;
-		}
-
-		Class<?>[] ics = cls.getClasses();
-		for(Class<?> ic : ics) {
-			System.out.println(ic.getName());
-			if(ic.isInterface()) {
-				// インターフェースの情報取得
-				ImplData implData = null;
-				String implSmplName = ic.getAnnotation(ConstantizedName.class).value();
-				String implName = typePkg + "." + StringUtils.uncapitalize(type)
-						+ "." + implSmplName;
-				if((orgType.equals("Clazz") || orgType.equals("Container"))
-						|| (orgType.equals("DataType") || orgType.equals("Container"))) {
-					if(implDataMap.containsKey(implName)) {
-						implData = implDataMap.get(implName);
-						implData.orgTypes.add(orgType);
-					}
-				}
-				if(implData == null) {
-					implData = new ImplData();
-					implData.extension = extension;
-					implData.typePkg = typePkg;
-					implData.type = type;
-					implData.typeName = typeName;
-					implData.orgTypes.add(orgType);
-					implData.icSmplName = ic.getSimpleName();
-					implData.icSmplCml = ic.getAnnotation(CamelizedName.class).value();
-					implData.implName = implName;
-					implData.implSmplName = implSmplName;
-					implDataMap.put(implName, implData);
-				}
-
-				Lib.retrieveInterfaces(ic, implData, 0, -1);
-			}
-		}
-	}
-
 	private static void outputImpl(ImplData implData) {
 		String extension = implData.extension;
 		String typePkg = implData.typePkg;
 		String type = implData.type;
 		String typeName = implData.typeName;
 		Set<String> orgTypes = implData.orgTypes;
-		String icSmplName = implData.icSmplName;
-		// String icSmplCml = implData.icSmplCml;
+		String ifcSmplName = implData.ifcSmplName;
+		// String ifcSmplCml = implData.ifcSmplCml;
 		String implSmplName = implData.implSmplName;
 		Map<String, Method[]> gsMap = implData.gsMap;
 		Map<String, Method> oMap = implData.oMap;
@@ -689,7 +656,7 @@ public class GenerateImpl {
 				imptList.add(pkg2Base + ".core.impl.TEXT");
 			} else if(gsMap.containsKey("text")) {
 				if(!extension.equals("core") || !orgTypes.contains("Container")
-						|| !icSmplName.equals("Text")) {
+						|| !ifcSmplName.equals("Text")) {
 					// imptList.add(pkgBase + ".core.dataType.TEXT");
 					imptList.add(pkg2Base + ".core.impl.TEXT");
 				}
@@ -697,9 +664,9 @@ public class GenerateImpl {
 			boolean hasList = false;
 			String pre = "";
 			if((extension.equals("core") && orgTypes.contains("Container")
-						&& (icSmplName.equals("Url") || icSmplName.equals("URL")))
+						&& (ifcSmplName.equals("Url") || ifcSmplName.equals("URL")))
 					|| (extension.equals("pending") && orgTypes.contains("Container")
-							&& (icSmplName.equals("CssSelectorType") || icSmplName.equals("XPathType")))) {
+							&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
 				// [個別対応]
 				imptList.add(typePkg + ".Clazz");
 				imptList.add(typePkg + ".Container");
@@ -712,10 +679,10 @@ public class GenerateImpl {
 				}
 			}
 			// if(extension.equals("core") && orgTypes.contains("Container")
-			//		&& (icSmplName.equals("Category"))) {
+			//		&& (ifcSmplName.equals("Category"))) {
 			//	imptList.add(pkgBase + ".healthLifesci.impl.PHYSICAL_ACTIVITY_CATEGORY");
 			// } else if(extension.equals("core") && orgTypes.contains("Container")
-			//		&& (icSmplName.equals("TypeOfBed"))) {
+			//		&& (ifcSmplName.equals("TypeOfBed"))) {
 			//	imptList.add(pkgBase + ".pending.impl.BED_TYPE");
 			// }
 			for(Method[] gsMtds : gsMap.values()) {
@@ -745,12 +712,12 @@ public class GenerateImpl {
 			// if(!gsMap.containsKey("seq") || extension.equals("core")
 			// if(extension.equals("core")
 						&& (orgTypes.contains("DataType") || (orgTypes.contains("Clazz")
-								&& (icSmplName.equals("DataType") || icSmplName.equals("Float")
-									|| icSmplName.equals("Integer") || icSmplName.equals("URL")))))
+								&& (ifcSmplName.equals("DataType") || ifcSmplName.equals("Float")
+									|| ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")))))
 					|| (extension.equals("pending")
-						&& (icSmplName.equals("CssSelectorType") || icSmplName.equals("XPathType")))) {
+						&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
 				ntvGSIfcCase = 9;
-				ntvAtMap.put(typeName + "." + icSmplName, "");
+				ntvAtMap.put(typeName + "." + ifcSmplName, "");
 			} else if(gsMap.containsKey("name")) {
 				if(!extension.equals("core")) {
 					imptList.add(pkg2Base + ".core.impl.NAME");
@@ -811,6 +778,7 @@ public class GenerateImpl {
 				} else {
 					gsNameList2 = gsNameList;
 				}
+				Collections.sort(gsNameList2);
 
 				for(String gsName : gsNameList2) {
 					if(gsName.equals("Boolean")) {
@@ -842,7 +810,9 @@ public class GenerateImpl {
 								Matcher exmc = expt.matcher(smc.getName());
 								exmc.find();
 								ntvGSIfcExt = exmc.group(1);
-								if(!implSmplName2.equals("URL")) {
+								if(!implSmplName2.equals("URL")
+										// [個別対応] 同名クラスのため直接指定
+										&& !(extension.equals("pending") && ifcSmplName.equals("Duration"))) {
 									if(!ent2.getValue().getName().startsWith(pkg2Base + "." + extension)) {
 										imptList.add(ntvGSIfcExt + ".impl." + implSmplName2);
 									}
@@ -865,7 +835,12 @@ public class GenerateImpl {
 								} else {
 									ntvGSIfcSmpl = smc.getSimpleName();
 									ntvGSIfcCml = smc.getAnnotation(CamelizedName.class).value().toString();
-									ntvGSIfcImpl = implSmplName2;
+									if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+										// [個別対応] 同名クラスのため直接指定
+										ntvGSIfcImpl = pkg2Base + ".core.impl.DURATION";
+									} else {
+										ntvGSIfcImpl = implSmplName2;
+									}
 									ntvGSNtvSmpl = "String";
 									ntvGSNtvName = ntvGSNtvSmpl;
 									ntvGSNtvCml = "string";
@@ -1008,7 +983,7 @@ public class GenerateImpl {
 			Set<String> alrdImptSet = new HashSet<String>();
 			Set<String> sameIfcSet = new HashSet<String>();
 			for(String orgType : orgTypes) {
-				String sameIfc = typePkg + "." + orgType + "." + icSmplName;
+				String sameIfc = typePkg + "." + orgType + "." + ifcSmplName;
 				sameIfcSet.add(sameIfc);
 			}
 			for(String imptName : imptList) {
@@ -1025,31 +1000,31 @@ public class GenerateImpl {
 
 			// クラス宣言
 			List<String> orgTypeList = new ArrayList<String>();
-			if(icSmplName.equals("Url") || icSmplName.equals("URL")) {
+			if(ifcSmplName.equals("Url") || ifcSmplName.equals("URL")) {
 				orgTypeList.add("Clazz.URL");
 				orgTypeList.add("Container.Url");
 			} else {
 				for(String orgType : orgTypes) {
-					orgTypeList.add(orgType + "." + icSmplName);
+					orgTypeList.add(orgType + "." + ifcSmplName);
 				}
 			}
 			Collections.sort(orgTypeList);
 			pw.printf("public class %s implements %s {\n", implSmplName,
 					StringUtils.join(orgTypeList, ", "));
 			pw.println();
-			// long uid = ObjectStreamClass.lookup(ic).getSerialVersionUID();
+			// long uid = ObjectStreamClass.lookup(ifc).getSerialVersionUID();
 			pw.printf("	private static final long serialVersionUID = %dL;\n", 1);
 			pw.println();
 
 			if(extension.equals("core") && orgTypes.contains("DataType")) {
 				// [個別対応]
-				if (icSmplName.equals("Boolean")) {
+				if (ifcSmplName.equals("Boolean")) {
 					pre = "java.lang.";
-				} else if(icSmplName.equals("Number")) {
+				} else if(ifcSmplName.equals("Number")) {
 					pre = "java.math.";
-				} else if(icSmplName.equals("Date")
-						|| icSmplName.equals("DateTime")
-						|| icSmplName.equals("Time")) {
+				} else if(ifcSmplName.equals("Date")
+						|| ifcSmplName.equals("DateTime")
+						|| ifcSmplName.equals("Time")) {
 					// pre = "java.time.";
 				}
 			}
@@ -1081,11 +1056,11 @@ public class GenerateImpl {
 				} else if(gsName.equals("Class")) {
 					gsName = "Clazz";
 				}
-				System.out.println(icSmplName + ", " + gsName);
+				System.out.println(ifcSmplName + ", " + gsName);
 
 				if(extension.equals("core") && orgTypes.contains("Clazz")
-						&& (icSmplName.equals("Integer")
-							|| icSmplName.equals("Float"))
+						&& (ifcSmplName.equals("Integer")
+							|| ifcSmplName.equals("Float"))
 						&& gsName.equals("Number")) {
 					// [個別対応]
 					alrdPrpSet.add(gsName.toLowerCase());
@@ -1093,22 +1068,22 @@ public class GenerateImpl {
 				}
 
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Number")
+						&& ifcSmplName.equals("Number")
 						&& gsName.equals("BigDecimal")) {
 					gsName = "Number";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("DateTime")
+						&& ifcSmplName.equals("DateTime")
 						&& gsName.equals("OffsetDateTime")) {
 					gsName = "DateTime";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Date")
+						&& ifcSmplName.equals("Date")
 						&& gsName.equals("LocalDate")) {
 					gsName = "Date";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Time")
+						&& ifcSmplName.equals("Time")
 						&& gsName.equals("LocalTime")) {
 					gsName = "Time";
 				}
@@ -1120,7 +1095,7 @@ public class GenerateImpl {
 					Type smt = smp.getType();
 					Class<?> smc = pMap.get(smt.getTypeName());
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+					if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Container.";
 					}
 					pw.printf("	public %s%s %s;\n", pre2, smc.getSimpleName(), smp.getName());
@@ -1132,16 +1107,19 @@ public class GenerateImpl {
 					Type[] aTypes = gType.getActualTypeArguments();
 					Class<?> smc = pMap.get(aTypes[0].getTypeName());
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+					if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+						// [個別対応] 同名クラスのため直接指定
+						pre2 = "";
+					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
-					} else if(orgTypes.contains("DataType") && icSmplName.equals("Text")) {
+					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
 						pre2 = "DataType.";
 					}
 					pw.printf("	public List<%s%s> %s;\n", pre2, smc.getSimpleName(), smp.getName());
 					alrdPrpSet.add(gsName.toLowerCase() + "list");
 				} else {
 					System.out.println("method " + gsName + " not found in "
-							+ typeName + "," + icSmplName + ". (100)");
+							+ typeName + "," + ifcSmplName + ". (100)");
 					System.exit(1);
 				}
 			}
@@ -1156,7 +1134,7 @@ public class GenerateImpl {
 
 			if(gsMap.containsKey("seq")) {
 				if(extension.equals("core") && orgTypes.contains("Clazz")
-						&& icSmplName.equals("Integer")) {
+						&& ifcSmplName.equals("Integer")) {
 					// IntegerはLong型が被るので追加しない
 				} else {
 					pw.printf("	public %s(Long seq) {\n", implSmplName);
@@ -1305,8 +1283,8 @@ public class GenerateImpl {
 				}
 
 				if(extension.equals("core") && orgTypes.contains("Clazz")
-						&& (icSmplName.equals("Integer")
-							|| icSmplName.equals("Float"))
+						&& (ifcSmplName.equals("Integer")
+							|| ifcSmplName.equals("Float"))
 						&& gsName.equals("Number")) {
 					// [個別対応]
 					alrdPrpSet.add(gsName.toLowerCase());
@@ -1314,22 +1292,22 @@ public class GenerateImpl {
 				}
 
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Number")
+						&& ifcSmplName.equals("Number")
 						&& gsName.equals("BigDecimal")) {
 					gsName = "Number";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("DateTime")
+						&& ifcSmplName.equals("DateTime")
 						&& gsName.equals("OffsetDateTime")) {
 					gsName = "DateTime";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Date")
+						&& ifcSmplName.equals("Date")
 						&& gsName.equals("LocalDate")) {
 					gsName = "Date";
 				}
 				if(extension.equals("core") && orgTypes.contains("DataType")
-						&& icSmplName.equals("Time")
+						&& ifcSmplName.equals("Time")
 						&& gsName.equals("LocalTime")) {
 					gsName = "Time";
 				}
@@ -1378,7 +1356,7 @@ public class GenerateImpl {
 					}
 
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+					if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Container.";
 					}
 					pw.printf("	public %s(%s%s %s) {\n", implSmplName,
@@ -1488,9 +1466,12 @@ public class GenerateImpl {
 						smplName = "Clazz";
 					}
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+					if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+						// [個別対応] 同名クラスのため直接指定
+						pre2 = "";
+					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
-					} else if(orgTypes.contains("DataType") && icSmplName.equals("Text")) {
+					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
 						pre2 = "DataType.";
 					}
 					String noListName = smp.getName().substring(0, smp.getName().length() - 4);
@@ -1597,15 +1578,15 @@ public class GenerateImpl {
 					alrdPrpSet.add(gsName.toLowerCase() + "list");
 				} else {
 					System.out.println("method " + gsName + " not found in "
-							+ typeName + "," + icSmplName + ". (200)");
+							+ typeName + "," + ifcSmplName + ". (200)");
 					System.exit(1);
 				}
 			}
 
 			if(pMap.size() > 1
 					&& !(extension.equals("core") && orgTypes.contains("Clazz")
-						&& (icSmplName.equals("Integer")
-							|| icSmplName.equals("Float")))) {
+						&& (ifcSmplName.equals("Integer")
+							|| ifcSmplName.equals("Float")))) {
 				List<String> prmStrs = new ArrayList<String>();
 				List<String> setMtds = new ArrayList<String>();
 				List<String> setMtdClss = new ArrayList<String>();
@@ -1658,22 +1639,22 @@ public class GenerateImpl {
 					}
 
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Number")
+							&& ifcSmplName.equals("Number")
 							&& gsName.equals("BigDecimal")) {
 						gsName = "Number";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("DateTime")
+							&& ifcSmplName.equals("DateTime")
 							&& gsName.equals("OffsetDateTime")) {
 						gsName = "DateTime";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Date")
+							&& ifcSmplName.equals("Date")
 							&& gsName.equals("LocalDate")) {
 						gsName = "Date";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Time")
+							&& ifcSmplName.equals("Time")
 							&& gsName.equals("LocalTime")) {
 						gsName = "Time";
 					}
@@ -1703,7 +1684,7 @@ public class GenerateImpl {
 							smplName = "Time";
 						}
 						String pre2 = pre;
-						if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+						if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 							pre2 = "Container.";
 						}
 						StringBuilder sb = new StringBuilder();
@@ -1752,9 +1733,12 @@ public class GenerateImpl {
 							smplName = "Time";
 						}
 						String pre2 = pre;
-						if(smc.getSimpleName().equals(icSmplName) && !orgTypes.contains("DataType")) {
+						if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+							// [個別対応] 同名クラスのため直接指定
+							pre2 = "";
+						} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 							pre2 = "Clazz.";
-						} else if(orgTypes.contains("DataType") && icSmplName.equals("Text")) {
+						} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
 							pre2 = "DataType.";
 						}
 						StringBuilder sb = new StringBuilder();
@@ -1782,7 +1766,7 @@ public class GenerateImpl {
 						alrdPrpSet.add(gsName.toLowerCase() + "list");
 					} else {
 						System.out.println("method " + gsName + " not found in "
-								+ typeName + "," + icSmplName + ". (300)");
+								+ typeName + "," + ifcSmplName + ". (300)");
 						System.exit(1);
 					}
 				}
@@ -1928,51 +1912,51 @@ public class GenerateImpl {
 			default:
 				if(extension.equals("core")) {
 					if(orgTypes.contains("DataType") || orgTypes.contains("Clazz")) {
-						if(icSmplName.equals("Text") || icSmplName.equals("URL")) {
+						if(ifcSmplName.equals("Text") || ifcSmplName.equals("URL")) {
 							pw.println("	@Override");
 							pw.printf("	public String getNativeValue() {\n");
 							pw.printf("		return getString();\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Boolean")) {
+						} else if(ifcSmplName.equals("Boolean")) {
 							pw.println("	@Override");
 							pw.printf("	public java.lang.Boolean getNativeValue() {\n");
 							pw.printf("		return getB00lean();\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Float")) {
+						} else if(ifcSmplName.equals("Float")) {
 							pw.println("	@Override");
 							pw.printf("	public Double getNativeValue() {\n");
 							pw.printf("		return getD0uble();\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Integer")) {
+						} else if(ifcSmplName.equals("Integer")) {
 							pw.println("	@Override");
 							pw.printf("	public Long getNativeValue() {\n");
 							pw.printf("		return getL0ng();\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Number")) {
+						} else if(ifcSmplName.equals("Number")) {
 							pw.println("	@Override");
 							pw.printf("	public java.math.BigDecimal getNativeValue() {\n");
 							pw.printf("		return getNumber();\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("DateTime")) {
+						} else if(ifcSmplName.equals("DateTime")) {
 							pw.println("	@Override");
 							pw.printf("	public java.util.Date getNativeValue() {\n");
 							pw.printf("		if(getDateTime() == null) return null;\n");
 							pw.printf("		return java.util.Date.from(getDateTime().toInstant());\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Date")) {
+						} else if(ifcSmplName.equals("Date")) {
 							pw.println("	@Override");
 							pw.printf("	public java.sql.Date getNativeValue() {\n");
 							pw.printf("		if(getDate() == null) return null;\n");
 							pw.printf("		return java.sql.Date.valueOf(getDate());\n");
 							pw.println("	}");
 							pw.println();
-						} else if(icSmplName.equals("Time")) {
+						} else if(ifcSmplName.equals("Time")) {
 							pw.println("	@Override");
 							pw.printf("	public java.sql.Time getNativeValue() {\n");
 							pw.printf("		if(getTime() == null) return null;\n");
@@ -1983,7 +1967,7 @@ public class GenerateImpl {
 					}
 				} else if(extension.equals("pending")) {
 					if(orgTypes.contains("DataType") || orgTypes.contains("Clazz")) {
-						if(icSmplName.equals("CssSelectorType") || icSmplName.equals("XPathType")) {
+						if(ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")) {
 							pw.println("	@Override");
 							pw.printf("	public String getNativeValue() {\n");
 							pw.printf("		return getString();\n");
@@ -2007,7 +1991,7 @@ public class GenerateImpl {
 					}
 				}
 				pw.printf("		return %s.%s.class.getAnnotation(SampleValue.class).value();\n",
-						type2, icSmplName);
+						type2, ifcSmplName);
 				pw.println("	}");
 				pw.println();
 			}
@@ -2115,7 +2099,10 @@ public class GenerateImpl {
 			pw.close();
 			pw = null;
 
-			if(gsMap.containsKey("seq")) {
+			if(gsMap.containsKey("seq")
+				&& !(extension.equals("core") && (orgTypes.contains("DataType")
+						|| (orgTypes.contains("Clazz") && (implSmplName.equals("INTEGER")
+							|| implSmplName.equals("FLOAT")))))) {
 				// sql出力
 				StringBuilder sqlFPath = new StringBuilder(sqlDPath);
 				sqlFPath.append("scm_");
@@ -2142,8 +2129,8 @@ public class GenerateImpl {
 					}
 
 					if(extension.equals("core") && orgTypes.contains("Clazz")
-							&& (icSmplName.equals("Integer")
-								|| icSmplName.equals("Float"))
+							&& (ifcSmplName.equals("Integer")
+								|| ifcSmplName.equals("Float"))
 							&& gsName.equals("Number")) {
 						// [個別対応]
 						alrdPrpSet.add(gsName.toLowerCase());
@@ -2151,22 +2138,22 @@ public class GenerateImpl {
 					}
 
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Number")
+							&& ifcSmplName.equals("Number")
 							&& gsName.equals("BigDecimal")) {
 						gsName = "Number";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("DateTime")
+							&& ifcSmplName.equals("DateTime")
 							&& gsName.equals("OffsetDateTime")) {
 						gsName = "DateTime";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Date")
+							&& ifcSmplName.equals("Date")
 							&& gsName.equals("LocalDate")) {
 						gsName = "Date";
 					}
 					if(extension.equals("core") && orgTypes.contains("DataType")
-							&& icSmplName.equals("Time")
+							&& ifcSmplName.equals("Time")
 							&& gsName.equals("LocalTime")) {
 						gsName = "Time";
 					}
@@ -2216,7 +2203,7 @@ public class GenerateImpl {
 						alrdPrpSet.add(gsName.toLowerCase() + "list");
 					} else {
 						System.out.println("method " + gsName + " not found in "
-								+ typeName + "," + icSmplName + ". (500)");
+								+ typeName + "," + ifcSmplName + ". (500)");
 						System.exit(1);
 					}
 				}
@@ -2316,7 +2303,7 @@ public class GenerateImpl {
 					}
 					domaConvFPath.append(StringUtils.uncapitalize(orgType));
 					domaConvFPath.append(File.separator);
-					domaConvFPath.append(icSmplName);
+					domaConvFPath.append(ifcSmplName);
 					domaConvFPath.append("Converter.java");
 					System.out.println(domaConvFPath.toString());
 					domaConvPkg.append(StringUtils.uncapitalize(orgType));
@@ -2389,21 +2376,21 @@ public class GenerateImpl {
 					}
 					pw.printf("import %s.%s;\n", implPkg.toString(), implSmplName);
 					String pre2 = "";
-					// if(orgType.equals("Clazz") && icSmplName.matches("^[A-Z]+$")) {
-					if(icSmplName.matches("^[A-Z]+$")) {
+					// if(orgType.equals("Clazz") && ifcSmplName.matches("^[A-Z]+$")) {
+					if(ifcSmplName.matches("^[A-Z]+$")) {
 						pw.printf("import %s.%s;\n", typePkg, orgType);
 						pre2 = orgType + ".";
 					} else {
-						pw.printf("import %s.%s.%s;\n", typePkg, orgType, icSmplName);
+						pw.printf("import %s.%s.%s;\n", typePkg, orgType, ifcSmplName);
 					}
 					pw.println("");
 					pw.println("@ExternalDomain");
 					pw.printf("public class %sConverter implements DomainConverter<%s%s, %s> {\n",
-							icSmplName, pre2, icSmplName, ntvGSNtvSmpl2);
+							ifcSmplName, pre2, ifcSmplName, ntvGSNtvSmpl2);
 					pw.println("");
 					pw.println("	@Override");
 					pw.printf("	public %s fromDomainToValue(%s%s domain) {\n",
-							ntvGSNtvSmpl2, pre2, icSmplName);
+							ntvGSNtvSmpl2, pre2, ifcSmplName);
 					if(ntvGSNtvSmpl.equals("OffsetDateTime")) {
 						pw.println("		return domain.getNativeValue();");
 					} else if(ntvGSNtvSmpl.equals("LocalDate")) {
@@ -2425,7 +2412,7 @@ public class GenerateImpl {
 					pw.println("");
 					pw.println("	@Override");
 					pw.printf("	public %s%s fromValueToDomain(%s value) {\n",
-							pre2, icSmplName, ntvGSNtvSmpl2);
+							pre2, ifcSmplName, ntvGSNtvSmpl2);
 					pw.printf("		return new %s(value);\n", implSmplName);
 					pw.println("	}");
 					pw.println("");
@@ -2433,15 +2420,15 @@ public class GenerateImpl {
 
 					pw.close();
 					pw = null;
-					implData.domaConvNameSet.add(domaConvPkg.toString() + "." + icSmplName + "Converter");
+					implData.domaConvNameSet.add(domaConvPkg.toString() + "." + ifcSmplName + "Converter");
 				}
 			}
 
 			// Gson
 			for(String orgType : orgTypes) {
-				String icSmplName2 = icSmplName;
-				if(extension.equals("core") && orgType.equals("Container") && icSmplName.equals("URL")) {
-					icSmplName2 = "Url";
+				String ifcSmplName2 = ifcSmplName;
+				if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("URL")) {
+					ifcSmplName2 = "Url";
 				}
 
 				String[] pes2 = typePkg.split("\\.");
@@ -2461,7 +2448,7 @@ public class GenerateImpl {
 				}
 				gsonFPath.append(StringUtils.uncapitalize(orgType));
 				gsonFPath.append(File.separator);
-				gsonFPath.append(icSmplName2);
+				gsonFPath.append(ifcSmplName2);
 				gsonFPath.append("Deserializer.java");
 				System.out.println(gsonFPath.toString());
 				gsonPkg.append(StringUtils.uncapitalize(orgType));
@@ -2491,37 +2478,37 @@ public class GenerateImpl {
 				pw.println("import org.kyojo.gson.reflect.TypeToken;");
 				pw.printf("import %s.%s;\n", implPkg.toString(), implSmplName);
 				String pre2 = "";
-				if(icSmplName2.matches("^[A-Z]+$")
-						|| (extension.equals("core") && orgType.equals("Clazz") && icSmplName.equals("Float"))
-						|| (extension.equals("meta") && orgType.equals("Clazz") && icSmplName.equals("Class"))) {
+				if(ifcSmplName2.matches("^[A-Z]+$")
+						|| (extension.equals("core") && orgType.equals("Clazz") && ifcSmplName.equals("Float"))
+						|| (extension.equals("meta") && orgType.equals("Clazz") && ifcSmplName.equals("Class"))) {
 					pw.printf("import %s.%s;\n", typePkg, orgType);
 					pre2 = orgType + ".";
 				} else {
-					pw.printf("import %s.%s.%s;\n", typePkg, orgType, icSmplName2);
+					pw.printf("import %s.%s.%s;\n", typePkg, orgType, ifcSmplName2);
 				}
 				pw.println("");
 				pw.printf("public class %sDeserializer implements JsonDeserializer<%s%s> {\n",
-						icSmplName2, pre2, icSmplName2);
+						ifcSmplName2, pre2, ifcSmplName2);
 				pw.println("");
 				pw.println("	@Override");
 				pw.printf("	public %s%s deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)\n",
-						pre2, icSmplName2);
+						pre2, ifcSmplName2);
 				pw.println("			throws JsonParseException {");
 				pw.println("		if(jsonElement.isJsonPrimitive()) {");
-				if(extension.equals("core") && orgType.equals("Clazz") && icSmplName.equals("DataType")
+				if(extension.equals("core") && orgType.equals("Clazz") && ifcSmplName.equals("DataType")
 						|| extension.equals("core") && orgType.equals("B00lean") ) {
 					pw.printf("			return new %s();\n", implSmplName);
 				} else if((ntvGSNtvSmpl != null && (ntvGSNtvSmpl.equals("Date")
 							|| ntvGSNtvSmpl.equals("OffsetDateTime") || ntvGSNtvSmpl.equals("LocalDate") || ntvGSNtvSmpl.equals("LocalTime")))
 						|| (extension.equals("core") && (orgTypes.contains("DataType")
-								&& (icSmplName.equals("Date") || icSmplName.equals("DateTime") || icSmplName.equals("Time"))))) {
-					if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("OffsetDateTime")) || icSmplName.equals("DateTime")) {
+								&& (ifcSmplName.equals("Date") || ifcSmplName.equals("DateTime") || ifcSmplName.equals("Time"))))) {
+					if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("OffsetDateTime")) || ifcSmplName.equals("DateTime")) {
 						pw.println("			java.time.OffsetDateTime dateTime = context.deserialize(jsonElement, java.time.OffsetDateTime.class);");
 						pw.printf("			return new %s(dateTime);\n", implSmplName);
-					} else if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("LocalDate")) || icSmplName.equals("Date")) {
+					} else if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("LocalDate")) || ifcSmplName.equals("Date")) {
 						pw.println("			java.time.LocalDate date = context.deserialize(jsonElement, java.time.LocalDate.class);");
 						pw.printf("			return new %s(date);\n", implSmplName);
-					} else if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("LocalTime")) || icSmplName.equals("Time")) {
+					} else if((ntvGSNtvSmpl != null && ntvGSNtvSmpl.equals("LocalTime")) || ifcSmplName.equals("Time")) {
 						pw.println("			java.time.LocalTime time = context.deserialize(jsonElement, java.time.LocalTime.class);");
 						pw.printf("			return new %s(time);\n", implSmplName);
 					} else {
@@ -2529,24 +2516,24 @@ public class GenerateImpl {
 						pw.printf("			return new %s(date);\n", implSmplName);
 					}
 				} else if((extension.equals("core") && (orgTypes.contains("DataType") || (orgTypes.contains("Clazz")
-								&& (icSmplName.equals("Float") || icSmplName.equals("Integer") || icSmplName.equals("URL")))))
+								&& (ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")))))
 							|| (extension.equals("pending") && orgTypes.contains("Clazz")
-								&& (icSmplName.equals("CssSelectorType") || icSmplName.equals("XPathType")))) {
-					if(icSmplName.equals("Float") || icSmplName.equals("Integer") || icSmplName.equals("Number")) {
+								&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
+					if(ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("Number")) {
 						pw.printf("			try {\n");
 					}
-					if(icSmplName.equals("Boolean")) {
+					if(ifcSmplName.equals("Boolean")) {
 						pw.printf("			return new %s(jsonElement.getAsBoolean());\n", implSmplName);
-					} else if(icSmplName.equals("Float")) {
+					} else if(ifcSmplName.equals("Float")) {
 						pw.printf("				return new %s(jsonElement.getAsDouble());\n", implSmplName);
-					} else if(icSmplName.equals("Integer")) {
+					} else if(ifcSmplName.equals("Integer")) {
 						pw.printf("				return new %s(jsonElement.getAsLong());\n", implSmplName);
-					} else if(icSmplName.equals("Number")) {
+					} else if(ifcSmplName.equals("Number")) {
 						pw.printf("				return new %s(jsonElement.getAsBigDecimal());\n", implSmplName);
 					} else {
 						pw.printf("			return new %s(jsonElement.getAsString());\n", implSmplName);
 					}
-					if(icSmplName.equals("Float") || icSmplName.equals("Integer") || icSmplName.equals("Number")) {
+					if(ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("Number")) {
 						pw.printf("			} catch(NumberFormatException nfe) {\n");
 						pw.printf("				return null;\n");
 						pw.printf("			}\n");
@@ -2574,7 +2561,7 @@ public class GenerateImpl {
 				pw.println("		}");
 				pw.println("");
 				pw.println("		JsonObject jsonObject = jsonElement.getAsJsonObject();");
-				pw.printf("		%s%s obj = new %s();\n", pre2, icSmplName2, implSmplName);
+				pw.printf("		%s%s obj = new %s();\n", pre2, ifcSmplName2, implSmplName);
 				pw.println("		HashMap<String, Field> fldMap = new HashMap<>();");
 				pw.printf("		Field[] flds = %s.class.getFields();\n", implSmplName);
 				pw.println("		for(Field fld : flds) {");
@@ -2610,8 +2597,8 @@ public class GenerateImpl {
 
 				pw.close();
 				pw = null;
-				implData.gsonTypeNameMap.put(typePkg + "." + orgType + "$" + icSmplName2,
-						gsonPkg.toString() + "." + icSmplName2 + "Deserializer");
+				implData.gsonTypeNameMap.put(typePkg + "." + orgType + "$" + ifcSmplName2,
+						gsonPkg.toString() + "." + ifcSmplName2 + "Deserializer");
 			}
 		} catch(IOException ioe) {
 			ioe.printStackTrace();

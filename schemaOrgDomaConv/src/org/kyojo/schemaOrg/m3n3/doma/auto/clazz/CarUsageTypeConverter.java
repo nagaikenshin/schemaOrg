@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.clazz;
+package org.kyojo.schemaorg.m3n3.doma.auto.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.CAR_USAGE_TYPE;
-import org.kyojo.schemaOrg.m3n3.auto.Clazz.CarUsageType;
+import org.kyojo.schemaorg.m3n3.auto.impl.CAR_USAGE_TYPE;
+import org.kyojo.schemaorg.m3n3.auto.Clazz.CarUsageType;
 
 @ExternalDomain
 public class CarUsageTypeConverter implements DomainConverter<CarUsageType, String> {

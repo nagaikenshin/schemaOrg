@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.TRANSMISSION_METHOD;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.TransmissionMethod;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.TRANSMISSION_METHOD;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.TransmissionMethod;
 
 @ExternalDomain
 public class TransmissionMethodConverter implements DomainConverter<TransmissionMethod, String> {

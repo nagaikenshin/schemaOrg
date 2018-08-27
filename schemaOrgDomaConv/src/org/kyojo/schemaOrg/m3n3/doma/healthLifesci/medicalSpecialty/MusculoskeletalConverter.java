@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalSpecialty;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalSpecialty;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalSpecialty.MUSCULOSKELETAL;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalSpecialty.Musculoskeletal;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalSpecialty.MUSCULOSKELETAL;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalSpecialty.Musculoskeletal;
 
 @ExternalDomain
 public class MusculoskeletalConverter implements DomainConverter<Musculoskeletal, String> {

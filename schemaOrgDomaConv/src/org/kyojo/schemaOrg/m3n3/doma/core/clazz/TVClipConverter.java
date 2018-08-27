@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.TV_CLIP;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.TVClip;
+import org.kyojo.schemaorg.m3n3.core.impl.TV_CLIP;
+import org.kyojo.schemaorg.m3n3.core.Clazz.TVClip;
 
 @ExternalDomain
 public class TVClipConverter implements DomainConverter<TVClip, String> {

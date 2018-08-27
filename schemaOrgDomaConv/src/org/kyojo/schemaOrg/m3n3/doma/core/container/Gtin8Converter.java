@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.GTIN8;
-import org.kyojo.schemaOrg.m3n3.core.Container.Gtin8;
+import org.kyojo.schemaorg.m3n3.core.impl.GTIN8;
+import org.kyojo.schemaorg.m3n3.core.Container.Gtin8;
 
 @ExternalDomain
 public class Gtin8Converter implements DomainConverter<Gtin8, String> {

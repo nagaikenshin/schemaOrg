@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.clazz;
+package org.kyojo.schemaorg.m3n3.doma.pending.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.LIBRARY_SYSTEM;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.LibrarySystem;
+import org.kyojo.schemaorg.m3n3.pending.impl.LIBRARY_SYSTEM;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.LibrarySystem;
 
 @ExternalDomain
 public class LibrarySystemConverter implements DomainConverter<LibrarySystem, String> {

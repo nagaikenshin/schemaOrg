@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.CLINICAL_PHARMACOLOGY;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ClinicalPharmacology;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.CLINICAL_PHARMACOLOGY;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ClinicalPharmacology;
 
 @ExternalDomain
 public class ClinicalPharmacologyConverter implements DomainConverter<ClinicalPharmacology, String> {

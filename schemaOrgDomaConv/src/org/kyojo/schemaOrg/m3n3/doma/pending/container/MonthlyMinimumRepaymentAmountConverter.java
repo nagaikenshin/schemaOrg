@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.MONTHLY_MINIMUM_REPAYMENT_AMOUNT;
-import org.kyojo.schemaOrg.m3n3.pending.Container.MonthlyMinimumRepaymentAmount;
+import org.kyojo.schemaorg.m3n3.pending.impl.MONTHLY_MINIMUM_REPAYMENT_AMOUNT;
+import org.kyojo.schemaorg.m3n3.pending.Container.MonthlyMinimumRepaymentAmount;
 
 @ExternalDomain
 public class MonthlyMinimumRepaymentAmountConverter implements DomainConverter<MonthlyMinimumRepaymentAmount, BigDecimal> {

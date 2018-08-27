@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.b00lean;
+package org.kyojo.schemaorg.m3n3.gson.core.b00lean;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.b00lean.FALSE;
-import org.kyojo.schemaOrg.m3n3.core.B00lean.False;
+import org.kyojo.schemaorg.m3n3.core.b00lean.FALSE;
+import org.kyojo.schemaorg.m3n3.core.B00lean.False;
 
 public class FalseDeserializer implements JsonDeserializer<False> {
 

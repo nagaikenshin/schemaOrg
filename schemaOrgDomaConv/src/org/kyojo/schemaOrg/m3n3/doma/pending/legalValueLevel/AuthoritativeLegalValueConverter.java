@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.legalValueLevel;
+package org.kyojo.schemaorg.m3n3.doma.pending.legalValueLevel;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.legalValueLevel.AUTHORITATIVE_LEGAL_VALUE;
-import org.kyojo.schemaOrg.m3n3.pending.LegalValueLevel.AuthoritativeLegalValue;
+import org.kyojo.schemaorg.m3n3.pending.legalValueLevel.AUTHORITATIVE_LEGAL_VALUE;
+import org.kyojo.schemaorg.m3n3.pending.LegalValueLevel.AuthoritativeLegalValue;
 
 @ExternalDomain
 public class AuthoritativeLegalValueConverter implements DomainConverter<AuthoritativeLegalValue, String> {

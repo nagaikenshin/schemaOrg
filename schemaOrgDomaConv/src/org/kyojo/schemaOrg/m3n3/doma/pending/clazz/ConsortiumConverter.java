@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.clazz;
+package org.kyojo.schemaorg.m3n3.doma.pending.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.CONSORTIUM;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.Consortium;
+import org.kyojo.schemaorg.m3n3.pending.impl.CONSORTIUM;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.Consortium;
 
 @ExternalDomain
 public class ConsortiumConverter implements DomainConverter<Consortium, String> {

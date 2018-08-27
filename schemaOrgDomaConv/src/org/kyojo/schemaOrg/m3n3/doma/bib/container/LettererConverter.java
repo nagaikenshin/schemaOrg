@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.bib.container;
+package org.kyojo.schemaorg.m3n3.doma.bib.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.bib.impl.LETTERER;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Letterer;
+import org.kyojo.schemaorg.m3n3.bib.impl.LETTERER;
+import org.kyojo.schemaorg.m3n3.bib.Container.Letterer;
 
 @ExternalDomain
 public class LettererConverter implements DomainConverter<Letterer, String> {

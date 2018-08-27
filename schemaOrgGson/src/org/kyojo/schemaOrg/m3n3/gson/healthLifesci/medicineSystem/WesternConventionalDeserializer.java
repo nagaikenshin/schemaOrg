@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.medicineSystem;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.medicineSystem;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicineSystem.WESTERN_CONVENTIONAL;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicineSystem.WesternConventional;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicineSystem.WESTERN_CONVENTIONAL;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicineSystem.WesternConventional;
 
 public class WesternConventionalDeserializer implements JsonDeserializer<WesternConventional> {
 

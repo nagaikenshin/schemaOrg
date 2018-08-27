@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.rsvpResponseType;
+package org.kyojo.schemaorg.m3n3.gson.core.rsvpResponseType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.rsvpResponseType.RSVP_RESPONSE_MAYBE;
-import org.kyojo.schemaOrg.m3n3.core.RsvpResponseType.RsvpResponseMaybe;
+import org.kyojo.schemaorg.m3n3.core.rsvpResponseType.RSVP_RESPONSE_MAYBE;
+import org.kyojo.schemaorg.m3n3.core.RsvpResponseType.RsvpResponseMaybe;
 
 public class RsvpResponseMaybeDeserializer implements JsonDeserializer<RsvpResponseMaybe> {
 

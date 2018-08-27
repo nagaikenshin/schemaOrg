@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.paymentStatusType;
+package org.kyojo.schemaorg.m3n3.doma.core.paymentStatusType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.paymentStatusType.PAYMENT_DUE;
-import org.kyojo.schemaOrg.m3n3.core.PaymentStatusType.PaymentDue;
+import org.kyojo.schemaorg.m3n3.core.paymentStatusType.PAYMENT_DUE;
+import org.kyojo.schemaorg.m3n3.core.PaymentStatusType.PaymentDue;
 
 @ExternalDomain
 public class PaymentDueConverter implements DomainConverter<PaymentDue, String> {

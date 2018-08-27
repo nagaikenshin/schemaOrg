@@ -1,37 +1,37 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci.medicalAudience;
+package org.kyojo.schemaorg.m3n3.healthLifesci.medicalAudience;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SampleValue;
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType;
-import org.kyojo.schemaOrg.m3n3.core.Container.AlternateName;
-import org.kyojo.schemaOrg.m3n3.core.Container.AudienceType;
-import org.kyojo.schemaOrg.m3n3.core.Container.Description;
-import org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription;
-import org.kyojo.schemaOrg.m3n3.core.Container.GeographicArea;
-import org.kyojo.schemaOrg.m3n3.core.Container.Identifier;
-import org.kyojo.schemaOrg.m3n3.core.Container.Image;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy;
-import org.kyojo.schemaOrg.m3n3.core.Container.NameRuby;
-import org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction;
-import org.kyojo.schemaOrg.m3n3.core.Container.RequiredGender;
-import org.kyojo.schemaOrg.m3n3.core.Container.RequiredMaxAge;
-import org.kyojo.schemaOrg.m3n3.core.Container.RequiredMinAge;
-import org.kyojo.schemaOrg.m3n3.core.Container.SameAs;
-import org.kyojo.schemaOrg.m3n3.core.Container.SuggestedGender;
-import org.kyojo.schemaOrg.m3n3.core.Container.SuggestedMaxAge;
-import org.kyojo.schemaOrg.m3n3.core.Container.SuggestedMinAge;
-import org.kyojo.schemaOrg.m3n3.core.Container.Url;
-import org.kyojo.schemaOrg.m3n3.core.DataType;
-import org.kyojo.schemaOrg.m3n3.core.impl.NAME;
-import org.kyojo.schemaOrg.m3n3.core.impl.TEXT;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HealthCondition;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalAudience;
-import org.kyojo.schemaOrg.m3n3.meta.Container.SupersededBy;
+import org.kyojo.schemaorg.SampleValue;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container.AdditionalType;
+import org.kyojo.schemaorg.m3n3.core.Container.AlternateName;
+import org.kyojo.schemaorg.m3n3.core.Container.AudienceType;
+import org.kyojo.schemaorg.m3n3.core.Container.Description;
+import org.kyojo.schemaorg.m3n3.core.Container.DisambiguatingDescription;
+import org.kyojo.schemaorg.m3n3.core.Container.GeographicArea;
+import org.kyojo.schemaorg.m3n3.core.Container.Identifier;
+import org.kyojo.schemaorg.m3n3.core.Container.Image;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.Container.NameFuzzy;
+import org.kyojo.schemaorg.m3n3.core.Container.NameRuby;
+import org.kyojo.schemaorg.m3n3.core.Container.PotentialAction;
+import org.kyojo.schemaorg.m3n3.core.Container.RequiredGender;
+import org.kyojo.schemaorg.m3n3.core.Container.RequiredMaxAge;
+import org.kyojo.schemaorg.m3n3.core.Container.RequiredMinAge;
+import org.kyojo.schemaorg.m3n3.core.Container.SameAs;
+import org.kyojo.schemaorg.m3n3.core.Container.SuggestedGender;
+import org.kyojo.schemaorg.m3n3.core.Container.SuggestedMaxAge;
+import org.kyojo.schemaorg.m3n3.core.Container.SuggestedMinAge;
+import org.kyojo.schemaorg.m3n3.core.Container.Url;
+import org.kyojo.schemaorg.m3n3.core.DataType;
+import org.kyojo.schemaorg.m3n3.core.impl.NAME;
+import org.kyojo.schemaorg.m3n3.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.HealthCondition;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalAudience;
+import org.kyojo.schemaorg.m3n3.meta.Container.SupersededBy;
 
 
 public class MEDICAL_RESEARCHER implements MedicalAudience.MedicalResearcher {

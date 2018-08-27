@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalObservationalStudyDesign;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalObservationalStudyDesign;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalObservationalStudyDesign.CASE_SERIES;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalObservationalStudyDesign.CaseSeries;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalObservationalStudyDesign.CASE_SERIES;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalObservationalStudyDesign.CaseSeries;
 
 @ExternalDomain
 public class CaseSeriesConverter implements DomainConverter<CaseSeries, String> {

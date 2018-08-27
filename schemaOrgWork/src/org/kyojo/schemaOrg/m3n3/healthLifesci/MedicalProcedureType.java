@@ -1,14 +1,14 @@
-package org.kyojo.schemaOrg.m3n3.healthLifesci;
+package org.kyojo.schemaorg.m3n3.healthLifesci;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SampleValue;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalProcedure;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SampleValue;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.MedicalProcedure;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://schema.org/MedicalProcedureType")

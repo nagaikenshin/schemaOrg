@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.RECIPE_YIELD;
-import org.kyojo.schemaOrg.m3n3.core.Container.RecipeYield;
+import org.kyojo.schemaorg.m3n3.core.impl.RECIPE_YIELD;
+import org.kyojo.schemaorg.m3n3.core.Container.RecipeYield;
 
 @ExternalDomain
 public class RecipeYieldConverter implements DomainConverter<RecipeYield, String> {

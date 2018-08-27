@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Boolean;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.DataType.Boolean;
 
 public class VALUE_REQUIRED implements Container.ValueRequired {
 

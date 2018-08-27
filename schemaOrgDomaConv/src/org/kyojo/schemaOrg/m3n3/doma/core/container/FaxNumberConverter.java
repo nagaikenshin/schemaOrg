@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.FAX_NUMBER;
-import org.kyojo.schemaOrg.m3n3.core.Container.FaxNumber;
+import org.kyojo.schemaorg.m3n3.core.impl.FAX_NUMBER;
+import org.kyojo.schemaorg.m3n3.core.Container.FaxNumber;
 
 @ExternalDomain
 public class FaxNumberConverter implements DomainConverter<FaxNumber, String> {

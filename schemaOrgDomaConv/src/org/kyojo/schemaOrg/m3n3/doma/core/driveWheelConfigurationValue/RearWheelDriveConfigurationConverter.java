@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.driveWheelConfigurationValue;
+package org.kyojo.schemaorg.m3n3.doma.core.driveWheelConfigurationValue;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.driveWheelConfigurationValue.REAR_WHEEL_DRIVE_CONFIGURATION;
-import org.kyojo.schemaOrg.m3n3.core.DriveWheelConfigurationValue.RearWheelDriveConfiguration;
+import org.kyojo.schemaorg.m3n3.core.driveWheelConfigurationValue.REAR_WHEEL_DRIVE_CONFIGURATION;
+import org.kyojo.schemaorg.m3n3.core.DriveWheelConfigurationValue.RearWheelDriveConfiguration;
 
 @ExternalDomain
 public class RearWheelDriveConfigurationConverter implements DomainConverter<RearWheelDriveConfiguration, String> {

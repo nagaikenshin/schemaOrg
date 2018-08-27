@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.container;
+package org.kyojo.schemaorg.m3n3.gson.core.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.impl.BIRTH_PLACE;
-import org.kyojo.schemaOrg.m3n3.core.Container.BirthPlace;
+import org.kyojo.schemaorg.m3n3.core.impl.BIRTH_PLACE;
+import org.kyojo.schemaorg.m3n3.core.Container.BirthPlace;
 
 public class BirthPlaceDeserializer implements JsonDeserializer<BirthPlace> {
 

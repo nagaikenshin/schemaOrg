@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.MENU_ITEM;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.MenuItem;
+import org.kyojo.schemaorg.m3n3.core.impl.MENU_ITEM;
+import org.kyojo.schemaorg.m3n3.core.Clazz.MenuItem;
 
 @ExternalDomain
 public class MenuItemConverter implements DomainConverter<MenuItem, String> {

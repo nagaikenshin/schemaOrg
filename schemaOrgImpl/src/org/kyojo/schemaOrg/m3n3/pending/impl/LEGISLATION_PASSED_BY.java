@@ -1,14 +1,14 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Organization;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Person;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.core.impl.ORGANIZATION;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Organization;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Person;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.core.impl.ORGANIZATION;
+import org.kyojo.schemaorg.m3n3.pending.Container;
 
 public class LEGISLATION_PASSED_BY implements Container.LegislationPassedBy {
 

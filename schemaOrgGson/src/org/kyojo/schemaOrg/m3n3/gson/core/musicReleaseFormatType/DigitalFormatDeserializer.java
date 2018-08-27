@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.musicReleaseFormatType;
+package org.kyojo.schemaorg.m3n3.gson.core.musicReleaseFormatType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.musicReleaseFormatType.DIGITAL_FORMAT;
-import org.kyojo.schemaOrg.m3n3.core.MusicReleaseFormatType.DigitalFormat;
+import org.kyojo.schemaorg.m3n3.core.musicReleaseFormatType.DIGITAL_FORMAT;
+import org.kyojo.schemaorg.m3n3.core.MusicReleaseFormatType.DigitalFormat;
 
 public class DigitalFormatDeserializer implements JsonDeserializer<DigitalFormat> {
 

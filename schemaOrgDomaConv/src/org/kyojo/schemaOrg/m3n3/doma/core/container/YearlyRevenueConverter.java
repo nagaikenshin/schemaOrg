@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.YEARLY_REVENUE;
-import org.kyojo.schemaOrg.m3n3.core.Container.YearlyRevenue;
+import org.kyojo.schemaorg.m3n3.core.impl.YEARLY_REVENUE;
+import org.kyojo.schemaorg.m3n3.core.Container.YearlyRevenue;
 
 @ExternalDomain
 public class YearlyRevenueConverter implements DomainConverter<YearlyRevenue, String> {

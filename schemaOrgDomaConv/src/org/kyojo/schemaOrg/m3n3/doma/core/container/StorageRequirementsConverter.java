@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.STORAGE_REQUIREMENTS;
-import org.kyojo.schemaOrg.m3n3.core.Container.StorageRequirements;
+import org.kyojo.schemaorg.m3n3.core.impl.STORAGE_REQUIREMENTS;
+import org.kyojo.schemaorg.m3n3.core.Container.StorageRequirements;
 
 @ExternalDomain
 public class StorageRequirementsConverter implements DomainConverter<StorageRequirements, String> {

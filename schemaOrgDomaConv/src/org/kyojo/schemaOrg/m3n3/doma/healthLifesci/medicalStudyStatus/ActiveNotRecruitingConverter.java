@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalStudyStatus;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalStudyStatus;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalStudyStatus.ACTIVE_NOT_RECRUITING;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalStudyStatus.ActiveNotRecruiting;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalStudyStatus.ACTIVE_NOT_RECRUITING;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalStudyStatus.ActiveNotRecruiting;
 
 @ExternalDomain
 public class ActiveNotRecruitingConverter implements DomainConverter<ActiveNotRecruiting, String> {

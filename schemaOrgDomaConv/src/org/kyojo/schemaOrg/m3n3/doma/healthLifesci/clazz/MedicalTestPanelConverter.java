@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.MEDICAL_TEST_PANEL;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalTestPanel;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.MEDICAL_TEST_PANEL;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.MedicalTestPanel;
 
 @ExternalDomain
 public class MedicalTestPanelConverter implements DomainConverter<MedicalTestPanel, String> {

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.itemAvailability;
+package org.kyojo.schemaorg.m3n3.doma.core.itemAvailability;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.itemAvailability.PRE_SALE;
-import org.kyojo.schemaOrg.m3n3.core.ItemAvailability.PreSale;
+import org.kyojo.schemaorg.m3n3.core.itemAvailability.PRE_SALE;
+import org.kyojo.schemaorg.m3n3.core.ItemAvailability.PreSale;
 
 @ExternalDomain
 public class PreSaleConverter implements DomainConverter<PreSale, String> {

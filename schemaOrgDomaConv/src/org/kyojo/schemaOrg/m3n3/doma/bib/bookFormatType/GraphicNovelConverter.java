@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.bib.bookFormatType;
+package org.kyojo.schemaorg.m3n3.doma.bib.bookFormatType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.bib.bookFormatType.GRAPHIC_NOVEL;
-import org.kyojo.schemaOrg.m3n3.bib.BookFormatType.GraphicNovel;
+import org.kyojo.schemaorg.m3n3.bib.bookFormatType.GRAPHIC_NOVEL;
+import org.kyojo.schemaorg.m3n3.bib.BookFormatType.GraphicNovel;
 
 @ExternalDomain
 public class GraphicNovelConverter implements DomainConverter<GraphicNovel, String> {

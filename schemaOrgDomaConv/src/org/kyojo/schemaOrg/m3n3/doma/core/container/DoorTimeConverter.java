@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.util.Date;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.DOOR_TIME;
-import org.kyojo.schemaOrg.m3n3.core.Container.DoorTime;
+import org.kyojo.schemaorg.m3n3.core.impl.DOOR_TIME;
+import org.kyojo.schemaorg.m3n3.core.Container.DoorTime;
 
 @ExternalDomain
 public class DoorTimeConverter implements DomainConverter<DoorTime, Date> {

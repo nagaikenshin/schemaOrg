@@ -2,18 +2,38 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    implementation 'org.kyojo.minion:minion:0.7.0'
-    compileOnly project(':schemaOrgWork')
-    implementation project(':schemaOrgImpl')
+	implementation 'org.kyojo.minion:minion:0.7.0'
+	compileOnly project(':schemaOrgWork')
+	implementation project(':schemaOrgImpl')
 }
 
 archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-gson'
 
+jar {
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+	classifier = 'sources'
+	from sourceSets.main.allSource
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
+javadoc {
+	options.locale = 'en_US'
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
+task javadocs(type: Javadoc) {
+	source = sourceSets.main.allJava
+}
+
+task javadocsJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadocs'
+	from javadocs.destinationDir
 }
 
 artifacts {
-    archives sourcesJar
+	archives sourcesJar
+	archives javadocsJar
 }

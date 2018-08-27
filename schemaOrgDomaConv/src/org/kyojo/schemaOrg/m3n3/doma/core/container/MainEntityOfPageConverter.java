@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.MAIN_ENTITY_OF_PAGE;
-import org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage;
+import org.kyojo.schemaorg.m3n3.core.impl.MAIN_ENTITY_OF_PAGE;
+import org.kyojo.schemaorg.m3n3.core.Container.MainEntityOfPage;
 
 @ExternalDomain
 public class MainEntityOfPageConverter implements DomainConverter<MainEntityOfPage, String> {

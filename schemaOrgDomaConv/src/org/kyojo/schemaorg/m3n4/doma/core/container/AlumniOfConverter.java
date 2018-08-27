@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n4.doma.core.container;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n4.core.impl.ALUMNI_OF;
+import org.kyojo.schemaorg.m3n4.core.Container.AlumniOf;
+
+@ExternalDomain
+public class AlumniOfConverter implements DomainConverter<AlumniOf, String> {
+
+	@Override
+	public String fromDomainToValue(AlumniOf domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public AlumniOf fromValueToDomain(String value) {
+		return new ALUMNI_OF(value);
+	}
+
+}

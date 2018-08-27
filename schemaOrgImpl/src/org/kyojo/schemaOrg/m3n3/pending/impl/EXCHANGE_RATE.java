@@ -1,14 +1,14 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.UnitPriceSpecification;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.ExchangeRateSpecification;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
-import org.kyojo.schemaOrg.m3n3.pending.impl.EXCHANGE_RATE_SPECIFICATION;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.UnitPriceSpecification;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.ExchangeRateSpecification;
+import org.kyojo.schemaorg.m3n3.pending.Container;
+import org.kyojo.schemaorg.m3n3.pending.impl.EXCHANGE_RATE_SPECIFICATION;
 
 public class EXCHANGE_RATE implements Container.ExchangeRate {
 

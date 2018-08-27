@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.clazz;
+package org.kyojo.schemaorg.m3n3.doma.pending.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.EVENT_SERIES;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.EventSeries;
+import org.kyojo.schemaorg.m3n3.pending.impl.EVENT_SERIES;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.EventSeries;
 
 @ExternalDomain
 public class EventSeriesConverter implements DomainConverter<EventSeries, String> {

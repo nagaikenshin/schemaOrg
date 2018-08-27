@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.BY_DAY;
-import org.kyojo.schemaOrg.m3n3.pending.Container.ByDay;
+import org.kyojo.schemaorg.m3n3.pending.impl.BY_DAY;
+import org.kyojo.schemaorg.m3n3.pending.Container.ByDay;
 
 @ExternalDomain
 public class ByDayConverter implements DomainConverter<ByDay, String> {

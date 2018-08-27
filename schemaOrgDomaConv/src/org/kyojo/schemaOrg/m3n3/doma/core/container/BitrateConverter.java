@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.BITRATE;
-import org.kyojo.schemaOrg.m3n3.core.Container.Bitrate;
+import org.kyojo.schemaorg.m3n3.core.impl.BITRATE;
+import org.kyojo.schemaorg.m3n3.core.Container.Bitrate;
 
 @ExternalDomain
 public class BitrateConverter implements DomainConverter<Bitrate, String> {

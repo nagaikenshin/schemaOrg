@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.NUMBER_OF_FORWARD_GEARS;
-import org.kyojo.schemaOrg.m3n3.core.Container.NumberOfForwardGears;
+import org.kyojo.schemaorg.m3n3.core.impl.NUMBER_OF_FORWARD_GEARS;
+import org.kyojo.schemaorg.m3n3.core.Container.NumberOfForwardGears;
 
 @ExternalDomain
 public class NumberOfForwardGearsConverter implements DomainConverter<NumberOfForwardGears, BigDecimal> {

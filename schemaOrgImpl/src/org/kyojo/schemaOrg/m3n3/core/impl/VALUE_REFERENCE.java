@@ -1,16 +1,16 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Enumeration;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.PropertyValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QuantitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.StructuredValue;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.Container.Name;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Enumeration;
+import org.kyojo.schemaorg.m3n3.core.Clazz.PropertyValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QualitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QuantitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.StructuredValue;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.Container.Name;
 
 public class VALUE_REFERENCE implements Container.ValueReference {
 

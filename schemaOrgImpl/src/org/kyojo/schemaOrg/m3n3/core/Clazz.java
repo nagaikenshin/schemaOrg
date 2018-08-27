@@ -1,94 +1,94 @@
-package org.kyojo.schemaOrg.m3n3.core;
+package org.kyojo.schemaorg.m3n3.core;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.auto.Container.AccelerationTime;
-import org.kyojo.schemaOrg.m3n3.auto.Container.AcrissCode;
-import org.kyojo.schemaOrg.m3n3.auto.Container.BodyType;
-import org.kyojo.schemaOrg.m3n3.auto.Container.EmissionsCO2;
-import org.kyojo.schemaOrg.m3n3.auto.Container.EngineDisplacement;
-import org.kyojo.schemaOrg.m3n3.auto.Container.EnginePower;
-import org.kyojo.schemaOrg.m3n3.auto.Container.EngineType;
-import org.kyojo.schemaOrg.m3n3.auto.Container.FuelCapacity;
-import org.kyojo.schemaOrg.m3n3.auto.Container.MeetsEmissionStandard;
-import org.kyojo.schemaOrg.m3n3.auto.Container.ModelDate;
-import org.kyojo.schemaOrg.m3n3.auto.Container.Payload;
-import org.kyojo.schemaOrg.m3n3.auto.Container.RoofLoad;
-import org.kyojo.schemaOrg.m3n3.auto.Container.SeatingCapacity;
-import org.kyojo.schemaOrg.m3n3.auto.Container.Speed;
-import org.kyojo.schemaOrg.m3n3.auto.Container.TongueWeight;
-import org.kyojo.schemaOrg.m3n3.auto.Container.Torque;
-import org.kyojo.schemaOrg.m3n3.auto.Container.TrailerWeight;
-import org.kyojo.schemaOrg.m3n3.auto.Container.VehicleSpecialUsage;
-import org.kyojo.schemaOrg.m3n3.auto.Container.WeightTotal;
-import org.kyojo.schemaOrg.m3n3.auto.Container.Wheelbase;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Abridged;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Artist;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Colorist;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Inker;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Letterer;
-import org.kyojo.schemaOrg.m3n3.bib.Container.Penciler;
-import org.kyojo.schemaOrg.m3n3.bib.Container.PublishedBy;
-import org.kyojo.schemaOrg.m3n3.bib.Container.PublisherImprint;
-import org.kyojo.schemaOrg.m3n3.bib.Container.TranslationOfWork;
-import org.kyojo.schemaOrg.m3n3.bib.Container.WorkTranslation;
-import org.kyojo.schemaOrg.m3n3.core.Container;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Text;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.MedicalBusiness;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableService;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Diet;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExercisePlan;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseRelatedDiet;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseType;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HealthCondition;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HospitalAffiliation;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicalSpecialty;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Purpose;
-import org.kyojo.schemaOrg.m3n3.meta.Container.SupersededBy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.AccountMinimumInflow;
-import org.kyojo.schemaOrg.m3n3.pending.Container.AccountOverdraftLimit;
-import org.kyojo.schemaOrg.m3n3.pending.Container.ActionableFeedbackPolicy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.BankAccountType;
-import org.kyojo.schemaOrg.m3n3.pending.Container.BroadcastFrequency;
-import org.kyojo.schemaOrg.m3n3.pending.Container.CashBack;
-import org.kyojo.schemaOrg.m3n3.pending.Container.ContactlessPayment;
-import org.kyojo.schemaOrg.m3n3.pending.Container.ContentReferenceTime;
-import org.kyojo.schemaOrg.m3n3.pending.Container.CorrectionsPolicy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.DiversityPolicy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.EducationalCredentialAwarded;
-import org.kyojo.schemaOrg.m3n3.pending.Container.EstimatedSalary;
-import org.kyojo.schemaOrg.m3n3.pending.Container.EthicsPolicy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.FloorLimit;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyContains;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCoveredBy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCovers;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCrosses;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyDisjoint;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyEquals;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyIntersects;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyOverlaps;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyTouches;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyWithin;
-import org.kyojo.schemaOrg.m3n3.pending.Container.GracePeriod;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HasBroadcastChannel;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanNetworkId;
-import org.kyojo.schemaOrg.m3n3.pending.Container.IsAcceptingNewPatients;
-import org.kyojo.schemaOrg.m3n3.pending.Container.LoanRepaymentForm;
-import org.kyojo.schemaOrg.m3n3.pending.Container.LoanType;
-import org.kyojo.schemaOrg.m3n3.pending.Container.MeasurementTechnique;
-import org.kyojo.schemaOrg.m3n3.pending.Container.MenuAddOn;
-import org.kyojo.schemaOrg.m3n3.pending.Container.MonthlyMinimumRepaymentAmount;
-import org.kyojo.schemaOrg.m3n3.pending.Container.RecourseLoan;
-import org.kyojo.schemaOrg.m3n3.pending.Container.RenegotiableLoan;
-import org.kyojo.schemaOrg.m3n3.pending.Container.Speakable;
-import org.kyojo.schemaOrg.m3n3.pending.Container.TermsOfService;
-import org.kyojo.schemaOrg.m3n3.pending.Container.UnnamedSourcesPolicy;
-import org.kyojo.schemaOrg.m3n3.pending.Container.VariableMeasured;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.auto.Container.AccelerationTime;
+import org.kyojo.schemaorg.m3n3.auto.Container.AcrissCode;
+import org.kyojo.schemaorg.m3n3.auto.Container.BodyType;
+import org.kyojo.schemaorg.m3n3.auto.Container.EmissionsCO2;
+import org.kyojo.schemaorg.m3n3.auto.Container.EngineDisplacement;
+import org.kyojo.schemaorg.m3n3.auto.Container.EnginePower;
+import org.kyojo.schemaorg.m3n3.auto.Container.EngineType;
+import org.kyojo.schemaorg.m3n3.auto.Container.FuelCapacity;
+import org.kyojo.schemaorg.m3n3.auto.Container.MeetsEmissionStandard;
+import org.kyojo.schemaorg.m3n3.auto.Container.ModelDate;
+import org.kyojo.schemaorg.m3n3.auto.Container.Payload;
+import org.kyojo.schemaorg.m3n3.auto.Container.RoofLoad;
+import org.kyojo.schemaorg.m3n3.auto.Container.SeatingCapacity;
+import org.kyojo.schemaorg.m3n3.auto.Container.Speed;
+import org.kyojo.schemaorg.m3n3.auto.Container.TongueWeight;
+import org.kyojo.schemaorg.m3n3.auto.Container.Torque;
+import org.kyojo.schemaorg.m3n3.auto.Container.TrailerWeight;
+import org.kyojo.schemaorg.m3n3.auto.Container.VehicleSpecialUsage;
+import org.kyojo.schemaorg.m3n3.auto.Container.WeightTotal;
+import org.kyojo.schemaorg.m3n3.auto.Container.Wheelbase;
+import org.kyojo.schemaorg.m3n3.bib.Container.Abridged;
+import org.kyojo.schemaorg.m3n3.bib.Container.Artist;
+import org.kyojo.schemaorg.m3n3.bib.Container.Colorist;
+import org.kyojo.schemaorg.m3n3.bib.Container.Inker;
+import org.kyojo.schemaorg.m3n3.bib.Container.Letterer;
+import org.kyojo.schemaorg.m3n3.bib.Container.Penciler;
+import org.kyojo.schemaorg.m3n3.bib.Container.PublishedBy;
+import org.kyojo.schemaorg.m3n3.bib.Container.PublisherImprint;
+import org.kyojo.schemaorg.m3n3.bib.Container.TranslationOfWork;
+import org.kyojo.schemaorg.m3n3.bib.Container.WorkTranslation;
+import org.kyojo.schemaorg.m3n3.core.Container;
+import org.kyojo.schemaorg.m3n3.core.DataType.Text;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.MedicalBusiness;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.AvailableService;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Diet;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ExercisePlan;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ExerciseRelatedDiet;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ExerciseType;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.HealthCondition;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.HospitalAffiliation;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.MedicalSpecialty;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Purpose;
+import org.kyojo.schemaorg.m3n3.meta.Container.SupersededBy;
+import org.kyojo.schemaorg.m3n3.pending.Container.AccountMinimumInflow;
+import org.kyojo.schemaorg.m3n3.pending.Container.AccountOverdraftLimit;
+import org.kyojo.schemaorg.m3n3.pending.Container.ActionableFeedbackPolicy;
+import org.kyojo.schemaorg.m3n3.pending.Container.BankAccountType;
+import org.kyojo.schemaorg.m3n3.pending.Container.BroadcastFrequency;
+import org.kyojo.schemaorg.m3n3.pending.Container.CashBack;
+import org.kyojo.schemaorg.m3n3.pending.Container.ContactlessPayment;
+import org.kyojo.schemaorg.m3n3.pending.Container.ContentReferenceTime;
+import org.kyojo.schemaorg.m3n3.pending.Container.CorrectionsPolicy;
+import org.kyojo.schemaorg.m3n3.pending.Container.DiversityPolicy;
+import org.kyojo.schemaorg.m3n3.pending.Container.EducationalCredentialAwarded;
+import org.kyojo.schemaorg.m3n3.pending.Container.EstimatedSalary;
+import org.kyojo.schemaorg.m3n3.pending.Container.EthicsPolicy;
+import org.kyojo.schemaorg.m3n3.pending.Container.FloorLimit;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyContains;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyCoveredBy;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyCovers;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyCrosses;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyDisjoint;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyEquals;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyIntersects;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyOverlaps;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyTouches;
+import org.kyojo.schemaorg.m3n3.pending.Container.GeospatiallyWithin;
+import org.kyojo.schemaorg.m3n3.pending.Container.GracePeriod;
+import org.kyojo.schemaorg.m3n3.pending.Container.HasBroadcastChannel;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanNetworkId;
+import org.kyojo.schemaorg.m3n3.pending.Container.IsAcceptingNewPatients;
+import org.kyojo.schemaorg.m3n3.pending.Container.LoanRepaymentForm;
+import org.kyojo.schemaorg.m3n3.pending.Container.LoanType;
+import org.kyojo.schemaorg.m3n3.pending.Container.MeasurementTechnique;
+import org.kyojo.schemaorg.m3n3.pending.Container.MenuAddOn;
+import org.kyojo.schemaorg.m3n3.pending.Container.MonthlyMinimumRepaymentAmount;
+import org.kyojo.schemaorg.m3n3.pending.Container.RecourseLoan;
+import org.kyojo.schemaorg.m3n3.pending.Container.RenegotiableLoan;
+import org.kyojo.schemaorg.m3n3.pending.Container.Speakable;
+import org.kyojo.schemaorg.m3n3.pending.Container.TermsOfService;
+import org.kyojo.schemaorg.m3n3.pending.Container.UnnamedSourcesPolicy;
+import org.kyojo.schemaorg.m3n3.pending.Container.VariableMeasured;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -106,29 +106,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface APIReference extends SchemaOrgClass, TechArticle {
 
 		/**
-		 * uri: http://schema.org/assemblyVersion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AssemblyVersion
+		 * @see <a href="http://schema.org/assemblyVersion">http://schema.org/assemblyVersion</a>
 		 */
 		public Container.AssemblyVersion getAssemblyVersion();
 		public void setAssemblyVersion(Container.AssemblyVersion assemblyVersion);
 
 		/**
-		 * uri: http://schema.org/executableLibraryName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExecutableLibraryName
+		 * @see <a href="http://schema.org/executableLibraryName">http://schema.org/executableLibraryName</a>
 		 */
 		public Container.ExecutableLibraryName getExecutableLibraryName();
 		public void setExecutableLibraryName(Container.ExecutableLibraryName executableLibraryName);
 
 		/**
-		 * uri: http://schema.org/programmingModel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProgrammingModel
+		 * @see <a href="http://schema.org/programmingModel">http://schema.org/programmingModel</a>
 		 */
 		public Container.ProgrammingModel getProgrammingModel();
 		public void setProgrammingModel(Container.ProgrammingModel programmingModel);
 
 		/**
-		 * uri: http://schema.org/targetPlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetPlatform
+		 * @see <a href="http://schema.org/targetPlatform">http://schema.org/targetPlatform</a>
 		 */
 		public Container.TargetPlatform getTargetPlatform();
 		public void setTargetPlatform(Container.TargetPlatform targetPlatform);
@@ -187,36 +183,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Accommodation extends Place, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/amenityFeature
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AmenityFeature
+		 * @see <a href="http://schema.org/amenityFeature">http://schema.org/amenityFeature</a>
 		 */
 		public Container.AmenityFeature getAmenityFeature();
 		public void setAmenityFeature(Container.AmenityFeature amenityFeature);
 
 		/**
-		 * uri: http://schema.org/floorSize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FloorSize
+		 * @see <a href="http://schema.org/floorSize">http://schema.org/floorSize</a>
 		 */
 		public Container.FloorSize getFloorSize();
 		public void setFloorSize(Container.FloorSize floorSize);
 
 		/**
-		 * uri: http://schema.org/numberOfRooms
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms
+		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
 		 */
 		public Container.NumberOfRooms getNumberOfRooms();
 		public void setNumberOfRooms(Container.NumberOfRooms numberOfRooms);
 
 		/**
-		 * uri: http://schema.org/permittedUsage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PermittedUsage
+		 * @see <a href="http://schema.org/permittedUsage">http://schema.org/permittedUsage</a>
 		 */
 		public Container.PermittedUsage getPermittedUsage();
 		public void setPermittedUsage(Container.PermittedUsage permittedUsage);
 
 		/**
-		 * uri: http://schema.org/petsAllowed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PetsAllowed
+		 * @see <a href="http://schema.org/petsAllowed">http://schema.org/petsAllowed</a>
 		 */
 		public Container.PetsAllowed getPetsAllowed();
 		public void setPetsAllowed(Container.PetsAllowed petsAllowed);
@@ -279,78 +270,67 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Action extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/actionStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ActionStatus
+		 * @see <a href="http://schema.org/actionStatus">http://schema.org/actionStatus</a>
 		 */
 		public Container.ActionStatus getActionStatus();
 		public void setActionStatus(Container.ActionStatus actionStatus);
 
 		/**
-		 * uri: http://schema.org/agent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Agent
+		 * @see <a href="http://schema.org/agent">http://schema.org/agent</a>
 		 */
 		public Container.Agent getAgent();
 		public void setAgent(Container.Agent agent);
 
 		/**
-		 * uri: http://schema.org/endTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndTime
+		 * @see <a href="http://schema.org/endTime">http://schema.org/endTime</a>
 		 */
 		public Container.EndTime getEndTime();
 		public void setEndTime(Container.EndTime endTime);
 
 		/**
-		 * uri: http://schema.org/error
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Error
+		 * @see <a href="http://schema.org/error">http://schema.org/error</a>
 		 */
 		public Container.Error getError();
 		public void setError(Container.Error error);
 
 		/**
-		 * uri: http://schema.org/instrument
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Instrument
+		 * @see <a href="http://schema.org/instrument">http://schema.org/instrument</a>
 		 */
 		public Container.Instrument getInstrument();
 		public void setInstrument(Container.Instrument instrument);
 
 		/**
-		 * uri: http://schema.org/location
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Location
+		 * @see <a href="http://schema.org/location">http://schema.org/location</a>
 		 */
 		public Container.Location getLocation();
 		public void setLocation(Container.Location location);
 
 		/**
-		 * uri: http://schema.org/object
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Object
+		 * @see <a href="http://schema.org/object">http://schema.org/object</a>
 		 */
 		public Container.Object getObject();
 		public void setObject(Container.Object object);
 
 		/**
-		 * uri: http://schema.org/participant
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Participant
+		 * @see <a href="http://schema.org/participant">http://schema.org/participant</a>
 		 */
 		public Container.Participant getParticipant();
 		public void setParticipant(Container.Participant participant);
 
 		/**
-		 * uri: http://schema.org/result
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Result
+		 * @see <a href="http://schema.org/result">http://schema.org/result</a>
 		 */
 		public Container.Result getResult();
 		public void setResult(Container.Result result);
 
 		/**
-		 * uri: http://schema.org/startTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartTime
+		 * @see <a href="http://schema.org/startTime">http://schema.org/startTime</a>
 		 */
 		public Container.StartTime getStartTime();
 		public void setStartTime(Container.StartTime startTime);
 
 		/**
-		 * uri: http://schema.org/target
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Target
+		 * @see <a href="http://schema.org/target">http://schema.org/target</a>
 		 */
 		public Container.Target getTarget();
 		public void setTarget(Container.Target target);
@@ -448,29 +428,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AggregateOffer extends Offer, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/highPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HighPrice
+		 * @see <a href="http://schema.org/highPrice">http://schema.org/highPrice</a>
 		 */
 		public Container.HighPrice getHighPrice();
 		public void setHighPrice(Container.HighPrice highPrice);
 
 		/**
-		 * uri: http://schema.org/lowPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LowPrice
+		 * @see <a href="http://schema.org/lowPrice">http://schema.org/lowPrice</a>
 		 */
 		public Container.LowPrice getLowPrice();
 		public void setLowPrice(Container.LowPrice lowPrice);
 
 		/**
-		 * uri: http://schema.org/offerCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OfferCount
+		 * @see <a href="http://schema.org/offerCount">http://schema.org/offerCount</a>
 		 */
 		public Container.OfferCount getOfferCount();
 		public void setOfferCount(Container.OfferCount offerCount);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
@@ -491,22 +467,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AggregateRating extends Rating, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/itemReviewed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemReviewed
+		 * @see <a href="http://schema.org/itemReviewed">http://schema.org/itemReviewed</a>
 		 */
 		public Container.ItemReviewed getItemReviewed();
 		public void setItemReviewed(Container.ItemReviewed itemReviewed);
 
 		/**
-		 * uri: http://schema.org/ratingCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RatingCount
+		 * @see <a href="http://schema.org/ratingCount">http://schema.org/ratingCount</a>
 		 */
 		public Container.RatingCount getRatingCount();
 		public void setRatingCount(Container.RatingCount ratingCount);
 
 		/**
-		 * uri: http://schema.org/reviewCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReviewCount
+		 * @see <a href="http://schema.org/reviewCount">http://schema.org/reviewCount</a>
 		 */
 		public Container.ReviewCount getReviewCount();
 		public void setReviewCount(Container.ReviewCount reviewCount);
@@ -543,15 +516,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Airline extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/boardingPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BoardingPolicy
+		 * @see <a href="http://schema.org/boardingPolicy">http://schema.org/boardingPolicy</a>
 		 */
 		public Container.BoardingPolicy getBoardingPolicy();
 		public void setBoardingPolicy(Container.BoardingPolicy boardingPolicy);
 
 		/**
-		 * uri: http://schema.org/iataCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IataCode
+		 * @see <a href="http://schema.org/iataCode">http://schema.org/iataCode</a>
 		 */
 		public Container.IataCode getIataCode();
 		public void setIataCode(Container.IataCode iataCode);
@@ -571,15 +542,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Airport extends CivicStructure, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/iataCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IataCode
+		 * @see <a href="http://schema.org/iataCode">http://schema.org/iataCode</a>
 		 */
 		public Container.IataCode getIataCode();
 		public void setIataCode(Container.IataCode iataCode);
 
 		/**
-		 * uri: http://schema.org/icaoCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IcaoCode
+		 * @see <a href="http://schema.org/icaoCode">http://schema.org/icaoCode</a>
 		 */
 		public Container.IcaoCode getIcaoCode();
 		public void setIcaoCode(Container.IcaoCode icaoCode);
@@ -601,36 +570,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AlignmentObject extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/alignmentType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlignmentType
+		 * @see <a href="http://schema.org/alignmentType">http://schema.org/alignmentType</a>
 		 */
 		public Container.AlignmentType getAlignmentType();
 		public void setAlignmentType(Container.AlignmentType alignmentType);
 
 		/**
-		 * uri: http://schema.org/educationalFramework
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EducationalFramework
+		 * @see <a href="http://schema.org/educationalFramework">http://schema.org/educationalFramework</a>
 		 */
 		public Container.EducationalFramework getEducationalFramework();
 		public void setEducationalFramework(Container.EducationalFramework educationalFramework);
 
 		/**
-		 * uri: http://schema.org/targetDescription
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetDescription
+		 * @see <a href="http://schema.org/targetDescription">http://schema.org/targetDescription</a>
 		 */
 		public Container.TargetDescription getTargetDescription();
 		public void setTargetDescription(Container.TargetDescription targetDescription);
 
 		/**
-		 * uri: http://schema.org/targetName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetName
+		 * @see <a href="http://schema.org/targetName">http://schema.org/targetName</a>
 		 */
 		public Container.TargetName getTargetName();
 		public void setTargetName(Container.TargetName targetName);
 
 		/**
-		 * uri: http://schema.org/targetUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetUrl
+		 * @see <a href="http://schema.org/targetUrl">http://schema.org/targetUrl</a>
 		 */
 		public Container.TargetUrl getTargetUrl();
 		public void setTargetUrl(Container.TargetUrl targetUrl);
@@ -651,8 +615,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AllocateAction extends OrganizeAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/purpose
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Purpose
+		 * @see <a href="http://schema.org/purpose">http://schema.org/purpose</a>
 		 */
 		public Purpose getPurpose();
 		public void setPurpose(Purpose purpose);
@@ -719,15 +682,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Apartment extends Accommodation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberOfRooms
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms
+		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
 		 */
 		public Container.NumberOfRooms getNumberOfRooms();
 		public void setNumberOfRooms(Container.NumberOfRooms numberOfRooms);
 
 		/**
-		 * uri: http://schema.org/occupancy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Occupancy
+		 * @see <a href="http://schema.org/occupancy">http://schema.org/occupancy</a>
 		 */
 		public Container.Occupancy getOccupancy();
 		public void setOccupancy(Container.Occupancy occupancy);
@@ -844,50 +805,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Article extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/articleBody
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArticleBody
+		 * @see <a href="http://schema.org/articleBody">http://schema.org/articleBody</a>
 		 */
 		public Container.ArticleBody getArticleBody();
 		public void setArticleBody(Container.ArticleBody articleBody);
 
 		/**
-		 * uri: http://schema.org/articleSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArticleSection
+		 * @see <a href="http://schema.org/articleSection">http://schema.org/articleSection</a>
 		 */
 		public Container.ArticleSection getArticleSection();
 		public void setArticleSection(Container.ArticleSection articleSection);
 
 		/**
-		 * uri: http://schema.org/pageEnd
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageEnd
+		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
 		 */
 		public Container.PageEnd getPageEnd();
 		public void setPageEnd(Container.PageEnd pageEnd);
 
 		/**
-		 * uri: http://schema.org/pageStart
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageStart
+		 * @see <a href="http://schema.org/pageStart">http://schema.org/pageStart</a>
 		 */
 		public Container.PageStart getPageStart();
 		public void setPageStart(Container.PageStart pageStart);
 
 		/**
-		 * uri: http://schema.org/pagination
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Pagination
+		 * @see <a href="http://schema.org/pagination">http://schema.org/pagination</a>
 		 */
 		public Container.Pagination getPagination();
 		public void setPagination(Container.Pagination pagination);
 
 		/**
-		 * uri: http://schema.org/speakable
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Speakable
+		 * @see <a href="http://schema.org/speakable">http://schema.org/speakable</a>
 		 */
 		public Speakable getSpeakable();
 		public void setSpeakable(Speakable speakable);
 
 		/**
-		 * uri: http://schema.org/wordCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WordCount
+		 * @see <a href="http://schema.org/wordCount">http://schema.org/wordCount</a>
 		 */
 		public Container.WordCount getWordCount();
 		public void setWordCount(Container.WordCount wordCount);
@@ -911,8 +865,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AskAction extends CommunicateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/question
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Question
+		 * @see <a href="http://schema.org/question">http://schema.org/question</a>
 		 */
 		public Container.Question getQuestion();
 		public void setQuestion(Container.Question question);
@@ -981,15 +934,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Audience extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/audienceType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AudienceType
+		 * @see <a href="http://schema.org/audienceType">http://schema.org/audienceType</a>
 		 */
 		public Container.AudienceType getAudienceType();
 		public void setAudienceType(Container.AudienceType audienceType);
 
 		/**
-		 * uri: http://schema.org/geographicArea
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GeographicArea
+		 * @see <a href="http://schema.org/geographicArea">http://schema.org/geographicArea</a>
 		 */
 		public Container.GeographicArea getGeographicArea();
 		public void setGeographicArea(Container.GeographicArea geographicArea);
@@ -1009,8 +960,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AudioObject extends MediaObject, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/transcript
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Transcript
+		 * @see <a href="http://schema.org/transcript">http://schema.org/transcript</a>
 		 */
 		public Container.Transcript getTranscript();
 		public void setTranscript(Container.Transcript transcript);
@@ -1031,8 +981,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface AuthorizeAction extends AllocateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -1180,22 +1129,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BankAccount extends FinancialProduct, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/accountMinimumInflow
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.AccountMinimumInflow
+		 * @see <a href="http://schema.org/accountMinimumInflow">http://schema.org/accountMinimumInflow</a>
 		 */
 		public AccountMinimumInflow getAccountMinimumInflow();
 		public void setAccountMinimumInflow(AccountMinimumInflow accountMinimumInflow);
 
 		/**
-		 * uri: http://schema.org/accountOverdraftLimit
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.AccountOverdraftLimit
+		 * @see <a href="http://schema.org/accountOverdraftLimit">http://schema.org/accountOverdraftLimit</a>
 		 */
 		public AccountOverdraftLimit getAccountOverdraftLimit();
 		public void setAccountOverdraftLimit(AccountOverdraftLimit accountOverdraftLimit);
 
 		/**
-		 * uri: http://schema.org/bankAccountType
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BankAccountType
+		 * @see <a href="http://schema.org/bankAccountType">http://schema.org/bankAccountType</a>
 		 */
 		public BankAccountType getBankAccountType();
 		public void setBankAccountType(BankAccountType bankAccountType);
@@ -1308,15 +1254,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BedDetails extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberOfBeds
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfBeds
+		 * @see <a href="http://schema.org/numberOfBeds">http://schema.org/numberOfBeds</a>
 		 */
 		public Container.NumberOfBeds getNumberOfBeds();
 		public void setNumberOfBeds(Container.NumberOfBeds numberOfBeds);
 
 		/**
-		 * uri: http://schema.org/typeOfBed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TypeOfBed
+		 * @see <a href="http://schema.org/typeOfBed">http://schema.org/typeOfBed</a>
 		 */
 		public Container.TypeOfBed getTypeOfBed();
 		public void setTypeOfBed(Container.TypeOfBed typeOfBed);
@@ -1369,15 +1313,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Blog extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/blogPost
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BlogPost
+		 * @see <a href="http://schema.org/blogPost">http://schema.org/blogPost</a>
 		 */
 		public Container.BlogPost getBlogPost();
 		public void setBlogPost(Container.BlogPost blogPost);
 
 		/**
-		 * uri: http://schema.org/issn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Issn
+		 * @see <a href="http://schema.org/issn">http://schema.org/issn</a>
 		 */
 		public Container.Issn getIssn();
 		public void setIssn(Container.Issn issn);
@@ -1441,43 +1383,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Book extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/abridged
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Abridged
+		 * @see <a href="http://schema.org/abridged">http://schema.org/abridged</a>
 		 */
 		public Abridged getAbridged();
 		public void setAbridged(Abridged abridged);
 
 		/**
-		 * uri: http://schema.org/bookEdition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BookEdition
+		 * @see <a href="http://schema.org/bookEdition">http://schema.org/bookEdition</a>
 		 */
 		public Container.BookEdition getBookEdition();
 		public void setBookEdition(Container.BookEdition bookEdition);
 
 		/**
-		 * uri: http://schema.org/bookFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BookFormat
+		 * @see <a href="http://schema.org/bookFormat">http://schema.org/bookFormat</a>
 		 */
 		public Container.BookFormat getBookFormat();
 		public void setBookFormat(Container.BookFormat bookFormat);
 
 		/**
-		 * uri: http://schema.org/illustrator
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Illustrator
+		 * @see <a href="http://schema.org/illustrator">http://schema.org/illustrator</a>
 		 */
 		public Container.Illustrator getIllustrator();
 		public void setIllustrator(Container.Illustrator illustrator);
 
 		/**
-		 * uri: http://schema.org/isbn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Isbn
+		 * @see <a href="http://schema.org/isbn">http://schema.org/isbn</a>
 		 */
 		public Container.Isbn getIsbn();
 		public void setIsbn(Container.Isbn isbn);
 
 		/**
-		 * uri: http://schema.org/numberOfPages
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfPages
+		 * @see <a href="http://schema.org/numberOfPages">http://schema.org/numberOfPages</a>
 		 */
 		public Container.NumberOfPages getNumberOfPages();
 		public void setNumberOfPages(Container.NumberOfPages numberOfPages);
@@ -1559,8 +1495,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BorrowAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/lender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Lender
+		 * @see <a href="http://schema.org/lender">http://schema.org/lender</a>
 		 */
 		public Container.Lender getLender();
 		public void setLender(Container.Lender lender);
@@ -1596,22 +1531,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Brand extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/logo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Logo
+		 * @see <a href="http://schema.org/logo">http://schema.org/logo</a>
 		 */
 		public Container.Logo getLogo();
 		public void setLogo(Container.Logo logo);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
@@ -1688,43 +1620,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BroadcastChannel extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/broadcastChannelId
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastChannelId
+		 * @see <a href="http://schema.org/broadcastChannelId">http://schema.org/broadcastChannelId</a>
 		 */
 		public Container.BroadcastChannelId getBroadcastChannelId();
 		public void setBroadcastChannelId(Container.BroadcastChannelId broadcastChannelId);
 
 		/**
-		 * uri: http://schema.org/broadcastFrequency
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BroadcastFrequency
+		 * @see <a href="http://schema.org/broadcastFrequency">http://schema.org/broadcastFrequency</a>
 		 */
 		public BroadcastFrequency getBroadcastFrequency();
 		public void setBroadcastFrequency(BroadcastFrequency broadcastFrequency);
 
 		/**
-		 * uri: http://schema.org/broadcastServiceTier
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastServiceTier
+		 * @see <a href="http://schema.org/broadcastServiceTier">http://schema.org/broadcastServiceTier</a>
 		 */
 		public Container.BroadcastServiceTier getBroadcastServiceTier();
 		public void setBroadcastServiceTier(Container.BroadcastServiceTier broadcastServiceTier);
 
 		/**
-		 * uri: http://schema.org/genre
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Genre
+		 * @see <a href="http://schema.org/genre">http://schema.org/genre</a>
 		 */
 		public Container.Genre getGenre();
 		public void setGenre(Container.Genre genre);
 
 		/**
-		 * uri: http://schema.org/inBroadcastLineup
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InBroadcastLineup
+		 * @see <a href="http://schema.org/inBroadcastLineup">http://schema.org/inBroadcastLineup</a>
 		 */
 		public Container.InBroadcastLineup getInBroadcastLineup();
 		public void setInBroadcastLineup(Container.InBroadcastLineup inBroadcastLineup);
 
 		/**
-		 * uri: http://schema.org/providesBroadcastService
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProvidesBroadcastService
+		 * @see <a href="http://schema.org/providesBroadcastService">http://schema.org/providesBroadcastService</a>
 		 */
 		public Container.ProvidesBroadcastService getProvidesBroadcastService();
 		public void setProvidesBroadcastService(Container.ProvidesBroadcastService providesBroadcastService);
@@ -1745,22 +1671,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BroadcastEvent extends PublicationEvent, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/broadcastOfEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastOfEvent
+		 * @see <a href="http://schema.org/broadcastOfEvent">http://schema.org/broadcastOfEvent</a>
 		 */
 		public Container.BroadcastOfEvent getBroadcastOfEvent();
 		public void setBroadcastOfEvent(Container.BroadcastOfEvent broadcastOfEvent);
 
 		/**
-		 * uri: http://schema.org/isLiveBroadcast
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsLiveBroadcast
+		 * @see <a href="http://schema.org/isLiveBroadcast">http://schema.org/isLiveBroadcast</a>
 		 */
 		public Container.IsLiveBroadcast getIsLiveBroadcast();
 		public void setIsLiveBroadcast(Container.IsLiveBroadcast isLiveBroadcast);
 
 		/**
-		 * uri: http://schema.org/videoFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VideoFormat
+		 * @see <a href="http://schema.org/videoFormat">http://schema.org/videoFormat</a>
 		 */
 		public Container.VideoFormat getVideoFormat();
 		public void setVideoFormat(Container.VideoFormat videoFormat);
@@ -1782,57 +1705,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BroadcastService extends SchemaOrgClass, Service {
 
 		/**
-		 * uri: http://schema.org/broadcastAffiliateOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastAffiliateOf
+		 * @see <a href="http://schema.org/broadcastAffiliateOf">http://schema.org/broadcastAffiliateOf</a>
 		 */
 		public Container.BroadcastAffiliateOf getBroadcastAffiliateOf();
 		public void setBroadcastAffiliateOf(Container.BroadcastAffiliateOf broadcastAffiliateOf);
 
 		/**
-		 * uri: http://schema.org/broadcastDisplayName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastDisplayName
+		 * @see <a href="http://schema.org/broadcastDisplayName">http://schema.org/broadcastDisplayName</a>
 		 */
 		public Container.BroadcastDisplayName getBroadcastDisplayName();
 		public void setBroadcastDisplayName(Container.BroadcastDisplayName broadcastDisplayName);
 
 		/**
-		 * uri: http://schema.org/broadcastFrequency
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.BroadcastFrequency
+		 * @see <a href="http://schema.org/broadcastFrequency">http://schema.org/broadcastFrequency</a>
 		 */
 		public BroadcastFrequency getBroadcastFrequency();
 		public void setBroadcastFrequency(BroadcastFrequency broadcastFrequency);
 
 		/**
-		 * uri: http://schema.org/broadcastTimezone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BroadcastTimezone
+		 * @see <a href="http://schema.org/broadcastTimezone">http://schema.org/broadcastTimezone</a>
 		 */
 		public Container.BroadcastTimezone getBroadcastTimezone();
 		public void setBroadcastTimezone(Container.BroadcastTimezone broadcastTimezone);
 
 		/**
-		 * uri: http://schema.org/broadcaster
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Broadcaster
+		 * @see <a href="http://schema.org/broadcaster">http://schema.org/broadcaster</a>
 		 */
 		public Container.Broadcaster getBroadcaster();
 		public void setBroadcaster(Container.Broadcaster broadcaster);
 
 		/**
-		 * uri: http://schema.org/hasBroadcastChannel
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HasBroadcastChannel
+		 * @see <a href="http://schema.org/hasBroadcastChannel">http://schema.org/hasBroadcastChannel</a>
 		 */
 		public HasBroadcastChannel getHasBroadcastChannel();
 		public void setHasBroadcastChannel(HasBroadcastChannel hasBroadcastChannel);
 
 		/**
-		 * uri: http://schema.org/parentService
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ParentService
+		 * @see <a href="http://schema.org/parentService">http://schema.org/parentService</a>
 		 */
 		public Container.ParentService getParentService();
 		public void setParentService(Container.ParentService parentService);
 
 		/**
-		 * uri: http://schema.org/videoFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VideoFormat
+		 * @see <a href="http://schema.org/videoFormat">http://schema.org/videoFormat</a>
 		 */
 		public Container.VideoFormat getVideoFormat();
 		public void setVideoFormat(Container.VideoFormat videoFormat);
@@ -1912,50 +1827,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BusTrip extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/arrivalBusStop
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalBusStop
+		 * @see <a href="http://schema.org/arrivalBusStop">http://schema.org/arrivalBusStop</a>
 		 */
 		public Container.ArrivalBusStop getArrivalBusStop();
 		public void setArrivalBusStop(Container.ArrivalBusStop arrivalBusStop);
 
 		/**
-		 * uri: http://schema.org/arrivalTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalTime
+		 * @see <a href="http://schema.org/arrivalTime">http://schema.org/arrivalTime</a>
 		 */
 		public Container.ArrivalTime getArrivalTime();
 		public void setArrivalTime(Container.ArrivalTime arrivalTime);
 
 		/**
-		 * uri: http://schema.org/busName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BusName
+		 * @see <a href="http://schema.org/busName">http://schema.org/busName</a>
 		 */
 		public Container.BusName getBusName();
 		public void setBusName(Container.BusName busName);
 
 		/**
-		 * uri: http://schema.org/busNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BusNumber
+		 * @see <a href="http://schema.org/busNumber">http://schema.org/busNumber</a>
 		 */
 		public Container.BusNumber getBusNumber();
 		public void setBusNumber(Container.BusNumber busNumber);
 
 		/**
-		 * uri: http://schema.org/departureBusStop
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureBusStop
+		 * @see <a href="http://schema.org/departureBusStop">http://schema.org/departureBusStop</a>
 		 */
 		public Container.DepartureBusStop getDepartureBusStop();
 		public void setDepartureBusStop(Container.DepartureBusStop departureBusStop);
 
 		/**
-		 * uri: http://schema.org/departureTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureTime
+		 * @see <a href="http://schema.org/departureTime">http://schema.org/departureTime</a>
 		 */
 		public Container.DepartureTime getDepartureTime();
 		public void setDepartureTime(Container.DepartureTime departureTime);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
@@ -1977,22 +1885,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BusinessAudience extends Audience, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberOfEmployees
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEmployees
+		 * @see <a href="http://schema.org/numberOfEmployees">http://schema.org/numberOfEmployees</a>
 		 */
 		public Container.NumberOfEmployees getNumberOfEmployees();
 		public void setNumberOfEmployees(Container.NumberOfEmployees numberOfEmployees);
 
 		/**
-		 * uri: http://schema.org/yearlyRevenue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.YearlyRevenue
+		 * @see <a href="http://schema.org/yearlyRevenue">http://schema.org/yearlyRevenue</a>
 		 */
 		public Container.YearlyRevenue getYearlyRevenue();
 		public void setYearlyRevenue(Container.YearlyRevenue yearlyRevenue);
 
 		/**
-		 * uri: http://schema.org/yearsInOperation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.YearsInOperation
+		 * @see <a href="http://schema.org/yearsInOperation">http://schema.org/yearsInOperation</a>
 		 */
 		public Container.YearsInOperation getYearsInOperation();
 		public void setYearsInOperation(Container.YearsInOperation yearsInOperation);
@@ -2069,8 +1974,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BuyAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/seller
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seller
+		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
 		 */
 		public Container.Seller getSeller();
 		public void setSeller(Container.Seller seller);
@@ -2196,15 +2100,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Car extends SchemaOrgClass, Vehicle {
 
 		/**
-		 * uri: http://schema.org/acrissCode
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.AcrissCode
+		 * @see <a href="http://schema.org/acrissCode">http://schema.org/acrissCode</a>
 		 */
 		public AcrissCode getAcrissCode();
 		public void setAcrissCode(AcrissCode acrissCode);
 
 		/**
-		 * uri: http://schema.org/roofLoad
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.RoofLoad
+		 * @see <a href="http://schema.org/roofLoad">http://schema.org/roofLoad</a>
 		 */
 		public RoofLoad getRoofLoad();
 		public void setRoofLoad(RoofLoad roofLoad);
@@ -2379,8 +2281,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ChooseAction extends AssessAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actionOption
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ActionOption
+		 * @see <a href="http://schema.org/actionOption">http://schema.org/actionOption</a>
 		 */
 		public Container.ActionOption getActionOption();
 		public void setActionOption(Container.ActionOption actionOption);
@@ -2443,8 +2344,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CivicStructure extends Place, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/openingHours
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OpeningHours
+		 * @see <a href="http://schema.org/openingHours">http://schema.org/openingHours</a>
 		 */
 		public Container.OpeningHours getOpeningHours();
 		public void setOpeningHours(Container.OpeningHours openingHours);
@@ -2466,8 +2366,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ClaimReview extends Review, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/claimReviewed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ClaimReviewed
+		 * @see <a href="http://schema.org/claimReviewed">http://schema.org/claimReviewed</a>
 		 */
 		public Container.ClaimReviewed getClaimReviewed();
 		public void setClaimReviewed(Container.ClaimReviewed claimReviewed);
@@ -2488,50 +2387,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Clip extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/clipNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ClipNumber
+		 * @see <a href="http://schema.org/clipNumber">http://schema.org/clipNumber</a>
 		 */
 		public Container.ClipNumber getClipNumber();
 		public void setClipNumber(Container.ClipNumber clipNumber);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/partOfEpisode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfEpisode
+		 * @see <a href="http://schema.org/partOfEpisode">http://schema.org/partOfEpisode</a>
 		 */
 		public Container.PartOfEpisode getPartOfEpisode();
 		public void setPartOfEpisode(Container.PartOfEpisode partOfEpisode);
 
 		/**
-		 * uri: http://schema.org/partOfSeason
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfSeason
+		 * @see <a href="http://schema.org/partOfSeason">http://schema.org/partOfSeason</a>
 		 */
 		public Container.PartOfSeason getPartOfSeason();
 		public void setPartOfSeason(Container.PartOfSeason partOfSeason);
 
 		/**
-		 * uri: http://schema.org/partOfSeries
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfSeries
+		 * @see <a href="http://schema.org/partOfSeries">http://schema.org/partOfSeries</a>
 		 */
 		public Container.PartOfSeries getPartOfSeries();
 		public void setPartOfSeries(Container.PartOfSeries partOfSeries);
@@ -2627,22 +2519,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Comment extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/downvoteCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DownvoteCount
+		 * @see <a href="http://schema.org/downvoteCount">http://schema.org/downvoteCount</a>
 		 */
 		public Container.DownvoteCount getDownvoteCount();
 		public void setDownvoteCount(Container.DownvoteCount downvoteCount);
 
 		/**
-		 * uri: http://schema.org/parentItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ParentItem
+		 * @see <a href="http://schema.org/parentItem">http://schema.org/parentItem</a>
 		 */
 		public Container.ParentItem getParentItem();
 		public void setParentItem(Container.ParentItem parentItem);
 
 		/**
-		 * uri: http://schema.org/upvoteCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UpvoteCount
+		 * @see <a href="http://schema.org/upvoteCount">http://schema.org/upvoteCount</a>
 		 */
 		public Container.UpvoteCount getUpvoteCount();
 		public void setUpvoteCount(Container.UpvoteCount upvoteCount);
@@ -2663,8 +2552,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CommentAction extends CommunicateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/resultComment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ResultComment
+		 * @see <a href="http://schema.org/resultComment">http://schema.org/resultComment</a>
 		 */
 		public Container.ResultComment getResultComment();
 		public void setResultComment(Container.ResultComment resultComment);
@@ -2686,22 +2574,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CommunicateAction extends InteractAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/about
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.About
+		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
 		 */
 		public Container.About getAbout();
 		public void setAbout(Container.About about);
 
 		/**
-		 * uri: http://schema.org/inLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InLanguage
+		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
 		 */
 		public Container.InLanguage getInLanguage();
 		public void setInLanguage(Container.InLanguage inLanguage);
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -2725,8 +2610,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CompoundPriceSpecification extends PriceSpecification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/priceComponent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceComponent
+		 * @see <a href="http://schema.org/priceComponent">http://schema.org/priceComponent</a>
 		 */
 		public Container.PriceComponent getPriceComponent();
 		public void setPriceComponent(Container.PriceComponent priceComponent);
@@ -2797,8 +2681,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ConsumeAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/expectsAcceptanceOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExpectsAcceptanceOf
+		 * @see <a href="http://schema.org/expectsAcceptanceOf">http://schema.org/expectsAcceptanceOf</a>
 		 */
 		public Container.ExpectsAcceptanceOf getExpectsAcceptanceOf();
 		public void setExpectsAcceptanceOf(Container.ExpectsAcceptanceOf expectsAcceptanceOf);
@@ -2833,64 +2716,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ContactPoint extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/availableLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableLanguage
+		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
 		 */
 		public Container.AvailableLanguage getAvailableLanguage();
 		public void setAvailableLanguage(Container.AvailableLanguage availableLanguage);
 
 		/**
-		 * uri: http://schema.org/contactOption
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContactOption
+		 * @see <a href="http://schema.org/contactOption">http://schema.org/contactOption</a>
 		 */
 		public Container.ContactOption getContactOption();
 		public void setContactOption(Container.ContactOption contactOption);
 
 		/**
-		 * uri: http://schema.org/contactType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContactType
+		 * @see <a href="http://schema.org/contactType">http://schema.org/contactType</a>
 		 */
 		public Container.ContactType getContactType();
 		public void setContactType(Container.ContactType contactType);
 
 		/**
-		 * uri: http://schema.org/email
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Email
+		 * @see <a href="http://schema.org/email">http://schema.org/email</a>
 		 */
 		public Container.Email getEmail();
 		public void setEmail(Container.Email email);
 
 		/**
-		 * uri: http://schema.org/faxNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FaxNumber
+		 * @see <a href="http://schema.org/faxNumber">http://schema.org/faxNumber</a>
 		 */
 		public Container.FaxNumber getFaxNumber();
 		public void setFaxNumber(Container.FaxNumber faxNumber);
 
 		/**
-		 * uri: http://schema.org/hoursAvailable
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HoursAvailable
+		 * @see <a href="http://schema.org/hoursAvailable">http://schema.org/hoursAvailable</a>
 		 */
 		public Container.HoursAvailable getHoursAvailable();
 		public void setHoursAvailable(Container.HoursAvailable hoursAvailable);
 
 		/**
-		 * uri: http://schema.org/productSupported
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductSupported
+		 * @see <a href="http://schema.org/productSupported">http://schema.org/productSupported</a>
 		 */
 		public Container.ProductSupported getProductSupported();
 		public void setProductSupported(Container.ProductSupported productSupported);
 
 		/**
-		 * uri: http://schema.org/telephone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Telephone
+		 * @see <a href="http://schema.org/telephone">http://schema.org/telephone</a>
 		 */
 		public Container.Telephone getTelephone();
 		public void setTelephone(Container.Telephone telephone);
@@ -2986,22 +2860,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CookAction extends CreateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/foodEstablishment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FoodEstablishment
+		 * @see <a href="http://schema.org/foodEstablishment">http://schema.org/foodEstablishment</a>
 		 */
 		public Container.FoodEstablishment getFoodEstablishment();
 		public void setFoodEstablishment(Container.FoodEstablishment foodEstablishment);
 
 		/**
-		 * uri: http://schema.org/foodEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FoodEvent
+		 * @see <a href="http://schema.org/foodEvent">http://schema.org/foodEvent</a>
 		 */
 		public Container.FoodEvent getFoodEvent();
 		public void setFoodEvent(Container.FoodEvent foodEvent);
 
 		/**
-		 * uri: http://schema.org/recipe
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipe
+		 * @see <a href="http://schema.org/recipe">http://schema.org/recipe</a>
 		 */
 		public Container.Recipe getRecipe();
 		public void setRecipe(Container.Recipe recipe);
@@ -3021,8 +2892,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Corporation extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/tickerSymbol
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TickerSymbol
+		 * @see <a href="http://schema.org/tickerSymbol">http://schema.org/tickerSymbol</a>
 		 */
 		public Container.TickerSymbol getTickerSymbol();
 		public void setTickerSymbol(Container.TickerSymbol tickerSymbol);
@@ -3062,29 +2932,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Course extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/courseCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CourseCode
+		 * @see <a href="http://schema.org/courseCode">http://schema.org/courseCode</a>
 		 */
 		public Container.CourseCode getCourseCode();
 		public void setCourseCode(Container.CourseCode courseCode);
 
 		/**
-		 * uri: http://schema.org/coursePrerequisites
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CoursePrerequisites
+		 * @see <a href="http://schema.org/coursePrerequisites">http://schema.org/coursePrerequisites</a>
 		 */
 		public Container.CoursePrerequisites getCoursePrerequisites();
 		public void setCoursePrerequisites(Container.CoursePrerequisites coursePrerequisites);
 
 		/**
-		 * uri: http://schema.org/educationalCredentialAwarded
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EducationalCredentialAwarded
+		 * @see <a href="http://schema.org/educationalCredentialAwarded">http://schema.org/educationalCredentialAwarded</a>
 		 */
 		public EducationalCredentialAwarded getEducationalCredentialAwarded();
 		public void setEducationalCredentialAwarded(EducationalCredentialAwarded educationalCredentialAwarded);
 
 		/**
-		 * uri: http://schema.org/hasCourseInstance
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasCourseInstance
+		 * @see <a href="http://schema.org/hasCourseInstance">http://schema.org/hasCourseInstance</a>
 		 */
 		public Container.HasCourseInstance getHasCourseInstance();
 		public void setHasCourseInstance(Container.HasCourseInstance hasCourseInstance);
@@ -3108,15 +2974,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CourseInstance extends Event, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/courseMode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CourseMode
+		 * @see <a href="http://schema.org/courseMode">http://schema.org/courseMode</a>
 		 */
 		public Container.CourseMode getCourseMode();
 		public void setCourseMode(Container.CourseMode courseMode);
 
 		/**
-		 * uri: http://schema.org/instructor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Instructor
+		 * @see <a href="http://schema.org/instructor">http://schema.org/instructor</a>
 		 */
 		public Container.Instructor getInstructor();
 		public void setInstructor(Container.Instructor instructor);
@@ -3168,575 +3032,493 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CreativeWork extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/about
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.About
+		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
 		 */
 		public Container.About getAbout();
 		public void setAbout(Container.About about);
 
 		/**
-		 * uri: http://schema.org/accessMode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessMode
+		 * @see <a href="http://schema.org/accessMode">http://schema.org/accessMode</a>
 		 */
 		public Container.AccessMode getAccessMode();
 		public void setAccessMode(Container.AccessMode accessMode);
 
 		/**
-		 * uri: http://schema.org/accessModeSufficient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessModeSufficient
+		 * @see <a href="http://schema.org/accessModeSufficient">http://schema.org/accessModeSufficient</a>
 		 */
 		public Container.AccessModeSufficient getAccessModeSufficient();
 		public void setAccessModeSufficient(Container.AccessModeSufficient accessModeSufficient);
 
 		/**
-		 * uri: http://schema.org/accessibilityAPI
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessibilityAPI
+		 * @see <a href="http://schema.org/accessibilityAPI">http://schema.org/accessibilityAPI</a>
 		 */
 		public Container.AccessibilityAPI getAccessibilityAPI();
 		public void setAccessibilityAPI(Container.AccessibilityAPI accessibilityAPI);
 
 		/**
-		 * uri: http://schema.org/accessibilityControl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessibilityControl
+		 * @see <a href="http://schema.org/accessibilityControl">http://schema.org/accessibilityControl</a>
 		 */
 		public Container.AccessibilityControl getAccessibilityControl();
 		public void setAccessibilityControl(Container.AccessibilityControl accessibilityControl);
 
 		/**
-		 * uri: http://schema.org/accessibilityFeature
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessibilityFeature
+		 * @see <a href="http://schema.org/accessibilityFeature">http://schema.org/accessibilityFeature</a>
 		 */
 		public Container.AccessibilityFeature getAccessibilityFeature();
 		public void setAccessibilityFeature(Container.AccessibilityFeature accessibilityFeature);
 
 		/**
-		 * uri: http://schema.org/accessibilityHazard
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessibilityHazard
+		 * @see <a href="http://schema.org/accessibilityHazard">http://schema.org/accessibilityHazard</a>
 		 */
 		public Container.AccessibilityHazard getAccessibilityHazard();
 		public void setAccessibilityHazard(Container.AccessibilityHazard accessibilityHazard);
 
 		/**
-		 * uri: http://schema.org/accessibilitySummary
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessibilitySummary
+		 * @see <a href="http://schema.org/accessibilitySummary">http://schema.org/accessibilitySummary</a>
 		 */
 		public Container.AccessibilitySummary getAccessibilitySummary();
 		public void setAccessibilitySummary(Container.AccessibilitySummary accessibilitySummary);
 
 		/**
-		 * uri: http://schema.org/accountablePerson
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccountablePerson
+		 * @see <a href="http://schema.org/accountablePerson">http://schema.org/accountablePerson</a>
 		 */
 		public Container.AccountablePerson getAccountablePerson();
 		public void setAccountablePerson(Container.AccountablePerson accountablePerson);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/alternativeHeadline
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlternativeHeadline
+		 * @see <a href="http://schema.org/alternativeHeadline">http://schema.org/alternativeHeadline</a>
 		 */
 		public Container.AlternativeHeadline getAlternativeHeadline();
 		public void setAlternativeHeadline(Container.AlternativeHeadline alternativeHeadline);
 
 		/**
-		 * uri: http://schema.org/associatedMedia
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AssociatedMedia
+		 * @see <a href="http://schema.org/associatedMedia">http://schema.org/associatedMedia</a>
 		 */
 		public Container.AssociatedMedia getAssociatedMedia();
 		public void setAssociatedMedia(Container.AssociatedMedia associatedMedia);
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/audio
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audio
+		 * @see <a href="http://schema.org/audio">http://schema.org/audio</a>
 		 */
 		public Container.Audio getAudio();
 		public void setAudio(Container.Audio audio);
 
 		/**
-		 * uri: http://schema.org/author
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Author
+		 * @see <a href="http://schema.org/author">http://schema.org/author</a>
 		 */
 		public Container.Author getAuthor();
 		public void setAuthor(Container.Author author);
 
 		/**
-		 * uri: http://schema.org/award
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Award
+		 * @see <a href="http://schema.org/award">http://schema.org/award</a>
 		 */
 		public Container.Award getAward();
 		public void setAward(Container.Award award);
 
 		/**
-		 * uri: http://schema.org/character
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Character
+		 * @see <a href="http://schema.org/character">http://schema.org/character</a>
 		 */
 		public Container.Character getCharacter();
 		public void setCharacter(Container.Character character);
 
 		/**
-		 * uri: http://schema.org/citation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Citation
+		 * @see <a href="http://schema.org/citation">http://schema.org/citation</a>
 		 */
 		public Container.Citation getCitation();
 		public void setCitation(Container.Citation citation);
 
 		/**
-		 * uri: http://schema.org/comment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Comment
+		 * @see <a href="http://schema.org/comment">http://schema.org/comment</a>
 		 */
 		public Container.Comment getComment();
 		public void setComment(Container.Comment comment);
 
 		/**
-		 * uri: http://schema.org/commentCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CommentCount
+		 * @see <a href="http://schema.org/commentCount">http://schema.org/commentCount</a>
 		 */
 		public Container.CommentCount getCommentCount();
 		public void setCommentCount(Container.CommentCount commentCount);
 
 		/**
-		 * uri: http://schema.org/contentLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContentLocation
+		 * @see <a href="http://schema.org/contentLocation">http://schema.org/contentLocation</a>
 		 */
 		public Container.ContentLocation getContentLocation();
 		public void setContentLocation(Container.ContentLocation contentLocation);
 
 		/**
-		 * uri: http://schema.org/contentRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContentRating
+		 * @see <a href="http://schema.org/contentRating">http://schema.org/contentRating</a>
 		 */
 		public Container.ContentRating getContentRating();
 		public void setContentRating(Container.ContentRating contentRating);
 
 		/**
-		 * uri: http://schema.org/contentReferenceTime
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ContentReferenceTime
+		 * @see <a href="http://schema.org/contentReferenceTime">http://schema.org/contentReferenceTime</a>
 		 */
 		public ContentReferenceTime getContentReferenceTime();
 		public void setContentReferenceTime(ContentReferenceTime contentReferenceTime);
 
 		/**
-		 * uri: http://schema.org/contributor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Contributor
+		 * @see <a href="http://schema.org/contributor">http://schema.org/contributor</a>
 		 */
 		public Container.Contributor getContributor();
 		public void setContributor(Container.Contributor contributor);
 
 		/**
-		 * uri: http://schema.org/copyrightHolder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CopyrightHolder
+		 * @see <a href="http://schema.org/copyrightHolder">http://schema.org/copyrightHolder</a>
 		 */
 		public Container.CopyrightHolder getCopyrightHolder();
 		public void setCopyrightHolder(Container.CopyrightHolder copyrightHolder);
 
 		/**
-		 * uri: http://schema.org/copyrightYear
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CopyrightYear
+		 * @see <a href="http://schema.org/copyrightYear">http://schema.org/copyrightYear</a>
 		 */
 		public Container.CopyrightYear getCopyrightYear();
 		public void setCopyrightYear(Container.CopyrightYear copyrightYear);
 
 		/**
-		 * uri: http://schema.org/creator
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Creator
+		 * @see <a href="http://schema.org/creator">http://schema.org/creator</a>
 		 */
 		public Container.Creator getCreator();
 		public void setCreator(Container.Creator creator);
 
 		/**
-		 * uri: http://schema.org/dateCreated
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateCreated
+		 * @see <a href="http://schema.org/dateCreated">http://schema.org/dateCreated</a>
 		 */
 		public Container.DateCreated getDateCreated();
 		public void setDateCreated(Container.DateCreated dateCreated);
 
 		/**
-		 * uri: http://schema.org/dateModified
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateModified
+		 * @see <a href="http://schema.org/dateModified">http://schema.org/dateModified</a>
 		 */
 		public Container.DateModified getDateModified();
 		public void setDateModified(Container.DateModified dateModified);
 
 		/**
-		 * uri: http://schema.org/datePublished
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DatePublished
+		 * @see <a href="http://schema.org/datePublished">http://schema.org/datePublished</a>
 		 */
 		public Container.DatePublished getDatePublished();
 		public void setDatePublished(Container.DatePublished datePublished);
 
 		/**
-		 * uri: http://schema.org/discussionUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DiscussionUrl
+		 * @see <a href="http://schema.org/discussionUrl">http://schema.org/discussionUrl</a>
 		 */
 		public Container.DiscussionUrl getDiscussionUrl();
 		public void setDiscussionUrl(Container.DiscussionUrl discussionUrl);
 
 		/**
-		 * uri: http://schema.org/editor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Editor
+		 * @see <a href="http://schema.org/editor">http://schema.org/editor</a>
 		 */
 		public Container.Editor getEditor();
 		public void setEditor(Container.Editor editor);
 
 		/**
-		 * uri: http://schema.org/educationalAlignment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EducationalAlignment
+		 * @see <a href="http://schema.org/educationalAlignment">http://schema.org/educationalAlignment</a>
 		 */
 		public Container.EducationalAlignment getEducationalAlignment();
 		public void setEducationalAlignment(Container.EducationalAlignment educationalAlignment);
 
 		/**
-		 * uri: http://schema.org/educationalUse
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EducationalUse
+		 * @see <a href="http://schema.org/educationalUse">http://schema.org/educationalUse</a>
 		 */
 		public Container.EducationalUse getEducationalUse();
 		public void setEducationalUse(Container.EducationalUse educationalUse);
 
 		/**
-		 * uri: http://schema.org/encoding
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Encoding
+		 * @see <a href="http://schema.org/encoding">http://schema.org/encoding</a>
 		 */
 		public Container.Encoding getEncoding();
 		public void setEncoding(Container.Encoding encoding);
 
 		/**
-		 * uri: http://schema.org/exampleOfWork
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExampleOfWork
+		 * @see <a href="http://schema.org/exampleOfWork">http://schema.org/exampleOfWork</a>
 		 */
 		public Container.ExampleOfWork getExampleOfWork();
 		public void setExampleOfWork(Container.ExampleOfWork exampleOfWork);
 
 		/**
-		 * uri: http://schema.org/expires
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Expires
+		 * @see <a href="http://schema.org/expires">http://schema.org/expires</a>
 		 */
 		public Container.Expires getExpires();
 		public void setExpires(Container.Expires expires);
 
 		/**
-		 * uri: http://schema.org/fileFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FileFormat
+		 * @see <a href="http://schema.org/fileFormat">http://schema.org/fileFormat</a>
 		 */
 		public Container.FileFormat getFileFormat();
 		public void setFileFormat(Container.FileFormat fileFormat);
 
 		/**
-		 * uri: http://schema.org/funder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Funder
+		 * @see <a href="http://schema.org/funder">http://schema.org/funder</a>
 		 */
 		public Container.Funder getFunder();
 		public void setFunder(Container.Funder funder);
 
 		/**
-		 * uri: http://schema.org/genre
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Genre
+		 * @see <a href="http://schema.org/genre">http://schema.org/genre</a>
 		 */
 		public Container.Genre getGenre();
 		public void setGenre(Container.Genre genre);
 
 		/**
-		 * uri: http://schema.org/hasPart
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasPart
+		 * @see <a href="http://schema.org/hasPart">http://schema.org/hasPart</a>
 		 */
 		public Container.HasPart getHasPart();
 		public void setHasPart(Container.HasPart hasPart);
 
 		/**
-		 * uri: http://schema.org/headline
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Headline
+		 * @see <a href="http://schema.org/headline">http://schema.org/headline</a>
 		 */
 		public Container.Headline getHeadline();
 		public void setHeadline(Container.Headline headline);
 
 		/**
-		 * uri: http://schema.org/inLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InLanguage
+		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
 		 */
 		public Container.InLanguage getInLanguage();
 		public void setInLanguage(Container.InLanguage inLanguage);
 
 		/**
-		 * uri: http://schema.org/interactionStatistic
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InteractionStatistic
+		 * @see <a href="http://schema.org/interactionStatistic">http://schema.org/interactionStatistic</a>
 		 */
 		public Container.InteractionStatistic getInteractionStatistic();
 		public void setInteractionStatistic(Container.InteractionStatistic interactionStatistic);
 
 		/**
-		 * uri: http://schema.org/interactivityType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InteractivityType
+		 * @see <a href="http://schema.org/interactivityType">http://schema.org/interactivityType</a>
 		 */
 		public Container.InteractivityType getInteractivityType();
 		public void setInteractivityType(Container.InteractivityType interactivityType);
 
 		/**
-		 * uri: http://schema.org/isAccessibleForFree
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsAccessibleForFree
+		 * @see <a href="http://schema.org/isAccessibleForFree">http://schema.org/isAccessibleForFree</a>
 		 */
 		public Container.IsAccessibleForFree getIsAccessibleForFree();
 		public void setIsAccessibleForFree(Container.IsAccessibleForFree isAccessibleForFree);
 
 		/**
-		 * uri: http://schema.org/isBasedOn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsBasedOn
+		 * @see <a href="http://schema.org/isBasedOn">http://schema.org/isBasedOn</a>
 		 */
 		public Container.IsBasedOn getIsBasedOn();
 		public void setIsBasedOn(Container.IsBasedOn isBasedOn);
 
 		/**
-		 * uri: http://schema.org/isFamilyFriendly
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsFamilyFriendly
+		 * @see <a href="http://schema.org/isFamilyFriendly">http://schema.org/isFamilyFriendly</a>
 		 */
 		public Container.IsFamilyFriendly getIsFamilyFriendly();
 		public void setIsFamilyFriendly(Container.IsFamilyFriendly isFamilyFriendly);
 
 		/**
-		 * uri: http://schema.org/isPartOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsPartOf
+		 * @see <a href="http://schema.org/isPartOf">http://schema.org/isPartOf</a>
 		 */
 		public Container.IsPartOf getIsPartOf();
 		public void setIsPartOf(Container.IsPartOf isPartOf);
 
 		/**
-		 * uri: http://schema.org/keywords
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Keywords
+		 * @see <a href="http://schema.org/keywords">http://schema.org/keywords</a>
 		 */
 		public Container.Keywords getKeywords();
 		public void setKeywords(Container.Keywords keywords);
 
 		/**
-		 * uri: http://schema.org/learningResourceType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LearningResourceType
+		 * @see <a href="http://schema.org/learningResourceType">http://schema.org/learningResourceType</a>
 		 */
 		public Container.LearningResourceType getLearningResourceType();
 		public void setLearningResourceType(Container.LearningResourceType learningResourceType);
 
 		/**
-		 * uri: http://schema.org/license
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.License
+		 * @see <a href="http://schema.org/license">http://schema.org/license</a>
 		 */
 		public Container.License getLicense();
 		public void setLicense(Container.License license);
 
 		/**
-		 * uri: http://schema.org/locationCreated
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LocationCreated
+		 * @see <a href="http://schema.org/locationCreated">http://schema.org/locationCreated</a>
 		 */
 		public Container.LocationCreated getLocationCreated();
 		public void setLocationCreated(Container.LocationCreated locationCreated);
 
 		/**
-		 * uri: http://schema.org/mainEntity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MainEntity
+		 * @see <a href="http://schema.org/mainEntity">http://schema.org/mainEntity</a>
 		 */
 		public Container.MainEntity getMainEntity();
 		public void setMainEntity(Container.MainEntity mainEntity);
 
 		/**
-		 * uri: http://schema.org/material
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Material
+		 * @see <a href="http://schema.org/material">http://schema.org/material</a>
 		 */
 		public Container.Material getMaterial();
 		public void setMaterial(Container.Material material);
 
 		/**
-		 * uri: http://schema.org/mentions
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Mentions
+		 * @see <a href="http://schema.org/mentions">http://schema.org/mentions</a>
 		 */
 		public Container.Mentions getMentions();
 		public void setMentions(Container.Mentions mentions);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
 
 		/**
-		 * uri: http://schema.org/position
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Position
+		 * @see <a href="http://schema.org/position">http://schema.org/position</a>
 		 */
 		public Container.Position getPosition();
 		public void setPosition(Container.Position position);
 
 		/**
-		 * uri: http://schema.org/producer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Producer
+		 * @see <a href="http://schema.org/producer">http://schema.org/producer</a>
 		 */
 		public Container.Producer getProducer();
 		public void setProducer(Container.Producer producer);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/publication
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Publication
+		 * @see <a href="http://schema.org/publication">http://schema.org/publication</a>
 		 */
 		public Container.Publication getPublication();
 		public void setPublication(Container.Publication publication);
 
 		/**
-		 * uri: http://schema.org/publisher
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Publisher
+		 * @see <a href="http://schema.org/publisher">http://schema.org/publisher</a>
 		 */
 		public Container.Publisher getPublisher();
 		public void setPublisher(Container.Publisher publisher);
 
 		/**
-		 * uri: http://schema.org/publisherImprint
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.PublisherImprint
+		 * @see <a href="http://schema.org/publisherImprint">http://schema.org/publisherImprint</a>
 		 */
 		public PublisherImprint getPublisherImprint();
 		public void setPublisherImprint(PublisherImprint publisherImprint);
 
 		/**
-		 * uri: http://schema.org/publishingPrinciples
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PublishingPrinciples
+		 * @see <a href="http://schema.org/publishingPrinciples">http://schema.org/publishingPrinciples</a>
 		 */
 		public Container.PublishingPrinciples getPublishingPrinciples();
 		public void setPublishingPrinciples(Container.PublishingPrinciples publishingPrinciples);
 
 		/**
-		 * uri: http://schema.org/recordedAt
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecordedAt
+		 * @see <a href="http://schema.org/recordedAt">http://schema.org/recordedAt</a>
 		 */
 		public Container.RecordedAt getRecordedAt();
 		public void setRecordedAt(Container.RecordedAt recordedAt);
 
 		/**
-		 * uri: http://schema.org/releasedEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReleasedEvent
+		 * @see <a href="http://schema.org/releasedEvent">http://schema.org/releasedEvent</a>
 		 */
 		public Container.ReleasedEvent getReleasedEvent();
 		public void setReleasedEvent(Container.ReleasedEvent releasedEvent);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/schemaVersion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SchemaVersion
+		 * @see <a href="http://schema.org/schemaVersion">http://schema.org/schemaVersion</a>
 		 */
 		public Container.SchemaVersion getSchemaVersion();
 		public void setSchemaVersion(Container.SchemaVersion schemaVersion);
 
 		/**
-		 * uri: http://schema.org/sourceOrganization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SourceOrganization
+		 * @see <a href="http://schema.org/sourceOrganization">http://schema.org/sourceOrganization</a>
 		 */
 		public Container.SourceOrganization getSourceOrganization();
 		public void setSourceOrganization(Container.SourceOrganization sourceOrganization);
 
 		/**
-		 * uri: http://schema.org/spatialCoverage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SpatialCoverage
+		 * @see <a href="http://schema.org/spatialCoverage">http://schema.org/spatialCoverage</a>
 		 */
 		public Container.SpatialCoverage getSpatialCoverage();
 		public void setSpatialCoverage(Container.SpatialCoverage spatialCoverage);
 
 		/**
-		 * uri: http://schema.org/sponsor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sponsor
+		 * @see <a href="http://schema.org/sponsor">http://schema.org/sponsor</a>
 		 */
 		public Container.Sponsor getSponsor();
 		public void setSponsor(Container.Sponsor sponsor);
 
 		/**
-		 * uri: http://schema.org/temporalCoverage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TemporalCoverage
+		 * @see <a href="http://schema.org/temporalCoverage">http://schema.org/temporalCoverage</a>
 		 */
 		public Container.TemporalCoverage getTemporalCoverage();
 		public void setTemporalCoverage(Container.TemporalCoverage temporalCoverage);
 
 		/**
-		 * uri: http://schema.org/text
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Text
+		 * @see <a href="http://schema.org/text">http://schema.org/text</a>
 		 */
 		public Container.Text getText();
 		public void setText(Container.Text text);
 
 		/**
-		 * uri: http://schema.org/thumbnailUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ThumbnailUrl
+		 * @see <a href="http://schema.org/thumbnailUrl">http://schema.org/thumbnailUrl</a>
 		 */
 		public Container.ThumbnailUrl getThumbnailUrl();
 		public void setThumbnailUrl(Container.ThumbnailUrl thumbnailUrl);
 
 		/**
-		 * uri: http://schema.org/timeRequired
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TimeRequired
+		 * @see <a href="http://schema.org/timeRequired">http://schema.org/timeRequired</a>
 		 */
 		public Container.TimeRequired getTimeRequired();
 		public void setTimeRequired(Container.TimeRequired timeRequired);
 
 		/**
-		 * uri: http://schema.org/translationOfWork
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.TranslationOfWork
+		 * @see <a href="http://schema.org/translationOfWork">http://schema.org/translationOfWork</a>
 		 */
 		public TranslationOfWork getTranslationOfWork();
 		public void setTranslationOfWork(TranslationOfWork translationOfWork);
 
 		/**
-		 * uri: http://schema.org/translator
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Translator
+		 * @see <a href="http://schema.org/translator">http://schema.org/translator</a>
 		 */
 		public Container.Translator getTranslator();
 		public void setTranslator(Container.Translator translator);
 
 		/**
-		 * uri: http://schema.org/typicalAgeRange
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TypicalAgeRange
+		 * @see <a href="http://schema.org/typicalAgeRange">http://schema.org/typicalAgeRange</a>
 		 */
 		public Container.TypicalAgeRange getTypicalAgeRange();
 		public void setTypicalAgeRange(Container.TypicalAgeRange typicalAgeRange);
 
 		/**
-		 * uri: http://schema.org/version
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Version
+		 * @see <a href="http://schema.org/version">http://schema.org/version</a>
 		 */
 		public Container.Version getVersion();
 		public void setVersion(Container.Version version);
 
 		/**
-		 * uri: http://schema.org/video
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Video
+		 * @see <a href="http://schema.org/video">http://schema.org/video</a>
 		 */
 		public Container.Video getVideo();
 		public void setVideo(Container.Video video);
 
 		/**
-		 * uri: http://schema.org/workExample
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkExample
+		 * @see <a href="http://schema.org/workExample">http://schema.org/workExample</a>
 		 */
 		public Container.WorkExample getWorkExample();
 		public void setWorkExample(Container.WorkExample workExample);
 
 		/**
-		 * uri: http://schema.org/workTranslation
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.WorkTranslation
+		 * @see <a href="http://schema.org/workTranslation">http://schema.org/workTranslation</a>
 		 */
 		public WorkTranslation getWorkTranslation();
 		public void setWorkTranslation(WorkTranslation workTranslation);
@@ -3757,71 +3539,61 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CreativeWorkSeason extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/endDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndDate
+		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
 		 */
 		public Container.EndDate getEndDate();
 		public void setEndDate(Container.EndDate endDate);
 
 		/**
-		 * uri: http://schema.org/episode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Episode
+		 * @see <a href="http://schema.org/episode">http://schema.org/episode</a>
 		 */
 		public Container.Episode getEpisode();
 		public void setEpisode(Container.Episode episode);
 
 		/**
-		 * uri: http://schema.org/numberOfEpisodes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEpisodes
+		 * @see <a href="http://schema.org/numberOfEpisodes">http://schema.org/numberOfEpisodes</a>
 		 */
 		public Container.NumberOfEpisodes getNumberOfEpisodes();
 		public void setNumberOfEpisodes(Container.NumberOfEpisodes numberOfEpisodes);
 
 		/**
-		 * uri: http://schema.org/partOfSeries
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfSeries
+		 * @see <a href="http://schema.org/partOfSeries">http://schema.org/partOfSeries</a>
 		 */
 		public Container.PartOfSeries getPartOfSeries();
 		public void setPartOfSeries(Container.PartOfSeries partOfSeries);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/seasonNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SeasonNumber
+		 * @see <a href="http://schema.org/seasonNumber">http://schema.org/seasonNumber</a>
 		 */
 		public Container.SeasonNumber getSeasonNumber();
 		public void setSeasonNumber(Container.SeasonNumber seasonNumber);
 
 		/**
-		 * uri: http://schema.org/startDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartDate
+		 * @see <a href="http://schema.org/startDate">http://schema.org/startDate</a>
 		 */
 		public Container.StartDate getStartDate();
 		public void setStartDate(Container.StartDate startDate);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -3864,22 +3636,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CreativeWorkSeries extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/endDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndDate
+		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
 		 */
 		public Container.EndDate getEndDate();
 		public void setEndDate(Container.EndDate endDate);
 
 		/**
-		 * uri: http://schema.org/issn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Issn
+		 * @see <a href="http://schema.org/issn">http://schema.org/issn</a>
 		 */
 		public Container.Issn getIssn();
 		public void setIssn(Container.Issn issn);
 
 		/**
-		 * uri: http://schema.org/startDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartDate
+		 * @see <a href="http://schema.org/startDate">http://schema.org/startDate</a>
 		 */
 		public Container.StartDate getStartDate();
 		public void setStartDate(Container.StartDate startDate);
@@ -3903,8 +3672,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface CreditCard extends LoanOrCredit, PaymentCard, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/monthlyMinimumRepaymentAmount
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MonthlyMinimumRepaymentAmount
+		 * @see <a href="http://schema.org/monthlyMinimumRepaymentAmount">http://schema.org/monthlyMinimumRepaymentAmount</a>
 		 */
 		public MonthlyMinimumRepaymentAmount getMonthlyMinimumRepaymentAmount();
 		public void setMonthlyMinimumRepaymentAmount(MonthlyMinimumRepaymentAmount monthlyMinimumRepaymentAmount);
@@ -3982,15 +3750,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DataCatalog extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dataset
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Dataset
+		 * @see <a href="http://schema.org/dataset">http://schema.org/dataset</a>
 		 */
 		public Container.Dataset getDataset();
 		public void setDataset(Container.Dataset dataset);
 
 		/**
-		 * uri: http://schema.org/measurementTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MeasurementTechnique
+		 * @see <a href="http://schema.org/measurementTechnique">http://schema.org/measurementTechnique</a>
 		 */
 		public MeasurementTechnique getMeasurementTechnique();
 		public void setMeasurementTechnique(MeasurementTechnique measurementTechnique);
@@ -4010,8 +3776,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DataDownload extends MediaObject, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/measurementTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MeasurementTechnique
+		 * @see <a href="http://schema.org/measurementTechnique">http://schema.org/measurementTechnique</a>
 		 */
 		public MeasurementTechnique getMeasurementTechnique();
 		public void setMeasurementTechnique(MeasurementTechnique measurementTechnique);
@@ -4033,8 +3798,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DataFeed extends Dataset, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dataFeedElement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DataFeedElement
+		 * @see <a href="http://schema.org/dataFeedElement">http://schema.org/dataFeedElement</a>
 		 */
 		public Container.DataFeedElement getDataFeedElement();
 		public void setDataFeedElement(Container.DataFeedElement dataFeedElement);
@@ -4055,29 +3819,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DataFeedItem extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dateCreated
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateCreated
+		 * @see <a href="http://schema.org/dateCreated">http://schema.org/dateCreated</a>
 		 */
 		public Container.DateCreated getDateCreated();
 		public void setDateCreated(Container.DateCreated dateCreated);
 
 		/**
-		 * uri: http://schema.org/dateDeleted
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateDeleted
+		 * @see <a href="http://schema.org/dateDeleted">http://schema.org/dateDeleted</a>
 		 */
 		public Container.DateDeleted getDateDeleted();
 		public void setDateDeleted(Container.DateDeleted dateDeleted);
 
 		/**
-		 * uri: http://schema.org/dateModified
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateModified
+		 * @see <a href="http://schema.org/dateModified">http://schema.org/dateModified</a>
 		 */
 		public Container.DateModified getDateModified();
 		public void setDateModified(Container.DateModified dateModified);
 
 		/**
-		 * uri: http://schema.org/item
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Item
+		 * @see <a href="http://schema.org/item">http://schema.org/item</a>
 		 */
 		public Container.Item getItem();
 		public void setItem(Container.Item item);
@@ -4109,36 +3869,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Dataset extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/distribution
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Distribution
+		 * @see <a href="http://schema.org/distribution">http://schema.org/distribution</a>
 		 */
 		public Container.Distribution getDistribution();
 		public void setDistribution(Container.Distribution distribution);
 
 		/**
-		 * uri: http://schema.org/includedInDataCatalog
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IncludedInDataCatalog
+		 * @see <a href="http://schema.org/includedInDataCatalog">http://schema.org/includedInDataCatalog</a>
 		 */
 		public Container.IncludedInDataCatalog getIncludedInDataCatalog();
 		public void setIncludedInDataCatalog(Container.IncludedInDataCatalog includedInDataCatalog);
 
 		/**
-		 * uri: http://schema.org/issn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Issn
+		 * @see <a href="http://schema.org/issn">http://schema.org/issn</a>
 		 */
 		public Container.Issn getIssn();
 		public void setIssn(Container.Issn issn);
 
 		/**
-		 * uri: http://schema.org/measurementTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MeasurementTechnique
+		 * @see <a href="http://schema.org/measurementTechnique">http://schema.org/measurementTechnique</a>
 		 */
 		public MeasurementTechnique getMeasurementTechnique();
 		public void setMeasurementTechnique(MeasurementTechnique measurementTechnique);
 
 		/**
-		 * uri: http://schema.org/variableMeasured
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.VariableMeasured
+		 * @see <a href="http://schema.org/variableMeasured">http://schema.org/variableMeasured</a>
 		 */
 		public VariableMeasured getVariableMeasured();
 		public void setVariableMeasured(VariableMeasured variableMeasured);
@@ -4246,29 +4001,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DeliveryChargeSpecification extends PriceSpecification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/appliesToDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AppliesToDeliveryMethod
+		 * @see <a href="http://schema.org/appliesToDeliveryMethod">http://schema.org/appliesToDeliveryMethod</a>
 		 */
 		public Container.AppliesToDeliveryMethod getAppliesToDeliveryMethod();
 		public void setAppliesToDeliveryMethod(Container.AppliesToDeliveryMethod appliesToDeliveryMethod);
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/eligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleRegion
+		 * @see <a href="http://schema.org/eligibleRegion">http://schema.org/eligibleRegion</a>
 		 */
 		public Container.EligibleRegion getEligibleRegion();
 		public void setEligibleRegion(Container.EligibleRegion eligibleRegion);
 
 		/**
-		 * uri: http://schema.org/ineligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IneligibleRegion
+		 * @see <a href="http://schema.org/ineligibleRegion">http://schema.org/ineligibleRegion</a>
 		 */
 		public Container.IneligibleRegion getIneligibleRegion();
 		public void setIneligibleRegion(Container.IneligibleRegion ineligibleRegion);
@@ -4289,29 +4040,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DeliveryEvent extends Event, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/accessCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccessCode
+		 * @see <a href="http://schema.org/accessCode">http://schema.org/accessCode</a>
 		 */
 		public Container.AccessCode getAccessCode();
 		public void setAccessCode(Container.AccessCode accessCode);
 
 		/**
-		 * uri: http://schema.org/availableFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableFrom
+		 * @see <a href="http://schema.org/availableFrom">http://schema.org/availableFrom</a>
 		 */
 		public Container.AvailableFrom getAvailableFrom();
 		public void setAvailableFrom(Container.AvailableFrom availableFrom);
 
 		/**
-		 * uri: http://schema.org/availableThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableThrough
+		 * @see <a href="http://schema.org/availableThrough">http://schema.org/availableThrough</a>
 		 */
 		public Container.AvailableThrough getAvailableThrough();
 		public void setAvailableThrough(Container.AvailableThrough availableThrough);
 
 		/**
-		 * uri: http://schema.org/hasDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasDeliveryMethod
+		 * @see <a href="http://schema.org/hasDeliveryMethod">http://schema.org/hasDeliveryMethod</a>
 		 */
 		public Container.HasDeliveryMethod getHasDeliveryMethod();
 		public void setHasDeliveryMethod(Container.HasDeliveryMethod hasDeliveryMethod);
@@ -4355,225 +4102,193 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Demand extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/acceptedPaymentMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcceptedPaymentMethod
+		 * @see <a href="http://schema.org/acceptedPaymentMethod">http://schema.org/acceptedPaymentMethod</a>
 		 */
 		public Container.AcceptedPaymentMethod getAcceptedPaymentMethod();
 		public void setAcceptedPaymentMethod(Container.AcceptedPaymentMethod acceptedPaymentMethod);
 
 		/**
-		 * uri: http://schema.org/advanceBookingRequirement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdvanceBookingRequirement
+		 * @see <a href="http://schema.org/advanceBookingRequirement">http://schema.org/advanceBookingRequirement</a>
 		 */
 		public Container.AdvanceBookingRequirement getAdvanceBookingRequirement();
 		public void setAdvanceBookingRequirement(Container.AdvanceBookingRequirement advanceBookingRequirement);
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/availability
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Availability
+		 * @see <a href="http://schema.org/availability">http://schema.org/availability</a>
 		 */
 		public Container.Availability getAvailability();
 		public void setAvailability(Container.Availability availability);
 
 		/**
-		 * uri: http://schema.org/availabilityEnds
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailabilityEnds
+		 * @see <a href="http://schema.org/availabilityEnds">http://schema.org/availabilityEnds</a>
 		 */
 		public Container.AvailabilityEnds getAvailabilityEnds();
 		public void setAvailabilityEnds(Container.AvailabilityEnds availabilityEnds);
 
 		/**
-		 * uri: http://schema.org/availabilityStarts
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailabilityStarts
+		 * @see <a href="http://schema.org/availabilityStarts">http://schema.org/availabilityStarts</a>
 		 */
 		public Container.AvailabilityStarts getAvailabilityStarts();
 		public void setAvailabilityStarts(Container.AvailabilityStarts availabilityStarts);
 
 		/**
-		 * uri: http://schema.org/availableAtOrFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableAtOrFrom
+		 * @see <a href="http://schema.org/availableAtOrFrom">http://schema.org/availableAtOrFrom</a>
 		 */
 		public Container.AvailableAtOrFrom getAvailableAtOrFrom();
 		public void setAvailableAtOrFrom(Container.AvailableAtOrFrom availableAtOrFrom);
 
 		/**
-		 * uri: http://schema.org/availableDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableDeliveryMethod
+		 * @see <a href="http://schema.org/availableDeliveryMethod">http://schema.org/availableDeliveryMethod</a>
 		 */
 		public Container.AvailableDeliveryMethod getAvailableDeliveryMethod();
 		public void setAvailableDeliveryMethod(Container.AvailableDeliveryMethod availableDeliveryMethod);
 
 		/**
-		 * uri: http://schema.org/businessFunction
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BusinessFunction
+		 * @see <a href="http://schema.org/businessFunction">http://schema.org/businessFunction</a>
 		 */
 		public Container.BusinessFunction getBusinessFunction();
 		public void setBusinessFunction(Container.BusinessFunction businessFunction);
 
 		/**
-		 * uri: http://schema.org/deliveryLeadTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryLeadTime
+		 * @see <a href="http://schema.org/deliveryLeadTime">http://schema.org/deliveryLeadTime</a>
 		 */
 		public Container.DeliveryLeadTime getDeliveryLeadTime();
 		public void setDeliveryLeadTime(Container.DeliveryLeadTime deliveryLeadTime);
 
 		/**
-		 * uri: http://schema.org/eligibleCustomerType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleCustomerType
+		 * @see <a href="http://schema.org/eligibleCustomerType">http://schema.org/eligibleCustomerType</a>
 		 */
 		public Container.EligibleCustomerType getEligibleCustomerType();
 		public void setEligibleCustomerType(Container.EligibleCustomerType eligibleCustomerType);
 
 		/**
-		 * uri: http://schema.org/eligibleDuration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleDuration
+		 * @see <a href="http://schema.org/eligibleDuration">http://schema.org/eligibleDuration</a>
 		 */
 		public Container.EligibleDuration getEligibleDuration();
 		public void setEligibleDuration(Container.EligibleDuration eligibleDuration);
 
 		/**
-		 * uri: http://schema.org/eligibleQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleQuantity
+		 * @see <a href="http://schema.org/eligibleQuantity">http://schema.org/eligibleQuantity</a>
 		 */
 		public Container.EligibleQuantity getEligibleQuantity();
 		public void setEligibleQuantity(Container.EligibleQuantity eligibleQuantity);
 
 		/**
-		 * uri: http://schema.org/eligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleRegion
+		 * @see <a href="http://schema.org/eligibleRegion">http://schema.org/eligibleRegion</a>
 		 */
 		public Container.EligibleRegion getEligibleRegion();
 		public void setEligibleRegion(Container.EligibleRegion eligibleRegion);
 
 		/**
-		 * uri: http://schema.org/eligibleTransactionVolume
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleTransactionVolume
+		 * @see <a href="http://schema.org/eligibleTransactionVolume">http://schema.org/eligibleTransactionVolume</a>
 		 */
 		public Container.EligibleTransactionVolume getEligibleTransactionVolume();
 		public void setEligibleTransactionVolume(Container.EligibleTransactionVolume eligibleTransactionVolume);
 
 		/**
-		 * uri: http://schema.org/gtin12
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin12
+		 * @see <a href="http://schema.org/gtin12">http://schema.org/gtin12</a>
 		 */
 		public Container.Gtin12 getGtin12();
 		public void setGtin12(Container.Gtin12 gtin12);
 
 		/**
-		 * uri: http://schema.org/gtin13
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin13
+		 * @see <a href="http://schema.org/gtin13">http://schema.org/gtin13</a>
 		 */
 		public Container.Gtin13 getGtin13();
 		public void setGtin13(Container.Gtin13 gtin13);
 
 		/**
-		 * uri: http://schema.org/gtin14
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin14
+		 * @see <a href="http://schema.org/gtin14">http://schema.org/gtin14</a>
 		 */
 		public Container.Gtin14 getGtin14();
 		public void setGtin14(Container.Gtin14 gtin14);
 
 		/**
-		 * uri: http://schema.org/gtin8
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin8
+		 * @see <a href="http://schema.org/gtin8">http://schema.org/gtin8</a>
 		 */
 		public Container.Gtin8 getGtin8();
 		public void setGtin8(Container.Gtin8 gtin8);
 
 		/**
-		 * uri: http://schema.org/includesObject
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IncludesObject
+		 * @see <a href="http://schema.org/includesObject">http://schema.org/includesObject</a>
 		 */
 		public Container.IncludesObject getIncludesObject();
 		public void setIncludesObject(Container.IncludesObject includesObject);
 
 		/**
-		 * uri: http://schema.org/ineligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IneligibleRegion
+		 * @see <a href="http://schema.org/ineligibleRegion">http://schema.org/ineligibleRegion</a>
 		 */
 		public Container.IneligibleRegion getIneligibleRegion();
 		public void setIneligibleRegion(Container.IneligibleRegion ineligibleRegion);
 
 		/**
-		 * uri: http://schema.org/inventoryLevel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InventoryLevel
+		 * @see <a href="http://schema.org/inventoryLevel">http://schema.org/inventoryLevel</a>
 		 */
 		public Container.InventoryLevel getInventoryLevel();
 		public void setInventoryLevel(Container.InventoryLevel inventoryLevel);
 
 		/**
-		 * uri: http://schema.org/itemCondition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemCondition
+		 * @see <a href="http://schema.org/itemCondition">http://schema.org/itemCondition</a>
 		 */
 		public Container.ItemCondition getItemCondition();
 		public void setItemCondition(Container.ItemCondition itemCondition);
 
 		/**
-		 * uri: http://schema.org/itemOffered
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemOffered
+		 * @see <a href="http://schema.org/itemOffered">http://schema.org/itemOffered</a>
 		 */
 		public Container.ItemOffered getItemOffered();
 		public void setItemOffered(Container.ItemOffered itemOffered);
 
 		/**
-		 * uri: http://schema.org/mpn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Mpn
+		 * @see <a href="http://schema.org/mpn">http://schema.org/mpn</a>
 		 */
 		public Container.Mpn getMpn();
 		public void setMpn(Container.Mpn mpn);
 
 		/**
-		 * uri: http://schema.org/priceSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceSpecification
+		 * @see <a href="http://schema.org/priceSpecification">http://schema.org/priceSpecification</a>
 		 */
 		public Container.PriceSpecification getPriceSpecification();
 		public void setPriceSpecification(Container.PriceSpecification priceSpecification);
 
 		/**
-		 * uri: http://schema.org/seller
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seller
+		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
 		 */
 		public Container.Seller getSeller();
 		public void setSeller(Container.Seller seller);
 
 		/**
-		 * uri: http://schema.org/serialNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SerialNumber
+		 * @see <a href="http://schema.org/serialNumber">http://schema.org/serialNumber</a>
 		 */
 		public Container.SerialNumber getSerialNumber();
 		public void setSerialNumber(Container.SerialNumber serialNumber);
 
 		/**
-		 * uri: http://schema.org/sku
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sku
+		 * @see <a href="http://schema.org/sku">http://schema.org/sku</a>
 		 */
 		public Container.Sku getSku();
 		public void setSku(Container.Sku sku);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
 
 		/**
-		 * uri: http://schema.org/warranty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Warranty
+		 * @see <a href="http://schema.org/warranty">http://schema.org/warranty</a>
 		 */
 		public Container.Warranty getWarranty();
 		public void setWarranty(Container.Warranty warranty);
@@ -4653,8 +4368,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DigitalDocument extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hasDigitalDocumentPermission
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasDigitalDocumentPermission
+		 * @see <a href="http://schema.org/hasDigitalDocumentPermission">http://schema.org/hasDigitalDocumentPermission</a>
 		 */
 		public Container.HasDigitalDocumentPermission getHasDigitalDocumentPermission();
 		public void setHasDigitalDocumentPermission(Container.HasDigitalDocumentPermission hasDigitalDocumentPermission);
@@ -4675,15 +4389,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DigitalDocumentPermission extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/grantee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Grantee
+		 * @see <a href="http://schema.org/grantee">http://schema.org/grantee</a>
 		 */
 		public Container.Grantee getGrantee();
 		public void setGrantee(Container.Grantee grantee);
 
 		/**
-		 * uri: http://schema.org/permissionType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PermissionType
+		 * @see <a href="http://schema.org/permissionType">http://schema.org/permissionType</a>
 		 */
 		public Container.PermissionType getPermissionType();
 		public void setPermissionType(Container.PermissionType permissionType);
@@ -4797,8 +4509,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface DonateAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -4935,8 +4646,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EducationalAudience extends Audience, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/educationalRole
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EducationalRole
+		 * @see <a href="http://schema.org/educationalRole">http://schema.org/educationalRole</a>
 		 */
 		public Container.EducationalRole getEducationalRole();
 		public void setEducationalRole(Container.EducationalRole educationalRole);
@@ -4956,8 +4666,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EducationalOrganization extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/alumni
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Alumni
+		 * @see <a href="http://schema.org/alumni">http://schema.org/alumni</a>
 		 */
 		public Container.Alumni getAlumni();
 		public void setAlumni(Container.Alumni alumni);
@@ -5063,15 +4772,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EmployeeRole extends OrganizationRole, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/baseSalary
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BaseSalary
+		 * @see <a href="http://schema.org/baseSalary">http://schema.org/baseSalary</a>
 		 */
 		public Container.BaseSalary getBaseSalary();
 		public void setBaseSalary(Container.BaseSalary baseSalary);
 
 		/**
-		 * uri: http://schema.org/salaryCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SalaryCurrency
+		 * @see <a href="http://schema.org/salaryCurrency">http://schema.org/salaryCurrency</a>
 		 */
 		public Container.SalaryCurrency getSalaryCurrency();
 		public void setSalaryCurrency(Container.SalaryCurrency salaryCurrency);
@@ -5106,8 +4813,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EndorseAction extends ReactAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/endorsee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Endorsee
+		 * @see <a href="http://schema.org/endorsee">http://schema.org/endorsee</a>
 		 */
 		public Container.Endorsee getEndorsee();
 		public void setEndorsee(Container.Endorsee endorsee);
@@ -5145,36 +4851,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EngineSpecification extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/engineDisplacement
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.EngineDisplacement
+		 * @see <a href="http://schema.org/engineDisplacement">http://schema.org/engineDisplacement</a>
 		 */
 		public EngineDisplacement getEngineDisplacement();
 		public void setEngineDisplacement(EngineDisplacement engineDisplacement);
 
 		/**
-		 * uri: http://schema.org/enginePower
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.EnginePower
+		 * @see <a href="http://schema.org/enginePower">http://schema.org/enginePower</a>
 		 */
 		public EnginePower getEnginePower();
 		public void setEnginePower(EnginePower enginePower);
 
 		/**
-		 * uri: http://schema.org/engineType
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.EngineType
+		 * @see <a href="http://schema.org/engineType">http://schema.org/engineType</a>
 		 */
 		public EngineType getEngineType();
 		public void setEngineType(EngineType engineType);
 
 		/**
-		 * uri: http://schema.org/fuelType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FuelType
+		 * @see <a href="http://schema.org/fuelType">http://schema.org/fuelType</a>
 		 */
 		public Container.FuelType getFuelType();
 		public void setFuelType(Container.FuelType fuelType);
 
 		/**
-		 * uri: http://schema.org/torque
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.Torque
+		 * @see <a href="http://schema.org/torque">http://schema.org/torque</a>
 		 */
 		public Torque getTorque();
 		public void setTorque(Torque torque);
@@ -5209,43 +4910,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface EntryPoint extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actionApplication
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ActionApplication
+		 * @see <a href="http://schema.org/actionApplication">http://schema.org/actionApplication</a>
 		 */
 		public Container.ActionApplication getActionApplication();
 		public void setActionApplication(Container.ActionApplication actionApplication);
 
 		/**
-		 * uri: http://schema.org/actionPlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ActionPlatform
+		 * @see <a href="http://schema.org/actionPlatform">http://schema.org/actionPlatform</a>
 		 */
 		public Container.ActionPlatform getActionPlatform();
 		public void setActionPlatform(Container.ActionPlatform actionPlatform);
 
 		/**
-		 * uri: http://schema.org/contentType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContentType
+		 * @see <a href="http://schema.org/contentType">http://schema.org/contentType</a>
 		 */
 		public Container.ContentType getContentType();
 		public void setContentType(Container.ContentType contentType);
 
 		/**
-		 * uri: http://schema.org/encodingType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EncodingType
+		 * @see <a href="http://schema.org/encodingType">http://schema.org/encodingType</a>
 		 */
 		public Container.EncodingType getEncodingType();
 		public void setEncodingType(Container.EncodingType encodingType);
 
 		/**
-		 * uri: http://schema.org/httpMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HttpMethod
+		 * @see <a href="http://schema.org/httpMethod">http://schema.org/httpMethod</a>
 		 */
 		public Container.HttpMethod getHttpMethod();
 		public void setHttpMethod(Container.HttpMethod httpMethod);
 
 		/**
-		 * uri: http://schema.org/urlTemplate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UrlTemplate
+		 * @see <a href="http://schema.org/urlTemplate">http://schema.org/urlTemplate</a>
 		 */
 		public Container.UrlTemplate getUrlTemplate();
 		public void setUrlTemplate(Container.UrlTemplate urlTemplate);
@@ -5266,8 +4961,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Enumeration extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/supersededBy
-		 * class: org.kyojo.schemaOrg.m3n3.meta.Container.SupersededBy
+		 * @see <a href="http://schema.org/supersededBy">http://schema.org/supersededBy</a>
 		 */
 		public SupersededBy getSupersededBy();
 		public void setSupersededBy(SupersededBy supersededBy);
@@ -5289,57 +4983,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Episode extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/episodeNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EpisodeNumber
+		 * @see <a href="http://schema.org/episodeNumber">http://schema.org/episodeNumber</a>
 		 */
 		public Container.EpisodeNumber getEpisodeNumber();
 		public void setEpisodeNumber(Container.EpisodeNumber episodeNumber);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/partOfSeason
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfSeason
+		 * @see <a href="http://schema.org/partOfSeason">http://schema.org/partOfSeason</a>
 		 */
 		public Container.PartOfSeason getPartOfSeason();
 		public void setPartOfSeason(Container.PartOfSeason partOfSeason);
 
 		/**
-		 * uri: http://schema.org/partOfSeries
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfSeries
+		 * @see <a href="http://schema.org/partOfSeries">http://schema.org/partOfSeries</a>
 		 */
 		public Container.PartOfSeries getPartOfSeries();
 		public void setPartOfSeries(Container.PartOfSeries partOfSeries);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -5363,225 +5049,193 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Event extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/about
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.About
+		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
 		 */
 		public Container.About getAbout();
 		public void setAbout(Container.About about);
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/attendee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Attendee
+		 * @see <a href="http://schema.org/attendee">http://schema.org/attendee</a>
 		 */
 		public Container.Attendee getAttendee();
 		public void setAttendee(Container.Attendee attendee);
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/composer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Composer
+		 * @see <a href="http://schema.org/composer">http://schema.org/composer</a>
 		 */
 		public Container.Composer getComposer();
 		public void setComposer(Container.Composer composer);
 
 		/**
-		 * uri: http://schema.org/contributor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Contributor
+		 * @see <a href="http://schema.org/contributor">http://schema.org/contributor</a>
 		 */
 		public Container.Contributor getContributor();
 		public void setContributor(Container.Contributor contributor);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/doorTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DoorTime
+		 * @see <a href="http://schema.org/doorTime">http://schema.org/doorTime</a>
 		 */
 		public Container.DoorTime getDoorTime();
 		public void setDoorTime(Container.DoorTime doorTime);
 
 		/**
-		 * uri: http://schema.org/duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duration
+		 * @see <a href="http://schema.org/duration">http://schema.org/duration</a>
 		 */
 		public Container.Duration getDuration();
 		public void setDuration(Container.Duration duration);
 
 		/**
-		 * uri: http://schema.org/endDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndDate
+		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
 		 */
 		public Container.EndDate getEndDate();
 		public void setEndDate(Container.EndDate endDate);
 
 		/**
-		 * uri: http://schema.org/eventStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EventStatus
+		 * @see <a href="http://schema.org/eventStatus">http://schema.org/eventStatus</a>
 		 */
 		public Container.EventStatus getEventStatus();
 		public void setEventStatus(Container.EventStatus eventStatus);
 
 		/**
-		 * uri: http://schema.org/funder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Funder
+		 * @see <a href="http://schema.org/funder">http://schema.org/funder</a>
 		 */
 		public Container.Funder getFunder();
 		public void setFunder(Container.Funder funder);
 
 		/**
-		 * uri: http://schema.org/inLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InLanguage
+		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
 		 */
 		public Container.InLanguage getInLanguage();
 		public void setInLanguage(Container.InLanguage inLanguage);
 
 		/**
-		 * uri: http://schema.org/isAccessibleForFree
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsAccessibleForFree
+		 * @see <a href="http://schema.org/isAccessibleForFree">http://schema.org/isAccessibleForFree</a>
 		 */
 		public Container.IsAccessibleForFree getIsAccessibleForFree();
 		public void setIsAccessibleForFree(Container.IsAccessibleForFree isAccessibleForFree);
 
 		/**
-		 * uri: http://schema.org/location
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Location
+		 * @see <a href="http://schema.org/location">http://schema.org/location</a>
 		 */
 		public Container.Location getLocation();
 		public void setLocation(Container.Location location);
 
 		/**
-		 * uri: http://schema.org/maximumAttendeeCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaximumAttendeeCapacity
+		 * @see <a href="http://schema.org/maximumAttendeeCapacity">http://schema.org/maximumAttendeeCapacity</a>
 		 */
 		public Container.MaximumAttendeeCapacity getMaximumAttendeeCapacity();
 		public void setMaximumAttendeeCapacity(Container.MaximumAttendeeCapacity maximumAttendeeCapacity);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
 
 		/**
-		 * uri: http://schema.org/organizer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Organizer
+		 * @see <a href="http://schema.org/organizer">http://schema.org/organizer</a>
 		 */
 		public Container.Organizer getOrganizer();
 		public void setOrganizer(Container.Organizer organizer);
 
 		/**
-		 * uri: http://schema.org/performer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Performer
+		 * @see <a href="http://schema.org/performer">http://schema.org/performer</a>
 		 */
 		public Container.Performer getPerformer();
 		public void setPerformer(Container.Performer performer);
 
 		/**
-		 * uri: http://schema.org/previousStartDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PreviousStartDate
+		 * @see <a href="http://schema.org/previousStartDate">http://schema.org/previousStartDate</a>
 		 */
 		public Container.PreviousStartDate getPreviousStartDate();
 		public void setPreviousStartDate(Container.PreviousStartDate previousStartDate);
 
 		/**
-		 * uri: http://schema.org/recordedIn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecordedIn
+		 * @see <a href="http://schema.org/recordedIn">http://schema.org/recordedIn</a>
 		 */
 		public Container.RecordedIn getRecordedIn();
 		public void setRecordedIn(Container.RecordedIn recordedIn);
 
 		/**
-		 * uri: http://schema.org/remainingAttendeeCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RemainingAttendeeCapacity
+		 * @see <a href="http://schema.org/remainingAttendeeCapacity">http://schema.org/remainingAttendeeCapacity</a>
 		 */
 		public Container.RemainingAttendeeCapacity getRemainingAttendeeCapacity();
 		public void setRemainingAttendeeCapacity(Container.RemainingAttendeeCapacity remainingAttendeeCapacity);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/sponsor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sponsor
+		 * @see <a href="http://schema.org/sponsor">http://schema.org/sponsor</a>
 		 */
 		public Container.Sponsor getSponsor();
 		public void setSponsor(Container.Sponsor sponsor);
 
 		/**
-		 * uri: http://schema.org/startDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartDate
+		 * @see <a href="http://schema.org/startDate">http://schema.org/startDate</a>
 		 */
 		public Container.StartDate getStartDate();
 		public void setStartDate(Container.StartDate startDate);
 
 		/**
-		 * uri: http://schema.org/subEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubEvent
+		 * @see <a href="http://schema.org/subEvent">http://schema.org/subEvent</a>
 		 */
 		public Container.SubEvent getSubEvent();
 		public void setSubEvent(Container.SubEvent subEvent);
 
 		/**
-		 * uri: http://schema.org/superEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuperEvent
+		 * @see <a href="http://schema.org/superEvent">http://schema.org/superEvent</a>
 		 */
 		public Container.SuperEvent getSuperEvent();
 		public void setSuperEvent(Container.SuperEvent superEvent);
 
 		/**
-		 * uri: http://schema.org/translator
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Translator
+		 * @see <a href="http://schema.org/translator">http://schema.org/translator</a>
 		 */
 		public Container.Translator getTranslator();
 		public void setTranslator(Container.Translator translator);
 
 		/**
-		 * uri: http://schema.org/typicalAgeRange
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TypicalAgeRange
+		 * @see <a href="http://schema.org/typicalAgeRange">http://schema.org/typicalAgeRange</a>
 		 */
 		public Container.TypicalAgeRange getTypicalAgeRange();
 		public void setTypicalAgeRange(Container.TypicalAgeRange typicalAgeRange);
 
 		/**
-		 * uri: http://schema.org/workFeatured
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkFeatured
+		 * @see <a href="http://schema.org/workFeatured">http://schema.org/workFeatured</a>
 		 */
 		public Container.WorkFeatured getWorkFeatured();
 		public void setWorkFeatured(Container.WorkFeatured workFeatured);
 
 		/**
-		 * uri: http://schema.org/workPerformed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkPerformed
+		 * @see <a href="http://schema.org/workPerformed">http://schema.org/workPerformed</a>
 		 */
 		public Container.WorkPerformed getWorkPerformed();
 		public void setWorkPerformed(Container.WorkPerformed workPerformed);
@@ -5652,85 +5306,73 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ExerciseAction extends PlayAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/diet
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Diet
+		 * @see <a href="http://schema.org/diet">http://schema.org/diet</a>
 		 */
 		public Diet getDiet();
 		public void setDiet(Diet diet);
 
 		/**
-		 * uri: http://schema.org/distance
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Distance
+		 * @see <a href="http://schema.org/distance">http://schema.org/distance</a>
 		 */
 		public Container.Distance getDistance();
 		public void setDistance(Container.Distance distance);
 
 		/**
-		 * uri: http://schema.org/exerciseCourse
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExerciseCourse
+		 * @see <a href="http://schema.org/exerciseCourse">http://schema.org/exerciseCourse</a>
 		 */
 		public Container.ExerciseCourse getExerciseCourse();
 		public void setExerciseCourse(Container.ExerciseCourse exerciseCourse);
 
 		/**
-		 * uri: http://schema.org/exercisePlan
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExercisePlan
+		 * @see <a href="http://schema.org/exercisePlan">http://schema.org/exercisePlan</a>
 		 */
 		public ExercisePlan getExercisePlan();
 		public void setExercisePlan(ExercisePlan exercisePlan);
 
 		/**
-		 * uri: http://schema.org/exerciseRelatedDiet
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseRelatedDiet
+		 * @see <a href="http://schema.org/exerciseRelatedDiet">http://schema.org/exerciseRelatedDiet</a>
 		 */
 		public ExerciseRelatedDiet getExerciseRelatedDiet();
 		public void setExerciseRelatedDiet(ExerciseRelatedDiet exerciseRelatedDiet);
 
 		/**
-		 * uri: http://schema.org/exerciseType
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ExerciseType
+		 * @see <a href="http://schema.org/exerciseType">http://schema.org/exerciseType</a>
 		 */
 		public ExerciseType getExerciseType();
 		public void setExerciseType(ExerciseType exerciseType);
 
 		/**
-		 * uri: http://schema.org/fromLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FromLocation
+		 * @see <a href="http://schema.org/fromLocation">http://schema.org/fromLocation</a>
 		 */
 		public Container.FromLocation getFromLocation();
 		public void setFromLocation(Container.FromLocation fromLocation);
 
 		/**
-		 * uri: http://schema.org/opponent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Opponent
+		 * @see <a href="http://schema.org/opponent">http://schema.org/opponent</a>
 		 */
 		public Container.Opponent getOpponent();
 		public void setOpponent(Container.Opponent opponent);
 
 		/**
-		 * uri: http://schema.org/sportsActivityLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SportsActivityLocation
+		 * @see <a href="http://schema.org/sportsActivityLocation">http://schema.org/sportsActivityLocation</a>
 		 */
 		public Container.SportsActivityLocation getSportsActivityLocation();
 		public void setSportsActivityLocation(Container.SportsActivityLocation sportsActivityLocation);
 
 		/**
-		 * uri: http://schema.org/sportsEvent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SportsEvent
+		 * @see <a href="http://schema.org/sportsEvent">http://schema.org/sportsEvent</a>
 		 */
 		public Container.SportsEvent getSportsEvent();
 		public void setSportsEvent(Container.SportsEvent sportsEvent);
 
 		/**
-		 * uri: http://schema.org/sportsTeam
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SportsTeam
+		 * @see <a href="http://schema.org/sportsTeam">http://schema.org/sportsTeam</a>
 		 */
 		public Container.SportsTeam getSportsTeam();
 		public void setSportsTeam(Container.SportsTeam sportsTeam);
 
 		/**
-		 * uri: http://schema.org/toLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ToLocation
+		 * @see <a href="http://schema.org/toLocation">http://schema.org/toLocation</a>
 		 */
 		public Container.ToLocation getToLocation();
 		public void setToLocation(Container.ToLocation toLocation);
@@ -5825,22 +5467,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FinancialProduct extends SchemaOrgClass, Service {
 
 		/**
-		 * uri: http://schema.org/annualPercentageRate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AnnualPercentageRate
+		 * @see <a href="http://schema.org/annualPercentageRate">http://schema.org/annualPercentageRate</a>
 		 */
 		public Container.AnnualPercentageRate getAnnualPercentageRate();
 		public void setAnnualPercentageRate(Container.AnnualPercentageRate annualPercentageRate);
 
 		/**
-		 * uri: http://schema.org/feesAndCommissionsSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FeesAndCommissionsSpecification
+		 * @see <a href="http://schema.org/feesAndCommissionsSpecification">http://schema.org/feesAndCommissionsSpecification</a>
 		 */
 		public Container.FeesAndCommissionsSpecification getFeesAndCommissionsSpecification();
 		public void setFeesAndCommissionsSpecification(Container.FeesAndCommissionsSpecification feesAndCommissionsSpecification);
 
 		/**
-		 * uri: http://schema.org/interestRate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InterestRate
+		 * @see <a href="http://schema.org/interestRate">http://schema.org/interestRate</a>
 		 */
 		public Container.InterestRate getInterestRate();
 		public void setInterestRate(Container.InterestRate interestRate);
@@ -5860,8 +5499,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FinancialService extends LocalBusiness, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/feesAndCommissionsSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FeesAndCommissionsSpecification
+		 * @see <a href="http://schema.org/feesAndCommissionsSpecification">http://schema.org/feesAndCommissionsSpecification</a>
 		 */
 		public Container.FeesAndCommissionsSpecification getFeesAndCommissionsSpecification();
 		public void setFeesAndCommissionsSpecification(Container.FeesAndCommissionsSpecification feesAndCommissionsSpecification);
@@ -5913,120 +5551,103 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Flight extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/aircraft
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Aircraft
+		 * @see <a href="http://schema.org/aircraft">http://schema.org/aircraft</a>
 		 */
 		public Container.Aircraft getAircraft();
 		public void setAircraft(Container.Aircraft aircraft);
 
 		/**
-		 * uri: http://schema.org/arrivalAirport
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalAirport
+		 * @see <a href="http://schema.org/arrivalAirport">http://schema.org/arrivalAirport</a>
 		 */
 		public Container.ArrivalAirport getArrivalAirport();
 		public void setArrivalAirport(Container.ArrivalAirport arrivalAirport);
 
 		/**
-		 * uri: http://schema.org/arrivalGate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalGate
+		 * @see <a href="http://schema.org/arrivalGate">http://schema.org/arrivalGate</a>
 		 */
 		public Container.ArrivalGate getArrivalGate();
 		public void setArrivalGate(Container.ArrivalGate arrivalGate);
 
 		/**
-		 * uri: http://schema.org/arrivalTerminal
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalTerminal
+		 * @see <a href="http://schema.org/arrivalTerminal">http://schema.org/arrivalTerminal</a>
 		 */
 		public Container.ArrivalTerminal getArrivalTerminal();
 		public void setArrivalTerminal(Container.ArrivalTerminal arrivalTerminal);
 
 		/**
-		 * uri: http://schema.org/arrivalTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalTime
+		 * @see <a href="http://schema.org/arrivalTime">http://schema.org/arrivalTime</a>
 		 */
 		public Container.ArrivalTime getArrivalTime();
 		public void setArrivalTime(Container.ArrivalTime arrivalTime);
 
 		/**
-		 * uri: http://schema.org/boardingPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BoardingPolicy
+		 * @see <a href="http://schema.org/boardingPolicy">http://schema.org/boardingPolicy</a>
 		 */
 		public Container.BoardingPolicy getBoardingPolicy();
 		public void setBoardingPolicy(Container.BoardingPolicy boardingPolicy);
 
 		/**
-		 * uri: http://schema.org/departureAirport
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureAirport
+		 * @see <a href="http://schema.org/departureAirport">http://schema.org/departureAirport</a>
 		 */
 		public Container.DepartureAirport getDepartureAirport();
 		public void setDepartureAirport(Container.DepartureAirport departureAirport);
 
 		/**
-		 * uri: http://schema.org/departureGate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureGate
+		 * @see <a href="http://schema.org/departureGate">http://schema.org/departureGate</a>
 		 */
 		public Container.DepartureGate getDepartureGate();
 		public void setDepartureGate(Container.DepartureGate departureGate);
 
 		/**
-		 * uri: http://schema.org/departureTerminal
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureTerminal
+		 * @see <a href="http://schema.org/departureTerminal">http://schema.org/departureTerminal</a>
 		 */
 		public Container.DepartureTerminal getDepartureTerminal();
 		public void setDepartureTerminal(Container.DepartureTerminal departureTerminal);
 
 		/**
-		 * uri: http://schema.org/departureTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureTime
+		 * @see <a href="http://schema.org/departureTime">http://schema.org/departureTime</a>
 		 */
 		public Container.DepartureTime getDepartureTime();
 		public void setDepartureTime(Container.DepartureTime departureTime);
 
 		/**
-		 * uri: http://schema.org/estimatedFlightDuration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EstimatedFlightDuration
+		 * @see <a href="http://schema.org/estimatedFlightDuration">http://schema.org/estimatedFlightDuration</a>
 		 */
 		public Container.EstimatedFlightDuration getEstimatedFlightDuration();
 		public void setEstimatedFlightDuration(Container.EstimatedFlightDuration estimatedFlightDuration);
 
 		/**
-		 * uri: http://schema.org/flightDistance
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FlightDistance
+		 * @see <a href="http://schema.org/flightDistance">http://schema.org/flightDistance</a>
 		 */
 		public Container.FlightDistance getFlightDistance();
 		public void setFlightDistance(Container.FlightDistance flightDistance);
 
 		/**
-		 * uri: http://schema.org/flightNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FlightNumber
+		 * @see <a href="http://schema.org/flightNumber">http://schema.org/flightNumber</a>
 		 */
 		public Container.FlightNumber getFlightNumber();
 		public void setFlightNumber(Container.FlightNumber flightNumber);
 
 		/**
-		 * uri: http://schema.org/mealService
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MealService
+		 * @see <a href="http://schema.org/mealService">http://schema.org/mealService</a>
 		 */
 		public Container.MealService getMealService();
 		public void setMealService(Container.MealService mealService);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/seller
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seller
+		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
 		 */
 		public Container.Seller getSeller();
 		public void setSeller(Container.Seller seller);
 
 		/**
-		 * uri: http://schema.org/webCheckinTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WebCheckinTime
+		 * @see <a href="http://schema.org/webCheckinTime">http://schema.org/webCheckinTime</a>
 		 */
 		public Container.WebCheckinTime getWebCheckinTime();
 		public void setWebCheckinTime(Container.WebCheckinTime webCheckinTime);
@@ -6050,29 +5671,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FlightReservation extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/boardingGroup
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BoardingGroup
+		 * @see <a href="http://schema.org/boardingGroup">http://schema.org/boardingGroup</a>
 		 */
 		public Container.BoardingGroup getBoardingGroup();
 		public void setBoardingGroup(Container.BoardingGroup boardingGroup);
 
 		/**
-		 * uri: http://schema.org/passengerPriorityStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PassengerPriorityStatus
+		 * @see <a href="http://schema.org/passengerPriorityStatus">http://schema.org/passengerPriorityStatus</a>
 		 */
 		public Container.PassengerPriorityStatus getPassengerPriorityStatus();
 		public void setPassengerPriorityStatus(Container.PassengerPriorityStatus passengerPriorityStatus);
 
 		/**
-		 * uri: http://schema.org/passengerSequenceNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PassengerSequenceNumber
+		 * @see <a href="http://schema.org/passengerSequenceNumber">http://schema.org/passengerSequenceNumber</a>
 		 */
 		public Container.PassengerSequenceNumber getPassengerSequenceNumber();
 		public void setPassengerSequenceNumber(Container.PassengerSequenceNumber passengerSequenceNumber);
 
 		/**
-		 * uri: http://schema.org/securityScreening
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SecurityScreening
+		 * @see <a href="http://schema.org/securityScreening">http://schema.org/securityScreening</a>
 		 */
 		public Container.SecurityScreening getSecurityScreening();
 		public void setSecurityScreening(Container.SecurityScreening securityScreening);
@@ -6139,8 +5756,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FollowAction extends InteractAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/followee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Followee
+		 * @see <a href="http://schema.org/followee">http://schema.org/followee</a>
 		 */
 		public Container.Followee getFollowee();
 		public void setFollowee(Container.Followee followee);
@@ -6160,29 +5776,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FoodEstablishment extends LocalBusiness, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/acceptsReservations
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcceptsReservations
+		 * @see <a href="http://schema.org/acceptsReservations">http://schema.org/acceptsReservations</a>
 		 */
 		public Container.AcceptsReservations getAcceptsReservations();
 		public void setAcceptsReservations(Container.AcceptsReservations acceptsReservations);
 
 		/**
-		 * uri: http://schema.org/hasMenu
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMenu
+		 * @see <a href="http://schema.org/hasMenu">http://schema.org/hasMenu</a>
 		 */
 		public Container.HasMenu getHasMenu();
 		public void setHasMenu(Container.HasMenu hasMenu);
 
 		/**
-		 * uri: http://schema.org/servesCuisine
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServesCuisine
+		 * @see <a href="http://schema.org/servesCuisine">http://schema.org/servesCuisine</a>
 		 */
 		public Container.ServesCuisine getServesCuisine();
 		public void setServesCuisine(Container.ServesCuisine servesCuisine);
 
 		/**
-		 * uri: http://schema.org/starRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StarRating
+		 * @see <a href="http://schema.org/starRating">http://schema.org/starRating</a>
 		 */
 		public Container.StarRating getStarRating();
 		public void setStarRating(Container.StarRating starRating);
@@ -6205,22 +5817,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface FoodEstablishmentReservation extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/endTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndTime
+		 * @see <a href="http://schema.org/endTime">http://schema.org/endTime</a>
 		 */
 		public Container.EndTime getEndTime();
 		public void setEndTime(Container.EndTime endTime);
 
 		/**
-		 * uri: http://schema.org/partySize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartySize
+		 * @see <a href="http://schema.org/partySize">http://schema.org/partySize</a>
 		 */
 		public Container.PartySize getPartySize();
 		public void setPartySize(Container.PartySize partySize);
 
 		/**
-		 * uri: http://schema.org/startTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartTime
+		 * @see <a href="http://schema.org/startTime">http://schema.org/startTime</a>
 		 */
 		public Container.StartTime getStartTime();
 		public void setStartTime(Container.StartTime startTime);
@@ -6286,36 +5895,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Game extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/characterAttribute
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CharacterAttribute
+		 * @see <a href="http://schema.org/characterAttribute">http://schema.org/characterAttribute</a>
 		 */
 		public Container.CharacterAttribute getCharacterAttribute();
 		public void setCharacterAttribute(Container.CharacterAttribute characterAttribute);
 
 		/**
-		 * uri: http://schema.org/gameItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameItem
+		 * @see <a href="http://schema.org/gameItem">http://schema.org/gameItem</a>
 		 */
 		public Container.GameItem getGameItem();
 		public void setGameItem(Container.GameItem gameItem);
 
 		/**
-		 * uri: http://schema.org/gameLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameLocation
+		 * @see <a href="http://schema.org/gameLocation">http://schema.org/gameLocation</a>
 		 */
 		public Container.GameLocation getGameLocation();
 		public void setGameLocation(Container.GameLocation gameLocation);
 
 		/**
-		 * uri: http://schema.org/numberOfPlayers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfPlayers
+		 * @see <a href="http://schema.org/numberOfPlayers">http://schema.org/numberOfPlayers</a>
 		 */
 		public Container.NumberOfPlayers getNumberOfPlayers();
 		public void setNumberOfPlayers(Container.NumberOfPlayers numberOfPlayers);
 
 		/**
-		 * uri: http://schema.org/quest
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Quest
+		 * @see <a href="http://schema.org/quest">http://schema.org/quest</a>
 		 */
 		public Container.Quest getQuest();
 		public void setQuest(Container.Quest quest);
@@ -6351,22 +5955,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GameServer extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/game
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Game
+		 * @see <a href="http://schema.org/game">http://schema.org/game</a>
 		 */
 		public Container.Game getGame();
 		public void setGame(Container.Game game);
 
 		/**
-		 * uri: http://schema.org/playersOnline
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PlayersOnline
+		 * @see <a href="http://schema.org/playersOnline">http://schema.org/playersOnline</a>
 		 */
 		public Container.PlayersOnline getPlayersOnline();
 		public void setPlayersOnline(Container.PlayersOnline playersOnline);
 
 		/**
-		 * uri: http://schema.org/serverStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServerStatus
+		 * @see <a href="http://schema.org/serverStatus">http://schema.org/serverStatus</a>
 		 */
 		public Container.ServerStatus getServerStatus();
 		public void setServerStatus(Container.ServerStatus serverStatus);
@@ -6475,15 +6076,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GeoCircle extends GeoShape, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/geoMidpoint
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GeoMidpoint
+		 * @see <a href="http://schema.org/geoMidpoint">http://schema.org/geoMidpoint</a>
 		 */
 		public Container.GeoMidpoint getGeoMidpoint();
 		public void setGeoMidpoint(Container.GeoMidpoint geoMidpoint);
 
 		/**
-		 * uri: http://schema.org/geoRadius
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GeoRadius
+		 * @see <a href="http://schema.org/geoRadius">http://schema.org/geoRadius</a>
 		 */
 		public Container.GeoRadius getGeoRadius();
 		public void setGeoRadius(Container.GeoRadius geoRadius);
@@ -6504,43 +6103,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GeoCoordinates extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/address
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Address
+		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
 		 */
 		public Container.Address getAddress();
 		public void setAddress(Container.Address address);
 
 		/**
-		 * uri: http://schema.org/addressCountry
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddressCountry
+		 * @see <a href="http://schema.org/addressCountry">http://schema.org/addressCountry</a>
 		 */
 		public Container.AddressCountry getAddressCountry();
 		public void setAddressCountry(Container.AddressCountry addressCountry);
 
 		/**
-		 * uri: http://schema.org/elevation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Elevation
+		 * @see <a href="http://schema.org/elevation">http://schema.org/elevation</a>
 		 */
 		public Container.Elevation getElevation();
 		public void setElevation(Container.Elevation elevation);
 
 		/**
-		 * uri: http://schema.org/latitude
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Latitude
+		 * @see <a href="http://schema.org/latitude">http://schema.org/latitude</a>
 		 */
 		public Container.Latitude getLatitude();
 		public void setLatitude(Container.Latitude latitude);
 
 		/**
-		 * uri: http://schema.org/longitude
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Longitude
+		 * @see <a href="http://schema.org/longitude">http://schema.org/longitude</a>
 		 */
 		public Container.Longitude getLongitude();
 		public void setLongitude(Container.Longitude longitude);
 
 		/**
-		 * uri: http://schema.org/postalCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PostalCode
+		 * @see <a href="http://schema.org/postalCode">http://schema.org/postalCode</a>
 		 */
 		public Container.PostalCode getPostalCode();
 		public void setPostalCode(Container.PostalCode postalCode);
@@ -6564,57 +6157,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GeoShape extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/address
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Address
+		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
 		 */
 		public Container.Address getAddress();
 		public void setAddress(Container.Address address);
 
 		/**
-		 * uri: http://schema.org/addressCountry
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddressCountry
+		 * @see <a href="http://schema.org/addressCountry">http://schema.org/addressCountry</a>
 		 */
 		public Container.AddressCountry getAddressCountry();
 		public void setAddressCountry(Container.AddressCountry addressCountry);
 
 		/**
-		 * uri: http://schema.org/box
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Box
+		 * @see <a href="http://schema.org/box">http://schema.org/box</a>
 		 */
 		public Container.Box getBox();
 		public void setBox(Container.Box box);
 
 		/**
-		 * uri: http://schema.org/circle
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Circle
+		 * @see <a href="http://schema.org/circle">http://schema.org/circle</a>
 		 */
 		public Container.Circle getCircle();
 		public void setCircle(Container.Circle circle);
 
 		/**
-		 * uri: http://schema.org/elevation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Elevation
+		 * @see <a href="http://schema.org/elevation">http://schema.org/elevation</a>
 		 */
 		public Container.Elevation getElevation();
 		public void setElevation(Container.Elevation elevation);
 
 		/**
-		 * uri: http://schema.org/line
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Line
+		 * @see <a href="http://schema.org/line">http://schema.org/line</a>
 		 */
 		public Container.Line getLine();
 		public void setLine(Container.Line line);
 
 		/**
-		 * uri: http://schema.org/polygon
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Polygon
+		 * @see <a href="http://schema.org/polygon">http://schema.org/polygon</a>
 		 */
 		public Container.Polygon getPolygon();
 		public void setPolygon(Container.Polygon polygon);
 
 		/**
-		 * uri: http://schema.org/postalCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PostalCode
+		 * @see <a href="http://schema.org/postalCode">http://schema.org/postalCode</a>
 		 */
 		public Container.PostalCode getPostalCode();
 		public void setPostalCode(Container.PostalCode postalCode);
@@ -6641,8 +6226,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GiveAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -6735,8 +6319,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface GovernmentService extends SchemaOrgClass, Service {
 
 		/**
-		 * uri: http://schema.org/serviceOperator
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceOperator
+		 * @see <a href="http://schema.org/serviceOperator">http://schema.org/serviceOperator</a>
 		 */
 		public Container.ServiceOperator getServiceOperator();
 		public void setServiceOperator(Container.ServiceOperator serviceOperator);
@@ -6919,15 +6502,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Hospital extends CivicStructure, EmergencyService, MedicalOrganization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableService
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableService
+		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
 		 */
 		public AvailableService getAvailableService();
 		public void setAvailableService(AvailableService availableService);
 
 		/**
-		 * uri: http://schema.org/medicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicalSpecialty
+		 * @see <a href="http://schema.org/medicalSpecialty">http://schema.org/medicalSpecialty</a>
 		 */
 		public MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
@@ -6986,15 +6567,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HotelRoom extends Room, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/bed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Bed
+		 * @see <a href="http://schema.org/bed">http://schema.org/bed</a>
 		 */
 		public Container.Bed getBed();
 		public void setBed(Container.Bed bed);
 
 		/**
-		 * uri: http://schema.org/occupancy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Occupancy
+		 * @see <a href="http://schema.org/occupancy">http://schema.org/occupancy</a>
 		 */
 		public Container.Occupancy getOccupancy();
 		public void setOccupancy(Container.Occupancy occupancy);
@@ -7018,8 +6597,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface House extends Accommodation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberOfRooms
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms
+		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
 		 */
 		public Container.NumberOfRooms getNumberOfRooms();
 		public void setNumberOfRooms(Container.NumberOfRooms numberOfRooms);
@@ -7055,57 +6633,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HowTo extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/estimatedCost
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EstimatedCost
+		 * @see <a href="http://schema.org/estimatedCost">http://schema.org/estimatedCost</a>
 		 */
 		public Container.EstimatedCost getEstimatedCost();
 		public void setEstimatedCost(Container.EstimatedCost estimatedCost);
 
 		/**
-		 * uri: http://schema.org/performTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PerformTime
+		 * @see <a href="http://schema.org/performTime">http://schema.org/performTime</a>
 		 */
 		public Container.PerformTime getPerformTime();
 		public void setPerformTime(Container.PerformTime performTime);
 
 		/**
-		 * uri: http://schema.org/prepTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrepTime
+		 * @see <a href="http://schema.org/prepTime">http://schema.org/prepTime</a>
 		 */
 		public Container.PrepTime getPrepTime();
 		public void setPrepTime(Container.PrepTime prepTime);
 
 		/**
-		 * uri: http://schema.org/steps
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Steps
+		 * @see <a href="http://schema.org/steps">http://schema.org/steps</a>
 		 */
 		public Container.Steps getSteps();
 		public void setSteps(Container.Steps steps);
 
 		/**
-		 * uri: http://schema.org/supply
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Supply
+		 * @see <a href="http://schema.org/supply">http://schema.org/supply</a>
 		 */
 		public Container.Supply getSupply();
 		public void setSupply(Container.Supply supply);
 
 		/**
-		 * uri: http://schema.org/tool
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Tool
+		 * @see <a href="http://schema.org/tool">http://schema.org/tool</a>
 		 */
 		public Container.Tool getTool();
 		public void setTool(Container.Tool tool);
 
 		/**
-		 * uri: http://schema.org/totalTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TotalTime
+		 * @see <a href="http://schema.org/totalTime">http://schema.org/totalTime</a>
 		 */
 		public Container.TotalTime getTotalTime();
 		public void setTotalTime(Container.TotalTime totalTime);
 
 		/**
-		 * uri: http://schema.org/yield
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Yield
+		 * @see <a href="http://schema.org/yield">http://schema.org/yield</a>
 		 */
 		public Container.Yield getYield();
 		public void setYield(Container.Yield yield);
@@ -7127,57 +6697,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HowToDirection extends ListItem, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/afterMedia
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AfterMedia
+		 * @see <a href="http://schema.org/afterMedia">http://schema.org/afterMedia</a>
 		 */
 		public Container.AfterMedia getAfterMedia();
 		public void setAfterMedia(Container.AfterMedia afterMedia);
 
 		/**
-		 * uri: http://schema.org/beforeMedia
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BeforeMedia
+		 * @see <a href="http://schema.org/beforeMedia">http://schema.org/beforeMedia</a>
 		 */
 		public Container.BeforeMedia getBeforeMedia();
 		public void setBeforeMedia(Container.BeforeMedia beforeMedia);
 
 		/**
-		 * uri: http://schema.org/duringMedia
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DuringMedia
+		 * @see <a href="http://schema.org/duringMedia">http://schema.org/duringMedia</a>
 		 */
 		public Container.DuringMedia getDuringMedia();
 		public void setDuringMedia(Container.DuringMedia duringMedia);
 
 		/**
-		 * uri: http://schema.org/performTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PerformTime
+		 * @see <a href="http://schema.org/performTime">http://schema.org/performTime</a>
 		 */
 		public Container.PerformTime getPerformTime();
 		public void setPerformTime(Container.PerformTime performTime);
 
 		/**
-		 * uri: http://schema.org/prepTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrepTime
+		 * @see <a href="http://schema.org/prepTime">http://schema.org/prepTime</a>
 		 */
 		public Container.PrepTime getPrepTime();
 		public void setPrepTime(Container.PrepTime prepTime);
 
 		/**
-		 * uri: http://schema.org/supply
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Supply
+		 * @see <a href="http://schema.org/supply">http://schema.org/supply</a>
 		 */
 		public Container.Supply getSupply();
 		public void setSupply(Container.Supply supply);
 
 		/**
-		 * uri: http://schema.org/tool
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Tool
+		 * @see <a href="http://schema.org/tool">http://schema.org/tool</a>
 		 */
 		public Container.Tool getTool();
 		public void setTool(Container.Tool tool);
 
 		/**
-		 * uri: http://schema.org/totalTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TotalTime
+		 * @see <a href="http://schema.org/totalTime">http://schema.org/totalTime</a>
 		 */
 		public Container.TotalTime getTotalTime();
 		public void setTotalTime(Container.TotalTime totalTime);
@@ -7199,8 +6761,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HowToItem extends ListItem, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/requiredQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiredQuantity
+		 * @see <a href="http://schema.org/requiredQuantity">http://schema.org/requiredQuantity</a>
 		 */
 		public Container.RequiredQuantity getRequiredQuantity();
 		public void setRequiredQuantity(Container.RequiredQuantity requiredQuantity);
@@ -7222,8 +6783,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HowToSection extends ItemList, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/steps
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Steps
+		 * @see <a href="http://schema.org/steps">http://schema.org/steps</a>
 		 */
 		public Container.Steps getSteps();
 		public void setSteps(Container.Steps steps);
@@ -7260,8 +6820,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface HowToSupply extends HowToItem, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/estimatedCost
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EstimatedCost
+		 * @see <a href="http://schema.org/estimatedCost">http://schema.org/estimatedCost</a>
 		 */
 		public Container.EstimatedCost getEstimatedCost();
 		public void setEstimatedCost(Container.EstimatedCost estimatedCost);
@@ -7358,29 +6917,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ImageObject extends MediaObject, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/caption
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Caption
+		 * @see <a href="http://schema.org/caption">http://schema.org/caption</a>
 		 */
 		public Container.Caption getCaption();
 		public void setCaption(Container.Caption caption);
 
 		/**
-		 * uri: http://schema.org/exifData
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExifData
+		 * @see <a href="http://schema.org/exifData">http://schema.org/exifData</a>
 		 */
 		public Container.ExifData getExifData();
 		public void setExifData(Container.ExifData exifData);
 
 		/**
-		 * uri: http://schema.org/representativeOfPage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RepresentativeOfPage
+		 * @see <a href="http://schema.org/representativeOfPage">http://schema.org/representativeOfPage</a>
 		 */
 		public Container.RepresentativeOfPage getRepresentativeOfPage();
 		public void setRepresentativeOfPage(Container.RepresentativeOfPage representativeOfPage);
 
 		/**
-		 * uri: http://schema.org/thumbnail
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Thumbnail
+		 * @see <a href="http://schema.org/thumbnail">http://schema.org/thumbnail</a>
 		 */
 		public Container.Thumbnail getThumbnail();
 		public void setThumbnail(Container.Thumbnail thumbnail);
@@ -7402,8 +6957,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface IndividualProduct extends Product, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/serialNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SerialNumber
+		 * @see <a href="http://schema.org/serialNumber">http://schema.org/serialNumber</a>
 		 */
 		public Container.SerialNumber getSerialNumber();
 		public void setSerialNumber(Container.SerialNumber serialNumber);
@@ -7425,8 +6979,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InformAction extends CommunicateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
@@ -7447,8 +7000,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InsertAction extends AddAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/toLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ToLocation
+		 * @see <a href="http://schema.org/toLocation">http://schema.org/toLocation</a>
 		 */
 		public Container.ToLocation getToLocation();
 		public void setToLocation(Container.ToLocation toLocation);
@@ -7543,22 +7095,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InteractionCounter extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/interactionService
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InteractionService
+		 * @see <a href="http://schema.org/interactionService">http://schema.org/interactionService</a>
 		 */
 		public Container.InteractionService getInteractionService();
 		public void setInteractionService(Container.InteractionService interactionService);
 
 		/**
-		 * uri: http://schema.org/interactionType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InteractionType
+		 * @see <a href="http://schema.org/interactionType">http://schema.org/interactionType</a>
 		 */
 		public Container.InteractionType getInteractionType();
 		public void setInteractionType(Container.InteractionType interactionType);
 
 		/**
-		 * uri: http://schema.org/userInteractionCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UserInteractionCount
+		 * @see <a href="http://schema.org/userInteractionCount">http://schema.org/userInteractionCount</a>
 		 */
 		public Container.UserInteractionCount getUserInteractionCount();
 		public void setUserInteractionCount(Container.UserInteractionCount userInteractionCount);
@@ -7594,8 +7143,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InvestmentOrDeposit extends FinancialProduct, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/amount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Amount
+		 * @see <a href="http://schema.org/amount">http://schema.org/amount</a>
 		 */
 		public Container.Amount getAmount();
 		public void setAmount(Container.Amount amount);
@@ -7616,8 +7164,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface InviteAction extends CommunicateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
@@ -7638,106 +7185,91 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Invoice extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/accountId
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AccountId
+		 * @see <a href="http://schema.org/accountId">http://schema.org/accountId</a>
 		 */
 		public Container.AccountId getAccountId();
 		public void setAccountId(Container.AccountId accountId);
 
 		/**
-		 * uri: http://schema.org/billingPeriod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BillingPeriod
+		 * @see <a href="http://schema.org/billingPeriod">http://schema.org/billingPeriod</a>
 		 */
 		public Container.BillingPeriod getBillingPeriod();
 		public void setBillingPeriod(Container.BillingPeriod billingPeriod);
 
 		/**
-		 * uri: http://schema.org/broker
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Broker
+		 * @see <a href="http://schema.org/broker">http://schema.org/broker</a>
 		 */
 		public Container.Broker getBroker();
 		public void setBroker(Container.Broker broker);
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Container.Category getCategory();
 		public void setCategory(Container.Category category);
 
 		/**
-		 * uri: http://schema.org/confirmationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ConfirmationNumber
+		 * @see <a href="http://schema.org/confirmationNumber">http://schema.org/confirmationNumber</a>
 		 */
 		public Container.ConfirmationNumber getConfirmationNumber();
 		public void setConfirmationNumber(Container.ConfirmationNumber confirmationNumber);
 
 		/**
-		 * uri: http://schema.org/customer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Customer
+		 * @see <a href="http://schema.org/customer">http://schema.org/customer</a>
 		 */
 		public Container.Customer getCustomer();
 		public void setCustomer(Container.Customer customer);
 
 		/**
-		 * uri: http://schema.org/minimumPaymentDue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinimumPaymentDue
+		 * @see <a href="http://schema.org/minimumPaymentDue">http://schema.org/minimumPaymentDue</a>
 		 */
 		public Container.MinimumPaymentDue getMinimumPaymentDue();
 		public void setMinimumPaymentDue(Container.MinimumPaymentDue minimumPaymentDue);
 
 		/**
-		 * uri: http://schema.org/paymentDueDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentDueDate
+		 * @see <a href="http://schema.org/paymentDueDate">http://schema.org/paymentDueDate</a>
 		 */
 		public Container.PaymentDueDate getPaymentDueDate();
 		public void setPaymentDueDate(Container.PaymentDueDate paymentDueDate);
 
 		/**
-		 * uri: http://schema.org/paymentMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentMethod
+		 * @see <a href="http://schema.org/paymentMethod">http://schema.org/paymentMethod</a>
 		 */
 		public Container.PaymentMethod getPaymentMethod();
 		public void setPaymentMethod(Container.PaymentMethod paymentMethod);
 
 		/**
-		 * uri: http://schema.org/paymentMethodId
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentMethodId
+		 * @see <a href="http://schema.org/paymentMethodId">http://schema.org/paymentMethodId</a>
 		 */
 		public Container.PaymentMethodId getPaymentMethodId();
 		public void setPaymentMethodId(Container.PaymentMethodId paymentMethodId);
 
 		/**
-		 * uri: http://schema.org/paymentStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentStatus
+		 * @see <a href="http://schema.org/paymentStatus">http://schema.org/paymentStatus</a>
 		 */
 		public Container.PaymentStatus getPaymentStatus();
 		public void setPaymentStatus(Container.PaymentStatus paymentStatus);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/referencesOrder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReferencesOrder
+		 * @see <a href="http://schema.org/referencesOrder">http://schema.org/referencesOrder</a>
 		 */
 		public Container.ReferencesOrder getReferencesOrder();
 		public void setReferencesOrder(Container.ReferencesOrder referencesOrder);
 
 		/**
-		 * uri: http://schema.org/scheduledPaymentDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ScheduledPaymentDate
+		 * @see <a href="http://schema.org/scheduledPaymentDate">http://schema.org/scheduledPaymentDate</a>
 		 */
 		public Container.ScheduledPaymentDate getScheduledPaymentDate();
 		public void setScheduledPaymentDate(Container.ScheduledPaymentDate scheduledPaymentDate);
 
 		/**
-		 * uri: http://schema.org/totalPaymentDue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TotalPaymentDue
+		 * @see <a href="http://schema.org/totalPaymentDue">http://schema.org/totalPaymentDue</a>
 		 */
 		public Container.TotalPaymentDue getTotalPaymentDue();
 		public void setTotalPaymentDue(Container.TotalPaymentDue totalPaymentDue);
@@ -7775,22 +7307,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ItemList extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/itemListElement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemListElement
+		 * @see <a href="http://schema.org/itemListElement">http://schema.org/itemListElement</a>
 		 */
 		public Container.ItemListElement getItemListElement();
 		public void setItemListElement(Container.ItemListElement itemListElement);
 
 		/**
-		 * uri: http://schema.org/itemListOrder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemListOrder
+		 * @see <a href="http://schema.org/itemListOrder">http://schema.org/itemListOrder</a>
 		 */
 		public Container.ItemListOrder getItemListOrder();
 		public void setItemListOrder(Container.ItemListOrder itemListOrder);
 
 		/**
-		 * uri: http://schema.org/numberOfItems
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfItems
+		 * @see <a href="http://schema.org/numberOfItems">http://schema.org/numberOfItems</a>
 		 */
 		public Container.NumberOfItems getNumberOfItems();
 		public void setNumberOfItems(Container.NumberOfItems numberOfItems);
@@ -7856,141 +7385,121 @@ public interface Clazz extends SchemaOrgClass {
 	public interface JobPosting extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/baseSalary
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BaseSalary
+		 * @see <a href="http://schema.org/baseSalary">http://schema.org/baseSalary</a>
 		 */
 		public Container.BaseSalary getBaseSalary();
 		public void setBaseSalary(Container.BaseSalary baseSalary);
 
 		/**
-		 * uri: http://schema.org/datePosted
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DatePosted
+		 * @see <a href="http://schema.org/datePosted">http://schema.org/datePosted</a>
 		 */
 		public Container.DatePosted getDatePosted();
 		public void setDatePosted(Container.DatePosted datePosted);
 
 		/**
-		 * uri: http://schema.org/educationRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EducationRequirements
+		 * @see <a href="http://schema.org/educationRequirements">http://schema.org/educationRequirements</a>
 		 */
 		public Container.EducationRequirements getEducationRequirements();
 		public void setEducationRequirements(Container.EducationRequirements educationRequirements);
 
 		/**
-		 * uri: http://schema.org/employmentType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EmploymentType
+		 * @see <a href="http://schema.org/employmentType">http://schema.org/employmentType</a>
 		 */
 		public Container.EmploymentType getEmploymentType();
 		public void setEmploymentType(Container.EmploymentType employmentType);
 
 		/**
-		 * uri: http://schema.org/estimatedSalary
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EstimatedSalary
+		 * @see <a href="http://schema.org/estimatedSalary">http://schema.org/estimatedSalary</a>
 		 */
 		public EstimatedSalary getEstimatedSalary();
 		public void setEstimatedSalary(EstimatedSalary estimatedSalary);
 
 		/**
-		 * uri: http://schema.org/experienceRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExperienceRequirements
+		 * @see <a href="http://schema.org/experienceRequirements">http://schema.org/experienceRequirements</a>
 		 */
 		public Container.ExperienceRequirements getExperienceRequirements();
 		public void setExperienceRequirements(Container.ExperienceRequirements experienceRequirements);
 
 		/**
-		 * uri: http://schema.org/hiringOrganization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HiringOrganization
+		 * @see <a href="http://schema.org/hiringOrganization">http://schema.org/hiringOrganization</a>
 		 */
 		public Container.HiringOrganization getHiringOrganization();
 		public void setHiringOrganization(Container.HiringOrganization hiringOrganization);
 
 		/**
-		 * uri: http://schema.org/incentiveCompensation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IncentiveCompensation
+		 * @see <a href="http://schema.org/incentiveCompensation">http://schema.org/incentiveCompensation</a>
 		 */
 		public Container.IncentiveCompensation getIncentiveCompensation();
 		public void setIncentiveCompensation(Container.IncentiveCompensation incentiveCompensation);
 
 		/**
-		 * uri: http://schema.org/industry
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Industry
+		 * @see <a href="http://schema.org/industry">http://schema.org/industry</a>
 		 */
 		public Container.Industry getIndustry();
 		public void setIndustry(Container.Industry industry);
 
 		/**
-		 * uri: http://schema.org/jobBenefits
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.JobBenefits
+		 * @see <a href="http://schema.org/jobBenefits">http://schema.org/jobBenefits</a>
 		 */
 		public Container.JobBenefits getJobBenefits();
 		public void setJobBenefits(Container.JobBenefits jobBenefits);
 
 		/**
-		 * uri: http://schema.org/jobLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.JobLocation
+		 * @see <a href="http://schema.org/jobLocation">http://schema.org/jobLocation</a>
 		 */
 		public Container.JobLocation getJobLocation();
 		public void setJobLocation(Container.JobLocation jobLocation);
 
 		/**
-		 * uri: http://schema.org/occupationalCategory
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OccupationalCategory
+		 * @see <a href="http://schema.org/occupationalCategory">http://schema.org/occupationalCategory</a>
 		 */
 		public Container.OccupationalCategory getOccupationalCategory();
 		public void setOccupationalCategory(Container.OccupationalCategory occupationalCategory);
 
 		/**
-		 * uri: http://schema.org/qualifications
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Qualifications
+		 * @see <a href="http://schema.org/qualifications">http://schema.org/qualifications</a>
 		 */
 		public Container.Qualifications getQualifications();
 		public void setQualifications(Container.Qualifications qualifications);
 
 		/**
-		 * uri: http://schema.org/responsibilities
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Responsibilities
+		 * @see <a href="http://schema.org/responsibilities">http://schema.org/responsibilities</a>
 		 */
 		public Container.Responsibilities getResponsibilities();
 		public void setResponsibilities(Container.Responsibilities responsibilities);
 
 		/**
-		 * uri: http://schema.org/salaryCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SalaryCurrency
+		 * @see <a href="http://schema.org/salaryCurrency">http://schema.org/salaryCurrency</a>
 		 */
 		public Container.SalaryCurrency getSalaryCurrency();
 		public void setSalaryCurrency(Container.SalaryCurrency salaryCurrency);
 
 		/**
-		 * uri: http://schema.org/skills
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Skills
+		 * @see <a href="http://schema.org/skills">http://schema.org/skills</a>
 		 */
 		public Container.Skills getSkills();
 		public void setSkills(Container.Skills skills);
 
 		/**
-		 * uri: http://schema.org/specialCommitments
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SpecialCommitments
+		 * @see <a href="http://schema.org/specialCommitments">http://schema.org/specialCommitments</a>
 		 */
 		public Container.SpecialCommitments getSpecialCommitments();
 		public void setSpecialCommitments(Container.SpecialCommitments specialCommitments);
 
 		/**
-		 * uri: http://schema.org/title
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Title
+		 * @see <a href="http://schema.org/title">http://schema.org/title</a>
 		 */
 		public Container.Title getTitle();
 		public void setTitle(Container.Title title);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
 
 		/**
-		 * uri: http://schema.org/workHours
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkHours
+		 * @see <a href="http://schema.org/workHours">http://schema.org/workHours</a>
 		 */
 		public Container.WorkHours getWorkHours();
 		public void setWorkHours(Container.WorkHours workHours);
@@ -8020,8 +7529,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface JoinAction extends InteractAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
@@ -8116,8 +7624,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LeaveAction extends InteractAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
@@ -8177,8 +7684,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LendAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/borrower
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Borrower
+		 * @see <a href="http://schema.org/borrower">http://schema.org/borrower</a>
 		 */
 		public Container.Borrower getBorrower();
 		public void setBorrower(Container.Borrower borrower);
@@ -8244,29 +7750,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ListItem extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/item
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Item
+		 * @see <a href="http://schema.org/item">http://schema.org/item</a>
 		 */
 		public Container.Item getItem();
 		public void setItem(Container.Item item);
 
 		/**
-		 * uri: http://schema.org/nextItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NextItem
+		 * @see <a href="http://schema.org/nextItem">http://schema.org/nextItem</a>
 		 */
 		public Container.NextItem getNextItem();
 		public void setNextItem(Container.NextItem nextItem);
 
 		/**
-		 * uri: http://schema.org/position
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Position
+		 * @see <a href="http://schema.org/position">http://schema.org/position</a>
 		 */
 		public Container.Position getPosition();
 		public void setPosition(Container.Position position);
 
 		/**
-		 * uri: http://schema.org/previousItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PreviousItem
+		 * @see <a href="http://schema.org/previousItem">http://schema.org/previousItem</a>
 		 */
 		public Container.PreviousItem getPreviousItem();
 		public void setPreviousItem(Container.PreviousItem previousItem);
@@ -8316,22 +7818,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LiveBlogPosting extends BlogPosting, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/coverageEndTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CoverageEndTime
+		 * @see <a href="http://schema.org/coverageEndTime">http://schema.org/coverageEndTime</a>
 		 */
 		public Container.CoverageEndTime getCoverageEndTime();
 		public void setCoverageEndTime(Container.CoverageEndTime coverageEndTime);
 
 		/**
-		 * uri: http://schema.org/coverageStartTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CoverageStartTime
+		 * @see <a href="http://schema.org/coverageStartTime">http://schema.org/coverageStartTime</a>
 		 */
 		public Container.CoverageStartTime getCoverageStartTime();
 		public void setCoverageStartTime(Container.CoverageStartTime coverageStartTime);
 
 		/**
-		 * uri: http://schema.org/liveBlogUpdate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LiveBlogUpdate
+		 * @see <a href="http://schema.org/liveBlogUpdate">http://schema.org/liveBlogUpdate</a>
 		 */
 		public Container.LiveBlogUpdate getLiveBlogUpdate();
 		public void setLiveBlogUpdate(Container.LiveBlogUpdate liveBlogUpdate);
@@ -8353,64 +7852,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LoanOrCredit extends FinancialProduct, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/amount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Amount
+		 * @see <a href="http://schema.org/amount">http://schema.org/amount</a>
 		 */
 		public Container.Amount getAmount();
 		public void setAmount(Container.Amount amount);
 
 		/**
-		 * uri: http://schema.org/currency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Currency
+		 * @see <a href="http://schema.org/currency">http://schema.org/currency</a>
 		 */
 		public Container.Currency getCurrency();
 		public void setCurrency(Container.Currency currency);
 
 		/**
-		 * uri: http://schema.org/gracePeriod
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GracePeriod
+		 * @see <a href="http://schema.org/gracePeriod">http://schema.org/gracePeriod</a>
 		 */
 		public GracePeriod getGracePeriod();
 		public void setGracePeriod(GracePeriod gracePeriod);
 
 		/**
-		 * uri: http://schema.org/loanRepaymentForm
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LoanRepaymentForm
+		 * @see <a href="http://schema.org/loanRepaymentForm">http://schema.org/loanRepaymentForm</a>
 		 */
 		public LoanRepaymentForm getLoanRepaymentForm();
 		public void setLoanRepaymentForm(LoanRepaymentForm loanRepaymentForm);
 
 		/**
-		 * uri: http://schema.org/loanTerm
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LoanTerm
+		 * @see <a href="http://schema.org/loanTerm">http://schema.org/loanTerm</a>
 		 */
 		public Container.LoanTerm getLoanTerm();
 		public void setLoanTerm(Container.LoanTerm loanTerm);
 
 		/**
-		 * uri: http://schema.org/loanType
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.LoanType
+		 * @see <a href="http://schema.org/loanType">http://schema.org/loanType</a>
 		 */
 		public LoanType getLoanType();
 		public void setLoanType(LoanType loanType);
 
 		/**
-		 * uri: http://schema.org/recourseLoan
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.RecourseLoan
+		 * @see <a href="http://schema.org/recourseLoan">http://schema.org/recourseLoan</a>
 		 */
 		public RecourseLoan getRecourseLoan();
 		public void setRecourseLoan(RecourseLoan recourseLoan);
 
 		/**
-		 * uri: http://schema.org/renegotiableLoan
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.RenegotiableLoan
+		 * @see <a href="http://schema.org/renegotiableLoan">http://schema.org/renegotiableLoan</a>
 		 */
 		public RenegotiableLoan getRenegotiableLoan();
 		public void setRenegotiableLoan(RenegotiableLoan renegotiableLoan);
 
 		/**
-		 * uri: http://schema.org/requiredCollateral
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiredCollateral
+		 * @see <a href="http://schema.org/requiredCollateral">http://schema.org/requiredCollateral</a>
 		 */
 		public Container.RequiredCollateral getRequiredCollateral();
 		public void setRequiredCollateral(Container.RequiredCollateral requiredCollateral);
@@ -8433,29 +7923,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LocalBusiness extends Organization, Place, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/currenciesAccepted
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CurrenciesAccepted
+		 * @see <a href="http://schema.org/currenciesAccepted">http://schema.org/currenciesAccepted</a>
 		 */
 		public Container.CurrenciesAccepted getCurrenciesAccepted();
 		public void setCurrenciesAccepted(Container.CurrenciesAccepted currenciesAccepted);
 
 		/**
-		 * uri: http://schema.org/openingHours
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OpeningHours
+		 * @see <a href="http://schema.org/openingHours">http://schema.org/openingHours</a>
 		 */
 		public Container.OpeningHours getOpeningHours();
 		public void setOpeningHours(Container.OpeningHours openingHours);
 
 		/**
-		 * uri: http://schema.org/paymentAccepted
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentAccepted
+		 * @see <a href="http://schema.org/paymentAccepted">http://schema.org/paymentAccepted</a>
 		 */
 		public Container.PaymentAccepted getPaymentAccepted();
 		public void setPaymentAccepted(Container.PaymentAccepted paymentAccepted);
 
 		/**
-		 * uri: http://schema.org/priceRange
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceRange
+		 * @see <a href="http://schema.org/priceRange">http://schema.org/priceRange</a>
 		 */
 		public Container.PriceRange getPriceRange();
 		public void setPriceRange(Container.PriceRange priceRange);
@@ -8478,22 +7964,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LocationFeatureSpecification extends PropertyValue, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hoursAvailable
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HoursAvailable
+		 * @see <a href="http://schema.org/hoursAvailable">http://schema.org/hoursAvailable</a>
 		 */
 		public Container.HoursAvailable getHoursAvailable();
 		public void setHoursAvailable(Container.HoursAvailable hoursAvailable);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
@@ -8543,50 +8026,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LodgingBusiness extends LocalBusiness, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/amenityFeature
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AmenityFeature
+		 * @see <a href="http://schema.org/amenityFeature">http://schema.org/amenityFeature</a>
 		 */
 		public Container.AmenityFeature getAmenityFeature();
 		public void setAmenityFeature(Container.AmenityFeature amenityFeature);
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/availableLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableLanguage
+		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
 		 */
 		public Container.AvailableLanguage getAvailableLanguage();
 		public void setAvailableLanguage(Container.AvailableLanguage availableLanguage);
 
 		/**
-		 * uri: http://schema.org/checkinTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheckinTime
+		 * @see <a href="http://schema.org/checkinTime">http://schema.org/checkinTime</a>
 		 */
 		public Container.CheckinTime getCheckinTime();
 		public void setCheckinTime(Container.CheckinTime checkinTime);
 
 		/**
-		 * uri: http://schema.org/checkoutTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheckoutTime
+		 * @see <a href="http://schema.org/checkoutTime">http://schema.org/checkoutTime</a>
 		 */
 		public Container.CheckoutTime getCheckoutTime();
 		public void setCheckoutTime(Container.CheckoutTime checkoutTime);
 
 		/**
-		 * uri: http://schema.org/petsAllowed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PetsAllowed
+		 * @see <a href="http://schema.org/petsAllowed">http://schema.org/petsAllowed</a>
 		 */
 		public Container.PetsAllowed getPetsAllowed();
 		public void setPetsAllowed(Container.PetsAllowed petsAllowed);
 
 		/**
-		 * uri: http://schema.org/starRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StarRating
+		 * @see <a href="http://schema.org/starRating">http://schema.org/starRating</a>
 		 */
 		public Container.StarRating getStarRating();
 		public void setStarRating(Container.StarRating starRating);
@@ -8609,43 +8085,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LodgingReservation extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/checkinTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheckinTime
+		 * @see <a href="http://schema.org/checkinTime">http://schema.org/checkinTime</a>
 		 */
 		public Container.CheckinTime getCheckinTime();
 		public void setCheckinTime(Container.CheckinTime checkinTime);
 
 		/**
-		 * uri: http://schema.org/checkoutTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheckoutTime
+		 * @see <a href="http://schema.org/checkoutTime">http://schema.org/checkoutTime</a>
 		 */
 		public Container.CheckoutTime getCheckoutTime();
 		public void setCheckoutTime(Container.CheckoutTime checkoutTime);
 
 		/**
-		 * uri: http://schema.org/lodgingUnitDescription
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LodgingUnitDescription
+		 * @see <a href="http://schema.org/lodgingUnitDescription">http://schema.org/lodgingUnitDescription</a>
 		 */
 		public Container.LodgingUnitDescription getLodgingUnitDescription();
 		public void setLodgingUnitDescription(Container.LodgingUnitDescription lodgingUnitDescription);
 
 		/**
-		 * uri: http://schema.org/lodgingUnitType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LodgingUnitType
+		 * @see <a href="http://schema.org/lodgingUnitType">http://schema.org/lodgingUnitType</a>
 		 */
 		public Container.LodgingUnitType getLodgingUnitType();
 		public void setLodgingUnitType(Container.LodgingUnitType lodgingUnitType);
 
 		/**
-		 * uri: http://schema.org/numAdults
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumAdults
+		 * @see <a href="http://schema.org/numAdults">http://schema.org/numAdults</a>
 		 */
 		public Container.NumAdults getNumAdults();
 		public void setNumAdults(Container.NumAdults numAdults);
 
 		/**
-		 * uri: http://schema.org/numChildren
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumChildren
+		 * @see <a href="http://schema.org/numChildren">http://schema.org/numChildren</a>
 		 */
 		public Container.NumChildren getNumChildren();
 		public void setNumChildren(Container.NumChildren numChildren);
@@ -8666,8 +8136,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface LoseAction extends AchieveAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/winner
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Winner
+		 * @see <a href="http://schema.org/winner">http://schema.org/winner</a>
 		 */
 		public Container.Winner getWinner();
 		public void setWinner(Container.Winner winner);
@@ -8687,8 +8156,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Map extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/mapType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MapType
+		 * @see <a href="http://schema.org/mapType">http://schema.org/mapType</a>
 		 */
 		public Container.MapType getMapType();
 		public void setMapType(Container.MapType mapType);
@@ -8757,106 +8225,91 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MediaObject extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/associatedArticle
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AssociatedArticle
+		 * @see <a href="http://schema.org/associatedArticle">http://schema.org/associatedArticle</a>
 		 */
 		public Container.AssociatedArticle getAssociatedArticle();
 		public void setAssociatedArticle(Container.AssociatedArticle associatedArticle);
 
 		/**
-		 * uri: http://schema.org/bitrate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Bitrate
+		 * @see <a href="http://schema.org/bitrate">http://schema.org/bitrate</a>
 		 */
 		public Container.Bitrate getBitrate();
 		public void setBitrate(Container.Bitrate bitrate);
 
 		/**
-		 * uri: http://schema.org/contentSize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContentSize
+		 * @see <a href="http://schema.org/contentSize">http://schema.org/contentSize</a>
 		 */
 		public Container.ContentSize getContentSize();
 		public void setContentSize(Container.ContentSize contentSize);
 
 		/**
-		 * uri: http://schema.org/contentUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContentUrl
+		 * @see <a href="http://schema.org/contentUrl">http://schema.org/contentUrl</a>
 		 */
 		public Container.ContentUrl getContentUrl();
 		public void setContentUrl(Container.ContentUrl contentUrl);
 
 		/**
-		 * uri: http://schema.org/duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duration
+		 * @see <a href="http://schema.org/duration">http://schema.org/duration</a>
 		 */
 		public Container.Duration getDuration();
 		public void setDuration(Container.Duration duration);
 
 		/**
-		 * uri: http://schema.org/embedUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EmbedUrl
+		 * @see <a href="http://schema.org/embedUrl">http://schema.org/embedUrl</a>
 		 */
 		public Container.EmbedUrl getEmbedUrl();
 		public void setEmbedUrl(Container.EmbedUrl embedUrl);
 
 		/**
-		 * uri: http://schema.org/encodesCreativeWork
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EncodesCreativeWork
+		 * @see <a href="http://schema.org/encodesCreativeWork">http://schema.org/encodesCreativeWork</a>
 		 */
 		public Container.EncodesCreativeWork getEncodesCreativeWork();
 		public void setEncodesCreativeWork(Container.EncodesCreativeWork encodesCreativeWork);
 
 		/**
-		 * uri: http://schema.org/encodingFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EncodingFormat
+		 * @see <a href="http://schema.org/encodingFormat">http://schema.org/encodingFormat</a>
 		 */
 		public Container.EncodingFormat getEncodingFormat();
 		public void setEncodingFormat(Container.EncodingFormat encodingFormat);
 
 		/**
-		 * uri: http://schema.org/height
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Height
+		 * @see <a href="http://schema.org/height">http://schema.org/height</a>
 		 */
 		public Container.Height getHeight();
 		public void setHeight(Container.Height height);
 
 		/**
-		 * uri: http://schema.org/playerType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PlayerType
+		 * @see <a href="http://schema.org/playerType">http://schema.org/playerType</a>
 		 */
 		public Container.PlayerType getPlayerType();
 		public void setPlayerType(Container.PlayerType playerType);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/regionsAllowed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RegionsAllowed
+		 * @see <a href="http://schema.org/regionsAllowed">http://schema.org/regionsAllowed</a>
 		 */
 		public Container.RegionsAllowed getRegionsAllowed();
 		public void setRegionsAllowed(Container.RegionsAllowed regionsAllowed);
 
 		/**
-		 * uri: http://schema.org/requiresSubscription
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiresSubscription
+		 * @see <a href="http://schema.org/requiresSubscription">http://schema.org/requiresSubscription</a>
 		 */
 		public Container.RequiresSubscription getRequiresSubscription();
 		public void setRequiresSubscription(Container.RequiresSubscription requiresSubscription);
 
 		/**
-		 * uri: http://schema.org/uploadDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UploadDate
+		 * @see <a href="http://schema.org/uploadDate">http://schema.org/uploadDate</a>
 		 */
 		public Container.UploadDate getUploadDate();
 		public void setUploadDate(Container.UploadDate uploadDate);
 
 		/**
-		 * uri: http://schema.org/width
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Width
+		 * @see <a href="http://schema.org/width">http://schema.org/width</a>
 		 */
 		public Container.Width getWidth();
 		public void setWidth(Container.Width width);
@@ -8878,22 +8331,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MedicalOrganization extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthPlanNetworkId
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanNetworkId
+		 * @see <a href="http://schema.org/healthPlanNetworkId">http://schema.org/healthPlanNetworkId</a>
 		 */
 		public HealthPlanNetworkId getHealthPlanNetworkId();
 		public void setHealthPlanNetworkId(HealthPlanNetworkId healthPlanNetworkId);
 
 		/**
-		 * uri: http://schema.org/isAcceptingNewPatients
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.IsAcceptingNewPatients
+		 * @see <a href="http://schema.org/isAcceptingNewPatients">http://schema.org/isAcceptingNewPatients</a>
 		 */
 		public IsAcceptingNewPatients getIsAcceptingNewPatients();
 		public void setIsAcceptingNewPatients(IsAcceptingNewPatients isAcceptingNewPatients);
 
 		/**
-		 * uri: http://schema.org/medicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicalSpecialty
+		 * @see <a href="http://schema.org/medicalSpecialty">http://schema.org/medicalSpecialty</a>
 		 */
 		public MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
@@ -8949,15 +8399,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Menu extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hasMenuItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMenuItem
+		 * @see <a href="http://schema.org/hasMenuItem">http://schema.org/hasMenuItem</a>
 		 */
 		public Container.HasMenuItem getHasMenuItem();
 		public void setHasMenuItem(Container.HasMenuItem hasMenuItem);
 
 		/**
-		 * uri: http://schema.org/hasMenuSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMenuSection
+		 * @see <a href="http://schema.org/hasMenuSection">http://schema.org/hasMenuSection</a>
 		 */
 		public Container.HasMenuSection getHasMenuSection();
 		public void setHasMenuSection(Container.HasMenuSection hasMenuSection);
@@ -8978,29 +8426,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MenuItem extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/menuAddOn
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MenuAddOn
+		 * @see <a href="http://schema.org/menuAddOn">http://schema.org/menuAddOn</a>
 		 */
 		public MenuAddOn getMenuAddOn();
 		public void setMenuAddOn(MenuAddOn menuAddOn);
 
 		/**
-		 * uri: http://schema.org/nutrition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Nutrition
+		 * @see <a href="http://schema.org/nutrition">http://schema.org/nutrition</a>
 		 */
 		public Container.Nutrition getNutrition();
 		public void setNutrition(Container.Nutrition nutrition);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
 
 		/**
-		 * uri: http://schema.org/suitableForDiet
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuitableForDiet
+		 * @see <a href="http://schema.org/suitableForDiet">http://schema.org/suitableForDiet</a>
 		 */
 		public Container.SuitableForDiet getSuitableForDiet();
 		public void setSuitableForDiet(Container.SuitableForDiet suitableForDiet);
@@ -9023,15 +8467,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MenuSection extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hasMenuItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMenuItem
+		 * @see <a href="http://schema.org/hasMenuItem">http://schema.org/hasMenuItem</a>
 		 */
 		public Container.HasMenuItem getHasMenuItem();
 		public void setHasMenuItem(Container.HasMenuItem hasMenuItem);
 
 		/**
-		 * uri: http://schema.org/hasMenuSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMenuSection
+		 * @see <a href="http://schema.org/hasMenuSection">http://schema.org/hasMenuSection</a>
 		 */
 		public Container.HasMenuSection getHasMenuSection();
 		public void setHasMenuSection(Container.HasMenuSection hasMenuSection);
@@ -9052,64 +8494,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Message extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/bccRecipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BccRecipient
+		 * @see <a href="http://schema.org/bccRecipient">http://schema.org/bccRecipient</a>
 		 */
 		public Container.BccRecipient getBccRecipient();
 		public void setBccRecipient(Container.BccRecipient bccRecipient);
 
 		/**
-		 * uri: http://schema.org/ccRecipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CcRecipient
+		 * @see <a href="http://schema.org/ccRecipient">http://schema.org/ccRecipient</a>
 		 */
 		public Container.CcRecipient getCcRecipient();
 		public void setCcRecipient(Container.CcRecipient ccRecipient);
 
 		/**
-		 * uri: http://schema.org/dateRead
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateRead
+		 * @see <a href="http://schema.org/dateRead">http://schema.org/dateRead</a>
 		 */
 		public Container.DateRead getDateRead();
 		public void setDateRead(Container.DateRead dateRead);
 
 		/**
-		 * uri: http://schema.org/dateReceived
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateReceived
+		 * @see <a href="http://schema.org/dateReceived">http://schema.org/dateReceived</a>
 		 */
 		public Container.DateReceived getDateReceived();
 		public void setDateReceived(Container.DateReceived dateReceived);
 
 		/**
-		 * uri: http://schema.org/dateSent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateSent
+		 * @see <a href="http://schema.org/dateSent">http://schema.org/dateSent</a>
 		 */
 		public Container.DateSent getDateSent();
 		public void setDateSent(Container.DateSent dateSent);
 
 		/**
-		 * uri: http://schema.org/messageAttachment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MessageAttachment
+		 * @see <a href="http://schema.org/messageAttachment">http://schema.org/messageAttachment</a>
 		 */
 		public Container.MessageAttachment getMessageAttachment();
 		public void setMessageAttachment(Container.MessageAttachment messageAttachment);
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
 
 		/**
-		 * uri: http://schema.org/sender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sender
+		 * @see <a href="http://schema.org/sender">http://schema.org/sender</a>
 		 */
 		public Container.Sender getSender();
 		public void setSender(Container.Sender sender);
 
 		/**
-		 * uri: http://schema.org/toRecipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ToRecipient
+		 * @see <a href="http://schema.org/toRecipient">http://schema.org/toRecipient</a>
 		 */
 		public Container.ToRecipient getToRecipient();
 		public void setToRecipient(Container.ToRecipient toRecipient);
@@ -9147,8 +8580,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MobileApplication extends SchemaOrgClass, SoftwareApplication {
 
 		/**
-		 * uri: http://schema.org/carrierRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CarrierRequirements
+		 * @see <a href="http://schema.org/carrierRequirements">http://schema.org/carrierRequirements</a>
 		 */
 		public Container.CarrierRequirements getCarrierRequirements();
 		public void setCarrierRequirements(Container.CarrierRequirements carrierRequirements);
@@ -9189,43 +8621,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MonetaryAmount extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/currency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Currency
+		 * @see <a href="http://schema.org/currency">http://schema.org/currency</a>
 		 */
 		public Container.Currency getCurrency();
 		public void setCurrency(Container.Currency currency);
 
 		/**
-		 * uri: http://schema.org/maxValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaxValue
+		 * @see <a href="http://schema.org/maxValue">http://schema.org/maxValue</a>
 		 */
 		public Container.MaxValue getMaxValue();
 		public void setMaxValue(Container.MaxValue maxValue);
 
 		/**
-		 * uri: http://schema.org/minValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinValue
+		 * @see <a href="http://schema.org/minValue">http://schema.org/minValue</a>
 		 */
 		public Container.MinValue getMinValue();
 		public void setMinValue(Container.MinValue minValue);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
 
 		/**
-		 * uri: http://schema.org/value
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Value
+		 * @see <a href="http://schema.org/value">http://schema.org/value</a>
 		 */
 		public Container.Value getValue();
 		public void setValue(Container.Value value);
@@ -9324,15 +8750,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MoveAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/fromLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FromLocation
+		 * @see <a href="http://schema.org/fromLocation">http://schema.org/fromLocation</a>
 		 */
 		public Container.FromLocation getFromLocation();
 		public void setFromLocation(Container.FromLocation fromLocation);
 
 		/**
-		 * uri: http://schema.org/toLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ToLocation
+		 * @see <a href="http://schema.org/toLocation">http://schema.org/toLocation</a>
 		 */
 		public Container.ToLocation getToLocation();
 		public void setToLocation(Container.ToLocation toLocation);
@@ -9352,57 +8776,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Movie extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/countryOfOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountryOfOrigin
+		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
 		 */
 		public Container.CountryOfOrigin getCountryOfOrigin();
 		public void setCountryOfOrigin(Container.CountryOfOrigin countryOfOrigin);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duration
+		 * @see <a href="http://schema.org/duration">http://schema.org/duration</a>
 		 */
 		public Container.Duration getDuration();
 		public void setDuration(Container.Duration duration);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/subtitleLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubtitleLanguage
+		 * @see <a href="http://schema.org/subtitleLanguage">http://schema.org/subtitleLanguage</a>
 		 */
 		public Container.SubtitleLanguage getSubtitleLanguage();
 		public void setSubtitleLanguage(Container.SubtitleLanguage subtitleLanguage);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -9451,36 +8867,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MovieSeries extends CreativeWorkSeries, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -9500,8 +8911,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MovieTheater extends CivicStructure, EntertainmentBusiness, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/screenCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ScreenCount
+		 * @see <a href="http://schema.org/screenCount">http://schema.org/screenCount</a>
 		 */
 		public Container.ScreenCount getScreenCount();
 		public void setScreenCount(Container.ScreenCount screenCount);
@@ -9549,29 +8959,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicAlbum extends MusicPlaylist, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/albumProductionType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlbumProductionType
+		 * @see <a href="http://schema.org/albumProductionType">http://schema.org/albumProductionType</a>
 		 */
 		public Container.AlbumProductionType getAlbumProductionType();
 		public void setAlbumProductionType(Container.AlbumProductionType albumProductionType);
 
 		/**
-		 * uri: http://schema.org/albumRelease
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlbumRelease
+		 * @see <a href="http://schema.org/albumRelease">http://schema.org/albumRelease</a>
 		 */
 		public Container.AlbumRelease getAlbumRelease();
 		public void setAlbumRelease(Container.AlbumRelease albumRelease);
 
 		/**
-		 * uri: http://schema.org/albumReleaseType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlbumReleaseType
+		 * @see <a href="http://schema.org/albumReleaseType">http://schema.org/albumReleaseType</a>
 		 */
 		public Container.AlbumReleaseType getAlbumReleaseType();
 		public void setAlbumReleaseType(Container.AlbumReleaseType albumReleaseType);
 
 		/**
-		 * uri: http://schema.org/byArtist
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ByArtist
+		 * @see <a href="http://schema.org/byArtist">http://schema.org/byArtist</a>
 		 */
 		public Container.ByArtist getByArtist();
 		public void setByArtist(Container.ByArtist byArtist);
@@ -9622,71 +9028,61 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicComposition extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/composer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Composer
+		 * @see <a href="http://schema.org/composer">http://schema.org/composer</a>
 		 */
 		public Container.Composer getComposer();
 		public void setComposer(Container.Composer composer);
 
 		/**
-		 * uri: http://schema.org/firstPerformance
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FirstPerformance
+		 * @see <a href="http://schema.org/firstPerformance">http://schema.org/firstPerformance</a>
 		 */
 		public Container.FirstPerformance getFirstPerformance();
 		public void setFirstPerformance(Container.FirstPerformance firstPerformance);
 
 		/**
-		 * uri: http://schema.org/includedComposition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IncludedComposition
+		 * @see <a href="http://schema.org/includedComposition">http://schema.org/includedComposition</a>
 		 */
 		public Container.IncludedComposition getIncludedComposition();
 		public void setIncludedComposition(Container.IncludedComposition includedComposition);
 
 		/**
-		 * uri: http://schema.org/iswcCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IswcCode
+		 * @see <a href="http://schema.org/iswcCode">http://schema.org/iswcCode</a>
 		 */
 		public Container.IswcCode getIswcCode();
 		public void setIswcCode(Container.IswcCode iswcCode);
 
 		/**
-		 * uri: http://schema.org/lyricist
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Lyricist
+		 * @see <a href="http://schema.org/lyricist">http://schema.org/lyricist</a>
 		 */
 		public Container.Lyricist getLyricist();
 		public void setLyricist(Container.Lyricist lyricist);
 
 		/**
-		 * uri: http://schema.org/lyrics
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Lyrics
+		 * @see <a href="http://schema.org/lyrics">http://schema.org/lyrics</a>
 		 */
 		public Container.Lyrics getLyrics();
 		public void setLyrics(Container.Lyrics lyrics);
 
 		/**
-		 * uri: http://schema.org/musicArrangement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicArrangement
+		 * @see <a href="http://schema.org/musicArrangement">http://schema.org/musicArrangement</a>
 		 */
 		public Container.MusicArrangement getMusicArrangement();
 		public void setMusicArrangement(Container.MusicArrangement musicArrangement);
 
 		/**
-		 * uri: http://schema.org/musicCompositionForm
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicCompositionForm
+		 * @see <a href="http://schema.org/musicCompositionForm">http://schema.org/musicCompositionForm</a>
 		 */
 		public Container.MusicCompositionForm getMusicCompositionForm();
 		public void setMusicCompositionForm(Container.MusicCompositionForm musicCompositionForm);
 
 		/**
-		 * uri: http://schema.org/musicalKey
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicalKey
+		 * @see <a href="http://schema.org/musicalKey">http://schema.org/musicalKey</a>
 		 */
 		public Container.MusicalKey getMusicalKey();
 		public void setMusicalKey(Container.MusicalKey musicalKey);
 
 		/**
-		 * uri: http://schema.org/recordedAs
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecordedAs
+		 * @see <a href="http://schema.org/recordedAs">http://schema.org/recordedAs</a>
 		 */
 		public Container.RecordedAs getRecordedAs();
 		public void setRecordedAs(Container.RecordedAs recordedAs);
@@ -9722,22 +9118,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicGroup extends PerformingGroup, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/album
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Album
+		 * @see <a href="http://schema.org/album">http://schema.org/album</a>
 		 */
 		public Container.Album getAlbum();
 		public void setAlbum(Container.Album album);
 
 		/**
-		 * uri: http://schema.org/genre
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Genre
+		 * @see <a href="http://schema.org/genre">http://schema.org/genre</a>
 		 */
 		public Container.Genre getGenre();
 		public void setGenre(Container.Genre genre);
 
 		/**
-		 * uri: http://schema.org/track
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Track
+		 * @see <a href="http://schema.org/track">http://schema.org/track</a>
 		 */
 		public Container.Track getTrack();
 		public void setTrack(Container.Track track);
@@ -9758,15 +9151,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicPlaylist extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numTracks
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumTracks
+		 * @see <a href="http://schema.org/numTracks">http://schema.org/numTracks</a>
 		 */
 		public Container.NumTracks getNumTracks();
 		public void setNumTracks(Container.NumTracks numTracks);
 
 		/**
-		 * uri: http://schema.org/track
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Track
+		 * @see <a href="http://schema.org/track">http://schema.org/track</a>
 		 */
 		public Container.Track getTrack();
 		public void setTrack(Container.Track track);
@@ -9787,43 +9178,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicRecording extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/byArtist
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ByArtist
+		 * @see <a href="http://schema.org/byArtist">http://schema.org/byArtist</a>
 		 */
 		public Container.ByArtist getByArtist();
 		public void setByArtist(Container.ByArtist byArtist);
 
 		/**
-		 * uri: http://schema.org/duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duration
+		 * @see <a href="http://schema.org/duration">http://schema.org/duration</a>
 		 */
 		public Container.Duration getDuration();
 		public void setDuration(Container.Duration duration);
 
 		/**
-		 * uri: http://schema.org/inAlbum
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InAlbum
+		 * @see <a href="http://schema.org/inAlbum">http://schema.org/inAlbum</a>
 		 */
 		public Container.InAlbum getInAlbum();
 		public void setInAlbum(Container.InAlbum inAlbum);
 
 		/**
-		 * uri: http://schema.org/inPlaylist
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InPlaylist
+		 * @see <a href="http://schema.org/inPlaylist">http://schema.org/inPlaylist</a>
 		 */
 		public Container.InPlaylist getInPlaylist();
 		public void setInPlaylist(Container.InPlaylist inPlaylist);
 
 		/**
-		 * uri: http://schema.org/isrcCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsrcCode
+		 * @see <a href="http://schema.org/isrcCode">http://schema.org/isrcCode</a>
 		 */
 		public Container.IsrcCode getIsrcCode();
 		public void setIsrcCode(Container.IsrcCode isrcCode);
 
 		/**
-		 * uri: http://schema.org/recordingOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecordingOf
+		 * @see <a href="http://schema.org/recordingOf">http://schema.org/recordingOf</a>
 		 */
 		public Container.RecordingOf getRecordingOf();
 		public void setRecordingOf(Container.RecordingOf recordingOf);
@@ -9844,43 +9229,37 @@ public interface Clazz extends SchemaOrgClass {
 	public interface MusicRelease extends MusicPlaylist, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/catalogNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CatalogNumber
+		 * @see <a href="http://schema.org/catalogNumber">http://schema.org/catalogNumber</a>
 		 */
 		public Container.CatalogNumber getCatalogNumber();
 		public void setCatalogNumber(Container.CatalogNumber catalogNumber);
 
 		/**
-		 * uri: http://schema.org/creditedTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CreditedTo
+		 * @see <a href="http://schema.org/creditedTo">http://schema.org/creditedTo</a>
 		 */
 		public Container.CreditedTo getCreditedTo();
 		public void setCreditedTo(Container.CreditedTo creditedTo);
 
 		/**
-		 * uri: http://schema.org/duration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duration
+		 * @see <a href="http://schema.org/duration">http://schema.org/duration</a>
 		 */
 		public Container.Duration getDuration();
 		public void setDuration(Container.Duration duration);
 
 		/**
-		 * uri: http://schema.org/musicReleaseFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicReleaseFormat
+		 * @see <a href="http://schema.org/musicReleaseFormat">http://schema.org/musicReleaseFormat</a>
 		 */
 		public Container.MusicReleaseFormat getMusicReleaseFormat();
 		public void setMusicReleaseFormat(Container.MusicReleaseFormat musicReleaseFormat);
 
 		/**
-		 * uri: http://schema.org/recordLabel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecordLabel
+		 * @see <a href="http://schema.org/recordLabel">http://schema.org/recordLabel</a>
 		 */
 		public Container.RecordLabel getRecordLabel();
 		public void setRecordLabel(Container.RecordLabel recordLabel);
 
 		/**
-		 * uri: http://schema.org/releaseOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReleaseOf
+		 * @see <a href="http://schema.org/releaseOf">http://schema.org/releaseOf</a>
 		 */
 		public Container.ReleaseOf getReleaseOf();
 		public void setReleaseOf(Container.ReleaseOf releaseOf);
@@ -9991,36 +9370,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface NewsArticle extends Article, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dateline
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Dateline
+		 * @see <a href="http://schema.org/dateline">http://schema.org/dateline</a>
 		 */
 		public Container.Dateline getDateline();
 		public void setDateline(Container.Dateline dateline);
 
 		/**
-		 * uri: http://schema.org/printColumn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrintColumn
+		 * @see <a href="http://schema.org/printColumn">http://schema.org/printColumn</a>
 		 */
 		public Container.PrintColumn getPrintColumn();
 		public void setPrintColumn(Container.PrintColumn printColumn);
 
 		/**
-		 * uri: http://schema.org/printEdition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrintEdition
+		 * @see <a href="http://schema.org/printEdition">http://schema.org/printEdition</a>
 		 */
 		public Container.PrintEdition getPrintEdition();
 		public void setPrintEdition(Container.PrintEdition printEdition);
 
 		/**
-		 * uri: http://schema.org/printPage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrintPage
+		 * @see <a href="http://schema.org/printPage">http://schema.org/printPage</a>
 		 */
 		public Container.PrintPage getPrintPage();
 		public void setPrintPage(Container.PrintPage printPage);
 
 		/**
-		 * uri: http://schema.org/printSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrintSection
+		 * @see <a href="http://schema.org/printSection">http://schema.org/printSection</a>
 		 */
 		public Container.PrintSection getPrintSection();
 		public void setPrintSection(Container.PrintSection printSection);
@@ -10084,85 +9458,73 @@ public interface Clazz extends SchemaOrgClass {
 	public interface NutritionInformation extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/calories
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Calories
+		 * @see <a href="http://schema.org/calories">http://schema.org/calories</a>
 		 */
 		public Container.Calories getCalories();
 		public void setCalories(Container.Calories calories);
 
 		/**
-		 * uri: http://schema.org/carbohydrateContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CarbohydrateContent
+		 * @see <a href="http://schema.org/carbohydrateContent">http://schema.org/carbohydrateContent</a>
 		 */
 		public Container.CarbohydrateContent getCarbohydrateContent();
 		public void setCarbohydrateContent(Container.CarbohydrateContent carbohydrateContent);
 
 		/**
-		 * uri: http://schema.org/cholesterolContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CholesterolContent
+		 * @see <a href="http://schema.org/cholesterolContent">http://schema.org/cholesterolContent</a>
 		 */
 		public Container.CholesterolContent getCholesterolContent();
 		public void setCholesterolContent(Container.CholesterolContent cholesterolContent);
 
 		/**
-		 * uri: http://schema.org/fatContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FatContent
+		 * @see <a href="http://schema.org/fatContent">http://schema.org/fatContent</a>
 		 */
 		public Container.FatContent getFatContent();
 		public void setFatContent(Container.FatContent fatContent);
 
 		/**
-		 * uri: http://schema.org/fiberContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FiberContent
+		 * @see <a href="http://schema.org/fiberContent">http://schema.org/fiberContent</a>
 		 */
 		public Container.FiberContent getFiberContent();
 		public void setFiberContent(Container.FiberContent fiberContent);
 
 		/**
-		 * uri: http://schema.org/proteinContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProteinContent
+		 * @see <a href="http://schema.org/proteinContent">http://schema.org/proteinContent</a>
 		 */
 		public Container.ProteinContent getProteinContent();
 		public void setProteinContent(Container.ProteinContent proteinContent);
 
 		/**
-		 * uri: http://schema.org/saturatedFatContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SaturatedFatContent
+		 * @see <a href="http://schema.org/saturatedFatContent">http://schema.org/saturatedFatContent</a>
 		 */
 		public Container.SaturatedFatContent getSaturatedFatContent();
 		public void setSaturatedFatContent(Container.SaturatedFatContent saturatedFatContent);
 
 		/**
-		 * uri: http://schema.org/servingSize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServingSize
+		 * @see <a href="http://schema.org/servingSize">http://schema.org/servingSize</a>
 		 */
 		public Container.ServingSize getServingSize();
 		public void setServingSize(Container.ServingSize servingSize);
 
 		/**
-		 * uri: http://schema.org/sodiumContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SodiumContent
+		 * @see <a href="http://schema.org/sodiumContent">http://schema.org/sodiumContent</a>
 		 */
 		public Container.SodiumContent getSodiumContent();
 		public void setSodiumContent(Container.SodiumContent sodiumContent);
 
 		/**
-		 * uri: http://schema.org/sugarContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SugarContent
+		 * @see <a href="http://schema.org/sugarContent">http://schema.org/sugarContent</a>
 		 */
 		public Container.SugarContent getSugarContent();
 		public void setSugarContent(Container.SugarContent sugarContent);
 
 		/**
-		 * uri: http://schema.org/transFatContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TransFatContent
+		 * @see <a href="http://schema.org/transFatContent">http://schema.org/transFatContent</a>
 		 */
 		public Container.TransFatContent getTransFatContent();
 		public void setTransFatContent(Container.TransFatContent transFatContent);
 
 		/**
-		 * uri: http://schema.org/unsaturatedFatContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnsaturatedFatContent
+		 * @see <a href="http://schema.org/unsaturatedFatContent">http://schema.org/unsaturatedFatContent</a>
 		 */
 		public Container.UnsaturatedFatContent getUnsaturatedFatContent();
 		public void setUnsaturatedFatContent(Container.UnsaturatedFatContent unsaturatedFatContent);
@@ -10206,281 +9568,241 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Offer extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/acceptedPaymentMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcceptedPaymentMethod
+		 * @see <a href="http://schema.org/acceptedPaymentMethod">http://schema.org/acceptedPaymentMethod</a>
 		 */
 		public Container.AcceptedPaymentMethod getAcceptedPaymentMethod();
 		public void setAcceptedPaymentMethod(Container.AcceptedPaymentMethod acceptedPaymentMethod);
 
 		/**
-		 * uri: http://schema.org/addOn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddOn
+		 * @see <a href="http://schema.org/addOn">http://schema.org/addOn</a>
 		 */
 		public Container.AddOn getAddOn();
 		public void setAddOn(Container.AddOn addOn);
 
 		/**
-		 * uri: http://schema.org/advanceBookingRequirement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdvanceBookingRequirement
+		 * @see <a href="http://schema.org/advanceBookingRequirement">http://schema.org/advanceBookingRequirement</a>
 		 */
 		public Container.AdvanceBookingRequirement getAdvanceBookingRequirement();
 		public void setAdvanceBookingRequirement(Container.AdvanceBookingRequirement advanceBookingRequirement);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/availability
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Availability
+		 * @see <a href="http://schema.org/availability">http://schema.org/availability</a>
 		 */
 		public Container.Availability getAvailability();
 		public void setAvailability(Container.Availability availability);
 
 		/**
-		 * uri: http://schema.org/availabilityEnds
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailabilityEnds
+		 * @see <a href="http://schema.org/availabilityEnds">http://schema.org/availabilityEnds</a>
 		 */
 		public Container.AvailabilityEnds getAvailabilityEnds();
 		public void setAvailabilityEnds(Container.AvailabilityEnds availabilityEnds);
 
 		/**
-		 * uri: http://schema.org/availabilityStarts
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailabilityStarts
+		 * @see <a href="http://schema.org/availabilityStarts">http://schema.org/availabilityStarts</a>
 		 */
 		public Container.AvailabilityStarts getAvailabilityStarts();
 		public void setAvailabilityStarts(Container.AvailabilityStarts availabilityStarts);
 
 		/**
-		 * uri: http://schema.org/availableAtOrFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableAtOrFrom
+		 * @see <a href="http://schema.org/availableAtOrFrom">http://schema.org/availableAtOrFrom</a>
 		 */
 		public Container.AvailableAtOrFrom getAvailableAtOrFrom();
 		public void setAvailableAtOrFrom(Container.AvailableAtOrFrom availableAtOrFrom);
 
 		/**
-		 * uri: http://schema.org/availableDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableDeliveryMethod
+		 * @see <a href="http://schema.org/availableDeliveryMethod">http://schema.org/availableDeliveryMethod</a>
 		 */
 		public Container.AvailableDeliveryMethod getAvailableDeliveryMethod();
 		public void setAvailableDeliveryMethod(Container.AvailableDeliveryMethod availableDeliveryMethod);
 
 		/**
-		 * uri: http://schema.org/businessFunction
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BusinessFunction
+		 * @see <a href="http://schema.org/businessFunction">http://schema.org/businessFunction</a>
 		 */
 		public Container.BusinessFunction getBusinessFunction();
 		public void setBusinessFunction(Container.BusinessFunction businessFunction);
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Container.Category getCategory();
 		public void setCategory(Container.Category category);
 
 		/**
-		 * uri: http://schema.org/deliveryLeadTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryLeadTime
+		 * @see <a href="http://schema.org/deliveryLeadTime">http://schema.org/deliveryLeadTime</a>
 		 */
 		public Container.DeliveryLeadTime getDeliveryLeadTime();
 		public void setDeliveryLeadTime(Container.DeliveryLeadTime deliveryLeadTime);
 
 		/**
-		 * uri: http://schema.org/eligibleCustomerType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleCustomerType
+		 * @see <a href="http://schema.org/eligibleCustomerType">http://schema.org/eligibleCustomerType</a>
 		 */
 		public Container.EligibleCustomerType getEligibleCustomerType();
 		public void setEligibleCustomerType(Container.EligibleCustomerType eligibleCustomerType);
 
 		/**
-		 * uri: http://schema.org/eligibleDuration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleDuration
+		 * @see <a href="http://schema.org/eligibleDuration">http://schema.org/eligibleDuration</a>
 		 */
 		public Container.EligibleDuration getEligibleDuration();
 		public void setEligibleDuration(Container.EligibleDuration eligibleDuration);
 
 		/**
-		 * uri: http://schema.org/eligibleQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleQuantity
+		 * @see <a href="http://schema.org/eligibleQuantity">http://schema.org/eligibleQuantity</a>
 		 */
 		public Container.EligibleQuantity getEligibleQuantity();
 		public void setEligibleQuantity(Container.EligibleQuantity eligibleQuantity);
 
 		/**
-		 * uri: http://schema.org/eligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleRegion
+		 * @see <a href="http://schema.org/eligibleRegion">http://schema.org/eligibleRegion</a>
 		 */
 		public Container.EligibleRegion getEligibleRegion();
 		public void setEligibleRegion(Container.EligibleRegion eligibleRegion);
 
 		/**
-		 * uri: http://schema.org/eligibleTransactionVolume
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleTransactionVolume
+		 * @see <a href="http://schema.org/eligibleTransactionVolume">http://schema.org/eligibleTransactionVolume</a>
 		 */
 		public Container.EligibleTransactionVolume getEligibleTransactionVolume();
 		public void setEligibleTransactionVolume(Container.EligibleTransactionVolume eligibleTransactionVolume);
 
 		/**
-		 * uri: http://schema.org/gtin12
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin12
+		 * @see <a href="http://schema.org/gtin12">http://schema.org/gtin12</a>
 		 */
 		public Container.Gtin12 getGtin12();
 		public void setGtin12(Container.Gtin12 gtin12);
 
 		/**
-		 * uri: http://schema.org/gtin13
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin13
+		 * @see <a href="http://schema.org/gtin13">http://schema.org/gtin13</a>
 		 */
 		public Container.Gtin13 getGtin13();
 		public void setGtin13(Container.Gtin13 gtin13);
 
 		/**
-		 * uri: http://schema.org/gtin14
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin14
+		 * @see <a href="http://schema.org/gtin14">http://schema.org/gtin14</a>
 		 */
 		public Container.Gtin14 getGtin14();
 		public void setGtin14(Container.Gtin14 gtin14);
 
 		/**
-		 * uri: http://schema.org/gtin8
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin8
+		 * @see <a href="http://schema.org/gtin8">http://schema.org/gtin8</a>
 		 */
 		public Container.Gtin8 getGtin8();
 		public void setGtin8(Container.Gtin8 gtin8);
 
 		/**
-		 * uri: http://schema.org/includesObject
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IncludesObject
+		 * @see <a href="http://schema.org/includesObject">http://schema.org/includesObject</a>
 		 */
 		public Container.IncludesObject getIncludesObject();
 		public void setIncludesObject(Container.IncludesObject includesObject);
 
 		/**
-		 * uri: http://schema.org/ineligibleRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IneligibleRegion
+		 * @see <a href="http://schema.org/ineligibleRegion">http://schema.org/ineligibleRegion</a>
 		 */
 		public Container.IneligibleRegion getIneligibleRegion();
 		public void setIneligibleRegion(Container.IneligibleRegion ineligibleRegion);
 
 		/**
-		 * uri: http://schema.org/inventoryLevel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InventoryLevel
+		 * @see <a href="http://schema.org/inventoryLevel">http://schema.org/inventoryLevel</a>
 		 */
 		public Container.InventoryLevel getInventoryLevel();
 		public void setInventoryLevel(Container.InventoryLevel inventoryLevel);
 
 		/**
-		 * uri: http://schema.org/itemCondition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemCondition
+		 * @see <a href="http://schema.org/itemCondition">http://schema.org/itemCondition</a>
 		 */
 		public Container.ItemCondition getItemCondition();
 		public void setItemCondition(Container.ItemCondition itemCondition);
 
 		/**
-		 * uri: http://schema.org/itemOffered
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemOffered
+		 * @see <a href="http://schema.org/itemOffered">http://schema.org/itemOffered</a>
 		 */
 		public Container.ItemOffered getItemOffered();
 		public void setItemOffered(Container.ItemOffered itemOffered);
 
 		/**
-		 * uri: http://schema.org/mpn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Mpn
+		 * @see <a href="http://schema.org/mpn">http://schema.org/mpn</a>
 		 */
 		public Container.Mpn getMpn();
 		public void setMpn(Container.Mpn mpn);
 
 		/**
-		 * uri: http://schema.org/offeredBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OfferedBy
+		 * @see <a href="http://schema.org/offeredBy">http://schema.org/offeredBy</a>
 		 */
 		public Container.OfferedBy getOfferedBy();
 		public void setOfferedBy(Container.OfferedBy offeredBy);
 
 		/**
-		 * uri: http://schema.org/price
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Price
+		 * @see <a href="http://schema.org/price">http://schema.org/price</a>
 		 */
 		public Container.Price getPrice();
 		public void setPrice(Container.Price price);
 
 		/**
-		 * uri: http://schema.org/priceCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceCurrency
+		 * @see <a href="http://schema.org/priceCurrency">http://schema.org/priceCurrency</a>
 		 */
 		public Container.PriceCurrency getPriceCurrency();
 		public void setPriceCurrency(Container.PriceCurrency priceCurrency);
 
 		/**
-		 * uri: http://schema.org/priceSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceSpecification
+		 * @see <a href="http://schema.org/priceSpecification">http://schema.org/priceSpecification</a>
 		 */
 		public Container.PriceSpecification getPriceSpecification();
 		public void setPriceSpecification(Container.PriceSpecification priceSpecification);
 
 		/**
-		 * uri: http://schema.org/priceValidUntil
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceValidUntil
+		 * @see <a href="http://schema.org/priceValidUntil">http://schema.org/priceValidUntil</a>
 		 */
 		public Container.PriceValidUntil getPriceValidUntil();
 		public void setPriceValidUntil(Container.PriceValidUntil priceValidUntil);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/seller
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seller
+		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
 		 */
 		public Container.Seller getSeller();
 		public void setSeller(Container.Seller seller);
 
 		/**
-		 * uri: http://schema.org/serialNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SerialNumber
+		 * @see <a href="http://schema.org/serialNumber">http://schema.org/serialNumber</a>
 		 */
 		public Container.SerialNumber getSerialNumber();
 		public void setSerialNumber(Container.SerialNumber serialNumber);
 
 		/**
-		 * uri: http://schema.org/sku
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sku
+		 * @see <a href="http://schema.org/sku">http://schema.org/sku</a>
 		 */
 		public Container.Sku getSku();
 		public void setSku(Container.Sku sku);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
 
 		/**
-		 * uri: http://schema.org/warranty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Warranty
+		 * @see <a href="http://schema.org/warranty">http://schema.org/warranty</a>
 		 */
 		public Container.Warranty getWarranty();
 		public void setWarranty(Container.Warranty warranty);
@@ -10569,36 +9891,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface OpeningHoursSpecification extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/closes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Closes
+		 * @see <a href="http://schema.org/closes">http://schema.org/closes</a>
 		 */
 		public Container.Closes getCloses();
 		public void setCloses(Container.Closes closes);
 
 		/**
-		 * uri: http://schema.org/dayOfWeek
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DayOfWeek
+		 * @see <a href="http://schema.org/dayOfWeek">http://schema.org/dayOfWeek</a>
 		 */
 		public Container.DayOfWeek getDayOfWeek();
 		public void setDayOfWeek(Container.DayOfWeek dayOfWeek);
 
 		/**
-		 * uri: http://schema.org/opens
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Opens
+		 * @see <a href="http://schema.org/opens">http://schema.org/opens</a>
 		 */
 		public Container.Opens getOpens();
 		public void setOpens(Container.Opens opens);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
@@ -10621,141 +9938,121 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Order extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/acceptedOffer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcceptedOffer
+		 * @see <a href="http://schema.org/acceptedOffer">http://schema.org/acceptedOffer</a>
 		 */
 		public Container.AcceptedOffer getAcceptedOffer();
 		public void setAcceptedOffer(Container.AcceptedOffer acceptedOffer);
 
 		/**
-		 * uri: http://schema.org/billingAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BillingAddress
+		 * @see <a href="http://schema.org/billingAddress">http://schema.org/billingAddress</a>
 		 */
 		public Container.BillingAddress getBillingAddress();
 		public void setBillingAddress(Container.BillingAddress billingAddress);
 
 		/**
-		 * uri: http://schema.org/broker
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Broker
+		 * @see <a href="http://schema.org/broker">http://schema.org/broker</a>
 		 */
 		public Container.Broker getBroker();
 		public void setBroker(Container.Broker broker);
 
 		/**
-		 * uri: http://schema.org/confirmationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ConfirmationNumber
+		 * @see <a href="http://schema.org/confirmationNumber">http://schema.org/confirmationNumber</a>
 		 */
 		public Container.ConfirmationNumber getConfirmationNumber();
 		public void setConfirmationNumber(Container.ConfirmationNumber confirmationNumber);
 
 		/**
-		 * uri: http://schema.org/customer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Customer
+		 * @see <a href="http://schema.org/customer">http://schema.org/customer</a>
 		 */
 		public Container.Customer getCustomer();
 		public void setCustomer(Container.Customer customer);
 
 		/**
-		 * uri: http://schema.org/discount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Discount
+		 * @see <a href="http://schema.org/discount">http://schema.org/discount</a>
 		 */
 		public Container.Discount getDiscount();
 		public void setDiscount(Container.Discount discount);
 
 		/**
-		 * uri: http://schema.org/discountCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DiscountCode
+		 * @see <a href="http://schema.org/discountCode">http://schema.org/discountCode</a>
 		 */
 		public Container.DiscountCode getDiscountCode();
 		public void setDiscountCode(Container.DiscountCode discountCode);
 
 		/**
-		 * uri: http://schema.org/discountCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DiscountCurrency
+		 * @see <a href="http://schema.org/discountCurrency">http://schema.org/discountCurrency</a>
 		 */
 		public Container.DiscountCurrency getDiscountCurrency();
 		public void setDiscountCurrency(Container.DiscountCurrency discountCurrency);
 
 		/**
-		 * uri: http://schema.org/isGift
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsGift
+		 * @see <a href="http://schema.org/isGift">http://schema.org/isGift</a>
 		 */
 		public Container.IsGift getIsGift();
 		public void setIsGift(Container.IsGift isGift);
 
 		/**
-		 * uri: http://schema.org/orderDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderDate
+		 * @see <a href="http://schema.org/orderDate">http://schema.org/orderDate</a>
 		 */
 		public Container.OrderDate getOrderDate();
 		public void setOrderDate(Container.OrderDate orderDate);
 
 		/**
-		 * uri: http://schema.org/orderDelivery
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderDelivery
+		 * @see <a href="http://schema.org/orderDelivery">http://schema.org/orderDelivery</a>
 		 */
 		public Container.OrderDelivery getOrderDelivery();
 		public void setOrderDelivery(Container.OrderDelivery orderDelivery);
 
 		/**
-		 * uri: http://schema.org/orderNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderNumber
+		 * @see <a href="http://schema.org/orderNumber">http://schema.org/orderNumber</a>
 		 */
 		public Container.OrderNumber getOrderNumber();
 		public void setOrderNumber(Container.OrderNumber orderNumber);
 
 		/**
-		 * uri: http://schema.org/orderStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderStatus
+		 * @see <a href="http://schema.org/orderStatus">http://schema.org/orderStatus</a>
 		 */
 		public Container.OrderStatus getOrderStatus();
 		public void setOrderStatus(Container.OrderStatus orderStatus);
 
 		/**
-		 * uri: http://schema.org/orderedItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderedItem
+		 * @see <a href="http://schema.org/orderedItem">http://schema.org/orderedItem</a>
 		 */
 		public Container.OrderedItem getOrderedItem();
 		public void setOrderedItem(Container.OrderedItem orderedItem);
 
 		/**
-		 * uri: http://schema.org/partOfInvoice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfInvoice
+		 * @see <a href="http://schema.org/partOfInvoice">http://schema.org/partOfInvoice</a>
 		 */
 		public Container.PartOfInvoice getPartOfInvoice();
 		public void setPartOfInvoice(Container.PartOfInvoice partOfInvoice);
 
 		/**
-		 * uri: http://schema.org/paymentDueDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentDueDate
+		 * @see <a href="http://schema.org/paymentDueDate">http://schema.org/paymentDueDate</a>
 		 */
 		public Container.PaymentDueDate getPaymentDueDate();
 		public void setPaymentDueDate(Container.PaymentDueDate paymentDueDate);
 
 		/**
-		 * uri: http://schema.org/paymentMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentMethod
+		 * @see <a href="http://schema.org/paymentMethod">http://schema.org/paymentMethod</a>
 		 */
 		public Container.PaymentMethod getPaymentMethod();
 		public void setPaymentMethod(Container.PaymentMethod paymentMethod);
 
 		/**
-		 * uri: http://schema.org/paymentMethodId
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentMethodId
+		 * @see <a href="http://schema.org/paymentMethodId">http://schema.org/paymentMethodId</a>
 		 */
 		public Container.PaymentMethodId getPaymentMethodId();
 		public void setPaymentMethodId(Container.PaymentMethodId paymentMethodId);
 
 		/**
-		 * uri: http://schema.org/paymentUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PaymentUrl
+		 * @see <a href="http://schema.org/paymentUrl">http://schema.org/paymentUrl</a>
 		 */
 		public Container.PaymentUrl getPaymentUrl();
 		public void setPaymentUrl(Container.PaymentUrl paymentUrl);
 
 		/**
-		 * uri: http://schema.org/seller
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seller
+		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
 		 */
 		public Container.Seller getSeller();
 		public void setSeller(Container.Seller seller);
@@ -10776,8 +10073,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface OrderAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/deliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryMethod
+		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
 		 */
 		public Container.DeliveryMethod getDeliveryMethod();
 		public void setDeliveryMethod(Container.DeliveryMethod deliveryMethod);
@@ -10799,36 +10095,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface OrderItem extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/orderDelivery
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderDelivery
+		 * @see <a href="http://schema.org/orderDelivery">http://schema.org/orderDelivery</a>
 		 */
 		public Container.OrderDelivery getOrderDelivery();
 		public void setOrderDelivery(Container.OrderDelivery orderDelivery);
 
 		/**
-		 * uri: http://schema.org/orderItemNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderItemNumber
+		 * @see <a href="http://schema.org/orderItemNumber">http://schema.org/orderItemNumber</a>
 		 */
 		public Container.OrderItemNumber getOrderItemNumber();
 		public void setOrderItemNumber(Container.OrderItemNumber orderItemNumber);
 
 		/**
-		 * uri: http://schema.org/orderItemStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderItemStatus
+		 * @see <a href="http://schema.org/orderItemStatus">http://schema.org/orderItemStatus</a>
 		 */
 		public Container.OrderItemStatus getOrderItemStatus();
 		public void setOrderItemStatus(Container.OrderItemStatus orderItemStatus);
 
 		/**
-		 * uri: http://schema.org/orderQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderQuantity
+		 * @see <a href="http://schema.org/orderQuantity">http://schema.org/orderQuantity</a>
 		 */
 		public Container.OrderQuantity getOrderQuantity();
 		public void setOrderQuantity(Container.OrderQuantity orderQuantity);
 
 		/**
-		 * uri: http://schema.org/orderedItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OrderedItem
+		 * @see <a href="http://schema.org/orderedItem">http://schema.org/orderedItem</a>
 		 */
 		public Container.OrderedItem getOrderedItem();
 		public void setOrderedItem(Container.OrderedItem orderedItem);
@@ -10863,323 +10154,277 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Organization extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/actionableFeedbackPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ActionableFeedbackPolicy
+		 * @see <a href="http://schema.org/actionableFeedbackPolicy">http://schema.org/actionableFeedbackPolicy</a>
 		 */
 		public ActionableFeedbackPolicy getActionableFeedbackPolicy();
 		public void setActionableFeedbackPolicy(ActionableFeedbackPolicy actionableFeedbackPolicy);
 
 		/**
-		 * uri: http://schema.org/address
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Address
+		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
 		 */
 		public Container.Address getAddress();
 		public void setAddress(Container.Address address);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/alumni
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Alumni
+		 * @see <a href="http://schema.org/alumni">http://schema.org/alumni</a>
 		 */
 		public Container.Alumni getAlumni();
 		public void setAlumni(Container.Alumni alumni);
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/award
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Award
+		 * @see <a href="http://schema.org/award">http://schema.org/award</a>
 		 */
 		public Container.Award getAward();
 		public void setAward(Container.Award award);
 
 		/**
-		 * uri: http://schema.org/brand
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Brand
+		 * @see <a href="http://schema.org/brand">http://schema.org/brand</a>
 		 */
 		public Container.Brand getBrand();
 		public void setBrand(Container.Brand brand);
 
 		/**
-		 * uri: http://schema.org/contactPoint
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContactPoint
+		 * @see <a href="http://schema.org/contactPoint">http://schema.org/contactPoint</a>
 		 */
 		public Container.ContactPoint getContactPoint();
 		public void setContactPoint(Container.ContactPoint contactPoint);
 
 		/**
-		 * uri: http://schema.org/correctionsPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CorrectionsPolicy
+		 * @see <a href="http://schema.org/correctionsPolicy">http://schema.org/correctionsPolicy</a>
 		 */
 		public CorrectionsPolicy getCorrectionsPolicy();
 		public void setCorrectionsPolicy(CorrectionsPolicy correctionsPolicy);
 
 		/**
-		 * uri: http://schema.org/department
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Department
+		 * @see <a href="http://schema.org/department">http://schema.org/department</a>
 		 */
 		public Container.Department getDepartment();
 		public void setDepartment(Container.Department department);
 
 		/**
-		 * uri: http://schema.org/dissolutionDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DissolutionDate
+		 * @see <a href="http://schema.org/dissolutionDate">http://schema.org/dissolutionDate</a>
 		 */
 		public Container.DissolutionDate getDissolutionDate();
 		public void setDissolutionDate(Container.DissolutionDate dissolutionDate);
 
 		/**
-		 * uri: http://schema.org/diversityPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.DiversityPolicy
+		 * @see <a href="http://schema.org/diversityPolicy">http://schema.org/diversityPolicy</a>
 		 */
 		public DiversityPolicy getDiversityPolicy();
 		public void setDiversityPolicy(DiversityPolicy diversityPolicy);
 
 		/**
-		 * uri: http://schema.org/duns
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duns
+		 * @see <a href="http://schema.org/duns">http://schema.org/duns</a>
 		 */
 		public Container.Duns getDuns();
 		public void setDuns(Container.Duns duns);
 
 		/**
-		 * uri: http://schema.org/email
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Email
+		 * @see <a href="http://schema.org/email">http://schema.org/email</a>
 		 */
 		public Container.Email getEmail();
 		public void setEmail(Container.Email email);
 
 		/**
-		 * uri: http://schema.org/employee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Employee
+		 * @see <a href="http://schema.org/employee">http://schema.org/employee</a>
 		 */
 		public Container.Employee getEmployee();
 		public void setEmployee(Container.Employee employee);
 
 		/**
-		 * uri: http://schema.org/ethicsPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.EthicsPolicy
+		 * @see <a href="http://schema.org/ethicsPolicy">http://schema.org/ethicsPolicy</a>
 		 */
 		public EthicsPolicy getEthicsPolicy();
 		public void setEthicsPolicy(EthicsPolicy ethicsPolicy);
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
 
 		/**
-		 * uri: http://schema.org/faxNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FaxNumber
+		 * @see <a href="http://schema.org/faxNumber">http://schema.org/faxNumber</a>
 		 */
 		public Container.FaxNumber getFaxNumber();
 		public void setFaxNumber(Container.FaxNumber faxNumber);
 
 		/**
-		 * uri: http://schema.org/founder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Founder
+		 * @see <a href="http://schema.org/founder">http://schema.org/founder</a>
 		 */
 		public Container.Founder getFounder();
 		public void setFounder(Container.Founder founder);
 
 		/**
-		 * uri: http://schema.org/foundingDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FoundingDate
+		 * @see <a href="http://schema.org/foundingDate">http://schema.org/foundingDate</a>
 		 */
 		public Container.FoundingDate getFoundingDate();
 		public void setFoundingDate(Container.FoundingDate foundingDate);
 
 		/**
-		 * uri: http://schema.org/foundingLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FoundingLocation
+		 * @see <a href="http://schema.org/foundingLocation">http://schema.org/foundingLocation</a>
 		 */
 		public Container.FoundingLocation getFoundingLocation();
 		public void setFoundingLocation(Container.FoundingLocation foundingLocation);
 
 		/**
-		 * uri: http://schema.org/funder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Funder
+		 * @see <a href="http://schema.org/funder">http://schema.org/funder</a>
 		 */
 		public Container.Funder getFunder();
 		public void setFunder(Container.Funder funder);
 
 		/**
-		 * uri: http://schema.org/globalLocationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GlobalLocationNumber
+		 * @see <a href="http://schema.org/globalLocationNumber">http://schema.org/globalLocationNumber</a>
 		 */
 		public Container.GlobalLocationNumber getGlobalLocationNumber();
 		public void setGlobalLocationNumber(Container.GlobalLocationNumber globalLocationNumber);
 
 		/**
-		 * uri: http://schema.org/hasOfferCatalog
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasOfferCatalog
+		 * @see <a href="http://schema.org/hasOfferCatalog">http://schema.org/hasOfferCatalog</a>
 		 */
 		public Container.HasOfferCatalog getHasOfferCatalog();
 		public void setHasOfferCatalog(Container.HasOfferCatalog hasOfferCatalog);
 
 		/**
-		 * uri: http://schema.org/hasPOS
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasPOS
+		 * @see <a href="http://schema.org/hasPOS">http://schema.org/hasPOS</a>
 		 */
 		public Container.HasPOS getHasPOS();
 		public void setHasPOS(Container.HasPOS hasPOS);
 
 		/**
-		 * uri: http://schema.org/isicV4
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsicV4
+		 * @see <a href="http://schema.org/isicV4">http://schema.org/isicV4</a>
 		 */
 		public Container.IsicV4 getIsicV4();
 		public void setIsicV4(Container.IsicV4 isicV4);
 
 		/**
-		 * uri: http://schema.org/legalName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LegalName
+		 * @see <a href="http://schema.org/legalName">http://schema.org/legalName</a>
 		 */
 		public Container.LegalName getLegalName();
 		public void setLegalName(Container.LegalName legalName);
 
 		/**
-		 * uri: http://schema.org/leiCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LeiCode
+		 * @see <a href="http://schema.org/leiCode">http://schema.org/leiCode</a>
 		 */
 		public Container.LeiCode getLeiCode();
 		public void setLeiCode(Container.LeiCode leiCode);
 
 		/**
-		 * uri: http://schema.org/location
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Location
+		 * @see <a href="http://schema.org/location">http://schema.org/location</a>
 		 */
 		public Container.Location getLocation();
 		public void setLocation(Container.Location location);
 
 		/**
-		 * uri: http://schema.org/logo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Logo
+		 * @see <a href="http://schema.org/logo">http://schema.org/logo</a>
 		 */
 		public Container.Logo getLogo();
 		public void setLogo(Container.Logo logo);
 
 		/**
-		 * uri: http://schema.org/makesOffer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MakesOffer
+		 * @see <a href="http://schema.org/makesOffer">http://schema.org/makesOffer</a>
 		 */
 		public Container.MakesOffer getMakesOffer();
 		public void setMakesOffer(Container.MakesOffer makesOffer);
 
 		/**
-		 * uri: http://schema.org/member
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Member
+		 * @see <a href="http://schema.org/member">http://schema.org/member</a>
 		 */
 		public Container.Member getMember();
 		public void setMember(Container.Member member);
 
 		/**
-		 * uri: http://schema.org/memberOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MemberOf
+		 * @see <a href="http://schema.org/memberOf">http://schema.org/memberOf</a>
 		 */
 		public Container.MemberOf getMemberOf();
 		public void setMemberOf(Container.MemberOf memberOf);
 
 		/**
-		 * uri: http://schema.org/naics
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Naics
+		 * @see <a href="http://schema.org/naics">http://schema.org/naics</a>
 		 */
 		public Container.Naics getNaics();
 		public void setNaics(Container.Naics naics);
 
 		/**
-		 * uri: http://schema.org/numberOfEmployees
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEmployees
+		 * @see <a href="http://schema.org/numberOfEmployees">http://schema.org/numberOfEmployees</a>
 		 */
 		public Container.NumberOfEmployees getNumberOfEmployees();
 		public void setNumberOfEmployees(Container.NumberOfEmployees numberOfEmployees);
 
 		/**
-		 * uri: http://schema.org/owns
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Owns
+		 * @see <a href="http://schema.org/owns">http://schema.org/owns</a>
 		 */
 		public Container.Owns getOwns();
 		public void setOwns(Container.Owns owns);
 
 		/**
-		 * uri: http://schema.org/parentOrganization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ParentOrganization
+		 * @see <a href="http://schema.org/parentOrganization">http://schema.org/parentOrganization</a>
 		 */
 		public Container.ParentOrganization getParentOrganization();
 		public void setParentOrganization(Container.ParentOrganization parentOrganization);
 
 		/**
-		 * uri: http://schema.org/publishingPrinciples
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PublishingPrinciples
+		 * @see <a href="http://schema.org/publishingPrinciples">http://schema.org/publishingPrinciples</a>
 		 */
 		public Container.PublishingPrinciples getPublishingPrinciples();
 		public void setPublishingPrinciples(Container.PublishingPrinciples publishingPrinciples);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/seeks
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seeks
+		 * @see <a href="http://schema.org/seeks">http://schema.org/seeks</a>
 		 */
 		public Container.Seeks getSeeks();
 		public void setSeeks(Container.Seeks seeks);
 
 		/**
-		 * uri: http://schema.org/sponsor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sponsor
+		 * @see <a href="http://schema.org/sponsor">http://schema.org/sponsor</a>
 		 */
 		public Container.Sponsor getSponsor();
 		public void setSponsor(Container.Sponsor sponsor);
 
 		/**
-		 * uri: http://schema.org/subOrganization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubOrganization
+		 * @see <a href="http://schema.org/subOrganization">http://schema.org/subOrganization</a>
 		 */
 		public Container.SubOrganization getSubOrganization();
 		public void setSubOrganization(Container.SubOrganization subOrganization);
 
 		/**
-		 * uri: http://schema.org/taxID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TaxID
+		 * @see <a href="http://schema.org/taxID">http://schema.org/taxID</a>
 		 */
 		public Container.TaxID getTaxID();
 		public void setTaxID(Container.TaxID taxID);
 
 		/**
-		 * uri: http://schema.org/telephone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Telephone
+		 * @see <a href="http://schema.org/telephone">http://schema.org/telephone</a>
 		 */
 		public Container.Telephone getTelephone();
 		public void setTelephone(Container.Telephone telephone);
 
 		/**
-		 * uri: http://schema.org/unnamedSourcesPolicy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.UnnamedSourcesPolicy
+		 * @see <a href="http://schema.org/unnamedSourcesPolicy">http://schema.org/unnamedSourcesPolicy</a>
 		 */
 		public UnnamedSourcesPolicy getUnnamedSourcesPolicy();
 		public void setUnnamedSourcesPolicy(UnnamedSourcesPolicy unnamedSourcesPolicy);
 
 		/**
-		 * uri: http://schema.org/vatID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VatID
+		 * @see <a href="http://schema.org/vatID">http://schema.org/vatID</a>
 		 */
 		public Container.VatID getVatID();
 		public void setVatID(Container.VatID vatID);
@@ -11200,8 +10445,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface OrganizationRole extends Role, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberedPosition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberedPosition
+		 * @see <a href="http://schema.org/numberedPosition">http://schema.org/numberedPosition</a>
 		 */
 		public Container.NumberedPosition getNumberedPosition();
 		public void setNumberedPosition(Container.NumberedPosition numberedPosition);
@@ -11253,29 +10497,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface OwnershipInfo extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/acquiredFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcquiredFrom
+		 * @see <a href="http://schema.org/acquiredFrom">http://schema.org/acquiredFrom</a>
 		 */
 		public Container.AcquiredFrom getAcquiredFrom();
 		public void setAcquiredFrom(Container.AcquiredFrom acquiredFrom);
 
 		/**
-		 * uri: http://schema.org/ownedFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OwnedFrom
+		 * @see <a href="http://schema.org/ownedFrom">http://schema.org/ownedFrom</a>
 		 */
 		public Container.OwnedFrom getOwnedFrom();
 		public void setOwnedFrom(Container.OwnedFrom ownedFrom);
 
 		/**
-		 * uri: http://schema.org/ownedThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OwnedThrough
+		 * @see <a href="http://schema.org/ownedThrough">http://schema.org/ownedThrough</a>
 		 */
 		public Container.OwnedThrough getOwnedThrough();
 		public void setOwnedThrough(Container.OwnedThrough ownedThrough);
 
 		/**
-		 * uri: http://schema.org/typeOfGood
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TypeOfGood
+		 * @see <a href="http://schema.org/typeOfGood">http://schema.org/typeOfGood</a>
 		 */
 		public Container.TypeOfGood getTypeOfGood();
 		public void setTypeOfGood(Container.TypeOfGood typeOfGood);
@@ -11325,78 +10565,67 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ParcelDelivery extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/deliveryAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryAddress
+		 * @see <a href="http://schema.org/deliveryAddress">http://schema.org/deliveryAddress</a>
 		 */
 		public Container.DeliveryAddress getDeliveryAddress();
 		public void setDeliveryAddress(Container.DeliveryAddress deliveryAddress);
 
 		/**
-		 * uri: http://schema.org/deliveryStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryStatus
+		 * @see <a href="http://schema.org/deliveryStatus">http://schema.org/deliveryStatus</a>
 		 */
 		public Container.DeliveryStatus getDeliveryStatus();
 		public void setDeliveryStatus(Container.DeliveryStatus deliveryStatus);
 
 		/**
-		 * uri: http://schema.org/expectedArrivalFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExpectedArrivalFrom
+		 * @see <a href="http://schema.org/expectedArrivalFrom">http://schema.org/expectedArrivalFrom</a>
 		 */
 		public Container.ExpectedArrivalFrom getExpectedArrivalFrom();
 		public void setExpectedArrivalFrom(Container.ExpectedArrivalFrom expectedArrivalFrom);
 
 		/**
-		 * uri: http://schema.org/expectedArrivalUntil
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ExpectedArrivalUntil
+		 * @see <a href="http://schema.org/expectedArrivalUntil">http://schema.org/expectedArrivalUntil</a>
 		 */
 		public Container.ExpectedArrivalUntil getExpectedArrivalUntil();
 		public void setExpectedArrivalUntil(Container.ExpectedArrivalUntil expectedArrivalUntil);
 
 		/**
-		 * uri: http://schema.org/hasDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasDeliveryMethod
+		 * @see <a href="http://schema.org/hasDeliveryMethod">http://schema.org/hasDeliveryMethod</a>
 		 */
 		public Container.HasDeliveryMethod getHasDeliveryMethod();
 		public void setHasDeliveryMethod(Container.HasDeliveryMethod hasDeliveryMethod);
 
 		/**
-		 * uri: http://schema.org/itemShipped
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemShipped
+		 * @see <a href="http://schema.org/itemShipped">http://schema.org/itemShipped</a>
 		 */
 		public Container.ItemShipped getItemShipped();
 		public void setItemShipped(Container.ItemShipped itemShipped);
 
 		/**
-		 * uri: http://schema.org/originAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OriginAddress
+		 * @see <a href="http://schema.org/originAddress">http://schema.org/originAddress</a>
 		 */
 		public Container.OriginAddress getOriginAddress();
 		public void setOriginAddress(Container.OriginAddress originAddress);
 
 		/**
-		 * uri: http://schema.org/partOfOrder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartOfOrder
+		 * @see <a href="http://schema.org/partOfOrder">http://schema.org/partOfOrder</a>
 		 */
 		public Container.PartOfOrder getPartOfOrder();
 		public void setPartOfOrder(Container.PartOfOrder partOfOrder);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/trackingNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TrackingNumber
+		 * @see <a href="http://schema.org/trackingNumber">http://schema.org/trackingNumber</a>
 		 */
 		public Container.TrackingNumber getTrackingNumber();
 		public void setTrackingNumber(Container.TrackingNumber trackingNumber);
 
 		/**
-		 * uri: http://schema.org/trackingUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TrackingUrl
+		 * @see <a href="http://schema.org/trackingUrl">http://schema.org/trackingUrl</a>
 		 */
 		public Container.TrackingUrl getTrackingUrl();
 		public void setTrackingUrl(Container.TrackingUrl trackingUrl);
@@ -11435,15 +10664,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ParentAudience extends PeopleAudience, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/childMaxAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ChildMaxAge
+		 * @see <a href="http://schema.org/childMaxAge">http://schema.org/childMaxAge</a>
 		 */
 		public Container.ChildMaxAge getChildMaxAge();
 		public void setChildMaxAge(Container.ChildMaxAge childMaxAge);
 
 		/**
-		 * uri: http://schema.org/childMinAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ChildMinAge
+		 * @see <a href="http://schema.org/childMinAge">http://schema.org/childMinAge</a>
 		 */
 		public Container.ChildMinAge getChildMinAge();
 		public void setChildMinAge(Container.ChildMinAge childMinAge);
@@ -11508,15 +10735,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PayAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/purpose
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Purpose
+		 * @see <a href="http://schema.org/purpose">http://schema.org/purpose</a>
 		 */
 		public Purpose getPurpose();
 		public void setPurpose(Purpose purpose);
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -11538,22 +10763,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PaymentCard extends FinancialProduct, PaymentMethod, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/cashBack
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.CashBack
+		 * @see <a href="http://schema.org/cashBack">http://schema.org/cashBack</a>
 		 */
 		public CashBack getCashBack();
 		public void setCashBack(CashBack cashBack);
 
 		/**
-		 * uri: http://schema.org/contactlessPayment
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.ContactlessPayment
+		 * @see <a href="http://schema.org/contactlessPayment">http://schema.org/contactlessPayment</a>
 		 */
 		public ContactlessPayment getContactlessPayment();
 		public void setContactlessPayment(ContactlessPayment contactlessPayment);
 
 		/**
-		 * uri: http://schema.org/floorLimit
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.FloorLimit
+		 * @see <a href="http://schema.org/floorLimit">http://schema.org/floorLimit</a>
 		 */
 		public FloorLimit getFloorLimit();
 		public void setFloorLimit(FloorLimit floorLimit);
@@ -11574,15 +10796,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PaymentChargeSpecification extends PriceSpecification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/appliesToDeliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AppliesToDeliveryMethod
+		 * @see <a href="http://schema.org/appliesToDeliveryMethod">http://schema.org/appliesToDeliveryMethod</a>
 		 */
 		public Container.AppliesToDeliveryMethod getAppliesToDeliveryMethod();
 		public void setAppliesToDeliveryMethod(Container.AppliesToDeliveryMethod appliesToDeliveryMethod);
 
 		/**
-		 * uri: http://schema.org/appliesToPaymentMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AppliesToPaymentMethod
+		 * @see <a href="http://schema.org/appliesToPaymentMethod">http://schema.org/appliesToPaymentMethod</a>
 		 */
 		public Container.AppliesToPaymentMethod getAppliesToPaymentMethod();
 		public void setAppliesToPaymentMethod(Container.AppliesToPaymentMethod appliesToPaymentMethod);
@@ -11654,50 +10874,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PeopleAudience extends Audience, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/healthCondition
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HealthCondition
+		 * @see <a href="http://schema.org/healthCondition">http://schema.org/healthCondition</a>
 		 */
 		public HealthCondition getHealthCondition();
 		public void setHealthCondition(HealthCondition healthCondition);
 
 		/**
-		 * uri: http://schema.org/requiredGender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiredGender
+		 * @see <a href="http://schema.org/requiredGender">http://schema.org/requiredGender</a>
 		 */
 		public Container.RequiredGender getRequiredGender();
 		public void setRequiredGender(Container.RequiredGender requiredGender);
 
 		/**
-		 * uri: http://schema.org/requiredMaxAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiredMaxAge
+		 * @see <a href="http://schema.org/requiredMaxAge">http://schema.org/requiredMaxAge</a>
 		 */
 		public Container.RequiredMaxAge getRequiredMaxAge();
 		public void setRequiredMaxAge(Container.RequiredMaxAge requiredMaxAge);
 
 		/**
-		 * uri: http://schema.org/requiredMinAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RequiredMinAge
+		 * @see <a href="http://schema.org/requiredMinAge">http://schema.org/requiredMinAge</a>
 		 */
 		public Container.RequiredMinAge getRequiredMinAge();
 		public void setRequiredMinAge(Container.RequiredMinAge requiredMinAge);
 
 		/**
-		 * uri: http://schema.org/suggestedGender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuggestedGender
+		 * @see <a href="http://schema.org/suggestedGender">http://schema.org/suggestedGender</a>
 		 */
 		public Container.SuggestedGender getSuggestedGender();
 		public void setSuggestedGender(Container.SuggestedGender suggestedGender);
 
 		/**
-		 * uri: http://schema.org/suggestedMaxAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuggestedMaxAge
+		 * @see <a href="http://schema.org/suggestedMaxAge">http://schema.org/suggestedMaxAge</a>
 		 */
 		public Container.SuggestedMaxAge getSuggestedMaxAge();
 		public void setSuggestedMaxAge(Container.SuggestedMaxAge suggestedMaxAge);
 
 		/**
-		 * uri: http://schema.org/suggestedMinAge
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuggestedMinAge
+		 * @see <a href="http://schema.org/suggestedMinAge">http://schema.org/suggestedMinAge</a>
 		 */
 		public Container.SuggestedMinAge getSuggestedMinAge();
 		public void setSuggestedMinAge(Container.SuggestedMinAge suggestedMinAge);
@@ -11718,8 +10931,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PerformAction extends PlayAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/entertainmentBusiness
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EntertainmentBusiness
+		 * @see <a href="http://schema.org/entertainmentBusiness">http://schema.org/entertainmentBusiness</a>
 		 */
 		public Container.EntertainmentBusiness getEntertainmentBusiness();
 		public void setEntertainmentBusiness(Container.EntertainmentBusiness entertainmentBusiness);
@@ -11741,8 +10953,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PerformanceRole extends Role, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/characterName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CharacterName
+		 * @see <a href="http://schema.org/characterName">http://schema.org/characterName</a>
 		 */
 		public Container.CharacterName getCharacterName();
 		public void setCharacterName(Container.CharacterName characterName);
@@ -11812,50 +11023,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Permit extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/issuedBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IssuedBy
+		 * @see <a href="http://schema.org/issuedBy">http://schema.org/issuedBy</a>
 		 */
 		public Container.IssuedBy getIssuedBy();
 		public void setIssuedBy(Container.IssuedBy issuedBy);
 
 		/**
-		 * uri: http://schema.org/issuedThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IssuedThrough
+		 * @see <a href="http://schema.org/issuedThrough">http://schema.org/issuedThrough</a>
 		 */
 		public Container.IssuedThrough getIssuedThrough();
 		public void setIssuedThrough(Container.IssuedThrough issuedThrough);
 
 		/**
-		 * uri: http://schema.org/permitAudience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PermitAudience
+		 * @see <a href="http://schema.org/permitAudience">http://schema.org/permitAudience</a>
 		 */
 		public Container.PermitAudience getPermitAudience();
 		public void setPermitAudience(Container.PermitAudience permitAudience);
 
 		/**
-		 * uri: http://schema.org/validFor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFor
+		 * @see <a href="http://schema.org/validFor">http://schema.org/validFor</a>
 		 */
 		public Container.ValidFor getValidFor();
 		public void setValidFor(Container.ValidFor validFor);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validIn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidIn
+		 * @see <a href="http://schema.org/validIn">http://schema.org/validIn</a>
 		 */
 		public Container.ValidIn getValidIn();
 		public void setValidIn(Container.ValidIn validIn);
 
 		/**
-		 * uri: http://schema.org/validUntil
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidUntil
+		 * @see <a href="http://schema.org/validUntil">http://schema.org/validUntil</a>
 		 */
 		public Container.ValidUntil getValidUntil();
 		public void setValidUntil(Container.ValidUntil validUntil);
@@ -11876,372 +11080,319 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Person extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/additionalName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalName
+		 * @see <a href="http://schema.org/additionalName">http://schema.org/additionalName</a>
 		 */
 		public Container.AdditionalName getAdditionalName();
 		public void setAdditionalName(Container.AdditionalName additionalName);
 
 		/**
-		 * uri: http://schema.org/address
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Address
+		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
 		 */
 		public Container.Address getAddress();
 		public void setAddress(Container.Address address);
 
 		/**
-		 * uri: http://schema.org/affiliation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Affiliation
+		 * @see <a href="http://schema.org/affiliation">http://schema.org/affiliation</a>
 		 */
 		public Container.Affiliation getAffiliation();
 		public void setAffiliation(Container.Affiliation affiliation);
 
 		/**
-		 * uri: http://schema.org/alumniOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlumniOf
+		 * @see <a href="http://schema.org/alumniOf">http://schema.org/alumniOf</a>
 		 */
 		public Container.AlumniOf getAlumniOf();
 		public void setAlumniOf(Container.AlumniOf alumniOf);
 
 		/**
-		 * uri: http://schema.org/award
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Award
+		 * @see <a href="http://schema.org/award">http://schema.org/award</a>
 		 */
 		public Container.Award getAward();
 		public void setAward(Container.Award award);
 
 		/**
-		 * uri: http://schema.org/birthDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BirthDate
+		 * @see <a href="http://schema.org/birthDate">http://schema.org/birthDate</a>
 		 */
 		public Container.BirthDate getBirthDate();
 		public void setBirthDate(Container.BirthDate birthDate);
 
 		/**
-		 * uri: http://schema.org/birthPlace
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BirthPlace
+		 * @see <a href="http://schema.org/birthPlace">http://schema.org/birthPlace</a>
 		 */
 		public Container.BirthPlace getBirthPlace();
 		public void setBirthPlace(Container.BirthPlace birthPlace);
 
 		/**
-		 * uri: http://schema.org/brand
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Brand
+		 * @see <a href="http://schema.org/brand">http://schema.org/brand</a>
 		 */
 		public Container.Brand getBrand();
 		public void setBrand(Container.Brand brand);
 
 		/**
-		 * uri: http://schema.org/children
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Children
+		 * @see <a href="http://schema.org/children">http://schema.org/children</a>
 		 */
 		public Container.Children getChildren();
 		public void setChildren(Container.Children children);
 
 		/**
-		 * uri: http://schema.org/colleague
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Colleague
+		 * @see <a href="http://schema.org/colleague">http://schema.org/colleague</a>
 		 */
 		public Container.Colleague getColleague();
 		public void setColleague(Container.Colleague colleague);
 
 		/**
-		 * uri: http://schema.org/contactPoint
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContactPoint
+		 * @see <a href="http://schema.org/contactPoint">http://schema.org/contactPoint</a>
 		 */
 		public Container.ContactPoint getContactPoint();
 		public void setContactPoint(Container.ContactPoint contactPoint);
 
 		/**
-		 * uri: http://schema.org/deathDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeathDate
+		 * @see <a href="http://schema.org/deathDate">http://schema.org/deathDate</a>
 		 */
 		public Container.DeathDate getDeathDate();
 		public void setDeathDate(Container.DeathDate deathDate);
 
 		/**
-		 * uri: http://schema.org/deathPlace
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeathPlace
+		 * @see <a href="http://schema.org/deathPlace">http://schema.org/deathPlace</a>
 		 */
 		public Container.DeathPlace getDeathPlace();
 		public void setDeathPlace(Container.DeathPlace deathPlace);
 
 		/**
-		 * uri: http://schema.org/duns
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Duns
+		 * @see <a href="http://schema.org/duns">http://schema.org/duns</a>
 		 */
 		public Container.Duns getDuns();
 		public void setDuns(Container.Duns duns);
 
 		/**
-		 * uri: http://schema.org/email
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Email
+		 * @see <a href="http://schema.org/email">http://schema.org/email</a>
 		 */
 		public Container.Email getEmail();
 		public void setEmail(Container.Email email);
 
 		/**
-		 * uri: http://schema.org/familyName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FamilyName
+		 * @see <a href="http://schema.org/familyName">http://schema.org/familyName</a>
 		 */
 		public Container.FamilyName getFamilyName();
 		public void setFamilyName(Container.FamilyName familyName);
 
 		/**
-		 * uri: http://kyojo.org/schemaSpl/familyNameRuby
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FamilyNameRuby
+		 * @see <a href="http://kyojo.org/schemaSpl/familyNameRuby">http://kyojo.org/schemaSpl/familyNameRuby</a>
 		 */
 		public Container.FamilyNameRuby getFamilyNameRuby();
 		public void setFamilyNameRuby(Container.FamilyNameRuby familyNameRuby);
 
 		/**
-		 * uri: http://schema.org/faxNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FaxNumber
+		 * @see <a href="http://schema.org/faxNumber">http://schema.org/faxNumber</a>
 		 */
 		public Container.FaxNumber getFaxNumber();
 		public void setFaxNumber(Container.FaxNumber faxNumber);
 
 		/**
-		 * uri: http://schema.org/follows
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Follows
+		 * @see <a href="http://schema.org/follows">http://schema.org/follows</a>
 		 */
 		public Container.Follows getFollows();
 		public void setFollows(Container.Follows follows);
 
 		/**
-		 * uri: http://schema.org/funder
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Funder
+		 * @see <a href="http://schema.org/funder">http://schema.org/funder</a>
 		 */
 		public Container.Funder getFunder();
 		public void setFunder(Container.Funder funder);
 
 		/**
-		 * uri: http://schema.org/gender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gender
+		 * @see <a href="http://schema.org/gender">http://schema.org/gender</a>
 		 */
 		public Container.Gender getGender();
 		public void setGender(Container.Gender gender);
 
 		/**
-		 * uri: http://schema.org/givenName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GivenName
+		 * @see <a href="http://schema.org/givenName">http://schema.org/givenName</a>
 		 */
 		public Container.GivenName getGivenName();
 		public void setGivenName(Container.GivenName givenName);
 
 		/**
-		 * uri: http://kyojo.org/schemaSpl/givenNameRuby
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GivenNameRuby
+		 * @see <a href="http://kyojo.org/schemaSpl/givenNameRuby">http://kyojo.org/schemaSpl/givenNameRuby</a>
 		 */
 		public Container.GivenNameRuby getGivenNameRuby();
 		public void setGivenNameRuby(Container.GivenNameRuby givenNameRuby);
 
 		/**
-		 * uri: http://schema.org/globalLocationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GlobalLocationNumber
+		 * @see <a href="http://schema.org/globalLocationNumber">http://schema.org/globalLocationNumber</a>
 		 */
 		public Container.GlobalLocationNumber getGlobalLocationNumber();
 		public void setGlobalLocationNumber(Container.GlobalLocationNumber globalLocationNumber);
 
 		/**
-		 * uri: http://schema.org/hasOfferCatalog
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasOfferCatalog
+		 * @see <a href="http://schema.org/hasOfferCatalog">http://schema.org/hasOfferCatalog</a>
 		 */
 		public Container.HasOfferCatalog getHasOfferCatalog();
 		public void setHasOfferCatalog(Container.HasOfferCatalog hasOfferCatalog);
 
 		/**
-		 * uri: http://schema.org/hasPOS
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasPOS
+		 * @see <a href="http://schema.org/hasPOS">http://schema.org/hasPOS</a>
 		 */
 		public Container.HasPOS getHasPOS();
 		public void setHasPOS(Container.HasPOS hasPOS);
 
 		/**
-		 * uri: http://schema.org/height
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Height
+		 * @see <a href="http://schema.org/height">http://schema.org/height</a>
 		 */
 		public Container.Height getHeight();
 		public void setHeight(Container.Height height);
 
 		/**
-		 * uri: http://schema.org/homeLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HomeLocation
+		 * @see <a href="http://schema.org/homeLocation">http://schema.org/homeLocation</a>
 		 */
 		public Container.HomeLocation getHomeLocation();
 		public void setHomeLocation(Container.HomeLocation homeLocation);
 
 		/**
-		 * uri: http://schema.org/honorificPrefix
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HonorificPrefix
+		 * @see <a href="http://schema.org/honorificPrefix">http://schema.org/honorificPrefix</a>
 		 */
 		public Container.HonorificPrefix getHonorificPrefix();
 		public void setHonorificPrefix(Container.HonorificPrefix honorificPrefix);
 
 		/**
-		 * uri: http://schema.org/honorificSuffix
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HonorificSuffix
+		 * @see <a href="http://schema.org/honorificSuffix">http://schema.org/honorificSuffix</a>
 		 */
 		public Container.HonorificSuffix getHonorificSuffix();
 		public void setHonorificSuffix(Container.HonorificSuffix honorificSuffix);
 
 		/**
-		 * uri: http://schema.org/isicV4
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsicV4
+		 * @see <a href="http://schema.org/isicV4">http://schema.org/isicV4</a>
 		 */
 		public Container.IsicV4 getIsicV4();
 		public void setIsicV4(Container.IsicV4 isicV4);
 
 		/**
-		 * uri: http://schema.org/jobTitle
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.JobTitle
+		 * @see <a href="http://schema.org/jobTitle">http://schema.org/jobTitle</a>
 		 */
 		public Container.JobTitle getJobTitle();
 		public void setJobTitle(Container.JobTitle jobTitle);
 
 		/**
-		 * uri: http://schema.org/knows
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Knows
+		 * @see <a href="http://schema.org/knows">http://schema.org/knows</a>
 		 */
 		public Container.Knows getKnows();
 		public void setKnows(Container.Knows knows);
 
 		/**
-		 * uri: http://schema.org/makesOffer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MakesOffer
+		 * @see <a href="http://schema.org/makesOffer">http://schema.org/makesOffer</a>
 		 */
 		public Container.MakesOffer getMakesOffer();
 		public void setMakesOffer(Container.MakesOffer makesOffer);
 
 		/**
-		 * uri: http://schema.org/memberOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MemberOf
+		 * @see <a href="http://schema.org/memberOf">http://schema.org/memberOf</a>
 		 */
 		public Container.MemberOf getMemberOf();
 		public void setMemberOf(Container.MemberOf memberOf);
 
 		/**
-		 * uri: http://schema.org/naics
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Naics
+		 * @see <a href="http://schema.org/naics">http://schema.org/naics</a>
 		 */
 		public Container.Naics getNaics();
 		public void setNaics(Container.Naics naics);
 
 		/**
-		 * uri: http://schema.org/nationality
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Nationality
+		 * @see <a href="http://schema.org/nationality">http://schema.org/nationality</a>
 		 */
 		public Container.Nationality getNationality();
 		public void setNationality(Container.Nationality nationality);
 
 		/**
-		 * uri: http://schema.org/netWorth
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NetWorth
+		 * @see <a href="http://schema.org/netWorth">http://schema.org/netWorth</a>
 		 */
 		public Container.NetWorth getNetWorth();
 		public void setNetWorth(Container.NetWorth netWorth);
 
 		/**
-		 * uri: http://schema.org/owns
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Owns
+		 * @see <a href="http://schema.org/owns">http://schema.org/owns</a>
 		 */
 		public Container.Owns getOwns();
 		public void setOwns(Container.Owns owns);
 
 		/**
-		 * uri: http://schema.org/parent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Parent
+		 * @see <a href="http://schema.org/parent">http://schema.org/parent</a>
 		 */
 		public Container.Parent getParent();
 		public void setParent(Container.Parent parent);
 
 		/**
-		 * uri: http://schema.org/performerIn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PerformerIn
+		 * @see <a href="http://schema.org/performerIn">http://schema.org/performerIn</a>
 		 */
 		public Container.PerformerIn getPerformerIn();
 		public void setPerformerIn(Container.PerformerIn performerIn);
 
 		/**
-		 * uri: http://schema.org/publishingPrinciples
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PublishingPrinciples
+		 * @see <a href="http://schema.org/publishingPrinciples">http://schema.org/publishingPrinciples</a>
 		 */
 		public Container.PublishingPrinciples getPublishingPrinciples();
 		public void setPublishingPrinciples(Container.PublishingPrinciples publishingPrinciples);
 
 		/**
-		 * uri: http://schema.org/relatedTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RelatedTo
+		 * @see <a href="http://schema.org/relatedTo">http://schema.org/relatedTo</a>
 		 */
 		public Container.RelatedTo getRelatedTo();
 		public void setRelatedTo(Container.RelatedTo relatedTo);
 
 		/**
-		 * uri: http://schema.org/seeks
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Seeks
+		 * @see <a href="http://schema.org/seeks">http://schema.org/seeks</a>
 		 */
 		public Container.Seeks getSeeks();
 		public void setSeeks(Container.Seeks seeks);
 
 		/**
-		 * uri: http://schema.org/sibling
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sibling
+		 * @see <a href="http://schema.org/sibling">http://schema.org/sibling</a>
 		 */
 		public Container.Sibling getSibling();
 		public void setSibling(Container.Sibling sibling);
 
 		/**
-		 * uri: http://schema.org/sponsor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sponsor
+		 * @see <a href="http://schema.org/sponsor">http://schema.org/sponsor</a>
 		 */
 		public Container.Sponsor getSponsor();
 		public void setSponsor(Container.Sponsor sponsor);
 
 		/**
-		 * uri: http://schema.org/spouse
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Spouse
+		 * @see <a href="http://schema.org/spouse">http://schema.org/spouse</a>
 		 */
 		public Container.Spouse getSpouse();
 		public void setSpouse(Container.Spouse spouse);
 
 		/**
-		 * uri: http://schema.org/taxID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TaxID
+		 * @see <a href="http://schema.org/taxID">http://schema.org/taxID</a>
 		 */
 		public Container.TaxID getTaxID();
 		public void setTaxID(Container.TaxID taxID);
 
 		/**
-		 * uri: http://schema.org/telephone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Telephone
+		 * @see <a href="http://schema.org/telephone">http://schema.org/telephone</a>
 		 */
 		public Container.Telephone getTelephone();
 		public void setTelephone(Container.Telephone telephone);
 
 		/**
-		 * uri: http://schema.org/vatID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VatID
+		 * @see <a href="http://schema.org/vatID">http://schema.org/vatID</a>
 		 */
 		public Container.VatID getVatID();
 		public void setVatID(Container.VatID vatID);
 
 		/**
-		 * uri: http://schema.org/weight
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Weight
+		 * @see <a href="http://schema.org/weight">http://schema.org/weight</a>
 		 */
 		public Container.Weight getWeight();
 		public void setWeight(Container.Weight weight);
 
 		/**
-		 * uri: http://schema.org/workLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkLocation
+		 * @see <a href="http://schema.org/workLocation">http://schema.org/workLocation</a>
 		 */
 		public Container.WorkLocation getWorkLocation();
 		public void setWorkLocation(Container.WorkLocation workLocation);
 
 		/**
-		 * uri: http://schema.org/worksFor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorksFor
+		 * @see <a href="http://schema.org/worksFor">http://schema.org/worksFor</a>
 		 */
 		public Container.WorksFor getWorksFor();
 		public void setWorksFor(Container.WorksFor worksFor);
@@ -12318,22 +11469,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Physician extends MedicalBusiness, MedicalOrganization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableService
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.AvailableService
+		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
 		 */
 		public AvailableService getAvailableService();
 		public void setAvailableService(AvailableService availableService);
 
 		/**
-		 * uri: http://schema.org/hospitalAffiliation
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.HospitalAffiliation
+		 * @see <a href="http://schema.org/hospitalAffiliation">http://schema.org/hospitalAffiliation</a>
 		 */
 		public HospitalAffiliation getHospitalAffiliation();
 		public void setHospitalAffiliation(HospitalAffiliation hospitalAffiliation);
 
 		/**
-		 * uri: http://schema.org/medicalSpecialty
-		 * class: org.kyojo.schemaOrg.m3n3.healthLifesci.Container.MedicalSpecialty
+		 * @see <a href="http://schema.org/medicalSpecialty">http://schema.org/medicalSpecialty</a>
 		 */
 		public MedicalSpecialty getMedicalSpecialty();
 		public void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
@@ -12354,232 +11502,199 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Place extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/additionalProperty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty
+		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
 		 */
 		public Container.AdditionalProperty getAdditionalProperty();
 		public void setAdditionalProperty(Container.AdditionalProperty additionalProperty);
 
 		/**
-		 * uri: http://schema.org/address
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Address
+		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
 		 */
 		public Container.Address getAddress();
 		public void setAddress(Container.Address address);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/amenityFeature
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AmenityFeature
+		 * @see <a href="http://schema.org/amenityFeature">http://schema.org/amenityFeature</a>
 		 */
 		public Container.AmenityFeature getAmenityFeature();
 		public void setAmenityFeature(Container.AmenityFeature amenityFeature);
 
 		/**
-		 * uri: http://schema.org/branchCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BranchCode
+		 * @see <a href="http://schema.org/branchCode">http://schema.org/branchCode</a>
 		 */
 		public Container.BranchCode getBranchCode();
 		public void setBranchCode(Container.BranchCode branchCode);
 
 		/**
-		 * uri: http://schema.org/containedInPlace
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContainedInPlace
+		 * @see <a href="http://schema.org/containedInPlace">http://schema.org/containedInPlace</a>
 		 */
 		public Container.ContainedInPlace getContainedInPlace();
 		public void setContainedInPlace(Container.ContainedInPlace containedInPlace);
 
 		/**
-		 * uri: http://schema.org/containsPlace
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContainsPlace
+		 * @see <a href="http://schema.org/containsPlace">http://schema.org/containsPlace</a>
 		 */
 		public Container.ContainsPlace getContainsPlace();
 		public void setContainsPlace(Container.ContainsPlace containsPlace);
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
 
 		/**
-		 * uri: http://schema.org/faxNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FaxNumber
+		 * @see <a href="http://schema.org/faxNumber">http://schema.org/faxNumber</a>
 		 */
 		public Container.FaxNumber getFaxNumber();
 		public void setFaxNumber(Container.FaxNumber faxNumber);
 
 		/**
-		 * uri: http://schema.org/geo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Geo
+		 * @see <a href="http://schema.org/geo">http://schema.org/geo</a>
 		 */
 		public Container.Geo getGeo();
 		public void setGeo(Container.Geo geo);
 
 		/**
-		 * uri: http://schema.org/geospatiallyContains
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyContains
+		 * @see <a href="http://schema.org/geospatiallyContains">http://schema.org/geospatiallyContains</a>
 		 */
 		public GeospatiallyContains getGeospatiallyContains();
 		public void setGeospatiallyContains(GeospatiallyContains geospatiallyContains);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCoveredBy
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCoveredBy
+		 * @see <a href="http://schema.org/geospatiallyCoveredBy">http://schema.org/geospatiallyCoveredBy</a>
 		 */
 		public GeospatiallyCoveredBy getGeospatiallyCoveredBy();
 		public void setGeospatiallyCoveredBy(GeospatiallyCoveredBy geospatiallyCoveredBy);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCovers
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCovers
+		 * @see <a href="http://schema.org/geospatiallyCovers">http://schema.org/geospatiallyCovers</a>
 		 */
 		public GeospatiallyCovers getGeospatiallyCovers();
 		public void setGeospatiallyCovers(GeospatiallyCovers geospatiallyCovers);
 
 		/**
-		 * uri: http://schema.org/geospatiallyCrosses
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyCrosses
+		 * @see <a href="http://schema.org/geospatiallyCrosses">http://schema.org/geospatiallyCrosses</a>
 		 */
 		public GeospatiallyCrosses getGeospatiallyCrosses();
 		public void setGeospatiallyCrosses(GeospatiallyCrosses geospatiallyCrosses);
 
 		/**
-		 * uri: http://schema.org/geospatiallyDisjoint
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyDisjoint
+		 * @see <a href="http://schema.org/geospatiallyDisjoint">http://schema.org/geospatiallyDisjoint</a>
 		 */
 		public GeospatiallyDisjoint getGeospatiallyDisjoint();
 		public void setGeospatiallyDisjoint(GeospatiallyDisjoint geospatiallyDisjoint);
 
 		/**
-		 * uri: http://schema.org/geospatiallyEquals
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyEquals
+		 * @see <a href="http://schema.org/geospatiallyEquals">http://schema.org/geospatiallyEquals</a>
 		 */
 		public GeospatiallyEquals getGeospatiallyEquals();
 		public void setGeospatiallyEquals(GeospatiallyEquals geospatiallyEquals);
 
 		/**
-		 * uri: http://schema.org/geospatiallyIntersects
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyIntersects
+		 * @see <a href="http://schema.org/geospatiallyIntersects">http://schema.org/geospatiallyIntersects</a>
 		 */
 		public GeospatiallyIntersects getGeospatiallyIntersects();
 		public void setGeospatiallyIntersects(GeospatiallyIntersects geospatiallyIntersects);
 
 		/**
-		 * uri: http://schema.org/geospatiallyOverlaps
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyOverlaps
+		 * @see <a href="http://schema.org/geospatiallyOverlaps">http://schema.org/geospatiallyOverlaps</a>
 		 */
 		public GeospatiallyOverlaps getGeospatiallyOverlaps();
 		public void setGeospatiallyOverlaps(GeospatiallyOverlaps geospatiallyOverlaps);
 
 		/**
-		 * uri: http://schema.org/geospatiallyTouches
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyTouches
+		 * @see <a href="http://schema.org/geospatiallyTouches">http://schema.org/geospatiallyTouches</a>
 		 */
 		public GeospatiallyTouches getGeospatiallyTouches();
 		public void setGeospatiallyTouches(GeospatiallyTouches geospatiallyTouches);
 
 		/**
-		 * uri: http://schema.org/geospatiallyWithin
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.GeospatiallyWithin
+		 * @see <a href="http://schema.org/geospatiallyWithin">http://schema.org/geospatiallyWithin</a>
 		 */
 		public GeospatiallyWithin getGeospatiallyWithin();
 		public void setGeospatiallyWithin(GeospatiallyWithin geospatiallyWithin);
 
 		/**
-		 * uri: http://schema.org/globalLocationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GlobalLocationNumber
+		 * @see <a href="http://schema.org/globalLocationNumber">http://schema.org/globalLocationNumber</a>
 		 */
 		public Container.GlobalLocationNumber getGlobalLocationNumber();
 		public void setGlobalLocationNumber(Container.GlobalLocationNumber globalLocationNumber);
 
 		/**
-		 * uri: http://schema.org/hasMap
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasMap
+		 * @see <a href="http://schema.org/hasMap">http://schema.org/hasMap</a>
 		 */
 		public Container.HasMap getHasMap();
 		public void setHasMap(Container.HasMap hasMap);
 
 		/**
-		 * uri: http://schema.org/isAccessibleForFree
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsAccessibleForFree
+		 * @see <a href="http://schema.org/isAccessibleForFree">http://schema.org/isAccessibleForFree</a>
 		 */
 		public Container.IsAccessibleForFree getIsAccessibleForFree();
 		public void setIsAccessibleForFree(Container.IsAccessibleForFree isAccessibleForFree);
 
 		/**
-		 * uri: http://schema.org/isicV4
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsicV4
+		 * @see <a href="http://schema.org/isicV4">http://schema.org/isicV4</a>
 		 */
 		public Container.IsicV4 getIsicV4();
 		public void setIsicV4(Container.IsicV4 isicV4);
 
 		/**
-		 * uri: http://schema.org/logo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Logo
+		 * @see <a href="http://schema.org/logo">http://schema.org/logo</a>
 		 */
 		public Container.Logo getLogo();
 		public void setLogo(Container.Logo logo);
 
 		/**
-		 * uri: http://schema.org/maximumAttendeeCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaximumAttendeeCapacity
+		 * @see <a href="http://schema.org/maximumAttendeeCapacity">http://schema.org/maximumAttendeeCapacity</a>
 		 */
 		public Container.MaximumAttendeeCapacity getMaximumAttendeeCapacity();
 		public void setMaximumAttendeeCapacity(Container.MaximumAttendeeCapacity maximumAttendeeCapacity);
 
 		/**
-		 * uri: http://schema.org/openingHoursSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OpeningHoursSpecification
+		 * @see <a href="http://schema.org/openingHoursSpecification">http://schema.org/openingHoursSpecification</a>
 		 */
 		public Container.OpeningHoursSpecification getOpeningHoursSpecification();
 		public void setOpeningHoursSpecification(Container.OpeningHoursSpecification openingHoursSpecification);
 
 		/**
-		 * uri: http://schema.org/photo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Photo
+		 * @see <a href="http://schema.org/photo">http://schema.org/photo</a>
 		 */
 		public Container.Photo getPhoto();
 		public void setPhoto(Container.Photo photo);
 
 		/**
-		 * uri: http://schema.org/publicAccess
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PublicAccess
+		 * @see <a href="http://schema.org/publicAccess">http://schema.org/publicAccess</a>
 		 */
 		public Container.PublicAccess getPublicAccess();
 		public void setPublicAccess(Container.PublicAccess publicAccess);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/smokingAllowed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SmokingAllowed
+		 * @see <a href="http://schema.org/smokingAllowed">http://schema.org/smokingAllowed</a>
 		 */
 		public Container.SmokingAllowed getSmokingAllowed();
 		public void setSmokingAllowed(Container.SmokingAllowed smokingAllowed);
 
 		/**
-		 * uri: http://schema.org/specialOpeningHoursSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SpecialOpeningHoursSpecification
+		 * @see <a href="http://schema.org/specialOpeningHoursSpecification">http://schema.org/specialOpeningHoursSpecification</a>
 		 */
 		public Container.SpecialOpeningHoursSpecification getSpecialOpeningHoursSpecification();
 		public void setSpecialOpeningHoursSpecification(Container.SpecialOpeningHoursSpecification specialOpeningHoursSpecification);
 
 		/**
-		 * uri: http://schema.org/telephone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Telephone
+		 * @see <a href="http://schema.org/telephone">http://schema.org/telephone</a>
 		 */
 		public Container.Telephone getTelephone();
 		public void setTelephone(Container.Telephone telephone);
@@ -12616,8 +11731,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PlanAction extends OrganizeAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/scheduledTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ScheduledTime
+		 * @see <a href="http://schema.org/scheduledTime">http://schema.org/scheduledTime</a>
 		 */
 		public Container.ScheduledTime getScheduledTime();
 		public void setScheduledTime(Container.ScheduledTime scheduledTime);
@@ -12646,15 +11760,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PlayAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/event
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Event
+		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
 		 */
 		public Container.Event getEvent();
 		public void setEvent(Container.Event event);
@@ -12744,50 +11856,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PostalAddress extends ContactPoint, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/addressCountry
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddressCountry
+		 * @see <a href="http://schema.org/addressCountry">http://schema.org/addressCountry</a>
 		 */
 		public Container.AddressCountry getAddressCountry();
 		public void setAddressCountry(Container.AddressCountry addressCountry);
 
 		/**
-		 * uri: http://schema.org/addressLocality
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddressLocality
+		 * @see <a href="http://schema.org/addressLocality">http://schema.org/addressLocality</a>
 		 */
 		public Container.AddressLocality getAddressLocality();
 		public void setAddressLocality(Container.AddressLocality addressLocality);
 
 		/**
-		 * uri: http://schema.org/addressRegion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AddressRegion
+		 * @see <a href="http://schema.org/addressRegion">http://schema.org/addressRegion</a>
 		 */
 		public Container.AddressRegion getAddressRegion();
 		public void setAddressRegion(Container.AddressRegion addressRegion);
 
 		/**
-		 * uri: http://kyojo.org/schemaSpl/buildingAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BuildingAddress
+		 * @see <a href="http://kyojo.org/schemaSpl/buildingAddress">http://kyojo.org/schemaSpl/buildingAddress</a>
 		 */
 		public Container.BuildingAddress getBuildingAddress();
 		public void setBuildingAddress(Container.BuildingAddress buildingAddress);
 
 		/**
-		 * uri: http://schema.org/postOfficeBoxNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PostOfficeBoxNumber
+		 * @see <a href="http://schema.org/postOfficeBoxNumber">http://schema.org/postOfficeBoxNumber</a>
 		 */
 		public Container.PostOfficeBoxNumber getPostOfficeBoxNumber();
 		public void setPostOfficeBoxNumber(Container.PostOfficeBoxNumber postOfficeBoxNumber);
 
 		/**
-		 * uri: http://schema.org/postalCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PostalCode
+		 * @see <a href="http://schema.org/postalCode">http://schema.org/postalCode</a>
 		 */
 		public Container.PostalCode getPostalCode();
 		public void setPostalCode(Container.PostalCode postalCode);
 
 		/**
-		 * uri: http://schema.org/streetAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StreetAddress
+		 * @see <a href="http://schema.org/streetAddress">http://schema.org/streetAddress</a>
 		 */
 		public Container.StreetAddress getStreetAddress();
 		public void setStreetAddress(Container.StreetAddress streetAddress);
@@ -12856,64 +11961,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PriceSpecification extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/eligibleQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleQuantity
+		 * @see <a href="http://schema.org/eligibleQuantity">http://schema.org/eligibleQuantity</a>
 		 */
 		public Container.EligibleQuantity getEligibleQuantity();
 		public void setEligibleQuantity(Container.EligibleQuantity eligibleQuantity);
 
 		/**
-		 * uri: http://schema.org/eligibleTransactionVolume
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EligibleTransactionVolume
+		 * @see <a href="http://schema.org/eligibleTransactionVolume">http://schema.org/eligibleTransactionVolume</a>
 		 */
 		public Container.EligibleTransactionVolume getEligibleTransactionVolume();
 		public void setEligibleTransactionVolume(Container.EligibleTransactionVolume eligibleTransactionVolume);
 
 		/**
-		 * uri: http://schema.org/maxPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaxPrice
+		 * @see <a href="http://schema.org/maxPrice">http://schema.org/maxPrice</a>
 		 */
 		public Container.MaxPrice getMaxPrice();
 		public void setMaxPrice(Container.MaxPrice maxPrice);
 
 		/**
-		 * uri: http://schema.org/minPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinPrice
+		 * @see <a href="http://schema.org/minPrice">http://schema.org/minPrice</a>
 		 */
 		public Container.MinPrice getMinPrice();
 		public void setMinPrice(Container.MinPrice minPrice);
 
 		/**
-		 * uri: http://schema.org/price
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Price
+		 * @see <a href="http://schema.org/price">http://schema.org/price</a>
 		 */
 		public Container.Price getPrice();
 		public void setPrice(Container.Price price);
 
 		/**
-		 * uri: http://schema.org/priceCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceCurrency
+		 * @see <a href="http://schema.org/priceCurrency">http://schema.org/priceCurrency</a>
 		 */
 		public Container.PriceCurrency getPriceCurrency();
 		public void setPriceCurrency(Container.PriceCurrency priceCurrency);
 
 		/**
-		 * uri: http://schema.org/validFrom
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidFrom
+		 * @see <a href="http://schema.org/validFrom">http://schema.org/validFrom</a>
 		 */
 		public Container.ValidFrom getValidFrom();
 		public void setValidFrom(Container.ValidFrom validFrom);
 
 		/**
-		 * uri: http://schema.org/validThrough
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValidThrough
+		 * @see <a href="http://schema.org/validThrough">http://schema.org/validThrough</a>
 		 */
 		public Container.ValidThrough getValidThrough();
 		public void setValidThrough(Container.ValidThrough validThrough);
 
 		/**
-		 * uri: http://schema.org/valueAddedTaxIncluded
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueAddedTaxIncluded
+		 * @see <a href="http://schema.org/valueAddedTaxIncluded">http://schema.org/valueAddedTaxIncluded</a>
 		 */
 		public Container.ValueAddedTaxIncluded getValueAddedTaxIncluded();
 		public void setValueAddedTaxIncluded(Container.ValueAddedTaxIncluded valueAddedTaxIncluded);
@@ -12935,225 +12031,193 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Product extends SchemaOrgClass, Thing {
 
 		/**
-		 * uri: http://schema.org/additionalProperty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty
+		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
 		 */
 		public Container.AdditionalProperty getAdditionalProperty();
 		public void setAdditionalProperty(Container.AdditionalProperty additionalProperty);
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/award
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Award
+		 * @see <a href="http://schema.org/award">http://schema.org/award</a>
 		 */
 		public Container.Award getAward();
 		public void setAward(Container.Award award);
 
 		/**
-		 * uri: http://schema.org/brand
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Brand
+		 * @see <a href="http://schema.org/brand">http://schema.org/brand</a>
 		 */
 		public Container.Brand getBrand();
 		public void setBrand(Container.Brand brand);
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Container.Category getCategory();
 		public void setCategory(Container.Category category);
 
 		/**
-		 * uri: http://schema.org/color
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Color
+		 * @see <a href="http://schema.org/color">http://schema.org/color</a>
 		 */
 		public Container.Color getColor();
 		public void setColor(Container.Color color);
 
 		/**
-		 * uri: http://schema.org/depth
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Depth
+		 * @see <a href="http://schema.org/depth">http://schema.org/depth</a>
 		 */
 		public Container.Depth getDepth();
 		public void setDepth(Container.Depth depth);
 
 		/**
-		 * uri: http://schema.org/gtin12
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin12
+		 * @see <a href="http://schema.org/gtin12">http://schema.org/gtin12</a>
 		 */
 		public Container.Gtin12 getGtin12();
 		public void setGtin12(Container.Gtin12 gtin12);
 
 		/**
-		 * uri: http://schema.org/gtin13
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin13
+		 * @see <a href="http://schema.org/gtin13">http://schema.org/gtin13</a>
 		 */
 		public Container.Gtin13 getGtin13();
 		public void setGtin13(Container.Gtin13 gtin13);
 
 		/**
-		 * uri: http://schema.org/gtin14
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin14
+		 * @see <a href="http://schema.org/gtin14">http://schema.org/gtin14</a>
 		 */
 		public Container.Gtin14 getGtin14();
 		public void setGtin14(Container.Gtin14 gtin14);
 
 		/**
-		 * uri: http://schema.org/gtin8
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Gtin8
+		 * @see <a href="http://schema.org/gtin8">http://schema.org/gtin8</a>
 		 */
 		public Container.Gtin8 getGtin8();
 		public void setGtin8(Container.Gtin8 gtin8);
 
 		/**
-		 * uri: http://schema.org/height
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Height
+		 * @see <a href="http://schema.org/height">http://schema.org/height</a>
 		 */
 		public Container.Height getHeight();
 		public void setHeight(Container.Height height);
 
 		/**
-		 * uri: http://schema.org/isAccessoryOrSparePartFor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsAccessoryOrSparePartFor
+		 * @see <a href="http://schema.org/isAccessoryOrSparePartFor">http://schema.org/isAccessoryOrSparePartFor</a>
 		 */
 		public Container.IsAccessoryOrSparePartFor getIsAccessoryOrSparePartFor();
 		public void setIsAccessoryOrSparePartFor(Container.IsAccessoryOrSparePartFor isAccessoryOrSparePartFor);
 
 		/**
-		 * uri: http://schema.org/isConsumableFor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsConsumableFor
+		 * @see <a href="http://schema.org/isConsumableFor">http://schema.org/isConsumableFor</a>
 		 */
 		public Container.IsConsumableFor getIsConsumableFor();
 		public void setIsConsumableFor(Container.IsConsumableFor isConsumableFor);
 
 		/**
-		 * uri: http://schema.org/isRelatedTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsRelatedTo
+		 * @see <a href="http://schema.org/isRelatedTo">http://schema.org/isRelatedTo</a>
 		 */
 		public Container.IsRelatedTo getIsRelatedTo();
 		public void setIsRelatedTo(Container.IsRelatedTo isRelatedTo);
 
 		/**
-		 * uri: http://schema.org/isSimilarTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsSimilarTo
+		 * @see <a href="http://schema.org/isSimilarTo">http://schema.org/isSimilarTo</a>
 		 */
 		public Container.IsSimilarTo getIsSimilarTo();
 		public void setIsSimilarTo(Container.IsSimilarTo isSimilarTo);
 
 		/**
-		 * uri: http://schema.org/itemCondition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemCondition
+		 * @see <a href="http://schema.org/itemCondition">http://schema.org/itemCondition</a>
 		 */
 		public Container.ItemCondition getItemCondition();
 		public void setItemCondition(Container.ItemCondition itemCondition);
 
 		/**
-		 * uri: http://schema.org/logo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Logo
+		 * @see <a href="http://schema.org/logo">http://schema.org/logo</a>
 		 */
 		public Container.Logo getLogo();
 		public void setLogo(Container.Logo logo);
 
 		/**
-		 * uri: http://schema.org/manufacturer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Manufacturer
+		 * @see <a href="http://schema.org/manufacturer">http://schema.org/manufacturer</a>
 		 */
 		public Container.Manufacturer getManufacturer();
 		public void setManufacturer(Container.Manufacturer manufacturer);
 
 		/**
-		 * uri: http://schema.org/material
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Material
+		 * @see <a href="http://schema.org/material">http://schema.org/material</a>
 		 */
 		public Container.Material getMaterial();
 		public void setMaterial(Container.Material material);
 
 		/**
-		 * uri: http://schema.org/model
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Model
+		 * @see <a href="http://schema.org/model">http://schema.org/model</a>
 		 */
 		public Container.Model getModel();
 		public void setModel(Container.Model model);
 
 		/**
-		 * uri: http://schema.org/mpn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Mpn
+		 * @see <a href="http://schema.org/mpn">http://schema.org/mpn</a>
 		 */
 		public Container.Mpn getMpn();
 		public void setMpn(Container.Mpn mpn);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
 
 		/**
-		 * uri: http://schema.org/productID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductID
+		 * @see <a href="http://schema.org/productID">http://schema.org/productID</a>
 		 */
 		public Container.ProductID getProductID();
 		public void setProductID(Container.ProductID productID);
 
 		/**
-		 * uri: http://schema.org/productionDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionDate
+		 * @see <a href="http://schema.org/productionDate">http://schema.org/productionDate</a>
 		 */
 		public Container.ProductionDate getProductionDate();
 		public void setProductionDate(Container.ProductionDate productionDate);
 
 		/**
-		 * uri: http://schema.org/purchaseDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PurchaseDate
+		 * @see <a href="http://schema.org/purchaseDate">http://schema.org/purchaseDate</a>
 		 */
 		public Container.PurchaseDate getPurchaseDate();
 		public void setPurchaseDate(Container.PurchaseDate purchaseDate);
 
 		/**
-		 * uri: http://schema.org/releaseDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReleaseDate
+		 * @see <a href="http://schema.org/releaseDate">http://schema.org/releaseDate</a>
 		 */
 		public Container.ReleaseDate getReleaseDate();
 		public void setReleaseDate(Container.ReleaseDate releaseDate);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/sku
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sku
+		 * @see <a href="http://schema.org/sku">http://schema.org/sku</a>
 		 */
 		public Container.Sku getSku();
 		public void setSku(Container.Sku sku);
 
 		/**
-		 * uri: http://schema.org/weight
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Weight
+		 * @see <a href="http://schema.org/weight">http://schema.org/weight</a>
 		 */
 		public Container.Weight getWeight();
 		public void setWeight(Container.Weight weight);
 
 		/**
-		 * uri: http://schema.org/width
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Width
+		 * @see <a href="http://schema.org/width">http://schema.org/width</a>
 		 */
 		public Container.Width getWidth();
 		public void setWidth(Container.Width width);
@@ -13175,22 +12239,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ProductModel extends Product, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/isVariantOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsVariantOf
+		 * @see <a href="http://schema.org/isVariantOf">http://schema.org/isVariantOf</a>
 		 */
 		public Container.IsVariantOf getIsVariantOf();
 		public void setIsVariantOf(Container.IsVariantOf isVariantOf);
 
 		/**
-		 * uri: http://schema.org/predecessorOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PredecessorOf
+		 * @see <a href="http://schema.org/predecessorOf">http://schema.org/predecessorOf</a>
 		 */
 		public Container.PredecessorOf getPredecessorOf();
 		public void setPredecessorOf(Container.PredecessorOf predecessorOf);
 
 		/**
-		 * uri: http://schema.org/successorOf
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuccessorOf
+		 * @see <a href="http://schema.org/successorOf">http://schema.org/successorOf</a>
 		 */
 		public Container.SuccessorOf getSuccessorOf();
 		public void setSuccessorOf(Container.SuccessorOf successorOf);
@@ -13263,29 +12324,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ProgramMembership extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/hostingOrganization
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HostingOrganization
+		 * @see <a href="http://schema.org/hostingOrganization">http://schema.org/hostingOrganization</a>
 		 */
 		public Container.HostingOrganization getHostingOrganization();
 		public void setHostingOrganization(Container.HostingOrganization hostingOrganization);
 
 		/**
-		 * uri: http://schema.org/member
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Member
+		 * @see <a href="http://schema.org/member">http://schema.org/member</a>
 		 */
 		public Container.Member getMember();
 		public void setMember(Container.Member member);
 
 		/**
-		 * uri: http://schema.org/membershipNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MembershipNumber
+		 * @see <a href="http://schema.org/membershipNumber">http://schema.org/membershipNumber</a>
 		 */
 		public Container.MembershipNumber getMembershipNumber();
 		public void setMembershipNumber(Container.MembershipNumber membershipNumber);
 
 		/**
-		 * uri: http://schema.org/programName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProgramName
+		 * @see <a href="http://schema.org/programName">http://schema.org/programName</a>
 		 */
 		public Container.ProgramName getProgramName();
 		public void setProgramName(Container.ProgramName programName);
@@ -13311,57 +12368,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PropertyValue extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/maxValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaxValue
+		 * @see <a href="http://schema.org/maxValue">http://schema.org/maxValue</a>
 		 */
 		public Container.MaxValue getMaxValue();
 		public void setMaxValue(Container.MaxValue maxValue);
 
 		/**
-		 * uri: http://schema.org/measurementTechnique
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.MeasurementTechnique
+		 * @see <a href="http://schema.org/measurementTechnique">http://schema.org/measurementTechnique</a>
 		 */
 		public MeasurementTechnique getMeasurementTechnique();
 		public void setMeasurementTechnique(MeasurementTechnique measurementTechnique);
 
 		/**
-		 * uri: http://schema.org/minValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinValue
+		 * @see <a href="http://schema.org/minValue">http://schema.org/minValue</a>
 		 */
 		public Container.MinValue getMinValue();
 		public void setMinValue(Container.MinValue minValue);
 
 		/**
-		 * uri: http://schema.org/propertyID
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PropertyID
+		 * @see <a href="http://schema.org/propertyID">http://schema.org/propertyID</a>
 		 */
 		public Container.PropertyID getPropertyID();
 		public void setPropertyID(Container.PropertyID propertyID);
 
 		/**
-		 * uri: http://schema.org/unitCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitCode
+		 * @see <a href="http://schema.org/unitCode">http://schema.org/unitCode</a>
 		 */
 		public Container.UnitCode getUnitCode();
 		public void setUnitCode(Container.UnitCode unitCode);
 
 		/**
-		 * uri: http://schema.org/unitText
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitText
+		 * @see <a href="http://schema.org/unitText">http://schema.org/unitText</a>
 		 */
 		public Container.UnitText getUnitText();
 		public void setUnitText(Container.UnitText unitText);
 
 		/**
-		 * uri: http://schema.org/value
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Value
+		 * @see <a href="http://schema.org/value">http://schema.org/value</a>
 		 */
 		public Container.Value getValue();
 		public void setValue(Container.Value value);
 
 		/**
-		 * uri: http://schema.org/valueReference
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueReference
+		 * @see <a href="http://schema.org/valueReference">http://schema.org/valueReference</a>
 		 */
 		public Container.ValueReference getValueReference();
 		public void setValueReference(Container.ValueReference valueReference);
@@ -13381,78 +12430,67 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PropertyValueSpecification extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/defaultValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DefaultValue
+		 * @see <a href="http://schema.org/defaultValue">http://schema.org/defaultValue</a>
 		 */
 		public Container.DefaultValue getDefaultValue();
 		public void setDefaultValue(Container.DefaultValue defaultValue);
 
 		/**
-		 * uri: http://schema.org/maxValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaxValue
+		 * @see <a href="http://schema.org/maxValue">http://schema.org/maxValue</a>
 		 */
 		public Container.MaxValue getMaxValue();
 		public void setMaxValue(Container.MaxValue maxValue);
 
 		/**
-		 * uri: http://schema.org/minValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinValue
+		 * @see <a href="http://schema.org/minValue">http://schema.org/minValue</a>
 		 */
 		public Container.MinValue getMinValue();
 		public void setMinValue(Container.MinValue minValue);
 
 		/**
-		 * uri: http://schema.org/multipleValues
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MultipleValues
+		 * @see <a href="http://schema.org/multipleValues">http://schema.org/multipleValues</a>
 		 */
 		public Container.MultipleValues getMultipleValues();
 		public void setMultipleValues(Container.MultipleValues multipleValues);
 
 		/**
-		 * uri: http://schema.org/readonlyValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReadonlyValue
+		 * @see <a href="http://schema.org/readonlyValue">http://schema.org/readonlyValue</a>
 		 */
 		public Container.ReadonlyValue getReadonlyValue();
 		public void setReadonlyValue(Container.ReadonlyValue readonlyValue);
 
 		/**
-		 * uri: http://schema.org/stepValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StepValue
+		 * @see <a href="http://schema.org/stepValue">http://schema.org/stepValue</a>
 		 */
 		public Container.StepValue getStepValue();
 		public void setStepValue(Container.StepValue stepValue);
 
 		/**
-		 * uri: http://schema.org/valueMaxLength
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueMaxLength
+		 * @see <a href="http://schema.org/valueMaxLength">http://schema.org/valueMaxLength</a>
 		 */
 		public Container.ValueMaxLength getValueMaxLength();
 		public void setValueMaxLength(Container.ValueMaxLength valueMaxLength);
 
 		/**
-		 * uri: http://schema.org/valueMinLength
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueMinLength
+		 * @see <a href="http://schema.org/valueMinLength">http://schema.org/valueMinLength</a>
 		 */
 		public Container.ValueMinLength getValueMinLength();
 		public void setValueMinLength(Container.ValueMinLength valueMinLength);
 
 		/**
-		 * uri: http://schema.org/valueName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueName
+		 * @see <a href="http://schema.org/valueName">http://schema.org/valueName</a>
 		 */
 		public Container.ValueName getValueName();
 		public void setValueName(Container.ValueName valueName);
 
 		/**
-		 * uri: http://schema.org/valuePattern
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValuePattern
+		 * @see <a href="http://schema.org/valuePattern">http://schema.org/valuePattern</a>
 		 */
 		public Container.ValuePattern getValuePattern();
 		public void setValuePattern(Container.ValuePattern valuePattern);
 
 		/**
-		 * uri: http://schema.org/valueRequired
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueRequired
+		 * @see <a href="http://schema.org/valueRequired">http://schema.org/valueRequired</a>
 		 */
 		public Container.ValueRequired getValueRequired();
 		public void setValueRequired(Container.ValueRequired valueRequired);
@@ -13489,22 +12527,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PublicationEvent extends Event, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/isAccessibleForFree
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsAccessibleForFree
+		 * @see <a href="http://schema.org/isAccessibleForFree">http://schema.org/isAccessibleForFree</a>
 		 */
 		public Container.IsAccessibleForFree getIsAccessibleForFree();
 		public void setIsAccessibleForFree(Container.IsAccessibleForFree isAccessibleForFree);
 
 		/**
-		 * uri: http://schema.org/publishedBy
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.PublishedBy
+		 * @see <a href="http://schema.org/publishedBy">http://schema.org/publishedBy</a>
 		 */
 		public PublishedBy getPublishedBy();
 		public void setPublishedBy(PublishedBy publishedBy);
 
 		/**
-		 * uri: http://schema.org/publishedOn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PublishedOn
+		 * @see <a href="http://schema.org/publishedOn">http://schema.org/publishedOn</a>
 		 */
 		public Container.PublishedOn getPublishedOn();
 		public void setPublishedOn(Container.PublishedOn publishedOn);
@@ -13529,29 +12564,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PublicationIssue extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/issueNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IssueNumber
+		 * @see <a href="http://schema.org/issueNumber">http://schema.org/issueNumber</a>
 		 */
 		public Container.IssueNumber getIssueNumber();
 		public void setIssueNumber(Container.IssueNumber issueNumber);
 
 		/**
-		 * uri: http://schema.org/pageEnd
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageEnd
+		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
 		 */
 		public Container.PageEnd getPageEnd();
 		public void setPageEnd(Container.PageEnd pageEnd);
 
 		/**
-		 * uri: http://schema.org/pageStart
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageStart
+		 * @see <a href="http://schema.org/pageStart">http://schema.org/pageStart</a>
 		 */
 		public Container.PageStart getPageStart();
 		public void setPageStart(Container.PageStart pageStart);
 
 		/**
-		 * uri: http://schema.org/pagination
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Pagination
+		 * @see <a href="http://schema.org/pagination">http://schema.org/pagination</a>
 		 */
 		public Container.Pagination getPagination();
 		public void setPagination(Container.Pagination pagination);
@@ -13576,29 +12607,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface PublicationVolume extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/pageEnd
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageEnd
+		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
 		 */
 		public Container.PageEnd getPageEnd();
 		public void setPageEnd(Container.PageEnd pageEnd);
 
 		/**
-		 * uri: http://schema.org/pageStart
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PageStart
+		 * @see <a href="http://schema.org/pageStart">http://schema.org/pageStart</a>
 		 */
 		public Container.PageStart getPageStart();
 		public void setPageStart(Container.PageStart pageStart);
 
 		/**
-		 * uri: http://schema.org/pagination
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Pagination
+		 * @see <a href="http://schema.org/pagination">http://schema.org/pagination</a>
 		 */
 		public Container.Pagination getPagination();
 		public void setPagination(Container.Pagination pagination);
 
 		/**
-		 * uri: http://schema.org/volumeNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VolumeNumber
+		 * @see <a href="http://schema.org/volumeNumber">http://schema.org/volumeNumber</a>
 		 */
 		public Container.VolumeNumber getVolumeNumber();
 		public void setVolumeNumber(Container.VolumeNumber volumeNumber);
@@ -13636,57 +12663,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface QualitativeValue extends Enumeration, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/additionalProperty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty
+		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
 		 */
 		public Container.AdditionalProperty getAdditionalProperty();
 		public void setAdditionalProperty(Container.AdditionalProperty additionalProperty);
 
 		/**
-		 * uri: http://schema.org/equal
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Equal
+		 * @see <a href="http://schema.org/equal">http://schema.org/equal</a>
 		 */
 		public Container.Equal getEqual();
 		public void setEqual(Container.Equal equal);
 
 		/**
-		 * uri: http://schema.org/greater
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Greater
+		 * @see <a href="http://schema.org/greater">http://schema.org/greater</a>
 		 */
 		public Container.Greater getGreater();
 		public void setGreater(Container.Greater greater);
 
 		/**
-		 * uri: http://schema.org/greaterOrEqual
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GreaterOrEqual
+		 * @see <a href="http://schema.org/greaterOrEqual">http://schema.org/greaterOrEqual</a>
 		 */
 		public Container.GreaterOrEqual getGreaterOrEqual();
 		public void setGreaterOrEqual(Container.GreaterOrEqual greaterOrEqual);
 
 		/**
-		 * uri: http://schema.org/lesser
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Lesser
+		 * @see <a href="http://schema.org/lesser">http://schema.org/lesser</a>
 		 */
 		public Container.Lesser getLesser();
 		public void setLesser(Container.Lesser lesser);
 
 		/**
-		 * uri: http://schema.org/lesserOrEqual
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LesserOrEqual
+		 * @see <a href="http://schema.org/lesserOrEqual">http://schema.org/lesserOrEqual</a>
 		 */
 		public Container.LesserOrEqual getLesserOrEqual();
 		public void setLesserOrEqual(Container.LesserOrEqual lesserOrEqual);
 
 		/**
-		 * uri: http://schema.org/nonEqual
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NonEqual
+		 * @see <a href="http://schema.org/nonEqual">http://schema.org/nonEqual</a>
 		 */
 		public Container.NonEqual getNonEqual();
 		public void setNonEqual(Container.NonEqual nonEqual);
 
 		/**
-		 * uri: http://schema.org/valueReference
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueReference
+		 * @see <a href="http://schema.org/valueReference">http://schema.org/valueReference</a>
 		 */
 		public Container.ValueReference getValueReference();
 		public void setValueReference(Container.ValueReference valueReference);
@@ -13707,50 +12726,43 @@ public interface Clazz extends SchemaOrgClass {
 	public interface QuantitativeValue extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/additionalProperty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalProperty
+		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
 		 */
 		public Container.AdditionalProperty getAdditionalProperty();
 		public void setAdditionalProperty(Container.AdditionalProperty additionalProperty);
 
 		/**
-		 * uri: http://schema.org/maxValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MaxValue
+		 * @see <a href="http://schema.org/maxValue">http://schema.org/maxValue</a>
 		 */
 		public Container.MaxValue getMaxValue();
 		public void setMaxValue(Container.MaxValue maxValue);
 
 		/**
-		 * uri: http://schema.org/minValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MinValue
+		 * @see <a href="http://schema.org/minValue">http://schema.org/minValue</a>
 		 */
 		public Container.MinValue getMinValue();
 		public void setMinValue(Container.MinValue minValue);
 
 		/**
-		 * uri: http://schema.org/unitCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitCode
+		 * @see <a href="http://schema.org/unitCode">http://schema.org/unitCode</a>
 		 */
 		public Container.UnitCode getUnitCode();
 		public void setUnitCode(Container.UnitCode unitCode);
 
 		/**
-		 * uri: http://schema.org/unitText
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitText
+		 * @see <a href="http://schema.org/unitText">http://schema.org/unitText</a>
 		 */
 		public Container.UnitText getUnitText();
 		public void setUnitText(Container.UnitText unitText);
 
 		/**
-		 * uri: http://schema.org/value
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Value
+		 * @see <a href="http://schema.org/value">http://schema.org/value</a>
 		 */
 		public Container.Value getValue();
 		public void setValue(Container.Value value);
 
 		/**
-		 * uri: http://schema.org/valueReference
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ValueReference
+		 * @see <a href="http://schema.org/valueReference">http://schema.org/valueReference</a>
 		 */
 		public Container.ValueReference getValueReference();
 		public void setValueReference(Container.ValueReference valueReference);
@@ -13788,36 +12800,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Question extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/acceptedAnswer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AcceptedAnswer
+		 * @see <a href="http://schema.org/acceptedAnswer">http://schema.org/acceptedAnswer</a>
 		 */
 		public Container.AcceptedAnswer getAcceptedAnswer();
 		public void setAcceptedAnswer(Container.AcceptedAnswer acceptedAnswer);
 
 		/**
-		 * uri: http://schema.org/answerCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AnswerCount
+		 * @see <a href="http://schema.org/answerCount">http://schema.org/answerCount</a>
 		 */
 		public Container.AnswerCount getAnswerCount();
 		public void setAnswerCount(Container.AnswerCount answerCount);
 
 		/**
-		 * uri: http://schema.org/downvoteCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DownvoteCount
+		 * @see <a href="http://schema.org/downvoteCount">http://schema.org/downvoteCount</a>
 		 */
 		public Container.DownvoteCount getDownvoteCount();
 		public void setDownvoteCount(Container.DownvoteCount downvoteCount);
 
 		/**
-		 * uri: http://schema.org/suggestedAnswer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuggestedAnswer
+		 * @see <a href="http://schema.org/suggestedAnswer">http://schema.org/suggestedAnswer</a>
 		 */
 		public Container.SuggestedAnswer getSuggestedAnswer();
 		public void setSuggestedAnswer(Container.SuggestedAnswer suggestedAnswer);
 
 		/**
-		 * uri: http://schema.org/upvoteCount
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UpvoteCount
+		 * @see <a href="http://schema.org/upvoteCount">http://schema.org/upvoteCount</a>
 		 */
 		public Container.UpvoteCount getUpvoteCount();
 		public void setUpvoteCount(Container.UpvoteCount upvoteCount);
@@ -13931,64 +12938,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface RadioSeries extends CreativeWorkSeries, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/containsSeason
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContainsSeason
+		 * @see <a href="http://schema.org/containsSeason">http://schema.org/containsSeason</a>
 		 */
 		public Container.ContainsSeason getContainsSeason();
 		public void setContainsSeason(Container.ContainsSeason containsSeason);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/episode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Episode
+		 * @see <a href="http://schema.org/episode">http://schema.org/episode</a>
 		 */
 		public Container.Episode getEpisode();
 		public void setEpisode(Container.Episode episode);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/numberOfEpisodes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEpisodes
+		 * @see <a href="http://schema.org/numberOfEpisodes">http://schema.org/numberOfEpisodes</a>
 		 */
 		public Container.NumberOfEpisodes getNumberOfEpisodes();
 		public void setNumberOfEpisodes(Container.NumberOfEpisodes numberOfEpisodes);
 
 		/**
-		 * uri: http://schema.org/numberOfSeasons
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfSeasons
+		 * @see <a href="http://schema.org/numberOfSeasons">http://schema.org/numberOfSeasons</a>
 		 */
 		public Container.NumberOfSeasons getNumberOfSeasons();
 		public void setNumberOfSeasons(Container.NumberOfSeasons numberOfSeasons);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -14023,29 +13021,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Rating extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/author
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Author
+		 * @see <a href="http://schema.org/author">http://schema.org/author</a>
 		 */
 		public Container.Author getAuthor();
 		public void setAuthor(Container.Author author);
 
 		/**
-		 * uri: http://schema.org/bestRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BestRating
+		 * @see <a href="http://schema.org/bestRating">http://schema.org/bestRating</a>
 		 */
 		public Container.BestRating getBestRating();
 		public void setBestRating(Container.BestRating bestRating);
 
 		/**
-		 * uri: http://schema.org/ratingValue
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RatingValue
+		 * @see <a href="http://schema.org/ratingValue">http://schema.org/ratingValue</a>
 		 */
 		public Container.RatingValue getRatingValue();
 		public void setRatingValue(Container.RatingValue ratingValue);
 
 		/**
-		 * uri: http://schema.org/worstRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorstRating
+		 * @see <a href="http://schema.org/worstRating">http://schema.org/worstRating</a>
 		 */
 		public Container.WorstRating getWorstRating();
 		public void setWorstRating(Container.WorstRating worstRating);
@@ -14117,15 +13111,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReceiveAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/deliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryMethod
+		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
 		 */
 		public Container.DeliveryMethod getDeliveryMethod();
 		public void setDeliveryMethod(Container.DeliveryMethod deliveryMethod);
 
 		/**
-		 * uri: http://schema.org/sender
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sender
+		 * @see <a href="http://schema.org/sender">http://schema.org/sender</a>
 		 */
 		public Container.Sender getSender();
 		public void setSender(Container.Sender sender);
@@ -14150,64 +13142,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Recipe extends HowTo, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/cookTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CookTime
+		 * @see <a href="http://schema.org/cookTime">http://schema.org/cookTime</a>
 		 */
 		public Container.CookTime getCookTime();
 		public void setCookTime(Container.CookTime cookTime);
 
 		/**
-		 * uri: http://schema.org/cookingMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CookingMethod
+		 * @see <a href="http://schema.org/cookingMethod">http://schema.org/cookingMethod</a>
 		 */
 		public Container.CookingMethod getCookingMethod();
 		public void setCookingMethod(Container.CookingMethod cookingMethod);
 
 		/**
-		 * uri: http://schema.org/nutrition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Nutrition
+		 * @see <a href="http://schema.org/nutrition">http://schema.org/nutrition</a>
 		 */
 		public Container.Nutrition getNutrition();
 		public void setNutrition(Container.Nutrition nutrition);
 
 		/**
-		 * uri: http://schema.org/recipeCategory
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecipeCategory
+		 * @see <a href="http://schema.org/recipeCategory">http://schema.org/recipeCategory</a>
 		 */
 		public Container.RecipeCategory getRecipeCategory();
 		public void setRecipeCategory(Container.RecipeCategory recipeCategory);
 
 		/**
-		 * uri: http://schema.org/recipeCuisine
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecipeCuisine
+		 * @see <a href="http://schema.org/recipeCuisine">http://schema.org/recipeCuisine</a>
 		 */
 		public Container.RecipeCuisine getRecipeCuisine();
 		public void setRecipeCuisine(Container.RecipeCuisine recipeCuisine);
 
 		/**
-		 * uri: http://schema.org/recipeIngredient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecipeIngredient
+		 * @see <a href="http://schema.org/recipeIngredient">http://schema.org/recipeIngredient</a>
 		 */
 		public Container.RecipeIngredient getRecipeIngredient();
 		public void setRecipeIngredient(Container.RecipeIngredient recipeIngredient);
 
 		/**
-		 * uri: http://schema.org/recipeInstructions
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecipeInstructions
+		 * @see <a href="http://schema.org/recipeInstructions">http://schema.org/recipeInstructions</a>
 		 */
 		public Container.RecipeInstructions getRecipeInstructions();
 		public void setRecipeInstructions(Container.RecipeInstructions recipeInstructions);
 
 		/**
-		 * uri: http://schema.org/recipeYield
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RecipeYield
+		 * @see <a href="http://schema.org/recipeYield">http://schema.org/recipeYield</a>
 		 */
 		public Container.RecipeYield getRecipeYield();
 		public void setRecipeYield(Container.RecipeYield recipeYield);
 
 		/**
-		 * uri: http://schema.org/suitableForDiet
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SuitableForDiet
+		 * @see <a href="http://schema.org/suitableForDiet">http://schema.org/suitableForDiet</a>
 		 */
 		public Container.SuitableForDiet getSuitableForDiet();
 		public void setSuitableForDiet(Container.SuitableForDiet suitableForDiet);
@@ -14286,15 +13269,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface RentAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/landlord
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Landlord
+		 * @see <a href="http://schema.org/landlord">http://schema.org/landlord</a>
 		 */
 		public Container.Landlord getLandlord();
 		public void setLandlord(Container.Landlord landlord);
 
 		/**
-		 * uri: http://schema.org/realEstateAgent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RealEstateAgent
+		 * @see <a href="http://schema.org/realEstateAgent">http://schema.org/realEstateAgent</a>
 		 */
 		public Container.RealEstateAgent getRealEstateAgent();
 		public void setRealEstateAgent(Container.RealEstateAgent realEstateAgent);
@@ -14317,29 +13298,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface RentalCarReservation extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dropoffLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DropoffLocation
+		 * @see <a href="http://schema.org/dropoffLocation">http://schema.org/dropoffLocation</a>
 		 */
 		public Container.DropoffLocation getDropoffLocation();
 		public void setDropoffLocation(Container.DropoffLocation dropoffLocation);
 
 		/**
-		 * uri: http://schema.org/dropoffTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DropoffTime
+		 * @see <a href="http://schema.org/dropoffTime">http://schema.org/dropoffTime</a>
 		 */
 		public Container.DropoffTime getDropoffTime();
 		public void setDropoffTime(Container.DropoffTime dropoffTime);
 
 		/**
-		 * uri: http://schema.org/pickupLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PickupLocation
+		 * @see <a href="http://schema.org/pickupLocation">http://schema.org/pickupLocation</a>
 		 */
 		public Container.PickupLocation getPickupLocation();
 		public void setPickupLocation(Container.PickupLocation pickupLocation);
 
 		/**
-		 * uri: http://schema.org/pickupTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PickupTime
+		 * @see <a href="http://schema.org/pickupTime">http://schema.org/pickupTime</a>
 		 */
 		public Container.PickupTime getPickupTime();
 		public void setPickupTime(Container.PickupTime pickupTime);
@@ -14360,15 +13337,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReplaceAction extends SchemaOrgClass, UpdateAction {
 
 		/**
-		 * uri: http://schema.org/replacee
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Replacee
+		 * @see <a href="http://schema.org/replacee">http://schema.org/replacee</a>
 		 */
 		public Container.Replacee getReplacee();
 		public void setReplacee(Container.Replacee replacee);
 
 		/**
-		 * uri: http://schema.org/replacer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Replacer
+		 * @see <a href="http://schema.org/replacer">http://schema.org/replacer</a>
 		 */
 		public Container.Replacer getReplacer();
 		public void setReplacer(Container.Replacer replacer);
@@ -14394,8 +13369,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReplyAction extends CommunicateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/resultComment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ResultComment
+		 * @see <a href="http://schema.org/resultComment">http://schema.org/resultComment</a>
 		 */
 		public Container.ResultComment getResultComment();
 		public void setResultComment(Container.ResultComment resultComment);
@@ -14416,8 +13390,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Report extends Article, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/reportNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReportNumber
+		 * @see <a href="http://schema.org/reportNumber">http://schema.org/reportNumber</a>
 		 */
 		public Container.ReportNumber getReportNumber();
 		public void setReportNumber(Container.ReportNumber reportNumber);
@@ -14443,85 +13416,73 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Reservation extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/bookingTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BookingTime
+		 * @see <a href="http://schema.org/bookingTime">http://schema.org/bookingTime</a>
 		 */
 		public Container.BookingTime getBookingTime();
 		public void setBookingTime(Container.BookingTime bookingTime);
 
 		/**
-		 * uri: http://schema.org/broker
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Broker
+		 * @see <a href="http://schema.org/broker">http://schema.org/broker</a>
 		 */
 		public Container.Broker getBroker();
 		public void setBroker(Container.Broker broker);
 
 		/**
-		 * uri: http://schema.org/modifiedTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ModifiedTime
+		 * @see <a href="http://schema.org/modifiedTime">http://schema.org/modifiedTime</a>
 		 */
 		public Container.ModifiedTime getModifiedTime();
 		public void setModifiedTime(Container.ModifiedTime modifiedTime);
 
 		/**
-		 * uri: http://schema.org/priceCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceCurrency
+		 * @see <a href="http://schema.org/priceCurrency">http://schema.org/priceCurrency</a>
 		 */
 		public Container.PriceCurrency getPriceCurrency();
 		public void setPriceCurrency(Container.PriceCurrency priceCurrency);
 
 		/**
-		 * uri: http://schema.org/programMembershipUsed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProgramMembershipUsed
+		 * @see <a href="http://schema.org/programMembershipUsed">http://schema.org/programMembershipUsed</a>
 		 */
 		public Container.ProgramMembershipUsed getProgramMembershipUsed();
 		public void setProgramMembershipUsed(Container.ProgramMembershipUsed programMembershipUsed);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/reservationFor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReservationFor
+		 * @see <a href="http://schema.org/reservationFor">http://schema.org/reservationFor</a>
 		 */
 		public Container.ReservationFor getReservationFor();
 		public void setReservationFor(Container.ReservationFor reservationFor);
 
 		/**
-		 * uri: http://schema.org/reservationId
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReservationId
+		 * @see <a href="http://schema.org/reservationId">http://schema.org/reservationId</a>
 		 */
 		public Container.ReservationId getReservationId();
 		public void setReservationId(Container.ReservationId reservationId);
 
 		/**
-		 * uri: http://schema.org/reservationStatus
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReservationStatus
+		 * @see <a href="http://schema.org/reservationStatus">http://schema.org/reservationStatus</a>
 		 */
 		public Container.ReservationStatus getReservationStatus();
 		public void setReservationStatus(Container.ReservationStatus reservationStatus);
 
 		/**
-		 * uri: http://schema.org/reservedTicket
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReservedTicket
+		 * @see <a href="http://schema.org/reservedTicket">http://schema.org/reservedTicket</a>
 		 */
 		public Container.ReservedTicket getReservedTicket();
 		public void setReservedTicket(Container.ReservedTicket reservedTicket);
 
 		/**
-		 * uri: http://schema.org/totalPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TotalPrice
+		 * @see <a href="http://schema.org/totalPrice">http://schema.org/totalPrice</a>
 		 */
 		public Container.TotalPrice getTotalPrice();
 		public void setTotalPrice(Container.TotalPrice totalPrice);
 
 		/**
-		 * uri: http://schema.org/underName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnderName
+		 * @see <a href="http://schema.org/underName">http://schema.org/underName</a>
 		 */
 		public Container.UnderName getUnderName();
 		public void setUnderName(Container.UnderName underName);
@@ -14542,8 +13503,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReservationPackage extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/subReservation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubReservation
+		 * @see <a href="http://schema.org/subReservation">http://schema.org/subReservation</a>
 		 */
 		public Container.SubReservation getSubReservation();
 		public void setSubReservation(Container.SubReservation subReservation);
@@ -14696,8 +13656,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReturnAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -14718,22 +13677,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Review extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/itemReviewed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ItemReviewed
+		 * @see <a href="http://schema.org/itemReviewed">http://schema.org/itemReviewed</a>
 		 */
 		public Container.ItemReviewed getItemReviewed();
 		public void setItemReviewed(Container.ItemReviewed itemReviewed);
 
 		/**
-		 * uri: http://schema.org/reviewBody
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReviewBody
+		 * @see <a href="http://schema.org/reviewBody">http://schema.org/reviewBody</a>
 		 */
 		public Container.ReviewBody getReviewBody();
 		public void setReviewBody(Container.ReviewBody reviewBody);
 
 		/**
-		 * uri: http://schema.org/reviewRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReviewRating
+		 * @see <a href="http://schema.org/reviewRating">http://schema.org/reviewRating</a>
 		 */
 		public Container.ReviewRating getReviewRating();
 		public void setReviewRating(Container.ReviewRating reviewRating);
@@ -14755,8 +13711,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ReviewAction extends AssessAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/resultReview
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ResultReview
+		 * @see <a href="http://schema.org/resultReview">http://schema.org/resultReview</a>
 		 */
 		public Container.ResultReview getResultReview();
 		public void setResultReview(Container.ResultReview resultReview);
@@ -14798,22 +13753,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Role extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/endDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.EndDate
+		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
 		 */
 		public Container.EndDate getEndDate();
 		public void setEndDate(Container.EndDate endDate);
 
 		/**
-		 * uri: http://schema.org/roleName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RoleName
+		 * @see <a href="http://schema.org/roleName">http://schema.org/roleName</a>
 		 */
 		public Container.RoleName getRoleName();
 		public void setRoleName(Container.RoleName roleName);
 
 		/**
-		 * uri: http://schema.org/startDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StartDate
+		 * @see <a href="http://schema.org/startDate">http://schema.org/startDate</a>
 		 */
 		public Container.StartDate getStartDate();
 		public void setStartDate(Container.StartDate startDate);
@@ -14869,22 +13821,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface RsvpAction extends InformAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/additionalNumberOfGuests
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalNumberOfGuests
+		 * @see <a href="http://schema.org/additionalNumberOfGuests">http://schema.org/additionalNumberOfGuests</a>
 		 */
 		public Container.AdditionalNumberOfGuests getAdditionalNumberOfGuests();
 		public void setAdditionalNumberOfGuests(Container.AdditionalNumberOfGuests additionalNumberOfGuests);
 
 		/**
-		 * uri: http://schema.org/comment
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Comment
+		 * @see <a href="http://schema.org/comment">http://schema.org/comment</a>
 		 */
 		public Container.Comment getComment();
 		public void setComment(Container.Comment comment);
 
 		/**
-		 * uri: http://schema.org/rsvpResponse
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RsvpResponse
+		 * @see <a href="http://schema.org/rsvpResponse">http://schema.org/rsvpResponse</a>
 		 */
 		public Container.RsvpResponse getRsvpResponse();
 		public void setRsvpResponse(Container.RsvpResponse rsvpResponse);
@@ -14981,22 +13930,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ScreeningEvent extends Event, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/subtitleLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubtitleLanguage
+		 * @see <a href="http://schema.org/subtitleLanguage">http://schema.org/subtitleLanguage</a>
 		 */
 		public Container.SubtitleLanguage getSubtitleLanguage();
 		public void setSubtitleLanguage(Container.SubtitleLanguage subtitleLanguage);
 
 		/**
-		 * uri: http://schema.org/videoFormat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VideoFormat
+		 * @see <a href="http://schema.org/videoFormat">http://schema.org/videoFormat</a>
 		 */
 		public Container.VideoFormat getVideoFormat();
 		public void setVideoFormat(Container.VideoFormat videoFormat);
 
 		/**
-		 * uri: http://schema.org/workPresented
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WorkPresented
+		 * @see <a href="http://schema.org/workPresented">http://schema.org/workPresented</a>
 		 */
 		public Container.WorkPresented getWorkPresented();
 		public void setWorkPresented(Container.WorkPresented workPresented);
@@ -15048,8 +13994,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SearchAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/query
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Query
+		 * @see <a href="http://schema.org/query">http://schema.org/query</a>
 		 */
 		public Container.Query getQuery();
 		public void setQuery(Container.Query query);
@@ -15084,29 +14029,25 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Seat extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/seatNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SeatNumber
+		 * @see <a href="http://schema.org/seatNumber">http://schema.org/seatNumber</a>
 		 */
 		public Container.SeatNumber getSeatNumber();
 		public void setSeatNumber(Container.SeatNumber seatNumber);
 
 		/**
-		 * uri: http://schema.org/seatRow
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SeatRow
+		 * @see <a href="http://schema.org/seatRow">http://schema.org/seatRow</a>
 		 */
 		public Container.SeatRow getSeatRow();
 		public void setSeatRow(Container.SeatRow seatRow);
 
 		/**
-		 * uri: http://schema.org/seatSection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SeatSection
+		 * @see <a href="http://schema.org/seatSection">http://schema.org/seatSection</a>
 		 */
 		public Container.SeatSection getSeatSection();
 		public void setSeatSection(Container.SeatSection seatSection);
 
 		/**
-		 * uri: http://schema.org/seatingType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SeatingType
+		 * @see <a href="http://schema.org/seatingType">http://schema.org/seatingType</a>
 		 */
 		public Container.SeatingType getSeatingType();
 		public void setSeatingType(Container.SeatingType seatingType);
@@ -15143,8 +14084,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SellAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/buyer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Buyer
+		 * @see <a href="http://schema.org/buyer">http://schema.org/buyer</a>
 		 */
 		public Container.Buyer getBuyer();
 		public void setBuyer(Container.Buyer buyer);
@@ -15171,15 +14111,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SendAction extends SchemaOrgClass, TransferAction {
 
 		/**
-		 * uri: http://schema.org/deliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryMethod
+		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
 		 */
 		public Container.DeliveryMethod getDeliveryMethod();
 		public void setDeliveryMethod(Container.DeliveryMethod deliveryMethod);
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -15217,141 +14155,121 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Service extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/aggregateRating
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AggregateRating
+		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
 		 */
 		public Container.AggregateRating getAggregateRating();
 		public void setAggregateRating(Container.AggregateRating aggregateRating);
 
 		/**
-		 * uri: http://schema.org/areaServed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AreaServed
+		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
 		 */
 		public Container.AreaServed getAreaServed();
 		public void setAreaServed(Container.AreaServed areaServed);
 
 		/**
-		 * uri: http://schema.org/audience
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Audience
+		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
 		 */
 		public Container.Audience getAudience();
 		public void setAudience(Container.Audience audience);
 
 		/**
-		 * uri: http://schema.org/availableChannel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableChannel
+		 * @see <a href="http://schema.org/availableChannel">http://schema.org/availableChannel</a>
 		 */
 		public Container.AvailableChannel getAvailableChannel();
 		public void setAvailableChannel(Container.AvailableChannel availableChannel);
 
 		/**
-		 * uri: http://schema.org/award
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Award
+		 * @see <a href="http://schema.org/award">http://schema.org/award</a>
 		 */
 		public Container.Award getAward();
 		public void setAward(Container.Award award);
 
 		/**
-		 * uri: http://schema.org/brand
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Brand
+		 * @see <a href="http://schema.org/brand">http://schema.org/brand</a>
 		 */
 		public Container.Brand getBrand();
 		public void setBrand(Container.Brand brand);
 
 		/**
-		 * uri: http://schema.org/broker
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Broker
+		 * @see <a href="http://schema.org/broker">http://schema.org/broker</a>
 		 */
 		public Container.Broker getBroker();
 		public void setBroker(Container.Broker broker);
 
 		/**
-		 * uri: http://schema.org/category
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Category
+		 * @see <a href="http://schema.org/category">http://schema.org/category</a>
 		 */
 		public Container.Category getCategory();
 		public void setCategory(Container.Category category);
 
 		/**
-		 * uri: http://schema.org/hasOfferCatalog
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HasOfferCatalog
+		 * @see <a href="http://schema.org/hasOfferCatalog">http://schema.org/hasOfferCatalog</a>
 		 */
 		public Container.HasOfferCatalog getHasOfferCatalog();
 		public void setHasOfferCatalog(Container.HasOfferCatalog hasOfferCatalog);
 
 		/**
-		 * uri: http://schema.org/hoursAvailable
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HoursAvailable
+		 * @see <a href="http://schema.org/hoursAvailable">http://schema.org/hoursAvailable</a>
 		 */
 		public Container.HoursAvailable getHoursAvailable();
 		public void setHoursAvailable(Container.HoursAvailable hoursAvailable);
 
 		/**
-		 * uri: http://schema.org/isRelatedTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsRelatedTo
+		 * @see <a href="http://schema.org/isRelatedTo">http://schema.org/isRelatedTo</a>
 		 */
 		public Container.IsRelatedTo getIsRelatedTo();
 		public void setIsRelatedTo(Container.IsRelatedTo isRelatedTo);
 
 		/**
-		 * uri: http://schema.org/isSimilarTo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IsSimilarTo
+		 * @see <a href="http://schema.org/isSimilarTo">http://schema.org/isSimilarTo</a>
 		 */
 		public Container.IsSimilarTo getIsSimilarTo();
 		public void setIsSimilarTo(Container.IsSimilarTo isSimilarTo);
 
 		/**
-		 * uri: http://schema.org/logo
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Logo
+		 * @see <a href="http://schema.org/logo">http://schema.org/logo</a>
 		 */
 		public Container.Logo getLogo();
 		public void setLogo(Container.Logo logo);
 
 		/**
-		 * uri: http://schema.org/offers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Offers
+		 * @see <a href="http://schema.org/offers">http://schema.org/offers</a>
 		 */
 		public Container.Offers getOffers();
 		public void setOffers(Container.Offers offers);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/providerMobility
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProviderMobility
+		 * @see <a href="http://schema.org/providerMobility">http://schema.org/providerMobility</a>
 		 */
 		public Container.ProviderMobility getProviderMobility();
 		public void setProviderMobility(Container.ProviderMobility providerMobility);
 
 		/**
-		 * uri: http://schema.org/review
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Review
+		 * @see <a href="http://schema.org/review">http://schema.org/review</a>
 		 */
 		public Container.Review getReview();
 		public void setReview(Container.Review review);
 
 		/**
-		 * uri: http://schema.org/serviceOutput
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceOutput
+		 * @see <a href="http://schema.org/serviceOutput">http://schema.org/serviceOutput</a>
 		 */
 		public Container.ServiceOutput getServiceOutput();
 		public void setServiceOutput(Container.ServiceOutput serviceOutput);
 
 		/**
-		 * uri: http://schema.org/serviceType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceType
+		 * @see <a href="http://schema.org/serviceType">http://schema.org/serviceType</a>
 		 */
 		public Container.ServiceType getServiceType();
 		public void setServiceType(Container.ServiceType serviceType);
 
 		/**
-		 * uri: http://schema.org/termsOfService
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.TermsOfService
+		 * @see <a href="http://schema.org/termsOfService">http://schema.org/termsOfService</a>
 		 */
 		public TermsOfService getTermsOfService();
 		public void setTermsOfService(TermsOfService termsOfService);
@@ -15373,57 +14291,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface ServiceChannel extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableLanguage
+		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
 		 */
 		public Container.AvailableLanguage getAvailableLanguage();
 		public void setAvailableLanguage(Container.AvailableLanguage availableLanguage);
 
 		/**
-		 * uri: http://schema.org/processingTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProcessingTime
+		 * @see <a href="http://schema.org/processingTime">http://schema.org/processingTime</a>
 		 */
 		public Container.ProcessingTime getProcessingTime();
 		public void setProcessingTime(Container.ProcessingTime processingTime);
 
 		/**
-		 * uri: http://schema.org/providesService
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProvidesService
+		 * @see <a href="http://schema.org/providesService">http://schema.org/providesService</a>
 		 */
 		public Container.ProvidesService getProvidesService();
 		public void setProvidesService(Container.ProvidesService providesService);
 
 		/**
-		 * uri: http://schema.org/serviceLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceLocation
+		 * @see <a href="http://schema.org/serviceLocation">http://schema.org/serviceLocation</a>
 		 */
 		public Container.ServiceLocation getServiceLocation();
 		public void setServiceLocation(Container.ServiceLocation serviceLocation);
 
 		/**
-		 * uri: http://schema.org/servicePhone
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServicePhone
+		 * @see <a href="http://schema.org/servicePhone">http://schema.org/servicePhone</a>
 		 */
 		public Container.ServicePhone getServicePhone();
 		public void setServicePhone(Container.ServicePhone servicePhone);
 
 		/**
-		 * uri: http://schema.org/servicePostalAddress
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServicePostalAddress
+		 * @see <a href="http://schema.org/servicePostalAddress">http://schema.org/servicePostalAddress</a>
 		 */
 		public Container.ServicePostalAddress getServicePostalAddress();
 		public void setServicePostalAddress(Container.ServicePostalAddress servicePostalAddress);
 
 		/**
-		 * uri: http://schema.org/serviceSmsNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceSmsNumber
+		 * @see <a href="http://schema.org/serviceSmsNumber">http://schema.org/serviceSmsNumber</a>
 		 */
 		public Container.ServiceSmsNumber getServiceSmsNumber();
 		public void setServiceSmsNumber(Container.ServiceSmsNumber serviceSmsNumber);
 
 		/**
-		 * uri: http://schema.org/serviceUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ServiceUrl
+		 * @see <a href="http://schema.org/serviceUrl">http://schema.org/serviceUrl</a>
 		 */
 		public Container.ServiceUrl getServiceUrl();
 		public void setServiceUrl(Container.ServiceUrl serviceUrl);
@@ -15486,15 +14396,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SingleFamilyResidence extends House, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/numberOfRooms
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms
+		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
 		 */
 		public Container.NumberOfRooms getNumberOfRooms();
 		public void setNumberOfRooms(Container.NumberOfRooms numberOfRooms);
 
 		/**
-		 * uri: http://schema.org/occupancy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Occupancy
+		 * @see <a href="http://schema.org/occupancy">http://schema.org/occupancy</a>
 		 */
 		public Container.Occupancy getOccupancy();
 		public void setOccupancy(Container.Occupancy occupancy);
@@ -15558,8 +14466,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SocialMediaPosting extends Article, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/sharedContent
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SharedContent
+		 * @see <a href="http://schema.org/sharedContent">http://schema.org/sharedContent</a>
 		 */
 		public Container.SharedContent getSharedContent();
 		public void setSharedContent(Container.SharedContent sharedContent);
@@ -15579,155 +14486,133 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SoftwareApplication extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/applicationCategory
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ApplicationCategory
+		 * @see <a href="http://schema.org/applicationCategory">http://schema.org/applicationCategory</a>
 		 */
 		public Container.ApplicationCategory getApplicationCategory();
 		public void setApplicationCategory(Container.ApplicationCategory applicationCategory);
 
 		/**
-		 * uri: http://schema.org/applicationSubCategory
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ApplicationSubCategory
+		 * @see <a href="http://schema.org/applicationSubCategory">http://schema.org/applicationSubCategory</a>
 		 */
 		public Container.ApplicationSubCategory getApplicationSubCategory();
 		public void setApplicationSubCategory(Container.ApplicationSubCategory applicationSubCategory);
 
 		/**
-		 * uri: http://schema.org/applicationSuite
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ApplicationSuite
+		 * @see <a href="http://schema.org/applicationSuite">http://schema.org/applicationSuite</a>
 		 */
 		public Container.ApplicationSuite getApplicationSuite();
 		public void setApplicationSuite(Container.ApplicationSuite applicationSuite);
 
 		/**
-		 * uri: http://schema.org/availableOnDevice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableOnDevice
+		 * @see <a href="http://schema.org/availableOnDevice">http://schema.org/availableOnDevice</a>
 		 */
 		public Container.AvailableOnDevice getAvailableOnDevice();
 		public void setAvailableOnDevice(Container.AvailableOnDevice availableOnDevice);
 
 		/**
-		 * uri: http://schema.org/countriesNotSupported
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountriesNotSupported
+		 * @see <a href="http://schema.org/countriesNotSupported">http://schema.org/countriesNotSupported</a>
 		 */
 		public Container.CountriesNotSupported getCountriesNotSupported();
 		public void setCountriesNotSupported(Container.CountriesNotSupported countriesNotSupported);
 
 		/**
-		 * uri: http://schema.org/countriesSupported
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountriesSupported
+		 * @see <a href="http://schema.org/countriesSupported">http://schema.org/countriesSupported</a>
 		 */
 		public Container.CountriesSupported getCountriesSupported();
 		public void setCountriesSupported(Container.CountriesSupported countriesSupported);
 
 		/**
-		 * uri: http://schema.org/downloadUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DownloadUrl
+		 * @see <a href="http://schema.org/downloadUrl">http://schema.org/downloadUrl</a>
 		 */
 		public Container.DownloadUrl getDownloadUrl();
 		public void setDownloadUrl(Container.DownloadUrl downloadUrl);
 
 		/**
-		 * uri: http://schema.org/featureList
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FeatureList
+		 * @see <a href="http://schema.org/featureList">http://schema.org/featureList</a>
 		 */
 		public Container.FeatureList getFeatureList();
 		public void setFeatureList(Container.FeatureList featureList);
 
 		/**
-		 * uri: http://schema.org/fileSize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FileSize
+		 * @see <a href="http://schema.org/fileSize">http://schema.org/fileSize</a>
 		 */
 		public Container.FileSize getFileSize();
 		public void setFileSize(Container.FileSize fileSize);
 
 		/**
-		 * uri: http://schema.org/installUrl
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InstallUrl
+		 * @see <a href="http://schema.org/installUrl">http://schema.org/installUrl</a>
 		 */
 		public Container.InstallUrl getInstallUrl();
 		public void setInstallUrl(Container.InstallUrl installUrl);
 
 		/**
-		 * uri: http://schema.org/memoryRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MemoryRequirements
+		 * @see <a href="http://schema.org/memoryRequirements">http://schema.org/memoryRequirements</a>
 		 */
 		public Container.MemoryRequirements getMemoryRequirements();
 		public void setMemoryRequirements(Container.MemoryRequirements memoryRequirements);
 
 		/**
-		 * uri: http://schema.org/operatingSystem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.OperatingSystem
+		 * @see <a href="http://schema.org/operatingSystem">http://schema.org/operatingSystem</a>
 		 */
 		public Container.OperatingSystem getOperatingSystem();
 		public void setOperatingSystem(Container.OperatingSystem operatingSystem);
 
 		/**
-		 * uri: http://schema.org/permissions
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Permissions
+		 * @see <a href="http://schema.org/permissions">http://schema.org/permissions</a>
 		 */
 		public Container.Permissions getPermissions();
 		public void setPermissions(Container.Permissions permissions);
 
 		/**
-		 * uri: http://schema.org/processorRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProcessorRequirements
+		 * @see <a href="http://schema.org/processorRequirements">http://schema.org/processorRequirements</a>
 		 */
 		public Container.ProcessorRequirements getProcessorRequirements();
 		public void setProcessorRequirements(Container.ProcessorRequirements processorRequirements);
 
 		/**
-		 * uri: http://schema.org/releaseNotes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReleaseNotes
+		 * @see <a href="http://schema.org/releaseNotes">http://schema.org/releaseNotes</a>
 		 */
 		public Container.ReleaseNotes getReleaseNotes();
 		public void setReleaseNotes(Container.ReleaseNotes releaseNotes);
 
 		/**
-		 * uri: http://schema.org/screenshot
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Screenshot
+		 * @see <a href="http://schema.org/screenshot">http://schema.org/screenshot</a>
 		 */
 		public Container.Screenshot getScreenshot();
 		public void setScreenshot(Container.Screenshot screenshot);
 
 		/**
-		 * uri: http://schema.org/softwareAddOn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SoftwareAddOn
+		 * @see <a href="http://schema.org/softwareAddOn">http://schema.org/softwareAddOn</a>
 		 */
 		public Container.SoftwareAddOn getSoftwareAddOn();
 		public void setSoftwareAddOn(Container.SoftwareAddOn softwareAddOn);
 
 		/**
-		 * uri: http://schema.org/softwareHelp
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SoftwareHelp
+		 * @see <a href="http://schema.org/softwareHelp">http://schema.org/softwareHelp</a>
 		 */
 		public Container.SoftwareHelp getSoftwareHelp();
 		public void setSoftwareHelp(Container.SoftwareHelp softwareHelp);
 
 		/**
-		 * uri: http://schema.org/softwareRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SoftwareRequirements
+		 * @see <a href="http://schema.org/softwareRequirements">http://schema.org/softwareRequirements</a>
 		 */
 		public Container.SoftwareRequirements getSoftwareRequirements();
 		public void setSoftwareRequirements(Container.SoftwareRequirements softwareRequirements);
 
 		/**
-		 * uri: http://schema.org/softwareVersion
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SoftwareVersion
+		 * @see <a href="http://schema.org/softwareVersion">http://schema.org/softwareVersion</a>
 		 */
 		public Container.SoftwareVersion getSoftwareVersion();
 		public void setSoftwareVersion(Container.SoftwareVersion softwareVersion);
 
 		/**
-		 * uri: http://schema.org/storageRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.StorageRequirements
+		 * @see <a href="http://schema.org/storageRequirements">http://schema.org/storageRequirements</a>
 		 */
 		public Container.StorageRequirements getStorageRequirements();
 		public void setStorageRequirements(Container.StorageRequirements storageRequirements);
 
 		/**
-		 * uri: http://schema.org/supportingData
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SupportingData
+		 * @see <a href="http://schema.org/supportingData">http://schema.org/supportingData</a>
 		 */
 		public Container.SupportingData getSupportingData();
 		public void setSupportingData(Container.SupportingData supportingData);
@@ -15749,36 +14634,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SoftwareSourceCode extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/codeRepository
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CodeRepository
+		 * @see <a href="http://schema.org/codeRepository">http://schema.org/codeRepository</a>
 		 */
 		public Container.CodeRepository getCodeRepository();
 		public void setCodeRepository(Container.CodeRepository codeRepository);
 
 		/**
-		 * uri: http://schema.org/codeSampleType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CodeSampleType
+		 * @see <a href="http://schema.org/codeSampleType">http://schema.org/codeSampleType</a>
 		 */
 		public Container.CodeSampleType getCodeSampleType();
 		public void setCodeSampleType(Container.CodeSampleType codeSampleType);
 
 		/**
-		 * uri: http://schema.org/programmingLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProgrammingLanguage
+		 * @see <a href="http://schema.org/programmingLanguage">http://schema.org/programmingLanguage</a>
 		 */
 		public Container.ProgrammingLanguage getProgrammingLanguage();
 		public void setProgrammingLanguage(Container.ProgrammingLanguage programmingLanguage);
 
 		/**
-		 * uri: http://schema.org/runtimePlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RuntimePlatform
+		 * @see <a href="http://schema.org/runtimePlatform">http://schema.org/runtimePlatform</a>
 		 */
 		public Container.RuntimePlatform getRuntimePlatform();
 		public void setRuntimePlatform(Container.RuntimePlatform runtimePlatform);
 
 		/**
-		 * uri: http://schema.org/targetProduct
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetProduct
+		 * @see <a href="http://schema.org/targetProduct">http://schema.org/targetProduct</a>
 		 */
 		public Container.TargetProduct getTargetProduct();
 		public void setTargetProduct(Container.TargetProduct targetProduct);
@@ -15799,8 +14679,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SomeProducts extends Product, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/inventoryLevel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InventoryLevel
+		 * @see <a href="http://schema.org/inventoryLevel">http://schema.org/inventoryLevel</a>
 		 */
 		public Container.InventoryLevel getInventoryLevel();
 		public void setInventoryLevel(Container.InventoryLevel inventoryLevel);
@@ -15879,22 +14758,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SportsEvent extends Event, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/awayTeam
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AwayTeam
+		 * @see <a href="http://schema.org/awayTeam">http://schema.org/awayTeam</a>
 		 */
 		public Container.AwayTeam getAwayTeam();
 		public void setAwayTeam(Container.AwayTeam awayTeam);
 
 		/**
-		 * uri: http://schema.org/competitor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Competitor
+		 * @see <a href="http://schema.org/competitor">http://schema.org/competitor</a>
 		 */
 		public Container.Competitor getCompetitor();
 		public void setCompetitor(Container.Competitor competitor);
 
 		/**
-		 * uri: http://schema.org/homeTeam
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.HomeTeam
+		 * @see <a href="http://schema.org/homeTeam">http://schema.org/homeTeam</a>
 		 */
 		public Container.HomeTeam getHomeTeam();
 		public void setHomeTeam(Container.HomeTeam homeTeam);
@@ -15916,8 +14792,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SportsOrganization extends Organization, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/sport
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Sport
+		 * @see <a href="http://schema.org/sport">http://schema.org/sport</a>
 		 */
 		public Container.Sport getSport();
 		public void setSport(Container.Sport sport);
@@ -15937,15 +14812,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface SportsTeam extends SchemaOrgClass, SportsOrganization {
 
 		/**
-		 * uri: http://schema.org/athlete
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Athlete
+		 * @see <a href="http://schema.org/athlete">http://schema.org/athlete</a>
 		 */
 		public Container.Athlete getAthlete();
 		public void setAthlete(Container.Athlete athlete);
 
 		/**
-		 * uri: http://schema.org/coach
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Coach
+		 * @see <a href="http://schema.org/coach">http://schema.org/coach</a>
 		 */
 		public Container.Coach getCoach();
 		public void setCoach(Container.Coach coach);
@@ -16097,22 +14970,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Suite extends Accommodation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/bed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Bed
+		 * @see <a href="http://schema.org/bed">http://schema.org/bed</a>
 		 */
 		public Container.Bed getBed();
 		public void setBed(Container.Bed bed);
 
 		/**
-		 * uri: http://schema.org/numberOfRooms
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfRooms
+		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
 		 */
 		public Container.NumberOfRooms getNumberOfRooms();
 		public void setNumberOfRooms(Container.NumberOfRooms numberOfRooms);
 
 		/**
-		 * uri: http://schema.org/occupancy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Occupancy
+		 * @see <a href="http://schema.org/occupancy">http://schema.org/occupancy</a>
 		 */
 		public Container.Occupancy getOccupancy();
 		public void setOccupancy(Container.Occupancy occupancy);
@@ -16178,15 +15048,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TVEpisode extends Episode, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/countryOfOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountryOfOrigin
+		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
 		 */
 		public Container.CountryOfOrigin getCountryOfOrigin();
 		public void setCountryOfOrigin(Container.CountryOfOrigin countryOfOrigin);
 
 		/**
-		 * uri: http://schema.org/subtitleLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SubtitleLanguage
+		 * @see <a href="http://schema.org/subtitleLanguage">http://schema.org/subtitleLanguage</a>
 		 */
 		public Container.SubtitleLanguage getSubtitleLanguage();
 		public void setSubtitleLanguage(Container.SubtitleLanguage subtitleLanguage);
@@ -16207,8 +15075,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TVSeason extends CreativeWork, CreativeWorkSeason, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/countryOfOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountryOfOrigin
+		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
 		 */
 		public Container.CountryOfOrigin getCountryOfOrigin();
 		public void setCountryOfOrigin(Container.CountryOfOrigin countryOfOrigin);
@@ -16229,71 +15096,61 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TVSeries extends CreativeWork, CreativeWorkSeries, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/containsSeason
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContainsSeason
+		 * @see <a href="http://schema.org/containsSeason">http://schema.org/containsSeason</a>
 		 */
 		public Container.ContainsSeason getContainsSeason();
 		public void setContainsSeason(Container.ContainsSeason containsSeason);
 
 		/**
-		 * uri: http://schema.org/countryOfOrigin
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CountryOfOrigin
+		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
 		 */
 		public Container.CountryOfOrigin getCountryOfOrigin();
 		public void setCountryOfOrigin(Container.CountryOfOrigin countryOfOrigin);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/episode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Episode
+		 * @see <a href="http://schema.org/episode">http://schema.org/episode</a>
 		 */
 		public Container.Episode getEpisode();
 		public void setEpisode(Container.Episode episode);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/numberOfEpisodes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEpisodes
+		 * @see <a href="http://schema.org/numberOfEpisodes">http://schema.org/numberOfEpisodes</a>
 		 */
 		public Container.NumberOfEpisodes getNumberOfEpisodes();
 		public void setNumberOfEpisodes(Container.NumberOfEpisodes numberOfEpisodes);
 
 		/**
-		 * uri: http://schema.org/numberOfSeasons
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfSeasons
+		 * @see <a href="http://schema.org/numberOfSeasons">http://schema.org/numberOfSeasons</a>
 		 */
 		public Container.NumberOfSeasons getNumberOfSeasons();
 		public void setNumberOfSeasons(Container.NumberOfSeasons numberOfSeasons);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -16366,22 +15223,19 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TaxiReservation extends Reservation, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/partySize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PartySize
+		 * @see <a href="http://schema.org/partySize">http://schema.org/partySize</a>
 		 */
 		public Container.PartySize getPartySize();
 		public void setPartySize(Container.PartySize partySize);
 
 		/**
-		 * uri: http://schema.org/pickupLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PickupLocation
+		 * @see <a href="http://schema.org/pickupLocation">http://schema.org/pickupLocation</a>
 		 */
 		public Container.PickupLocation getPickupLocation();
 		public void setPickupLocation(Container.PickupLocation pickupLocation);
 
 		/**
-		 * uri: http://schema.org/pickupTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PickupTime
+		 * @see <a href="http://schema.org/pickupTime">http://schema.org/pickupTime</a>
 		 */
 		public Container.PickupTime getPickupTime();
 		public void setPickupTime(Container.PickupTime pickupTime);
@@ -16433,15 +15287,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TechArticle extends Article, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dependencies
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Dependencies
+		 * @see <a href="http://schema.org/dependencies">http://schema.org/dependencies</a>
 		 */
 		public Container.Dependencies getDependencies();
 		public void setDependencies(Container.Dependencies dependencies);
 
 		/**
-		 * uri: http://schema.org/proficiencyLevel
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProficiencyLevel
+		 * @see <a href="http://schema.org/proficiencyLevel">http://schema.org/proficiencyLevel</a>
 		 */
 		public Container.ProficiencyLevel getProficiencyLevel();
 		public void setProficiencyLevel(Container.ProficiencyLevel proficiencyLevel);
@@ -16549,92 +15401,79 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Thing extends SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/additionalType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AdditionalType
+		 * @see <a href="http://schema.org/additionalType">http://schema.org/additionalType</a>
 		 */
 		public Container.AdditionalType getAdditionalType();
 		public void setAdditionalType(Container.AdditionalType additionalType);
 
 		/**
-		 * uri: http://schema.org/alternateName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AlternateName
+		 * @see <a href="http://schema.org/alternateName">http://schema.org/alternateName</a>
 		 */
 		public Container.AlternateName getAlternateName();
 		public void setAlternateName(Container.AlternateName alternateName);
 
 		/**
-		 * uri: http://schema.org/description
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Description
+		 * @see <a href="http://schema.org/description">http://schema.org/description</a>
 		 */
 		public Container.Description getDescription();
 		public void setDescription(Container.Description description);
 
 		/**
-		 * uri: http://schema.org/disambiguatingDescription
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DisambiguatingDescription
+		 * @see <a href="http://schema.org/disambiguatingDescription">http://schema.org/disambiguatingDescription</a>
 		 */
 		public Container.DisambiguatingDescription getDisambiguatingDescription();
 		public void setDisambiguatingDescription(Container.DisambiguatingDescription disambiguatingDescription);
 
 		/**
-		 * uri: http://schema.org/identifier
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Identifier
+		 * @see <a href="http://schema.org/identifier">http://schema.org/identifier</a>
 		 */
 		public Container.Identifier getIdentifier();
 		public void setIdentifier(Container.Identifier identifier);
 
 		/**
-		 * uri: http://schema.org/image
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Image
+		 * @see <a href="http://schema.org/image">http://schema.org/image</a>
 		 */
 		public Container.Image getImage();
 		public void setImage(Container.Image image);
 
 		/**
-		 * uri: http://schema.org/mainEntityOfPage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MainEntityOfPage
+		 * @see <a href="http://schema.org/mainEntityOfPage">http://schema.org/mainEntityOfPage</a>
 		 */
 		public Container.MainEntityOfPage getMainEntityOfPage();
 		public void setMainEntityOfPage(Container.MainEntityOfPage mainEntityOfPage);
 
 		/**
-		 * uri: http://schema.org/name
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Name
+		 * @see <a href="http://schema.org/name">http://schema.org/name</a>
 		 */
 		public Container.Name getName();
 		public void setName(Container.Name name);
 
 		/**
-		 * uri: http://kyojo.org/schemaSpl/nameFuzzy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NameFuzzy
+		 * @see <a href="http://kyojo.org/schemaSpl/nameFuzzy">http://kyojo.org/schemaSpl/nameFuzzy</a>
 		 */
 		public Container.NameFuzzy getNameFuzzy();
 		public void setNameFuzzy(Container.NameFuzzy nameFuzzy);
 
 		/**
-		 * uri: http://kyojo.org/schemaSpl/nameRuby
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NameRuby
+		 * @see <a href="http://kyojo.org/schemaSpl/nameRuby">http://kyojo.org/schemaSpl/nameRuby</a>
 		 */
 		public Container.NameRuby getNameRuby();
 		public void setNameRuby(Container.NameRuby nameRuby);
 
 		/**
-		 * uri: http://schema.org/potentialAction
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PotentialAction
+		 * @see <a href="http://schema.org/potentialAction">http://schema.org/potentialAction</a>
 		 */
 		public Container.PotentialAction getPotentialAction();
 		public void setPotentialAction(Container.PotentialAction potentialAction);
 
 		/**
-		 * uri: http://schema.org/sameAs
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SameAs
+		 * @see <a href="http://schema.org/sameAs">http://schema.org/sameAs</a>
 		 */
 		public Container.SameAs getSameAs();
 		public void setSameAs(Container.SameAs sameAs);
 
 		/**
-		 * uri: http://schema.org/url
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Url
+		 * @see <a href="http://schema.org/url">http://schema.org/url</a>
 		 */
 		public Container.Url getUrl();
 		public void setUrl(Container.Url url);
@@ -16655,57 +15494,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Ticket extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/dateIssued
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateIssued
+		 * @see <a href="http://schema.org/dateIssued">http://schema.org/dateIssued</a>
 		 */
 		public Container.DateIssued getDateIssued();
 		public void setDateIssued(Container.DateIssued dateIssued);
 
 		/**
-		 * uri: http://schema.org/issuedBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.IssuedBy
+		 * @see <a href="http://schema.org/issuedBy">http://schema.org/issuedBy</a>
 		 */
 		public Container.IssuedBy getIssuedBy();
 		public void setIssuedBy(Container.IssuedBy issuedBy);
 
 		/**
-		 * uri: http://schema.org/priceCurrency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceCurrency
+		 * @see <a href="http://schema.org/priceCurrency">http://schema.org/priceCurrency</a>
 		 */
 		public Container.PriceCurrency getPriceCurrency();
 		public void setPriceCurrency(Container.PriceCurrency priceCurrency);
 
 		/**
-		 * uri: http://schema.org/ticketNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TicketNumber
+		 * @see <a href="http://schema.org/ticketNumber">http://schema.org/ticketNumber</a>
 		 */
 		public Container.TicketNumber getTicketNumber();
 		public void setTicketNumber(Container.TicketNumber ticketNumber);
 
 		/**
-		 * uri: http://schema.org/ticketToken
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TicketToken
+		 * @see <a href="http://schema.org/ticketToken">http://schema.org/ticketToken</a>
 		 */
 		public Container.TicketToken getTicketToken();
 		public void setTicketToken(Container.TicketToken ticketToken);
 
 		/**
-		 * uri: http://schema.org/ticketedSeat
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TicketedSeat
+		 * @see <a href="http://schema.org/ticketedSeat">http://schema.org/ticketedSeat</a>
 		 */
 		public Container.TicketedSeat getTicketedSeat();
 		public void setTicketedSeat(Container.TicketedSeat ticketedSeat);
 
 		/**
-		 * uri: http://schema.org/totalPrice
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TotalPrice
+		 * @see <a href="http://schema.org/totalPrice">http://schema.org/totalPrice</a>
 		 */
 		public Container.TotalPrice getTotalPrice();
 		public void setTotalPrice(Container.TotalPrice totalPrice);
 
 		/**
-		 * uri: http://schema.org/underName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnderName
+		 * @see <a href="http://schema.org/underName">http://schema.org/underName</a>
 		 */
 		public Container.UnderName getUnderName();
 		public void setUnderName(Container.UnderName underName);
@@ -16742,8 +15573,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TipAction extends SchemaOrgClass, TradeAction {
 
 		/**
-		 * uri: http://schema.org/recipient
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Recipient
+		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
 		 */
 		public Container.Recipient getRecipient();
 		public void setRecipient(Container.Recipient recipient);
@@ -16789,15 +15619,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TouristAttraction extends Place, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/availableLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AvailableLanguage
+		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
 		 */
 		public Container.AvailableLanguage getAvailableLanguage();
 		public void setAvailableLanguage(Container.AvailableLanguage availableLanguage);
 
 		/**
-		 * uri: http://schema.org/touristType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TouristType
+		 * @see <a href="http://schema.org/touristType">http://schema.org/touristType</a>
 		 */
 		public Container.TouristType getTouristType();
 		public void setTouristType(Container.TouristType touristType);
@@ -16853,8 +15681,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TrackAction extends FindAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/deliveryMethod
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeliveryMethod
+		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
 		 */
 		public Container.DeliveryMethod getDeliveryMethod();
 		public void setDeliveryMethod(Container.DeliveryMethod deliveryMethod);
@@ -16877,15 +15704,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TradeAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/price
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Price
+		 * @see <a href="http://schema.org/price">http://schema.org/price</a>
 		 */
 		public Container.Price getPrice();
 		public void setPrice(Container.Price price);
 
 		/**
-		 * uri: http://schema.org/priceSpecification
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceSpecification
+		 * @see <a href="http://schema.org/priceSpecification">http://schema.org/priceSpecification</a>
 		 */
 		public Container.PriceSpecification getPriceSpecification();
 		public void setPriceSpecification(Container.PriceSpecification priceSpecification);
@@ -16937,64 +15762,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TrainTrip extends Intangible, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/arrivalPlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalPlatform
+		 * @see <a href="http://schema.org/arrivalPlatform">http://schema.org/arrivalPlatform</a>
 		 */
 		public Container.ArrivalPlatform getArrivalPlatform();
 		public void setArrivalPlatform(Container.ArrivalPlatform arrivalPlatform);
 
 		/**
-		 * uri: http://schema.org/arrivalStation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalStation
+		 * @see <a href="http://schema.org/arrivalStation">http://schema.org/arrivalStation</a>
 		 */
 		public Container.ArrivalStation getArrivalStation();
 		public void setArrivalStation(Container.ArrivalStation arrivalStation);
 
 		/**
-		 * uri: http://schema.org/arrivalTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArrivalTime
+		 * @see <a href="http://schema.org/arrivalTime">http://schema.org/arrivalTime</a>
 		 */
 		public Container.ArrivalTime getArrivalTime();
 		public void setArrivalTime(Container.ArrivalTime arrivalTime);
 
 		/**
-		 * uri: http://schema.org/departurePlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DeparturePlatform
+		 * @see <a href="http://schema.org/departurePlatform">http://schema.org/departurePlatform</a>
 		 */
 		public Container.DeparturePlatform getDeparturePlatform();
 		public void setDeparturePlatform(Container.DeparturePlatform departurePlatform);
 
 		/**
-		 * uri: http://schema.org/departureStation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureStation
+		 * @see <a href="http://schema.org/departureStation">http://schema.org/departureStation</a>
 		 */
 		public Container.DepartureStation getDepartureStation();
 		public void setDepartureStation(Container.DepartureStation departureStation);
 
 		/**
-		 * uri: http://schema.org/departureTime
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DepartureTime
+		 * @see <a href="http://schema.org/departureTime">http://schema.org/departureTime</a>
 		 */
 		public Container.DepartureTime getDepartureTime();
 		public void setDepartureTime(Container.DepartureTime departureTime);
 
 		/**
-		 * uri: http://schema.org/provider
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Provider
+		 * @see <a href="http://schema.org/provider">http://schema.org/provider</a>
 		 */
 		public Container.Provider getProvider();
 		public void setProvider(Container.Provider provider);
 
 		/**
-		 * uri: http://schema.org/trainName
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TrainName
+		 * @see <a href="http://schema.org/trainName">http://schema.org/trainName</a>
 		 */
 		public Container.TrainName getTrainName();
 		public void setTrainName(Container.TrainName trainName);
 
 		/**
-		 * uri: http://schema.org/trainNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TrainNumber
+		 * @see <a href="http://schema.org/trainNumber">http://schema.org/trainNumber</a>
 		 */
 		public Container.TrainNumber getTrainNumber();
 		public void setTrainNumber(Container.TrainNumber trainNumber);
@@ -17016,15 +15832,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TransferAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/fromLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FromLocation
+		 * @see <a href="http://schema.org/fromLocation">http://schema.org/fromLocation</a>
 		 */
 		public Container.FromLocation getFromLocation();
 		public void setFromLocation(Container.FromLocation fromLocation);
 
 		/**
-		 * uri: http://schema.org/toLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ToLocation
+		 * @see <a href="http://schema.org/toLocation">http://schema.org/toLocation</a>
 		 */
 		public Container.ToLocation getToLocation();
 		public void setToLocation(Container.ToLocation toLocation);
@@ -17046,8 +15860,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TravelAction extends MoveAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/distance
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Distance
+		 * @see <a href="http://schema.org/distance">http://schema.org/distance</a>
 		 */
 		public Container.Distance getDistance();
 		public void setDistance(Container.Distance distance);
@@ -17083,36 +15896,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface TypeAndQuantityNode extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/amountOfThisGood
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.AmountOfThisGood
+		 * @see <a href="http://schema.org/amountOfThisGood">http://schema.org/amountOfThisGood</a>
 		 */
 		public Container.AmountOfThisGood getAmountOfThisGood();
 		public void setAmountOfThisGood(Container.AmountOfThisGood amountOfThisGood);
 
 		/**
-		 * uri: http://schema.org/businessFunction
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BusinessFunction
+		 * @see <a href="http://schema.org/businessFunction">http://schema.org/businessFunction</a>
 		 */
 		public Container.BusinessFunction getBusinessFunction();
 		public void setBusinessFunction(Container.BusinessFunction businessFunction);
 
 		/**
-		 * uri: http://schema.org/typeOfGood
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TypeOfGood
+		 * @see <a href="http://schema.org/typeOfGood">http://schema.org/typeOfGood</a>
 		 */
 		public Container.TypeOfGood getTypeOfGood();
 		public void setTypeOfGood(Container.TypeOfGood typeOfGood);
 
 		/**
-		 * uri: http://schema.org/unitCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitCode
+		 * @see <a href="http://schema.org/unitCode">http://schema.org/unitCode</a>
 		 */
 		public Container.UnitCode getUnitCode();
 		public void setUnitCode(Container.UnitCode unitCode);
 
 		/**
-		 * uri: http://schema.org/unitText
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitText
+		 * @see <a href="http://schema.org/unitText">http://schema.org/unitText</a>
 		 */
 		public Container.UnitText getUnitText();
 		public void setUnitText(Container.UnitText unitText);
@@ -17169,36 +15977,31 @@ public interface Clazz extends SchemaOrgClass {
 	public interface UnitPriceSpecification extends PriceSpecification, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/billingIncrement
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BillingIncrement
+		 * @see <a href="http://schema.org/billingIncrement">http://schema.org/billingIncrement</a>
 		 */
 		public Container.BillingIncrement getBillingIncrement();
 		public void setBillingIncrement(Container.BillingIncrement billingIncrement);
 
 		/**
-		 * uri: http://schema.org/priceType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PriceType
+		 * @see <a href="http://schema.org/priceType">http://schema.org/priceType</a>
 		 */
 		public Container.PriceType getPriceType();
 		public void setPriceType(Container.PriceType priceType);
 
 		/**
-		 * uri: http://schema.org/referenceQuantity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReferenceQuantity
+		 * @see <a href="http://schema.org/referenceQuantity">http://schema.org/referenceQuantity</a>
 		 */
 		public Container.ReferenceQuantity getReferenceQuantity();
 		public void setReferenceQuantity(Container.ReferenceQuantity referenceQuantity);
 
 		/**
-		 * uri: http://schema.org/unitCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitCode
+		 * @see <a href="http://schema.org/unitCode">http://schema.org/unitCode</a>
 		 */
 		public Container.UnitCode getUnitCode();
 		public void setUnitCode(Container.UnitCode unitCode);
 
 		/**
-		 * uri: http://schema.org/unitText
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.UnitText
+		 * @see <a href="http://schema.org/unitText">http://schema.org/unitText</a>
 		 */
 		public Container.UnitText getUnitText();
 		public void setUnitText(Container.UnitText unitText);
@@ -17219,8 +16022,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface UpdateAction extends Action, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/targetCollection
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.TargetCollection
+		 * @see <a href="http://schema.org/targetCollection">http://schema.org/targetCollection</a>
 		 */
 		public Container.TargetCollection getTargetCollection();
 		public void setTargetCollection(Container.TargetCollection targetCollection);
@@ -17257,267 +16059,229 @@ public interface Clazz extends SchemaOrgClass {
 	public interface Vehicle extends Product, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/accelerationTime
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.AccelerationTime
+		 * @see <a href="http://schema.org/accelerationTime">http://schema.org/accelerationTime</a>
 		 */
 		public AccelerationTime getAccelerationTime();
 		public void setAccelerationTime(AccelerationTime accelerationTime);
 
 		/**
-		 * uri: http://schema.org/bodyType
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.BodyType
+		 * @see <a href="http://schema.org/bodyType">http://schema.org/bodyType</a>
 		 */
 		public BodyType getBodyType();
 		public void setBodyType(BodyType bodyType);
 
 		/**
-		 * uri: http://schema.org/cargoVolume
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CargoVolume
+		 * @see <a href="http://schema.org/cargoVolume">http://schema.org/cargoVolume</a>
 		 */
 		public Container.CargoVolume getCargoVolume();
 		public void setCargoVolume(Container.CargoVolume cargoVolume);
 
 		/**
-		 * uri: http://schema.org/dateVehicleFirstRegistered
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DateVehicleFirstRegistered
+		 * @see <a href="http://schema.org/dateVehicleFirstRegistered">http://schema.org/dateVehicleFirstRegistered</a>
 		 */
 		public Container.DateVehicleFirstRegistered getDateVehicleFirstRegistered();
 		public void setDateVehicleFirstRegistered(Container.DateVehicleFirstRegistered dateVehicleFirstRegistered);
 
 		/**
-		 * uri: http://schema.org/driveWheelConfiguration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DriveWheelConfiguration
+		 * @see <a href="http://schema.org/driveWheelConfiguration">http://schema.org/driveWheelConfiguration</a>
 		 */
 		public Container.DriveWheelConfiguration getDriveWheelConfiguration();
 		public void setDriveWheelConfiguration(Container.DriveWheelConfiguration driveWheelConfiguration);
 
 		/**
-		 * uri: http://schema.org/emissionsCO2
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.EmissionsCO2
+		 * @see <a href="http://schema.org/emissionsCO2">http://schema.org/emissionsCO2</a>
 		 */
 		public EmissionsCO2 getEmissionsCO2();
 		public void setEmissionsCO2(EmissionsCO2 emissionsCO2);
 
 		/**
-		 * uri: http://schema.org/fuelCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.FuelCapacity
+		 * @see <a href="http://schema.org/fuelCapacity">http://schema.org/fuelCapacity</a>
 		 */
 		public FuelCapacity getFuelCapacity();
 		public void setFuelCapacity(FuelCapacity fuelCapacity);
 
 		/**
-		 * uri: http://schema.org/fuelConsumption
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FuelConsumption
+		 * @see <a href="http://schema.org/fuelConsumption">http://schema.org/fuelConsumption</a>
 		 */
 		public Container.FuelConsumption getFuelConsumption();
 		public void setFuelConsumption(Container.FuelConsumption fuelConsumption);
 
 		/**
-		 * uri: http://schema.org/fuelEfficiency
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FuelEfficiency
+		 * @see <a href="http://schema.org/fuelEfficiency">http://schema.org/fuelEfficiency</a>
 		 */
 		public Container.FuelEfficiency getFuelEfficiency();
 		public void setFuelEfficiency(Container.FuelEfficiency fuelEfficiency);
 
 		/**
-		 * uri: http://schema.org/fuelType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.FuelType
+		 * @see <a href="http://schema.org/fuelType">http://schema.org/fuelType</a>
 		 */
 		public Container.FuelType getFuelType();
 		public void setFuelType(Container.FuelType fuelType);
 
 		/**
-		 * uri: http://schema.org/knownVehicleDamages
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.KnownVehicleDamages
+		 * @see <a href="http://schema.org/knownVehicleDamages">http://schema.org/knownVehicleDamages</a>
 		 */
 		public Container.KnownVehicleDamages getKnownVehicleDamages();
 		public void setKnownVehicleDamages(Container.KnownVehicleDamages knownVehicleDamages);
 
 		/**
-		 * uri: http://schema.org/meetsEmissionStandard
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.MeetsEmissionStandard
+		 * @see <a href="http://schema.org/meetsEmissionStandard">http://schema.org/meetsEmissionStandard</a>
 		 */
 		public MeetsEmissionStandard getMeetsEmissionStandard();
 		public void setMeetsEmissionStandard(MeetsEmissionStandard meetsEmissionStandard);
 
 		/**
-		 * uri: http://schema.org/mileageFromOdometer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MileageFromOdometer
+		 * @see <a href="http://schema.org/mileageFromOdometer">http://schema.org/mileageFromOdometer</a>
 		 */
 		public Container.MileageFromOdometer getMileageFromOdometer();
 		public void setMileageFromOdometer(Container.MileageFromOdometer mileageFromOdometer);
 
 		/**
-		 * uri: http://schema.org/modelDate
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.ModelDate
+		 * @see <a href="http://schema.org/modelDate">http://schema.org/modelDate</a>
 		 */
 		public ModelDate getModelDate();
 		public void setModelDate(ModelDate modelDate);
 
 		/**
-		 * uri: http://schema.org/numberOfAirbags
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfAirbags
+		 * @see <a href="http://schema.org/numberOfAirbags">http://schema.org/numberOfAirbags</a>
 		 */
 		public Container.NumberOfAirbags getNumberOfAirbags();
 		public void setNumberOfAirbags(Container.NumberOfAirbags numberOfAirbags);
 
 		/**
-		 * uri: http://schema.org/numberOfAxles
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfAxles
+		 * @see <a href="http://schema.org/numberOfAxles">http://schema.org/numberOfAxles</a>
 		 */
 		public Container.NumberOfAxles getNumberOfAxles();
 		public void setNumberOfAxles(Container.NumberOfAxles numberOfAxles);
 
 		/**
-		 * uri: http://schema.org/numberOfDoors
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfDoors
+		 * @see <a href="http://schema.org/numberOfDoors">http://schema.org/numberOfDoors</a>
 		 */
 		public Container.NumberOfDoors getNumberOfDoors();
 		public void setNumberOfDoors(Container.NumberOfDoors numberOfDoors);
 
 		/**
-		 * uri: http://schema.org/numberOfForwardGears
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfForwardGears
+		 * @see <a href="http://schema.org/numberOfForwardGears">http://schema.org/numberOfForwardGears</a>
 		 */
 		public Container.NumberOfForwardGears getNumberOfForwardGears();
 		public void setNumberOfForwardGears(Container.NumberOfForwardGears numberOfForwardGears);
 
 		/**
-		 * uri: http://schema.org/numberOfPreviousOwners
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfPreviousOwners
+		 * @see <a href="http://schema.org/numberOfPreviousOwners">http://schema.org/numberOfPreviousOwners</a>
 		 */
 		public Container.NumberOfPreviousOwners getNumberOfPreviousOwners();
 		public void setNumberOfPreviousOwners(Container.NumberOfPreviousOwners numberOfPreviousOwners);
 
 		/**
-		 * uri: http://schema.org/payload
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.Payload
+		 * @see <a href="http://schema.org/payload">http://schema.org/payload</a>
 		 */
 		public Payload getPayload();
 		public void setPayload(Payload payload);
 
 		/**
-		 * uri: http://schema.org/productionDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionDate
+		 * @see <a href="http://schema.org/productionDate">http://schema.org/productionDate</a>
 		 */
 		public Container.ProductionDate getProductionDate();
 		public void setProductionDate(Container.ProductionDate productionDate);
 
 		/**
-		 * uri: http://schema.org/purchaseDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PurchaseDate
+		 * @see <a href="http://schema.org/purchaseDate">http://schema.org/purchaseDate</a>
 		 */
 		public Container.PurchaseDate getPurchaseDate();
 		public void setPurchaseDate(Container.PurchaseDate purchaseDate);
 
 		/**
-		 * uri: http://schema.org/seatingCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.SeatingCapacity
+		 * @see <a href="http://schema.org/seatingCapacity">http://schema.org/seatingCapacity</a>
 		 */
 		public SeatingCapacity getSeatingCapacity();
 		public void setSeatingCapacity(SeatingCapacity seatingCapacity);
 
 		/**
-		 * uri: http://schema.org/speed
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.Speed
+		 * @see <a href="http://schema.org/speed">http://schema.org/speed</a>
 		 */
 		public Speed getSpeed();
 		public void setSpeed(Speed speed);
 
 		/**
-		 * uri: http://schema.org/steeringPosition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SteeringPosition
+		 * @see <a href="http://schema.org/steeringPosition">http://schema.org/steeringPosition</a>
 		 */
 		public Container.SteeringPosition getSteeringPosition();
 		public void setSteeringPosition(Container.SteeringPosition steeringPosition);
 
 		/**
-		 * uri: http://schema.org/tongueWeight
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.TongueWeight
+		 * @see <a href="http://schema.org/tongueWeight">http://schema.org/tongueWeight</a>
 		 */
 		public TongueWeight getTongueWeight();
 		public void setTongueWeight(TongueWeight tongueWeight);
 
 		/**
-		 * uri: http://schema.org/trailerWeight
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.TrailerWeight
+		 * @see <a href="http://schema.org/trailerWeight">http://schema.org/trailerWeight</a>
 		 */
 		public TrailerWeight getTrailerWeight();
 		public void setTrailerWeight(TrailerWeight trailerWeight);
 
 		/**
-		 * uri: http://schema.org/vehicleConfiguration
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleConfiguration
+		 * @see <a href="http://schema.org/vehicleConfiguration">http://schema.org/vehicleConfiguration</a>
 		 */
 		public Container.VehicleConfiguration getVehicleConfiguration();
 		public void setVehicleConfiguration(Container.VehicleConfiguration vehicleConfiguration);
 
 		/**
-		 * uri: http://schema.org/vehicleEngine
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleEngine
+		 * @see <a href="http://schema.org/vehicleEngine">http://schema.org/vehicleEngine</a>
 		 */
 		public Container.VehicleEngine getVehicleEngine();
 		public void setVehicleEngine(Container.VehicleEngine vehicleEngine);
 
 		/**
-		 * uri: http://schema.org/vehicleIdentificationNumber
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleIdentificationNumber
+		 * @see <a href="http://schema.org/vehicleIdentificationNumber">http://schema.org/vehicleIdentificationNumber</a>
 		 */
 		public Container.VehicleIdentificationNumber getVehicleIdentificationNumber();
 		public void setVehicleIdentificationNumber(Container.VehicleIdentificationNumber vehicleIdentificationNumber);
 
 		/**
-		 * uri: http://schema.org/vehicleInteriorColor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleInteriorColor
+		 * @see <a href="http://schema.org/vehicleInteriorColor">http://schema.org/vehicleInteriorColor</a>
 		 */
 		public Container.VehicleInteriorColor getVehicleInteriorColor();
 		public void setVehicleInteriorColor(Container.VehicleInteriorColor vehicleInteriorColor);
 
 		/**
-		 * uri: http://schema.org/vehicleInteriorType
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleInteriorType
+		 * @see <a href="http://schema.org/vehicleInteriorType">http://schema.org/vehicleInteriorType</a>
 		 */
 		public Container.VehicleInteriorType getVehicleInteriorType();
 		public void setVehicleInteriorType(Container.VehicleInteriorType vehicleInteriorType);
 
 		/**
-		 * uri: http://schema.org/vehicleModelDate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleModelDate
+		 * @see <a href="http://schema.org/vehicleModelDate">http://schema.org/vehicleModelDate</a>
 		 */
 		public Container.VehicleModelDate getVehicleModelDate();
 		public void setVehicleModelDate(Container.VehicleModelDate vehicleModelDate);
 
 		/**
-		 * uri: http://schema.org/vehicleSeatingCapacity
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleSeatingCapacity
+		 * @see <a href="http://schema.org/vehicleSeatingCapacity">http://schema.org/vehicleSeatingCapacity</a>
 		 */
 		public Container.VehicleSeatingCapacity getVehicleSeatingCapacity();
 		public void setVehicleSeatingCapacity(Container.VehicleSeatingCapacity vehicleSeatingCapacity);
 
 		/**
-		 * uri: http://schema.org/vehicleSpecialUsage
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.VehicleSpecialUsage
+		 * @see <a href="http://schema.org/vehicleSpecialUsage">http://schema.org/vehicleSpecialUsage</a>
 		 */
 		public VehicleSpecialUsage getVehicleSpecialUsage();
 		public void setVehicleSpecialUsage(VehicleSpecialUsage vehicleSpecialUsage);
 
 		/**
-		 * uri: http://schema.org/vehicleTransmission
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VehicleTransmission
+		 * @see <a href="http://schema.org/vehicleTransmission">http://schema.org/vehicleTransmission</a>
 		 */
 		public Container.VehicleTransmission getVehicleTransmission();
 		public void setVehicleTransmission(Container.VehicleTransmission vehicleTransmission);
 
 		/**
-		 * uri: http://schema.org/weightTotal
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.WeightTotal
+		 * @see <a href="http://schema.org/weightTotal">http://schema.org/weightTotal</a>
 		 */
 		public WeightTotal getWeightTotal();
 		public void setWeightTotal(WeightTotal weightTotal);
 
 		/**
-		 * uri: http://schema.org/wheelbase
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.Wheelbase
+		 * @see <a href="http://schema.org/wheelbase">http://schema.org/wheelbase</a>
 		 */
 		public Wheelbase getWheelbase();
 		public void setWheelbase(Wheelbase wheelbase);
@@ -17553,64 +16317,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface VideoGame extends Game, SchemaOrgClass, SoftwareApplication {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/cheatCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheatCode
+		 * @see <a href="http://schema.org/cheatCode">http://schema.org/cheatCode</a>
 		 */
 		public Container.CheatCode getCheatCode();
 		public void setCheatCode(Container.CheatCode cheatCode);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/gamePlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GamePlatform
+		 * @see <a href="http://schema.org/gamePlatform">http://schema.org/gamePlatform</a>
 		 */
 		public Container.GamePlatform getGamePlatform();
 		public void setGamePlatform(Container.GamePlatform gamePlatform);
 
 		/**
-		 * uri: http://schema.org/gameServer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameServer
+		 * @see <a href="http://schema.org/gameServer">http://schema.org/gameServer</a>
 		 */
 		public Container.GameServer getGameServer();
 		public void setGameServer(Container.GameServer gameServer);
 
 		/**
-		 * uri: http://schema.org/gameTip
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameTip
+		 * @see <a href="http://schema.org/gameTip">http://schema.org/gameTip</a>
 		 */
 		public Container.GameTip getGameTip();
 		public void setGameTip(Container.GameTip gameTip);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/playMode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PlayMode
+		 * @see <a href="http://schema.org/playMode">http://schema.org/playMode</a>
 		 */
 		public Container.PlayMode getPlayMode();
 		public void setPlayMode(Container.PlayMode playMode);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -17644,120 +16399,103 @@ public interface Clazz extends SchemaOrgClass {
 	public interface VideoGameSeries extends CreativeWorkSeries, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/characterAttribute
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CharacterAttribute
+		 * @see <a href="http://schema.org/characterAttribute">http://schema.org/characterAttribute</a>
 		 */
 		public Container.CharacterAttribute getCharacterAttribute();
 		public void setCharacterAttribute(Container.CharacterAttribute characterAttribute);
 
 		/**
-		 * uri: http://schema.org/cheatCode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.CheatCode
+		 * @see <a href="http://schema.org/cheatCode">http://schema.org/cheatCode</a>
 		 */
 		public Container.CheatCode getCheatCode();
 		public void setCheatCode(Container.CheatCode cheatCode);
 
 		/**
-		 * uri: http://schema.org/containsSeason
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ContainsSeason
+		 * @see <a href="http://schema.org/containsSeason">http://schema.org/containsSeason</a>
 		 */
 		public Container.ContainsSeason getContainsSeason();
 		public void setContainsSeason(Container.ContainsSeason containsSeason);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/episode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Episode
+		 * @see <a href="http://schema.org/episode">http://schema.org/episode</a>
 		 */
 		public Container.Episode getEpisode();
 		public void setEpisode(Container.Episode episode);
 
 		/**
-		 * uri: http://schema.org/gameItem
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameItem
+		 * @see <a href="http://schema.org/gameItem">http://schema.org/gameItem</a>
 		 */
 		public Container.GameItem getGameItem();
 		public void setGameItem(Container.GameItem gameItem);
 
 		/**
-		 * uri: http://schema.org/gameLocation
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GameLocation
+		 * @see <a href="http://schema.org/gameLocation">http://schema.org/gameLocation</a>
 		 */
 		public Container.GameLocation getGameLocation();
 		public void setGameLocation(Container.GameLocation gameLocation);
 
 		/**
-		 * uri: http://schema.org/gamePlatform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.GamePlatform
+		 * @see <a href="http://schema.org/gamePlatform">http://schema.org/gamePlatform</a>
 		 */
 		public Container.GamePlatform getGamePlatform();
 		public void setGamePlatform(Container.GamePlatform gamePlatform);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/numberOfEpisodes
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfEpisodes
+		 * @see <a href="http://schema.org/numberOfEpisodes">http://schema.org/numberOfEpisodes</a>
 		 */
 		public Container.NumberOfEpisodes getNumberOfEpisodes();
 		public void setNumberOfEpisodes(Container.NumberOfEpisodes numberOfEpisodes);
 
 		/**
-		 * uri: http://schema.org/numberOfPlayers
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfPlayers
+		 * @see <a href="http://schema.org/numberOfPlayers">http://schema.org/numberOfPlayers</a>
 		 */
 		public Container.NumberOfPlayers getNumberOfPlayers();
 		public void setNumberOfPlayers(Container.NumberOfPlayers numberOfPlayers);
 
 		/**
-		 * uri: http://schema.org/numberOfSeasons
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.NumberOfSeasons
+		 * @see <a href="http://schema.org/numberOfSeasons">http://schema.org/numberOfSeasons</a>
 		 */
 		public Container.NumberOfSeasons getNumberOfSeasons();
 		public void setNumberOfSeasons(Container.NumberOfSeasons numberOfSeasons);
 
 		/**
-		 * uri: http://schema.org/playMode
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PlayMode
+		 * @see <a href="http://schema.org/playMode">http://schema.org/playMode</a>
 		 */
 		public Container.PlayMode getPlayMode();
 		public void setPlayMode(Container.PlayMode playMode);
 
 		/**
-		 * uri: http://schema.org/productionCompany
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ProductionCompany
+		 * @see <a href="http://schema.org/productionCompany">http://schema.org/productionCompany</a>
 		 */
 		public Container.ProductionCompany getProductionCompany();
 		public void setProductionCompany(Container.ProductionCompany productionCompany);
 
 		/**
-		 * uri: http://schema.org/quest
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Quest
+		 * @see <a href="http://schema.org/quest">http://schema.org/quest</a>
 		 */
 		public Container.Quest getQuest();
 		public void setQuest(Container.Quest quest);
 
 		/**
-		 * uri: http://schema.org/trailer
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Trailer
+		 * @see <a href="http://schema.org/trailer">http://schema.org/trailer</a>
 		 */
 		public Container.Trailer getTrailer();
 		public void setTrailer(Container.Trailer trailer);
@@ -17777,57 +16515,49 @@ public interface Clazz extends SchemaOrgClass {
 	public interface VideoObject extends MediaObject, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/actor
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Actor
+		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
 		 */
 		public Container.Actor getActor();
 		public void setActor(Container.Actor actor);
 
 		/**
-		 * uri: http://schema.org/caption
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Caption
+		 * @see <a href="http://schema.org/caption">http://schema.org/caption</a>
 		 */
 		public Container.Caption getCaption();
 		public void setCaption(Container.Caption caption);
 
 		/**
-		 * uri: http://schema.org/director
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Director
+		 * @see <a href="http://schema.org/director">http://schema.org/director</a>
 		 */
 		public Container.Director getDirector();
 		public void setDirector(Container.Director director);
 
 		/**
-		 * uri: http://schema.org/musicBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MusicBy
+		 * @see <a href="http://schema.org/musicBy">http://schema.org/musicBy</a>
 		 */
 		public Container.MusicBy getMusicBy();
 		public void setMusicBy(Container.MusicBy musicBy);
 
 		/**
-		 * uri: http://schema.org/thumbnail
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Thumbnail
+		 * @see <a href="http://schema.org/thumbnail">http://schema.org/thumbnail</a>
 		 */
 		public Container.Thumbnail getThumbnail();
 		public void setThumbnail(Container.Thumbnail thumbnail);
 
 		/**
-		 * uri: http://schema.org/transcript
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Transcript
+		 * @see <a href="http://schema.org/transcript">http://schema.org/transcript</a>
 		 */
 		public Container.Transcript getTranscript();
 		public void setTranscript(Container.Transcript transcript);
 
 		/**
-		 * uri: http://schema.org/videoFrameSize
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VideoFrameSize
+		 * @see <a href="http://schema.org/videoFrameSize">http://schema.org/videoFrameSize</a>
 		 */
 		public Container.VideoFrameSize getVideoFrameSize();
 		public void setVideoFrameSize(Container.VideoFrameSize videoFrameSize);
 
 		/**
-		 * uri: http://schema.org/videoQuality
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.VideoQuality
+		 * @see <a href="http://schema.org/videoQuality">http://schema.org/videoQuality</a>
 		 */
 		public Container.VideoQuality getVideoQuality();
 		public void setVideoQuality(Container.VideoQuality videoQuality);
@@ -17877,85 +16607,73 @@ public interface Clazz extends SchemaOrgClass {
 	public interface VisualArtwork extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/artEdition
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArtEdition
+		 * @see <a href="http://schema.org/artEdition">http://schema.org/artEdition</a>
 		 */
 		public Container.ArtEdition getArtEdition();
 		public void setArtEdition(Container.ArtEdition artEdition);
 
 		/**
-		 * uri: http://schema.org/artMedium
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArtMedium
+		 * @see <a href="http://schema.org/artMedium">http://schema.org/artMedium</a>
 		 */
 		public Container.ArtMedium getArtMedium();
 		public void setArtMedium(Container.ArtMedium artMedium);
 
 		/**
-		 * uri: http://schema.org/artform
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Artform
+		 * @see <a href="http://schema.org/artform">http://schema.org/artform</a>
 		 */
 		public Container.Artform getArtform();
 		public void setArtform(Container.Artform artform);
 
 		/**
-		 * uri: http://schema.org/artist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Artist
+		 * @see <a href="http://schema.org/artist">http://schema.org/artist</a>
 		 */
 		public Artist getArtist();
 		public void setArtist(Artist artist);
 
 		/**
-		 * uri: http://schema.org/artworkSurface
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ArtworkSurface
+		 * @see <a href="http://schema.org/artworkSurface">http://schema.org/artworkSurface</a>
 		 */
 		public Container.ArtworkSurface getArtworkSurface();
 		public void setArtworkSurface(Container.ArtworkSurface artworkSurface);
 
 		/**
-		 * uri: http://schema.org/colorist
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Colorist
+		 * @see <a href="http://schema.org/colorist">http://schema.org/colorist</a>
 		 */
 		public Colorist getColorist();
 		public void setColorist(Colorist colorist);
 
 		/**
-		 * uri: http://schema.org/depth
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Depth
+		 * @see <a href="http://schema.org/depth">http://schema.org/depth</a>
 		 */
 		public Container.Depth getDepth();
 		public void setDepth(Container.Depth depth);
 
 		/**
-		 * uri: http://schema.org/height
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Height
+		 * @see <a href="http://schema.org/height">http://schema.org/height</a>
 		 */
 		public Container.Height getHeight();
 		public void setHeight(Container.Height height);
 
 		/**
-		 * uri: http://schema.org/inker
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Inker
+		 * @see <a href="http://schema.org/inker">http://schema.org/inker</a>
 		 */
 		public Inker getInker();
 		public void setInker(Inker inker);
 
 		/**
-		 * uri: http://schema.org/letterer
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Letterer
+		 * @see <a href="http://schema.org/letterer">http://schema.org/letterer</a>
 		 */
 		public Letterer getLetterer();
 		public void setLetterer(Letterer letterer);
 
 		/**
-		 * uri: http://schema.org/penciler
-		 * class: org.kyojo.schemaOrg.m3n3.bib.Container.Penciler
+		 * @see <a href="http://schema.org/penciler">http://schema.org/penciler</a>
 		 */
 		public Penciler getPenciler();
 		public void setPenciler(Penciler penciler);
 
 		/**
-		 * uri: http://schema.org/width
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Width
+		 * @see <a href="http://schema.org/width">http://schema.org/width</a>
 		 */
 		public Container.Width getWidth();
 		public void setWidth(Container.Width width);
@@ -17991,8 +16709,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface VoteAction extends ChooseAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/candidate
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Candidate
+		 * @see <a href="http://schema.org/candidate">http://schema.org/candidate</a>
 		 */
 		public Container.Candidate getCandidate();
 		public void setCandidate(Container.Candidate candidate);
@@ -18086,15 +16803,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WarrantyPromise extends SchemaOrgClass, StructuredValue {
 
 		/**
-		 * uri: http://schema.org/durationOfWarranty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.DurationOfWarranty
+		 * @see <a href="http://schema.org/durationOfWarranty">http://schema.org/durationOfWarranty</a>
 		 */
 		public Container.DurationOfWarranty getDurationOfWarranty();
 		public void setDurationOfWarranty(Container.DurationOfWarranty durationOfWarranty);
 
 		/**
-		 * uri: http://schema.org/warrantyScope
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.WarrantyScope
+		 * @see <a href="http://schema.org/warrantyScope">http://schema.org/warrantyScope</a>
 		 */
 		public Container.WarrantyScope getWarrantyScope();
 		public void setWarrantyScope(Container.WarrantyScope warrantyScope);
@@ -18175,8 +16890,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WebApplication extends SchemaOrgClass, SoftwareApplication {
 
 		/**
-		 * uri: http://schema.org/browserRequirements
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.BrowserRequirements
+		 * @see <a href="http://schema.org/browserRequirements">http://schema.org/browserRequirements</a>
 		 */
 		public Container.BrowserRequirements getBrowserRequirements();
 		public void setBrowserRequirements(Container.BrowserRequirements browserRequirements);
@@ -18201,64 +16915,55 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WebPage extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/breadcrumb
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Breadcrumb
+		 * @see <a href="http://schema.org/breadcrumb">http://schema.org/breadcrumb</a>
 		 */
 		public Container.Breadcrumb getBreadcrumb();
 		public void setBreadcrumb(Container.Breadcrumb breadcrumb);
 
 		/**
-		 * uri: http://schema.org/lastReviewed
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.LastReviewed
+		 * @see <a href="http://schema.org/lastReviewed">http://schema.org/lastReviewed</a>
 		 */
 		public Container.LastReviewed getLastReviewed();
 		public void setLastReviewed(Container.LastReviewed lastReviewed);
 
 		/**
-		 * uri: http://schema.org/mainContentOfPage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.MainContentOfPage
+		 * @see <a href="http://schema.org/mainContentOfPage">http://schema.org/mainContentOfPage</a>
 		 */
 		public Container.MainContentOfPage getMainContentOfPage();
 		public void setMainContentOfPage(Container.MainContentOfPage mainContentOfPage);
 
 		/**
-		 * uri: http://schema.org/primaryImageOfPage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.PrimaryImageOfPage
+		 * @see <a href="http://schema.org/primaryImageOfPage">http://schema.org/primaryImageOfPage</a>
 		 */
 		public Container.PrimaryImageOfPage getPrimaryImageOfPage();
 		public void setPrimaryImageOfPage(Container.PrimaryImageOfPage primaryImageOfPage);
 
 		/**
-		 * uri: http://schema.org/relatedLink
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.RelatedLink
+		 * @see <a href="http://schema.org/relatedLink">http://schema.org/relatedLink</a>
 		 */
 		public Container.RelatedLink getRelatedLink();
 		public void setRelatedLink(Container.RelatedLink relatedLink);
 
 		/**
-		 * uri: http://schema.org/reviewedBy
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.ReviewedBy
+		 * @see <a href="http://schema.org/reviewedBy">http://schema.org/reviewedBy</a>
 		 */
 		public Container.ReviewedBy getReviewedBy();
 		public void setReviewedBy(Container.ReviewedBy reviewedBy);
 
 		/**
-		 * uri: http://schema.org/significantLink
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.SignificantLink
+		 * @see <a href="http://schema.org/significantLink">http://schema.org/significantLink</a>
 		 */
 		public Container.SignificantLink getSignificantLink();
 		public void setSignificantLink(Container.SignificantLink significantLink);
 
 		/**
-		 * uri: http://schema.org/speakable
-		 * class: org.kyojo.schemaOrg.m3n3.pending.Container.Speakable
+		 * @see <a href="http://schema.org/speakable">http://schema.org/speakable</a>
 		 */
 		public Speakable getSpeakable();
 		public void setSpeakable(Speakable speakable);
 
 		/**
-		 * uri: http://schema.org/specialty
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Specialty
+		 * @see <a href="http://schema.org/specialty">http://schema.org/specialty</a>
 		 */
 		public Container.Specialty getSpecialty();
 		public void setSpecialty(Container.Specialty specialty);
@@ -18295,8 +17000,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WebSite extends CreativeWork, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/issn
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Issn
+		 * @see <a href="http://schema.org/issn">http://schema.org/issn</a>
 		 */
 		public Container.Issn getIssn();
 		public void setIssn(Container.Issn issn);
@@ -18331,8 +17035,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WinAction extends AchieveAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/loser
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.Loser
+		 * @see <a href="http://schema.org/loser">http://schema.org/loser</a>
 		 */
 		public Container.Loser getLoser();
 		public void setLoser(Container.Loser loser);
@@ -18367,8 +17070,7 @@ public interface Clazz extends SchemaOrgClass {
 	public interface WriteAction extends CreateAction, SchemaOrgClass {
 
 		/**
-		 * uri: http://schema.org/inLanguage
-		 * class: org.kyojo.schemaOrg.m3n3.core.Container.InLanguage
+		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
 		 */
 		public Container.InLanguage getInLanguage();
 		public void setInLanguage(Container.InLanguage inLanguage);

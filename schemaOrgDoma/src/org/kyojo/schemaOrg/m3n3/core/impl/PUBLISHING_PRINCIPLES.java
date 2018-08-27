@@ -1,12 +1,12 @@
-package org.kyojo.schemaOrg.m3n3.core.impl;
+package org.kyojo.schemaorg.m3n3.core.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.CreativeWork;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.URL;
-import org.kyojo.schemaOrg.m3n3.core.Container;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.Clazz.CreativeWork;
+import org.kyojo.schemaorg.m3n3.core.Clazz.URL;
+import org.kyojo.schemaorg.m3n3.core.Container;
 
 import org.seasar.doma.Transient;
 
@@ -23,7 +23,7 @@ public class PUBLISHING_PRINCIPLES implements Container.PublishingPrinciples {
 	}
 
 	public PUBLISHING_PRINCIPLES(String string) {
-		this(new org.kyojo.schemaOrg.m3n3.core.impl.URL(string));
+		this(new org.kyojo.schemaorg.m3n3.core.impl.URL(string));
 	}
 
 	public String getString() {
@@ -39,9 +39,9 @@ public class PUBLISHING_PRINCIPLES implements Container.PublishingPrinciples {
 			urlList = new ArrayList<URL>();
 		}
 		if(urlList.size() == 0) {
-			urlList.add(new org.kyojo.schemaOrg.m3n3.core.impl.URL(string));
+			urlList.add(new org.kyojo.schemaorg.m3n3.core.impl.URL(string));
 		} else {
-			urlList.set(0, new org.kyojo.schemaOrg.m3n3.core.impl.URL(string));
+			urlList.set(0, new org.kyojo.schemaorg.m3n3.core.impl.URL(string));
 		}
 	}
 

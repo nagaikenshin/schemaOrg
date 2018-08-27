@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.pending.container;
+package org.kyojo.schemaorg.m3n3.gson.pending.container;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.pending.impl.DOWN_PAYMENT;
-import org.kyojo.schemaOrg.m3n3.pending.Container.DownPayment;
+import org.kyojo.schemaorg.m3n3.pending.impl.DOWN_PAYMENT;
+import org.kyojo.schemaorg.m3n3.pending.Container.DownPayment;
 
 public class DownPaymentDeserializer implements JsonDeserializer<DownPayment> {
 

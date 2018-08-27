@@ -2,17 +2,37 @@ apply plugin: 'java-library'
 apply plugin: 'maven'
 
 dependencies {
-    implementation 'commons-logging:commons-logging:1.2'
-    compileOnly project(':schemaOrgWork')
+	implementation 'commons-logging:commons-logging:1.2'
+	compileOnly project(':schemaOrgWork')
 }
 
 archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-impl'
 
+jar {
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+	classifier = 'sources'
+	from sourceSets.main.allSource
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
+javadoc {
+	options.locale = 'en_US'
+	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+}
+
+task javadocs(type: Javadoc) {
+	source = sourceSets.main.allJava
+}
+
+task javadocsJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadocs'
+	from javadocs.destinationDir
 }
 
 artifacts {
-    archives sourcesJar
+	archives sourcesJar
+	archives javadocsJar
 }

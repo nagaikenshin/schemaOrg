@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.physicalExam;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.physicalExam;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.physicalExam.LUNG;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.PhysicalExam.Lung;
+import org.kyojo.schemaorg.m3n3.healthLifesci.physicalExam.LUNG;
+import org.kyojo.schemaorg.m3n3.healthLifesci.PhysicalExam.Lung;
 
 @ExternalDomain
 public class LungConverter implements DomainConverter<Lung, String> {

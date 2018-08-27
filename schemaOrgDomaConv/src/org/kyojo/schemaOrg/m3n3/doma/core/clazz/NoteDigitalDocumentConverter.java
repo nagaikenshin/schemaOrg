@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.NOTE_DIGITAL_DOCUMENT;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.NoteDigitalDocument;
+import org.kyojo.schemaorg.m3n3.core.impl.NOTE_DIGITAL_DOCUMENT;
+import org.kyojo.schemaorg.m3n3.core.Clazz.NoteDigitalDocument;
 
 @ExternalDomain
 public class NoteDigitalDocumentConverter implements DomainConverter<NoteDigitalDocument, String> {

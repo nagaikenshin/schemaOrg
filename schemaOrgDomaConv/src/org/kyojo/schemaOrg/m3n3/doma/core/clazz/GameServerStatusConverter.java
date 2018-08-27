@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.clazz;
+package org.kyojo.schemaorg.m3n3.doma.core.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.GAME_SERVER_STATUS;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.GameServerStatus;
+import org.kyojo.schemaorg.m3n3.core.impl.GAME_SERVER_STATUS;
+import org.kyojo.schemaorg.m3n3.core.Clazz.GameServerStatus;
 
 @ExternalDomain
 public class GameServerStatusConverter implements DomainConverter<GameServerStatus, String> {

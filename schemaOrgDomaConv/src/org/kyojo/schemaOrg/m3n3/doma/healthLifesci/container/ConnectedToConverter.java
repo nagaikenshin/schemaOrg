@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.CONNECTED_TO;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.ConnectedTo;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.CONNECTED_TO;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.ConnectedTo;
 
 @ExternalDomain
 public class ConnectedToConverter implements DomainConverter<ConnectedTo, String> {

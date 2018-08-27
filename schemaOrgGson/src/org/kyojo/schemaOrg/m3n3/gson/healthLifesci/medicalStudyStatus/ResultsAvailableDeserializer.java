@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.healthLifesci.medicalStudyStatus;
+package org.kyojo.schemaorg.m3n3.gson.healthLifesci.medicalStudyStatus;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalStudyStatus.RESULTS_AVAILABLE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalStudyStatus.ResultsAvailable;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalStudyStatus.RESULTS_AVAILABLE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalStudyStatus.ResultsAvailable;
 
 public class ResultsAvailableDeserializer implements JsonDeserializer<ResultsAvailable> {
 

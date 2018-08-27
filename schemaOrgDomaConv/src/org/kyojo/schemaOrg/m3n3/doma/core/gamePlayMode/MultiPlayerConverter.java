@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.gamePlayMode;
+package org.kyojo.schemaorg.m3n3.doma.core.gamePlayMode;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.gamePlayMode.MULTI_PLAYER;
-import org.kyojo.schemaOrg.m3n3.core.GamePlayMode.MultiPlayer;
+import org.kyojo.schemaorg.m3n3.core.gamePlayMode.MULTI_PLAYER;
+import org.kyojo.schemaorg.m3n3.core.GamePlayMode.MultiPlayer;
 
 @ExternalDomain
 public class MultiPlayerConverter implements DomainConverter<MultiPlayer, String> {

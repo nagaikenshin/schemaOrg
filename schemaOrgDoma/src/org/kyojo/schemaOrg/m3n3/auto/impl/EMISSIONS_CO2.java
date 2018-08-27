@@ -1,12 +1,12 @@
-package org.kyojo.schemaOrg.m3n3.auto.impl;
+package org.kyojo.schemaorg.m3n3.auto.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.auto.Container;
-import org.kyojo.schemaOrg.m3n3.core.DataType.Number;
-import org.kyojo.schemaOrg.m3n3.core.impl.NUMBER;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.auto.Container;
+import org.kyojo.schemaorg.m3n3.core.DataType.Number;
+import org.kyojo.schemaorg.m3n3.core.impl.NUMBER;
 
 import org.seasar.doma.Transient;
 

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.eventStatusType;
+package org.kyojo.schemaorg.m3n3.doma.core.eventStatusType;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.eventStatusType.EVENT_RESCHEDULED;
-import org.kyojo.schemaOrg.m3n3.core.EventStatusType.EventRescheduled;
+import org.kyojo.schemaorg.m3n3.core.eventStatusType.EVENT_RESCHEDULED;
+import org.kyojo.schemaorg.m3n3.core.EventStatusType.EventRescheduled;
 
 @ExternalDomain
 public class EventRescheduledConverter implements DomainConverter<EventRescheduled, String> {

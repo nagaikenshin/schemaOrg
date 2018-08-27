@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.clazz;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.NERVE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Clazz.Nerve;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.NERVE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Clazz.Nerve;
 
 @ExternalDomain
 public class NerveConverter implements DomainConverter<Nerve, String> {

@@ -1,12 +1,12 @@
-package org.kyojo.schemaOrg.m3n3.pending.impl;
+package org.kyojo.schemaorg.m3n3.pending.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kyojo.schemaOrg.SimpleJsonBuilder;
-import org.kyojo.schemaOrg.m3n3.core.DataType.DateTime;
-import org.kyojo.schemaOrg.m3n3.core.impl.DATE_TIME;
-import org.kyojo.schemaOrg.m3n3.pending.Container;
+import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n3.core.DataType.DateTime;
+import org.kyojo.schemaorg.m3n3.core.impl.DATE_TIME;
+import org.kyojo.schemaorg.m3n3.pending.Container;
 
 public class CONTENT_REFERENCE_TIME implements Container.ContentReferenceTime {
 

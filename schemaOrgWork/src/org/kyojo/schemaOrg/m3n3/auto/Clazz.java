@@ -1,15 +1,15 @@
-package org.kyojo.schemaOrg.m3n3.auto;
+package org.kyojo.schemaorg.m3n3.auto;
 
-import org.kyojo.schemaOrg.CamelizedName;
-import org.kyojo.schemaOrg.ConstantizedName;
-import org.kyojo.schemaOrg.JsonLdContext;
-import org.kyojo.schemaOrg.SchemaOrgClass;
-import org.kyojo.schemaOrg.SchemaOrgComment;
-import org.kyojo.schemaOrg.SchemaOrgLabel;
-import org.kyojo.schemaOrg.SchemaOrgURI;
-import org.kyojo.schemaOrg.m3n3.auto.Container;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.QualitativeValue;
-import org.kyojo.schemaOrg.m3n3.core.Clazz.Vehicle;
+import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConstantizedName;
+import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.SchemaOrgClass;
+import org.kyojo.schemaorg.SchemaOrgComment;
+import org.kyojo.schemaorg.SchemaOrgLabel;
+import org.kyojo.schemaorg.SchemaOrgURI;
+import org.kyojo.schemaorg.m3n3.auto.Container;
+import org.kyojo.schemaorg.m3n3.core.Clazz.QualitativeValue;
+import org.kyojo.schemaorg.m3n3.core.Clazz.Vehicle;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/2000/01/rdf-schema#Class")
@@ -28,15 +28,13 @@ public interface Clazz extends SchemaOrgClass {
 	public interface BusOrCoach extends SchemaOrgClass, Vehicle {
 
 		/**
-		 * uri: http://schema.org/acrissCode
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.AcrissCode
+		 * @see <a href="http://schema.org/acrissCode">http://schema.org/acrissCode</a>
 		 */
 		public Container.AcrissCode getAcrissCode();
 		public void setAcrissCode(Container.AcrissCode acrissCode);
 
 		/**
-		 * uri: http://schema.org/roofLoad
-		 * class: org.kyojo.schemaOrg.m3n3.auto.Container.RoofLoad
+		 * @see <a href="http://schema.org/roofLoad">http://schema.org/roofLoad</a>
 		 */
 		public Container.RoofLoad getRoofLoad();
 		public void setRoofLoad(Container.RoofLoad roofLoad);

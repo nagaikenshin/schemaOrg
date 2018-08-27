@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.RECORD_LABEL;
-import org.kyojo.schemaOrg.m3n3.core.Container.RecordLabel;
+import org.kyojo.schemaorg.m3n3.core.impl.RECORD_LABEL;
+import org.kyojo.schemaorg.m3n3.core.Container.RecordLabel;
 
 @ExternalDomain
 public class RecordLabelConverter implements DomainConverter<RecordLabel, String> {

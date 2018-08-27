@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.core.container;
+package org.kyojo.schemaorg.m3n3.doma.core.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.core.impl.EDUCATIONAL_ALIGNMENT;
-import org.kyojo.schemaOrg.m3n3.core.Container.EducationalAlignment;
+import org.kyojo.schemaorg.m3n3.core.impl.EDUCATIONAL_ALIGNMENT;
+import org.kyojo.schemaorg.m3n3.core.Container.EducationalAlignment;
 
 @ExternalDomain
 public class EducationalAlignmentConverter implements DomainConverter<EducationalAlignment, String> {

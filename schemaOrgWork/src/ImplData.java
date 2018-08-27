@@ -12,18 +12,20 @@ public class ImplData {
 	public String typePkg = "";
 	public String type = "";
 	public String typeName = "";
-	public Set<String> orgTypes = new HashSet<String>();
-	public String icSmplName = "";
-	public String icSmplCml = "";
+	public Set<String> orgTypes = new HashSet<>();
+	public String ifcName = "";
+	public String ifcSmplName = "";
+	public String ifcSmplCml = "";
 	public String implName = "";
 	public String implSmplName = "";
-	public Map<String, Method[]> gsMap = new HashMap<String, Method[]>();
-	public Map<String, Method> oMap = new HashMap<String, Method>();
-	public Map<String, Class<?>> pMap = new HashMap<String, Class<?>>();
-	public List<String> ifcTree = new ArrayList<String>();
+	public Map<String, Method[]> gsMap = new HashMap<>();
+	public Map<String, Method> oMap = new HashMap<>();
+	public Map<String, Class<?>> pMap = new HashMap<>();
+	public List<String> ifcTree = new ArrayList<>();
+	public Set<String> allIfcSet = new HashSet<>();
 	public Map<String, String> ntvAtMap = new HashMap<>();
 	public Map<String, String> ntvMdMap = new HashMap<>();
-	public Set<String> domaConvNameSet = new HashSet<String>();
-	public Map<String, String> gsonTypeNameMap = new HashMap<String, String>();
+	public Set<String> domaConvNameSet = new HashSet<>();
+	public Map<String, String> gsonTypeNameMap = new HashMap<>();
 
 }

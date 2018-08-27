@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.container;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.impl.PURPOSE;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.Container.Purpose;
+import org.kyojo.schemaorg.m3n3.healthLifesci.impl.PURPOSE;
+import org.kyojo.schemaorg.m3n3.healthLifesci.Container.Purpose;
 
 @ExternalDomain
 public class PurposeConverter implements DomainConverter<Purpose, String> {

@@ -1,4 +1,4 @@
-package org.kyojo.schemaOrg.m3n3.gson.core.bookFormatType;
+package org.kyojo.schemaorg.m3n3.gson.core.bookFormatType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -14,8 +14,8 @@ import org.kyojo.gson.JsonElement;
 import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
 import org.kyojo.gson.reflect.TypeToken;
-import org.kyojo.schemaOrg.m3n3.core.bookFormatType.PAPERBACK;
-import org.kyojo.schemaOrg.m3n3.core.BookFormatType.Paperback;
+import org.kyojo.schemaorg.m3n3.core.bookFormatType.PAPERBACK;
+import org.kyojo.schemaorg.m3n3.core.BookFormatType.Paperback;
 
 public class PaperbackDeserializer implements JsonDeserializer<Paperback> {
 

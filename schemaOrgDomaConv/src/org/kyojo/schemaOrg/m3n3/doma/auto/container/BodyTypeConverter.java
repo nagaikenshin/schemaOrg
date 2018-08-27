@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.auto.container;
+package org.kyojo.schemaorg.m3n3.doma.auto.container;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.auto.impl.BODY_TYPE;
-import org.kyojo.schemaOrg.m3n3.auto.Container.BodyType;
+import org.kyojo.schemaorg.m3n3.auto.impl.BODY_TYPE;
+import org.kyojo.schemaorg.m3n3.auto.Container.BodyType;
 
 @ExternalDomain
 public class BodyTypeConverter implements DomainConverter<BodyType, String> {

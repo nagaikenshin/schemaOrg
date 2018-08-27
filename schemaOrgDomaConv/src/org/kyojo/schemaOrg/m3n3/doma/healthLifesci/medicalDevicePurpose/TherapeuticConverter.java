@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.healthLifesci.medicalDevicePurpose;
+package org.kyojo.schemaorg.m3n3.doma.healthLifesci.medicalDevicePurpose;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.healthLifesci.medicalDevicePurpose.THERAPEUTIC;
-import org.kyojo.schemaOrg.m3n3.healthLifesci.MedicalDevicePurpose.Therapeutic;
+import org.kyojo.schemaorg.m3n3.healthLifesci.medicalDevicePurpose.THERAPEUTIC;
+import org.kyojo.schemaorg.m3n3.healthLifesci.MedicalDevicePurpose.Therapeutic;
 
 @ExternalDomain
 public class TherapeuticConverter implements DomainConverter<Therapeutic, String> {

@@ -1,11 +1,11 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.container;
+package org.kyojo.schemaorg.m3n3.doma.pending.container;
 
 import java.math.BigDecimal;
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.HEALTH_PLAN_COINSURANCE_RATE;
-import org.kyojo.schemaOrg.m3n3.pending.Container.HealthPlanCoinsuranceRate;
+import org.kyojo.schemaorg.m3n3.pending.impl.HEALTH_PLAN_COINSURANCE_RATE;
+import org.kyojo.schemaorg.m3n3.pending.Container.HealthPlanCoinsuranceRate;
 
 @ExternalDomain
 public class HealthPlanCoinsuranceRateConverter implements DomainConverter<HealthPlanCoinsuranceRate, BigDecimal> {

@@ -12,19 +12,19 @@ Class and Property types mapping
 (schema.org's) class types mapped like
 ```
 http://schema.org/Person
-org.kyojo.schemaOrg.m3n3.core.Clazz$Person
+org.kyojo.schemaorg.m3n4.core.Clazz$Person
 ```
 
 Property types mapped like
 ```
 http://schema.org/author
-org.kyojo.schemaOrg.m3n3.core.Container$Author
+org.kyojo.schemaorg.m3n4.core.Container$Author
 ```
 
 These are interfaces and have each entity classes like
 ```
-org.kyojo.schemaOrg.m3n3.core.impl.PERSON
-org.kyojo.schemaOrg.m3n3.core.impl.AUTHOR
+org.kyojo.schemaorg.m3n4.core.impl.PERSON
+org.kyojo.schemaorg.m3n4.core.impl.AUTHOR
 ```
 
 Class and Property types field possession
@@ -32,13 +32,13 @@ Class and Property types field possession
 
 (schema.org's) class types has fields of (schema.org's) property types in the singular object.
 ```
-org.kyojo.schemaOrg.m3n3.core.Clazz$CreativeWork
+org.kyojo.schemaorg.m3n4.core.Clazz$CreativeWork
     public Container.Author getAuthor();
     public void setAuthor(Container.Author author);
 ```
 Property types has fields of class types in the List object.
 ```
-org.kyojo.schemaOrg.m3n3.core.Container$Author
+org.kyojo.schemaorg.m3n4.core.Container$Author
     public Clazz.Person getPerson();
     public void setPerson(Clazz.Person person);
     public List<Clazz.Person> getPersonList();
@@ -63,7 +63,7 @@ General class type's entity classes has at least 2 constructors, no arguments an
 Dedicated JSON builder
 ----------------------
 
-`org.kyojo.schemaOrg.m3n3.SimpleJsonBuilder` is the JSON builder for JSONizing schemeOrg objects. It is added functions internally no other general JSON builders provide, but enough available as a simple JSON builder for any purpose.
+`org.kyojo.schemaorg.m3n4.SimpleJsonBuilder` is the JSON builder for JSONizing schemeOrg objects. It is added functions internally no other general JSON builders provide, but enough available as a simple JSON builder for any purpose.
 ```
 CreativeWork creativeWork = new CREATIVE_WORK();
 Author author = new AUTHOR(new PERSON("誰か"));
@@ -81,7 +81,7 @@ GSON assumed for deserialization
 --------------------------------
 
 The deserialization JSONized schemaOrg objects is [GSON](https://github.com/google/gson) use assumed.
-The correspondence list of interfaces and deserializers is written in `org.kyojo.schemaOrg.m3n3.gson.GsonTypeAdapters.properties`. Load and register by GsonBuilder calling registerTypeAdapter() method.
+The correspondence list of interfaces and deserializers is written in `org.kyojo.schemaorg.m3n4.gson.GsonTypeAdapters.properties`. Load and register by GsonBuilder calling registerTypeAdapter() method.
 
 Included Projects
 -----------------

@@ -1,10 +1,10 @@
-package org.kyojo.schemaOrg.m3n3.doma.pending.clazz;
+package org.kyojo.schemaorg.m3n3.doma.pending.clazz;
 
 import org.seasar.doma.ExternalDomain;
 import org.seasar.doma.jdbc.domain.DomainConverter;
 
-import org.kyojo.schemaOrg.m3n3.pending.impl.BED_TYPE;
-import org.kyojo.schemaOrg.m3n3.pending.Clazz.BedType;
+import org.kyojo.schemaorg.m3n3.pending.impl.BED_TYPE;
+import org.kyojo.schemaorg.m3n3.pending.Clazz.BedType;
 
 @ExternalDomain
 public class BedTypeConverter implements DomainConverter<BedType, String> {
