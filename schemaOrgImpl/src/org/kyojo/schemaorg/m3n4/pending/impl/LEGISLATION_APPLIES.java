@@ -6,6 +6,7 @@ import java.util.List;
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 import org.kyojo.schemaorg.m3n4.pending.Clazz.Legislation;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.LegislationObject;
 import org.kyojo.schemaorg.m3n4.pending.Container;
 import org.kyojo.schemaorg.m3n4.pending.impl.LEGISLATION;
 
@@ -14,6 +15,7 @@ public class LEGISLATION_APPLIES implements Container.LegislationApplies {
 	private static final long serialVersionUID = 1L;
 
 	public List<Legislation> legislationList;
+	public List<LegislationObject> legislationObjectList;
 
 	public LEGISLATION_APPLIES() {
 	}
@@ -85,6 +87,58 @@ public class LEGISLATION_APPLIES implements Container.LegislationApplies {
 	@Override
 	public boolean hasLegislation() {
 		return legislationList != null && legislationList.size() > 0 && legislationList.get(0) != null;
+	}
+
+	public LEGISLATION_APPLIES(LegislationObject legislationObject) {
+		legislationObjectList = new ArrayList<LegislationObject>();
+		legislationObjectList.add(legislationObject);
+	}
+
+	@Override
+	public LegislationObject getLegislationObject() {
+		if(legislationObjectList != null && legislationObjectList.size() > 0) {
+			return legislationObjectList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setLegislationObject(LegislationObject legislationObject) {
+		if(legislationObjectList == null) {
+			legislationObjectList = new ArrayList<>();
+		}
+		if(legislationObjectList.size() == 0) {
+			legislationObjectList.add(legislationObject);
+		} else {
+			legislationObjectList.set(0, legislationObject);
+		}
+	}
+
+	@Override
+	public List<LegislationObject> getLegislationObjectList() {
+		return legislationObjectList;
+	}
+
+	@Override
+	public void setLegislationObjectList(List<LegislationObject> legislationObjectList) {
+		this.legislationObjectList = legislationObjectList;
+	}
+
+	@Override
+	public boolean hasLegislationObject() {
+		return legislationObjectList != null && legislationObjectList.size() > 0 && legislationObjectList.get(0) != null;
+	}
+
+	public LEGISLATION_APPLIES(List<Legislation> legislationList,
+			List<LegislationObject> legislationObjectList) {
+		setLegislationList(legislationList);
+		setLegislationObjectList(legislationObjectList);
+	}
+
+	public void copy(Container.LegislationApplies org) {
+		setLegislationList(org.getLegislationList());
+		setLegislationObjectList(org.getLegislationObjectList());
 	}
 
 	@Override

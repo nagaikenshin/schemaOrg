@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Barcode;
 import org.kyojo.schemaorg.m3n4.core.Clazz.ImageObject;
 import org.kyojo.schemaorg.m3n4.core.Clazz.Photograph;
 import org.kyojo.schemaorg.m3n4.core.Clazz.URL;
@@ -13,6 +14,7 @@ public class PHOTO implements Container.Photo {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<Barcode> barcodeList;
 	public List<ImageObject> imageObjectList;
 	public List<Photograph> photographList;
 	public List<URL> urlList;
@@ -41,6 +43,47 @@ public class PHOTO implements Container.Photo {
 		} else {
 			urlList.set(0, new org.kyojo.schemaorg.m3n4.core.impl.URL(string));
 		}
+	}
+
+	public PHOTO(Barcode barcode) {
+		barcodeList = new ArrayList<Barcode>();
+		barcodeList.add(barcode);
+	}
+
+	@Override
+	public Barcode getBarcode() {
+		if(barcodeList != null && barcodeList.size() > 0) {
+			return barcodeList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setBarcode(Barcode barcode) {
+		if(barcodeList == null) {
+			barcodeList = new ArrayList<>();
+		}
+		if(barcodeList.size() == 0) {
+			barcodeList.add(barcode);
+		} else {
+			barcodeList.set(0, barcode);
+		}
+	}
+
+	@Override
+	public List<Barcode> getBarcodeList() {
+		return barcodeList;
+	}
+
+	@Override
+	public void setBarcodeList(List<Barcode> barcodeList) {
+		this.barcodeList = barcodeList;
+	}
+
+	@Override
+	public boolean hasBarcode() {
+		return barcodeList != null && barcodeList.size() > 0 && barcodeList.get(0) != null;
 	}
 
 	public PHOTO(ImageObject imageObject) {
@@ -166,15 +209,18 @@ public class PHOTO implements Container.Photo {
 		return urlList != null && urlList.size() > 0 && urlList.get(0) != null;
 	}
 
-	public PHOTO(List<ImageObject> imageObjectList,
+	public PHOTO(List<Barcode> barcodeList,
+			List<ImageObject> imageObjectList,
 			List<Photograph> photographList,
 			List<URL> urlList) {
+		setBarcodeList(barcodeList);
 		setImageObjectList(imageObjectList);
 		setPhotographList(photographList);
 		setURLList(urlList);
 	}
 
 	public void copy(Container.Photo org) {
+		setBarcodeList(org.getBarcodeList());
 		setImageObjectList(org.getImageObjectList());
 		setPhotographList(org.getPhotographList());
 		setURLList(org.getURLList());

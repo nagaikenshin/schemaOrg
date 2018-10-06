@@ -366,64 +366,6 @@ public class BUSINESS_AUDIENCE implements Clazz.BusinessAudience {
 		this.yearsInOperation = yearsInOperation;
 	}
 
-	public BUSINESS_AUDIENCE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			AudienceType audienceType,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			GeographicArea geographicArea,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			NumberOfEmployees numberOfEmployees,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			YearlyRevenue yearlyRevenue,
-			YearsInOperation yearsInOperation) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAudienceType(audienceType);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setGeographicArea(geographicArea);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setNumberOfEmployees(numberOfEmployees);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setYearlyRevenue(yearlyRevenue);
-		setYearsInOperation(yearsInOperation);
-	}
-
 	public void copy(Clazz.BusinessAudience org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

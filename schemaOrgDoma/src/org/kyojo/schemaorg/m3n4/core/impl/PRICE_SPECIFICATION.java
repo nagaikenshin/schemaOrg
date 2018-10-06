@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.CompoundPriceSpecification;
+import org.kyojo.schemaorg.m3n4.core.Clazz.DeliveryChargeSpecification;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PaymentChargeSpecification;
+import org.kyojo.schemaorg.m3n4.core.Clazz.UnitPriceSpecification;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.AdditionalType;
 import org.kyojo.schemaorg.m3n4.core.Container.AlternateName;
@@ -50,6 +54,10 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 	public Long expiredBy;
 	public AdditionalType additionalType;
 	public AlternateName alternateName;
+	@Transient
+	public List<CompoundPriceSpecification> compoundPriceSpecificationList;
+	@Transient
+	public List<DeliveryChargeSpecification> deliveryChargeSpecificationList;
 	public Description description;
 	public DisambiguatingDescription disambiguatingDescription;
 	public EligibleQuantity eligibleQuantity;
@@ -62,6 +70,8 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
+	@Transient
+	public List<PaymentChargeSpecification> paymentChargeSpecificationList;
 	public PotentialAction potentialAction;
 	public Price price;
 	public PriceCurrency priceCurrency;
@@ -69,6 +79,8 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 	public List<Clazz.PriceSpecification> priceSpecificationList;
 	public SameAs sameAs;
 	public SubjectOf subjectOf;
+	@Transient
+	public List<UnitPriceSpecification> unitPriceSpecificationList;
 	public Url url;
 	public ValidFrom validFrom;
 	public ValidThrough validThrough;
@@ -139,6 +151,88 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 	@Override
 	public void setAlternateName(AlternateName alternateName) {
 		this.alternateName = alternateName;
+	}
+
+	public PRICE_SPECIFICATION(CompoundPriceSpecification compoundPriceSpecification) {
+		compoundPriceSpecificationList = new ArrayList<CompoundPriceSpecification>();
+		compoundPriceSpecificationList.add(compoundPriceSpecification);
+	}
+
+	@Override
+	public CompoundPriceSpecification getCompoundPriceSpecification() {
+		if(compoundPriceSpecificationList != null && compoundPriceSpecificationList.size() > 0) {
+			return compoundPriceSpecificationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCompoundPriceSpecification(CompoundPriceSpecification compoundPriceSpecification) {
+		if(compoundPriceSpecificationList == null) {
+			compoundPriceSpecificationList = new ArrayList<>();
+		}
+		if(compoundPriceSpecificationList.size() == 0) {
+			compoundPriceSpecificationList.add(compoundPriceSpecification);
+		} else {
+			compoundPriceSpecificationList.set(0, compoundPriceSpecification);
+		}
+	}
+
+	@Override
+	public List<CompoundPriceSpecification> getCompoundPriceSpecificationList() {
+		return compoundPriceSpecificationList;
+	}
+
+	@Override
+	public void setCompoundPriceSpecificationList(List<CompoundPriceSpecification> compoundPriceSpecificationList) {
+		this.compoundPriceSpecificationList = compoundPriceSpecificationList;
+	}
+
+	@Override
+	public boolean hasCompoundPriceSpecification() {
+		return compoundPriceSpecificationList != null && compoundPriceSpecificationList.size() > 0 && compoundPriceSpecificationList.get(0) != null;
+	}
+
+	public PRICE_SPECIFICATION(DeliveryChargeSpecification deliveryChargeSpecification) {
+		deliveryChargeSpecificationList = new ArrayList<DeliveryChargeSpecification>();
+		deliveryChargeSpecificationList.add(deliveryChargeSpecification);
+	}
+
+	@Override
+	public DeliveryChargeSpecification getDeliveryChargeSpecification() {
+		if(deliveryChargeSpecificationList != null && deliveryChargeSpecificationList.size() > 0) {
+			return deliveryChargeSpecificationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setDeliveryChargeSpecification(DeliveryChargeSpecification deliveryChargeSpecification) {
+		if(deliveryChargeSpecificationList == null) {
+			deliveryChargeSpecificationList = new ArrayList<>();
+		}
+		if(deliveryChargeSpecificationList.size() == 0) {
+			deliveryChargeSpecificationList.add(deliveryChargeSpecification);
+		} else {
+			deliveryChargeSpecificationList.set(0, deliveryChargeSpecification);
+		}
+	}
+
+	@Override
+	public List<DeliveryChargeSpecification> getDeliveryChargeSpecificationList() {
+		return deliveryChargeSpecificationList;
+	}
+
+	@Override
+	public void setDeliveryChargeSpecificationList(List<DeliveryChargeSpecification> deliveryChargeSpecificationList) {
+		this.deliveryChargeSpecificationList = deliveryChargeSpecificationList;
+	}
+
+	@Override
+	public boolean hasDeliveryChargeSpecification() {
+		return deliveryChargeSpecificationList != null && deliveryChargeSpecificationList.size() > 0 && deliveryChargeSpecificationList.get(0) != null;
 	}
 
 	public PRICE_SPECIFICATION(Description description) {
@@ -309,6 +403,47 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 		this.nameRuby = nameRuby;
 	}
 
+	public PRICE_SPECIFICATION(PaymentChargeSpecification paymentChargeSpecification) {
+		paymentChargeSpecificationList = new ArrayList<PaymentChargeSpecification>();
+		paymentChargeSpecificationList.add(paymentChargeSpecification);
+	}
+
+	@Override
+	public PaymentChargeSpecification getPaymentChargeSpecification() {
+		if(paymentChargeSpecificationList != null && paymentChargeSpecificationList.size() > 0) {
+			return paymentChargeSpecificationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPaymentChargeSpecification(PaymentChargeSpecification paymentChargeSpecification) {
+		if(paymentChargeSpecificationList == null) {
+			paymentChargeSpecificationList = new ArrayList<>();
+		}
+		if(paymentChargeSpecificationList.size() == 0) {
+			paymentChargeSpecificationList.add(paymentChargeSpecification);
+		} else {
+			paymentChargeSpecificationList.set(0, paymentChargeSpecification);
+		}
+	}
+
+	@Override
+	public List<PaymentChargeSpecification> getPaymentChargeSpecificationList() {
+		return paymentChargeSpecificationList;
+	}
+
+	@Override
+	public void setPaymentChargeSpecificationList(List<PaymentChargeSpecification> paymentChargeSpecificationList) {
+		this.paymentChargeSpecificationList = paymentChargeSpecificationList;
+	}
+
+	@Override
+	public boolean hasPaymentChargeSpecification() {
+		return paymentChargeSpecificationList != null && paymentChargeSpecificationList.size() > 0 && paymentChargeSpecificationList.get(0) != null;
+	}
+
 	public PRICE_SPECIFICATION(PotentialAction potentialAction) {
 		setPotentialAction(potentialAction);
 	}
@@ -420,6 +555,47 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 		this.subjectOf = subjectOf;
 	}
 
+	public PRICE_SPECIFICATION(UnitPriceSpecification unitPriceSpecification) {
+		unitPriceSpecificationList = new ArrayList<UnitPriceSpecification>();
+		unitPriceSpecificationList.add(unitPriceSpecification);
+	}
+
+	@Override
+	public UnitPriceSpecification getUnitPriceSpecification() {
+		if(unitPriceSpecificationList != null && unitPriceSpecificationList.size() > 0) {
+			return unitPriceSpecificationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setUnitPriceSpecification(UnitPriceSpecification unitPriceSpecification) {
+		if(unitPriceSpecificationList == null) {
+			unitPriceSpecificationList = new ArrayList<>();
+		}
+		if(unitPriceSpecificationList.size() == 0) {
+			unitPriceSpecificationList.add(unitPriceSpecification);
+		} else {
+			unitPriceSpecificationList.set(0, unitPriceSpecification);
+		}
+	}
+
+	@Override
+	public List<UnitPriceSpecification> getUnitPriceSpecificationList() {
+		return unitPriceSpecificationList;
+	}
+
+	@Override
+	public void setUnitPriceSpecificationList(List<UnitPriceSpecification> unitPriceSpecificationList) {
+		this.unitPriceSpecificationList = unitPriceSpecificationList;
+	}
+
+	@Override
+	public boolean hasUnitPriceSpecification() {
+		return unitPriceSpecificationList != null && unitPriceSpecificationList.size() > 0 && unitPriceSpecificationList.get(0) != null;
+	}
+
 	public PRICE_SPECIFICATION(Url url) {
 		setUrl(url);
 	}
@@ -476,74 +652,6 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 		this.valueAddedTaxIncluded = valueAddedTaxIncluded;
 	}
 
-	public PRICE_SPECIFICATION(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			EligibleQuantity eligibleQuantity,
-			EligibleTransactionVolume eligibleTransactionVolume,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			MaxPrice maxPrice,
-			MinPrice minPrice,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			Price price,
-			PriceCurrency priceCurrency,
-			List<Clazz.PriceSpecification> priceSpecificationList,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			ValidFrom validFrom,
-			ValidThrough validThrough,
-			ValueAddedTaxIncluded valueAddedTaxIncluded) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEligibleQuantity(eligibleQuantity);
-		setEligibleTransactionVolume(eligibleTransactionVolume);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMaxPrice(maxPrice);
-		setMinPrice(minPrice);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setPrice(price);
-		setPriceCurrency(priceCurrency);
-		setPriceSpecificationList(priceSpecificationList);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setValidFrom(validFrom);
-		setValidThrough(validThrough);
-		setValueAddedTaxIncluded(valueAddedTaxIncluded);
-	}
-
 	public void copy(Clazz.PriceSpecification org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -580,7 +688,11 @@ public class PRICE_SPECIFICATION implements Clazz.PriceSpecification, Container.
 	}
 
 	public void copy(Container.PriceSpecification org) {
+		setCompoundPriceSpecificationList(org.getCompoundPriceSpecificationList());
+		setDeliveryChargeSpecificationList(org.getDeliveryChargeSpecificationList());
+		setPaymentChargeSpecificationList(org.getPaymentChargeSpecificationList());
 		setPriceSpecificationList(org.getPriceSpecificationList());
+		setUnitPriceSpecificationList(org.getUnitPriceSpecificationList());
 	}
 
 	@Override

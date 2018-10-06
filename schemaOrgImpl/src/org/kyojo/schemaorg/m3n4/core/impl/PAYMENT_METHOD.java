@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.CreditCard;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PaymentCard;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.AdditionalType;
 import org.kyojo.schemaorg.m3n4.core.Container.AlternateName;
@@ -40,6 +42,7 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 	public Long expiredBy;
 	public AdditionalType additionalType;
 	public AlternateName alternateName;
+	public List<CreditCard> creditCardList;
 	public Description description;
 	public DisambiguatingDescription disambiguatingDescription;
 	public Identifier identifier;
@@ -48,6 +51,7 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
+	public List<PaymentCard> paymentCardList;
 	public List<Clazz.PaymentMethod> paymentMethodList;
 	public PotentialAction potentialAction;
 	public SameAs sameAs;
@@ -120,6 +124,47 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 	@Override
 	public void setAlternateName(AlternateName alternateName) {
 		this.alternateName = alternateName;
+	}
+
+	public PAYMENT_METHOD(CreditCard creditCard) {
+		creditCardList = new ArrayList<CreditCard>();
+		creditCardList.add(creditCard);
+	}
+
+	@Override
+	public CreditCard getCreditCard() {
+		if(creditCardList != null && creditCardList.size() > 0) {
+			return creditCardList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCreditCard(CreditCard creditCard) {
+		if(creditCardList == null) {
+			creditCardList = new ArrayList<>();
+		}
+		if(creditCardList.size() == 0) {
+			creditCardList.add(creditCard);
+		} else {
+			creditCardList.set(0, creditCard);
+		}
+	}
+
+	@Override
+	public List<CreditCard> getCreditCardList() {
+		return creditCardList;
+	}
+
+	@Override
+	public void setCreditCardList(List<CreditCard> creditCardList) {
+		this.creditCardList = creditCardList;
+	}
+
+	@Override
+	public boolean hasCreditCard() {
+		return creditCardList != null && creditCardList.size() > 0 && creditCardList.get(0) != null;
 	}
 
 	public PAYMENT_METHOD(Description description) {
@@ -234,6 +279,47 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 		this.nameRuby = nameRuby;
 	}
 
+	public PAYMENT_METHOD(PaymentCard paymentCard) {
+		paymentCardList = new ArrayList<PaymentCard>();
+		paymentCardList.add(paymentCard);
+	}
+
+	@Override
+	public PaymentCard getPaymentCard() {
+		if(paymentCardList != null && paymentCardList.size() > 0) {
+			return paymentCardList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPaymentCard(PaymentCard paymentCard) {
+		if(paymentCardList == null) {
+			paymentCardList = new ArrayList<>();
+		}
+		if(paymentCardList.size() == 0) {
+			paymentCardList.add(paymentCard);
+		} else {
+			paymentCardList.set(0, paymentCard);
+		}
+	}
+
+	@Override
+	public List<PaymentCard> getPaymentCardList() {
+		return paymentCardList;
+	}
+
+	@Override
+	public void setPaymentCardList(List<PaymentCard> paymentCardList) {
+		this.paymentCardList = paymentCardList;
+	}
+
+	@Override
+	public boolean hasPaymentCard() {
+		return paymentCardList != null && paymentCardList.size() > 0 && paymentCardList.get(0) != null;
+	}
+
 	public PAYMENT_METHOD(Clazz.PaymentMethod paymentMethod) {
 		paymentMethodList = new ArrayList<Clazz.PaymentMethod>();
 		paymentMethodList.add(paymentMethod);
@@ -345,58 +431,6 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 		this.url = url;
 	}
 
-	public PAYMENT_METHOD(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			List<Clazz.PaymentMethod> paymentMethodList,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			SupersededBy supersededBy,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPaymentMethodList(paymentMethodList);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setSupersededBy(supersededBy);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.PaymentMethod org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -425,6 +459,8 @@ public class PAYMENT_METHOD implements Clazz.PaymentMethod, Container.PaymentMet
 	}
 
 	public void copy(Container.PaymentMethod org) {
+		setCreditCardList(org.getCreditCardList());
+		setPaymentCardList(org.getPaymentCardList());
 		setPaymentMethodList(org.getPaymentMethodList());
 	}
 

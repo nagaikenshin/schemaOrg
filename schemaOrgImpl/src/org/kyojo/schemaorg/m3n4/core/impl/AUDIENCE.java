@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.BusinessAudience;
+import org.kyojo.schemaorg.m3n4.core.Clazz.EducationalAudience;
+import org.kyojo.schemaorg.m3n4.core.Clazz.ParentAudience;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PeopleAudience;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.AdditionalType;
 import org.kyojo.schemaorg.m3n4.core.Container.AlternateName;
@@ -24,6 +28,8 @@ import org.kyojo.schemaorg.m3n4.core.Container.Url;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalAudience;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.Patient;
 import org.kyojo.schemaorg.m3n4.pending.Container.SubjectOf;
 
 public class AUDIENCE implements Clazz.Audience, Container.Audience {
@@ -43,15 +49,21 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 	public AlternateName alternateName;
 	public List<Clazz.Audience> audienceList;
 	public AudienceType audienceType;
+	public List<BusinessAudience> businessAudienceList;
 	public Description description;
 	public DisambiguatingDescription disambiguatingDescription;
+	public List<EducationalAudience> educationalAudienceList;
 	public GeographicArea geographicArea;
 	public Identifier identifier;
 	public Image image;
 	public MainEntityOfPage mainEntityOfPage;
+	public List<MedicalAudience> medicalAudienceList;
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
+	public List<ParentAudience> parentAudienceList;
+	public List<Patient> patientList;
+	public List<PeopleAudience> peopleAudienceList;
 	public PotentialAction potentialAction;
 	public SameAs sameAs;
 	public SubjectOf subjectOf;
@@ -179,6 +191,47 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 		this.audienceType = audienceType;
 	}
 
+	public AUDIENCE(BusinessAudience businessAudience) {
+		businessAudienceList = new ArrayList<BusinessAudience>();
+		businessAudienceList.add(businessAudience);
+	}
+
+	@Override
+	public BusinessAudience getBusinessAudience() {
+		if(businessAudienceList != null && businessAudienceList.size() > 0) {
+			return businessAudienceList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setBusinessAudience(BusinessAudience businessAudience) {
+		if(businessAudienceList == null) {
+			businessAudienceList = new ArrayList<>();
+		}
+		if(businessAudienceList.size() == 0) {
+			businessAudienceList.add(businessAudience);
+		} else {
+			businessAudienceList.set(0, businessAudience);
+		}
+	}
+
+	@Override
+	public List<BusinessAudience> getBusinessAudienceList() {
+		return businessAudienceList;
+	}
+
+	@Override
+	public void setBusinessAudienceList(List<BusinessAudience> businessAudienceList) {
+		this.businessAudienceList = businessAudienceList;
+	}
+
+	@Override
+	public boolean hasBusinessAudience() {
+		return businessAudienceList != null && businessAudienceList.size() > 0 && businessAudienceList.get(0) != null;
+	}
+
 	public AUDIENCE(Description description) {
 		setDescription(description);
 	}
@@ -205,6 +258,47 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 	@Override
 	public void setDisambiguatingDescription(DisambiguatingDescription disambiguatingDescription) {
 		this.disambiguatingDescription = disambiguatingDescription;
+	}
+
+	public AUDIENCE(EducationalAudience educationalAudience) {
+		educationalAudienceList = new ArrayList<EducationalAudience>();
+		educationalAudienceList.add(educationalAudience);
+	}
+
+	@Override
+	public EducationalAudience getEducationalAudience() {
+		if(educationalAudienceList != null && educationalAudienceList.size() > 0) {
+			return educationalAudienceList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setEducationalAudience(EducationalAudience educationalAudience) {
+		if(educationalAudienceList == null) {
+			educationalAudienceList = new ArrayList<>();
+		}
+		if(educationalAudienceList.size() == 0) {
+			educationalAudienceList.add(educationalAudience);
+		} else {
+			educationalAudienceList.set(0, educationalAudience);
+		}
+	}
+
+	@Override
+	public List<EducationalAudience> getEducationalAudienceList() {
+		return educationalAudienceList;
+	}
+
+	@Override
+	public void setEducationalAudienceList(List<EducationalAudience> educationalAudienceList) {
+		this.educationalAudienceList = educationalAudienceList;
+	}
+
+	@Override
+	public boolean hasEducationalAudience() {
+		return educationalAudienceList != null && educationalAudienceList.size() > 0 && educationalAudienceList.get(0) != null;
 	}
 
 	public AUDIENCE(GeographicArea geographicArea) {
@@ -263,6 +357,47 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 		this.mainEntityOfPage = mainEntityOfPage;
 	}
 
+	public AUDIENCE(MedicalAudience medicalAudience) {
+		medicalAudienceList = new ArrayList<MedicalAudience>();
+		medicalAudienceList.add(medicalAudience);
+	}
+
+	@Override
+	public MedicalAudience getMedicalAudience() {
+		if(medicalAudienceList != null && medicalAudienceList.size() > 0) {
+			return medicalAudienceList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalAudience(MedicalAudience medicalAudience) {
+		if(medicalAudienceList == null) {
+			medicalAudienceList = new ArrayList<>();
+		}
+		if(medicalAudienceList.size() == 0) {
+			medicalAudienceList.add(medicalAudience);
+		} else {
+			medicalAudienceList.set(0, medicalAudience);
+		}
+	}
+
+	@Override
+	public List<MedicalAudience> getMedicalAudienceList() {
+		return medicalAudienceList;
+	}
+
+	@Override
+	public void setMedicalAudienceList(List<MedicalAudience> medicalAudienceList) {
+		this.medicalAudienceList = medicalAudienceList;
+	}
+
+	@Override
+	public boolean hasMedicalAudience() {
+		return medicalAudienceList != null && medicalAudienceList.size() > 0 && medicalAudienceList.get(0) != null;
+	}
+
 	public AUDIENCE(Name name) {
 		setName(name);
 	}
@@ -303,6 +438,129 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 	@Override
 	public void setNameRuby(NameRuby nameRuby) {
 		this.nameRuby = nameRuby;
+	}
+
+	public AUDIENCE(ParentAudience parentAudience) {
+		parentAudienceList = new ArrayList<ParentAudience>();
+		parentAudienceList.add(parentAudience);
+	}
+
+	@Override
+	public ParentAudience getParentAudience() {
+		if(parentAudienceList != null && parentAudienceList.size() > 0) {
+			return parentAudienceList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setParentAudience(ParentAudience parentAudience) {
+		if(parentAudienceList == null) {
+			parentAudienceList = new ArrayList<>();
+		}
+		if(parentAudienceList.size() == 0) {
+			parentAudienceList.add(parentAudience);
+		} else {
+			parentAudienceList.set(0, parentAudience);
+		}
+	}
+
+	@Override
+	public List<ParentAudience> getParentAudienceList() {
+		return parentAudienceList;
+	}
+
+	@Override
+	public void setParentAudienceList(List<ParentAudience> parentAudienceList) {
+		this.parentAudienceList = parentAudienceList;
+	}
+
+	@Override
+	public boolean hasParentAudience() {
+		return parentAudienceList != null && parentAudienceList.size() > 0 && parentAudienceList.get(0) != null;
+	}
+
+	public AUDIENCE(Patient patient) {
+		patientList = new ArrayList<Patient>();
+		patientList.add(patient);
+	}
+
+	@Override
+	public Patient getPatient() {
+		if(patientList != null && patientList.size() > 0) {
+			return patientList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPatient(Patient patient) {
+		if(patientList == null) {
+			patientList = new ArrayList<>();
+		}
+		if(patientList.size() == 0) {
+			patientList.add(patient);
+		} else {
+			patientList.set(0, patient);
+		}
+	}
+
+	@Override
+	public List<Patient> getPatientList() {
+		return patientList;
+	}
+
+	@Override
+	public void setPatientList(List<Patient> patientList) {
+		this.patientList = patientList;
+	}
+
+	@Override
+	public boolean hasPatient() {
+		return patientList != null && patientList.size() > 0 && patientList.get(0) != null;
+	}
+
+	public AUDIENCE(PeopleAudience peopleAudience) {
+		peopleAudienceList = new ArrayList<PeopleAudience>();
+		peopleAudienceList.add(peopleAudience);
+	}
+
+	@Override
+	public PeopleAudience getPeopleAudience() {
+		if(peopleAudienceList != null && peopleAudienceList.size() > 0) {
+			return peopleAudienceList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPeopleAudience(PeopleAudience peopleAudience) {
+		if(peopleAudienceList == null) {
+			peopleAudienceList = new ArrayList<>();
+		}
+		if(peopleAudienceList.size() == 0) {
+			peopleAudienceList.add(peopleAudience);
+		} else {
+			peopleAudienceList.set(0, peopleAudience);
+		}
+	}
+
+	@Override
+	public List<PeopleAudience> getPeopleAudienceList() {
+		return peopleAudienceList;
+	}
+
+	@Override
+	public void setPeopleAudienceList(List<PeopleAudience> peopleAudienceList) {
+		this.peopleAudienceList = peopleAudienceList;
+	}
+
+	@Override
+	public boolean hasPeopleAudience() {
+		return peopleAudienceList != null && peopleAudienceList.size() > 0 && peopleAudienceList.get(0) != null;
 	}
 
 	public AUDIENCE(PotentialAction potentialAction) {
@@ -361,60 +619,6 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 		this.url = url;
 	}
 
-	public AUDIENCE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			List<Clazz.Audience> audienceList,
-			AudienceType audienceType,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			GeographicArea geographicArea,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAudienceList(audienceList);
-		setAudienceType(audienceType);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setGeographicArea(geographicArea);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.Audience org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -445,6 +649,12 @@ public class AUDIENCE implements Clazz.Audience, Container.Audience {
 
 	public void copy(Container.Audience org) {
 		setAudienceList(org.getAudienceList());
+		setBusinessAudienceList(org.getBusinessAudienceList());
+		setEducationalAudienceList(org.getEducationalAudienceList());
+		setMedicalAudienceList(org.getMedicalAudienceList());
+		setParentAudienceList(org.getParentAudienceList());
+		setPatientList(org.getPatientList());
+		setPeopleAudienceList(org.getPeopleAudienceList());
 	}
 
 	@Override

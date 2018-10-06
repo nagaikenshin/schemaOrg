@@ -27,6 +27,11 @@ import org.kyojo.schemaorg.SampleValue;
 
 public class GenerateImpl {
 
+	// リリースするschema.orgバージョンが若い順に
+	// perl nq2java.pl
+	// gradle run
+	// gradle install
+	// を繰り返す。
 	public static String basePath = "..";
 	public static String verStr = "m3n4"; // Libにもバージョンを見ているところあり
 	public static String defDPath = basePath + "/schemaOrgWork/src/";
@@ -38,6 +43,8 @@ public class GenerateImpl {
 	public static String pkg1Base = "org.kyojo.schemaorg";
 	public static String pkg2Base = pkg1Base + "." + verStr;
 	public static String verSrcMPath = pkg2Base.replaceAll("\\.", "/") + "/";
+	public static String rngFPath = basePath + "/data/" + verStr + "/rng.tsv";
+	public static String subFPath = basePath + "/data/" + verStr + "/sub.tsv";
 	public static Pattern cfpt = Pattern.compile("(org/kyojo/schemaorg/" + verStr + ")/(\\w+)/(\\w+)\\.java$");
 	public static Pattern expt = Pattern.compile("^(" + pkg2Base.replaceAll("\\.", "\\\\.") + "\\.\\w+)\\.");
 
@@ -45,7 +52,7 @@ public class GenerateImpl {
 		File pd = new File(defDPath);
 		Map<String, ImplData> implDataMap = new HashMap<>();
 		Map<String, String> impl2Ifc = new HashMap<>();
-		Map<String, String> ifc2Impl = new HashMap<>();
+		Map<String, Set<String>> ifc2Impl = new HashMap<>();
 		try {
 			// 古いソースファイルを削除
 			File implDir = new File(implDPath + verSrcMPath);
@@ -77,13 +84,66 @@ public class GenerateImpl {
 				}
 			}
 
+			BufferedReader br = null;
+			Map<String, Set<String>> subSetMap = new HashMap<>();
+			Map<String, Set<String>> rngSetMap = new HashMap<>();
+			Set<String> gsonBasicSet = new HashSet<>();
+			List<String> basicRootList = new ArrayList<>();
+			try {
+				br = new BufferedReader(new FileReader(new File(subFPath)));
+				String line;
+				String subKey = null;
+				Set<String> subSet = null;
+				while((line = br.readLine()) != null) {
+					if(line.length() == 0) {
+						subSetMap.put(subKey, subSet);
+					} else if(line.startsWith("\t\t")) {
+						subSet.add(line.substring(2));
+					} else if(line.startsWith("\t")) {
+					} else {
+						subKey = line;
+						subSet = new HashSet<>();
+					}
+				}
+				br.close();
+				br = null;
+
+				br = new BufferedReader(new FileReader(new File(rngFPath)));
+				String rngKey = null;
+				Set<String> rngSet = null;
+				while((line = br.readLine()) != null) {
+					if(line.length() == 0) {
+						rngSetMap.put(rngKey, rngSet);
+					} else if(line.startsWith("\t\t")) {
+					} else if(line.startsWith("\t")) {
+						rngSet.add(line.substring(1));
+					} else {
+						rngKey = line;
+						rngSet = new HashSet<>();
+					}
+				}
+				br.close();
+				br = null;
+
+			} catch(IOException ioe) {
+				ioe.printStackTrace();
+				System.exit(1);
+			} finally {
+				if(br != null) {
+					try {
+						br.close();
+					} catch(IOException ioe) {}
+					br = null;
+				}
+			}
+
 			Lib.retrieve(pd, implDataMap, impl2Ifc, ifc2Impl);
 
 			List<String> domaConvNameList = new ArrayList<>();
 			List<String> gsonTypeNameList = new ArrayList<>();
 			Map<String, String> gsonTypeNameMap = new HashMap<>();
 			for(ImplData implData : implDataMap.values()) {
-				outputImpl(implData);
+				outputImpl(implData, subSetMap, rngSetMap);
 				domaConvNameList.addAll(implData.domaConvNameSet);
 				gsonTypeNameMap.putAll(implData.gsonTypeNameMap);
 				for(String gsonTypeName : implData.gsonTypeNameMap.keySet()) {
@@ -92,29 +152,87 @@ public class GenerateImpl {
 			}
 
 			// デフォルトで有効にするインターフェースを内包するクラスを検索
-			Set<String> gsonBasicSet = new HashSet<>();
-			List<String> basicRootList = new ArrayList<>();
+			Set<String> gsonBasicSet2 = new HashSet<>();
 			basicRootList.add(pkg2Base + ".core.Clazz$Person");
 			basicRootList.add(pkg2Base + ".core.Clazz$DataType");
 			basicRootList.add(pkg2Base + ".core.Clazz$DayOfWeek");
 			basicRootList.add(pkg2Base + ".core.Clazz$Float");
 			basicRootList.add(pkg2Base + ".core.Clazz$Integer");
+			basicRootList.add(pkg2Base + ".core.Clazz$URL");
 			basicRootList.add(pkg2Base + ".core.Clazz$Action");
 			basicRootList.add(pkg2Base + ".core.Clazz$Event");
+			basicRootList.add(pkg2Base + ".core.Clazz$Place");
+			basicRootList.add(pkg2Base + ".core.Clazz$Product");
 			basicRootList.add(pkg2Base + ".core.Clazz$LocalBusiness");
+			basicRootList.add(pkg2Base + ".core.Clazz$CreativeWork");
+			basicRootList.add(pkg2Base + ".core.Clazz$MusicAlbum");
+			basicRootList.add(pkg2Base + ".core.Clazz$NewsArticle");
+			basicRootList.add(pkg2Base + ".core.Clazz$Report");
+			basicRootList.add(pkg2Base + ".core.Clazz$ScholarlyArticle");
+			basicRootList.add(pkg2Base + ".core.Clazz$LiveBlogPosting");
+			basicRootList.add(pkg2Base + ".core.Clazz$DiscussionForumPosting");
+			basicRootList.add(pkg2Base + ".core.Clazz$Blog");
+			basicRootList.add(pkg2Base + ".core.Clazz$Book");
+			basicRootList.add(pkg2Base + ".core.Clazz$Comment");
+			basicRootList.add(pkg2Base + ".core.Clazz$Course");
+			basicRootList.add(pkg2Base + ".core.Clazz$Recipe");
+			basicRootList.add(pkg2Base + ".core.Clazz$AudioObject");
+			basicRootList.add(pkg2Base + ".core.Clazz$DataDownload");
+			basicRootList.add(pkg2Base + ".core.Clazz$ImageObject");
+			basicRootList.add(pkg2Base + ".core.Clazz$MusicVideoObject");
+			basicRootList.add(pkg2Base + ".core.Clazz$Menu");
+			basicRootList.add(pkg2Base + ".core.Clazz$EmailMessage");
+			basicRootList.add(pkg2Base + ".core.Clazz$Movie");
+			basicRootList.add(pkg2Base + ".core.Clazz$Photograph");
+			basicRootList.add(pkg2Base + ".core.Clazz$Question");
+			basicRootList.add(pkg2Base + ".core.Clazz$Review");
+			basicRootList.add(pkg2Base + ".core.Clazz$SoftwareApplication");
+			basicRootList.add(pkg2Base + ".core.Clazz$TVSeries");
+			basicRootList.add(pkg2Base + ".core.Clazz$WebPage");
+			basicRootList.add(pkg2Base + ".core.Clazz$AggregateOffer");
+			basicRootList.add(pkg2Base + ".core.Clazz$AggregateRating");
+			basicRootList.add(pkg2Base + ".core.Clazz$PlayAction");
+			basicRootList.add(pkg2Base + ".core.Clazz$ReadAction");
+			basicRootList.add(pkg2Base + ".core.Clazz$SendAction");
+			basicRootList.add(pkg2Base + ".core.Clazz$ReceiveAction");
+			basicRootList.add(pkg2Base + ".core.Clazz$GeoCoordinates");
+			basicRootList.add(pkg2Base + ".core.Clazz$PostalAddress");
+			basicRootList.add(pkg2Base + ".core.Clazz$GeoShape");
+			basicRootList.add(pkg2Base + ".core.Clazz$InteractionCounter");
+			basicRootList.add(pkg2Base + ".core.Clazz$MonetaryAmount");
+			basicRootList.add(pkg2Base + ".core.Clazz$NutritionInformation");
+			basicRootList.add(pkg2Base + ".core.Clazz$OpeningHoursSpecification");
+			basicRootList.add(pkg2Base + ".core.Clazz$PriceSpecification");
+			basicRootList.add(pkg2Base + ".core.Clazz$EntryPoint");
 			for(String basicRoot : basicRootList) {
-				Lib.retrieveContainedTypes(basicRoot, gsonBasicSet, implDataMap, ifc2Impl);
+				Lib.retrieveContainedTypes(basicRoot, gsonBasicSet, gsonBasicSet2,
+						implDataMap, ifc2Impl, subSetMap);
 			}
+			gsonBasicSet.addAll(gsonBasicSet2);
+
+			gsonBasicSet.add(pkg2Base + ".core.DataType$Boolean");
+			gsonBasicSet.add(pkg2Base + ".core.DataType$Date");
+			gsonBasicSet.add(pkg2Base + ".core.DataType$DateTime");
+			gsonBasicSet.add(pkg2Base + ".core.DataType$Number");
+			gsonBasicSet.add(pkg2Base + ".core.DataType$Text");
+			gsonBasicSet.add(pkg2Base + ".core.DataType$Time");
 
 			// デフォルトで有効にするインターフェースをインプリメントするクラスを検索
 			Set<String> basicSuperSet = new HashSet<>();
 			basicSuperSet.add(pkg2Base + ".core.Clazz$Action");
 			basicSuperSet.add(pkg2Base + ".core.Clazz$Event");
 			basicSuperSet.add(pkg2Base + ".core.Clazz$DayOfWeek");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$GenderType");
 			basicSuperSet.add(pkg2Base + ".core.Clazz$LocalBusiness");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$CreativeWork");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$Product");
+			basicSuperSet.add(pkg2Base + ".core.Clazz$Intangible");
 			for(String basicSuper : basicSuperSet) {
 				for(ImplData implData : implDataMap.values()) {
 					if(implData.allIfcSet.contains(basicSuper)) {
+						for(String orgType : implData.orgTypes) {
+							gsonBasicSet.add(implData.typePkg + "." + orgType + "." + implData.ifcSmplName);
+						}
 						gsonBasicSet.add(implData.ifcName);
 					}
 				}
@@ -570,7 +688,8 @@ public class GenerateImpl {
 		}
 	}
 
-	private static void outputImpl(ImplData implData) {
+	private static void outputImpl(ImplData implData,
+			Map<String, Set<String>> subSetMap, Map<String, Set<String>> rngSetMap) {
 		String extension = implData.extension;
 		String typePkg = implData.typePkg;
 		String type = implData.type;
@@ -594,7 +713,7 @@ public class GenerateImpl {
 					withLists.add(ent.getKey());
 				} else {
 					// オーバーロードで重複するもの
-					// CreativeWorkのCommentとReviewのみ -> 個別対応
+					// CreativeWorkのCommentとReview -> 個別対応
 					// System.out.println("single method: " + sms[0]);
 					// System.out.println("list method: " + lms[0]);
 				}
@@ -637,6 +756,52 @@ public class GenerateImpl {
 		PrintWriter pw = null;
 		BufferedReader br = null;
 		try {
+			boolean isSubCreativeWork = false; // ClazzがCreativeWorkのサブクラス
+			boolean isSubMedicalEntity = false; // ClazzがMedicalEntityのサブクラス
+			Class<?> cwCls = GenerateImpl.class.getClassLoader()
+					.loadClass(pkg2Base + ".core.Clazz$CreativeWork");
+			Class<?> meCls = GenerateImpl.class.getClassLoader()
+					.loadClass(pkg2Base + ".healthLifesci.Clazz$MedicalEntity");
+			if(implData.orgTypes.contains("Clazz")) {
+				String ifcClsName = typePkg + ".Clazz$" + ifcSmplName;
+				Class<?> ifcClsCls = GenerateImpl.class.getClassLoader().loadClass(ifcClsName);
+				if(cwCls.isAssignableFrom(ifcClsCls)) {
+					isSubCreativeWork = true;
+				}
+				if(meCls.isAssignableFrom(ifcClsCls)) {
+					isSubMedicalEntity = true;
+				}
+			}
+			boolean hasThing = false; // ContainerがThingを取る
+			boolean hasCreativeWork = false; // ContainerがCreativeWorkを取る
+			boolean isCtnHasClz = false; // ContainerがClazzを取る
+			Set<String> rngSetCtn = null;
+			if(implData.orgTypes.contains("Container")) {
+				String ifcCtnName = typePkg + ".Container$";
+				if(ifcSmplName.equals("Url") || ifcSmplName.equals("URL")) {
+					ifcCtnName += "Url";
+				} else {
+					ifcCtnName += ifcSmplName;
+				}
+				Class<?> ifcCtnCls = GenerateImpl.class.getClassLoader().loadClass(ifcCtnName);
+
+				ImplData implData2 = new ImplData();
+				Lib.retrieveInterfaces(ifcCtnCls, implData2, 0, 0);
+				if(implData2.pMap.containsKey(pkg2Base + ".core.Clazz$Thing")) {
+					hasThing = true;
+				}
+				if(implData2.pMap.containsKey(pkg2Base + ".core.Clazz$CreativeWork")) {
+					hasCreativeWork = true;
+				}
+
+				rngSetCtn = rngSetMap.get(ifcCtnName);
+				if(rngSetCtn != null && implData.orgTypes.contains("Clazz")) {
+					String ifcClsName = typePkg + ".Clazz$" + ifcSmplName;
+					isCtnHasClz = rngSetCtn.contains(ifcClsName);
+				}
+			}
+			Set<String> rngSet = rngSetMap.get(implData.ifcName);
+
 			// java出力ファイルオープン
 			File cf = new File(javaFPath.toString());
 			File cd = cf.getParentFile();
@@ -661,6 +826,7 @@ public class GenerateImpl {
 					imptList.add(pkg2Base + ".core.impl.TEXT");
 				}
 			}
+
 			boolean hasList = false;
 			String pre = "";
 			if((extension.equals("core") && orgTypes.contains("Container")
@@ -675,16 +841,38 @@ public class GenerateImpl {
 					if(p.getName().startsWith("java.lang")) {
 						continue;
 					}
+
+					// [個別対応] 直接指定
+					if(isCtnHasClz) {
+						if(isSubCreativeWork) {
+							if(hasCreativeWork) {
+								if(p.getSimpleName().equals("Comment")) {
+									imptList.add(pkg2Base + ".core.impl.COMMENT");
+									continue;
+								} else if(p.getSimpleName().equals("Review")) {
+									imptList.add(pkg2Base + ".core.impl.REVIEW");
+									continue;
+								} else if(hasThing) {
+									if(p.getSimpleName().equals("AggregateRating")) {
+										imptList.add(pkg2Base + ".core.impl.AGGREGATE_RATING");
+										continue;
+									} else if(p.getSimpleName().equals("Audience")) {
+										imptList.add(pkg2Base + ".core.impl.AUDIENCE");
+										continue;
+									}
+								}
+							}
+						}
+						if(isSubMedicalEntity && hasThing
+								&& p.getSimpleName().equals("MedicineSystem")) {
+							imptList.add(pkg2Base + ".healthLifesci.impl.MEDICINE_SYSTEM");
+							continue;
+						}
+					}
 					imptList.add(p.getName().replace("$", "."));
 				}
 			}
-			// if(extension.equals("core") && orgTypes.contains("Container")
-			//		&& (ifcSmplName.equals("Category"))) {
-			//	imptList.add(pkgBase + ".healthLifesci.impl.PHYSICAL_ACTIVITY_CATEGORY");
-			// } else if(extension.equals("core") && orgTypes.contains("Container")
-			//		&& (ifcSmplName.equals("TypeOfBed"))) {
-			//	imptList.add(pkgBase + ".pending.impl.BED_TYPE");
-			// }
+
 			for(Method[] gsMtds : gsMap.values()) {
 				Method gm = gsMtds[0];
 				if(gm.getReturnType().equals(List.class)) {
@@ -730,7 +918,10 @@ public class GenerateImpl {
 				ntvGSNtvSmpl = "String";
 				ntvGSNtvName = ntvGSNtvSmpl;
 				ntvGSNtvCml = "string";
-			} else if(gsMap.containsKey("organizationList".toLowerCase())) {
+			} else if(gsMap.containsKey("organizationList".toLowerCase())
+					&& (rngSet.contains(pkg2Base + ".core.Container.Organization")
+						|| (rngSetCtn != null
+							&& rngSetCtn.contains(pkg2Base + ".core.Container.Organization")))) {
 				imptList.add(pkg2Base + ".core.Container.Name");
 				if(!extension.equals("core")) {
 					imptList.add(pkg2Base + ".core.impl.ORGANIZATION");
@@ -742,7 +933,10 @@ public class GenerateImpl {
 				ntvGSNtvSmpl = "String";
 				ntvGSNtvName = ntvGSNtvSmpl;
 				ntvGSNtvCml = "string";
-			} else if(gsMap.containsKey("personList".toLowerCase())) {
+			} else if(gsMap.containsKey("personList".toLowerCase())
+					&& (rngSet.contains(pkg2Base + ".core.Container.Person")
+						|| (rngSetCtn != null
+							&& rngSetCtn.contains(pkg2Base + ".core.Container.Person")))) {
 				imptList.add(pkg2Base + ".core.Container.Name");
 				if(!extension.equals("core")) {
 					imptList.add(pkg2Base + ".core.impl.PERSON");
@@ -789,12 +983,18 @@ public class GenerateImpl {
 						gsName = "D0uble";
 					} else if(gsName.equals("Long")) {
 						gsName = "L0ng";
+					} else if(gsName.equals("Float")) {
+						gsName = "Fl0at";
 					}
 					if(gsMap.containsKey(gsName.toLowerCase() + "list")) {
 						Method sm = gsMap.get(gsName.toLowerCase() + "list")[1];
 						ParameterizedType gType = (ParameterizedType)sm.getGenericParameterTypes()[0];
 						Type[] aTypes = gType.getActualTypeArguments();
 						Class<?> smc = pMap.get(aTypes[0].getTypeName());
+						if(!rngSet.contains(smc.getName())
+								&& !(rngSetCtn != null && rngSetCtn.contains(smc.getName()))) {
+							continue;
+						}
 						ImplData implData2 = new ImplData();
 						Lib.retrieveInterfaces(smc, implData2, 0, 0);
 						for(Map.Entry<String, Class<?>> ent2 : implData2.pMap.entrySet()) {
@@ -1055,6 +1255,8 @@ public class GenerateImpl {
 					gsName = "L0ng";
 				} else if(gsName.equals("Class")) {
 					gsName = "Clazz";
+				} else if(gsName.equals("Float")) {
+					gsName = "Fl0at";
 				}
 				System.out.println(ifcSmplName + ", " + gsName);
 
@@ -1095,7 +1297,45 @@ public class GenerateImpl {
 					Type smt = smp.getType();
 					Class<?> smc = pMap.get(smt.getTypeName());
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
+					boolean isDupCore = false;
+					boolean isDupHL = false;
+					if(isCtnHasClz) {
+						if(isSubCreativeWork) {
+							if(hasCreativeWork) {
+								if(smc.getSimpleName().equals("Comment")
+										|| smc.getSimpleName().equals("Review")) {
+									isDupCore = true;
+								} else if(hasThing) {
+									if(smc.getSimpleName().equals("AggregateRating")
+											|| smc.getSimpleName().equals("Audience")) {
+										isDupCore = true;
+									}
+								}
+							}
+							if(isSubMedicalEntity && hasThing
+									&& smc.getSimpleName().equals("MedicineSystem")) {
+								isDupHL = true;
+							}
+							if(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment")) {
+								isDupCore = true;
+							} else if(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review")) {
+								isDupCore = true;
+							}
+						}
+					}
+					if(isDupCore) {
+						if(extension.equals("core")) {
+							pre2 = "Container.";
+						} else {
+							pre2 = pkg2Base + ".core.Container.";
+						}
+					} else if(isDupHL) {
+						if(extension.equals("healthLifesci")) {
+							pre2 = "Container.";
+						} else {
+							pre2 = pkg2Base + ".healthLifesci.Container.";
+						}
+					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Container.";
 					}
 					pw.printf("	public %s%s %s;\n", pre2, smc.getSimpleName(), smp.getName());
@@ -1107,7 +1347,45 @@ public class GenerateImpl {
 					Type[] aTypes = gType.getActualTypeArguments();
 					Class<?> smc = pMap.get(aTypes[0].getTypeName());
 					String pre2 = pre;
-					if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+					boolean isDupCore = false;
+					boolean isDupHL = false;
+					if(isCtnHasClz) {
+						if(isSubCreativeWork) {
+							if(hasCreativeWork) {
+								if(smc.getSimpleName().equals("Comment")
+										|| smc.getSimpleName().equals("Review")) {
+									isDupCore = true;
+								} else if(hasThing) {
+									if(smc.getSimpleName().equals("AggregateRating")
+											|| smc.getSimpleName().equals("Audience")) {
+										isDupCore = true;
+									}
+								}
+							}
+							if(isSubMedicalEntity && hasThing
+									&& smc.getSimpleName().equals("MedicineSystem")) {
+								isDupHL = true;
+							}
+							if(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment")) {
+								isDupCore = true;
+							} else if(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review")) {
+								isDupCore = true;
+							}
+						}
+					}
+					if(isDupCore) {
+						if(extension.equals("core")) {
+							pre2 = "Clazz.";
+						} else {
+							pre2 = pkg2Base + ".core.Clazz.";
+						}
+					} else if(isDupHL) {
+						if(extension.equals("healthLifesci")) {
+							pre2 = "Clazz.";
+						} else {
+							pre2 = pkg2Base + ".healthLifesci.Clazz.";
+						}
+					} else if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
 						// [個別対応] 同名クラスのため直接指定
 						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
@@ -1280,6 +1558,8 @@ public class GenerateImpl {
 					gsName = "L0ng";
 				} else if(gsName.equals("Class")) {
 					gsName = "Clazz";
+				} else if(gsName.equals("Float")) {
+					gsName = "Fl0at";
 				}
 
 				if(extension.equals("core") && orgTypes.contains("Clazz")
@@ -1327,6 +1607,8 @@ public class GenerateImpl {
 						smplName = "D0uble";
 					} else if(smplName.equals("Long")) {
 						smplName = "L0ng";
+					} else if(smplName.equals("Float")) {
+						smplName = "Fl0at";
 					} else if(smplName.equals("BigDecimal")) {
 						smplName = "Number";
 					} else if(smplName.equals("OffsetDateTime")) {
@@ -1356,7 +1638,45 @@ public class GenerateImpl {
 					}
 
 					String pre2 = pre;
-					if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
+					boolean isDupCore = false;
+					boolean isDupHL = false;
+					if(isCtnHasClz) {
+						if(isSubCreativeWork) {
+							if(hasCreativeWork) {
+								if(smc.getSimpleName().equals("Comment")
+										|| smc.getSimpleName().equals("Review")) {
+									isDupCore = true;
+								} else if(hasThing) {
+									if(smc.getSimpleName().equals("AggregateRating")
+											|| smc.getSimpleName().equals("Audience")) {
+										isDupCore = true;
+									}
+								}
+							}
+							if(isSubMedicalEntity && hasThing
+									&& smc.getSimpleName().equals("MedicineSystem")) {
+								isDupHL = true;
+							}
+							if(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment")) {
+								isDupCore = true;
+							} else if(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review")) {
+								isDupCore = true;
+							}
+						}
+					}
+					if(isDupCore) {
+						if(extension.equals("core")) {
+							pre2 = "Container.";
+						} else {
+							pre2 = pkg2Base + ".core.Container.";
+						}
+					} else if(isDupHL) {
+						if(extension.equals("healthLifesci")) {
+							pre2 = "Container.";
+						} else {
+							pre2 = pkg2Base + ".healthLifesci.Container.";
+						}
+					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Container.";
 					}
 					pw.printf("	public %s(%s%s %s) {\n", implSmplName,
@@ -1376,8 +1696,8 @@ public class GenerateImpl {
 						pw.println("		}");
 						pw.println("	}");
 						pw.println();
-					} else if(!(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment"))
-							&& !(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review"))) {
+					} else if(!(isDupCore || isDupHL)
+							&& !(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType"))) {
 						// [個別対応]
 						pw.println("	@Override");
 						pw.printf("	public %s%s get%s() {\n", pre2,
@@ -1419,6 +1739,7 @@ public class GenerateImpl {
 						pw.println("	}");
 						pw.println();
 						// smplName = "D0uble";
+						smplName = "Fl0at";
 					} else if(smplName.equals("Integer")) {
 						pw.printf("	public %s(Long l0ng) {\n", implSmplName);
 						pw.printf("		this(new INTEGER(l0ng));\n");
@@ -1465,8 +1786,50 @@ public class GenerateImpl {
 					} else if(smplName.equals("Class")) {
 						smplName = "Clazz";
 					}
+
 					String pre2 = pre;
-					if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
+					String pre3 = "Container.";
+					boolean isDupCore = false;
+					boolean isDupHL = false;
+					if(isCtnHasClz) {
+						if(isSubCreativeWork) {
+							if(hasCreativeWork) {
+								if(smc.getSimpleName().equals("Comment")
+										|| smc.getSimpleName().equals("Review")) {
+									isDupCore = true;
+								} else if(hasThing) {
+									if(smc.getSimpleName().equals("AggregateRating")
+											|| smc.getSimpleName().equals("Audience")) {
+										isDupCore = true;
+									}
+								}
+							}
+							if(isSubMedicalEntity && hasThing
+									&& smc.getSimpleName().equals("MedicineSystem")) {
+								isDupHL = true;
+							}
+							if(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment")) {
+								isDupCore = true;
+							} else if(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review")) {
+								isDupCore = true;
+							}
+						}
+					}
+					if(isDupCore) {
+						if(extension.equals("core")) {
+							pre2 = "Clazz.";
+						} else {
+							pre2 = pkg2Base + ".core.Clazz.";
+							pre3 = pkg2Base + ".core.Container.";
+						}
+					} else if(isDupHL) {
+						if(extension.equals("healthLifesci")) {
+							pre2 = "Clazz.";
+						} else {
+							pre2 = pkg2Base + ".healthLifesci.Clazz.";
+							pre3 = pkg2Base + ".healthLifesci.Container.";
+						}
+					} else if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
 						// [個別対応] 同名クラスのため直接指定
 						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
@@ -1483,8 +1846,7 @@ public class GenerateImpl {
 					pw.println("	}");
 					pw.println();
 					pw.println("	@Override");
-					if(!(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment"))
-							&& !(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review"))
+					if(!(isDupCore || isDupHL)
 							&& !(implSmplName.equals("TEXT") && smc.getSimpleName().equals("Text"))) {
 						pw.printf("	public %s%s get%s() {\n", pre2,
 								smc.getSimpleName(), smplName);
@@ -1497,7 +1859,8 @@ public class GenerateImpl {
 						pw.println("	}");
 					} else {
 						// [個別対応]
-						pw.printf("	public %s get%s() {\n", implSmplName, smplName);
+						String smcImpl = smc.getAnnotation(ConstantizedName.class).value();
+						pw.printf("	public %s get%s() {\n", smcImpl, smplName);
 						pw.printf("		%s%s cls = null;\n", pre2, smc.getSimpleName());
 						pw.printf("		if(%s != null && %s.size() > 0) {\n",
 								smp.getName(), smp.getName());
@@ -1513,13 +1876,13 @@ public class GenerateImpl {
 							pw.println("			impl.copy(cls);");
 							pw.println("		}");
 						} else {
-							pw.printf("		Container.%s ctn = %s;\n", smc.getSimpleName(),
+							pw.printf("		%s%s ctn = %s;\n", pre3, smc.getSimpleName(),
 									smp.getName().substring(0, smp.getName().length() - 4));
 							pw.println("		if(cls == null && ctn == null) {");
 							pw.println("			return null;");
 							pw.println("		}");
 							pw.println("");
-							pw.printf("		%s impl = new %s();\n", implSmplName, implSmplName);
+							pw.printf("		%s impl = new %s();\n", smcImpl, smcImpl);
 							pw.println("		if(cls != null) {");
 							pw.println("			impl.copy(cls);");
 							pw.println("		}");
@@ -1557,8 +1920,7 @@ public class GenerateImpl {
 					pw.println("	}");
 					pw.println();
 					pw.println("	@Override");
-					if(!(implSmplName.equals("COMMENT") && smc.getSimpleName().equals("Comment"))
-							&& !(implSmplName.equals("REVIEW") && smc.getSimpleName().equals("Review"))
+					if(!(isDupCore || isDupHL)
 							&& !(implSmplName.equals("TEXT") && smc.getSimpleName().equals("Text"))) {
 						pw.printf("	public boolean has%s() {\n", smplName);
 						pw.printf("		return %s != null && %s.size() > 0 && %s.get(0) != null;\n",
@@ -1636,6 +1998,8 @@ public class GenerateImpl {
 						gsName = "L0ng";
 					} else if(gsName.equals("Class")) {
 						gsName = "Clazz";
+					} else if(gsName.equals("Float")) {
+						gsName = "Fl0at";
 					}
 
 					if(extension.equals("core") && orgTypes.contains("DataType")
@@ -1674,6 +2038,8 @@ public class GenerateImpl {
 							smplName = "D0uble";
 						} else if(smplName.equals("Long")) {
 							smplName = "L0ng";
+						} else if(smplName.equals("Float")) {
+							smplName = "Fl0at";
 						} else if(smplName.equals("BigDecimal")) {
 							smplName = "Number";
 						} else if(smplName.equals("OffsetDateTime")) {
@@ -1723,6 +2089,8 @@ public class GenerateImpl {
 							smplName = "D0uble";
 						} else if(smplName.equals("Long")) {
 							smplName = "L0ng";
+						} else if(smplName.equals("Float")) {
+							smplName = "Fl0at";
 						} else if(smplName.equals("BigDecimal")) {
 							smplName = "Number";
 						} else if(smplName.equals("OffsetDateTime")) {
@@ -1771,16 +2139,18 @@ public class GenerateImpl {
 					}
 				}
 
-				if(prmStrs.size() > 1) {
-					pw.printf("	public %s(%s) {\n", implSmplName, String.join(",\n\t\t\t", prmStrs));
-				} else {
-					pw.printf("	public %s(%s) {\n", implSmplName, prmStrs.get(0));
+				if(pMap.size() <= 20) { // あまり引数の多いコンストラクタは無駄だし作れない
+					if(prmStrs.size() > 1) {
+						pw.printf("	public %s(%s) {\n", implSmplName, String.join(",\n\t\t\t", prmStrs));
+					} else {
+						pw.printf("	public %s(%s) {\n", implSmplName, prmStrs.get(0));
+					}
+					for(String setMtd : setMtds) {
+						pw.println(setMtd);
+					}
+					pw.println("	}");
+					pw.println();
 				}
-				for(String setMtd : setMtds) {
-					pw.println(setMtd);
-				}
-				pw.println("	}");
-				pw.println();
 
 				for(String orgType : orgTypeList) {
 					if(orgType.startsWith("Container.") && setMtdCtns.size() > 0) {
@@ -2126,6 +2496,8 @@ public class GenerateImpl {
 						gsName = "L0ng";
 					} else if(gsName.equals("Class")) {
 						gsName = "Clazz";
+					} else if(gsName.equals("Float")) {
+						gsName = "Fl0at";
 					}
 
 					if(extension.equals("core") && orgTypes.contains("Clazz")
@@ -2245,7 +2617,7 @@ public class GenerateImpl {
 			}
 			pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
 			br = new BufferedReader(new FileReader(new File(javaFPath.toString())));
-			String line;
+			String line = null;
 			int lcnt = 0;
 			while((line = br.readLine()) != null) {
 				lcnt++;
@@ -2279,7 +2651,8 @@ public class GenerateImpl {
 					pw.println(line);
 				}
 			}
-
+			br.close();
+			br = null;
 			pw.close();
 			pw = null;
 
@@ -2470,6 +2843,7 @@ public class GenerateImpl {
 				pw.println("import java.util.List;");
 				pw.println("import java.util.Map.Entry;");
 				pw.println("");
+				pw.println("import org.kyojo.gson.JsonArray;");
 				pw.println("import org.kyojo.gson.JsonDeserializationContext;");
 				pw.println("import org.kyojo.gson.JsonDeserializer;");
 				pw.println("import org.kyojo.gson.JsonElement;");
@@ -2568,10 +2942,12 @@ public class GenerateImpl {
 				pw.println("			fldMap.put(fld.getName(), fld);");
 				pw.println("		}");
 				pw.println("		for(Entry<String, JsonElement> ent : jsonObject.entrySet()) {");
-				pw.println("			if(fldMap.containsKey(ent.getKey())) {");
-				pw.println("				Field fld = fldMap.get(ent.getKey());");
-				pw.println("				JsonElement elm = ent.getValue();");
-				pw.println("				try {");
+				pw.println("			try {");
+				pw.println("				boolean noListSuf = fldMap.containsKey(ent.getKey());");
+				pw.println("				boolean hasListSuf = fldMap.containsKey(ent.getKey() + \"List\");");
+				pw.println("				if(noListSuf && !hasListSuf) {");
+				pw.println("					Field fld = fldMap.get(ent.getKey());");
+				pw.println("					JsonElement elm = ent.getValue();");
 				pw.println("					if(fld.getType().equals(List.class)) {");
 				pw.println("						ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
 				pw.println("						Type[] aTypes = gType.getActualTypeArguments();");
@@ -2582,11 +2958,26 @@ public class GenerateImpl {
 				pw.println("						Object val = context.deserialize(elm, fld.getType());");
 				pw.println("						fld.set(obj, val);");
 				pw.println("					}");
-				pw.println("				} catch(IllegalArgumentException iae) {");
-				pw.println("					throw new JsonParseException(iae);");
-				pw.println("				} catch(IllegalAccessException iae) {");
-				pw.println("					throw new JsonParseException(iae);");
+				pw.println("				} else if(hasListSuf) {");
+				pw.println("					Field fld = fldMap.get(ent.getKey() + \"List\");");
+				pw.println("					JsonElement elm = ent.getValue();");
+				pw.println("					ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
+				pw.println("					Type[] aTypes = gType.getActualTypeArguments();");
+				pw.println("					Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();");
+				pw.println("					if(elm.isJsonArray()) {");
+				pw.println("						List<?> list = context.deserialize(elm, listType);");
+				pw.println("						fld.set(obj, list);");
+				pw.println("					} else {");
+				pw.println("						Object val = context.deserialize(elm, aTypes[0]);");
+				pw.println("						List<Object> list = context.deserialize(new JsonArray(), listType);");
+				pw.println("						list.add(val);");
+				pw.println("						fld.set(obj, list);");
+				pw.println("					}");
 				pw.println("				}");
+				pw.println("			} catch(IllegalArgumentException iae) {");
+				pw.println("				throw new JsonParseException(iae);");
+				pw.println("			} catch(IllegalAccessException iae) {");
+				pw.println("				throw new JsonParseException(iae);");
 				pw.println("			}");
 				pw.println("		}");
 				pw.println("");

@@ -21,6 +21,9 @@ import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MaximumDoseSchedule;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.RecommendedDoseSchedule;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.ReportedDoseSchedule;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container.Code;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container.DoseUnit;
@@ -65,13 +68,19 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 	public Image image;
 	public LegalStatus legalStatus;
 	public MainEntityOfPage mainEntityOfPage;
+	@Transient
+	public List<MaximumDoseSchedule> maximumDoseScheduleList;
 	public MedicineSystem medicineSystem;
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
 	public PotentialAction potentialAction;
 	public RecognizingAuthority recognizingAuthority;
+	@Transient
+	public List<RecommendedDoseSchedule> recommendedDoseScheduleList;
 	public RelevantSpecialty relevantSpecialty;
+	@Transient
+	public List<ReportedDoseSchedule> reportedDoseScheduleList;
 	public SameAs sameAs;
 	public Study study;
 	public SubjectOf subjectOf;
@@ -340,6 +349,47 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 		this.mainEntityOfPage = mainEntityOfPage;
 	}
 
+	public DOSE_SCHEDULE(MaximumDoseSchedule maximumDoseSchedule) {
+		maximumDoseScheduleList = new ArrayList<MaximumDoseSchedule>();
+		maximumDoseScheduleList.add(maximumDoseSchedule);
+	}
+
+	@Override
+	public MaximumDoseSchedule getMaximumDoseSchedule() {
+		if(maximumDoseScheduleList != null && maximumDoseScheduleList.size() > 0) {
+			return maximumDoseScheduleList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMaximumDoseSchedule(MaximumDoseSchedule maximumDoseSchedule) {
+		if(maximumDoseScheduleList == null) {
+			maximumDoseScheduleList = new ArrayList<>();
+		}
+		if(maximumDoseScheduleList.size() == 0) {
+			maximumDoseScheduleList.add(maximumDoseSchedule);
+		} else {
+			maximumDoseScheduleList.set(0, maximumDoseSchedule);
+		}
+	}
+
+	@Override
+	public List<MaximumDoseSchedule> getMaximumDoseScheduleList() {
+		return maximumDoseScheduleList;
+	}
+
+	@Override
+	public void setMaximumDoseScheduleList(List<MaximumDoseSchedule> maximumDoseScheduleList) {
+		this.maximumDoseScheduleList = maximumDoseScheduleList;
+	}
+
+	@Override
+	public boolean hasMaximumDoseSchedule() {
+		return maximumDoseScheduleList != null && maximumDoseScheduleList.size() > 0 && maximumDoseScheduleList.get(0) != null;
+	}
+
 	public DOSE_SCHEDULE(MedicineSystem medicineSystem) {
 		setMedicineSystem(medicineSystem);
 	}
@@ -424,6 +474,47 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 		this.recognizingAuthority = recognizingAuthority;
 	}
 
+	public DOSE_SCHEDULE(RecommendedDoseSchedule recommendedDoseSchedule) {
+		recommendedDoseScheduleList = new ArrayList<RecommendedDoseSchedule>();
+		recommendedDoseScheduleList.add(recommendedDoseSchedule);
+	}
+
+	@Override
+	public RecommendedDoseSchedule getRecommendedDoseSchedule() {
+		if(recommendedDoseScheduleList != null && recommendedDoseScheduleList.size() > 0) {
+			return recommendedDoseScheduleList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setRecommendedDoseSchedule(RecommendedDoseSchedule recommendedDoseSchedule) {
+		if(recommendedDoseScheduleList == null) {
+			recommendedDoseScheduleList = new ArrayList<>();
+		}
+		if(recommendedDoseScheduleList.size() == 0) {
+			recommendedDoseScheduleList.add(recommendedDoseSchedule);
+		} else {
+			recommendedDoseScheduleList.set(0, recommendedDoseSchedule);
+		}
+	}
+
+	@Override
+	public List<RecommendedDoseSchedule> getRecommendedDoseScheduleList() {
+		return recommendedDoseScheduleList;
+	}
+
+	@Override
+	public void setRecommendedDoseScheduleList(List<RecommendedDoseSchedule> recommendedDoseScheduleList) {
+		this.recommendedDoseScheduleList = recommendedDoseScheduleList;
+	}
+
+	@Override
+	public boolean hasRecommendedDoseSchedule() {
+		return recommendedDoseScheduleList != null && recommendedDoseScheduleList.size() > 0 && recommendedDoseScheduleList.get(0) != null;
+	}
+
 	public DOSE_SCHEDULE(RelevantSpecialty relevantSpecialty) {
 		setRelevantSpecialty(relevantSpecialty);
 	}
@@ -436,6 +527,47 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 	@Override
 	public void setRelevantSpecialty(RelevantSpecialty relevantSpecialty) {
 		this.relevantSpecialty = relevantSpecialty;
+	}
+
+	public DOSE_SCHEDULE(ReportedDoseSchedule reportedDoseSchedule) {
+		reportedDoseScheduleList = new ArrayList<ReportedDoseSchedule>();
+		reportedDoseScheduleList.add(reportedDoseSchedule);
+	}
+
+	@Override
+	public ReportedDoseSchedule getReportedDoseSchedule() {
+		if(reportedDoseScheduleList != null && reportedDoseScheduleList.size() > 0) {
+			return reportedDoseScheduleList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setReportedDoseSchedule(ReportedDoseSchedule reportedDoseSchedule) {
+		if(reportedDoseScheduleList == null) {
+			reportedDoseScheduleList = new ArrayList<>();
+		}
+		if(reportedDoseScheduleList.size() == 0) {
+			reportedDoseScheduleList.add(reportedDoseSchedule);
+		} else {
+			reportedDoseScheduleList.set(0, reportedDoseSchedule);
+		}
+	}
+
+	@Override
+	public List<ReportedDoseSchedule> getReportedDoseScheduleList() {
+		return reportedDoseScheduleList;
+	}
+
+	@Override
+	public void setReportedDoseScheduleList(List<ReportedDoseSchedule> reportedDoseScheduleList) {
+		this.reportedDoseScheduleList = reportedDoseScheduleList;
+	}
+
+	@Override
+	public boolean hasReportedDoseSchedule() {
+		return reportedDoseScheduleList != null && reportedDoseScheduleList.size() > 0 && reportedDoseScheduleList.get(0) != null;
 	}
 
 	public DOSE_SCHEDULE(SameAs sameAs) {
@@ -508,78 +640,6 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 		this.url = url;
 	}
 
-	public DOSE_SCHEDULE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Code code,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			List<Clazz.DoseSchedule> doseScheduleList,
-			DoseUnit doseUnit,
-			DoseValue doseValue,
-			Frequency frequency,
-			Guideline guideline,
-			Identifier identifier,
-			Image image,
-			LegalStatus legalStatus,
-			MainEntityOfPage mainEntityOfPage,
-			MedicineSystem medicineSystem,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RecognizingAuthority recognizingAuthority,
-			RelevantSpecialty relevantSpecialty,
-			SameAs sameAs,
-			Study study,
-			SubjectOf subjectOf,
-			TargetPopulation targetPopulation,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setCode(code);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setDoseScheduleList(doseScheduleList);
-		setDoseUnit(doseUnit);
-		setDoseValue(doseValue);
-		setFrequency(frequency);
-		setGuideline(guideline);
-		setIdentifier(identifier);
-		setImage(image);
-		setLegalStatus(legalStatus);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMedicineSystem(medicineSystem);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRecognizingAuthority(recognizingAuthority);
-		setRelevantSpecialty(relevantSpecialty);
-		setSameAs(sameAs);
-		setStudy(study);
-		setSubjectOf(subjectOf);
-		setTargetPopulation(targetPopulation);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.DoseSchedule org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -619,6 +679,9 @@ public class DOSE_SCHEDULE implements Clazz.DoseSchedule, Container.DoseSchedule
 
 	public void copy(Container.DoseSchedule org) {
 		setDoseScheduleList(org.getDoseScheduleList());
+		setMaximumDoseScheduleList(org.getMaximumDoseScheduleList());
+		setRecommendedDoseScheduleList(org.getRecommendedDoseScheduleList());
+		setReportedDoseScheduleList(org.getReportedDoseScheduleList());
 	}
 
 	@Override

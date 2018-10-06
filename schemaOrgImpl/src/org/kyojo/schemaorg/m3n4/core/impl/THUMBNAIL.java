@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Barcode;
 import org.kyojo.schemaorg.m3n4.core.Clazz.ImageObject;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
@@ -12,6 +13,7 @@ public class THUMBNAIL implements Container.Thumbnail {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<Barcode> barcodeList;
 	public List<ImageObject> imageObjectList;
 
 	public THUMBNAIL() {
@@ -43,6 +45,47 @@ public class THUMBNAIL implements Container.Thumbnail {
 		} else {
 			imageObjectList.set(0, new IMAGE_OBJECT(string));
 		}
+	}
+
+	public THUMBNAIL(Barcode barcode) {
+		barcodeList = new ArrayList<Barcode>();
+		barcodeList.add(barcode);
+	}
+
+	@Override
+	public Barcode getBarcode() {
+		if(barcodeList != null && barcodeList.size() > 0) {
+			return barcodeList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setBarcode(Barcode barcode) {
+		if(barcodeList == null) {
+			barcodeList = new ArrayList<>();
+		}
+		if(barcodeList.size() == 0) {
+			barcodeList.add(barcode);
+		} else {
+			barcodeList.set(0, barcode);
+		}
+	}
+
+	@Override
+	public List<Barcode> getBarcodeList() {
+		return barcodeList;
+	}
+
+	@Override
+	public void setBarcodeList(List<Barcode> barcodeList) {
+		this.barcodeList = barcodeList;
+	}
+
+	@Override
+	public boolean hasBarcode() {
+		return barcodeList != null && barcodeList.size() > 0 && barcodeList.get(0) != null;
 	}
 
 	public THUMBNAIL(ImageObject imageObject) {
@@ -84,6 +127,17 @@ public class THUMBNAIL implements Container.Thumbnail {
 	@Override
 	public boolean hasImageObject() {
 		return imageObjectList != null && imageObjectList.size() > 0 && imageObjectList.get(0) != null;
+	}
+
+	public THUMBNAIL(List<Barcode> barcodeList,
+			List<ImageObject> imageObjectList) {
+		setBarcodeList(barcodeList);
+		setImageObjectList(imageObjectList);
+	}
+
+	public void copy(Container.Thumbnail org) {
+		setBarcodeList(org.getBarcodeList());
+		setImageObjectList(org.getImageObjectList());
 	}
 
 	@Override

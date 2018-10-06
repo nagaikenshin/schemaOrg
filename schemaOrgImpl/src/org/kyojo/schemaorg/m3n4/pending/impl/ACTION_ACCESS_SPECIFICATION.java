@@ -382,66 +382,6 @@ public class ACTION_ACCESS_SPECIFICATION implements Clazz.ActionAccessSpecificat
 		this.url = url;
 	}
 
-	public ACTION_ACCESS_SPECIFICATION(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			AvailabilityEnds availabilityEnds,
-			AvailabilityStarts availabilityStarts,
-			Category category,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			EligibleRegion eligibleRegion,
-			ExpectsAcceptanceOf expectsAcceptanceOf,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RequiresSubscription requiresSubscription,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAvailabilityEnds(availabilityEnds);
-		setAvailabilityStarts(availabilityStarts);
-		setCategory(category);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEligibleRegion(eligibleRegion);
-		setExpectsAcceptanceOf(expectsAcceptanceOf);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRequiresSubscription(requiresSubscription);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.ActionAccessSpecification org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

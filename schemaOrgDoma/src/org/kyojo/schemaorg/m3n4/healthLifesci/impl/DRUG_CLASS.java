@@ -364,60 +364,6 @@ public class DRUG_CLASS implements Clazz.DrugClass, Container.DrugClass {
 		this.url = url;
 	}
 
-	public DRUG_CLASS(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Drug drug,
-			List<Clazz.DrugClass> drugClassList,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			SupersededBy supersededBy,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setDrug(drug);
-		setDrugClassList(drugClassList);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setSupersededBy(supersededBy);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.DrugClass org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.MobileApplication;
 import org.kyojo.schemaorg.m3n4.core.Clazz.SoftwareApplication;
+import org.kyojo.schemaorg.m3n4.core.Clazz.VideoGame;
+import org.kyojo.schemaorg.m3n4.core.Clazz.WebApplication;
 import org.kyojo.schemaorg.m3n4.core.Clazz.WebSite;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
@@ -13,7 +16,10 @@ public class INTERACTION_SERVICE implements Container.InteractionService {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<MobileApplication> mobileApplicationList;
 	public List<SoftwareApplication> softwareApplicationList;
+	public List<VideoGame> videoGameList;
+	public List<WebApplication> webApplicationList;
 	public List<WebSite> webSiteList;
 
 	public INTERACTION_SERVICE() {
@@ -45,6 +51,47 @@ public class INTERACTION_SERVICE implements Container.InteractionService {
 		} else {
 			softwareApplicationList.set(0, new SOFTWARE_APPLICATION(string));
 		}
+	}
+
+	public INTERACTION_SERVICE(MobileApplication mobileApplication) {
+		mobileApplicationList = new ArrayList<MobileApplication>();
+		mobileApplicationList.add(mobileApplication);
+	}
+
+	@Override
+	public MobileApplication getMobileApplication() {
+		if(mobileApplicationList != null && mobileApplicationList.size() > 0) {
+			return mobileApplicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMobileApplication(MobileApplication mobileApplication) {
+		if(mobileApplicationList == null) {
+			mobileApplicationList = new ArrayList<>();
+		}
+		if(mobileApplicationList.size() == 0) {
+			mobileApplicationList.add(mobileApplication);
+		} else {
+			mobileApplicationList.set(0, mobileApplication);
+		}
+	}
+
+	@Override
+	public List<MobileApplication> getMobileApplicationList() {
+		return mobileApplicationList;
+	}
+
+	@Override
+	public void setMobileApplicationList(List<MobileApplication> mobileApplicationList) {
+		this.mobileApplicationList = mobileApplicationList;
+	}
+
+	@Override
+	public boolean hasMobileApplication() {
+		return mobileApplicationList != null && mobileApplicationList.size() > 0 && mobileApplicationList.get(0) != null;
 	}
 
 	public INTERACTION_SERVICE(SoftwareApplication softwareApplication) {
@@ -88,6 +135,88 @@ public class INTERACTION_SERVICE implements Container.InteractionService {
 		return softwareApplicationList != null && softwareApplicationList.size() > 0 && softwareApplicationList.get(0) != null;
 	}
 
+	public INTERACTION_SERVICE(VideoGame videoGame) {
+		videoGameList = new ArrayList<VideoGame>();
+		videoGameList.add(videoGame);
+	}
+
+	@Override
+	public VideoGame getVideoGame() {
+		if(videoGameList != null && videoGameList.size() > 0) {
+			return videoGameList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setVideoGame(VideoGame videoGame) {
+		if(videoGameList == null) {
+			videoGameList = new ArrayList<>();
+		}
+		if(videoGameList.size() == 0) {
+			videoGameList.add(videoGame);
+		} else {
+			videoGameList.set(0, videoGame);
+		}
+	}
+
+	@Override
+	public List<VideoGame> getVideoGameList() {
+		return videoGameList;
+	}
+
+	@Override
+	public void setVideoGameList(List<VideoGame> videoGameList) {
+		this.videoGameList = videoGameList;
+	}
+
+	@Override
+	public boolean hasVideoGame() {
+		return videoGameList != null && videoGameList.size() > 0 && videoGameList.get(0) != null;
+	}
+
+	public INTERACTION_SERVICE(WebApplication webApplication) {
+		webApplicationList = new ArrayList<WebApplication>();
+		webApplicationList.add(webApplication);
+	}
+
+	@Override
+	public WebApplication getWebApplication() {
+		if(webApplicationList != null && webApplicationList.size() > 0) {
+			return webApplicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setWebApplication(WebApplication webApplication) {
+		if(webApplicationList == null) {
+			webApplicationList = new ArrayList<>();
+		}
+		if(webApplicationList.size() == 0) {
+			webApplicationList.add(webApplication);
+		} else {
+			webApplicationList.set(0, webApplication);
+		}
+	}
+
+	@Override
+	public List<WebApplication> getWebApplicationList() {
+		return webApplicationList;
+	}
+
+	@Override
+	public void setWebApplicationList(List<WebApplication> webApplicationList) {
+		this.webApplicationList = webApplicationList;
+	}
+
+	@Override
+	public boolean hasWebApplication() {
+		return webApplicationList != null && webApplicationList.size() > 0 && webApplicationList.get(0) != null;
+	}
+
 	public INTERACTION_SERVICE(WebSite webSite) {
 		webSiteList = new ArrayList<WebSite>();
 		webSiteList.add(webSite);
@@ -129,14 +258,23 @@ public class INTERACTION_SERVICE implements Container.InteractionService {
 		return webSiteList != null && webSiteList.size() > 0 && webSiteList.get(0) != null;
 	}
 
-	public INTERACTION_SERVICE(List<SoftwareApplication> softwareApplicationList,
+	public INTERACTION_SERVICE(List<MobileApplication> mobileApplicationList,
+			List<SoftwareApplication> softwareApplicationList,
+			List<VideoGame> videoGameList,
+			List<WebApplication> webApplicationList,
 			List<WebSite> webSiteList) {
+		setMobileApplicationList(mobileApplicationList);
 		setSoftwareApplicationList(softwareApplicationList);
+		setVideoGameList(videoGameList);
+		setWebApplicationList(webApplicationList);
 		setWebSiteList(webSiteList);
 	}
 
 	public void copy(Container.InteractionService org) {
+		setMobileApplicationList(org.getMobileApplicationList());
 		setSoftwareApplicationList(org.getSoftwareApplicationList());
+		setVideoGameList(org.getVideoGameList());
+		setWebApplicationList(org.getWebApplicationList());
 		setWebSiteList(org.getWebSiteList());
 	}
 

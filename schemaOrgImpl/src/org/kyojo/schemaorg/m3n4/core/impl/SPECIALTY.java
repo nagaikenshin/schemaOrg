@@ -22,6 +22,7 @@ import org.kyojo.schemaorg.m3n4.core.Container.Url;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalSpecialty;
 import org.kyojo.schemaorg.m3n4.meta.Container.SupersededBy;
 import org.kyojo.schemaorg.m3n4.pending.Container.SubjectOf;
 
@@ -45,6 +46,7 @@ public class SPECIALTY implements Clazz.Specialty, Container.Specialty {
 	public Identifier identifier;
 	public Image image;
 	public MainEntityOfPage mainEntityOfPage;
+	public List<MedicalSpecialty> medicalSpecialtyList;
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
@@ -190,6 +192,47 @@ public class SPECIALTY implements Clazz.Specialty, Container.Specialty {
 	@Override
 	public void setMainEntityOfPage(MainEntityOfPage mainEntityOfPage) {
 		this.mainEntityOfPage = mainEntityOfPage;
+	}
+
+	public SPECIALTY(MedicalSpecialty medicalSpecialty) {
+		medicalSpecialtyList = new ArrayList<MedicalSpecialty>();
+		medicalSpecialtyList.add(medicalSpecialty);
+	}
+
+	@Override
+	public MedicalSpecialty getMedicalSpecialty() {
+		if(medicalSpecialtyList != null && medicalSpecialtyList.size() > 0) {
+			return medicalSpecialtyList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalSpecialty(MedicalSpecialty medicalSpecialty) {
+		if(medicalSpecialtyList == null) {
+			medicalSpecialtyList = new ArrayList<>();
+		}
+		if(medicalSpecialtyList.size() == 0) {
+			medicalSpecialtyList.add(medicalSpecialty);
+		} else {
+			medicalSpecialtyList.set(0, medicalSpecialty);
+		}
+	}
+
+	@Override
+	public List<MedicalSpecialty> getMedicalSpecialtyList() {
+		return medicalSpecialtyList;
+	}
+
+	@Override
+	public void setMedicalSpecialtyList(List<MedicalSpecialty> medicalSpecialtyList) {
+		this.medicalSpecialtyList = medicalSpecialtyList;
+	}
+
+	@Override
+	public boolean hasMedicalSpecialty() {
+		return medicalSpecialtyList != null && medicalSpecialtyList.size() > 0 && medicalSpecialtyList.get(0) != null;
 	}
 
 	public SPECIALTY(Name name) {
@@ -345,58 +388,6 @@ public class SPECIALTY implements Clazz.Specialty, Container.Specialty {
 		this.url = url;
 	}
 
-	public SPECIALTY(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			List<Clazz.Specialty> specialtyList,
-			SubjectOf subjectOf,
-			SupersededBy supersededBy,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSpecialtyList(specialtyList);
-		setSubjectOf(subjectOf);
-		setSupersededBy(supersededBy);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.Specialty org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -425,6 +416,7 @@ public class SPECIALTY implements Clazz.Specialty, Container.Specialty {
 	}
 
 	public void copy(Container.Specialty org) {
+		setMedicalSpecialtyList(org.getMedicalSpecialtyList());
 		setSpecialtyList(org.getSpecialtyList());
 	}
 

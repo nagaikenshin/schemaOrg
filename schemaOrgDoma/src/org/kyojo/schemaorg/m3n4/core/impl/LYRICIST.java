@@ -7,6 +7,7 @@ import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.Person;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.Patient;
 
 import org.seasar.doma.Transient;
 
@@ -14,6 +15,8 @@ public class LYRICIST implements Container.Lyricist {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
+	public List<Patient> patientList;
 	@Transient
 	public List<Person> personList;
 
@@ -46,6 +49,47 @@ public class LYRICIST implements Container.Lyricist {
 		} else {
 			personList.set(0, new PERSON(string));
 		}
+	}
+
+	public LYRICIST(Patient patient) {
+		patientList = new ArrayList<Patient>();
+		patientList.add(patient);
+	}
+
+	@Override
+	public Patient getPatient() {
+		if(patientList != null && patientList.size() > 0) {
+			return patientList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPatient(Patient patient) {
+		if(patientList == null) {
+			patientList = new ArrayList<>();
+		}
+		if(patientList.size() == 0) {
+			patientList.add(patient);
+		} else {
+			patientList.set(0, patient);
+		}
+	}
+
+	@Override
+	public List<Patient> getPatientList() {
+		return patientList;
+	}
+
+	@Override
+	public void setPatientList(List<Patient> patientList) {
+		this.patientList = patientList;
+	}
+
+	@Override
+	public boolean hasPatient() {
+		return patientList != null && patientList.size() > 0 && patientList.get(0) != null;
 	}
 
 	public LYRICIST(Person person) {
@@ -87,6 +131,17 @@ public class LYRICIST implements Container.Lyricist {
 	@Override
 	public boolean hasPerson() {
 		return personList != null && personList.size() > 0 && personList.get(0) != null;
+	}
+
+	public LYRICIST(List<Patient> patientList,
+			List<Person> personList) {
+		setPatientList(patientList);
+		setPersonList(personList);
+	}
+
+	public void copy(Container.Lyricist org) {
+		setPatientList(org.getPatientList());
+		setPersonList(org.getPersonList());
 	}
 
 	@Override

@@ -382,66 +382,6 @@ public class FM_RADIO_CHANNEL implements Clazz.FMRadioChannel {
 		this.url = url;
 	}
 
-	public FM_RADIO_CHANNEL(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			BroadcastChannelId broadcastChannelId,
-			BroadcastFrequency broadcastFrequency,
-			BroadcastServiceTier broadcastServiceTier,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Genre genre,
-			Identifier identifier,
-			Image image,
-			InBroadcastLineup inBroadcastLineup,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			ProvidesBroadcastService providesBroadcastService,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setBroadcastChannelId(broadcastChannelId);
-		setBroadcastFrequency(broadcastFrequency);
-		setBroadcastServiceTier(broadcastServiceTier);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setGenre(genre);
-		setIdentifier(identifier);
-		setImage(image);
-		setInBroadcastLineup(inBroadcastLineup);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setProvidesBroadcastService(providesBroadcastService);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.FMRadioChannel org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

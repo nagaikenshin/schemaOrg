@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PostalAddress;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.AdditionalType;
 import org.kyojo.schemaorg.m3n4.core.Container.AlternateName;
@@ -67,6 +68,8 @@ public class CONTACT_POINT implements Clazz.ContactPoint, Container.ContactPoint
 	public Name name;
 	public NameFuzzy nameFuzzy;
 	public NameRuby nameRuby;
+	@Transient
+	public List<PostalAddress> postalAddressList;
 	public PotentialAction potentialAction;
 	public ProductSupported productSupported;
 	public SameAs sameAs;
@@ -392,6 +395,47 @@ public class CONTACT_POINT implements Clazz.ContactPoint, Container.ContactPoint
 		this.nameRuby = nameRuby;
 	}
 
+	public CONTACT_POINT(PostalAddress postalAddress) {
+		postalAddressList = new ArrayList<PostalAddress>();
+		postalAddressList.add(postalAddress);
+	}
+
+	@Override
+	public PostalAddress getPostalAddress() {
+		if(postalAddressList != null && postalAddressList.size() > 0) {
+			return postalAddressList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPostalAddress(PostalAddress postalAddress) {
+		if(postalAddressList == null) {
+			postalAddressList = new ArrayList<>();
+		}
+		if(postalAddressList.size() == 0) {
+			postalAddressList.add(postalAddress);
+		} else {
+			postalAddressList.set(0, postalAddress);
+		}
+	}
+
+	@Override
+	public List<PostalAddress> getPostalAddressList() {
+		return postalAddressList;
+	}
+
+	@Override
+	public void setPostalAddressList(List<PostalAddress> postalAddressList) {
+		this.postalAddressList = postalAddressList;
+	}
+
+	@Override
+	public boolean hasPostalAddress() {
+		return postalAddressList != null && postalAddressList.size() > 0 && postalAddressList.get(0) != null;
+	}
+
 	public CONTACT_POINT(PotentialAction potentialAction) {
 		setPotentialAction(potentialAction);
 	}
@@ -476,74 +520,6 @@ public class CONTACT_POINT implements Clazz.ContactPoint, Container.ContactPoint
 		this.url = url;
 	}
 
-	public CONTACT_POINT(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			AreaServed areaServed,
-			AvailableLanguage availableLanguage,
-			ContactOption contactOption,
-			List<Clazz.ContactPoint> contactPointList,
-			ContactType contactType,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Email email,
-			FaxNumber faxNumber,
-			HoursAvailable hoursAvailable,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			ProductSupported productSupported,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Telephone telephone,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAreaServed(areaServed);
-		setAvailableLanguage(availableLanguage);
-		setContactOption(contactOption);
-		setContactPointList(contactPointList);
-		setContactType(contactType);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEmail(email);
-		setFaxNumber(faxNumber);
-		setHoursAvailable(hoursAvailable);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setProductSupported(productSupported);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setTelephone(telephone);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.ContactPoint org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -581,6 +557,7 @@ public class CONTACT_POINT implements Clazz.ContactPoint, Container.ContactPoint
 
 	public void copy(Container.ContactPoint org) {
 		setContactPointList(org.getContactPointList());
+		setPostalAddressList(org.getPostalAddressList());
 	}
 
 	@Override

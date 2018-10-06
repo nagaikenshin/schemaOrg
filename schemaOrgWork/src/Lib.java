@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -16,7 +17,7 @@ import org.kyojo.schemaorg.ConstantizedName;
 public class Lib {
 
 	public static void retrieve(File pd, Map<String, ImplData> implDataMap,
-			Map<String, String> impl2Ifc, Map<String, String> ifc2Impl)
+			Map<String, String> impl2Ifc, Map<String, Set<String>> ifc2Impl)
 			throws IOException, ClassNotFoundException {
 		File[] fl = pd.listFiles();
 		for(File f: fl) {
@@ -31,7 +32,7 @@ public class Lib {
 	}
 
 	private static void processFile(File inFile, Map<String, ImplData> implDataMap,
-			Map<String, String> impl2Ifc, Map<String, String> ifc2Impl)
+			Map<String, String> impl2Ifc, Map<String, Set<String>> ifc2Impl)
 			throws IOException, ClassNotFoundException {
 		String tgtStr = inFile.getCanonicalPath().replaceAll(Pattern.quote(File.separator), "/");
 		Matcher cfmc = GenerateImpl.cfpt.matcher(tgtStr);
@@ -86,7 +87,14 @@ public class Lib {
 					implDataMap.put(implName, implData);
 
 					impl2Ifc.put(implName, implData.ifcName);
-					ifc2Impl.put(implData.ifcName, implName);
+					Set<String> tmpSet = null;
+					if(ifc2Impl.containsKey(implData.ifcName)) {
+						tmpSet = ifc2Impl.get(implData.ifcName);
+					} else {
+						tmpSet = new HashSet<>();
+						ifc2Impl.put(implData.ifcName, tmpSet);
+					}
+					tmpSet.add(implName);
 				}
 
 				Lib.retrieveInterfaces(ifc, implData, 0, -1);
@@ -186,18 +194,30 @@ public class Lib {
 		}
 	}
 
-	public static void retrieveContainedTypes(String tgt, Set<String> gsonBasicSet,
-			Map<String, ImplData> implDataMap, Map<String, String> ifc2Impl) throws ClassNotFoundException {
-		if(gsonBasicSet.contains(tgt)) return;
+	public static void retrieveContainedTypes(String tgt,
+			Set<String> gsonBasicSet, Set<String> gsonBasicSet2,
+			Map<String, ImplData> implDataMap, Map<String, Set<String>> ifc2Impl,
+			Map<String, Set<String>> subSetMap) throws ClassNotFoundException {
+		if(gsonBasicSet2.contains(tgt)) return;
 
 		if(ifc2Impl.containsKey(tgt)) {
-			ImplData implData = implDataMap.get(ifc2Impl.get(tgt));
-			for(String gsonTypeName : implData.gsonTypeNameMap.keySet()) {
-				gsonBasicSet.add(gsonTypeName);
-			}
+			gsonBasicSet2.add(tgt);
 
-			for(Map.Entry<String, Class<?>> ent : implData.pMap.entrySet()) {
-				retrieveContainedTypes(ent.getKey(), gsonBasicSet, implDataMap, ifc2Impl);
+			Set<String> implSet = ifc2Impl.get(tgt);
+			for(String implName : implSet) {
+				ImplData implData = implDataMap.get(implName);
+				for(Map.Entry<String, Class<?>> ent : implData.pMap.entrySet()) {
+					// gsonBasicSet2.add(ent.getKey());
+					if(subSetMap.containsKey(ent.getKey())) {
+						gsonBasicSet.addAll(subSetMap.get(ent.getKey()));
+					}
+					retrieveContainedTypes(ent.getKey(), gsonBasicSet, gsonBasicSet2,
+							implDataMap, ifc2Impl, subSetMap);
+				}
+
+				for(String gsonTypeName : implData.gsonTypeNameMap.keySet()) {
+					gsonBasicSet.add(gsonTypeName);
+				}
 			}
 		}
 	}

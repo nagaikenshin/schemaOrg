@@ -42,7 +42,7 @@ public class SimpleJsonBuilder {
 	private static Pattern cmlPt1 = Pattern.compile("[A-Z]+");
 	private static Pattern cmlPt2 = Pattern.compile("([A-Z]+)([A-Z].*)");
 	private static Pattern cmlPt3 = Pattern.compile("([A-Z])(.*)");
-	private static final int DEPTH_LIMIT = 15;
+	private static final int DEPTH_LIMIT = 100;
 
 	public static List<Field> getAllFields(Class<?> type) {
 		List<Field> flds = new ArrayList<>();

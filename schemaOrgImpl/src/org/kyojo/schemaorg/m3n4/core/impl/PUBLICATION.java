@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.BroadcastEvent;
+import org.kyojo.schemaorg.m3n4.core.Clazz.OnDemandEvent;
 import org.kyojo.schemaorg.m3n4.core.Clazz.PublicationEvent;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
@@ -12,6 +14,8 @@ public class PUBLICATION implements Container.Publication {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<BroadcastEvent> broadcastEventList;
+	public List<OnDemandEvent> onDemandEventList;
 	public List<PublicationEvent> publicationEventList;
 
 	public PUBLICATION() {
@@ -43,6 +47,88 @@ public class PUBLICATION implements Container.Publication {
 		} else {
 			publicationEventList.set(0, new PUBLICATION_EVENT(string));
 		}
+	}
+
+	public PUBLICATION(BroadcastEvent broadcastEvent) {
+		broadcastEventList = new ArrayList<BroadcastEvent>();
+		broadcastEventList.add(broadcastEvent);
+	}
+
+	@Override
+	public BroadcastEvent getBroadcastEvent() {
+		if(broadcastEventList != null && broadcastEventList.size() > 0) {
+			return broadcastEventList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setBroadcastEvent(BroadcastEvent broadcastEvent) {
+		if(broadcastEventList == null) {
+			broadcastEventList = new ArrayList<>();
+		}
+		if(broadcastEventList.size() == 0) {
+			broadcastEventList.add(broadcastEvent);
+		} else {
+			broadcastEventList.set(0, broadcastEvent);
+		}
+	}
+
+	@Override
+	public List<BroadcastEvent> getBroadcastEventList() {
+		return broadcastEventList;
+	}
+
+	@Override
+	public void setBroadcastEventList(List<BroadcastEvent> broadcastEventList) {
+		this.broadcastEventList = broadcastEventList;
+	}
+
+	@Override
+	public boolean hasBroadcastEvent() {
+		return broadcastEventList != null && broadcastEventList.size() > 0 && broadcastEventList.get(0) != null;
+	}
+
+	public PUBLICATION(OnDemandEvent onDemandEvent) {
+		onDemandEventList = new ArrayList<OnDemandEvent>();
+		onDemandEventList.add(onDemandEvent);
+	}
+
+	@Override
+	public OnDemandEvent getOnDemandEvent() {
+		if(onDemandEventList != null && onDemandEventList.size() > 0) {
+			return onDemandEventList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setOnDemandEvent(OnDemandEvent onDemandEvent) {
+		if(onDemandEventList == null) {
+			onDemandEventList = new ArrayList<>();
+		}
+		if(onDemandEventList.size() == 0) {
+			onDemandEventList.add(onDemandEvent);
+		} else {
+			onDemandEventList.set(0, onDemandEvent);
+		}
+	}
+
+	@Override
+	public List<OnDemandEvent> getOnDemandEventList() {
+		return onDemandEventList;
+	}
+
+	@Override
+	public void setOnDemandEventList(List<OnDemandEvent> onDemandEventList) {
+		this.onDemandEventList = onDemandEventList;
+	}
+
+	@Override
+	public boolean hasOnDemandEvent() {
+		return onDemandEventList != null && onDemandEventList.size() > 0 && onDemandEventList.get(0) != null;
 	}
 
 	public PUBLICATION(PublicationEvent publicationEvent) {
@@ -84,6 +170,20 @@ public class PUBLICATION implements Container.Publication {
 	@Override
 	public boolean hasPublicationEvent() {
 		return publicationEventList != null && publicationEventList.size() > 0 && publicationEventList.get(0) != null;
+	}
+
+	public PUBLICATION(List<BroadcastEvent> broadcastEventList,
+			List<OnDemandEvent> onDemandEventList,
+			List<PublicationEvent> publicationEventList) {
+		setBroadcastEventList(broadcastEventList);
+		setOnDemandEventList(onDemandEventList);
+		setPublicationEventList(publicationEventList);
+	}
+
+	public void copy(Container.Publication org) {
+		setBroadcastEventList(org.getBroadcastEventList());
+		setOnDemandEventList(org.getOnDemandEventList());
+		setPublicationEventList(org.getPublicationEventList());
 	}
 
 	@Override

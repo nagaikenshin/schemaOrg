@@ -351,62 +351,6 @@ public class MENU_ITEM implements Clazz.MenuItem {
 		this.url = url;
 	}
 
-	public MENU_ITEM(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			MenuAddOn menuAddOn,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			Nutrition nutrition,
-			Offers offers,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			SuitableForDiet suitableForDiet,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMenuAddOn(menuAddOn);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setNutrition(nutrition);
-		setOffers(offers);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setSuitableForDiet(suitableForDiet);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.MenuItem org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.ContactPoint;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PostalAddress;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 
@@ -16,6 +17,8 @@ public class SERVICE_PHONE implements Container.ServicePhone {
 
 	@Transient
 	public List<ContactPoint> contactPointList;
+	@Transient
+	public List<PostalAddress> postalAddressList;
 
 	public SERVICE_PHONE() {
 	}
@@ -87,6 +90,58 @@ public class SERVICE_PHONE implements Container.ServicePhone {
 	@Override
 	public boolean hasContactPoint() {
 		return contactPointList != null && contactPointList.size() > 0 && contactPointList.get(0) != null;
+	}
+
+	public SERVICE_PHONE(PostalAddress postalAddress) {
+		postalAddressList = new ArrayList<PostalAddress>();
+		postalAddressList.add(postalAddress);
+	}
+
+	@Override
+	public PostalAddress getPostalAddress() {
+		if(postalAddressList != null && postalAddressList.size() > 0) {
+			return postalAddressList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPostalAddress(PostalAddress postalAddress) {
+		if(postalAddressList == null) {
+			postalAddressList = new ArrayList<>();
+		}
+		if(postalAddressList.size() == 0) {
+			postalAddressList.add(postalAddress);
+		} else {
+			postalAddressList.set(0, postalAddress);
+		}
+	}
+
+	@Override
+	public List<PostalAddress> getPostalAddressList() {
+		return postalAddressList;
+	}
+
+	@Override
+	public void setPostalAddressList(List<PostalAddress> postalAddressList) {
+		this.postalAddressList = postalAddressList;
+	}
+
+	@Override
+	public boolean hasPostalAddress() {
+		return postalAddressList != null && postalAddressList.size() > 0 && postalAddressList.get(0) != null;
+	}
+
+	public SERVICE_PHONE(List<ContactPoint> contactPointList,
+			List<PostalAddress> postalAddressList) {
+		setContactPointList(contactPointList);
+		setPostalAddressList(postalAddressList);
+	}
+
+	public void copy(Container.ServicePhone org) {
+		setContactPointList(org.getContactPointList());
+		setPostalAddressList(org.getPostalAddressList());
 	}
 
 	@Override

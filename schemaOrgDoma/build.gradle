@@ -1,9 +1,10 @@
 apply plugin: 'java-library'
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 dependencies {
 	implementation 'commons-logging:commons-logging:1.2'
-	implementation 'org.seasar.doma:doma:2.17.0'
+	implementation 'org.seasar.doma:doma:2.19.2'
 	compileOnly project(':schemaOrgWork')
 }
 
@@ -22,18 +23,70 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 javadoc {
 	options.locale = 'en_US'
 	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
+	maxMemory = '4096m'
 }
 
-task javadocs(type: Javadoc) {
+task javadocGen(type: Javadoc) {
 	source = sourceSets.main.allJava
 }
 
-task javadocsJar(type: Jar, dependsOn: javadoc) {
-	classifier = 'javadocs'
-	from javadocs.destinationDir
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadocGen.destinationDir
 }
 
 artifacts {
 	archives sourcesJar
-	archives javadocsJar
+	archives javadocJar
+}
+
+signing {
+	sign configurations.archives
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			beforeDeployment {
+				MavenDeployment deployment -> signing.signPom(deployment)
+			}
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			pom.project {
+				name 'schemaOrg'
+				packaging 'jar'
+				// optionally artifactId can be defined here
+				description 'A Java implementation of schema.org data structure'
+				url 'https://github.com/nagaikenshin/schemaOrg'
+
+				scm {
+					connection 'scm:git:git://github.com/nagaikenshin/schemaOrg.git'
+					developerConnection 'scm:git:ssh://github.com:nagaikenshin/schemaOrg.git'
+					url 'https://github.com/nagaikenshin/schemaOrg/tree/master'
+				}
+
+				licenses {
+					license {
+						name 'The Apache License, Version 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+
+				developers {
+					developer {
+						id 'nagaikenshin'
+						name 'nagaikenshin'
+						email 'nagai@nagaikenshin.com'
+					}
+				}
+			}
+		}
+	}
 }

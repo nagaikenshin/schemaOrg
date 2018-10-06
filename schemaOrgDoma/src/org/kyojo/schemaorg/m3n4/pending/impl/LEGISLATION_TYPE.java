@@ -7,6 +7,7 @@ import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.URL;
 import org.kyojo.schemaorg.m3n4.core.DataType.Text;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalCode;
 import org.kyojo.schemaorg.m3n4.pending.Clazz.CategoryCode;
 import org.kyojo.schemaorg.m3n4.pending.Container;
 
@@ -18,6 +19,8 @@ public class LEGISLATION_TYPE implements Container.LegislationType {
 
 	@Transient
 	public List<CategoryCode> categoryCodeList;
+	@Transient
+	public List<MedicalCode> medicalCodeList;
 	@Transient
 	public List<Text> textList;
 	@Transient
@@ -65,6 +68,47 @@ public class LEGISLATION_TYPE implements Container.LegislationType {
 	@Override
 	public boolean hasCategoryCode() {
 		return categoryCodeList != null && categoryCodeList.size() > 0 && categoryCodeList.get(0) != null;
+	}
+
+	public LEGISLATION_TYPE(MedicalCode medicalCode) {
+		medicalCodeList = new ArrayList<MedicalCode>();
+		medicalCodeList.add(medicalCode);
+	}
+
+	@Override
+	public MedicalCode getMedicalCode() {
+		if(medicalCodeList != null && medicalCodeList.size() > 0) {
+			return medicalCodeList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalCode(MedicalCode medicalCode) {
+		if(medicalCodeList == null) {
+			medicalCodeList = new ArrayList<>();
+		}
+		if(medicalCodeList.size() == 0) {
+			medicalCodeList.add(medicalCode);
+		} else {
+			medicalCodeList.set(0, medicalCode);
+		}
+	}
+
+	@Override
+	public List<MedicalCode> getMedicalCodeList() {
+		return medicalCodeList;
+	}
+
+	@Override
+	public void setMedicalCodeList(List<MedicalCode> medicalCodeList) {
+		this.medicalCodeList = medicalCodeList;
+	}
+
+	@Override
+	public boolean hasMedicalCode() {
+		return medicalCodeList != null && medicalCodeList.size() > 0 && medicalCodeList.get(0) != null;
 	}
 
 	public LEGISLATION_TYPE(String string) {
@@ -154,15 +198,18 @@ public class LEGISLATION_TYPE implements Container.LegislationType {
 	}
 
 	public LEGISLATION_TYPE(List<CategoryCode> categoryCodeList,
+			List<MedicalCode> medicalCodeList,
 			List<Text> textList,
 			List<URL> urlList) {
 		setCategoryCodeList(categoryCodeList);
+		setMedicalCodeList(medicalCodeList);
 		setTextList(textList);
 		setURLList(urlList);
 	}
 
 	public void copy(Container.LegislationType org) {
 		setCategoryCodeList(org.getCategoryCodeList());
+		setMedicalCodeList(org.getMedicalCodeList());
 		setTextList(org.getTextList());
 		setURLList(org.getURLList());
 	}

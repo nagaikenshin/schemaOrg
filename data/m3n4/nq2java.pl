@@ -13,16 +13,22 @@ binmode (STDERR, ':utf8');
 
 my $cur_ver_str = 'm3n4';
 my $prv_ver_str = 'm3n3';
-my $url = "file://home/nagai/kyojo/schemaOrg201804/data/$cur_ver_str/all-layers.nq";
-my $out1_dpath = '/home/nagai/kyojo/schemaOrg201804/schemaOrgWork/src/org/kyojo/schemaorg/';
+my $base_dpath = '/home/nagai/kyojo/schemaOrg201804';
+my $url = "file:/$base_dpath/data/$cur_ver_str/all-layers.nq";
+my $out1_dpath = "$base_dpath/schemaOrgWork/src/org/kyojo/schemaorg/";
 my $out2_dpath = "$out1_dpath$cur_ver_str/";
 my $pkg1_base = 'org.kyojo.schemaorg';
 my $pkg2_base = "$pkg1_base.$cur_ver_str";
 my $wrn_fpath = 'warn.txt';
 my $tpi_fpath = 'type_value_in.tsv';
 my $tpo_fpath = 'type_value_out.tsv';
+my $flt_fpath = "$base_dpath/schemaOrgGson/src/org/kyojo/schemaorg/$cur_ver_str/gson/GsonTypeAdapters.properties";
 my $abb_fpath = 'abbrev.txt';
 my $ntv_fpath = 'native_value.tsv';
+my $sup_fpath = 'sup.tsv';
+my $sub_fpath = 'sub.tsv';
+my $rng_fpath = 'rng.tsv';
+my $dmn_fpath = 'dmn.tsv';
 
 my %type_value_defs = ();
 open (FIN, $tpi_fpath) || die "cannot open $tpi_fpath: $!";
@@ -37,6 +43,23 @@ while (<FIN>) {
 }
 close FIN;
 
+my %flt_defs = ();
+open (FIN, $flt_fpath) || die "cannot open $flt_fpath: $!";
+binmode (FIN, ':utf8');
+while (<FIN>) {
+	s/[ \r\n]+$//;
+
+	if (/^#/) {
+		next;
+	}
+
+	my @vals = split (/=/);
+	if (@vals == 2) {
+		$flt_defs{$vals[0]} = 1;
+	}
+}
+close FIN;
+
 open (FWRN, '>' . $wrn_fpath) or die "can't open $wrn_fpath: $!";
 binmode (FWRN, ':utf8');
 
@@ -46,9 +69,20 @@ binmode (FTPO, ':utf8');
 open (FABB, '>' . $abb_fpath) or die "can't open $abb_fpath: $!";
 binmode (FABB, ':utf8');
 
-open (FNTV, '>' . $tpo_fpath) or die "can't open $ntv_fpath: $!";
+open (FNTV, '>' . $ntv_fpath) or die "can't open $ntv_fpath: $!";
 binmode (FNTV, ':utf8');
 
+open (FSUP, '>' . $sup_fpath) or die "can't open $sup_fpath: $!";
+binmode (FSUP, ':utf8');
+
+open (FSUB, '>' . $sub_fpath) or die "can't open $sub_fpath: $!";
+binmode (FSUB, ':utf8');
+
+open (FRNG, '>' . $rng_fpath) or die "can't open $rng_fpath: $!";
+binmode (FRNG, ':utf8');
+
+open (FDMN, '>' . $dmn_fpath) or die "can't open $dmn_fpath: $!";
+binmode (FDMN, ':utf8');
 
 my $store = RDF::Trine::Store::Memory->new ();
 my $model = RDF::Trine::Model->new ($store);
@@ -358,6 +392,31 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 	$full2domains{"$domain->{this_pkg}.$domain->{this_name}"} = $domain;
 }
 
+foreach my $domain_uri (sort keys %$domain_uris) {
+	my $domain = $domain_uris->{$domain_uri};
+	my @successive = ();
+	retrieve_subclasses ($domain, \@successive, 0);
+	print FSUP "\n";
+}
+
+foreach my $domain_uri (sort keys %$domain_uris) {
+	my $domain = $domain_uris->{$domain_uri};
+	print FSUB "$domain->{type_pri}" . '$' . "$domain->{this_name}\n";
+	if (exists $domain->{drct_subclasses}) {
+		foreach my $sub_uri (sort keys %{$domain->{drct_subclasses}}) {
+			my $sub_domain = $domain_uris->{$sub_uri};
+			print FSUB "\t$sub_domain->{type_pri}" . '$' . "$sub_domain->{this_name}\n";
+		}
+	}
+	if (exists $domain->{all_subclasses}) {
+		foreach my $sub_uri (sort keys %{$domain->{all_subclasses}}) {
+			my $sub_domain = $domain_uris->{$sub_uri};
+			print FSUB "\t\t$sub_domain->{type_pri}" . '$' . "$sub_domain->{this_name}\n";
+		}
+	}
+	print FSUB "\n";
+}
+
 sub add_type {
 	my $domain_uri = shift;
 	my $domain = shift;
@@ -380,6 +439,44 @@ sub add_type {
 	$domain->{type_fulls}{$full} = 1;
 	$type2uris->{$full} = $prop;
 	$type2names->{$full} = $type_name;
+}
+
+sub retrieve_subclasses {
+	my $tgt_domain = shift;
+	my $successive = shift;
+	my $depth = shift;
+
+	print FSUP "\t" x $depth . "$tgt_domain->{type_pri}" . '$' . "$tgt_domain->{this_name}\n";
+
+	push (@$successive, $tgt_domain);
+	if (exists $tgt_domain->{super_uris}) {
+		my $super_uris = $tgt_domain->{super_uris};
+		foreach my $super_uri (sort keys %$super_uris) {
+			my $s_domain = '';
+			if (exists $domain_uris->{$super_uri}) {
+				$s_domain = $domain_uris->{$super_uri};
+			} else {
+				if ($super_uri =~ /^(.+\/\/)([a-z0-9\-\.]*)(schema\.org\/\w+)$/) {
+					my $tmp_uri = $1 . $3;
+					if (exists $domain_uris->{$tmp_uri}) {
+						$s_domain = $domain_uris->{$tmp_uri};
+					}
+				}
+			}
+			if ($s_domain eq '') {
+				print "couldn't find $super_uri in \$domain_uris\n";
+				die;
+			}
+
+			$s_domain->{drct_subclasses}{$tgt_domain->{this_uri}} = 1;
+			foreach my $tmp_domain (@$successive) {
+				$s_domain->{all_subclasses}{$tmp_domain->{this_uri}} = $depth + 1;
+			}
+
+			retrieve_subclasses ($s_domain, $successive, $depth + 1);
+		}
+	}
+	pop @$successive;
 }
 
 eval {
@@ -887,6 +984,932 @@ public enum NativeValueDataType {
 }
 EoS
 close FOUT;
+
+$out_fpath = $out1_dpath . 'SimpleJsonWalker.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base;
+EoS
+print FOUT << 'EoS';
+
+import java.beans.Introspector;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.kyojo.schemaorg.JsonOffsetElement.JsonArrayPhase;
+import org.kyojo.schemaorg.JsonOffsetElement.JsonElementType;
+import org.kyojo.schemaorg.JsonOffsetElement.JsonObjectPhase;
+
+public class SimpleJsonWalker {
+
+	private static final Log logger = LogFactory.getLog(SimpleJsonWalker.class);
+
+	public static boolean breakDownJson(String json, JsonOffsetElement joe) {
+		if(json == null) {
+			logger.warn("null arg");
+			return false;
+		}
+
+		int start = 0;
+		for(; start < json.length(); start++) {
+			char ch = json.charAt(start);
+			if(!isMarginChar(ch)) {
+				break;
+			}
+		}
+
+		if(start == json.length()) {
+			logger.warn("blank arg");
+			return false;
+		}
+
+		int end = json.length() - 1;
+		for(; end >= 0; end--) {
+			char ch = json.charAt(end);
+			if(!isMarginChar(ch)) {
+				break;
+			}
+		}
+
+		char ch = json.charAt(start);
+		if(ch == '{') {
+			return walkObject(json, start, joe);
+		} else if(ch == '[') {
+			return walkArray(json, start, joe);
+		} else if(ch == '"') {
+			return walkString(json, start, joe);
+		} else {
+			return walkValue(json, start, joe);
+		}
+	}
+
+	private static boolean walkObject(String json, int ofs, JsonOffsetElement joe) {
+		joe.type = JsonElementType.V_OBJECT;
+		joe.start = ofs;
+
+		JsonOffsetElement child;
+		JsonObjectPhase phase = JsonObjectPhase.LEFT;
+		boolean keyIsId = false;
+		boolean keyIsType = false;
+		for(int pos = ofs + 1; pos < json.length(); pos++) {
+			char ch = json.charAt(pos);
+			if(isMarginChar(ch)) {
+				child = new JsonOffsetElement();
+				if(!walkMargin(json, pos, child)) {
+					return false;
+				}
+				pos = child.end;
+				joe.children.add(child);
+			} else if(ch == '}') {
+				if(phase != JsonObjectPhase.LEFT && phase != JsonObjectPhase.VALUE) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				phase = JsonObjectPhase.RIGHT;
+				joe.end = pos;
+				break;
+			} else if(ch == ':') {
+				if(phase != JsonObjectPhase.KEY) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				child.type = JsonElementType.COLON;
+				child.start = child.end = pos;
+				phase = child.objectPhase = JsonObjectPhase.COLON;
+				joe.children.add(child);
+			} else if(ch == ',') {
+				if(phase != JsonObjectPhase.VALUE) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				child.type = JsonElementType.COMMA;
+				child.start = child.end = pos;
+				phase = child.objectPhase = JsonObjectPhase.COMMA;
+				joe.children.add(child);
+				keyIsId = false;
+				keyIsType = false;
+			} else if(ch == '{') {
+				if(phase != JsonObjectPhase.COLON) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkObject(json, pos, child)) {
+					return false;
+				}
+				phase = child.objectPhase = JsonObjectPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				joe.lastValueIndex = joe.children.size() - 1;
+			} else if(ch == '[') {
+				if(phase != JsonObjectPhase.COLON) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkArray(json, pos, child)) {
+					return false;
+				}
+				phase = child.objectPhase = JsonObjectPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				joe.lastValueIndex = joe.children.size() - 1;
+			} else if(ch == '"') {
+				if(phase != JsonObjectPhase.LEFT
+						&& phase != JsonObjectPhase.COLON && phase != JsonObjectPhase.COMMA) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkString(json, pos, child)) {
+					return false;
+				}
+				if(phase == JsonObjectPhase.COLON) {
+					phase = child.objectPhase = JsonObjectPhase.VALUE;
+					if(keyIsId) {
+						joe.jsonLdId = json.substring(child.start + 1, child.end);
+					} else if(keyIsType) {
+						joe.jsonLdType = json.substring(child.start + 1, child.end);
+					}
+				} else {
+					phase = child.objectPhase = JsonObjectPhase.KEY;
+					String key = json.substring(child.start + 1, child.end);
+					if(key.equals("@id")) {
+						keyIsId = true;
+					} else if(key.equals("@type")) {
+						keyIsType = true;
+					}
+				}
+				pos = child.end;
+				joe.children.add(child);
+				if(joe.firstValueIndex == null) {
+					joe.firstValueIndex = joe.children.size() - 1;
+				}
+				joe.lastValueIndex = joe.children.size() - 1;
+			} else {
+				if(phase != JsonObjectPhase.COLON) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkValue(json, pos, child)) {
+					return false;
+				}
+				phase = child.objectPhase = JsonObjectPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				joe.lastValueIndex = joe.children.size() - 1;
+			}
+		}
+
+		if(joe.end == null) {
+			logger.warn("not terminated: pos=" + ofs + ", around=" + clipAround(json, ofs));
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	private static boolean walkArray(String json, int ofs, JsonOffsetElement joe) {
+		joe.type = JsonElementType.V_ARRAY;
+		joe.start = ofs;
+
+		JsonOffsetElement child;
+		JsonArrayPhase phase = JsonArrayPhase.LEFT;
+		boolean hasOnlyString = false;
+		boolean notOnlyString = false;
+		for(int pos = ofs + 1; pos < json.length(); pos++) {
+			char ch = json.charAt(pos);
+			if(isMarginChar(ch)) {
+				child = new JsonOffsetElement();
+				if(!walkMargin(json, pos, child)) {
+					return false;
+				}
+				pos = child.end;
+				joe.children.add(child);
+			} else if(ch == ']') {
+				if(phase != JsonArrayPhase.LEFT && phase != JsonArrayPhase.VALUE) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				phase = JsonArrayPhase.RIGHT;
+				joe.end = pos;
+				break;
+			} else if(ch == ',') {
+				if(phase != JsonArrayPhase.VALUE) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				child.type = JsonElementType.COMMA;
+				child.start = child.end = pos;
+				phase = child.arrayPhase = JsonArrayPhase.COMMA;
+				joe.children.add(child);
+			} else if(ch == '{') {
+				if(phase != JsonArrayPhase.LEFT && phase != JsonArrayPhase.COMMA) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkObject(json, pos, child)) {
+					return false;
+				}
+				phase = child.arrayPhase = JsonArrayPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				if(joe.firstValueIndex == null) {
+					joe.firstValueIndex = joe.children.size() - 1;
+				}
+				joe.lastValueIndex = joe.children.size() - 1;
+				notOnlyString = true;
+			} else if(ch == '[') {
+				if(phase != JsonArrayPhase.LEFT && phase != JsonArrayPhase.COMMA) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkArray(json, pos, child)) {
+					return false;
+				}
+				phase = child.arrayPhase = JsonArrayPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				if(joe.firstValueIndex == null) {
+					joe.firstValueIndex = joe.children.size() - 1;
+				}
+				joe.lastValueIndex = joe.children.size() - 1;
+				notOnlyString = true;
+			} else if(ch == '"') {
+				if(phase != JsonArrayPhase.LEFT && phase != JsonArrayPhase.COMMA) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkString(json, pos, child)) {
+					return false;
+				}
+				phase = child.arrayPhase = JsonArrayPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				if(joe.firstValueIndex == null) {
+					joe.firstValueIndex = joe.children.size() - 1;
+				}
+				joe.lastValueIndex = joe.children.size() - 1;
+				hasOnlyString = true;
+			} else {
+				if(phase != JsonArrayPhase.LEFT && phase != JsonArrayPhase.COMMA) {
+					logger.warn("invalid object: pos=" + pos + ", around=" + clipAround(json, pos));
+					return false;
+				}
+				child = new JsonOffsetElement();
+				if(!walkValue(json, pos, child)) {
+					return false;
+				}
+				phase = child.arrayPhase = JsonArrayPhase.VALUE;
+				pos = child.end;
+				joe.children.add(child);
+				if(joe.firstValueIndex == null) {
+					joe.firstValueIndex = joe.children.size() - 1;
+				}
+				joe.lastValueIndex = joe.children.size() - 1;
+				notOnlyString = true;
+			}
+		}
+		joe.onlyString = hasOnlyString && !notOnlyString;
+
+		if(joe.end == null) {
+			logger.warn("not terminated: pos=" + ofs);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	private static boolean walkString(String json, int ofs, JsonOffsetElement joe) {
+		joe.type = JsonElementType.V_STRING;
+		joe.start = ofs;
+
+		int escpCnt = 0;
+		for(int pos = ofs + 1; pos < json.length(); pos++) {
+			char ch = json.charAt(pos);
+			if(ch == '"' && escpCnt % 2 == 0) {
+				joe.end = pos;
+				joe.onlyString = true;
+				return true;
+			}
+			if(ch == '\\') {
+				escpCnt++;
+			} else {
+				escpCnt = 0;
+			}
+		}
+
+		logger.warn("not terminated: pos=" + ofs + ", around=" + clipAround(json, ofs));
+		return false;
+	}
+
+	private static Pattern numPt = Pattern.compile("\\-?\\d+(?:\\.\\d+|)(?:[eE][\\-\\+]?\\d+|)");
+
+	private static boolean walkValue(String json, int ofs, JsonOffsetElement joe) {
+		joe.start = ofs;
+
+		if(json.length() - ofs >= 4) {
+			String str = json.substring(ofs, ofs + 4);
+			if(str.equals("false")) {
+				joe.type = JsonElementType.V_FALSE;
+			} else if(str.equals("null")) {
+				joe.type = JsonElementType.V_NULL;
+			} else if(str.equals("true")) {
+				joe.type = JsonElementType.V_TRUE;
+			}
+			if(joe.type != null) {
+				joe.end = ofs + 3;
+				return true;
+			}
+		}
+
+		Matcher numMc = numPt.matcher(json);
+		numMc.region(ofs, json.length());
+		if(numMc.lookingAt()) {
+			joe.type = JsonElementType.V_NUMBER;
+			joe.end = ofs + numMc.group().length() - 1;
+			return true;
+		}
+
+		logger.warn("invalid value: pos=" + ofs + ", around=" + clipAround(json, ofs));
+		return false;
+	}
+
+	private static boolean walkMargin(String json, int ofs, JsonOffsetElement joe) {
+		joe.type = JsonElementType.MARGIN;
+		joe.start = ofs;
+
+		for(int pos = ofs + 1; pos < json.length(); pos++) {
+			char ch = json.charAt(pos);
+			if(!isMarginChar(ch)) {
+				joe.end = pos - 1;
+				break;
+			}
+		}
+
+		if(joe.end == null) {
+			joe.end = json.length() - 1;
+		}
+		return true;
+	}
+
+	public static boolean isMarginChar(char ch) {
+		switch(ch) {
+		case ' ':
+		case '\t':
+		case '\r':
+		case '\n':
+			return true;
+		default:
+			return false;
+		}
+	}
+
+	public static String clipAround(String text, int pos) {
+		final int LEN = 15;
+		int begin = pos - LEN;
+		if(begin < 0) begin = 0;
+		int end = pos + LEN;
+		if(end >= text.length()) end = text.length();
+		return text.substring(begin, pos) + "!!here!!" + text.substring(pos, end);
+	}
+
+	/**
+	 * Formats the given JSON string
+	 *
+	 * @param json the JSON string to format
+	 * @param indent the indentation string per one depth
+	 * @return JSON string
+	 */
+	public static String formatJson(String json, String indent) {
+		JsonOffsetElement joe = new JsonOffsetElement();
+		boolean res = breakDownJson(json, joe);
+		if(res) {
+			StringBuilder sb = new StringBuilder();
+			formatJsonSub(json, joe, true, true, false, false, 0, "\t", sb);
+			return sb.toString();
+		} else {
+			logger.warn("couldn't parse: " + json);
+			return null;
+		}
+	}
+
+	protected static void formatJsonSub(String json, JsonOffsetElement joe,
+			boolean isFirst, boolean isLast, boolean isLeft, boolean isRight,
+			int depth, String indent, StringBuilder sb) {
+		if(joe.children.size() == 0) {
+			if(joe.type != JsonElementType.MARGIN) {
+				insertIndent(joe, isFirst, isLast, false, false, depth, indent, sb);
+				sb.append(json.substring(joe.start, joe.end + 1));
+				insertNewLine(joe, isFirst, isLast, false, false, depth, indent, sb);
+			}
+		} else {
+			if(joe.type != JsonElementType.MARGIN) {
+				insertIndent(joe, isFirst, isLast, true, false, depth, indent, sb);
+				int firstStart = joe.children.get(0).start;
+				sb.append(json.substring(joe.start, firstStart));
+				insertNewLine(joe, isFirst, isLast, true, false, depth, indent, sb);
+			}
+
+			int depthInc = 0;
+			if(joe.type != JsonElementType.MARGIN) {
+				depthInc++;
+			}
+			for(int ci = 0; ci < joe.children.size(); ci++) {
+				JsonOffsetElement child = joe.children.get(ci);
+				formatJsonSub(json, child,
+						ci == joe.firstValueIndex, ci == joe.lastValueIndex,
+						false, false, depth + depthInc, indent, sb);
+			}
+
+			if(joe.type != JsonElementType.MARGIN) {
+				insertIndent(joe, isFirst, isLast, false, true, depth, indent, sb);
+				int lastEnd = joe.children.get(joe.children.size() - 1).end;
+				sb.append(json.substring(lastEnd + 1, joe.end + 1));
+				insertNewLine(joe, isFirst, isLast, false, true, depth, indent, sb);
+			}
+		}
+	}
+
+	protected static void insertIndent(JsonOffsetElement joe,
+			boolean isFirst, boolean isLast, boolean isLeft, boolean isRight,
+			int depth, String indent, StringBuilder sb) {
+		if(indent == null) return;
+
+		if(joe.objectPhase == JsonObjectPhase.COMMA
+				|| joe.arrayPhase == JsonArrayPhase.COMMA) {
+		} else if(!isRight && (joe.objectPhase == JsonObjectPhase.COLON
+					|| joe.objectPhase == JsonObjectPhase.VALUE)) {
+			sb.append(" ");
+		} else {
+			for(int ii = 0; ii < depth; ii++) {
+				sb.append(indent);
+			}
+		}
+	}
+
+	protected static void insertNewLine(JsonOffsetElement joe,
+			boolean isFirst, boolean isLast, boolean isLeft, boolean isRight,
+			int depth, String indent, StringBuilder sb) {
+		if(indent == null) return;
+
+		if(joe.objectPhase == JsonObjectPhase.VALUE
+				|| joe.arrayPhase == JsonArrayPhase.VALUE) {
+			if(isLast || isLeft) {
+				sb.append('\n');
+				return;
+			}
+		} else if(joe.objectPhase != JsonObjectPhase.KEY
+				&& joe.objectPhase != JsonObjectPhase.COLON) {
+			sb.append('\n');
+		}
+	}
+
+	public enum JsonLdThingStringGiven {
+		AS_TEXT,
+		AS_URL,
+		AS_NAME,
+		AS_INHERIT,
+		AS_THING_NAME,
+		AS_THING_URL,
+		AS_THING_IDENTIFIER_TEXT,
+		AS_THING_IDENTIFIER_URL
+	}
+
+	public enum JsonLdAtIdStringGiven {
+		AS_TEXT,
+		AS_URL,
+		AS_AUTO
+	}
+
+	/**
+	 * Converts the given JSON-Ld string to JSON
+	 *
+	 * @param jsonLd the JSON-Ld string to convert
+	 * @param jsonLdRootMap the map to store JSON-Ld's key-values on the root
+	 * @param thingStrModeMap the definition to interpret a string as schema.org's Thing subclasses
+	 * @param atIdMode the definition to interpret JSON-Ld's {@literal @}id as schema.org's identifier property
+	 * @return JSON string
+	 */
+	public static String jsonLdToJson(String jsonLd, Map<String, String> jsonLdRootMap,
+			Map<String, JsonLdThingStringGiven> thingStrModeMap, JsonLdAtIdStringGiven atIdMode) {
+		JsonOffsetElement joe = new JsonOffsetElement();
+		boolean res = breakDownJson(jsonLd, joe);
+		if(res) {
+			if(joe.type != JsonElementType.V_OBJECT) {
+				logger.warn("not object: " + jsonLd);
+				return null;
+			}
+
+			StringBuilder sb = new StringBuilder();
+			jsonLdToJsonSub(jsonLd, joe, jsonLdRootMap, null, thingStrModeMap, atIdMode, 0, sb);
+
+			return sb.toString();
+		} else {
+			logger.warn("couldn't parse: " + jsonLd);
+			return null;
+		}
+	}
+
+	protected static void jsonLdToJsonSub(String jsonLd, JsonOffsetElement joe,
+			Map<String, String> jsonLdRootMap, String parentKey,
+			Map<String, JsonLdThingStringGiven> thingStrModeMap,
+			JsonLdAtIdStringGiven atIdMode, int depth, StringBuilder sb) {
+		if(joe.children.size() == 0) {
+			if(joe.type != JsonElementType.MARGIN) {
+				if(thingStrModeMap != null && parentKey != null
+						&& thingStrModeMap.containsKey(parentKey)
+						&& joe.type == JsonElementType.V_STRING
+						&& (joe.objectPhase == JsonObjectPhase.VALUE)) {
+					JsonLdThingStringGiven thingStrMode = thingStrModeMap.get(parentKey);
+					int outer = 0;
+					switch(thingStrMode) {
+					case AS_THING_IDENTIFIER_TEXT:
+					case AS_THING_IDENTIFIER_URL:
+					case AS_THING_NAME:
+						sb.append("{\"thing\":");
+						outer++;
+						break;
+					default:
+						break;
+					}
+					switch(thingStrMode) {
+					case AS_THING_IDENTIFIER_TEXT:
+					case AS_THING_IDENTIFIER_URL:
+						sb.append("{\"identifier\":");
+						outer++;
+						break;
+					default:
+						break;
+					}
+					sb.append("{\"");
+					switch(thingStrMode) {
+					case AS_INHERIT:
+						sb.append(parentKey);
+						break;
+					case AS_NAME:
+					case AS_THING_NAME:
+						sb.append("name");
+						break;
+					case AS_URL:
+					case AS_THING_IDENTIFIER_URL:
+						sb.append("url");
+						break;
+					case AS_TEXT:
+					case AS_THING_IDENTIFIER_TEXT:
+					default:
+						sb.append("text");
+						break;
+					}
+					sb.append("\":");
+					sb.append(jsonLd.substring(joe.start, joe.end + 1));
+					sb.append("}");
+					for(int oi = 0; oi < outer; oi++) {
+						sb.append("}");
+					}
+				} else {
+					sb.append(jsonLd.substring(joe.start, joe.end + 1));
+				}
+			}
+		} else {
+			Map<String, List<Map<String, JsonOffsetElement>>> propListMap = null;
+			Map<String, List<Map<String, String>>> propJsonLdMap = null;
+			if(joe.type == JsonElementType.V_OBJECT) {
+				if(joe.jsonLdType != null) {
+					propListMap = new HashMap<>();
+					propJsonLdMap = new HashMap<>();
+
+					addJsonLdPropertyToJsonMap(jsonLd, joe, jsonLdRootMap,
+							thingStrModeMap, atIdMode, depth + 1, propListMap, propJsonLdMap);
+				}
+			} else if(joe.type == JsonElementType.V_ARRAY) {
+				for(JsonOffsetElement child : joe.children) {
+					if(child.jsonLdType != null) {
+						if(propListMap == null) {
+							propListMap = new HashMap<>();
+							propJsonLdMap = new HashMap<>();
+						}
+
+						addJsonLdPropertyToJsonMap(jsonLd, child, jsonLdRootMap,
+								thingStrModeMap, atIdMode, depth + 1, propListMap, propJsonLdMap);
+					}
+				}
+			}
+
+			if(propListMap == null) {
+				boolean jsonLdOnlyStringArray = false;
+				if(parentKey != null && joe.type == JsonElementType.V_ARRAY
+						&& joe.onlyString && thingStrModeMap.containsKey(parentKey)) {
+					jsonLdOnlyStringArray = true;
+					sb.append("{\"");
+					switch(thingStrModeMap.get(parentKey)) {
+					case AS_TEXT:
+						sb.append("text");
+						break;
+					case AS_URL:
+						sb.append("url");
+						break;
+					case AS_NAME:
+						sb.append("name");
+						break;
+					case AS_INHERIT:
+					default:
+						sb.append(parentKey);
+						break;
+					}
+					sb.append("\":");
+				}
+
+				if(joe.type != JsonElementType.MARGIN) {
+					int firstStart = joe.children.get(0).start;
+					sb.append(jsonLd.substring(joe.start, firstStart));
+				}
+
+				for(int ci = 0; ci < joe.children.size(); ci++) {
+					JsonOffsetElement child = joe.children.get(ci);
+					jsonLdToJsonSub(jsonLd, child, jsonLdRootMap, parentKey,
+							thingStrModeMap, atIdMode, depth + 1, sb);
+				}
+
+				if(joe.type != JsonElementType.MARGIN) {
+					int lastEnd = joe.children.get(joe.children.size() - 1).end;
+					sb.append(jsonLd.substring(lastEnd + 1, joe.end + 1));
+				}
+
+				if(jsonLdOnlyStringArray) {
+					sb.append("}");
+				}
+			} else {
+				if(depth > 0) {
+					sb.append("{");
+				}
+
+				int pc = 0;
+				for(Entry<String, List<Map<String, JsonOffsetElement>>> propListEnt : propListMap.entrySet()) {
+					pc++;
+
+					String typeKey = propListEnt.getKey();
+					List<Map<String, JsonOffsetElement>> childObjMapList = propListEnt.getValue();
+					List<Map<String, String>> childJsonLdMapList = propJsonLdMap.get(typeKey);
+
+					if(depth > 0) {
+						sb.append("\"");
+						sb.append(propListEnt.getKey());
+						if(childObjMapList.size() > 1) {
+							sb.append("List");
+						}
+						sb.append("\":");
+
+						if(childObjMapList.size() > 1) {
+							sb.append("[");
+						}
+					}
+
+					int ec = 0;
+					for(Map<String, JsonOffsetElement> childObjMap : childObjMapList) {
+						Map<String, String> childJsonLdMap = childJsonLdMapList.get(ec);
+						ec++;
+						sb.append("{");
+
+						int cc = 0;
+						for(Map.Entry<String, JsonOffsetElement> childObjEnt : childObjMap.entrySet()) {
+							cc++;
+							String key = childObjEnt.getKey();
+							JsonOffsetElement child = childObjEnt.getValue();
+
+							sb.append("\"");
+							sb.append(key);
+							sb.append("\":");
+							if(childJsonLdMap.containsKey(key)) {
+								sb.append(childJsonLdMap.get(key));
+							} else {
+								jsonLdToJsonSub(jsonLd, child, jsonLdRootMap, key,
+										thingStrModeMap, atIdMode, depth + 1, sb);
+							}
+
+							if(cc < childObjMap.size()) {
+								sb.append(",");
+							}
+						}
+
+						sb.append("}");
+						if(ec < childObjMapList.size()) {
+							sb.append(",");
+						}
+					}
+
+					if(depth > 0 && childObjMapList.size() > 1) {
+						sb.append("]");
+					}
+
+					if(pc < propListMap.size()) {
+						sb.append(",");
+					}
+				}
+
+				if(depth > 0) {
+					sb.append("}");
+				}
+			}
+		}
+	}
+
+	protected static boolean addJsonLdPropertyToJsonMap(String jsonLd,
+			JsonOffsetElement joe, Map<String, String> jsonLdRootMap,
+			Map<String, JsonLdThingStringGiven> thingStringModeMap,
+			JsonLdAtIdStringGiven atIdMode, int depth,
+			Map<String, List<Map<String, JsonOffsetElement>>> propListMap,
+			Map<String, List<Map<String, String>>> propJsonLdMap) {
+		Map<String, JsonOffsetElement> childObjMap = new HashMap<>();
+		Map<String, String> childJsonLdMap = new HashMap<>();
+		boolean keyIsId = false;
+		boolean keyIsType = false;
+		boolean keyIsJsonLd = false;
+		String key = null;
+		String idStr = null;
+		String typeKey = null;
+		for(JsonOffsetElement child : joe.children) {
+			if(keyIsId) {
+				if(child.type == JsonElementType.V_STRING
+						&& child.objectPhase == JsonObjectPhase.VALUE) {
+					String val = jsonLd.substring(child.start + 1, child.end);
+					if(depth <= 1) {
+						jsonLdRootMap.put(key, val);
+					}
+					JsonLdAtIdStringGiven mode = atIdMode;
+					if(atIdMode == JsonLdAtIdStringGiven.AS_AUTO) {
+						if(val.startsWith("http")) {
+							mode = JsonLdAtIdStringGiven.AS_URL;
+						} else {
+							mode = JsonLdAtIdStringGiven.AS_TEXT;
+						}
+					}
+
+					switch(mode) {
+					case AS_URL:
+						idStr = "{\"url\":\""
+							+ SimpleJsonBuilder.escapeJson(val) + "\"}";
+						break;
+					case AS_TEXT:
+					default:
+						idStr = "{\"text\":\""
+							+ SimpleJsonBuilder.escapeJson(val) + "\"}";
+						break;
+					}
+					childObjMap.put("identifier", null);
+					childJsonLdMap.put("identifier", idStr);
+				} else if(child.type == JsonElementType.COMMA) {
+					keyIsId = false;
+				}
+				continue;
+			} else if(keyIsType) {
+				if(child.type == JsonElementType.V_STRING
+						&& child.objectPhase == JsonObjectPhase.VALUE) {
+					String val = jsonLd.substring(child.start + 1, child.end);
+					typeKey = Introspector.decapitalize(val);
+					if(depth <= 1) {
+						jsonLdRootMap.put(key, val);
+					}
+				} else if(child.type == JsonElementType.COMMA) {
+					keyIsType = false;
+				}
+				continue;
+			} else if(keyIsJsonLd) {
+				if(depth <= 1) {
+					if(child.type == JsonElementType.V_STRING
+							&& child.objectPhase == JsonObjectPhase.VALUE) {
+						String val = jsonLd.substring(child.start + 1, child.end);
+						jsonLdRootMap.put(key, val);
+					}
+				}
+				if(child.type == JsonElementType.COMMA) {
+					keyIsJsonLd = false;
+				}
+				continue;
+			} else {
+				if(child.type == JsonElementType.V_STRING
+						&& child.objectPhase == JsonObjectPhase.KEY) {
+					key = jsonLd.substring(child.start + 1, child.end);
+					// System.out.println(key + ": " + depth);
+					if(key.equals("@id")) {
+						keyIsId = true;
+						continue;
+					} else if(key.equals("@type")) {
+						keyIsType = true;
+						continue;
+					} else if(key.startsWith("@")) {
+						keyIsJsonLd = true;
+						continue;
+					}
+				} else if(child.objectPhase == JsonObjectPhase.VALUE) {
+					childObjMap.put(key, child);
+				}
+			}
+		}
+
+		if(typeKey == null) {
+			// JSON-Ldと通常のJSONの混在はないはず
+			return false;
+		} else {
+			List<Map<String, JsonOffsetElement>> childObjMapList = null;
+			if(propListMap.containsKey(typeKey)) {
+				childObjMapList = propListMap.get(typeKey);
+			} else {
+				childObjMapList = new ArrayList<>();
+				propListMap.put(typeKey, childObjMapList);
+			}
+			childObjMapList.add(childObjMap);
+
+			List<Map<String, String>> childJsonLdMapList = null;
+			if(propJsonLdMap.containsKey(typeKey)) {
+				childJsonLdMapList = propJsonLdMap.get(typeKey);
+			} else {
+				childJsonLdMapList = new ArrayList<>();
+				propJsonLdMap.put(typeKey, childJsonLdMapList);
+			}
+			childJsonLdMapList.add(childJsonLdMap);
+
+			return true;
+		}
+	}
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'JsonOffsetElement.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base;
+EoS
+print FOUT << 'EoS';
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class JsonOffsetElement {
+
+	public JsonElementType type;
+	public Integer start;
+	public List<JsonOffsetElement> children = new LinkedList<>();
+	public Integer firstValueIndex;
+	public Integer lastValueIndex;
+	public Integer end;
+	public JsonObjectPhase objectPhase;
+	public JsonArrayPhase arrayPhase;
+	public String jsonLdId;
+	public String jsonLdType;
+	public boolean onlyString;
+
+	public enum JsonElementType {
+		MARGIN,
+		V_FALSE,
+		V_NULL,
+		V_TRUE,
+		V_OBJECT,
+		V_ARRAY,
+		V_NUMBER,
+		V_STRING,
+		COLON,
+		COMMA
+	}
+
+	public enum JsonObjectPhase {
+		LEFT,
+		KEY,
+		COLON,
+		VALUE,
+		COMMA,
+		RIGHT
+	}
+
+	public enum JsonArrayPhase {
+		LEFT,
+		VALUE,
+		COMMA,
+		RIGHT
+	}
+
+}
+EoS
+close FOUT;
+
 $out_fpath = $out1_dpath . 'SimpleJsonBuilder.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -937,7 +1960,7 @@ public class SimpleJsonBuilder {
 	private static Pattern cmlPt1 = Pattern.compile("[A-Z]+");
 	private static Pattern cmlPt2 = Pattern.compile("([A-Z]+)([A-Z].*)");
 	private static Pattern cmlPt3 = Pattern.compile("([A-Z])(.*)");
-	private static final int DEPTH_LIMIT = 15;
+	private static final int DEPTH_LIMIT = 100;
 
 	public static List<Field> getAllFields(Class<?> type) {
 		List<Field> flds = new ArrayList<>();
@@ -1847,6 +2870,29 @@ close FOUT;
 
 foreach my $type_full (sort keys %type_fulls) {
 	my $type_domain_uris = $type_fulls{$type_full};
+
+	foreach my $domain_uri (sort keys %$type_domain_uris) {
+		my $domain = $domain_uris->{$domain_uri};
+
+		if (!exists $domain->{this_name}) {
+			next;
+		} elsif (exists $domain->{'http://schema.org/supersededBy'}) {
+			next;
+		}
+
+		print FTREE "\n";
+		print FTREE "$type_full\n";
+		print FTREE "$domain_uri\n";
+		if (exists $domain->{all_subclasses}) {
+			foreach my $tmp_domain_uri (sort keys %{$domain->{all_subclasses}}) {
+				print FTREE " $tmp_domain_uri\n";
+			}
+		}
+	}
+}
+
+foreach my $type_full (sort keys %type_fulls) {
+	my $type_domain_uris = $type_fulls{$type_full};
 	my $imports = {};
 	my $extension = '';
 	my $type_pkg = '';
@@ -1936,13 +2982,40 @@ foreach my $type_full (sort keys %type_fulls) {
 			}
 		}
 
-		# rangeIncludesで名称が被らないことを保証
+		print FRNG "$domain->{type_pri}" . '$' . "$domain->{this_name}\n";
 		if (exists $domain->{'http://schema.org/rangeIncludes'}) {
 			my $rng_incs = $domain->{'http://schema.org/rangeIncludes'};
 			if (keys %$rng_incs > 0) {
 				$has_range = 1;
 			}
 
+			# rangeIncludesのサブクラスも加える（プロパティが大量に増える）
+			my $rng_incs2 = $rng_incs;
+			foreach my $rng_inc2 (sort keys %$rng_incs2) {
+				if (exists $domain_uris->{$rng_inc2}) {
+					my $ri_domain = $domain_uris->{$rng_inc2};
+					print FRNG "\t$ri_domain->{type_pri}" . '$' . "$ri_domain->{this_name}\n";
+					if ($ri_domain->{this_name} eq 'QualitativeValue') {
+						# 無関係の値ばかりになるので除外
+						next;
+					} elsif ($ri_domain->{this_name} eq 'Text') {
+						next;
+					}
+					if (exists $ri_domain->{all_subclasses}) {
+						foreach my $ri_uri (sort keys %{$ri_domain->{all_subclasses}}) {
+							my $ri_domain_sub = $domain_uris->{$ri_uri};
+							unless (exists $flt_defs{$ri_domain_sub->{type_pri} . '$' . $ri_domain_sub->{this_name}}) {
+								# Thing下全ては多いので絞る
+								next;
+							}
+							print FRNG "\t\t$ri_domain_sub->{type_pri}" . '$' . "$ri_domain_sub->{this_name}\n";
+							$rng_incs->{$ri_uri} = 1;
+						}
+					}
+				}
+			}
+
+			# rangeIncludesで名称が被らないことを保証
 			foreach my $rng_inc (sort keys %$rng_incs) {
 				if (!exists $domain_uris->{$rng_inc}) {
 					print "incprop $rng_inc not exists.\n";
@@ -1977,13 +3050,15 @@ foreach my $type_full (sort keys %type_fulls) {
 				}
 			} elsif ($type_name ne 'Container') {
 				if (keys %$rng_incs > 0) {
-					print "nomal type contains rangeIncludes.\n";
+					print "normal type contains rangeIncludes.\n";
 					die Dumper $domain;
 				}
 			}
 		}
+		print FRNG "\n";
 
 		# domainIncludesで名称が被らないことを保証
+		print FDMN "$domain->{type_pri}" . '$' . "$domain->{this_name}\n";
 		if (exists $domain->{'http://schema.org/domainIncludes'}) {
 			my $dom_incs = $domain->{'http://schema.org/domainIncludes'};
 			foreach my $dom_inc (sort keys %$dom_incs) {
@@ -1995,6 +3070,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
 					next;
 				}
+				print FDMN "\t$p_domain->{type_pri}" . '$' . "$p_domain->{this_name}\n";
+
 				my $p_domain_type_full = $p_domain->{type_pri};
 				my $p_domain_full = $p_domain_type_full . '.' . $p_domain->{this_name};
 				my $p_domain_type_name = $type2names{$p_domain_type_full};
@@ -2028,6 +3105,7 @@ foreach my $type_full (sort keys %type_fulls) {
 				}
 			}
 		}
+		print FDMN "\n";
 
 		if ($domain->{this_name} eq 'DateTime') {
 			$has_date_time = 1;
@@ -2122,6 +3200,9 @@ foreach my $type_full (sort keys %type_fulls) {
 		# 継承元から見えるのでインポート不要
 		# delete $imports->{$pkg2_base . '.healthLifesci.Clazz.MedicalBusiness'};
 		# delete $imports->{$pkg2_base . '.healthLifesci.Clazz.MedicalTherapy'};
+	} elsif ($extension eq 'healthLifesci' && $type_name eq 'Container') {
+		# 同名クラスのため直接指定
+		delete $imports->{$pkg2_base . '.core.Clazz.Action'};
 	}
 
 	eval {
@@ -2395,6 +3476,12 @@ foreach my $type_full (sort keys %type_fulls) {
 					$var_name = 'b00lean';
 				} elsif ($var_name eq 'class') {
 					$var_name = 'clazz';
+				} elsif ($var_name eq 'double') {
+					$var_name = 'd0uble';
+				} elsif ($var_name eq 'long') {
+					$var_name = 'l0ng';
+				} elsif ($var_name eq 'float') {
+					$var_name = 'fl0at';
 				}
 				my $msd_name = $p_domain->{this_name};
 				if ($msd_name eq 'Boolean') {
@@ -2405,10 +3492,17 @@ foreach my $type_full (sort keys %type_fulls) {
 					$msd_name = 'D0uble';
 				} elsif ($msd_name eq 'Long') {
 					$msd_name = 'L0ng';
+				} elsif ($msd_name eq 'Float') {
+					$msd_name = 'Fl0at';
 				}
 
 				# [個別対応] core.Clazz.Duration と pending.Container.Duration が同名
 				if ($extension eq 'pending' && $msd_name eq 'Duration') {
+					$pre = $pkg2_base . '.core.Clazz.';
+				}
+
+				# [個別対応] https://schema.org/Action と https://health-lifesci.schema.org/action が同名
+				if ($extension eq 'healthLifesci' && $msd_name eq 'Action') {
 					$pre = $pkg2_base . '.core.Clazz.';
 				}
 
@@ -2435,9 +3529,9 @@ foreach my $type_full (sort keys %type_fulls) {
 					-($a =~ /\/DateTime$/) || $b =~ /\/DateTime$/ ||
 					-($a =~ /\/Date$/) || $b =~ /\/Date$/ ||
 					-($a =~ /\/Time$/) || $b =~ /\/Time$/ ||
-					-($a =~ /\/Integer$/) || $b =~ /\/Integer$/ ||
-					-($a =~ /\/Float$/) || $b =~ /\/Float$/ ||
 					-($a =~ /\/Number$/) || $b =~ /\/Number$/ ||
+					-($a =~ /\/Float$/) || $b =~ /\/Float$/ ||
+					-($a =~ /\/Integer$/) || $b =~ /\/Integer$/ ||
 					-($a =~ /\/Boolean$/) || $b =~ /\/Boolean$/ || $a cmp $b;
 				} @rng_inc_keys;
 			foreach my $rng_inc (@rng_inc_keys) {
@@ -2625,6 +3719,10 @@ close FWRN;
 close FTPO;
 close FABB;
 close FNTV;
+close FSUP;
+close FSUB;
+close FRNG;
+close FDMN;
 
 sub str2ar {
 	my $str = shift;

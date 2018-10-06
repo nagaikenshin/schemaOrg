@@ -334,60 +334,6 @@ public class EXCHANGE_RATE_SPECIFICATION implements Clazz.ExchangeRateSpecificat
 		this.url = url;
 	}
 
-	public EXCHANGE_RATE_SPECIFICATION(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Currency currency,
-			CurrentExchangeRate currentExchangeRate,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			ExchangeRateSpread exchangeRateSpread,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setCurrency(currency);
-		setCurrentExchangeRate(currentExchangeRate);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setExchangeRateSpread(exchangeRateSpread);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.ExchangeRateSpecification org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

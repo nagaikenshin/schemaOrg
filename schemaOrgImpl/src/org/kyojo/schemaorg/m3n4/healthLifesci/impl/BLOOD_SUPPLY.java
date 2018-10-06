@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.Artery;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.LymphaticVessel;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.Vein;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.Vessel;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.impl.VESSEL;
@@ -13,6 +16,9 @@ public class BLOOD_SUPPLY implements Container.BloodSupply {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<Artery> arteryList;
+	public List<LymphaticVessel> lymphaticVesselList;
+	public List<Vein> veinList;
 	public List<Vessel> vesselList;
 
 	public BLOOD_SUPPLY() {
@@ -44,6 +50,129 @@ public class BLOOD_SUPPLY implements Container.BloodSupply {
 		} else {
 			vesselList.set(0, new VESSEL(string));
 		}
+	}
+
+	public BLOOD_SUPPLY(Artery artery) {
+		arteryList = new ArrayList<Artery>();
+		arteryList.add(artery);
+	}
+
+	@Override
+	public Artery getArtery() {
+		if(arteryList != null && arteryList.size() > 0) {
+			return arteryList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setArtery(Artery artery) {
+		if(arteryList == null) {
+			arteryList = new ArrayList<>();
+		}
+		if(arteryList.size() == 0) {
+			arteryList.add(artery);
+		} else {
+			arteryList.set(0, artery);
+		}
+	}
+
+	@Override
+	public List<Artery> getArteryList() {
+		return arteryList;
+	}
+
+	@Override
+	public void setArteryList(List<Artery> arteryList) {
+		this.arteryList = arteryList;
+	}
+
+	@Override
+	public boolean hasArtery() {
+		return arteryList != null && arteryList.size() > 0 && arteryList.get(0) != null;
+	}
+
+	public BLOOD_SUPPLY(LymphaticVessel lymphaticVessel) {
+		lymphaticVesselList = new ArrayList<LymphaticVessel>();
+		lymphaticVesselList.add(lymphaticVessel);
+	}
+
+	@Override
+	public LymphaticVessel getLymphaticVessel() {
+		if(lymphaticVesselList != null && lymphaticVesselList.size() > 0) {
+			return lymphaticVesselList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setLymphaticVessel(LymphaticVessel lymphaticVessel) {
+		if(lymphaticVesselList == null) {
+			lymphaticVesselList = new ArrayList<>();
+		}
+		if(lymphaticVesselList.size() == 0) {
+			lymphaticVesselList.add(lymphaticVessel);
+		} else {
+			lymphaticVesselList.set(0, lymphaticVessel);
+		}
+	}
+
+	@Override
+	public List<LymphaticVessel> getLymphaticVesselList() {
+		return lymphaticVesselList;
+	}
+
+	@Override
+	public void setLymphaticVesselList(List<LymphaticVessel> lymphaticVesselList) {
+		this.lymphaticVesselList = lymphaticVesselList;
+	}
+
+	@Override
+	public boolean hasLymphaticVessel() {
+		return lymphaticVesselList != null && lymphaticVesselList.size() > 0 && lymphaticVesselList.get(0) != null;
+	}
+
+	public BLOOD_SUPPLY(Vein vein) {
+		veinList = new ArrayList<Vein>();
+		veinList.add(vein);
+	}
+
+	@Override
+	public Vein getVein() {
+		if(veinList != null && veinList.size() > 0) {
+			return veinList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setVein(Vein vein) {
+		if(veinList == null) {
+			veinList = new ArrayList<>();
+		}
+		if(veinList.size() == 0) {
+			veinList.add(vein);
+		} else {
+			veinList.set(0, vein);
+		}
+	}
+
+	@Override
+	public List<Vein> getVeinList() {
+		return veinList;
+	}
+
+	@Override
+	public void setVeinList(List<Vein> veinList) {
+		this.veinList = veinList;
+	}
+
+	@Override
+	public boolean hasVein() {
+		return veinList != null && veinList.size() > 0 && veinList.get(0) != null;
 	}
 
 	public BLOOD_SUPPLY(Vessel vessel) {
@@ -85,6 +214,23 @@ public class BLOOD_SUPPLY implements Container.BloodSupply {
 	@Override
 	public boolean hasVessel() {
 		return vesselList != null && vesselList.size() > 0 && vesselList.get(0) != null;
+	}
+
+	public BLOOD_SUPPLY(List<Artery> arteryList,
+			List<LymphaticVessel> lymphaticVesselList,
+			List<Vein> veinList,
+			List<Vessel> vesselList) {
+		setArteryList(arteryList);
+		setLymphaticVesselList(lymphaticVesselList);
+		setVeinList(veinList);
+		setVesselList(vesselList);
+	}
+
+	public void copy(Container.BloodSupply org) {
+		setArteryList(org.getArteryList());
+		setLymphaticVesselList(org.getLymphaticVesselList());
+		setVeinList(org.getVeinList());
+		setVesselList(org.getVesselList());
 	}
 
 	@Override

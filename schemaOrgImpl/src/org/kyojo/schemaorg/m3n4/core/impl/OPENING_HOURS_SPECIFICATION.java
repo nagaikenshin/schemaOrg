@@ -409,66 +409,6 @@ public class OPENING_HOURS_SPECIFICATION implements Clazz.OpeningHoursSpecificat
 		this.validThrough = validThrough;
 	}
 
-	public OPENING_HOURS_SPECIFICATION(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Closes closes,
-			DayOfWeek dayOfWeek,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			List<Clazz.OpeningHoursSpecification> openingHoursSpecificationList,
-			Opens opens,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			ValidFrom validFrom,
-			ValidThrough validThrough) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setCloses(closes);
-		setDayOfWeek(dayOfWeek);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setOpeningHoursSpecificationList(openingHoursSpecificationList);
-		setOpens(opens);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setValidFrom(validFrom);
-		setValidThrough(validThrough);
-	}
-
 	public void copy(Clazz.OpeningHoursSpecification org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

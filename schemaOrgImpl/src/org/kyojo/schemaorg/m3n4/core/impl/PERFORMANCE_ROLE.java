@@ -350,62 +350,6 @@ public class PERFORMANCE_ROLE implements Clazz.PerformanceRole {
 		this.url = url;
 	}
 
-	public PERFORMANCE_ROLE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			CharacterName characterName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			EndDate endDate,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RoleName roleName,
-			SameAs sameAs,
-			StartDate startDate,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setCharacterName(characterName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEndDate(endDate);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRoleName(roleName);
-		setSameAs(sameAs);
-		setStartDate(startDate);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.PerformanceRole org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

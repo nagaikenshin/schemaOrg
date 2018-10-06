@@ -29,6 +29,7 @@ import org.kyojo.schemaorg.m3n4.core.Container.WorstRating;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.EmployerAggregateRating;
 import org.kyojo.schemaorg.m3n4.pending.Container.ReviewAspect;
 import org.kyojo.schemaorg.m3n4.pending.Container.SubjectOf;
 
@@ -55,6 +56,8 @@ public class AGGREGATE_RATING implements Clazz.AggregateRating, Container.Aggreg
 	public BestRating bestRating;
 	public Description description;
 	public DisambiguatingDescription disambiguatingDescription;
+	@Transient
+	public List<EmployerAggregateRating> employerAggregateRatingList;
 	public Identifier identifier;
 	public Image image;
 	public ItemReviewed itemReviewed;
@@ -234,6 +237,47 @@ public class AGGREGATE_RATING implements Clazz.AggregateRating, Container.Aggreg
 	@Override
 	public void setDisambiguatingDescription(DisambiguatingDescription disambiguatingDescription) {
 		this.disambiguatingDescription = disambiguatingDescription;
+	}
+
+	public AGGREGATE_RATING(EmployerAggregateRating employerAggregateRating) {
+		employerAggregateRatingList = new ArrayList<EmployerAggregateRating>();
+		employerAggregateRatingList.add(employerAggregateRating);
+	}
+
+	@Override
+	public EmployerAggregateRating getEmployerAggregateRating() {
+		if(employerAggregateRatingList != null && employerAggregateRatingList.size() > 0) {
+			return employerAggregateRatingList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setEmployerAggregateRating(EmployerAggregateRating employerAggregateRating) {
+		if(employerAggregateRatingList == null) {
+			employerAggregateRatingList = new ArrayList<>();
+		}
+		if(employerAggregateRatingList.size() == 0) {
+			employerAggregateRatingList.add(employerAggregateRating);
+		} else {
+			employerAggregateRatingList.set(0, employerAggregateRating);
+		}
+	}
+
+	@Override
+	public List<EmployerAggregateRating> getEmployerAggregateRatingList() {
+		return employerAggregateRatingList;
+	}
+
+	@Override
+	public void setEmployerAggregateRatingList(List<EmployerAggregateRating> employerAggregateRatingList) {
+		this.employerAggregateRatingList = employerAggregateRatingList;
+	}
+
+	@Override
+	public boolean hasEmployerAggregateRating() {
+		return employerAggregateRatingList != null && employerAggregateRatingList.size() > 0 && employerAggregateRatingList.get(0) != null;
 	}
 
 	public AGGREGATE_RATING(Identifier identifier) {
@@ -460,72 +504,6 @@ public class AGGREGATE_RATING implements Clazz.AggregateRating, Container.Aggreg
 		this.worstRating = worstRating;
 	}
 
-	public AGGREGATE_RATING(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			List<Clazz.AggregateRating> aggregateRatingList,
-			AlternateName alternateName,
-			Author author,
-			BestRating bestRating,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			ItemReviewed itemReviewed,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RatingCount ratingCount,
-			RatingValue ratingValue,
-			ReviewAspect reviewAspect,
-			ReviewCount reviewCount,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			WorstRating worstRating) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAggregateRatingList(aggregateRatingList);
-		setAlternateName(alternateName);
-		setAuthor(author);
-		setBestRating(bestRating);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setItemReviewed(itemReviewed);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRatingCount(ratingCount);
-		setRatingValue(ratingValue);
-		setReviewAspect(reviewAspect);
-		setReviewCount(reviewCount);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setWorstRating(worstRating);
-	}
-
 	public void copy(Clazz.AggregateRating org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -562,6 +540,7 @@ public class AGGREGATE_RATING implements Clazz.AggregateRating, Container.Aggreg
 
 	public void copy(Container.AggregateRating org) {
 		setAggregateRatingList(org.getAggregateRatingList());
+		setEmployerAggregateRatingList(org.getEmployerAggregateRatingList());
 	}
 
 	@Override

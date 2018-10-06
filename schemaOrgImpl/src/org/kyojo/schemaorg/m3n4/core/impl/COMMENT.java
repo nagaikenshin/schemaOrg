@@ -8,6 +8,7 @@ import org.kyojo.schemaorg.m3n4.bib.Container.PublisherImprint;
 import org.kyojo.schemaorg.m3n4.bib.Container.TranslationOfWork;
 import org.kyojo.schemaorg.m3n4.bib.Container.WorkTranslation;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Answer;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.About;
 import org.kyojo.schemaorg.m3n4.core.Container.AccessMode;
@@ -105,6 +106,7 @@ import org.kyojo.schemaorg.m3n4.core.Container.WorkExample;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.CorrectionComment;
 import org.kyojo.schemaorg.m3n4.pending.Container.ContentReferenceTime;
 import org.kyojo.schemaorg.m3n4.pending.Container.Correction;
 import org.kyojo.schemaorg.m3n4.pending.Container.SdDatePublished;
@@ -138,6 +140,7 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 	public AggregateRating aggregateRating;
 	public AlternateName alternateName;
 	public AlternativeHeadline alternativeHeadline;
+	public List<Answer> answerList;
 	public AssociatedMedia associatedMedia;
 	public Audience audience;
 	public Audio audio;
@@ -155,6 +158,7 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 	public CopyrightHolder copyrightHolder;
 	public CopyrightYear copyrightYear;
 	public Correction correction;
+	public List<CorrectionComment> correctionCommentList;
 	public Creator creator;
 	public DateCreated dateCreated;
 	public DateModified dateModified;
@@ -451,6 +455,47 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 		this.alternativeHeadline = alternativeHeadline;
 	}
 
+	public COMMENT(Answer answer) {
+		answerList = new ArrayList<Answer>();
+		answerList.add(answer);
+	}
+
+	@Override
+	public Answer getAnswer() {
+		if(answerList != null && answerList.size() > 0) {
+			return answerList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setAnswer(Answer answer) {
+		if(answerList == null) {
+			answerList = new ArrayList<>();
+		}
+		if(answerList.size() == 0) {
+			answerList.add(answer);
+		} else {
+			answerList.set(0, answer);
+		}
+	}
+
+	@Override
+	public List<Answer> getAnswerList() {
+		return answerList;
+	}
+
+	@Override
+	public void setAnswerList(List<Answer> answerList) {
+		this.answerList = answerList;
+	}
+
+	@Override
+	public boolean hasAnswer() {
+		return answerList != null && answerList.size() > 0 && answerList.get(0) != null;
+	}
+
 	public COMMENT(AssociatedMedia associatedMedia) {
 		setAssociatedMedia(associatedMedia);
 	}
@@ -722,6 +767,47 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 	@Override
 	public void setCorrection(Correction correction) {
 		this.correction = correction;
+	}
+
+	public COMMENT(CorrectionComment correctionComment) {
+		correctionCommentList = new ArrayList<CorrectionComment>();
+		correctionCommentList.add(correctionComment);
+	}
+
+	@Override
+	public CorrectionComment getCorrectionComment() {
+		if(correctionCommentList != null && correctionCommentList.size() > 0) {
+			return correctionCommentList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCorrectionComment(CorrectionComment correctionComment) {
+		if(correctionCommentList == null) {
+			correctionCommentList = new ArrayList<>();
+		}
+		if(correctionCommentList.size() == 0) {
+			correctionCommentList.add(correctionComment);
+		} else {
+			correctionCommentList.set(0, correctionComment);
+		}
+	}
+
+	@Override
+	public List<CorrectionComment> getCorrectionCommentList() {
+		return correctionCommentList;
+	}
+
+	@Override
+	public void setCorrectionCommentList(List<CorrectionComment> correctionCommentList) {
+		this.correctionCommentList = correctionCommentList;
+	}
+
+	@Override
+	public boolean hasCorrectionComment() {
+		return correctionCommentList != null && correctionCommentList.size() > 0 && correctionCommentList.get(0) != null;
 	}
 
 	public COMMENT(Creator creator) {
@@ -1760,234 +1846,6 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 		this.workTranslation = workTranslation;
 	}
 
-	public COMMENT(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			About about,
-			AccessMode accessMode,
-			AccessModeSufficient accessModeSufficient,
-			AccessibilityAPI accessibilityAPI,
-			AccessibilityControl accessibilityControl,
-			AccessibilityFeature accessibilityFeature,
-			AccessibilityHazard accessibilityHazard,
-			AccessibilitySummary accessibilitySummary,
-			AccountablePerson accountablePerson,
-			AdditionalType additionalType,
-			AggregateRating aggregateRating,
-			AlternateName alternateName,
-			AlternativeHeadline alternativeHeadline,
-			AssociatedMedia associatedMedia,
-			Audience audience,
-			Audio audio,
-			Author author,
-			Award award,
-			Character character,
-			Citation citation,
-			Container.Comment comment,
-			List<Clazz.Comment> commentList,
-			CommentCount commentCount,
-			ContentLocation contentLocation,
-			ContentRating contentRating,
-			ContentReferenceTime contentReferenceTime,
-			Contributor contributor,
-			CopyrightHolder copyrightHolder,
-			CopyrightYear copyrightYear,
-			Correction correction,
-			Creator creator,
-			DateCreated dateCreated,
-			DateModified dateModified,
-			DatePublished datePublished,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			DiscussionUrl discussionUrl,
-			DownvoteCount downvoteCount,
-			Editor editor,
-			EducationalAlignment educationalAlignment,
-			EducationalUse educationalUse,
-			Encoding encoding,
-			EncodingFormat encodingFormat,
-			ExampleOfWork exampleOfWork,
-			Expires expires,
-			Funder funder,
-			Genre genre,
-			HasPart hasPart,
-			Headline headline,
-			Identifier identifier,
-			Image image,
-			InLanguage inLanguage,
-			InteractionStatistic interactionStatistic,
-			InteractivityType interactivityType,
-			IsAccessibleForFree isAccessibleForFree,
-			IsBasedOn isBasedOn,
-			IsFamilyFriendly isFamilyFriendly,
-			IsPartOf isPartOf,
-			Keywords keywords,
-			LearningResourceType learningResourceType,
-			License license,
-			LocationCreated locationCreated,
-			MainEntity mainEntity,
-			MainEntityOfPage mainEntityOfPage,
-			Material material,
-			Mentions mentions,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			Offers offers,
-			ParentItem parentItem,
-			Position position,
-			PotentialAction potentialAction,
-			Producer producer,
-			Provider provider,
-			Publication publication,
-			Publisher publisher,
-			PublisherImprint publisherImprint,
-			PublishingPrinciples publishingPrinciples,
-			RecordedAt recordedAt,
-			ReleasedEvent releasedEvent,
-			Review review,
-			SameAs sameAs,
-			SchemaVersion schemaVersion,
-			SdDatePublished sdDatePublished,
-			SdLicense sdLicense,
-			SdPublisher sdPublisher,
-			SourceOrganization sourceOrganization,
-			SpatialCoverage spatialCoverage,
-			Sponsor sponsor,
-			SubjectOf subjectOf,
-			TemporalCoverage temporalCoverage,
-			Text text,
-			ThumbnailUrl thumbnailUrl,
-			TimeRequired timeRequired,
-			TranslationOfWork translationOfWork,
-			Translator translator,
-			TypicalAgeRange typicalAgeRange,
-			UpvoteCount upvoteCount,
-			Url url,
-			Version version,
-			Video video,
-			WorkExample workExample,
-			WorkTranslation workTranslation) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAbout(about);
-		setAccessMode(accessMode);
-		setAccessModeSufficient(accessModeSufficient);
-		setAccessibilityAPI(accessibilityAPI);
-		setAccessibilityControl(accessibilityControl);
-		setAccessibilityFeature(accessibilityFeature);
-		setAccessibilityHazard(accessibilityHazard);
-		setAccessibilitySummary(accessibilitySummary);
-		setAccountablePerson(accountablePerson);
-		setAdditionalType(additionalType);
-		setAggregateRating(aggregateRating);
-		setAlternateName(alternateName);
-		setAlternativeHeadline(alternativeHeadline);
-		setAssociatedMedia(associatedMedia);
-		setAudience(audience);
-		setAudio(audio);
-		setAuthor(author);
-		setAward(award);
-		setCharacter(character);
-		setCitation(citation);
-		setComment(comment);
-		setCommentList(commentList);
-		setCommentCount(commentCount);
-		setContentLocation(contentLocation);
-		setContentRating(contentRating);
-		setContentReferenceTime(contentReferenceTime);
-		setContributor(contributor);
-		setCopyrightHolder(copyrightHolder);
-		setCopyrightYear(copyrightYear);
-		setCorrection(correction);
-		setCreator(creator);
-		setDateCreated(dateCreated);
-		setDateModified(dateModified);
-		setDatePublished(datePublished);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setDiscussionUrl(discussionUrl);
-		setDownvoteCount(downvoteCount);
-		setEditor(editor);
-		setEducationalAlignment(educationalAlignment);
-		setEducationalUse(educationalUse);
-		setEncoding(encoding);
-		setEncodingFormat(encodingFormat);
-		setExampleOfWork(exampleOfWork);
-		setExpires(expires);
-		setFunder(funder);
-		setGenre(genre);
-		setHasPart(hasPart);
-		setHeadline(headline);
-		setIdentifier(identifier);
-		setImage(image);
-		setInLanguage(inLanguage);
-		setInteractionStatistic(interactionStatistic);
-		setInteractivityType(interactivityType);
-		setIsAccessibleForFree(isAccessibleForFree);
-		setIsBasedOn(isBasedOn);
-		setIsFamilyFriendly(isFamilyFriendly);
-		setIsPartOf(isPartOf);
-		setKeywords(keywords);
-		setLearningResourceType(learningResourceType);
-		setLicense(license);
-		setLocationCreated(locationCreated);
-		setMainEntity(mainEntity);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMaterial(material);
-		setMentions(mentions);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setOffers(offers);
-		setParentItem(parentItem);
-		setPosition(position);
-		setPotentialAction(potentialAction);
-		setProducer(producer);
-		setProvider(provider);
-		setPublication(publication);
-		setPublisher(publisher);
-		setPublisherImprint(publisherImprint);
-		setPublishingPrinciples(publishingPrinciples);
-		setRecordedAt(recordedAt);
-		setReleasedEvent(releasedEvent);
-		setReview(review);
-		setSameAs(sameAs);
-		setSchemaVersion(schemaVersion);
-		setSdDatePublished(sdDatePublished);
-		setSdLicense(sdLicense);
-		setSdPublisher(sdPublisher);
-		setSourceOrganization(sourceOrganization);
-		setSpatialCoverage(spatialCoverage);
-		setSponsor(sponsor);
-		setSubjectOf(subjectOf);
-		setTemporalCoverage(temporalCoverage);
-		setText(text);
-		setThumbnailUrl(thumbnailUrl);
-		setTimeRequired(timeRequired);
-		setTranslationOfWork(translationOfWork);
-		setTranslator(translator);
-		setTypicalAgeRange(typicalAgeRange);
-		setUpvoteCount(upvoteCount);
-		setUrl(url);
-		setVersion(version);
-		setVideo(video);
-		setWorkExample(workExample);
-		setWorkTranslation(workTranslation);
-	}
-
 	public void copy(Clazz.Comment org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -2104,7 +1962,9 @@ public class COMMENT implements Clazz.Comment, Container.Comment {
 	}
 
 	public void copy(Container.Comment org) {
+		setAnswerList(org.getAnswerList());
 		setCommentList(org.getCommentList());
+		setCorrectionCommentList(org.getCorrectionCommentList());
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.AggregateOffer;
 import org.kyojo.schemaorg.m3n4.core.Clazz.Offer;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
@@ -14,6 +15,8 @@ public class OFFERS implements Container.Offers {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
+	public List<AggregateOffer> aggregateOfferList;
 	@Transient
 	public List<Offer> offerList;
 
@@ -46,6 +49,47 @@ public class OFFERS implements Container.Offers {
 		} else {
 			offerList.set(0, new OFFER(string));
 		}
+	}
+
+	public OFFERS(AggregateOffer aggregateOffer) {
+		aggregateOfferList = new ArrayList<AggregateOffer>();
+		aggregateOfferList.add(aggregateOffer);
+	}
+
+	@Override
+	public AggregateOffer getAggregateOffer() {
+		if(aggregateOfferList != null && aggregateOfferList.size() > 0) {
+			return aggregateOfferList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setAggregateOffer(AggregateOffer aggregateOffer) {
+		if(aggregateOfferList == null) {
+			aggregateOfferList = new ArrayList<>();
+		}
+		if(aggregateOfferList.size() == 0) {
+			aggregateOfferList.add(aggregateOffer);
+		} else {
+			aggregateOfferList.set(0, aggregateOffer);
+		}
+	}
+
+	@Override
+	public List<AggregateOffer> getAggregateOfferList() {
+		return aggregateOfferList;
+	}
+
+	@Override
+	public void setAggregateOfferList(List<AggregateOffer> aggregateOfferList) {
+		this.aggregateOfferList = aggregateOfferList;
+	}
+
+	@Override
+	public boolean hasAggregateOffer() {
+		return aggregateOfferList != null && aggregateOfferList.size() > 0 && aggregateOfferList.get(0) != null;
 	}
 
 	public OFFERS(Offer offer) {
@@ -87,6 +131,17 @@ public class OFFERS implements Container.Offers {
 	@Override
 	public boolean hasOffer() {
 		return offerList != null && offerList.size() > 0 && offerList.get(0) != null;
+	}
+
+	public OFFERS(List<AggregateOffer> aggregateOfferList,
+			List<Offer> offerList) {
+		setAggregateOfferList(aggregateOfferList);
+		setOfferList(offerList);
+	}
+
+	public void copy(Container.Offers org) {
+		setAggregateOfferList(org.getAggregateOfferList());
+		setOfferList(org.getOfferList());
 	}
 
 	@Override

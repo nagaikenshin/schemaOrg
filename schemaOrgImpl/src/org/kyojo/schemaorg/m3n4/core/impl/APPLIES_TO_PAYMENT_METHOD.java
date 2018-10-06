@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.CreditCard;
+import org.kyojo.schemaorg.m3n4.core.Clazz.PaymentCard;
 import org.kyojo.schemaorg.m3n4.core.Clazz.PaymentMethod;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
@@ -12,6 +14,8 @@ public class APPLIES_TO_PAYMENT_METHOD implements Container.AppliesToPaymentMeth
 
 	private static final long serialVersionUID = 1L;
 
+	public List<CreditCard> creditCardList;
+	public List<PaymentCard> paymentCardList;
 	public List<PaymentMethod> paymentMethodList;
 
 	public APPLIES_TO_PAYMENT_METHOD() {
@@ -43,6 +47,88 @@ public class APPLIES_TO_PAYMENT_METHOD implements Container.AppliesToPaymentMeth
 		} else {
 			paymentMethodList.set(0, new PAYMENT_METHOD(string));
 		}
+	}
+
+	public APPLIES_TO_PAYMENT_METHOD(CreditCard creditCard) {
+		creditCardList = new ArrayList<CreditCard>();
+		creditCardList.add(creditCard);
+	}
+
+	@Override
+	public CreditCard getCreditCard() {
+		if(creditCardList != null && creditCardList.size() > 0) {
+			return creditCardList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCreditCard(CreditCard creditCard) {
+		if(creditCardList == null) {
+			creditCardList = new ArrayList<>();
+		}
+		if(creditCardList.size() == 0) {
+			creditCardList.add(creditCard);
+		} else {
+			creditCardList.set(0, creditCard);
+		}
+	}
+
+	@Override
+	public List<CreditCard> getCreditCardList() {
+		return creditCardList;
+	}
+
+	@Override
+	public void setCreditCardList(List<CreditCard> creditCardList) {
+		this.creditCardList = creditCardList;
+	}
+
+	@Override
+	public boolean hasCreditCard() {
+		return creditCardList != null && creditCardList.size() > 0 && creditCardList.get(0) != null;
+	}
+
+	public APPLIES_TO_PAYMENT_METHOD(PaymentCard paymentCard) {
+		paymentCardList = new ArrayList<PaymentCard>();
+		paymentCardList.add(paymentCard);
+	}
+
+	@Override
+	public PaymentCard getPaymentCard() {
+		if(paymentCardList != null && paymentCardList.size() > 0) {
+			return paymentCardList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPaymentCard(PaymentCard paymentCard) {
+		if(paymentCardList == null) {
+			paymentCardList = new ArrayList<>();
+		}
+		if(paymentCardList.size() == 0) {
+			paymentCardList.add(paymentCard);
+		} else {
+			paymentCardList.set(0, paymentCard);
+		}
+	}
+
+	@Override
+	public List<PaymentCard> getPaymentCardList() {
+		return paymentCardList;
+	}
+
+	@Override
+	public void setPaymentCardList(List<PaymentCard> paymentCardList) {
+		this.paymentCardList = paymentCardList;
+	}
+
+	@Override
+	public boolean hasPaymentCard() {
+		return paymentCardList != null && paymentCardList.size() > 0 && paymentCardList.get(0) != null;
 	}
 
 	public APPLIES_TO_PAYMENT_METHOD(PaymentMethod paymentMethod) {
@@ -84,6 +170,20 @@ public class APPLIES_TO_PAYMENT_METHOD implements Container.AppliesToPaymentMeth
 	@Override
 	public boolean hasPaymentMethod() {
 		return paymentMethodList != null && paymentMethodList.size() > 0 && paymentMethodList.get(0) != null;
+	}
+
+	public APPLIES_TO_PAYMENT_METHOD(List<CreditCard> creditCardList,
+			List<PaymentCard> paymentCardList,
+			List<PaymentMethod> paymentMethodList) {
+		setCreditCardList(creditCardList);
+		setPaymentCardList(paymentCardList);
+		setPaymentMethodList(paymentMethodList);
+	}
+
+	public void copy(Container.AppliesToPaymentMethod org) {
+		setCreditCardList(org.getCreditCardList());
+		setPaymentCardList(org.getPaymentCardList());
+		setPaymentMethodList(org.getPaymentMethodList());
 	}
 
 	@Override

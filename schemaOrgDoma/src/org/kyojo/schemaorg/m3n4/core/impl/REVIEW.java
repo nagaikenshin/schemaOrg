@@ -8,6 +8,7 @@ import org.kyojo.schemaorg.m3n4.bib.Container.PublisherImprint;
 import org.kyojo.schemaorg.m3n4.bib.Container.TranslationOfWork;
 import org.kyojo.schemaorg.m3n4.bib.Container.WorkTranslation;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.ClaimReview;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.About;
 import org.kyojo.schemaorg.m3n4.core.Container.AccessMode;
@@ -105,6 +106,10 @@ import org.kyojo.schemaorg.m3n4.core.Container.WorkExample;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.CriticReview;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.EmployerReview;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.ReviewNewsArticle;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.UserReview;
 import org.kyojo.schemaorg.m3n4.pending.Container.ContentReferenceTime;
 import org.kyojo.schemaorg.m3n4.pending.Container.Correction;
 import org.kyojo.schemaorg.m3n4.pending.Container.ReviewAspect;
@@ -148,6 +153,8 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	public Award award;
 	public Character character;
 	public Citation citation;
+	@Transient
+	public List<ClaimReview> claimReviewList;
 	public Comment comment;
 	public CommentCount commentCount;
 	public ContentLocation contentLocation;
@@ -158,6 +165,8 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	public CopyrightYear copyrightYear;
 	public Correction correction;
 	public Creator creator;
+	@Transient
+	public List<CriticReview> criticReviewList;
 	public DateCreated dateCreated;
 	public DateModified dateModified;
 	public DatePublished datePublished;
@@ -167,6 +176,8 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	public Editor editor;
 	public EducationalAlignment educationalAlignment;
 	public EducationalUse educationalUse;
+	@Transient
+	public List<EmployerReview> employerReviewList;
 	public Encoding encoding;
 	public EncodingFormat encodingFormat;
 	public ExampleOfWork exampleOfWork;
@@ -212,6 +223,8 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	public List<Clazz.Review> reviewList;
 	public ReviewAspect reviewAspect;
 	public ReviewBody reviewBody;
+	@Transient
+	public List<ReviewNewsArticle> reviewNewsArticleList;
 	public ReviewRating reviewRating;
 	public SameAs sameAs;
 	public SchemaVersion schemaVersion;
@@ -230,6 +243,8 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	public Translator translator;
 	public TypicalAgeRange typicalAgeRange;
 	public Url url;
+	@Transient
+	public List<UserReview> userReviewList;
 	public Version version;
 	public Video video;
 	public WorkExample workExample;
@@ -554,6 +569,47 @@ public class REVIEW implements Clazz.Review, Container.Review {
 		this.citation = citation;
 	}
 
+	public REVIEW(ClaimReview claimReview) {
+		claimReviewList = new ArrayList<ClaimReview>();
+		claimReviewList.add(claimReview);
+	}
+
+	@Override
+	public ClaimReview getClaimReview() {
+		if(claimReviewList != null && claimReviewList.size() > 0) {
+			return claimReviewList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setClaimReview(ClaimReview claimReview) {
+		if(claimReviewList == null) {
+			claimReviewList = new ArrayList<>();
+		}
+		if(claimReviewList.size() == 0) {
+			claimReviewList.add(claimReview);
+		} else {
+			claimReviewList.set(0, claimReview);
+		}
+	}
+
+	@Override
+	public List<ClaimReview> getClaimReviewList() {
+		return claimReviewList;
+	}
+
+	@Override
+	public void setClaimReviewList(List<ClaimReview> claimReviewList) {
+		this.claimReviewList = claimReviewList;
+	}
+
+	@Override
+	public boolean hasClaimReview() {
+		return claimReviewList != null && claimReviewList.size() > 0 && claimReviewList.get(0) != null;
+	}
+
 	public REVIEW(Comment comment) {
 		setComment(comment);
 	}
@@ -694,6 +750,47 @@ public class REVIEW implements Clazz.Review, Container.Review {
 		this.creator = creator;
 	}
 
+	public REVIEW(CriticReview criticReview) {
+		criticReviewList = new ArrayList<CriticReview>();
+		criticReviewList.add(criticReview);
+	}
+
+	@Override
+	public CriticReview getCriticReview() {
+		if(criticReviewList != null && criticReviewList.size() > 0) {
+			return criticReviewList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCriticReview(CriticReview criticReview) {
+		if(criticReviewList == null) {
+			criticReviewList = new ArrayList<>();
+		}
+		if(criticReviewList.size() == 0) {
+			criticReviewList.add(criticReview);
+		} else {
+			criticReviewList.set(0, criticReview);
+		}
+	}
+
+	@Override
+	public List<CriticReview> getCriticReviewList() {
+		return criticReviewList;
+	}
+
+	@Override
+	public void setCriticReviewList(List<CriticReview> criticReviewList) {
+		this.criticReviewList = criticReviewList;
+	}
+
+	@Override
+	public boolean hasCriticReview() {
+		return criticReviewList != null && criticReviewList.size() > 0 && criticReviewList.get(0) != null;
+	}
+
 	public REVIEW(DateCreated dateCreated) {
 		setDateCreated(dateCreated);
 	}
@@ -818,6 +915,47 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	@Override
 	public void setEducationalUse(EducationalUse educationalUse) {
 		this.educationalUse = educationalUse;
+	}
+
+	public REVIEW(EmployerReview employerReview) {
+		employerReviewList = new ArrayList<EmployerReview>();
+		employerReviewList.add(employerReview);
+	}
+
+	@Override
+	public EmployerReview getEmployerReview() {
+		if(employerReviewList != null && employerReviewList.size() > 0) {
+			return employerReviewList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setEmployerReview(EmployerReview employerReview) {
+		if(employerReviewList == null) {
+			employerReviewList = new ArrayList<>();
+		}
+		if(employerReviewList.size() == 0) {
+			employerReviewList.add(employerReview);
+		} else {
+			employerReviewList.set(0, employerReview);
+		}
+	}
+
+	@Override
+	public List<EmployerReview> getEmployerReviewList() {
+		return employerReviewList;
+	}
+
+	@Override
+	public void setEmployerReviewList(List<EmployerReview> employerReviewList) {
+		this.employerReviewList = employerReviewList;
+	}
+
+	@Override
+	public boolean hasEmployerReview() {
+		return employerReviewList != null && employerReviewList.size() > 0 && employerReviewList.get(0) != null;
 	}
 
 	public REVIEW(Encoding encoding) {
@@ -1471,6 +1609,47 @@ public class REVIEW implements Clazz.Review, Container.Review {
 		this.reviewBody = reviewBody;
 	}
 
+	public REVIEW(ReviewNewsArticle reviewNewsArticle) {
+		reviewNewsArticleList = new ArrayList<ReviewNewsArticle>();
+		reviewNewsArticleList.add(reviewNewsArticle);
+	}
+
+	@Override
+	public ReviewNewsArticle getReviewNewsArticle() {
+		if(reviewNewsArticleList != null && reviewNewsArticleList.size() > 0) {
+			return reviewNewsArticleList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setReviewNewsArticle(ReviewNewsArticle reviewNewsArticle) {
+		if(reviewNewsArticleList == null) {
+			reviewNewsArticleList = new ArrayList<>();
+		}
+		if(reviewNewsArticleList.size() == 0) {
+			reviewNewsArticleList.add(reviewNewsArticle);
+		} else {
+			reviewNewsArticleList.set(0, reviewNewsArticle);
+		}
+	}
+
+	@Override
+	public List<ReviewNewsArticle> getReviewNewsArticleList() {
+		return reviewNewsArticleList;
+	}
+
+	@Override
+	public void setReviewNewsArticleList(List<ReviewNewsArticle> reviewNewsArticleList) {
+		this.reviewNewsArticleList = reviewNewsArticleList;
+	}
+
+	@Override
+	public boolean hasReviewNewsArticle() {
+		return reviewNewsArticleList != null && reviewNewsArticleList.size() > 0 && reviewNewsArticleList.get(0) != null;
+	}
+
 	public REVIEW(ReviewRating reviewRating) {
 		setReviewRating(reviewRating);
 	}
@@ -1723,6 +1902,47 @@ public class REVIEW implements Clazz.Review, Container.Review {
 		this.url = url;
 	}
 
+	public REVIEW(UserReview userReview) {
+		userReviewList = new ArrayList<UserReview>();
+		userReviewList.add(userReview);
+	}
+
+	@Override
+	public UserReview getUserReview() {
+		if(userReviewList != null && userReviewList.size() > 0) {
+			return userReviewList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setUserReview(UserReview userReview) {
+		if(userReviewList == null) {
+			userReviewList = new ArrayList<>();
+		}
+		if(userReviewList.size() == 0) {
+			userReviewList.add(userReview);
+		} else {
+			userReviewList.set(0, userReview);
+		}
+	}
+
+	@Override
+	public List<UserReview> getUserReviewList() {
+		return userReviewList;
+	}
+
+	@Override
+	public void setUserReviewList(List<UserReview> userReviewList) {
+		this.userReviewList = userReviewList;
+	}
+
+	@Override
+	public boolean hasUserReview() {
+		return userReviewList != null && userReviewList.size() > 0 && userReviewList.get(0) != null;
+	}
+
 	public REVIEW(Version version) {
 		setVersion(version);
 	}
@@ -1777,236 +1997,6 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	@Override
 	public void setWorkTranslation(WorkTranslation workTranslation) {
 		this.workTranslation = workTranslation;
-	}
-
-	public REVIEW(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			About about,
-			AccessMode accessMode,
-			AccessModeSufficient accessModeSufficient,
-			AccessibilityAPI accessibilityAPI,
-			AccessibilityControl accessibilityControl,
-			AccessibilityFeature accessibilityFeature,
-			AccessibilityHazard accessibilityHazard,
-			AccessibilitySummary accessibilitySummary,
-			AccountablePerson accountablePerson,
-			AdditionalType additionalType,
-			AggregateRating aggregateRating,
-			AlternateName alternateName,
-			AlternativeHeadline alternativeHeadline,
-			AssociatedMedia associatedMedia,
-			Audience audience,
-			Audio audio,
-			Author author,
-			Award award,
-			Character character,
-			Citation citation,
-			Comment comment,
-			CommentCount commentCount,
-			ContentLocation contentLocation,
-			ContentRating contentRating,
-			ContentReferenceTime contentReferenceTime,
-			Contributor contributor,
-			CopyrightHolder copyrightHolder,
-			CopyrightYear copyrightYear,
-			Correction correction,
-			Creator creator,
-			DateCreated dateCreated,
-			DateModified dateModified,
-			DatePublished datePublished,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			DiscussionUrl discussionUrl,
-			Editor editor,
-			EducationalAlignment educationalAlignment,
-			EducationalUse educationalUse,
-			Encoding encoding,
-			EncodingFormat encodingFormat,
-			ExampleOfWork exampleOfWork,
-			Expires expires,
-			Funder funder,
-			Genre genre,
-			HasPart hasPart,
-			Headline headline,
-			Identifier identifier,
-			Image image,
-			InLanguage inLanguage,
-			InteractionStatistic interactionStatistic,
-			InteractivityType interactivityType,
-			IsAccessibleForFree isAccessibleForFree,
-			IsBasedOn isBasedOn,
-			IsFamilyFriendly isFamilyFriendly,
-			IsPartOf isPartOf,
-			ItemReviewed itemReviewed,
-			Keywords keywords,
-			LearningResourceType learningResourceType,
-			License license,
-			LocationCreated locationCreated,
-			MainEntity mainEntity,
-			MainEntityOfPage mainEntityOfPage,
-			Material material,
-			Mentions mentions,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			Offers offers,
-			Position position,
-			PotentialAction potentialAction,
-			Producer producer,
-			Provider provider,
-			Publication publication,
-			Publisher publisher,
-			PublisherImprint publisherImprint,
-			PublishingPrinciples publishingPrinciples,
-			RecordedAt recordedAt,
-			ReleasedEvent releasedEvent,
-			Container.Review review,
-			List<Clazz.Review> reviewList,
-			ReviewAspect reviewAspect,
-			ReviewBody reviewBody,
-			ReviewRating reviewRating,
-			SameAs sameAs,
-			SchemaVersion schemaVersion,
-			SdDatePublished sdDatePublished,
-			SdLicense sdLicense,
-			SdPublisher sdPublisher,
-			SourceOrganization sourceOrganization,
-			SpatialCoverage spatialCoverage,
-			Sponsor sponsor,
-			SubjectOf subjectOf,
-			TemporalCoverage temporalCoverage,
-			Text text,
-			ThumbnailUrl thumbnailUrl,
-			TimeRequired timeRequired,
-			TranslationOfWork translationOfWork,
-			Translator translator,
-			TypicalAgeRange typicalAgeRange,
-			Url url,
-			Version version,
-			Video video,
-			WorkExample workExample,
-			WorkTranslation workTranslation) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAbout(about);
-		setAccessMode(accessMode);
-		setAccessModeSufficient(accessModeSufficient);
-		setAccessibilityAPI(accessibilityAPI);
-		setAccessibilityControl(accessibilityControl);
-		setAccessibilityFeature(accessibilityFeature);
-		setAccessibilityHazard(accessibilityHazard);
-		setAccessibilitySummary(accessibilitySummary);
-		setAccountablePerson(accountablePerson);
-		setAdditionalType(additionalType);
-		setAggregateRating(aggregateRating);
-		setAlternateName(alternateName);
-		setAlternativeHeadline(alternativeHeadline);
-		setAssociatedMedia(associatedMedia);
-		setAudience(audience);
-		setAudio(audio);
-		setAuthor(author);
-		setAward(award);
-		setCharacter(character);
-		setCitation(citation);
-		setComment(comment);
-		setCommentCount(commentCount);
-		setContentLocation(contentLocation);
-		setContentRating(contentRating);
-		setContentReferenceTime(contentReferenceTime);
-		setContributor(contributor);
-		setCopyrightHolder(copyrightHolder);
-		setCopyrightYear(copyrightYear);
-		setCorrection(correction);
-		setCreator(creator);
-		setDateCreated(dateCreated);
-		setDateModified(dateModified);
-		setDatePublished(datePublished);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setDiscussionUrl(discussionUrl);
-		setEditor(editor);
-		setEducationalAlignment(educationalAlignment);
-		setEducationalUse(educationalUse);
-		setEncoding(encoding);
-		setEncodingFormat(encodingFormat);
-		setExampleOfWork(exampleOfWork);
-		setExpires(expires);
-		setFunder(funder);
-		setGenre(genre);
-		setHasPart(hasPart);
-		setHeadline(headline);
-		setIdentifier(identifier);
-		setImage(image);
-		setInLanguage(inLanguage);
-		setInteractionStatistic(interactionStatistic);
-		setInteractivityType(interactivityType);
-		setIsAccessibleForFree(isAccessibleForFree);
-		setIsBasedOn(isBasedOn);
-		setIsFamilyFriendly(isFamilyFriendly);
-		setIsPartOf(isPartOf);
-		setItemReviewed(itemReviewed);
-		setKeywords(keywords);
-		setLearningResourceType(learningResourceType);
-		setLicense(license);
-		setLocationCreated(locationCreated);
-		setMainEntity(mainEntity);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMaterial(material);
-		setMentions(mentions);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setOffers(offers);
-		setPosition(position);
-		setPotentialAction(potentialAction);
-		setProducer(producer);
-		setProvider(provider);
-		setPublication(publication);
-		setPublisher(publisher);
-		setPublisherImprint(publisherImprint);
-		setPublishingPrinciples(publishingPrinciples);
-		setRecordedAt(recordedAt);
-		setReleasedEvent(releasedEvent);
-		setReview(review);
-		setReviewList(reviewList);
-		setReviewAspect(reviewAspect);
-		setReviewBody(reviewBody);
-		setReviewRating(reviewRating);
-		setSameAs(sameAs);
-		setSchemaVersion(schemaVersion);
-		setSdDatePublished(sdDatePublished);
-		setSdLicense(sdLicense);
-		setSdPublisher(sdPublisher);
-		setSourceOrganization(sourceOrganization);
-		setSpatialCoverage(spatialCoverage);
-		setSponsor(sponsor);
-		setSubjectOf(subjectOf);
-		setTemporalCoverage(temporalCoverage);
-		setText(text);
-		setThumbnailUrl(thumbnailUrl);
-		setTimeRequired(timeRequired);
-		setTranslationOfWork(translationOfWork);
-		setTranslator(translator);
-		setTypicalAgeRange(typicalAgeRange);
-		setUrl(url);
-		setVersion(version);
-		setVideo(video);
-		setWorkExample(workExample);
-		setWorkTranslation(workTranslation);
 	}
 
 	public void copy(Clazz.Review org) {
@@ -2126,7 +2116,12 @@ public class REVIEW implements Clazz.Review, Container.Review {
 	}
 
 	public void copy(Container.Review org) {
+		setClaimReviewList(org.getClaimReviewList());
+		setCriticReviewList(org.getCriticReviewList());
+		setEmployerReviewList(org.getEmployerReviewList());
 		setReviewList(org.getReviewList());
+		setReviewNewsArticleList(org.getReviewNewsArticleList());
+		setUserReviewList(org.getUserReviewList());
 	}
 
 	@Override

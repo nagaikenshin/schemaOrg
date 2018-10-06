@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.ApprovedIndication;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalIndication;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.PreventionIndication;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.TreatmentIndication;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.impl.MEDICAL_INDICATION;
 
@@ -16,7 +19,13 @@ public class INDICATION implements Container.Indication {
 	private static final long serialVersionUID = 1L;
 
 	@Transient
+	public List<ApprovedIndication> approvedIndicationList;
+	@Transient
 	public List<MedicalIndication> medicalIndicationList;
+	@Transient
+	public List<PreventionIndication> preventionIndicationList;
+	@Transient
+	public List<TreatmentIndication> treatmentIndicationList;
 
 	public INDICATION() {
 	}
@@ -47,6 +56,47 @@ public class INDICATION implements Container.Indication {
 		} else {
 			medicalIndicationList.set(0, new MEDICAL_INDICATION(string));
 		}
+	}
+
+	public INDICATION(ApprovedIndication approvedIndication) {
+		approvedIndicationList = new ArrayList<ApprovedIndication>();
+		approvedIndicationList.add(approvedIndication);
+	}
+
+	@Override
+	public ApprovedIndication getApprovedIndication() {
+		if(approvedIndicationList != null && approvedIndicationList.size() > 0) {
+			return approvedIndicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setApprovedIndication(ApprovedIndication approvedIndication) {
+		if(approvedIndicationList == null) {
+			approvedIndicationList = new ArrayList<>();
+		}
+		if(approvedIndicationList.size() == 0) {
+			approvedIndicationList.add(approvedIndication);
+		} else {
+			approvedIndicationList.set(0, approvedIndication);
+		}
+	}
+
+	@Override
+	public List<ApprovedIndication> getApprovedIndicationList() {
+		return approvedIndicationList;
+	}
+
+	@Override
+	public void setApprovedIndicationList(List<ApprovedIndication> approvedIndicationList) {
+		this.approvedIndicationList = approvedIndicationList;
+	}
+
+	@Override
+	public boolean hasApprovedIndication() {
+		return approvedIndicationList != null && approvedIndicationList.size() > 0 && approvedIndicationList.get(0) != null;
 	}
 
 	public INDICATION(MedicalIndication medicalIndication) {
@@ -88,6 +138,105 @@ public class INDICATION implements Container.Indication {
 	@Override
 	public boolean hasMedicalIndication() {
 		return medicalIndicationList != null && medicalIndicationList.size() > 0 && medicalIndicationList.get(0) != null;
+	}
+
+	public INDICATION(PreventionIndication preventionIndication) {
+		preventionIndicationList = new ArrayList<PreventionIndication>();
+		preventionIndicationList.add(preventionIndication);
+	}
+
+	@Override
+	public PreventionIndication getPreventionIndication() {
+		if(preventionIndicationList != null && preventionIndicationList.size() > 0) {
+			return preventionIndicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setPreventionIndication(PreventionIndication preventionIndication) {
+		if(preventionIndicationList == null) {
+			preventionIndicationList = new ArrayList<>();
+		}
+		if(preventionIndicationList.size() == 0) {
+			preventionIndicationList.add(preventionIndication);
+		} else {
+			preventionIndicationList.set(0, preventionIndication);
+		}
+	}
+
+	@Override
+	public List<PreventionIndication> getPreventionIndicationList() {
+		return preventionIndicationList;
+	}
+
+	@Override
+	public void setPreventionIndicationList(List<PreventionIndication> preventionIndicationList) {
+		this.preventionIndicationList = preventionIndicationList;
+	}
+
+	@Override
+	public boolean hasPreventionIndication() {
+		return preventionIndicationList != null && preventionIndicationList.size() > 0 && preventionIndicationList.get(0) != null;
+	}
+
+	public INDICATION(TreatmentIndication treatmentIndication) {
+		treatmentIndicationList = new ArrayList<TreatmentIndication>();
+		treatmentIndicationList.add(treatmentIndication);
+	}
+
+	@Override
+	public TreatmentIndication getTreatmentIndication() {
+		if(treatmentIndicationList != null && treatmentIndicationList.size() > 0) {
+			return treatmentIndicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setTreatmentIndication(TreatmentIndication treatmentIndication) {
+		if(treatmentIndicationList == null) {
+			treatmentIndicationList = new ArrayList<>();
+		}
+		if(treatmentIndicationList.size() == 0) {
+			treatmentIndicationList.add(treatmentIndication);
+		} else {
+			treatmentIndicationList.set(0, treatmentIndication);
+		}
+	}
+
+	@Override
+	public List<TreatmentIndication> getTreatmentIndicationList() {
+		return treatmentIndicationList;
+	}
+
+	@Override
+	public void setTreatmentIndicationList(List<TreatmentIndication> treatmentIndicationList) {
+		this.treatmentIndicationList = treatmentIndicationList;
+	}
+
+	@Override
+	public boolean hasTreatmentIndication() {
+		return treatmentIndicationList != null && treatmentIndicationList.size() > 0 && treatmentIndicationList.get(0) != null;
+	}
+
+	public INDICATION(List<ApprovedIndication> approvedIndicationList,
+			List<MedicalIndication> medicalIndicationList,
+			List<PreventionIndication> preventionIndicationList,
+			List<TreatmentIndication> treatmentIndicationList) {
+		setApprovedIndicationList(approvedIndicationList);
+		setMedicalIndicationList(medicalIndicationList);
+		setPreventionIndicationList(preventionIndicationList);
+		setTreatmentIndicationList(treatmentIndicationList);
+	}
+
+	public void copy(Container.Indication org) {
+		setApprovedIndicationList(org.getApprovedIndicationList());
+		setMedicalIndicationList(org.getMedicalIndicationList());
+		setPreventionIndicationList(org.getPreventionIndicationList());
+		setTreatmentIndicationList(org.getTreatmentIndicationList());
 	}
 
 	@Override

@@ -6,6 +6,8 @@ import java.util.List;
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalGuideline;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalGuidelineContraindication;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalGuidelineRecommendation;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.impl.MEDICAL_GUIDELINE;
 
@@ -17,6 +19,10 @@ public class GUIDELINE implements Container.Guideline {
 
 	@Transient
 	public List<MedicalGuideline> medicalGuidelineList;
+	@Transient
+	public List<MedicalGuidelineContraindication> medicalGuidelineContraindicationList;
+	@Transient
+	public List<MedicalGuidelineRecommendation> medicalGuidelineRecommendationList;
 
 	public GUIDELINE() {
 	}
@@ -88,6 +94,102 @@ public class GUIDELINE implements Container.Guideline {
 	@Override
 	public boolean hasMedicalGuideline() {
 		return medicalGuidelineList != null && medicalGuidelineList.size() > 0 && medicalGuidelineList.get(0) != null;
+	}
+
+	public GUIDELINE(MedicalGuidelineContraindication medicalGuidelineContraindication) {
+		medicalGuidelineContraindicationList = new ArrayList<MedicalGuidelineContraindication>();
+		medicalGuidelineContraindicationList.add(medicalGuidelineContraindication);
+	}
+
+	@Override
+	public MedicalGuidelineContraindication getMedicalGuidelineContraindication() {
+		if(medicalGuidelineContraindicationList != null && medicalGuidelineContraindicationList.size() > 0) {
+			return medicalGuidelineContraindicationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalGuidelineContraindication(MedicalGuidelineContraindication medicalGuidelineContraindication) {
+		if(medicalGuidelineContraindicationList == null) {
+			medicalGuidelineContraindicationList = new ArrayList<>();
+		}
+		if(medicalGuidelineContraindicationList.size() == 0) {
+			medicalGuidelineContraindicationList.add(medicalGuidelineContraindication);
+		} else {
+			medicalGuidelineContraindicationList.set(0, medicalGuidelineContraindication);
+		}
+	}
+
+	@Override
+	public List<MedicalGuidelineContraindication> getMedicalGuidelineContraindicationList() {
+		return medicalGuidelineContraindicationList;
+	}
+
+	@Override
+	public void setMedicalGuidelineContraindicationList(List<MedicalGuidelineContraindication> medicalGuidelineContraindicationList) {
+		this.medicalGuidelineContraindicationList = medicalGuidelineContraindicationList;
+	}
+
+	@Override
+	public boolean hasMedicalGuidelineContraindication() {
+		return medicalGuidelineContraindicationList != null && medicalGuidelineContraindicationList.size() > 0 && medicalGuidelineContraindicationList.get(0) != null;
+	}
+
+	public GUIDELINE(MedicalGuidelineRecommendation medicalGuidelineRecommendation) {
+		medicalGuidelineRecommendationList = new ArrayList<MedicalGuidelineRecommendation>();
+		medicalGuidelineRecommendationList.add(medicalGuidelineRecommendation);
+	}
+
+	@Override
+	public MedicalGuidelineRecommendation getMedicalGuidelineRecommendation() {
+		if(medicalGuidelineRecommendationList != null && medicalGuidelineRecommendationList.size() > 0) {
+			return medicalGuidelineRecommendationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalGuidelineRecommendation(MedicalGuidelineRecommendation medicalGuidelineRecommendation) {
+		if(medicalGuidelineRecommendationList == null) {
+			medicalGuidelineRecommendationList = new ArrayList<>();
+		}
+		if(medicalGuidelineRecommendationList.size() == 0) {
+			medicalGuidelineRecommendationList.add(medicalGuidelineRecommendation);
+		} else {
+			medicalGuidelineRecommendationList.set(0, medicalGuidelineRecommendation);
+		}
+	}
+
+	@Override
+	public List<MedicalGuidelineRecommendation> getMedicalGuidelineRecommendationList() {
+		return medicalGuidelineRecommendationList;
+	}
+
+	@Override
+	public void setMedicalGuidelineRecommendationList(List<MedicalGuidelineRecommendation> medicalGuidelineRecommendationList) {
+		this.medicalGuidelineRecommendationList = medicalGuidelineRecommendationList;
+	}
+
+	@Override
+	public boolean hasMedicalGuidelineRecommendation() {
+		return medicalGuidelineRecommendationList != null && medicalGuidelineRecommendationList.size() > 0 && medicalGuidelineRecommendationList.get(0) != null;
+	}
+
+	public GUIDELINE(List<MedicalGuideline> medicalGuidelineList,
+			List<MedicalGuidelineContraindication> medicalGuidelineContraindicationList,
+			List<MedicalGuidelineRecommendation> medicalGuidelineRecommendationList) {
+		setMedicalGuidelineList(medicalGuidelineList);
+		setMedicalGuidelineContraindicationList(medicalGuidelineContraindicationList);
+		setMedicalGuidelineRecommendationList(medicalGuidelineRecommendationList);
+	}
+
+	public void copy(Container.Guideline org) {
+		setMedicalGuidelineList(org.getMedicalGuidelineList());
+		setMedicalGuidelineContraindicationList(org.getMedicalGuidelineContraindicationList());
+		setMedicalGuidelineRecommendationList(org.getMedicalGuidelineRecommendationList());
 	}
 
 	@Override

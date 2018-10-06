@@ -6,6 +6,7 @@ import java.util.List;
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalSign;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.VitalSign;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.impl.MEDICAL_SIGN;
 
@@ -14,6 +15,7 @@ public class SIGN_DETECTED implements Container.SignDetected {
 	private static final long serialVersionUID = 1L;
 
 	public List<MedicalSign> medicalSignList;
+	public List<VitalSign> vitalSignList;
 
 	public SIGN_DETECTED() {
 	}
@@ -85,6 +87,58 @@ public class SIGN_DETECTED implements Container.SignDetected {
 	@Override
 	public boolean hasMedicalSign() {
 		return medicalSignList != null && medicalSignList.size() > 0 && medicalSignList.get(0) != null;
+	}
+
+	public SIGN_DETECTED(VitalSign vitalSign) {
+		vitalSignList = new ArrayList<VitalSign>();
+		vitalSignList.add(vitalSign);
+	}
+
+	@Override
+	public VitalSign getVitalSign() {
+		if(vitalSignList != null && vitalSignList.size() > 0) {
+			return vitalSignList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setVitalSign(VitalSign vitalSign) {
+		if(vitalSignList == null) {
+			vitalSignList = new ArrayList<>();
+		}
+		if(vitalSignList.size() == 0) {
+			vitalSignList.add(vitalSign);
+		} else {
+			vitalSignList.set(0, vitalSign);
+		}
+	}
+
+	@Override
+	public List<VitalSign> getVitalSignList() {
+		return vitalSignList;
+	}
+
+	@Override
+	public void setVitalSignList(List<VitalSign> vitalSignList) {
+		this.vitalSignList = vitalSignList;
+	}
+
+	@Override
+	public boolean hasVitalSign() {
+		return vitalSignList != null && vitalSignList.size() > 0 && vitalSignList.get(0) != null;
+	}
+
+	public SIGN_DETECTED(List<MedicalSign> medicalSignList,
+			List<VitalSign> vitalSignList) {
+		setMedicalSignList(medicalSignList);
+		setVitalSignList(vitalSignList);
+	}
+
+	public void copy(Container.SignDetected org) {
+		setMedicalSignList(org.getMedicalSignList());
+		setVitalSignList(org.getVitalSignList());
 	}
 
 	@Override

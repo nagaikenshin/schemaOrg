@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.LocationFeatureSpecification;
 import org.kyojo.schemaorg.m3n4.core.Clazz.PropertyValue;
 import org.kyojo.schemaorg.m3n4.core.Clazz.URL;
 import org.kyojo.schemaorg.m3n4.core.Container;
@@ -16,6 +17,8 @@ public class ACCOUNT_ID implements Container.AccountId {
 	private static final long serialVersionUID = 1L;
 
 	@Transient
+	public List<LocationFeatureSpecification> locationFeatureSpecificationList;
+	@Transient
 	public List<PropertyValue> propertyValueList;
 	@Transient
 	public List<Text> textList;
@@ -23,6 +26,47 @@ public class ACCOUNT_ID implements Container.AccountId {
 	public List<URL> urlList;
 
 	public ACCOUNT_ID() {
+	}
+
+	public ACCOUNT_ID(LocationFeatureSpecification locationFeatureSpecification) {
+		locationFeatureSpecificationList = new ArrayList<LocationFeatureSpecification>();
+		locationFeatureSpecificationList.add(locationFeatureSpecification);
+	}
+
+	@Override
+	public LocationFeatureSpecification getLocationFeatureSpecification() {
+		if(locationFeatureSpecificationList != null && locationFeatureSpecificationList.size() > 0) {
+			return locationFeatureSpecificationList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setLocationFeatureSpecification(LocationFeatureSpecification locationFeatureSpecification) {
+		if(locationFeatureSpecificationList == null) {
+			locationFeatureSpecificationList = new ArrayList<>();
+		}
+		if(locationFeatureSpecificationList.size() == 0) {
+			locationFeatureSpecificationList.add(locationFeatureSpecification);
+		} else {
+			locationFeatureSpecificationList.set(0, locationFeatureSpecification);
+		}
+	}
+
+	@Override
+	public List<LocationFeatureSpecification> getLocationFeatureSpecificationList() {
+		return locationFeatureSpecificationList;
+	}
+
+	@Override
+	public void setLocationFeatureSpecificationList(List<LocationFeatureSpecification> locationFeatureSpecificationList) {
+		this.locationFeatureSpecificationList = locationFeatureSpecificationList;
+	}
+
+	@Override
+	public boolean hasLocationFeatureSpecification() {
+		return locationFeatureSpecificationList != null && locationFeatureSpecificationList.size() > 0 && locationFeatureSpecificationList.get(0) != null;
 	}
 
 	public ACCOUNT_ID(PropertyValue propertyValue) {
@@ -152,15 +196,18 @@ public class ACCOUNT_ID implements Container.AccountId {
 		return urlList != null && urlList.size() > 0 && urlList.get(0) != null;
 	}
 
-	public ACCOUNT_ID(List<PropertyValue> propertyValueList,
+	public ACCOUNT_ID(List<LocationFeatureSpecification> locationFeatureSpecificationList,
+			List<PropertyValue> propertyValueList,
 			List<Text> textList,
 			List<URL> urlList) {
+		setLocationFeatureSpecificationList(locationFeatureSpecificationList);
 		setPropertyValueList(propertyValueList);
 		setTextList(textList);
 		setURLList(urlList);
 	}
 
 	public void copy(Container.AccountId org) {
+		setLocationFeatureSpecificationList(org.getLocationFeatureSpecificationList());
 		setPropertyValueList(org.getPropertyValueList());
 		setTextList(org.getTextList());
 		setURLList(org.getURLList());

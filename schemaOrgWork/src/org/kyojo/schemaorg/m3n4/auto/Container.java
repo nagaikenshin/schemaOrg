@@ -10,12 +10,16 @@ import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
 import org.kyojo.schemaorg.SchemaOrgURI;
 import org.kyojo.schemaorg.m3n4.auto.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Float;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Integer;
 import org.kyojo.schemaorg.m3n4.core.Clazz.QualitativeValue;
 import org.kyojo.schemaorg.m3n4.core.Clazz.QuantitativeValue;
 import org.kyojo.schemaorg.m3n4.core.Clazz.URL;
 import org.kyojo.schemaorg.m3n4.core.DataType.Date;
 import org.kyojo.schemaorg.m3n4.core.DataType.Number;
 import org.kyojo.schemaorg.m3n4.core.DataType.Text;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.MonetaryAmountDistribution;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.QuantitativeValueDistribution;
 
 @JsonLdContext("http://schema.org")
 @SchemaOrgURI("http://www.w3.org/1999/02/22-rdf-syntax-ns#Property")
@@ -44,6 +48,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface AccelerationTime extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -51,6 +64,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -133,6 +155,24 @@ public interface Container extends SchemaOrgProperty {
 	public interface EmissionsCO2 extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
+		 */
+		public Float getFl0at();
+		public void setFl0at(Float fl0at);
+		public List<Float> getFl0atList();
+		public void setFl0atList(List<Float> fl0atList);
+		public boolean hasFl0at();
+
+		/**
+		 * @see <a href="http://schema.org/Integer">http://schema.org/Integer</a>
+		 */
+		public Integer getInteger();
+		public void setInteger(Integer integer);
+		public List<Integer> getIntegerList();
+		public void setIntegerList(List<Integer> integerList);
+		public boolean hasInteger();
+
+		/**
 		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
 		 */
 		public Number getNumber();
@@ -163,6 +203,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface EngineDisplacement extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -170,6 +219,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -196,6 +254,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface EnginePower extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -203,6 +270,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -262,6 +338,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface FuelCapacity extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -269,6 +354,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -363,6 +457,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface Payload extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -370,6 +473,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -398,6 +510,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface RoofLoad extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -405,6 +526,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -420,6 +550,33 @@ public interface Container extends SchemaOrgProperty {
 	@CamelizedName("seatingCapacity")
 	@ConstantizedName("SEATING_CAPACITY")
 	public interface SeatingCapacity extends SchemaOrgProperty {
+
+		/**
+		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
+		 */
+		public Float getFl0at();
+		public void setFl0at(Float fl0at);
+		public List<Float> getFl0atList();
+		public void setFl0atList(List<Float> fl0atList);
+		public boolean hasFl0at();
+
+		/**
+		 * @see <a href="http://schema.org/Integer">http://schema.org/Integer</a>
+		 */
+		public Integer getInteger();
+		public void setInteger(Integer integer);
+		public List<Integer> getIntegerList();
+		public void setIntegerList(List<Integer> integerList);
+		public boolean hasInteger();
+
+		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
 
 		/**
 		 * @see <a href="http://schema.org/Number">http://schema.org/Number</a>
@@ -438,6 +595,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public java.math.BigDecimal getNativeValue();
 
@@ -463,6 +629,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface Speed extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -470,6 +645,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -499,6 +683,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface TongueWeight extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -506,6 +699,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -530,6 +732,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface Torque extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -537,6 +748,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -563,6 +783,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface TrailerWeight extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -570,6 +799,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -632,6 +870,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface WeightTotal extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -639,6 +886,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 
@@ -656,6 +912,15 @@ public interface Container extends SchemaOrgProperty {
 	public interface Wheelbase extends SchemaOrgProperty {
 
 		/**
+		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
+		 */
+		public MonetaryAmountDistribution getMonetaryAmountDistribution();
+		public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution);
+		public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList();
+		public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList);
+		public boolean hasMonetaryAmountDistribution();
+
+		/**
 		 * @see <a href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a>
 		 */
 		public QuantitativeValue getQuantitativeValue();
@@ -663,6 +928,15 @@ public interface Container extends SchemaOrgProperty {
 		public List<QuantitativeValue> getQuantitativeValueList();
 		public void setQuantitativeValueList(List<QuantitativeValue> quantitativeValueList);
 		public boolean hasQuantitativeValue();
+
+		/**
+		 * @see <a href="http://schema.org/QuantitativeValueDistribution">http://schema.org/QuantitativeValueDistribution</a>
+		 */
+		public QuantitativeValueDistribution getQuantitativeValueDistribution();
+		public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution);
+		public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList();
+		public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList);
+		public boolean hasQuantitativeValueDistribution();
 
 		public String getNativeValue();
 

@@ -367,64 +367,6 @@ public class TYPE_AND_QUANTITY_NODE implements Clazz.TypeAndQuantityNode {
 		this.url = url;
 	}
 
-	public TYPE_AND_QUANTITY_NODE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			AmountOfThisGood amountOfThisGood,
-			BusinessFunction businessFunction,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			TypeOfGood typeOfGood,
-			UnitCode unitCode,
-			UnitText unitText,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAmountOfThisGood(amountOfThisGood);
-		setBusinessFunction(businessFunction);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setTypeOfGood(typeOfGood);
-		setUnitCode(unitCode);
-		setUnitText(unitText);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.TypeAndQuantityNode org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

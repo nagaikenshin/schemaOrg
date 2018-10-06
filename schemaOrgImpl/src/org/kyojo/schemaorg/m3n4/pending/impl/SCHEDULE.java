@@ -398,68 +398,6 @@ public class SCHEDULE implements Clazz.Schedule {
 		this.url = url;
 	}
 
-	public SCHEDULE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			ByDay byDay,
-			ByMonth byMonth,
-			ByMonthDay byMonthDay,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			EventSchedule eventSchedule,
-			ExceptDate exceptDate,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RepeatCount repeatCount,
-			RepeatFrequency repeatFrequency,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setByDay(byDay);
-		setByMonth(byMonth);
-		setByMonthDay(byMonthDay);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEventSchedule(eventSchedule);
-		setExceptDate(exceptDate);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRepeatCount(repeatCount);
-		setRepeatFrequency(repeatFrequency);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.Schedule org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

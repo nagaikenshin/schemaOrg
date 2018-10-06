@@ -8,6 +8,7 @@ import org.kyojo.schemaorg.m3n4.bib.Container.PublisherImprint;
 import org.kyojo.schemaorg.m3n4.bib.Container.TranslationOfWork;
 import org.kyojo.schemaorg.m3n4.bib.Container.WorkTranslation;
 import org.kyojo.schemaorg.m3n4.core.Clazz;
+import org.kyojo.schemaorg.m3n4.core.Clazz.DataFeed;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.About;
 import org.kyojo.schemaorg.m3n4.core.Container.AccessMode;
@@ -106,6 +107,7 @@ import org.kyojo.schemaorg.m3n4.core.Container.WorkExample;
 import org.kyojo.schemaorg.m3n4.core.DataType;
 import org.kyojo.schemaorg.m3n4.core.impl.NAME;
 import org.kyojo.schemaorg.m3n4.core.impl.TEXT;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.CompleteDataFeed;
 import org.kyojo.schemaorg.m3n4.pending.Container.ContentReferenceTime;
 import org.kyojo.schemaorg.m3n4.pending.Container.Correction;
 import org.kyojo.schemaorg.m3n4.pending.Container.MeasurementTechnique;
@@ -152,6 +154,8 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 	public Citation citation;
 	public Comment comment;
 	public CommentCount commentCount;
+	@Transient
+	public List<CompleteDataFeed> completeDataFeedList;
 	public ContentLocation contentLocation;
 	public ContentRating contentRating;
 	public ContentReferenceTime contentReferenceTime;
@@ -160,6 +164,8 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 	public CopyrightYear copyrightYear;
 	public Correction correction;
 	public Creator creator;
+	@Transient
+	public List<DataFeed> dataFeedList;
 	@Transient
 	public List<Clazz.Dataset> datasetList;
 	public DateCreated dateCreated;
@@ -585,6 +591,47 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 		this.commentCount = commentCount;
 	}
 
+	public DATASET(CompleteDataFeed completeDataFeed) {
+		completeDataFeedList = new ArrayList<CompleteDataFeed>();
+		completeDataFeedList.add(completeDataFeed);
+	}
+
+	@Override
+	public CompleteDataFeed getCompleteDataFeed() {
+		if(completeDataFeedList != null && completeDataFeedList.size() > 0) {
+			return completeDataFeedList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCompleteDataFeed(CompleteDataFeed completeDataFeed) {
+		if(completeDataFeedList == null) {
+			completeDataFeedList = new ArrayList<>();
+		}
+		if(completeDataFeedList.size() == 0) {
+			completeDataFeedList.add(completeDataFeed);
+		} else {
+			completeDataFeedList.set(0, completeDataFeed);
+		}
+	}
+
+	@Override
+	public List<CompleteDataFeed> getCompleteDataFeedList() {
+		return completeDataFeedList;
+	}
+
+	@Override
+	public void setCompleteDataFeedList(List<CompleteDataFeed> completeDataFeedList) {
+		this.completeDataFeedList = completeDataFeedList;
+	}
+
+	@Override
+	public boolean hasCompleteDataFeed() {
+		return completeDataFeedList != null && completeDataFeedList.size() > 0 && completeDataFeedList.get(0) != null;
+	}
+
 	public DATASET(ContentLocation contentLocation) {
 		setContentLocation(contentLocation);
 	}
@@ -695,6 +742,47 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 	@Override
 	public void setCreator(Creator creator) {
 		this.creator = creator;
+	}
+
+	public DATASET(DataFeed dataFeed) {
+		dataFeedList = new ArrayList<DataFeed>();
+		dataFeedList.add(dataFeed);
+	}
+
+	@Override
+	public DataFeed getDataFeed() {
+		if(dataFeedList != null && dataFeedList.size() > 0) {
+			return dataFeedList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setDataFeed(DataFeed dataFeed) {
+		if(dataFeedList == null) {
+			dataFeedList = new ArrayList<>();
+		}
+		if(dataFeedList.size() == 0) {
+			dataFeedList.add(dataFeed);
+		} else {
+			dataFeedList.set(0, dataFeed);
+		}
+	}
+
+	@Override
+	public List<DataFeed> getDataFeedList() {
+		return dataFeedList;
+	}
+
+	@Override
+	public void setDataFeedList(List<DataFeed> dataFeedList) {
+		this.dataFeedList = dataFeedList;
+	}
+
+	@Override
+	public boolean hasDataFeed() {
+		return dataFeedList != null && dataFeedList.size() > 0 && dataFeedList.get(0) != null;
 	}
 
 	public DATASET(Clazz.Dataset dataset) {
@@ -1788,238 +1876,6 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 		this.workTranslation = workTranslation;
 	}
 
-	public DATASET(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			About about,
-			AccessMode accessMode,
-			AccessModeSufficient accessModeSufficient,
-			AccessibilityAPI accessibilityAPI,
-			AccessibilityControl accessibilityControl,
-			AccessibilityFeature accessibilityFeature,
-			AccessibilityHazard accessibilityHazard,
-			AccessibilitySummary accessibilitySummary,
-			AccountablePerson accountablePerson,
-			AdditionalType additionalType,
-			AggregateRating aggregateRating,
-			AlternateName alternateName,
-			AlternativeHeadline alternativeHeadline,
-			AssociatedMedia associatedMedia,
-			Audience audience,
-			Audio audio,
-			Author author,
-			Award award,
-			Character character,
-			Citation citation,
-			Comment comment,
-			CommentCount commentCount,
-			ContentLocation contentLocation,
-			ContentRating contentRating,
-			ContentReferenceTime contentReferenceTime,
-			Contributor contributor,
-			CopyrightHolder copyrightHolder,
-			CopyrightYear copyrightYear,
-			Correction correction,
-			Creator creator,
-			List<Clazz.Dataset> datasetList,
-			DateCreated dateCreated,
-			DateModified dateModified,
-			DatePublished datePublished,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			DiscussionUrl discussionUrl,
-			Distribution distribution,
-			Editor editor,
-			EducationalAlignment educationalAlignment,
-			EducationalUse educationalUse,
-			Encoding encoding,
-			EncodingFormat encodingFormat,
-			ExampleOfWork exampleOfWork,
-			Expires expires,
-			Funder funder,
-			Genre genre,
-			HasPart hasPart,
-			Headline headline,
-			Identifier identifier,
-			Image image,
-			InLanguage inLanguage,
-			IncludedInDataCatalog includedInDataCatalog,
-			InteractionStatistic interactionStatistic,
-			InteractivityType interactivityType,
-			IsAccessibleForFree isAccessibleForFree,
-			IsBasedOn isBasedOn,
-			IsFamilyFriendly isFamilyFriendly,
-			IsPartOf isPartOf,
-			Issn issn,
-			Keywords keywords,
-			LearningResourceType learningResourceType,
-			License license,
-			LocationCreated locationCreated,
-			MainEntity mainEntity,
-			MainEntityOfPage mainEntityOfPage,
-			Material material,
-			MeasurementTechnique measurementTechnique,
-			Mentions mentions,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			Offers offers,
-			Position position,
-			PotentialAction potentialAction,
-			Producer producer,
-			Provider provider,
-			Publication publication,
-			Publisher publisher,
-			PublisherImprint publisherImprint,
-			PublishingPrinciples publishingPrinciples,
-			RecordedAt recordedAt,
-			ReleasedEvent releasedEvent,
-			Review review,
-			SameAs sameAs,
-			SchemaVersion schemaVersion,
-			SdDatePublished sdDatePublished,
-			SdLicense sdLicense,
-			SdPublisher sdPublisher,
-			SourceOrganization sourceOrganization,
-			SpatialCoverage spatialCoverage,
-			Sponsor sponsor,
-			SubjectOf subjectOf,
-			TemporalCoverage temporalCoverage,
-			Text text,
-			ThumbnailUrl thumbnailUrl,
-			TimeRequired timeRequired,
-			TranslationOfWork translationOfWork,
-			Translator translator,
-			TypicalAgeRange typicalAgeRange,
-			Url url,
-			VariableMeasured variableMeasured,
-			Version version,
-			Video video,
-			WorkExample workExample,
-			WorkTranslation workTranslation) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAbout(about);
-		setAccessMode(accessMode);
-		setAccessModeSufficient(accessModeSufficient);
-		setAccessibilityAPI(accessibilityAPI);
-		setAccessibilityControl(accessibilityControl);
-		setAccessibilityFeature(accessibilityFeature);
-		setAccessibilityHazard(accessibilityHazard);
-		setAccessibilitySummary(accessibilitySummary);
-		setAccountablePerson(accountablePerson);
-		setAdditionalType(additionalType);
-		setAggregateRating(aggregateRating);
-		setAlternateName(alternateName);
-		setAlternativeHeadline(alternativeHeadline);
-		setAssociatedMedia(associatedMedia);
-		setAudience(audience);
-		setAudio(audio);
-		setAuthor(author);
-		setAward(award);
-		setCharacter(character);
-		setCitation(citation);
-		setComment(comment);
-		setCommentCount(commentCount);
-		setContentLocation(contentLocation);
-		setContentRating(contentRating);
-		setContentReferenceTime(contentReferenceTime);
-		setContributor(contributor);
-		setCopyrightHolder(copyrightHolder);
-		setCopyrightYear(copyrightYear);
-		setCorrection(correction);
-		setCreator(creator);
-		setDatasetList(datasetList);
-		setDateCreated(dateCreated);
-		setDateModified(dateModified);
-		setDatePublished(datePublished);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setDiscussionUrl(discussionUrl);
-		setDistribution(distribution);
-		setEditor(editor);
-		setEducationalAlignment(educationalAlignment);
-		setEducationalUse(educationalUse);
-		setEncoding(encoding);
-		setEncodingFormat(encodingFormat);
-		setExampleOfWork(exampleOfWork);
-		setExpires(expires);
-		setFunder(funder);
-		setGenre(genre);
-		setHasPart(hasPart);
-		setHeadline(headline);
-		setIdentifier(identifier);
-		setImage(image);
-		setInLanguage(inLanguage);
-		setIncludedInDataCatalog(includedInDataCatalog);
-		setInteractionStatistic(interactionStatistic);
-		setInteractivityType(interactivityType);
-		setIsAccessibleForFree(isAccessibleForFree);
-		setIsBasedOn(isBasedOn);
-		setIsFamilyFriendly(isFamilyFriendly);
-		setIsPartOf(isPartOf);
-		setIssn(issn);
-		setKeywords(keywords);
-		setLearningResourceType(learningResourceType);
-		setLicense(license);
-		setLocationCreated(locationCreated);
-		setMainEntity(mainEntity);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMaterial(material);
-		setMeasurementTechnique(measurementTechnique);
-		setMentions(mentions);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setOffers(offers);
-		setPosition(position);
-		setPotentialAction(potentialAction);
-		setProducer(producer);
-		setProvider(provider);
-		setPublication(publication);
-		setPublisher(publisher);
-		setPublisherImprint(publisherImprint);
-		setPublishingPrinciples(publishingPrinciples);
-		setRecordedAt(recordedAt);
-		setReleasedEvent(releasedEvent);
-		setReview(review);
-		setSameAs(sameAs);
-		setSchemaVersion(schemaVersion);
-		setSdDatePublished(sdDatePublished);
-		setSdLicense(sdLicense);
-		setSdPublisher(sdPublisher);
-		setSourceOrganization(sourceOrganization);
-		setSpatialCoverage(spatialCoverage);
-		setSponsor(sponsor);
-		setSubjectOf(subjectOf);
-		setTemporalCoverage(temporalCoverage);
-		setText(text);
-		setThumbnailUrl(thumbnailUrl);
-		setTimeRequired(timeRequired);
-		setTranslationOfWork(translationOfWork);
-		setTranslator(translator);
-		setTypicalAgeRange(typicalAgeRange);
-		setUrl(url);
-		setVariableMeasured(variableMeasured);
-		setVersion(version);
-		setVideo(video);
-		setWorkExample(workExample);
-		setWorkTranslation(workTranslation);
-	}
-
 	public void copy(Clazz.Dataset org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());
@@ -2138,6 +1994,8 @@ public class DATASET implements Clazz.Dataset, Container.Dataset {
 	}
 
 	public void copy(Container.Dataset org) {
+		setCompleteDataFeedList(org.getCompleteDataFeedList());
+		setDataFeedList(org.getDataFeedList());
 		setDatasetList(org.getDatasetList());
 	}
 

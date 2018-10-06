@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Float;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Integer;
 import org.kyojo.schemaorg.m3n4.core.Clazz.QuantitativeValue;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.DataType.Number;
 import org.kyojo.schemaorg.m3n4.core.DataType.Text;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.MonetaryAmountDistribution;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.QuantitativeValueDistribution;
 
 import org.seasar.doma.Transient;
 
@@ -16,13 +20,152 @@ public class REQUIRED_QUANTITY implements Container.RequiredQuantity {
 	private static final long serialVersionUID = 1L;
 
 	@Transient
+	public List<Float> fl0atList;
+	@Transient
+	public List<Integer> integerList;
+	@Transient
+	public List<MonetaryAmountDistribution> monetaryAmountDistributionList;
+	@Transient
 	public List<Number> numberList;
 	@Transient
 	public List<QuantitativeValue> quantitativeValueList;
 	@Transient
+	public List<QuantitativeValueDistribution> quantitativeValueDistributionList;
+	@Transient
 	public List<Text> textList;
 
 	public REQUIRED_QUANTITY() {
+	}
+
+	public REQUIRED_QUANTITY(Double d0uble) {
+		this(new FLOAT(d0uble));
+	}
+
+	public REQUIRED_QUANTITY(Float fl0at) {
+		fl0atList = new ArrayList<Float>();
+		fl0atList.add(fl0at);
+	}
+
+	@Override
+	public Float getFl0at() {
+		if(fl0atList != null && fl0atList.size() > 0) {
+			return fl0atList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setFl0at(Float fl0at) {
+		if(fl0atList == null) {
+			fl0atList = new ArrayList<>();
+		}
+		if(fl0atList.size() == 0) {
+			fl0atList.add(fl0at);
+		} else {
+			fl0atList.set(0, fl0at);
+		}
+	}
+
+	@Override
+	public List<Float> getFl0atList() {
+		return fl0atList;
+	}
+
+	@Override
+	public void setFl0atList(List<Float> fl0atList) {
+		this.fl0atList = fl0atList;
+	}
+
+	@Override
+	public boolean hasFl0at() {
+		return fl0atList != null && fl0atList.size() > 0 && fl0atList.get(0) != null;
+	}
+
+	public REQUIRED_QUANTITY(Long l0ng) {
+		this(new INTEGER(l0ng));
+	}
+
+	public REQUIRED_QUANTITY(Integer integer) {
+		integerList = new ArrayList<Integer>();
+		integerList.add(integer);
+	}
+
+	@Override
+	public Integer getInteger() {
+		if(integerList != null && integerList.size() > 0) {
+			return integerList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setInteger(Integer integer) {
+		if(integerList == null) {
+			integerList = new ArrayList<>();
+		}
+		if(integerList.size() == 0) {
+			integerList.add(integer);
+		} else {
+			integerList.set(0, integer);
+		}
+	}
+
+	@Override
+	public List<Integer> getIntegerList() {
+		return integerList;
+	}
+
+	@Override
+	public void setIntegerList(List<Integer> integerList) {
+		this.integerList = integerList;
+	}
+
+	@Override
+	public boolean hasInteger() {
+		return integerList != null && integerList.size() > 0 && integerList.get(0) != null;
+	}
+
+	public REQUIRED_QUANTITY(MonetaryAmountDistribution monetaryAmountDistribution) {
+		monetaryAmountDistributionList = new ArrayList<MonetaryAmountDistribution>();
+		monetaryAmountDistributionList.add(monetaryAmountDistribution);
+	}
+
+	@Override
+	public MonetaryAmountDistribution getMonetaryAmountDistribution() {
+		if(monetaryAmountDistributionList != null && monetaryAmountDistributionList.size() > 0) {
+			return monetaryAmountDistributionList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMonetaryAmountDistribution(MonetaryAmountDistribution monetaryAmountDistribution) {
+		if(monetaryAmountDistributionList == null) {
+			monetaryAmountDistributionList = new ArrayList<>();
+		}
+		if(monetaryAmountDistributionList.size() == 0) {
+			monetaryAmountDistributionList.add(monetaryAmountDistribution);
+		} else {
+			monetaryAmountDistributionList.set(0, monetaryAmountDistribution);
+		}
+	}
+
+	@Override
+	public List<MonetaryAmountDistribution> getMonetaryAmountDistributionList() {
+		return monetaryAmountDistributionList;
+	}
+
+	@Override
+	public void setMonetaryAmountDistributionList(List<MonetaryAmountDistribution> monetaryAmountDistributionList) {
+		this.monetaryAmountDistributionList = monetaryAmountDistributionList;
+	}
+
+	@Override
+	public boolean hasMonetaryAmountDistribution() {
+		return monetaryAmountDistributionList != null && monetaryAmountDistributionList.size() > 0 && monetaryAmountDistributionList.get(0) != null;
 	}
 
 	public REQUIRED_QUANTITY(java.math.BigDecimal number) {
@@ -111,6 +254,47 @@ public class REQUIRED_QUANTITY implements Container.RequiredQuantity {
 		return quantitativeValueList != null && quantitativeValueList.size() > 0 && quantitativeValueList.get(0) != null;
 	}
 
+	public REQUIRED_QUANTITY(QuantitativeValueDistribution quantitativeValueDistribution) {
+		quantitativeValueDistributionList = new ArrayList<QuantitativeValueDistribution>();
+		quantitativeValueDistributionList.add(quantitativeValueDistribution);
+	}
+
+	@Override
+	public QuantitativeValueDistribution getQuantitativeValueDistribution() {
+		if(quantitativeValueDistributionList != null && quantitativeValueDistributionList.size() > 0) {
+			return quantitativeValueDistributionList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setQuantitativeValueDistribution(QuantitativeValueDistribution quantitativeValueDistribution) {
+		if(quantitativeValueDistributionList == null) {
+			quantitativeValueDistributionList = new ArrayList<>();
+		}
+		if(quantitativeValueDistributionList.size() == 0) {
+			quantitativeValueDistributionList.add(quantitativeValueDistribution);
+		} else {
+			quantitativeValueDistributionList.set(0, quantitativeValueDistribution);
+		}
+	}
+
+	@Override
+	public List<QuantitativeValueDistribution> getQuantitativeValueDistributionList() {
+		return quantitativeValueDistributionList;
+	}
+
+	@Override
+	public void setQuantitativeValueDistributionList(List<QuantitativeValueDistribution> quantitativeValueDistributionList) {
+		this.quantitativeValueDistributionList = quantitativeValueDistributionList;
+	}
+
+	@Override
+	public boolean hasQuantitativeValueDistribution() {
+		return quantitativeValueDistributionList != null && quantitativeValueDistributionList.size() > 0 && quantitativeValueDistributionList.get(0) != null;
+	}
+
 	public REQUIRED_QUANTITY(String string) {
 		this(new TEXT(string));
 	}
@@ -156,17 +340,29 @@ public class REQUIRED_QUANTITY implements Container.RequiredQuantity {
 		return textList != null && textList.size() > 0 && textList.get(0) != null;
 	}
 
-	public REQUIRED_QUANTITY(List<Number> numberList,
+	public REQUIRED_QUANTITY(List<Float> fl0atList,
+			List<Integer> integerList,
+			List<MonetaryAmountDistribution> monetaryAmountDistributionList,
+			List<Number> numberList,
 			List<QuantitativeValue> quantitativeValueList,
+			List<QuantitativeValueDistribution> quantitativeValueDistributionList,
 			List<Text> textList) {
+		setFl0atList(fl0atList);
+		setIntegerList(integerList);
+		setMonetaryAmountDistributionList(monetaryAmountDistributionList);
 		setNumberList(numberList);
 		setQuantitativeValueList(quantitativeValueList);
+		setQuantitativeValueDistributionList(quantitativeValueDistributionList);
 		setTextList(textList);
 	}
 
 	public void copy(Container.RequiredQuantity org) {
+		setFl0atList(org.getFl0atList());
+		setIntegerList(org.getIntegerList());
+		setMonetaryAmountDistributionList(org.getMonetaryAmountDistributionList());
 		setNumberList(org.getNumberList());
 		setQuantitativeValueList(org.getQuantitativeValueList());
+		setQuantitativeValueDistributionList(org.getQuantitativeValueDistributionList());
 		setTextList(org.getTextList());
 	}
 

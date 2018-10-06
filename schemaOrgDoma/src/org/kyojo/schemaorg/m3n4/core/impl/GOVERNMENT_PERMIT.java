@@ -399,68 +399,6 @@ public class GOVERNMENT_PERMIT implements Clazz.GovernmentPermit {
 		this.validUntil = validUntil;
 	}
 
-	public GOVERNMENT_PERMIT(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			IssuedBy issuedBy,
-			IssuedThrough issuedThrough,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PermitAudience permitAudience,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			ValidFor validFor,
-			ValidFrom validFrom,
-			ValidIn validIn,
-			ValidUntil validUntil) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setIssuedBy(issuedBy);
-		setIssuedThrough(issuedThrough);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPermitAudience(permitAudience);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setValidFor(validFor);
-		setValidFrom(validFrom);
-		setValidIn(validIn);
-		setValidUntil(validUntil);
-	}
-
 	public void copy(Clazz.GovernmentPermit org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

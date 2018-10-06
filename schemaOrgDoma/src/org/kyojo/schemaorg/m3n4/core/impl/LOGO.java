@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Barcode;
 import org.kyojo.schemaorg.m3n4.core.Clazz.ImageObject;
 import org.kyojo.schemaorg.m3n4.core.Clazz.URL;
 import org.kyojo.schemaorg.m3n4.core.Container;
@@ -14,6 +15,8 @@ public class LOGO implements Container.Logo {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
+	public List<Barcode> barcodeList;
 	@Transient
 	public List<ImageObject> imageObjectList;
 	@Transient
@@ -43,6 +46,47 @@ public class LOGO implements Container.Logo {
 		} else {
 			urlList.set(0, new org.kyojo.schemaorg.m3n4.core.impl.URL(string));
 		}
+	}
+
+	public LOGO(Barcode barcode) {
+		barcodeList = new ArrayList<Barcode>();
+		barcodeList.add(barcode);
+	}
+
+	@Override
+	public Barcode getBarcode() {
+		if(barcodeList != null && barcodeList.size() > 0) {
+			return barcodeList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setBarcode(Barcode barcode) {
+		if(barcodeList == null) {
+			barcodeList = new ArrayList<>();
+		}
+		if(barcodeList.size() == 0) {
+			barcodeList.add(barcode);
+		} else {
+			barcodeList.set(0, barcode);
+		}
+	}
+
+	@Override
+	public List<Barcode> getBarcodeList() {
+		return barcodeList;
+	}
+
+	@Override
+	public void setBarcodeList(List<Barcode> barcodeList) {
+		this.barcodeList = barcodeList;
+	}
+
+	@Override
+	public boolean hasBarcode() {
+		return barcodeList != null && barcodeList.size() > 0 && barcodeList.get(0) != null;
 	}
 
 	public LOGO(ImageObject imageObject) {
@@ -127,13 +171,16 @@ public class LOGO implements Container.Logo {
 		return urlList != null && urlList.size() > 0 && urlList.get(0) != null;
 	}
 
-	public LOGO(List<ImageObject> imageObjectList,
+	public LOGO(List<Barcode> barcodeList,
+			List<ImageObject> imageObjectList,
 			List<URL> urlList) {
+		setBarcodeList(barcodeList);
 		setImageObjectList(imageObjectList);
 		setURLList(urlList);
 	}
 
 	public void copy(Container.Logo org) {
+		setBarcodeList(org.getBarcodeList());
 		setImageObjectList(org.getImageObjectList());
 		setURLList(org.getURLList());
 	}

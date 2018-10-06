@@ -377,62 +377,6 @@ public class GAME_SERVER implements Clazz.GameServer, Container.GameServer {
 		this.url = url;
 	}
 
-	public GAME_SERVER(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Game game,
-			List<Clazz.GameServer> gameServerList,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PlayersOnline playersOnline,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			ServerStatus serverStatus,
-			SubjectOf subjectOf,
-			Url url) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setGame(game);
-		setGameServerList(gameServerList);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPlayersOnline(playersOnline);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setServerStatus(serverStatus);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-	}
-
 	public void copy(Clazz.GameServer org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

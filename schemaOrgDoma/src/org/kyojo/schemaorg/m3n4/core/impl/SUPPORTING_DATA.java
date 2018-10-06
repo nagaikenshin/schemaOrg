@@ -7,6 +7,7 @@ import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.DataFeed;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.pending.Clazz.CompleteDataFeed;
 
 import org.seasar.doma.Transient;
 
@@ -14,6 +15,8 @@ public class SUPPORTING_DATA implements Container.SupportingData {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
+	public List<CompleteDataFeed> completeDataFeedList;
 	@Transient
 	public List<DataFeed> dataFeedList;
 
@@ -46,6 +49,47 @@ public class SUPPORTING_DATA implements Container.SupportingData {
 		} else {
 			dataFeedList.set(0, new DATA_FEED(string));
 		}
+	}
+
+	public SUPPORTING_DATA(CompleteDataFeed completeDataFeed) {
+		completeDataFeedList = new ArrayList<CompleteDataFeed>();
+		completeDataFeedList.add(completeDataFeed);
+	}
+
+	@Override
+	public CompleteDataFeed getCompleteDataFeed() {
+		if(completeDataFeedList != null && completeDataFeedList.size() > 0) {
+			return completeDataFeedList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setCompleteDataFeed(CompleteDataFeed completeDataFeed) {
+		if(completeDataFeedList == null) {
+			completeDataFeedList = new ArrayList<>();
+		}
+		if(completeDataFeedList.size() == 0) {
+			completeDataFeedList.add(completeDataFeed);
+		} else {
+			completeDataFeedList.set(0, completeDataFeed);
+		}
+	}
+
+	@Override
+	public List<CompleteDataFeed> getCompleteDataFeedList() {
+		return completeDataFeedList;
+	}
+
+	@Override
+	public void setCompleteDataFeedList(List<CompleteDataFeed> completeDataFeedList) {
+		this.completeDataFeedList = completeDataFeedList;
+	}
+
+	@Override
+	public boolean hasCompleteDataFeed() {
+		return completeDataFeedList != null && completeDataFeedList.size() > 0 && completeDataFeedList.get(0) != null;
 	}
 
 	public SUPPORTING_DATA(DataFeed dataFeed) {
@@ -87,6 +131,17 @@ public class SUPPORTING_DATA implements Container.SupportingData {
 	@Override
 	public boolean hasDataFeed() {
 		return dataFeedList != null && dataFeedList.size() > 0 && dataFeedList.get(0) != null;
+	}
+
+	public SUPPORTING_DATA(List<CompleteDataFeed> completeDataFeedList,
+			List<DataFeed> dataFeedList) {
+		setCompleteDataFeedList(completeDataFeedList);
+		setDataFeedList(dataFeedList);
+	}
+
+	public void copy(Container.SupportingData org) {
+		setCompleteDataFeedList(org.getCompleteDataFeedList());
+		setDataFeedList(org.getDataFeedList());
 	}
 
 	@Override

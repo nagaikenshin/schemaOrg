@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Float;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Integer;
 import org.kyojo.schemaorg.m3n4.core.DataType.Number;
+import org.kyojo.schemaorg.m3n4.core.impl.FLOAT;
+import org.kyojo.schemaorg.m3n4.core.impl.INTEGER;
 import org.kyojo.schemaorg.m3n4.core.impl.NUMBER;
 import org.kyojo.schemaorg.m3n4.pending.Container;
 
@@ -12,9 +16,101 @@ public class LOAN_PAYMENT_FREQUENCY implements Container.LoanPaymentFrequency {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<Float> fl0atList;
+	public List<Integer> integerList;
 	public List<Number> numberList;
 
 	public LOAN_PAYMENT_FREQUENCY() {
+	}
+
+	public LOAN_PAYMENT_FREQUENCY(Double d0uble) {
+		this(new FLOAT(d0uble));
+	}
+
+	public LOAN_PAYMENT_FREQUENCY(Float fl0at) {
+		fl0atList = new ArrayList<Float>();
+		fl0atList.add(fl0at);
+	}
+
+	@Override
+	public Float getFl0at() {
+		if(fl0atList != null && fl0atList.size() > 0) {
+			return fl0atList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setFl0at(Float fl0at) {
+		if(fl0atList == null) {
+			fl0atList = new ArrayList<>();
+		}
+		if(fl0atList.size() == 0) {
+			fl0atList.add(fl0at);
+		} else {
+			fl0atList.set(0, fl0at);
+		}
+	}
+
+	@Override
+	public List<Float> getFl0atList() {
+		return fl0atList;
+	}
+
+	@Override
+	public void setFl0atList(List<Float> fl0atList) {
+		this.fl0atList = fl0atList;
+	}
+
+	@Override
+	public boolean hasFl0at() {
+		return fl0atList != null && fl0atList.size() > 0 && fl0atList.get(0) != null;
+	}
+
+	public LOAN_PAYMENT_FREQUENCY(Long l0ng) {
+		this(new INTEGER(l0ng));
+	}
+
+	public LOAN_PAYMENT_FREQUENCY(Integer integer) {
+		integerList = new ArrayList<Integer>();
+		integerList.add(integer);
+	}
+
+	@Override
+	public Integer getInteger() {
+		if(integerList != null && integerList.size() > 0) {
+			return integerList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setInteger(Integer integer) {
+		if(integerList == null) {
+			integerList = new ArrayList<>();
+		}
+		if(integerList.size() == 0) {
+			integerList.add(integer);
+		} else {
+			integerList.set(0, integer);
+		}
+	}
+
+	@Override
+	public List<Integer> getIntegerList() {
+		return integerList;
+	}
+
+	@Override
+	public void setIntegerList(List<Integer> integerList) {
+		this.integerList = integerList;
+	}
+
+	@Override
+	public boolean hasInteger() {
+		return integerList != null && integerList.size() > 0 && integerList.get(0) != null;
 	}
 
 	public LOAN_PAYMENT_FREQUENCY(java.math.BigDecimal number) {
@@ -60,6 +156,20 @@ public class LOAN_PAYMENT_FREQUENCY implements Container.LoanPaymentFrequency {
 	@Override
 	public boolean hasNumber() {
 		return numberList != null && numberList.size() > 0 && numberList.get(0) != null;
+	}
+
+	public LOAN_PAYMENT_FREQUENCY(List<Float> fl0atList,
+			List<Integer> integerList,
+			List<Number> numberList) {
+		setFl0atList(fl0atList);
+		setIntegerList(integerList);
+		setNumberList(numberList);
+	}
+
+	public void copy(Container.LoanPaymentFrequency org) {
+		setFl0atList(org.getFl0atList());
+		setIntegerList(org.getIntegerList());
+		setNumberList(org.getNumberList());
 	}
 
 	@Override

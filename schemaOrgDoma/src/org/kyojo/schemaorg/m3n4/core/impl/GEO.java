@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.GeoCircle;
 import org.kyojo.schemaorg.m3n4.core.Clazz.GeoCoordinates;
 import org.kyojo.schemaorg.m3n4.core.Clazz.GeoShape;
 import org.kyojo.schemaorg.m3n4.core.Container;
@@ -15,6 +16,8 @@ public class GEO implements Container.Geo {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
+	public List<GeoCircle> geoCircleList;
 	@Transient
 	public List<GeoCoordinates> geoCoordinatesList;
 	@Transient
@@ -49,6 +52,47 @@ public class GEO implements Container.Geo {
 		} else {
 			geoCoordinatesList.set(0, new GEO_COORDINATES(string));
 		}
+	}
+
+	public GEO(GeoCircle geoCircle) {
+		geoCircleList = new ArrayList<GeoCircle>();
+		geoCircleList.add(geoCircle);
+	}
+
+	@Override
+	public GeoCircle getGeoCircle() {
+		if(geoCircleList != null && geoCircleList.size() > 0) {
+			return geoCircleList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setGeoCircle(GeoCircle geoCircle) {
+		if(geoCircleList == null) {
+			geoCircleList = new ArrayList<>();
+		}
+		if(geoCircleList.size() == 0) {
+			geoCircleList.add(geoCircle);
+		} else {
+			geoCircleList.set(0, geoCircle);
+		}
+	}
+
+	@Override
+	public List<GeoCircle> getGeoCircleList() {
+		return geoCircleList;
+	}
+
+	@Override
+	public void setGeoCircleList(List<GeoCircle> geoCircleList) {
+		this.geoCircleList = geoCircleList;
+	}
+
+	@Override
+	public boolean hasGeoCircle() {
+		return geoCircleList != null && geoCircleList.size() > 0 && geoCircleList.get(0) != null;
 	}
 
 	public GEO(GeoCoordinates geoCoordinates) {
@@ -133,13 +177,16 @@ public class GEO implements Container.Geo {
 		return geoShapeList != null && geoShapeList.size() > 0 && geoShapeList.get(0) != null;
 	}
 
-	public GEO(List<GeoCoordinates> geoCoordinatesList,
+	public GEO(List<GeoCircle> geoCircleList,
+			List<GeoCoordinates> geoCoordinatesList,
 			List<GeoShape> geoShapeList) {
+		setGeoCircleList(geoCircleList);
 		setGeoCoordinatesList(geoCoordinatesList);
 		setGeoShapeList(geoShapeList);
 	}
 
 	public void copy(Container.Geo org) {
+		setGeoCircleList(org.getGeoCircleList());
 		setGeoCoordinatesList(org.getGeoCoordinatesList());
 		setGeoShapeList(org.getGeoShapeList());
 	}

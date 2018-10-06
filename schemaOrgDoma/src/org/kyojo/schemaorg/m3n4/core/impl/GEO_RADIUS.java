@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.Distance;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Float;
+import org.kyojo.schemaorg.m3n4.core.Clazz.Integer;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.DataType.Number;
 import org.kyojo.schemaorg.m3n4.core.DataType.Text;
@@ -17,6 +19,10 @@ public class GEO_RADIUS implements Container.GeoRadius {
 
 	@Transient
 	public List<Distance> distanceList;
+	@Transient
+	public List<Float> fl0atList;
+	@Transient
+	public List<Integer> integerList;
 	@Transient
 	public List<Number> numberList;
 	@Transient
@@ -64,6 +70,96 @@ public class GEO_RADIUS implements Container.GeoRadius {
 	@Override
 	public boolean hasDistance() {
 		return distanceList != null && distanceList.size() > 0 && distanceList.get(0) != null;
+	}
+
+	public GEO_RADIUS(Double d0uble) {
+		this(new FLOAT(d0uble));
+	}
+
+	public GEO_RADIUS(Float fl0at) {
+		fl0atList = new ArrayList<Float>();
+		fl0atList.add(fl0at);
+	}
+
+	@Override
+	public Float getFl0at() {
+		if(fl0atList != null && fl0atList.size() > 0) {
+			return fl0atList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setFl0at(Float fl0at) {
+		if(fl0atList == null) {
+			fl0atList = new ArrayList<>();
+		}
+		if(fl0atList.size() == 0) {
+			fl0atList.add(fl0at);
+		} else {
+			fl0atList.set(0, fl0at);
+		}
+	}
+
+	@Override
+	public List<Float> getFl0atList() {
+		return fl0atList;
+	}
+
+	@Override
+	public void setFl0atList(List<Float> fl0atList) {
+		this.fl0atList = fl0atList;
+	}
+
+	@Override
+	public boolean hasFl0at() {
+		return fl0atList != null && fl0atList.size() > 0 && fl0atList.get(0) != null;
+	}
+
+	public GEO_RADIUS(Long l0ng) {
+		this(new INTEGER(l0ng));
+	}
+
+	public GEO_RADIUS(Integer integer) {
+		integerList = new ArrayList<Integer>();
+		integerList.add(integer);
+	}
+
+	@Override
+	public Integer getInteger() {
+		if(integerList != null && integerList.size() > 0) {
+			return integerList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setInteger(Integer integer) {
+		if(integerList == null) {
+			integerList = new ArrayList<>();
+		}
+		if(integerList.size() == 0) {
+			integerList.add(integer);
+		} else {
+			integerList.set(0, integer);
+		}
+	}
+
+	@Override
+	public List<Integer> getIntegerList() {
+		return integerList;
+	}
+
+	@Override
+	public void setIntegerList(List<Integer> integerList) {
+		this.integerList = integerList;
+	}
+
+	@Override
+	public boolean hasInteger() {
+		return integerList != null && integerList.size() > 0 && integerList.get(0) != null;
 	}
 
 	public GEO_RADIUS(java.math.BigDecimal number) {
@@ -157,15 +253,21 @@ public class GEO_RADIUS implements Container.GeoRadius {
 	}
 
 	public GEO_RADIUS(List<Distance> distanceList,
+			List<Float> fl0atList,
+			List<Integer> integerList,
 			List<Number> numberList,
 			List<Text> textList) {
 		setDistanceList(distanceList);
+		setFl0atList(fl0atList);
+		setIntegerList(integerList);
 		setNumberList(numberList);
 		setTextList(textList);
 	}
 
 	public void copy(Container.GeoRadius org) {
 		setDistanceList(org.getDistanceList());
+		setFl0atList(org.getFl0atList());
+		setIntegerList(org.getIntegerList());
 		setNumberList(org.getNumberList());
 		setTextList(org.getTextList());
 	}

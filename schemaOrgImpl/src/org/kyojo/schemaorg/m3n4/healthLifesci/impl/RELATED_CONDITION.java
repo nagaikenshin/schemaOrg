@@ -5,7 +5,12 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.InfectiousDisease;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalCondition;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalSign;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalSignOrSymptom;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.MedicalSymptom;
+import org.kyojo.schemaorg.m3n4.healthLifesci.Clazz.VitalSign;
 import org.kyojo.schemaorg.m3n4.healthLifesci.Container;
 import org.kyojo.schemaorg.m3n4.healthLifesci.impl.MEDICAL_CONDITION;
 
@@ -13,7 +18,12 @@ public class RELATED_CONDITION implements Container.RelatedCondition {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<InfectiousDisease> infectiousDiseaseList;
 	public List<MedicalCondition> medicalConditionList;
+	public List<MedicalSign> medicalSignList;
+	public List<MedicalSignOrSymptom> medicalSignOrSymptomList;
+	public List<MedicalSymptom> medicalSymptomList;
+	public List<VitalSign> vitalSignList;
 
 	public RELATED_CONDITION() {
 	}
@@ -44,6 +54,47 @@ public class RELATED_CONDITION implements Container.RelatedCondition {
 		} else {
 			medicalConditionList.set(0, new MEDICAL_CONDITION(string));
 		}
+	}
+
+	public RELATED_CONDITION(InfectiousDisease infectiousDisease) {
+		infectiousDiseaseList = new ArrayList<InfectiousDisease>();
+		infectiousDiseaseList.add(infectiousDisease);
+	}
+
+	@Override
+	public InfectiousDisease getInfectiousDisease() {
+		if(infectiousDiseaseList != null && infectiousDiseaseList.size() > 0) {
+			return infectiousDiseaseList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setInfectiousDisease(InfectiousDisease infectiousDisease) {
+		if(infectiousDiseaseList == null) {
+			infectiousDiseaseList = new ArrayList<>();
+		}
+		if(infectiousDiseaseList.size() == 0) {
+			infectiousDiseaseList.add(infectiousDisease);
+		} else {
+			infectiousDiseaseList.set(0, infectiousDisease);
+		}
+	}
+
+	@Override
+	public List<InfectiousDisease> getInfectiousDiseaseList() {
+		return infectiousDiseaseList;
+	}
+
+	@Override
+	public void setInfectiousDiseaseList(List<InfectiousDisease> infectiousDiseaseList) {
+		this.infectiousDiseaseList = infectiousDiseaseList;
+	}
+
+	@Override
+	public boolean hasInfectiousDisease() {
+		return infectiousDiseaseList != null && infectiousDiseaseList.size() > 0 && infectiousDiseaseList.get(0) != null;
 	}
 
 	public RELATED_CONDITION(MedicalCondition medicalCondition) {
@@ -85,6 +136,193 @@ public class RELATED_CONDITION implements Container.RelatedCondition {
 	@Override
 	public boolean hasMedicalCondition() {
 		return medicalConditionList != null && medicalConditionList.size() > 0 && medicalConditionList.get(0) != null;
+	}
+
+	public RELATED_CONDITION(MedicalSign medicalSign) {
+		medicalSignList = new ArrayList<MedicalSign>();
+		medicalSignList.add(medicalSign);
+	}
+
+	@Override
+	public MedicalSign getMedicalSign() {
+		if(medicalSignList != null && medicalSignList.size() > 0) {
+			return medicalSignList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalSign(MedicalSign medicalSign) {
+		if(medicalSignList == null) {
+			medicalSignList = new ArrayList<>();
+		}
+		if(medicalSignList.size() == 0) {
+			medicalSignList.add(medicalSign);
+		} else {
+			medicalSignList.set(0, medicalSign);
+		}
+	}
+
+	@Override
+	public List<MedicalSign> getMedicalSignList() {
+		return medicalSignList;
+	}
+
+	@Override
+	public void setMedicalSignList(List<MedicalSign> medicalSignList) {
+		this.medicalSignList = medicalSignList;
+	}
+
+	@Override
+	public boolean hasMedicalSign() {
+		return medicalSignList != null && medicalSignList.size() > 0 && medicalSignList.get(0) != null;
+	}
+
+	public RELATED_CONDITION(MedicalSignOrSymptom medicalSignOrSymptom) {
+		medicalSignOrSymptomList = new ArrayList<MedicalSignOrSymptom>();
+		medicalSignOrSymptomList.add(medicalSignOrSymptom);
+	}
+
+	@Override
+	public MedicalSignOrSymptom getMedicalSignOrSymptom() {
+		if(medicalSignOrSymptomList != null && medicalSignOrSymptomList.size() > 0) {
+			return medicalSignOrSymptomList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalSignOrSymptom(MedicalSignOrSymptom medicalSignOrSymptom) {
+		if(medicalSignOrSymptomList == null) {
+			medicalSignOrSymptomList = new ArrayList<>();
+		}
+		if(medicalSignOrSymptomList.size() == 0) {
+			medicalSignOrSymptomList.add(medicalSignOrSymptom);
+		} else {
+			medicalSignOrSymptomList.set(0, medicalSignOrSymptom);
+		}
+	}
+
+	@Override
+	public List<MedicalSignOrSymptom> getMedicalSignOrSymptomList() {
+		return medicalSignOrSymptomList;
+	}
+
+	@Override
+	public void setMedicalSignOrSymptomList(List<MedicalSignOrSymptom> medicalSignOrSymptomList) {
+		this.medicalSignOrSymptomList = medicalSignOrSymptomList;
+	}
+
+	@Override
+	public boolean hasMedicalSignOrSymptom() {
+		return medicalSignOrSymptomList != null && medicalSignOrSymptomList.size() > 0 && medicalSignOrSymptomList.get(0) != null;
+	}
+
+	public RELATED_CONDITION(MedicalSymptom medicalSymptom) {
+		medicalSymptomList = new ArrayList<MedicalSymptom>();
+		medicalSymptomList.add(medicalSymptom);
+	}
+
+	@Override
+	public MedicalSymptom getMedicalSymptom() {
+		if(medicalSymptomList != null && medicalSymptomList.size() > 0) {
+			return medicalSymptomList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setMedicalSymptom(MedicalSymptom medicalSymptom) {
+		if(medicalSymptomList == null) {
+			medicalSymptomList = new ArrayList<>();
+		}
+		if(medicalSymptomList.size() == 0) {
+			medicalSymptomList.add(medicalSymptom);
+		} else {
+			medicalSymptomList.set(0, medicalSymptom);
+		}
+	}
+
+	@Override
+	public List<MedicalSymptom> getMedicalSymptomList() {
+		return medicalSymptomList;
+	}
+
+	@Override
+	public void setMedicalSymptomList(List<MedicalSymptom> medicalSymptomList) {
+		this.medicalSymptomList = medicalSymptomList;
+	}
+
+	@Override
+	public boolean hasMedicalSymptom() {
+		return medicalSymptomList != null && medicalSymptomList.size() > 0 && medicalSymptomList.get(0) != null;
+	}
+
+	public RELATED_CONDITION(VitalSign vitalSign) {
+		vitalSignList = new ArrayList<VitalSign>();
+		vitalSignList.add(vitalSign);
+	}
+
+	@Override
+	public VitalSign getVitalSign() {
+		if(vitalSignList != null && vitalSignList.size() > 0) {
+			return vitalSignList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setVitalSign(VitalSign vitalSign) {
+		if(vitalSignList == null) {
+			vitalSignList = new ArrayList<>();
+		}
+		if(vitalSignList.size() == 0) {
+			vitalSignList.add(vitalSign);
+		} else {
+			vitalSignList.set(0, vitalSign);
+		}
+	}
+
+	@Override
+	public List<VitalSign> getVitalSignList() {
+		return vitalSignList;
+	}
+
+	@Override
+	public void setVitalSignList(List<VitalSign> vitalSignList) {
+		this.vitalSignList = vitalSignList;
+	}
+
+	@Override
+	public boolean hasVitalSign() {
+		return vitalSignList != null && vitalSignList.size() > 0 && vitalSignList.get(0) != null;
+	}
+
+	public RELATED_CONDITION(List<InfectiousDisease> infectiousDiseaseList,
+			List<MedicalCondition> medicalConditionList,
+			List<MedicalSign> medicalSignList,
+			List<MedicalSignOrSymptom> medicalSignOrSymptomList,
+			List<MedicalSymptom> medicalSymptomList,
+			List<VitalSign> vitalSignList) {
+		setInfectiousDiseaseList(infectiousDiseaseList);
+		setMedicalConditionList(medicalConditionList);
+		setMedicalSignList(medicalSignList);
+		setMedicalSignOrSymptomList(medicalSignOrSymptomList);
+		setMedicalSymptomList(medicalSymptomList);
+		setVitalSignList(vitalSignList);
+	}
+
+	public void copy(Container.RelatedCondition org) {
+		setInfectiousDiseaseList(org.getInfectiousDiseaseList());
+		setMedicalConditionList(org.getMedicalConditionList());
+		setMedicalSignList(org.getMedicalSignList());
+		setMedicalSignOrSymptomList(org.getMedicalSignOrSymptomList());
+		setMedicalSymptomList(org.getMedicalSymptomList());
+		setVitalSignList(org.getVitalSignList());
 	}
 
 	@Override

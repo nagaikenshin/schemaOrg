@@ -83,6 +83,71 @@ GSON assumed for deserialization
 The deserialization JSONized schemaOrg objects is [GSON](https://github.com/google/gson) use assumed.
 The correspondence list of interfaces and deserializers is written in `org.kyojo.schemaorg.m3n4.gson.GsonTypeAdapters.properties`. Load and register by GsonBuilder calling registerTypeAdapter() method.
 
+JSON structure analyzing utility class
+--------------------------------------
+
+`org.kyojo.schemaorg.SimpleJsonWalker` is the utility class for analyzing JSON structure. It realize the formatting JSON and the conversion JSON-LD to JSON. If this JSON-LD is the data structure of schema.org, the converted JSON is deserializable to a schemaOrg object.
+
+JSON-LD:
+```
+{
+    "@context": "http://schema.org",
+    "@type": "ItemList",
+    "url": "http://multivarki.ru?filters%5Bprice%5D%5BLTE%5D=39600",
+    "numberOfItems": "315",
+    "itemListElement": [
+        {
+            "@type": "Product",
+            "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+            "url": "http://multivarki.ru/brand_502/",
+            "name": "Brand 502"
+        },
+        {
+            "@type": "Product",
+            "name": "..."
+        }
+    ],
+    "offers": {
+        "@type": "Offer",
+        "price": "4399 p."
+    }
+}
+```
+```
+Map<String, String> jsonLdRootMap = new HashMap<>();
+String json1 = SimpleJsonWalker.jsonLdToJson(jsonLd, jsonLdRootMap, null, null);
+String json2 = SimpleJsonWalker.formatJson(json1, "\t");
+```
+Results:
+```
+{
+    "offers" : {
+        "offer" : {
+            "price" : "4399 p."
+        }
+    },
+    "itemListElement" : {
+        "productList" : [
+            {
+                "image" : "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+                "name" : "Brand 502",
+                "url" : "http://multivarki.ru/brand_502/"
+            },
+            {
+                "name" : "..."
+            }
+        ]
+    },
+    "numberOfItems" : "315",
+    "url" : "http://multivarki.ru?filters%5Bprice%5D%5BLTE%5D=39600"
+}
+```
+
+Examples
+--------
+
+Short examples found [here](https://kyojo.org/kyojoLab/schemaOrgLab/index.html).
+
 Included Projects
 -----------------
 
@@ -91,4 +156,13 @@ Included Projects
 * schemaOrgGson - GSON deserializers for schemaOrgImpl.
 * schemaOrgDoma - schemaOrgImpl added [Doma](http://doma.readthedocs.io/ja/stable/) domain class use features.
 * schemaOrgDomaConv - Converters for schemaOrgDoma.
+
+Maven Repository
+----------------
+
+* [kyojo-schemaorg-m3n4-cmn](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-cmn)
+* [kyojo-schemaorg-m3n4-impl](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-impl)
+* [kyojo-schemaorg-m3n4-gson](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-gson)
+* [kyojo-schemaorg-m3n4-doma](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-doma)
+* [kyojo-schemaorg-m3n4-domaConv](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-domaConv)
 

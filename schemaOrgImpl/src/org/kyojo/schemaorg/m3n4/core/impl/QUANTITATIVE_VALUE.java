@@ -398,68 +398,6 @@ public class QUANTITATIVE_VALUE implements Clazz.QuantitativeValue {
 		this.valueReference = valueReference;
 	}
 
-	public QUANTITATIVE_VALUE(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalProperty additionalProperty,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			MaxValue maxValue,
-			MinValue minValue,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			UnitCode unitCode,
-			UnitText unitText,
-			Url url,
-			Value value,
-			ValueReference valueReference) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalProperty(additionalProperty);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setMaxValue(maxValue);
-		setMinValue(minValue);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUnitCode(unitCode);
-		setUnitText(unitText);
-		setUrl(url);
-		setValue(value);
-		setValueReference(valueReference);
-	}
-
 	public void copy(Clazz.QuantitativeValue org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

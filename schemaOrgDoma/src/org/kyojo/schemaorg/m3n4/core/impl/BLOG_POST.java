@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
 import org.kyojo.schemaorg.m3n4.core.Clazz.BlogPosting;
+import org.kyojo.schemaorg.m3n4.core.Clazz.LiveBlogPosting;
 import org.kyojo.schemaorg.m3n4.core.Container;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 
@@ -16,6 +17,8 @@ public class BLOG_POST implements Container.BlogPost {
 
 	@Transient
 	public List<BlogPosting> blogPostingList;
+	@Transient
+	public List<LiveBlogPosting> liveBlogPostingList;
 
 	public BLOG_POST() {
 	}
@@ -87,6 +90,58 @@ public class BLOG_POST implements Container.BlogPost {
 	@Override
 	public boolean hasBlogPosting() {
 		return blogPostingList != null && blogPostingList.size() > 0 && blogPostingList.get(0) != null;
+	}
+
+	public BLOG_POST(LiveBlogPosting liveBlogPosting) {
+		liveBlogPostingList = new ArrayList<LiveBlogPosting>();
+		liveBlogPostingList.add(liveBlogPosting);
+	}
+
+	@Override
+	public LiveBlogPosting getLiveBlogPosting() {
+		if(liveBlogPostingList != null && liveBlogPostingList.size() > 0) {
+			return liveBlogPostingList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setLiveBlogPosting(LiveBlogPosting liveBlogPosting) {
+		if(liveBlogPostingList == null) {
+			liveBlogPostingList = new ArrayList<>();
+		}
+		if(liveBlogPostingList.size() == 0) {
+			liveBlogPostingList.add(liveBlogPosting);
+		} else {
+			liveBlogPostingList.set(0, liveBlogPosting);
+		}
+	}
+
+	@Override
+	public List<LiveBlogPosting> getLiveBlogPostingList() {
+		return liveBlogPostingList;
+	}
+
+	@Override
+	public void setLiveBlogPostingList(List<LiveBlogPosting> liveBlogPostingList) {
+		this.liveBlogPostingList = liveBlogPostingList;
+	}
+
+	@Override
+	public boolean hasLiveBlogPosting() {
+		return liveBlogPostingList != null && liveBlogPostingList.size() > 0 && liveBlogPostingList.get(0) != null;
+	}
+
+	public BLOG_POST(List<BlogPosting> blogPostingList,
+			List<LiveBlogPosting> liveBlogPostingList) {
+		setBlogPostingList(blogPostingList);
+		setLiveBlogPostingList(liveBlogPostingList);
+	}
+
+	public void copy(Container.BlogPost org) {
+		setBlogPostingList(org.getBlogPostingList());
+		setLiveBlogPostingList(org.getLiveBlogPostingList());
 	}
 
 	@Override

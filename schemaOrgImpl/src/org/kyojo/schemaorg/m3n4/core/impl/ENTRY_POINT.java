@@ -382,66 +382,6 @@ public class ENTRY_POINT implements Clazz.EntryPoint {
 		this.urlTemplate = urlTemplate;
 	}
 
-	public ENTRY_POINT(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			ActionApplication actionApplication,
-			ActionPlatform actionPlatform,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			ContentType contentType,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			EncodingType encodingType,
-			HttpMethod httpMethod,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			UrlTemplate urlTemplate) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setActionApplication(actionApplication);
-		setActionPlatform(actionPlatform);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setContentType(contentType);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setEncodingType(encodingType);
-		setHttpMethod(httpMethod);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setUrlTemplate(urlTemplate);
-	}
-
 	public void copy(Clazz.EntryPoint org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

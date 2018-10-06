@@ -366,64 +366,6 @@ public class ENDORSEMENT_RATING implements Clazz.EndorsementRating {
 		this.worstRating = worstRating;
 	}
 
-	public ENDORSEMENT_RATING(Long seq,
-			Long refSeq,
-			String refAcr,
-			java.util.Date createdAt,
-			Long createdBy,
-			java.util.Date updatedAt,
-			Long updatedBy,
-			java.util.Date expiredAt,
-			Long expiredBy,
-			AdditionalType additionalType,
-			AlternateName alternateName,
-			Author author,
-			BestRating bestRating,
-			Description description,
-			DisambiguatingDescription disambiguatingDescription,
-			Identifier identifier,
-			Image image,
-			MainEntityOfPage mainEntityOfPage,
-			Name name,
-			NameFuzzy nameFuzzy,
-			NameRuby nameRuby,
-			PotentialAction potentialAction,
-			RatingValue ratingValue,
-			ReviewAspect reviewAspect,
-			SameAs sameAs,
-			SubjectOf subjectOf,
-			Url url,
-			WorstRating worstRating) {
-		setSeq(seq);
-		setRefSeq(refSeq);
-		setRefAcr(refAcr);
-		setCreatedAt(createdAt);
-		setCreatedBy(createdBy);
-		setUpdatedAt(updatedAt);
-		setUpdatedBy(updatedBy);
-		setExpiredAt(expiredAt);
-		setExpiredBy(expiredBy);
-		setAdditionalType(additionalType);
-		setAlternateName(alternateName);
-		setAuthor(author);
-		setBestRating(bestRating);
-		setDescription(description);
-		setDisambiguatingDescription(disambiguatingDescription);
-		setIdentifier(identifier);
-		setImage(image);
-		setMainEntityOfPage(mainEntityOfPage);
-		setName(name);
-		setNameFuzzy(nameFuzzy);
-		setNameRuby(nameRuby);
-		setPotentialAction(potentialAction);
-		setRatingValue(ratingValue);
-		setReviewAspect(reviewAspect);
-		setSameAs(sameAs);
-		setSubjectOf(subjectOf);
-		setUrl(url);
-		setWorstRating(worstRating);
-	}
-
 	public void copy(Clazz.EndorsementRating org) {
 		setSeq(org.getSeq());
 		setRefSeq(org.getRefSeq());

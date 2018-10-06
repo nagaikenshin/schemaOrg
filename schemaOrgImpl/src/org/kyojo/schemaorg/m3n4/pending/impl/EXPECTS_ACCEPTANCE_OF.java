@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.kyojo.schemaorg.SimpleJsonBuilder;
+import org.kyojo.schemaorg.m3n4.core.Clazz.AggregateOffer;
 import org.kyojo.schemaorg.m3n4.core.Clazz.Offer;
 import org.kyojo.schemaorg.m3n4.core.Container.Name;
 import org.kyojo.schemaorg.m3n4.core.impl.OFFER;
@@ -13,6 +14,7 @@ public class EXPECTS_ACCEPTANCE_OF implements Container.ExpectsAcceptanceOf {
 
 	private static final long serialVersionUID = 1L;
 
+	public List<AggregateOffer> aggregateOfferList;
 	public List<Offer> offerList;
 
 	public EXPECTS_ACCEPTANCE_OF() {
@@ -44,6 +46,47 @@ public class EXPECTS_ACCEPTANCE_OF implements Container.ExpectsAcceptanceOf {
 		} else {
 			offerList.set(0, new OFFER(string));
 		}
+	}
+
+	public EXPECTS_ACCEPTANCE_OF(AggregateOffer aggregateOffer) {
+		aggregateOfferList = new ArrayList<AggregateOffer>();
+		aggregateOfferList.add(aggregateOffer);
+	}
+
+	@Override
+	public AggregateOffer getAggregateOffer() {
+		if(aggregateOfferList != null && aggregateOfferList.size() > 0) {
+			return aggregateOfferList.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public void setAggregateOffer(AggregateOffer aggregateOffer) {
+		if(aggregateOfferList == null) {
+			aggregateOfferList = new ArrayList<>();
+		}
+		if(aggregateOfferList.size() == 0) {
+			aggregateOfferList.add(aggregateOffer);
+		} else {
+			aggregateOfferList.set(0, aggregateOffer);
+		}
+	}
+
+	@Override
+	public List<AggregateOffer> getAggregateOfferList() {
+		return aggregateOfferList;
+	}
+
+	@Override
+	public void setAggregateOfferList(List<AggregateOffer> aggregateOfferList) {
+		this.aggregateOfferList = aggregateOfferList;
+	}
+
+	@Override
+	public boolean hasAggregateOffer() {
+		return aggregateOfferList != null && aggregateOfferList.size() > 0 && aggregateOfferList.get(0) != null;
 	}
 
 	public EXPECTS_ACCEPTANCE_OF(Offer offer) {
@@ -85,6 +128,17 @@ public class EXPECTS_ACCEPTANCE_OF implements Container.ExpectsAcceptanceOf {
 	@Override
 	public boolean hasOffer() {
 		return offerList != null && offerList.size() > 0 && offerList.get(0) != null;
+	}
+
+	public EXPECTS_ACCEPTANCE_OF(List<AggregateOffer> aggregateOfferList,
+			List<Offer> offerList) {
+		setAggregateOfferList(aggregateOfferList);
+		setOfferList(offerList);
+	}
+
+	public void copy(Container.ExpectsAcceptanceOf org) {
+		setAggregateOfferList(org.getAggregateOfferList());
+		setOfferList(org.getOfferList());
 	}
 
 	@Override
