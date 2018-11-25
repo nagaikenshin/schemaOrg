@@ -149,7 +149,7 @@ public class SimpleJsonBuilder {
 					if(loop) {
 						sb.append("null");
 						logger.warn("object looping:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
@@ -187,7 +187,7 @@ public class SimpleJsonBuilder {
 					if(loop) {
 						sb.append("null");
 						logger.warn("object looping:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
@@ -716,7 +716,7 @@ public class SimpleJsonBuilder {
 			if(loop) {
 				sb.append("null");
 				logger.warn("object looping:");
-				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 			} else if(depth == DEPTH_LIMIT) {
 				sb.append("null");
 				logger.warn("depth limit over:");

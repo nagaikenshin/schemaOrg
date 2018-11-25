@@ -304,9 +304,10 @@ public class GenerateImpl {
 				pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
 				for(String gsonTypeName : gsonTypeNameList) {
 					String cmnt = "# ";
-					if(gsonTypeName.startsWith("java.") || gsonBasicSet.contains(gsonTypeName)) {
+					// ToDo: もっと適切に必要なDeserializerを絞る方法
+					// if(gsonTypeName.startsWith("java.") || gsonBasicSet.contains(gsonTypeName)) {
 						cmnt = "";
-					}
+					// }
 					pw.printf("%s%s=%s\n", cmnt, gsonTypeName, gsonTypeNameMap.get(gsonTypeName));
 				}
 
@@ -674,6 +675,103 @@ public class GenerateImpl {
 
 				pw.close();
 				pw = null;
+
+				//--
+				gsonFPath = new StringBuilder(gsonDPath);
+				gsonFPath.append(pkg2Base.replaceAll("\\.", "/"));
+				gsonFPath.append(File.separator);
+				gsonFPath.append("gson");
+				gsonFPath.append(File.separator);
+				gsonFPath.append("DeserializerTemplate.java");
+
+				cf = new File(gsonFPath.toString());
+				cd = cf.getParentFile();
+				if(!cd.exists()) {
+					cd.mkdirs();
+				}
+				pw = new PrintWriter(new BufferedWriter(new FileWriter(cf)));
+				pw.printf("package %s;\n", gsonPkg.toString());
+				pw.println("");
+				pw.println("import java.lang.reflect.Field;");
+				pw.println("import java.lang.reflect.ParameterizedType;");
+				pw.println("import java.lang.reflect.Type;");
+				pw.println("import java.util.ArrayList;");
+				pw.println("import java.util.List;");
+				pw.println("import java.util.Map;");
+				pw.println("import java.util.Map.Entry;");
+				pw.println("");
+				pw.println("import org.kyojo.gson.JsonArray;");
+				pw.println("import org.kyojo.gson.JsonDeserializationContext;");
+				pw.println("import org.kyojo.gson.JsonElement;");
+				pw.println("import org.kyojo.gson.JsonObject;");
+				pw.println("import org.kyojo.gson.JsonParseException;");
+				pw.println("import org.kyojo.gson.reflect.TypeToken;");
+				pw.println("import org.kyojo.schemaorg.SimpleJsonBuilder;");
+				pw.println("");
+				pw.println("public class DeserializerTemplate {");
+				pw.println("");
+				pw.println("	public static <I, E extends I> I deserializeSub(JsonElement jsonElement, Type type,");
+				pw.println("			JsonDeserializationContext context, I obj, Class<I> ifc, Class<E> impl,");
+				pw.println("			Map<String, Field> fldMap) throws JsonParseException {");
+				pw.println("		JsonObject jsonObject = jsonElement.getAsJsonObject();");
+				pw.println("		if(fldMap.size() == 0) {");
+				pw.println("			List<Field> dclFlds = SimpleJsonBuilder.getAllFields(impl);");
+				pw.println("			for(Field dclFld : dclFlds) {");
+				pw.println("				if(fldMap.containsKey(dclFld.getName())) {");
+				pw.println("					// 下位クラスのフィールドを優先");
+				pw.println("					continue;");
+				pw.println("				}");
+				pw.println("				fldMap.put(dclFld.getName(), dclFld);");
+				pw.println("			}");
+				pw.println("		}");
+				pw.println("");
+				pw.println("		for(Entry<String, JsonElement> ent : jsonObject.entrySet()) {");
+				pw.println("			try {");
+				pw.println("				boolean noListSuf = fldMap.containsKey(ent.getKey());");
+				pw.println("				boolean hasListSuf = fldMap.containsKey(ent.getKey() + \"List\");");
+				pw.println("				if(noListSuf && !hasListSuf) {");
+				pw.println("					Field fld = fldMap.get(ent.getKey());");
+				pw.println("					JsonElement elm = ent.getValue();");
+				pw.println("					if(fld.getType().equals(List.class)) {");
+				pw.println("						ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
+				pw.println("						Type[] aTypes = gType.getActualTypeArguments();");
+				pw.println("						Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();");
+				pw.println("						List<?> list = context.deserialize(elm, listType);");
+				pw.println("						fld.set(obj, list);");
+				pw.println("					} else {");
+				pw.println("						Object val = context.deserialize(elm, fld.getType());");
+				pw.println("						fld.set(obj, val);");
+				pw.println("					}");
+				pw.println("				} else if(hasListSuf) {");
+				pw.println("					Field fld = fldMap.get(ent.getKey() + \"List\");");
+				pw.println("					JsonElement elm = ent.getValue();");
+				pw.println("					ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
+				pw.println("					Type[] aTypes = gType.getActualTypeArguments();");
+				pw.println("					Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();");
+				pw.println("					if(elm.isJsonArray()) {");
+				pw.println("						List<?> list = context.deserialize(elm, listType);");
+				pw.println("						fld.set(obj, list);");
+				pw.println("					} else {");
+				pw.println("						Object val = context.deserialize(elm, aTypes[0]);");
+				pw.println("						List<Object> list = context.deserialize(new JsonArray(), listType);");
+				pw.println("						list.add(val);");
+				pw.println("						fld.set(obj, list);");
+				pw.println("					}");
+				pw.println("				}");
+				pw.println("			} catch(IllegalArgumentException iae) {");
+				pw.println("				throw new JsonParseException(iae);");
+				pw.println("			} catch(IllegalAccessException iae) {");
+				pw.println("				throw new JsonParseException(iae);");
+				pw.println("			}");
+				pw.println("		}");
+				pw.println("");
+				pw.println("		return obj;");
+				pw.println("	}");
+				pw.println("");
+				pw.println("}");
+
+				pw.close();
+				pw = null;
 			} catch(IOException ioe) {
 				ioe.printStackTrace();
 				System.exit(1);
@@ -702,6 +800,22 @@ public class GenerateImpl {
 		Map<String, Method> oMap = implData.oMap;
 		Map<String, Class<?>> pMap = implData.pMap;
 		Map<String, String> ntvAtMap = implData.ntvAtMap;
+		Map<String, String> coreTextSubMap = new HashMap<>();
+		coreTextSubMap.put("HTML", "html");
+		coreTextSubMap.put("Html", "html");
+		coreTextSubMap.put("LaTeX", "latex");
+		coreTextSubMap.put("Markdown", "markdown");
+		coreTextSubMap.put("AsciiDoc", "asciiDoc");
+		coreTextSubMap.put("RTF", "rtf");
+		coreTextSubMap.put("Rtf", "rtf");
+		coreTextSubMap.put("Hatena", "hatena");
+		coreTextSubMap.put("Textile", "textile");
+		coreTextSubMap.put("DokuWiki", "dokuWiki");
+		coreTextSubMap.put("MoinMoin", "moinMoin");
+		coreTextSubMap.put("MediaWiki", "mediaWiki");
+		coreTextSubMap.put("PukiWiki", "pukiWiki");
+		coreTextSubMap.put("Simple", "simple");
+		coreTextSubMap.put("RedmineWiki", "redmineWiki");
 
 		// Listのメソッド優先で残す
 		Set<String> withLists = new HashSet<>();
@@ -780,6 +894,10 @@ public class GenerateImpl {
 				String ifcCtnName = typePkg + ".Container$";
 				if(ifcSmplName.equals("Url") || ifcSmplName.equals("URL")) {
 					ifcCtnName += "Url";
+				} else if(ifcSmplName.equals("Html") || ifcSmplName.equals("HTML")) {
+					ifcCtnName += "Html";
+				} else if(ifcSmplName.equals("Rtf") || ifcSmplName.equals("RTF")) {
+					ifcCtnName += "Rtf";
 				} else {
 					ifcCtnName += ifcSmplName;
 				}
@@ -830,7 +948,10 @@ public class GenerateImpl {
 			boolean hasList = false;
 			String pre = "";
 			if((extension.equals("core") && orgTypes.contains("Container")
-						&& (ifcSmplName.equals("Url") || ifcSmplName.equals("URL")))
+						&& (ifcSmplName.equals("Url") || ifcSmplName.equals("URL")
+								|| ifcSmplName.equals("Html") || ifcSmplName.equals("HTML")
+								|| ifcSmplName.equals("Rtf") || ifcSmplName.equals("RTF")
+								|| coreTextSubMap.containsKey(ifcSmplName)))
 					|| (extension.equals("pending") && orgTypes.contains("Container")
 							&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
 				// [個別対応]
@@ -901,7 +1022,8 @@ public class GenerateImpl {
 			// if(extension.equals("core")
 						&& (orgTypes.contains("DataType") || (orgTypes.contains("Clazz")
 								&& (ifcSmplName.equals("DataType") || ifcSmplName.equals("Float")
-									|| ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")))))
+									|| ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")
+									|| coreTextSubMap.containsKey(ifcSmplName)))))
 					|| (extension.equals("pending")
 						&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
 				ntvGSIfcCase = 9;
@@ -1010,7 +1132,8 @@ public class GenerateImpl {
 								Matcher exmc = expt.matcher(smc.getName());
 								exmc.find();
 								ntvGSIfcExt = exmc.group(1);
-								if(!implSmplName2.equals("URL")
+								if(!implSmplName2.equals("URL") && !implSmplName2.equals("HTML")
+										&& !implSmplName2.equals("RTF")
 										// [個別対応] 同名クラスのため直接指定
 										&& !(extension.equals("pending") && ifcSmplName.equals("Duration"))) {
 									if(!ent2.getValue().getName().startsWith(pkg2Base + "." + extension)) {
@@ -1029,6 +1152,20 @@ public class GenerateImpl {
 									ntvGSIfcSmpl = "URL";
 									ntvGSIfcCml = "url";
 									ntvGSIfcImpl = pkg2Base + ".core.impl.URL";
+									ntvGSNtvSmpl = "String";
+									ntvGSNtvName = ntvGSNtvSmpl;
+									ntvGSNtvCml = "string";
+								} else if(implSmplName2.equals("HTML")) {
+									ntvGSIfcSmpl = "HTML";
+									ntvGSIfcCml = "html";
+									ntvGSIfcImpl = pkg2Base + ".core.impl.HTML";
+									ntvGSNtvSmpl = "String";
+									ntvGSNtvName = ntvGSNtvSmpl;
+									ntvGSNtvCml = "string";
+								} else if(implSmplName2.equals("RTF")) {
+									ntvGSIfcSmpl = "RTF";
+									ntvGSIfcCml = "rtf";
+									ntvGSIfcImpl = pkg2Base + ".core.impl.RTF";
 									ntvGSNtvSmpl = "String";
 									ntvGSNtvName = ntvGSNtvSmpl;
 									ntvGSNtvCml = "string";
@@ -1068,6 +1205,22 @@ public class GenerateImpl {
 					ntvGSIfcSmpl = "URL";
 					ntvGSIfcCml = "url";
 					ntvGSIfcImpl = pkg2Base + ".core.impl.URL";
+					ntvGSNtvSmpl = "String";
+					ntvGSNtvName = ntvGSNtvSmpl;
+					ntvGSNtvCml = "string";
+				} else if(gsMap.containsKey("htmlList".toLowerCase())) {
+					ntvGSIfcCase = 2;
+					ntvGSIfcSmpl = "HTML";
+					ntvGSIfcCml = "html";
+					ntvGSIfcImpl = pkg2Base + ".core.impl.HTML";
+					ntvGSNtvSmpl = "String";
+					ntvGSNtvName = ntvGSNtvSmpl;
+					ntvGSNtvCml = "string";
+				} else if(gsMap.containsKey("rtfList".toLowerCase())) {
+					ntvGSIfcCase = 2;
+					ntvGSIfcSmpl = "RTF";
+					ntvGSIfcCml = "rtf";
+					ntvGSIfcImpl = pkg2Base + ".core.impl.RTF";
 					ntvGSNtvSmpl = "String";
 					ntvGSNtvName = ntvGSNtvSmpl;
 					ntvGSNtvCml = "string";
@@ -1203,6 +1356,12 @@ public class GenerateImpl {
 			if(ifcSmplName.equals("Url") || ifcSmplName.equals("URL")) {
 				orgTypeList.add("Clazz.URL");
 				orgTypeList.add("Container.Url");
+			} else if(ifcSmplName.equals("Html") || ifcSmplName.equals("HTML")) {
+				orgTypeList.add("Clazz.HTML");
+				orgTypeList.add("Container.Html");
+			} else if(ifcSmplName.equals("Rtf") || ifcSmplName.equals("RTF")) {
+				orgTypeList.add("Clazz.RTF");
+				orgTypeList.add("Container.Rtf");
 			} else {
 				for(String orgType : orgTypes) {
 					orgTypeList.add(orgType + "." + ifcSmplName);
@@ -1390,7 +1549,8 @@ public class GenerateImpl {
 						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
-					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
+					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
+							&& !coreTextSubMap.containsKey(smc.getSimpleName())) {
 						pre2 = "DataType.";
 					}
 					pw.printf("	public List<%s%s> %s;\n", pre2, smc.getSimpleName(), smp.getName());
@@ -1684,13 +1844,25 @@ public class GenerateImpl {
 					pw.printf("		set%s(%s);\n", smplName, smp.getName());
 					pw.println("	}");
 					pw.println();
-					if(implSmplName.equals("TEXT") && smc.getSimpleName().equals("String")) {
+					if(extension.equals("core") && (ifcSmplName.equals("Text")
+								|| ifcSmplName.equals("Url")
+								|| coreTextSubMap.containsKey(ifcSmplName))
+							&& smc.getSimpleName().equals("String")) {
 						// [個別対応]
+						String pname;
+						if(ifcSmplName.equals("Text")) {
+							pname = "text";
+						} else if(ifcSmplName.equals("Url")) {
+							pname = "url";
+						} else {
+							pname = coreTextSubMap.get(ifcSmplName);
+						}
 						pw.println("	public String getString() {");
 						pw.println("		if(string != null) {");
 						pw.println("			return string;");
-						pw.println("		} else if(textList != null && textList.size() > 0 && textList.get(0) != null) {");
-						pw.println("			return textList.get(0).getString();");
+						pw.printf("		} else if(%sList != null && %sList.size() > 0 && %sList.get(0) != null) {\n",
+								pname, pname, pname);
+						pw.printf("			return %sList.get(0).getString();\n", pname);
 						pw.println("		} else {");
 						pw.println("			return null;");
 						pw.println("		}");
@@ -1834,7 +2006,8 @@ public class GenerateImpl {
 						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
-					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
+					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
+							&& !coreTextSubMap.containsKey(smc.getSimpleName())) {
 						pre2 = "DataType.";
 					}
 					String noListName = smp.getName().substring(0, smp.getName().length() - 4);
@@ -1846,8 +2019,11 @@ public class GenerateImpl {
 					pw.println("	}");
 					pw.println();
 					pw.println("	@Override");
-					if(!(isDupCore || isDupHL)
-							&& !(implSmplName.equals("TEXT") && smc.getSimpleName().equals("Text"))) {
+					boolean isDupCoreText = extension.equals("core")
+							&& ((ifcSmplName.equals("Text") && smc.getSimpleName().equals("Text")
+								|| (ifcSmplName.equals("Url") && smc.getSimpleName().equals("Url")
+								|| (coreTextSubMap.containsKey(ifcSmplName) && coreTextSubMap.containsKey(smc.getSimpleName())))));
+					if(!(isDupCore || isDupHL) && !isDupCoreText) {
 						pw.printf("	public %s%s get%s() {\n", pre2,
 								smc.getSimpleName(), smplName);
 						pw.printf("		if(%s != null && %s.size() > 0) {\n",
@@ -1866,7 +2042,7 @@ public class GenerateImpl {
 								smp.getName(), smp.getName());
 						pw.printf("			cls = %s.get(0);\n", smp.getName());
 						pw.println("		}");
-						if(implSmplName.equals("TEXT")) {
+						if(isDupCoreText) {
 							pw.println("		if(cls == null && string == null) {");
 							pw.println("			return null;");
 							pw.println("		}");
@@ -1920,8 +2096,7 @@ public class GenerateImpl {
 					pw.println("	}");
 					pw.println();
 					pw.println("	@Override");
-					if(!(isDupCore || isDupHL)
-							&& !(implSmplName.equals("TEXT") && smc.getSimpleName().equals("Text"))) {
+					if(!(isDupCore || isDupHL) && !isDupCoreText) {
 						pw.printf("	public boolean has%s() {\n", smplName);
 						pw.printf("		return %s != null && %s.size() > 0 && %s.get(0) != null;\n",
 								smp.getName(), smp.getName(), smp.getName());
@@ -1932,7 +2107,7 @@ public class GenerateImpl {
 						pw.printf("		return (%s != null && %s.size() > 0 && %s.get(0) != null)\n",
 								smp.getName(), smp.getName(), smp.getName());
 						pw.printf("				|| %s != null;\n",
-								implSmplName.equals("TEXT") ? "string" :
+								isDupCoreText ? "string" :
 									smp.getName().substring(0, smp.getName().length() - 4));
 						pw.println("	}");
 					}
@@ -2106,7 +2281,8 @@ public class GenerateImpl {
 							pre2 = "";
 						} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 							pre2 = "Clazz.";
-						} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")) {
+						} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
+								&& !coreTextSubMap.containsKey(smc.getSimpleName())) {
 							pre2 = "DataType.";
 						}
 						StringBuilder sb = new StringBuilder();
@@ -2219,7 +2395,7 @@ public class GenerateImpl {
 					pw.println("	}");
 					pw.println();
 				} else if(ntvGSNtvSmpl.equals("String")) {
-					if(ntvGSIfcSmpl.equals("URL")
+					if(ntvGSIfcSmpl.equals("URL") || coreTextSubMap.containsKey(ntvGSIfcSmpl)
 							|| ntvGSIfcSmpl.equals("CssSelectorType") || ntvGSIfcSmpl.equals("XPathType")) {
 						pw.println("	@Override");
 						pw.printf("	public String getNativeValue() {\n");
@@ -2282,7 +2458,8 @@ public class GenerateImpl {
 			default:
 				if(extension.equals("core")) {
 					if(orgTypes.contains("DataType") || orgTypes.contains("Clazz")) {
-						if(ifcSmplName.equals("Text") || ifcSmplName.equals("URL")) {
+						if(ifcSmplName.equals("Text") || ifcSmplName.equals("URL")
+								|| coreTextSubMap.containsKey(ifcSmplName)) {
 							pw.println("	@Override");
 							pw.printf("	public String getNativeValue() {\n");
 							pw.printf("		return getString();\n");
@@ -2656,8 +2833,35 @@ public class GenerateImpl {
 			pw.close();
 			pw = null;
 
-			if(ntvGSIfcCase > 0 && ntvGSIfcCase < 9) {
-				// Doma converterファイル出力
+			// Doma converterファイル出力
+			String ntvGSNtvSmpl2 = ntvGSNtvSmpl;
+			if(ntvGSNtvSmpl == null) {
+				if(ifcSmplName.equals("Text")
+						|| ifcSmplName.equals("URL")
+						|| ifcSmplName.equals("Url")
+						|| coreTextSubMap.containsKey(ifcSmplName)
+						|| ifcSmplName.equals("CssSelectorType")
+						|| ifcSmplName.equals("XPathType")) {
+					ntvGSNtvSmpl2 = "String";
+				} else if(ifcSmplName.equals("Number")) {
+					ntvGSNtvSmpl2 = "BigDecimal";
+				} else if(ifcSmplName.equals("Float")) {
+					ntvGSNtvSmpl2 = "Double";
+				} else if(ifcSmplName.equals("Integer")) {
+					ntvGSNtvSmpl2 = "Long";
+				} else if(ifcSmplName.equals("Boolean")) {
+					ntvGSNtvSmpl2 = "java.lang.Boolean";
+				} else {
+					System.out.println(ifcSmplName + ": ntvGSNtvSmpl=null");
+				}
+			} else if(ntvGSNtvSmpl.equals("B00lean")) {
+				ntvGSNtvSmpl2 = "Boolean";
+			} else if(ntvGSNtvSmpl.equals("D0uble")) {
+				ntvGSNtvSmpl2 = "Double";
+			} else if(ntvGSNtvSmpl.equals("L0ng")) {
+				ntvGSNtvSmpl2 = "Long";
+			}
+			if(ntvGSNtvSmpl2 != null) {
 				for(String orgType : orgTypes) {
 					String[] pes2 = typePkg.split("\\.");
 					StringBuilder domaConvFPath = new StringBuilder(domaConvDPath);
@@ -2676,7 +2880,15 @@ public class GenerateImpl {
 					}
 					domaConvFPath.append(StringUtils.uncapitalize(orgType));
 					domaConvFPath.append(File.separator);
-					domaConvFPath.append(ifcSmplName);
+					String ifcSmplName2 = ifcSmplName;
+					if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("URL")) {
+						ifcSmplName2 = "Url";
+					} else if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("HTML")) {
+						ifcSmplName2 = "Html";
+					} else if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("RTF")) {
+						ifcSmplName2 = "Rtf";
+					}
+					domaConvFPath.append(ifcSmplName2);
 					domaConvFPath.append("Converter.java");
 					System.out.println(domaConvFPath.toString());
 					domaConvPkg.append(StringUtils.uncapitalize(orgType));
@@ -2690,24 +2902,17 @@ public class GenerateImpl {
 
 					pw.printf("package %s;\n", domaConvPkg.toString());
 					pw.println("");
-					String ntvGSNtvSmpl2 = ntvGSNtvSmpl;
-					if(ntvGSNtvSmpl.equals("B00lean")) {
-						ntvGSNtvSmpl2 = "Boolean";
-					} else if(ntvGSNtvSmpl.equals("D0uble")) {
-						ntvGSNtvSmpl2 = "Double";
-					} else if(ntvGSNtvSmpl.equals("L0ng")) {
-						ntvGSNtvSmpl2 = "Long";
-					} else if(ntvGSNtvSmpl.equals("Date")) {
+					if(ntvGSNtvSmpl2.equals("Date")) {
 						pw.println("import java.util.Date;");
-					} else if(ntvGSNtvSmpl.equals("BigDecimal")) {
+					} else if(ntvGSNtvSmpl2.equals("BigDecimal")) {
 						pw.println("import java.math.BigDecimal;");
-					} else if(ntvGSNtvSmpl.equals("OffsetDateTime")) {
+					} else if(ntvGSNtvSmpl2.equals("OffsetDateTime")) {
 						pw.println("import java.util.Date;");
 						ntvGSNtvSmpl2 = "Date";
-					} else if(ntvGSNtvSmpl.equals("LocalDate")) {
+					} else if(ntvGSNtvSmpl2.equals("LocalDate")) {
 						pw.println("import java.sql.Date;");
 						ntvGSNtvSmpl2 = "Date";
-					} else if(ntvGSNtvSmpl.equals("LocalTime")) {
+					} else if(ntvGSNtvSmpl2.equals("LocalTime")) {
 						pw.println("import java.sql.Time;");
 						ntvGSNtvSmpl2 = "Time";
 					}
@@ -2731,7 +2936,7 @@ public class GenerateImpl {
 							// pre = "Clazz";
 							break;
 						case 2:
-							if(ntvGSIfcSmpl.equals("URL")
+							if(ntvGSIfcSmpl.equals("URL") || coreTextSubMap.containsKey(ntvGSIfcSmpl)
 									|| ntvGSIfcSmpl.equals("CssSelectorType") || ntvGSIfcSmpl.equals("XPathType")
 									|| ntvGSIfcSmpl.equals("Float") || ntvGSIfcSmpl.equals("Integer")) {
 								// pre = "Clazz";
@@ -2749,22 +2954,24 @@ public class GenerateImpl {
 					}
 					pw.printf("import %s.%s;\n", implPkg.toString(), implSmplName);
 					String pre2 = "";
-					// if(orgType.equals("Clazz") && ifcSmplName.matches("^[A-Z]+$")) {
-					if(ifcSmplName.matches("^[A-Z]+$")) {
+					// if(orgType.equals("Clazz") && ifcSmplName2.matches("^[A-Z0-9]+$")) {
+					if(ifcSmplName2.matches("^[A-Z0-9]+$")) {
 						pw.printf("import %s.%s;\n", typePkg, orgType);
 						pre2 = orgType + ".";
 					} else {
-						pw.printf("import %s.%s.%s;\n", typePkg, orgType, ifcSmplName);
+						pw.printf("import %s.%s.%s;\n", typePkg, orgType, ifcSmplName2);
 					}
 					pw.println("");
 					pw.println("@ExternalDomain");
 					pw.printf("public class %sConverter implements DomainConverter<%s%s, %s> {\n",
-							ifcSmplName, pre2, ifcSmplName, ntvGSNtvSmpl2);
+							ifcSmplName2, pre2, ifcSmplName2, ntvGSNtvSmpl2);
 					pw.println("");
 					pw.println("	@Override");
 					pw.printf("	public %s fromDomainToValue(%s%s domain) {\n",
-							ntvGSNtvSmpl2, pre2, ifcSmplName);
-					if(ntvGSNtvSmpl.equals("OffsetDateTime")) {
+							ntvGSNtvSmpl2, pre2, ifcSmplName2);
+					if(ntvGSNtvSmpl == null) {
+						pw.println("		return domain.getNativeValue();");
+					} else if(ntvGSNtvSmpl.equals("OffsetDateTime")) {
 						pw.println("		return domain.getNativeValue();");
 					} else if(ntvGSNtvSmpl.equals("LocalDate")) {
 						pw.println("		if(domain != null && domain.getDateList() != null && domain.getDateList().size() > 0) {");
@@ -2785,7 +2992,7 @@ public class GenerateImpl {
 					pw.println("");
 					pw.println("	@Override");
 					pw.printf("	public %s%s fromValueToDomain(%s value) {\n",
-							pre2, ifcSmplName, ntvGSNtvSmpl2);
+							pre2, ifcSmplName2, ntvGSNtvSmpl2);
 					pw.printf("		return new %s(value);\n", implSmplName);
 					pw.println("	}");
 					pw.println("");
@@ -2793,7 +3000,7 @@ public class GenerateImpl {
 
 					pw.close();
 					pw = null;
-					implData.domaConvNameSet.add(domaConvPkg.toString() + "." + ifcSmplName + "Converter");
+					implData.domaConvNameSet.add(domaConvPkg.toString() + "." + ifcSmplName2 + "Converter");
 				}
 			}
 
@@ -2802,6 +3009,10 @@ public class GenerateImpl {
 				String ifcSmplName2 = ifcSmplName;
 				if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("URL")) {
 					ifcSmplName2 = "Url";
+				} else if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("HTML")) {
+					ifcSmplName2 = "Html";
+				} else if(extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("RTF")) {
+					ifcSmplName2 = "Rtf";
 				}
 
 				String[] pes2 = typePkg.split("\\.");
@@ -2836,33 +3047,37 @@ public class GenerateImpl {
 				pw.printf("package %s;\n", gsonPkg.toString());
 				pw.println("");
 				pw.println("import java.lang.reflect.Field;");
-				pw.println("import java.lang.reflect.ParameterizedType;");
 				pw.println("import java.lang.reflect.Type;");
-				pw.println("import java.util.ArrayList;");
 				pw.println("import java.util.HashMap;");
-				pw.println("import java.util.List;");
-				pw.println("import java.util.Map.Entry;");
+				if(!ifcSmplName2.equals("Map")) {
+					pw.println("import java.util.Map;");
+				}
 				pw.println("");
-				pw.println("import org.kyojo.gson.JsonArray;");
 				pw.println("import org.kyojo.gson.JsonDeserializationContext;");
 				pw.println("import org.kyojo.gson.JsonDeserializer;");
 				pw.println("import org.kyojo.gson.JsonElement;");
-				pw.println("import org.kyojo.gson.JsonObject;");
 				pw.println("import org.kyojo.gson.JsonParseException;");
-				pw.println("import org.kyojo.gson.reflect.TypeToken;");
 				pw.printf("import %s.%s;\n", implPkg.toString(), implSmplName);
 				String pre2 = "";
-				if(ifcSmplName2.matches("^[A-Z]+$")
+				if(ifcSmplName2.matches("^[A-Z0-9]+$")
 						|| (extension.equals("core") && orgType.equals("Clazz") && ifcSmplName.equals("Float"))
+						|| (extension.equals("core") && orgType.equals("Container") && ifcSmplName.equals("Object"))
 						|| (extension.equals("meta") && orgType.equals("Clazz") && ifcSmplName.equals("Class"))) {
 					pw.printf("import %s.%s;\n", typePkg, orgType);
 					pre2 = orgType + ".";
 				} else {
 					pw.printf("import %s.%s.%s;\n", typePkg, orgType, ifcSmplName2);
 				}
+				pw.printf("import %s.gson.DeserializerTemplate;\n", pkg2Base);
 				pw.println("");
 				pw.printf("public class %sDeserializer implements JsonDeserializer<%s%s> {\n",
 						ifcSmplName2, pre2, ifcSmplName2);
+				pw.println("");
+				if(ifcSmplName2.equals("Map")) {
+					pw.println("	public static java.util.Map<String, Field> fldMap = new HashMap<>();");
+				} else {
+					pw.println("	public static Map<String, Field> fldMap = new HashMap<>();");
+				}
 				pw.println("");
 				pw.println("	@Override");
 				pw.printf("	public %s%s deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)\n",
@@ -2890,7 +3105,8 @@ public class GenerateImpl {
 						pw.printf("			return new %s(date);\n", implSmplName);
 					}
 				} else if((extension.equals("core") && (orgTypes.contains("DataType") || (orgTypes.contains("Clazz")
-								&& (ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")))))
+								&& (ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("URL")
+										|| coreTextSubMap.containsKey(ifcSmplName)))))
 							|| (extension.equals("pending") && orgTypes.contains("Clazz")
 								&& (ifcSmplName.equals("CssSelectorType") || ifcSmplName.equals("XPathType")))) {
 					if(ifcSmplName.equals("Float") || ifcSmplName.equals("Integer") || ifcSmplName.equals("Number")) {
@@ -2913,7 +3129,7 @@ public class GenerateImpl {
 						pw.printf("			}\n");
 					}
 				} else {
-					String ntvGSNtvSmpl2 = ntvGSNtvSmpl;
+					ntvGSNtvSmpl2 = ntvGSNtvSmpl;
 					if(ntvGSNtvSmpl.equals("B00lean")) {
 						ntvGSNtvSmpl2 = "Boolean";
 						pw.printf("			return new %s(jsonElement.getAs%s());\n", implSmplName, ntvGSNtvSmpl2);
@@ -2934,54 +3150,11 @@ public class GenerateImpl {
 				}
 				pw.println("		}");
 				pw.println("");
-				pw.println("		JsonObject jsonObject = jsonElement.getAsJsonObject();");
-				pw.printf("		%s%s obj = new %s();\n", pre2, ifcSmplName2, implSmplName);
-				pw.println("		HashMap<String, Field> fldMap = new HashMap<>();");
-				pw.printf("		Field[] flds = %s.class.getFields();\n", implSmplName);
-				pw.println("		for(Field fld : flds) {");
-				pw.println("			fldMap.put(fld.getName(), fld);");
-				pw.println("		}");
-				pw.println("		for(Entry<String, JsonElement> ent : jsonObject.entrySet()) {");
-				pw.println("			try {");
-				pw.println("				boolean noListSuf = fldMap.containsKey(ent.getKey());");
-				pw.println("				boolean hasListSuf = fldMap.containsKey(ent.getKey() + \"List\");");
-				pw.println("				if(noListSuf && !hasListSuf) {");
-				pw.println("					Field fld = fldMap.get(ent.getKey());");
-				pw.println("					JsonElement elm = ent.getValue();");
-				pw.println("					if(fld.getType().equals(List.class)) {");
-				pw.println("						ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
-				pw.println("						Type[] aTypes = gType.getActualTypeArguments();");
-				pw.println("						Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();");
-				pw.println("						List<?> list = context.deserialize(elm, listType);");
-				pw.println("						fld.set(obj, list);");
-				pw.println("					} else {");
-				pw.println("						Object val = context.deserialize(elm, fld.getType());");
-				pw.println("						fld.set(obj, val);");
-				pw.println("					}");
-				pw.println("				} else if(hasListSuf) {");
-				pw.println("					Field fld = fldMap.get(ent.getKey() + \"List\");");
-				pw.println("					JsonElement elm = ent.getValue();");
-				pw.println("					ParameterizedType gType = (ParameterizedType)fld.getGenericType();");
-				pw.println("					Type[] aTypes = gType.getActualTypeArguments();");
-				pw.println("					Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();");
-				pw.println("					if(elm.isJsonArray()) {");
-				pw.println("						List<?> list = context.deserialize(elm, listType);");
-				pw.println("						fld.set(obj, list);");
-				pw.println("					} else {");
-				pw.println("						Object val = context.deserialize(elm, aTypes[0]);");
-				pw.println("						List<Object> list = context.deserialize(new JsonArray(), listType);");
-				pw.println("						list.add(val);");
-				pw.println("						fld.set(obj, list);");
-				pw.println("					}");
-				pw.println("				}");
-				pw.println("			} catch(IllegalArgumentException iae) {");
-				pw.println("				throw new JsonParseException(iae);");
-				pw.println("			} catch(IllegalAccessException iae) {");
-				pw.println("				throw new JsonParseException(iae);");
-				pw.println("			}");
-				pw.println("		}");
-				pw.println("");
-				pw.println("		return obj;");
+
+
+				pw.println("		return DeserializerTemplate.deserializeSub(jsonElement, type, context,");
+				pw.printf("			new %s(), %s%s.class, %s.class, fldMap);\n",
+						implSmplName, pre2, ifcSmplName2, implSmplName);
 				pw.println("	}");
 				pw.println("");
 				pw.println("}");

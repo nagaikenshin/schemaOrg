@@ -1,24 +1,21 @@
 package org.kyojo.schemaorg.m3n4.gson.core.orderStatus;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 
-import org.kyojo.gson.JsonArray;
 import org.kyojo.gson.JsonDeserializationContext;
 import org.kyojo.gson.JsonDeserializer;
 import org.kyojo.gson.JsonElement;
-import org.kyojo.gson.JsonObject;
 import org.kyojo.gson.JsonParseException;
-import org.kyojo.gson.reflect.TypeToken;
 import org.kyojo.schemaorg.m3n4.core.orderStatus.ORDER_PAYMENT_DUE;
 import org.kyojo.schemaorg.m3n4.core.OrderStatus.OrderPaymentDue;
+import org.kyojo.schemaorg.m3n4.gson.DeserializerTemplate;
 
 public class OrderPaymentDueDeserializer implements JsonDeserializer<OrderPaymentDue> {
+
+	public static Map<String, Field> fldMap = new HashMap<>();
 
 	@Override
 	public OrderPaymentDue deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext context)
@@ -27,54 +24,8 @@ public class OrderPaymentDueDeserializer implements JsonDeserializer<OrderPaymen
 			return new ORDER_PAYMENT_DUE(jsonElement.getAsString());
 		}
 
-		JsonObject jsonObject = jsonElement.getAsJsonObject();
-		OrderPaymentDue obj = new ORDER_PAYMENT_DUE();
-		HashMap<String, Field> fldMap = new HashMap<>();
-		Field[] flds = ORDER_PAYMENT_DUE.class.getFields();
-		for(Field fld : flds) {
-			fldMap.put(fld.getName(), fld);
-		}
-		for(Entry<String, JsonElement> ent : jsonObject.entrySet()) {
-			try {
-				boolean noListSuf = fldMap.containsKey(ent.getKey());
-				boolean hasListSuf = fldMap.containsKey(ent.getKey() + "List");
-				if(noListSuf && !hasListSuf) {
-					Field fld = fldMap.get(ent.getKey());
-					JsonElement elm = ent.getValue();
-					if(fld.getType().equals(List.class)) {
-						ParameterizedType gType = (ParameterizedType)fld.getGenericType();
-						Type[] aTypes = gType.getActualTypeArguments();
-						Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();
-						List<?> list = context.deserialize(elm, listType);
-						fld.set(obj, list);
-					} else {
-						Object val = context.deserialize(elm, fld.getType());
-						fld.set(obj, val);
-					}
-				} else if(hasListSuf) {
-					Field fld = fldMap.get(ent.getKey() + "List");
-					JsonElement elm = ent.getValue();
-					ParameterizedType gType = (ParameterizedType)fld.getGenericType();
-					Type[] aTypes = gType.getActualTypeArguments();
-					Type listType = TypeToken.getParameterized(ArrayList.class, (Class<?>)aTypes[0]).getType();
-					if(elm.isJsonArray()) {
-						List<?> list = context.deserialize(elm, listType);
-						fld.set(obj, list);
-					} else {
-						Object val = context.deserialize(elm, aTypes[0]);
-						List<Object> list = context.deserialize(new JsonArray(), listType);
-						list.add(val);
-						fld.set(obj, list);
-					}
-				}
-			} catch(IllegalArgumentException iae) {
-				throw new JsonParseException(iae);
-			} catch(IllegalAccessException iae) {
-				throw new JsonParseException(iae);
-			}
-		}
-
-		return obj;
+		return DeserializerTemplate.deserializeSub(jsonElement, type, context,
+			new ORDER_PAYMENT_DUE(), OrderPaymentDue.class, ORDER_PAYMENT_DUE.class, fldMap);
 	}
 
 }

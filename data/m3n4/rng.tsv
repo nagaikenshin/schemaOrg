@@ -815,6 +815,32 @@ org.kyojo.schemaorg.m3n4.core.BookFormatType$Hardcover
 
 org.kyojo.schemaorg.m3n4.core.BookFormatType$Paperback
 
+org.kyojo.schemaorg.m3n4.core.Clazz$AsciiDoc
+
+org.kyojo.schemaorg.m3n4.core.Clazz$DokuWiki
+
+org.kyojo.schemaorg.m3n4.core.Clazz$HTML
+
+org.kyojo.schemaorg.m3n4.core.Clazz$Hatena
+
+org.kyojo.schemaorg.m3n4.core.Clazz$LaTeX
+
+org.kyojo.schemaorg.m3n4.core.Clazz$Markdown
+
+org.kyojo.schemaorg.m3n4.core.Clazz$MediaWiki
+
+org.kyojo.schemaorg.m3n4.core.Clazz$MoinMoin
+
+org.kyojo.schemaorg.m3n4.core.Clazz$PukiWiki
+
+org.kyojo.schemaorg.m3n4.core.Clazz$RTF
+
+org.kyojo.schemaorg.m3n4.core.Clazz$RedmineWiki
+
+org.kyojo.schemaorg.m3n4.core.Clazz$Simple
+
+org.kyojo.schemaorg.m3n4.core.Clazz$Textile
+
 org.kyojo.schemaorg.m3n4.core.Clazz$APIReference
 
 org.kyojo.schemaorg.m3n4.core.Clazz$AboutPage
@@ -1995,8 +2021,14 @@ org.kyojo.schemaorg.m3n4.core.ContactPointOption$HearingImpairedSupported
 
 org.kyojo.schemaorg.m3n4.core.ContactPointOption$TollFree
 
+org.kyojo.schemaorg.m3n4.core.Container$AsciiDoc
+	org.kyojo.schemaorg.m3n4.core.Clazz$AsciiDoc
+
 org.kyojo.schemaorg.m3n4.core.Container$BuildingAddress
 	org.kyojo.schemaorg.m3n4.core.DataType$Text
+
+org.kyojo.schemaorg.m3n4.core.Container$DokuWiki
+	org.kyojo.schemaorg.m3n4.core.Clazz$DokuWiki
 
 org.kyojo.schemaorg.m3n4.core.Container$FamilyNameRuby
 	org.kyojo.schemaorg.m3n4.core.DataType$Text
@@ -2004,11 +2036,44 @@ org.kyojo.schemaorg.m3n4.core.Container$FamilyNameRuby
 org.kyojo.schemaorg.m3n4.core.Container$GivenNameRuby
 	org.kyojo.schemaorg.m3n4.core.DataType$Text
 
+org.kyojo.schemaorg.m3n4.core.Container$Hatena
+	org.kyojo.schemaorg.m3n4.core.Clazz$Hatena
+
+org.kyojo.schemaorg.m3n4.core.Container$Html
+	org.kyojo.schemaorg.m3n4.core.Clazz$HTML
+
+org.kyojo.schemaorg.m3n4.core.Container$LaTeX
+	org.kyojo.schemaorg.m3n4.core.Clazz$LaTeX
+
+org.kyojo.schemaorg.m3n4.core.Container$Markdown
+	org.kyojo.schemaorg.m3n4.core.Clazz$Markdown
+
+org.kyojo.schemaorg.m3n4.core.Container$MediaWiki
+	org.kyojo.schemaorg.m3n4.core.Clazz$MediaWiki
+
+org.kyojo.schemaorg.m3n4.core.Container$MoinMoin
+	org.kyojo.schemaorg.m3n4.core.Clazz$MoinMoin
+
 org.kyojo.schemaorg.m3n4.core.Container$NameFuzzy
 	org.kyojo.schemaorg.m3n4.core.DataType$Text
 
 org.kyojo.schemaorg.m3n4.core.Container$NameRuby
 	org.kyojo.schemaorg.m3n4.core.DataType$Text
+
+org.kyojo.schemaorg.m3n4.core.Container$PukiWiki
+	org.kyojo.schemaorg.m3n4.core.Clazz$PukiWiki
+
+org.kyojo.schemaorg.m3n4.core.Container$RedmineWiki
+	org.kyojo.schemaorg.m3n4.core.Clazz$RedmineWiki
+
+org.kyojo.schemaorg.m3n4.core.Container$Rtf
+	org.kyojo.schemaorg.m3n4.core.Clazz$RTF
+
+org.kyojo.schemaorg.m3n4.core.Container$Simple
+	org.kyojo.schemaorg.m3n4.core.Clazz$Simple
+
+org.kyojo.schemaorg.m3n4.core.Container$Textile
+	org.kyojo.schemaorg.m3n4.core.Clazz$Textile
 
 org.kyojo.schemaorg.m3n4.core.Container$About
 	org.kyojo.schemaorg.m3n4.core.Clazz$Thing

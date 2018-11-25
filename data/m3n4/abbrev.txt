@@ -23,6 +23,11 @@ label: APIReference
 camel: apiReference
 const: API_REFERENCE
 
+uri: http://kyojo.org/schemaSpl/AsciiDoc
+label: AsciiDoc
+camel: asciiDoc
+const: ASCII_DOC
+
 uri: http://schema.org/Blog
 label: Blog
 camel: blog
@@ -77,6 +82,11 @@ uri: http://schema.org/GatedResidenceCommunity
 label: GatedResidenceCommunity
 camel: gatedResidenceCommunity
 const: GATED_RESIDENCE_COMMUNITY
+
+uri: http://kyojo.org/schemaSpl/HTML
+label: HTML
+camel: html
+const: HTML
 
 uri: http://schema.org/HVACBusiness
 label: HVACBusiness
@@ -162,6 +172,11 @@ uri: http://schema.org/QAPage
 label: QAPage
 camel: qaPage
 const: QA_PAGE
+
+uri: http://kyojo.org/schemaSpl/RTF
+label: RTF
+camel: rtf
+const: RTF
 
 uri: http://schema.org/RVPark
 label: RVPark
@@ -303,6 +318,11 @@ label: accountId
 camel: accountId
 const: ACCOUNT_ID
 
+uri: http://kyojo.org/schemaSpl/asciiDoc
+label: asciiDoc
+camel: asciiDoc
+const: ASCII_DOC
+
 uri: http://schema.org/bed
 label: bed
 camel: bed
@@ -392,6 +412,11 @@ uri: http://schema.org/hasPOS
 label: hasPOS
 camel: hasPOS
 const: HAS_POS
+
+uri: http://kyojo.org/schemaSpl/html
+label: html
+camel: html
+const: HTML
 
 uri: http://schema.org/identifier
 label: identifier
@@ -527,6 +552,11 @@ uri: http://schema.org/reservationId
 label: reservationId
 camel: reservationId
 const: RESERVATION_ID
+
+uri: http://kyojo.org/schemaSpl/rtf
+label: rtf
+camel: rtf
+const: RTF
 
 uri: http://schema.org/securityScreening
 label: securityScreening

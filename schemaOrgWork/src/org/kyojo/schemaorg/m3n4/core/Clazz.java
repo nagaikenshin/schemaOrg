@@ -890,6 +890,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/AsciiDoc")
+	@SchemaOrgLabel("AsciiDoc")
+	@SchemaOrgComment("AsciiDoc format source text.")
+	@CamelizedName("asciiDoc")
+	@ConstantizedName("ASCII_DOC")
+	public interface AsciiDoc extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/AskAction")
 	@SchemaOrgLabel("AskAction")
 	@SchemaOrgComment(""
@@ -4549,6 +4563,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/DokuWiki")
+	@SchemaOrgLabel("DokuWiki")
+	@SchemaOrgComment("DokuWiki format source text.")
+	@CamelizedName("dokuWiki")
+	@ConstantizedName("DOKU_WIKI")
+	public interface DokuWiki extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/DonateAction")
 	@SchemaOrgLabel("DonateAction")
 	@SchemaOrgComment(""
@@ -6378,6 +6406,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/HTML")
+	@SchemaOrgLabel("HTML")
+	@SchemaOrgComment("HTML formatted text.")
+	@CamelizedName("html")
+	@ConstantizedName("HTML")
+	public interface HTML extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/HVACBusiness")
 	@SchemaOrgLabel("HVACBusiness")
 	@SchemaOrgComment(""
@@ -6413,6 +6455,20 @@ public interface Clazz extends SchemaOrgClass {
 	@CamelizedName("hardwareStore")
 	@ConstantizedName("HARDWARE_STORE")
 	public interface HardwareStore extends SchemaOrgClass, Store {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/Hatena")
+	@SchemaOrgLabel("Hatena")
+	@SchemaOrgComment("Hatena notation source text.")
+	@CamelizedName("hatena")
+	@ConstantizedName("HATENA")
+	public interface Hatena extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -7575,6 +7631,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/LaTeX")
+	@SchemaOrgLabel("LaTeX")
+	@SchemaOrgComment("LaTeX format source text.")
+	@CamelizedName("latex")
+	@ConstantizedName("LATEX")
+	public interface LaTeX extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/LakeBodyOfWater")
 	@SchemaOrgLabel("LakeBodyOfWater")
 	@SchemaOrgComment("A lake (for example, Lake Pontrachain).")
@@ -8216,6 +8286,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/Markdown")
+	@SchemaOrgLabel("Markdown")
+	@SchemaOrgComment("Markdown format source text.")
+	@CamelizedName("markdown")
+	@ConstantizedName("MARKDOWN")
+	public interface Markdown extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/MarryAction")
 	@SchemaOrgLabel("MarryAction")
 	@SchemaOrgComment("The act of marrying a person.")
@@ -8347,6 +8431,20 @@ public interface Clazz extends SchemaOrgClass {
 		 */
 		public Container.Width getWidth();
 		public void setWidth(Container.Width width);
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/MediaWiki")
+	@SchemaOrgLabel("MediaWiki")
+	@SchemaOrgComment("MediaWiki format source text.")
+	@CamelizedName("mediaWiki")
+	@ConstantizedName("MEDIA_WIKI")
+	public interface MediaWiki extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -8633,6 +8731,20 @@ public interface Clazz extends SchemaOrgClass {
 	@CamelizedName("mobilePhoneStore")
 	@ConstantizedName("MOBILE_PHONE_STORE")
 	public interface MobilePhoneStore extends SchemaOrgClass, Store {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/MoinMoin")
+	@SchemaOrgLabel("MoinMoin")
+	@SchemaOrgComment("MoinMoin format source text.")
+	@CamelizedName("moinMoin")
+	@ConstantizedName("MOIN_MOIN")
+	public interface MoinMoin extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -12713,6 +12825,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/PukiWiki")
+	@SchemaOrgLabel("PukiWiki")
+	@SchemaOrgComment("PukiWiki format source text.")
+	@CamelizedName("pukiWiki")
+	@ConstantizedName("PUKI_WIKI")
+	public interface PukiWiki extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/QAPage")
 	@SchemaOrgLabel("QAPage")
 	@SchemaOrgComment(""
@@ -12920,6 +13046,20 @@ public interface Clazz extends SchemaOrgClass {
 	@CamelizedName("quoteAction")
 	@ConstantizedName("QUOTE_ACTION")
 	public interface QuoteAction extends SchemaOrgClass, TradeAction {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/RTF")
+	@SchemaOrgLabel("RTF")
+	@SchemaOrgComment("RTF format source text.")
+	@CamelizedName("rtf")
+	@ConstantizedName("RTF")
+	public interface RTF extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -13290,6 +13430,20 @@ public interface Clazz extends SchemaOrgClass {
 	@CamelizedName("recyclingCenter")
 	@ConstantizedName("RECYCLING_CENTER")
 	public interface RecyclingCenter extends LocalBusiness, SchemaOrgClass {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/RedmineWiki")
+	@SchemaOrgLabel("RedmineWiki")
+	@SchemaOrgComment("Redmine Wiki format source text.")
+	@CamelizedName("redmineWiki")
+	@ConstantizedName("REDMINE_WIKI")
+	public interface RedmineWiki extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -14478,6 +14632,20 @@ public interface Clazz extends SchemaOrgClass {
 	}
 
 	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/Simple")
+	@SchemaOrgLabel("Simple")
+	@SchemaOrgComment("Simple format source text.")
+	@CamelizedName("simple")
+	@ConstantizedName("SIMPLE")
+	public interface Simple extends SchemaOrgClass, Text {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
 	@SchemaOrgURI("http://schema.org/SingleFamilyResidence")
 	@SchemaOrgLabel("SingleFamilyResidence")
 	@SchemaOrgComment("Residence type: Single-family home.")
@@ -15445,6 +15613,20 @@ public interface Clazz extends SchemaOrgClass {
 	@CamelizedName("textDigitalDocument")
 	@ConstantizedName("TEXT_DIGITAL_DOCUMENT")
 	public interface TextDigitalDocument extends DigitalDocument, SchemaOrgClass {
+
+		public String getString();
+		public void setString(String string);
+		public String getNativeValue();
+
+	}
+
+	@JsonLdContext("http://schema.org")
+	@SchemaOrgURI("http://kyojo.org/schemaSpl/Textile")
+	@SchemaOrgLabel("Textile")
+	@SchemaOrgComment("Textile notation source text.")
+	@CamelizedName("textile")
+	@ConstantizedName("TEXTILE")
+	public interface Textile extends SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
