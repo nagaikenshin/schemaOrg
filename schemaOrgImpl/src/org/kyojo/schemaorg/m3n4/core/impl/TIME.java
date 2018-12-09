@@ -29,7 +29,11 @@ public class TIME implements DataType.Time {
 
 	public TIME(java.util.Date time) {
 		if(time != null) {
-			setTime(java.time.LocalDateTime.ofInstant(time.toInstant(), java.time.ZoneId.systemDefault()).toLocalTime());
+			if(time instanceof java.sql.Time) {
+				setTime(((java.sql.Time)time).toLocalTime());
+			} else {
+				setTime(java.time.LocalDateTime.ofInstant(time.toInstant(), java.time.ZoneId.systemDefault()).toLocalTime());
+			}
 		}
 	}
 

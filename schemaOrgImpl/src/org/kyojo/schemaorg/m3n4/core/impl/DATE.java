@@ -29,7 +29,11 @@ public class DATE implements DataType.Date {
 
 	public DATE(java.util.Date date) {
 		if(date != null) {
-			setDate(date.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());
+			if(date instanceof java.sql.Date) {
+				setDate(((java.sql.Date)date).toLocalDate());
+			} else {
+				setDate(date.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());
+			}
 		}
 	}
 

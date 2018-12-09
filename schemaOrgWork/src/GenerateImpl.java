@@ -1782,7 +1782,11 @@ public class GenerateImpl {
 					} else if(smplName.equals("LocalDate")) {
 						pw.printf("	public %s(java.util.Date date) {\n", implSmplName);
 						pw.println("		if(date != null) {");
-						pw.printf("			setDate(date.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());\n");
+						pw.println("			if(date instanceof java.sql.Date) {");
+						pw.println("				setDate(((java.sql.Date)date).toLocalDate());");
+						pw.println("			} else {");
+						pw.println("				setDate(date.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate());");
+						pw.println("			}");
 						pw.println("		}");
 						pw.println("	}");
 						pw.println();
@@ -1790,7 +1794,11 @@ public class GenerateImpl {
 					} else if(smplName.equals("LocalTime")) {
 						pw.printf("	public %s(java.util.Date time) {\n", implSmplName);
 						pw.println("		if(time != null) {");
-						pw.printf("			setTime(java.time.LocalDateTime.ofInstant(time.toInstant(), java.time.ZoneId.systemDefault()).toLocalTime());\n");
+						pw.println("			if(time instanceof java.sql.Time) {");
+						pw.println("				setTime(((java.sql.Time)time).toLocalTime());");
+						pw.println("			} else {");
+						pw.println("				setTime(java.time.LocalDateTime.ofInstant(time.toInstant(), java.time.ZoneId.systemDefault()).toLocalTime());");
+						pw.println("			}");
 						pw.println("		}");
 						pw.println("	}");
 						pw.println();
