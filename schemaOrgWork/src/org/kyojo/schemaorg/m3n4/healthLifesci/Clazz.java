@@ -3,6 +3,7 @@ package org.kyojo.schemaorg.m3n4.healthLifesci;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgClass;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -41,7 +42,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Organs, tissues, and cells are all anatomical structures.")
 	@CamelizedName("anatomicalStructure")
 	@ConstantizedName("ANATOMICAL_STRUCTURE")
-	public interface AnatomicalStructure extends MedicalEntity, SchemaOrgClass {
+	public interface AnatomicalStructure extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
@@ -114,7 +115,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " respiratory, skeletal, urinary, vestibular, and other systems.")
 	@CamelizedName("anatomicalSystem")
 	@ConstantizedName("ANATOMICAL_SYSTEM")
-	public interface AnatomicalSystem extends MedicalEntity, SchemaOrgClass {
+	public interface AnatomicalSystem extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
@@ -161,7 +162,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " approves indications for most drugs in the US.")
 	@CamelizedName("approvedIndication")
 	@ConstantizedName("APPROVED_INDICATION")
-	public interface ApprovedIndication extends MedicalIndication, SchemaOrgClass {
+	public interface ApprovedIndication extends MedicalIndication, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -176,7 +177,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A type of blood vessel that specifically carries blood away from the heart.")
 	@CamelizedName("artery")
 	@ConstantizedName("ARTERY")
-	public interface Artery extends SchemaOrgClass, Vessel {
+	public interface Artery extends NativeValueText, SchemaOrgClass, Vessel {
 
 		/**
 		 * @see <a href="http://schema.org/arterialBranch">http://schema.org/arterialBranch</a>
@@ -209,7 +210,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A medical test performed on a sample of a patient's blood.")
 	@CamelizedName("bloodTest")
 	@ConstantizedName("BLOOD_TEST")
-	public interface BloodTest extends MedicalTest, SchemaOrgClass {
+	public interface BloodTest extends MedicalTest, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -225,7 +226,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " body.")
 	@CamelizedName("bone")
 	@ConstantizedName("BONE")
-	public interface Bone extends AnatomicalStructure, SchemaOrgClass {
+	public interface Bone extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -241,7 +242,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " as the coordinating center of sensation and intellectual and nervous activity.")
 	@CamelizedName("brainStructure")
 	@ConstantizedName("BRAIN_STRUCTURE")
-	public interface BrainStructure extends AnatomicalStructure, SchemaOrgClass {
+	public interface BrainStructure extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -258,7 +259,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " distinguish it.")
 	@CamelizedName("ddxElement")
 	@ConstantizedName("DDX_ELEMENT")
-	public interface DDxElement extends MedicalIntangible, SchemaOrgClass {
+	public interface DDxElement extends MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/diagnosis">http://schema.org/diagnosis</a>
@@ -285,7 +286,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A medical laboratory that offers on-site or off-site diagnostic services.")
 	@CamelizedName("diagnosticLab")
 	@ConstantizedName("DIAGNOSTIC_LAB")
-	public interface DiagnosticLab extends MedicalOrganization, SchemaOrgClass {
+	public interface DiagnosticLab extends MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableTest">http://schema.org/availableTest</a>
@@ -307,7 +308,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " therapeutic, purposes.")
 	@CamelizedName("diagnosticProcedure")
 	@ConstantizedName("DIAGNOSTIC_PROCEDURE")
-	public interface DiagnosticProcedure extends MedicalProcedure, SchemaOrgClass {
+	public interface DiagnosticProcedure extends MedicalProcedure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -323,7 +324,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " health-related goal.")
 	@CamelizedName("diet")
 	@ConstantizedName("DIET")
-	public interface Diet extends CreativeWork, LifestyleModification, SchemaOrgClass {
+	public interface Diet extends CreativeWork, LifestyleModification, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dietFeatures">http://schema.org/dietFeatures</a>
@@ -377,7 +378,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " tissues, glandulars and metabolites.")
 	@CamelizedName("dietarySupplement")
 	@ConstantizedName("DIETARY_SUPPLEMENT")
-	public interface DietarySupplement extends SchemaOrgClass, Substance {
+	public interface DietarySupplement extends NativeValueText, SchemaOrgClass, Substance {
 
 		/**
 		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
@@ -464,7 +465,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A specific dosing schedule for a drug or supplement.")
 	@CamelizedName("doseSchedule")
 	@ConstantizedName("DOSE_SCHEDULE")
-	public interface DoseSchedule extends MedicalIntangible, SchemaOrgClass {
+	public interface DoseSchedule extends MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/doseUnit">http://schema.org/doseUnit</a>
@@ -506,7 +507,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " between them.")
 	@CamelizedName("drug")
 	@ConstantizedName("DRUG")
-	public interface Drug extends SchemaOrgClass, Substance {
+	public interface Drug extends NativeValueText, SchemaOrgClass, Substance {
 
 		/**
 		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
@@ -709,7 +710,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " effects, etc.")
 	@CamelizedName("drugClass")
 	@ConstantizedName("DRUG_CLASS")
-	public interface DrugClass extends MedicalEnumeration, SchemaOrgClass {
+	public interface DrugClass extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/drug">http://schema.org/drug</a>
@@ -736,7 +737,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " schema's markup.")
 	@CamelizedName("drugCost")
 	@ConstantizedName("DRUG_COST")
-	public interface DrugCost extends MedicalEnumeration, SchemaOrgClass {
+	public interface DrugCost extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/applicableLocation">http://schema.org/applicableLocation</a>
@@ -787,7 +788,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Enumerated categories of medical drug costs.")
 	@CamelizedName("drugCostCategory")
 	@ConstantizedName("DRUG_COST_CATEGORY")
-	public interface DrugCostCategory extends MedicalEnumeration, SchemaOrgClass {
+	public interface DrugCostCategory extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -802,7 +803,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The legal availability status of a medical drug.")
 	@CamelizedName("drugLegalStatus")
 	@ConstantizedName("DRUG_LEGAL_STATUS")
-	public interface DrugLegalStatus extends MedicalIntangible, SchemaOrgClass {
+	public interface DrugLegalStatus extends MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/applicableLocation">http://schema.org/applicableLocation</a>
@@ -824,7 +825,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " drug or pharmaceutical used as directed by the mother during pregnancy.")
 	@CamelizedName("drugPregnancyCategory")
 	@ConstantizedName("DRUG_PREGNANCY_CATEGORY")
-	public interface DrugPregnancyCategory extends MedicalEnumeration, SchemaOrgClass {
+	public interface DrugPregnancyCategory extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -839,7 +840,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Indicates whether this drug is available by prescription or over-the-counter.")
 	@CamelizedName("drugPrescriptionStatus")
 	@ConstantizedName("DRUG_PRESCRIPTION_STATUS")
-	public interface DrugPrescriptionStatus extends MedicalEnumeration, SchemaOrgClass {
+	public interface DrugPrescriptionStatus extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -854,7 +855,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A specific strength in which a medical drug is available in a specific country.")
 	@CamelizedName("drugStrength")
 	@ConstantizedName("DRUG_STRENGTH")
-	public interface DrugStrength extends MedicalIntangible, SchemaOrgClass {
+	public interface DrugStrength extends MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
@@ -901,7 +902,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " clinician.")
 	@CamelizedName("exercisePlan")
 	@ConstantizedName("EXERCISE_PLAN")
-	public interface ExercisePlan extends CreativeWork, PhysicalActivity, SchemaOrgClass {
+	public interface ExercisePlan extends CreativeWork, NativeValueText, PhysicalActivity, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/activityDuration">http://schema.org/activityDuration</a>
@@ -964,7 +965,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Any medical imaging modality typically used for diagnostic purposes.")
 	@CamelizedName("imagingTest")
 	@ConstantizedName("IMAGING_TEST")
-	public interface ImagingTest extends MedicalTest, SchemaOrgClass {
+	public interface ImagingTest extends MedicalTest, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/imagingTechnique">http://schema.org/imagingTechnique</a>
@@ -986,7 +987,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " type.")
 	@CamelizedName("infectiousAgentClass")
 	@ConstantizedName("INFECTIOUS_AGENT_CLASS")
-	public interface InfectiousAgentClass extends MedicalEnumeration, SchemaOrgClass {
+	public interface InfectiousAgentClass extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1005,7 +1006,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " this disease.")
 	@CamelizedName("infectiousDisease")
 	@ConstantizedName("INFECTIOUS_DISEASE")
-	public interface InfectiousDisease extends MedicalCondition, SchemaOrgClass {
+	public interface InfectiousDisease extends MedicalCondition, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/infectiousAgent">http://schema.org/infectiousAgent</a>
@@ -1038,7 +1039,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The anatomical location at which two or more bones make contact.")
 	@CamelizedName("joint")
 	@ConstantizedName("JOINT")
-	public interface Joint extends AnatomicalStructure, SchemaOrgClass {
+	public interface Joint extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/biomechnicalClass">http://schema.org/biomechnicalClass</a>
@@ -1072,7 +1073,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " other lifestyle changes aimed at improving a health condition.")
 	@CamelizedName("lifestyleModification")
 	@ConstantizedName("LIFESTYLE_MODIFICATION")
-	public interface LifestyleModification extends MedicalEntity, SchemaOrgClass {
+	public interface LifestyleModification extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1088,7 +1089,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " connect multiple bones, cartilages, and structurally support joints.")
 	@CamelizedName("ligament")
 	@ConstantizedName("LIGAMENT")
-	public interface Ligament extends AnatomicalStructure, SchemaOrgClass {
+	public interface Ligament extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1104,7 +1105,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " toward the heart.")
 	@CamelizedName("lymphaticVessel")
 	@ConstantizedName("LYMPHATIC_VESSEL")
-	public interface LymphaticVessel extends SchemaOrgClass, Vessel {
+	public interface LymphaticVessel extends NativeValueText, SchemaOrgClass, Vessel {
 
 		/**
 		 * @see <a href="http://schema.org/originatesFrom">http://schema.org/originatesFrom</a>
@@ -1140,7 +1141,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " MedicalEntity.")
 	@CamelizedName("maximumDoseSchedule")
 	@ConstantizedName("MAXIMUM_DOSE_SCHEDULE")
-	public interface MaximumDoseSchedule extends DoseSchedule, SchemaOrgClass {
+	public interface MaximumDoseSchedule extends DoseSchedule, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1155,7 +1156,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Target audiences for medical web pages. Enumerated type.")
 	@CamelizedName("medicalAudience")
 	@ConstantizedName("MEDICAL_AUDIENCE")
-	public interface MedicalAudience extends Audience, MedicalEnumeration, PeopleAudience, SchemaOrgClass {
+	public interface MedicalAudience extends Audience, MedicalEnumeration, NativeValueText, PeopleAudience, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1172,7 +1173,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " professionals.")
 	@CamelizedName("medicalBusiness")
 	@ConstantizedName("MEDICAL_BUSINESS")
-	public interface MedicalBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface MedicalBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1201,7 +1202,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " conditions can be causes as well.")
 	@CamelizedName("medicalCause")
 	@ConstantizedName("MEDICAL_CAUSE")
-	public interface MedicalCause extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalCause extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/causeOf">http://schema.org/causeOf</a>
@@ -1224,7 +1225,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " but with evolution it may be open to inpatients as well.")
 	@CamelizedName("medicalClinic")
 	@ConstantizedName("MEDICAL_CLINIC")
-	public interface MedicalClinic extends MedicalBusiness, MedicalOrganization, SchemaOrgClass {
+	public interface MedicalClinic extends MedicalBusiness, MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
@@ -1250,7 +1251,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A code for a medical entity.")
 	@CamelizedName("medicalCode")
 	@ConstantizedName("MEDICAL_CODE")
-	public interface MedicalCode extends CategoryCode, MedicalIntangible, SchemaOrgClass {
+	public interface MedicalCode extends CategoryCode, MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/codeValue">http://schema.org/codeValue</a>
@@ -1279,7 +1280,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " disorders, syndromes, etc.")
 	@CamelizedName("medicalCondition")
 	@ConstantizedName("MEDICAL_CONDITION")
-	public interface MedicalCondition extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalCondition extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedAnatomy">http://schema.org/associatedAnatomy</a>
@@ -1402,7 +1403,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A stage of a medical condition, such as 'Stage IIIa'.")
 	@CamelizedName("medicalConditionStage")
 	@ConstantizedName("MEDICAL_CONDITION_STAGE")
-	public interface MedicalConditionStage extends MedicalIntangible, SchemaOrgClass {
+	public interface MedicalConditionStage extends MedicalIntangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/stageAsNumber">http://schema.org/stageAsNumber</a>
@@ -1433,7 +1434,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " other considerations or mitigated by other measures).")
 	@CamelizedName("medicalContraindication")
 	@ConstantizedName("MEDICAL_CONTRAINDICATION")
-	public interface MedicalContraindication extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalContraindication extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1448,7 +1449,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Any object used in a medical capacity, such as to diagnose or treat a patient.")
 	@CamelizedName("medicalDevice")
 	@ConstantizedName("MEDICAL_DEVICE")
-	public interface MedicalDevice extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalDevice extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/adverseOutcome">http://schema.org/adverseOutcome</a>
@@ -1512,7 +1513,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " device.")
 	@CamelizedName("medicalDevicePurpose")
 	@ConstantizedName("MEDICAL_DEVICE_PURPOSE")
-	public interface MedicalDevicePurpose extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalDevicePurpose extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1527,7 +1528,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The most generic type of entity related to health and the practice of medicine.")
 	@CamelizedName("medicalEntity")
 	@ConstantizedName("MEDICAL_ENTITY")
-	public interface MedicalEntity extends SchemaOrgClass, Thing {
+	public interface MedicalEntity extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/code">http://schema.org/code</a>
@@ -1586,7 +1587,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " items or a listing of all of the elements of a set in medicine practice.")
 	@CamelizedName("medicalEnumeration")
 	@ConstantizedName("MEDICAL_ENUMERATION")
-	public interface MedicalEnumeration extends Enumeration, SchemaOrgClass {
+	public interface MedicalEnumeration extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1601,7 +1602,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Level of evidence for a medical guideline. Enumerated type.")
 	@CamelizedName("medicalEvidenceLevel")
 	@ConstantizedName("MEDICAL_EVIDENCE_LEVEL")
-	public interface MedicalEvidenceLevel extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalEvidenceLevel extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1622,7 +1623,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " recognizingAuthority base property of MedicalEntity.")
 	@CamelizedName("medicalGuideline")
 	@ConstantizedName("MEDICAL_GUIDELINE")
-	public interface MedicalGuideline extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalGuideline extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/evidenceLevel">http://schema.org/evidenceLevel</a>
@@ -1662,7 +1663,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " quality of the data supporting the contraindication is sound.")
 	@CamelizedName("medicalGuidelineContraindication")
 	@ConstantizedName("MEDICAL_GUIDELINE_CONTRAINDICATION")
-	public interface MedicalGuidelineContraindication extends MedicalGuideline, SchemaOrgClass {
+	public interface MedicalGuidelineContraindication extends MedicalGuideline, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1678,7 +1679,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the data supporting the recommendation is sound.")
 	@CamelizedName("medicalGuidelineRecommendation")
 	@ConstantizedName("MEDICAL_GUIDELINE_RECOMMENDATION")
-	public interface MedicalGuidelineRecommendation extends MedicalGuideline, SchemaOrgClass {
+	public interface MedicalGuidelineRecommendation extends MedicalGuideline, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/recommendationStrength">http://schema.org/recommendationStrength</a>
@@ -1700,7 +1701,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " type.")
 	@CamelizedName("medicalImagingTechnique")
 	@ConstantizedName("MEDICAL_IMAGING_TECHNIQUE")
-	public interface MedicalImagingTechnique extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalImagingTechnique extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1716,7 +1717,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " symptoms, risk factors, anatomical states, etc.")
 	@CamelizedName("medicalIndication")
 	@ConstantizedName("MEDICAL_INDICATION")
-	public interface MedicalIndication extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalIndication extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1732,7 +1733,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " in the medical space.")
 	@CamelizedName("medicalIntangible")
 	@ConstantizedName("MEDICAL_INTANGIBLE")
-	public interface MedicalIntangible extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalIntangible extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1754,7 +1755,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the treatment.")
 	@CamelizedName("medicalObservationalStudy")
 	@ConstantizedName("MEDICAL_OBSERVATIONAL_STUDY")
-	public interface MedicalObservationalStudy extends MedicalStudy, SchemaOrgClass {
+	public interface MedicalObservationalStudy extends MedicalStudy, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/studyDesign">http://schema.org/studyDesign</a>
@@ -1775,7 +1776,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Design models for observational medical studies. Enumerated type.")
 	@CamelizedName("medicalObservationalStudyDesign")
 	@ConstantizedName("MEDICAL_OBSERVATIONAL_STUDY_DESIGN")
-	public interface MedicalObservationalStudyDesign extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalObservationalStudyDesign extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1792,7 +1793,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " techniques.")
 	@CamelizedName("medicalProcedure")
 	@ConstantizedName("MEDICAL_PROCEDURE")
-	public interface MedicalProcedure extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalProcedure extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/bodyLocation">http://schema.org/bodyLocation</a>
@@ -1855,7 +1856,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An enumeration that describes different types of medical procedures.")
 	@CamelizedName("medicalProcedureType")
 	@ConstantizedName("MEDICAL_PROCEDURE_TYPE")
-	public interface MedicalProcedureType extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalProcedureType extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1872,7 +1873,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " online calculators.")
 	@CamelizedName("medicalRiskCalculator")
 	@ConstantizedName("MEDICAL_RISK_CALCULATOR")
-	public interface MedicalRiskCalculator extends MedicalRiskEstimator, SchemaOrgClass {
+	public interface MedicalRiskCalculator extends MedicalRiskEstimator, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1888,7 +1889,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " complication or condition.")
 	@CamelizedName("medicalRiskEstimator")
 	@ConstantizedName("MEDICAL_RISK_ESTIMATOR")
-	public interface MedicalRiskEstimator extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalRiskEstimator extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/estimatesRiskOf">http://schema.org/estimatesRiskOf</a>
@@ -1916,7 +1917,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " contracting a disease, medical condition, or complication.")
 	@CamelizedName("medicalRiskFactor")
 	@ConstantizedName("MEDICAL_RISK_FACTOR")
-	public interface MedicalRiskFactor extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalRiskFactor extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/increasesRiskOf">http://schema.org/increasesRiskOf</a>
@@ -1938,7 +1939,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " associated with prognosis, e.g. CHAD score, TIMI risk score.")
 	@CamelizedName("medicalRiskScore")
 	@ConstantizedName("MEDICAL_RISK_SCORE")
-	public interface MedicalRiskScore extends MedicalRiskEstimator, SchemaOrgClass {
+	public interface MedicalRiskScore extends MedicalRiskEstimator, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/algorithm">http://schema.org/algorithm</a>
@@ -1959,7 +1960,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A scholarly article in the medical domain.")
 	@CamelizedName("medicalScholarlyArticle")
 	@ConstantizedName("MEDICAL_SCHOLARLY_ARTICLE")
-	public interface MedicalScholarlyArticle extends SchemaOrgClass, ScholarlyArticle {
+	public interface MedicalScholarlyArticle extends NativeValueText, SchemaOrgClass, ScholarlyArticle {
 
 		/**
 		 * @see <a href="http://schema.org/publicationType">http://schema.org/publicationType</a>
@@ -1981,7 +1982,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " objective diagnostic tests or physical examination.")
 	@CamelizedName("medicalSign")
 	@ConstantizedName("MEDICAL_SIGN")
-	public interface MedicalSign extends MedicalSignOrSymptom, SchemaOrgClass {
+	public interface MedicalSign extends MedicalSignOrSymptom, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/identifyingExam">http://schema.org/identifyingExam</a>
@@ -2009,7 +2010,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " generally subjective while a sign is objective.")
 	@CamelizedName("medicalSignOrSymptom")
 	@ConstantizedName("MEDICAL_SIGN_OR_SYMPTOM")
-	public interface MedicalSignOrSymptom extends MedicalCondition, SchemaOrgClass {
+	public interface MedicalSignOrSymptom extends MedicalCondition, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/cause">http://schema.org/cause</a>
@@ -2039,7 +2040,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " type.")
 	@CamelizedName("medicalSpecialty")
 	@ConstantizedName("MEDICAL_SPECIALTY")
-	public interface MedicalSpecialty extends MedicalEnumeration, SchemaOrgClass, Specialty {
+	public interface MedicalSpecialty extends MedicalEnumeration, NativeValueText, SchemaOrgClass, Specialty {
 
 		public String getString();
 		public void setString(String string);
@@ -2061,7 +2062,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID.")
 	@CamelizedName("medicalStudy")
 	@ConstantizedName("MEDICAL_STUDY")
-	public interface MedicalStudy extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalStudy extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/healthCondition">http://schema.org/healthCondition</a>
@@ -2118,7 +2119,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The status of a medical study. Enumerated type.")
 	@CamelizedName("medicalStudyStatus")
 	@ConstantizedName("MEDICAL_STUDY_STATUS")
-	public interface MedicalStudyStatus extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalStudyStatus extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2134,7 +2135,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " subjective)  like stomachache, lower-back pain, or fatigue.")
 	@CamelizedName("medicalSymptom")
 	@ConstantizedName("MEDICAL_SYMPTOM")
-	public interface MedicalSymptom extends MedicalSignOrSymptom, SchemaOrgClass {
+	public interface MedicalSymptom extends MedicalSignOrSymptom, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2149,7 +2150,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Any medical test, typically performed for diagnostic purposes.")
 	@CamelizedName("medicalTest")
 	@ConstantizedName("MEDICAL_TEST")
-	public interface MedicalTest extends MedicalEntity, SchemaOrgClass {
+	public interface MedicalTest extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/affectedBy">http://schema.org/affectedBy</a>
@@ -2194,7 +2195,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Any collection of tests commonly ordered together.")
 	@CamelizedName("medicalTestPanel")
 	@ConstantizedName("MEDICAL_TEST_PANEL")
-	public interface MedicalTestPanel extends MedicalTest, SchemaOrgClass {
+	public interface MedicalTestPanel extends MedicalTest, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/subTest">http://schema.org/subTest</a>
@@ -2220,7 +2221,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " condition.")
 	@CamelizedName("medicalTherapy")
 	@ConstantizedName("MEDICAL_THERAPY")
-	public interface MedicalTherapy extends SchemaOrgClass, TherapeuticProcedure {
+	public interface MedicalTherapy extends NativeValueText, SchemaOrgClass, TherapeuticProcedure {
 
 		/**
 		 * @see <a href="http://schema.org/contraindication">http://schema.org/contraindication</a>
@@ -2256,7 +2257,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the different treatment and/or control groups.")
 	@CamelizedName("medicalTrial")
 	@ConstantizedName("MEDICAL_TRIAL")
-	public interface MedicalTrial extends MedicalStudy, SchemaOrgClass {
+	public interface MedicalTrial extends MedicalStudy, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/phase">http://schema.org/phase</a>
@@ -2283,7 +2284,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Design models for medical trials. Enumerated type.")
 	@CamelizedName("medicalTrialDesign")
 	@ConstantizedName("MEDICAL_TRIAL_DESIGN")
-	public interface MedicalTrialDesign extends Enumeration, MedicalEnumeration, SchemaOrgClass {
+	public interface MedicalTrialDesign extends Enumeration, MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2298,7 +2299,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A web page that provides medical information.")
 	@CamelizedName("medicalWebPage")
 	@ConstantizedName("MEDICAL_WEB_PAGE")
-	public interface MedicalWebPage extends SchemaOrgClass, WebPage {
+	public interface MedicalWebPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -2312,7 +2313,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Systems of medical practice.")
 	@CamelizedName("medicineSystem")
 	@ConstantizedName("MEDICINE_SYSTEM")
-	public interface MedicineSystem extends MedicalEnumeration, SchemaOrgClass {
+	public interface MedicineSystem extends MedicalEnumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2328,7 +2329,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " that animals use to effect movement.")
 	@CamelizedName("muscle")
 	@ConstantizedName("MUSCLE")
-	public interface Muscle extends AnatomicalStructure, SchemaOrgClass {
+	public interface Muscle extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/action">http://schema.org/action</a>
@@ -2386,7 +2387,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " along each of the axons.")
 	@CamelizedName("nerve")
 	@ConstantizedName("NERVE")
-	public interface Nerve extends AnatomicalStructure, SchemaOrgClass {
+	public interface Nerve extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/nerveMotor">http://schema.org/nerveMotor</a>
@@ -2420,7 +2421,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " purposeful activity to help them overcome or learn to deal with their problems.")
 	@CamelizedName("occupationalTherapy")
 	@ConstantizedName("OCCUPATIONAL_THERAPY")
-	public interface OccupationalTherapy extends MedicalTherapy, SchemaOrgClass {
+	public interface OccupationalTherapy extends MedicalTherapy, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2435,7 +2436,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A store that sells reading glasses and similar devices for improving vision.")
 	@CamelizedName("optician")
 	@ConstantizedName("OPTICIAN")
-	public interface Optician extends MedicalBusiness, SchemaOrgClass {
+	public interface Optician extends MedicalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2451,7 +2452,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " relieving the symptoms of an underlying health condition.")
 	@CamelizedName("palliativeProcedure")
 	@ConstantizedName("PALLIATIVE_PROCEDURE")
-	public interface PalliativeProcedure extends MedicalProcedure, MedicalTherapy, SchemaOrgClass {
+	public interface PalliativeProcedure extends MedicalProcedure, MedicalTherapy, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2467,7 +2468,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " a tissue sample by a pathologist.")
 	@CamelizedName("pathologyTest")
 	@ConstantizedName("PATHOLOGY_TEST")
-	public interface PathologyTest extends MedicalTest, SchemaOrgClass {
+	public interface PathologyTest extends MedicalTest, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/tissueSample">http://schema.org/tissueSample</a>
@@ -2488,7 +2489,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A patient is any person recipient of health care services.")
 	@CamelizedName("patient")
 	@ConstantizedName("PATIENT")
-	public interface Patient extends MedicalAudience, Person, SchemaOrgClass {
+	public interface Patient extends MedicalAudience, NativeValueText, Person, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/diagnosis">http://schema.org/diagnosis</a>
@@ -2524,7 +2525,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " treatment or recovery plan.")
 	@CamelizedName("physicalActivity")
 	@ConstantizedName("PHYSICAL_ACTIVITY")
-	public interface PhysicalActivity extends LifestyleModification, SchemaOrgClass {
+	public interface PhysicalActivity extends LifestyleModification, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedAnatomy">http://schema.org/associatedAnatomy</a>
@@ -2563,7 +2564,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Categories of physical activity, organized by physiologic classification.")
 	@CamelizedName("physicalActivityCategory")
 	@ConstantizedName("PHYSICAL_ACTIVITY_CATEGORY")
-	public interface PhysicalActivityCategory extends Enumeration, SchemaOrgClass {
+	public interface PhysicalActivityCategory extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2578,7 +2579,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A type of physical examination of a patient performed by a physician.")
 	@CamelizedName("physicalExam")
 	@ConstantizedName("PHYSICAL_EXAM")
-	public interface PhysicalExam extends MedicalEnumeration, MedicalProcedure, SchemaOrgClass {
+	public interface PhysicalExam extends MedicalEnumeration, MedicalProcedure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2594,7 +2595,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " health condition.")
 	@CamelizedName("physicalTherapy")
 	@ConstantizedName("PHYSICAL_THERAPY")
-	public interface PhysicalTherapy extends MedicalTherapy, SchemaOrgClass {
+	public interface PhysicalTherapy extends MedicalTherapy, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2609,7 +2610,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An indication for preventing an underlying condition, symptom, etc.")
 	@CamelizedName("preventionIndication")
 	@ConstantizedName("PREVENTION_INDICATION")
-	public interface PreventionIndication extends MedicalIndication, SchemaOrgClass {
+	public interface PreventionIndication extends MedicalIndication, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2625,7 +2626,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " improving a mental health condition without use of drugs.")
 	@CamelizedName("psychologicalTreatment")
 	@ConstantizedName("PSYCHOLOGICAL_TREATMENT")
-	public interface PsychologicalTreatment extends SchemaOrgClass, TherapeuticProcedure {
+	public interface PsychologicalTreatment extends NativeValueText, SchemaOrgClass, TherapeuticProcedure {
 
 		public String getString();
 		public void setString(String string);
@@ -2640,7 +2641,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A process of care using radiation aimed at improving a health condition.")
 	@CamelizedName("radiationTherapy")
 	@ConstantizedName("RADIATION_THERAPY")
-	public interface RadiationTherapy extends MedicalTherapy, SchemaOrgClass {
+	public interface RadiationTherapy extends MedicalTherapy, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2658,7 +2659,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " MedicalEntity.")
 	@CamelizedName("recommendedDoseSchedule")
 	@ConstantizedName("RECOMMENDED_DOSE_SCHEDULE")
-	public interface RecommendedDoseSchedule extends DoseSchedule, SchemaOrgClass {
+	public interface RecommendedDoseSchedule extends DoseSchedule, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2673,7 +2674,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A patient-reported or observed dosing schedule for a drug or supplement.")
 	@CamelizedName("reportedDoseSchedule")
 	@ConstantizedName("REPORTED_DOSE_SCHEDULE")
-	public interface ReportedDoseSchedule extends DoseSchedule, SchemaOrgClass {
+	public interface ReportedDoseSchedule extends DoseSchedule, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2689,7 +2690,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " be biological, mineral or chemical.")
 	@CamelizedName("substance")
 	@ConstantizedName("SUBSTANCE")
-	public interface Substance extends MedicalEntity, SchemaOrgClass {
+	public interface Substance extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/activeIngredient">http://schema.org/activeIngredient</a>
@@ -2733,7 +2734,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " anatomical structure).")
 	@CamelizedName("superficialAnatomy")
 	@ConstantizedName("SUPERFICIAL_ANATOMY")
-	public interface SuperficialAnatomy extends MedicalEntity, SchemaOrgClass {
+	public interface SuperficialAnatomy extends MedicalEntity, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedPathophysiology">http://schema.org/associatedPathophysiology</a>
@@ -2779,7 +2780,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " improving a health condition.")
 	@CamelizedName("therapeuticProcedure")
 	@ConstantizedName("THERAPEUTIC_PROCEDURE")
-	public interface TherapeuticProcedure extends MedicalProcedure, SchemaOrgClass {
+	public interface TherapeuticProcedure extends MedicalProcedure, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/adverseOutcome">http://schema.org/adverseOutcome</a>
@@ -2818,7 +2819,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An indication for treating an underlying condition, symptom, etc.")
 	@CamelizedName("treatmentIndication")
 	@ConstantizedName("TREATMENT_INDICATION")
-	public interface TreatmentIndication extends MedicalIndication, SchemaOrgClass {
+	public interface TreatmentIndication extends MedicalIndication, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2833,7 +2834,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A type of blood vessel that specifically carries blood to the heart.")
 	@CamelizedName("vein")
 	@ConstantizedName("VEIN")
-	public interface Vein extends SchemaOrgClass, Vessel {
+	public interface Vein extends NativeValueText, SchemaOrgClass, Vessel {
 
 		/**
 		 * @see <a href="http://schema.org/drainsTo">http://schema.org/drainsTo</a>
@@ -2867,7 +2868,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " network of hollow tubes that transport blood throughout the entire body.")
 	@CamelizedName("vessel")
 	@ConstantizedName("VESSEL")
-	public interface Vessel extends AnatomicalStructure, SchemaOrgClass {
+	public interface Vessel extends AnatomicalStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2881,7 +2882,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A vet's office.")
 	@CamelizedName("veterinaryCare")
 	@ConstantizedName("VETERINARY_CARE")
-	public interface VeterinaryCare extends MedicalOrganization, SchemaOrgClass {
+	public interface VeterinaryCare extends MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2897,7 +2898,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the most basic body functions.")
 	@CamelizedName("vitalSign")
 	@ConstantizedName("VITAL_SIGN")
-	public interface VitalSign extends MedicalSign, SchemaOrgClass {
+	public interface VitalSign extends MedicalSign, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);

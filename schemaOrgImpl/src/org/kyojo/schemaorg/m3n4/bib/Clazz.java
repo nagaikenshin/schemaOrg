@@ -3,6 +3,7 @@ package org.kyojo.schemaorg.m3n4.bib;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgClass;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -32,7 +33,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " media form illustrating any subject.")
 	@CamelizedName("atlas")
 	@ConstantizedName("ATLAS")
-	public interface Atlas extends CreativeWork, SchemaOrgClass {
+	public interface Atlas extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -46,7 +47,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An audiobook.")
 	@CamelizedName("audiobook")
 	@ConstantizedName("AUDIOBOOK")
-	public interface Audiobook extends AudioObject, Book, SchemaOrgClass {
+	public interface Audiobook extends AudioObject, Book, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/readBy">http://schema.org/readBy</a>
@@ -68,7 +69,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " section number or a name.")
 	@CamelizedName("chapter")
 	@ConstantizedName("CHAPTER")
-	public interface Chapter extends CreativeWork, SchemaOrgClass {
+	public interface Chapter extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
@@ -101,7 +102,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A created collection of Creative Works or other artefacts.")
 	@CamelizedName("collection")
 	@ConstantizedName("COLLECTION")
-	public interface Collection extends CreativeWork, SchemaOrgClass {
+	public interface Collection extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -115,7 +116,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The artwork on the cover of a comic.")
 	@CamelizedName("comicCoverArt")
 	@ConstantizedName("COMIC_COVER_ART")
-	public interface ComicCoverArt extends ComicStory, CoverArt, SchemaOrgClass {
+	public interface ComicCoverArt extends ComicStory, CoverArt, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -135,7 +136,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " issue (if any).")
 	@CamelizedName("comicIssue")
 	@ConstantizedName("COMIC_ISSUE")
-	public interface ComicIssue extends PublicationIssue, SchemaOrgClass {
+	public interface ComicIssue extends NativeValueText, PublicationIssue, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/artist">http://schema.org/artist</a>
@@ -187,7 +188,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " example \"The Amazing Spider-Man\" or \"Groo the\n    Wanderer\".")
 	@CamelizedName("comicSeries")
 	@ConstantizedName("COMIC_SERIES")
-	public interface ComicSeries extends Periodical, SchemaOrgClass {
+	public interface ComicSeries extends NativeValueText, Periodical, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -204,7 +205,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " at least two stories: a cover (ComicCoverArt) and an interior story.")
 	@CamelizedName("comicStory")
 	@ConstantizedName("COMIC_STORY")
-	public interface ComicStory extends CreativeWork, SchemaOrgClass {
+	public interface ComicStory extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/artist">http://schema.org/artist</a>
@@ -249,7 +250,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The artwork on the outer surface of a CreativeWork.")
 	@CamelizedName("coverArt")
 	@ConstantizedName("COVER_ART")
-	public interface CoverArt extends SchemaOrgClass, VisualArtwork {
+	public interface CoverArt extends NativeValueText, SchemaOrgClass, VisualArtwork {
 
 		public String getString();
 		public void setString(String string);
@@ -266,7 +267,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " business, culture, education). Often published daily.")
 	@CamelizedName("newspaper")
 	@ConstantizedName("NEWSPAPER")
-	public interface Newspaper extends Periodical, SchemaOrgClass {
+	public interface Newspaper extends NativeValueText, Periodical, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -282,7 +283,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " academic degree or professional qualification.")
 	@CamelizedName("thesis")
 	@ConstantizedName("THESIS")
-	public interface Thesis extends CreativeWork, SchemaOrgClass {
+	public interface Thesis extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/inSupportOf">http://schema.org/inSupportOf</a>

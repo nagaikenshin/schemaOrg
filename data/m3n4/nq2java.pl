@@ -610,6 +610,7 @@ sub retrieve_subclasses {
 eval {
 	mkpath $out2_dpath;
 };
+
 my $out_fpath = $out1_dpath . 'Jsonizable.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -622,6 +623,7 @@ public interface Jsonizable extends Serializable {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgType.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -633,6 +635,7 @@ public interface SchemaOrgType extends Jsonizable {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgClass.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -664,6 +667,7 @@ public interface SchemaOrgClass extends SchemaOrgType {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgProperty.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -675,6 +679,7 @@ public interface SchemaOrgProperty extends SchemaOrgType {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgURI.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -697,6 +702,7 @@ public @interface SchemaOrgURI {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgLabel.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -719,6 +725,7 @@ public @interface SchemaOrgLabel {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SchemaOrgComment.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -741,6 +748,7 @@ public @interface SchemaOrgComment {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'SampleValue.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -763,6 +771,7 @@ public @interface SampleValue {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'JsonLdContext.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -785,6 +794,7 @@ public @interface JsonLdContext {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'CamelizedName.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -807,6 +817,7 @@ public @interface CamelizedName {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'ConstantizedName.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -829,6 +840,7 @@ public @interface ConstantizedName {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'JsonListIndex.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -848,6 +860,7 @@ public @interface JsonListIndex {
 }
 EoS
 close FOUT;
+
 $out_fpath = $out1_dpath . 'JsonListNo.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -867,6 +880,319 @@ public @interface JsonListNo {
 }
 EoS
 close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueBoolean.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueBoolean {
+
+	public Boolean getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueDate.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueDate {
+
+	public java.util.Date getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueDateTime.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueDateTime {
+
+	public java.util.Date getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueFloat.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueFloat {
+
+	public Double getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueInteger.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueInteger {
+
+	public Long getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueNumber.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+import java.math.BigDecimal;
+
+public interface NativeValueNumber {
+
+	public BigDecimal getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueText.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueText {
+
+	public String getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out1_dpath . 'NativeValueTime.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT "package $pkg1_base;\n";
+print FOUT << 'EoS';
+
+public interface NativeValueTime {
+
+	public java.util.Date getNativeValue();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerBoolean.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerBoolean {
+
+	public DataType.Boolean getB00lean();
+	public void setB00lean(DataType.Boolean b00lean);
+	public List<DataType.Boolean> getB00leanList();
+	public void setB00leanList(List<DataType.Boolean> b00leanList);
+	public boolean hasB00lean();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerDate.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerDate {
+
+	public DataType.Date getDate();
+	public void setDate(DataType.Date date);
+	public List<DataType.Date> getDateList();
+	public void setDateList(List<DataType.Date> dateList);
+	public boolean hasDate();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerDateTime.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerDateTime {
+
+	public DataType.DateTime getDateTime();
+	public void setDateTime(DataType.DateTime dateTime);
+	public List<DataType.DateTime> getDateTimeList();
+	public void setDateTimeList(List<DataType.DateTime> dateTimeList);
+	public boolean hasDateTime();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerFloat.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.Clazz;
+
+public interface ContainerFloat {
+
+	public Clazz.Float getFl0at();
+	public void setFl0at(Clazz.Float fl0at);
+	public List<Clazz.Float> getFl0atList();
+	public void setFl0atList(List<Clazz.Float> fl0atList);
+	public boolean hasFl0at();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerInteger.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.Clazz;
+
+public interface ContainerInteger {
+
+	public Clazz.Integer getInteger();
+	public void setInteger(Clazz.Integer integer);
+	public List<Clazz.Integer> getIntegerList();
+	public void setIntegerList(List<Clazz.Integer> integerList);
+	public boolean hasInteger();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerNumber.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerNumber {
+
+	public DataType.Number getNumber();
+	public void setNumber(DataType.Number number);
+	public List<DataType.Number> getNumberList();
+	public void setNumberList(List<DataType.Number> numberList);
+	public boolean hasNumber();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerText.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerText {
+
+	public DataType.Text getText();
+	public void setText(DataType.Text text);
+	public List<DataType.Text> getTextList();
+	public void setTextList(List<DataType.Text> textList);
+	public boolean hasText();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerTime.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.DataType;
+
+public interface ContainerTime {
+
+	public DataType.Time getTime();
+	public void setTime(DataType.Time time);
+	public List<DataType.Time> getTimeList();
+	public void setTimeList(List<DataType.Time> timeList);
+	public boolean hasTime();
+
+}
+EoS
+close FOUT;
+
+$out_fpath = $out2_dpath . 'ContainerURL.java';
+open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
+binmode (FOUT, ':utf8');
+print FOUT << "EoS";
+package $pkg1_base.$cur_ver_str;
+
+import java.util.List;
+
+import $pkg1_base.$cur_ver_str.core.Clazz;
+
+public interface ContainerURL {
+
+	public Clazz.URL getURL();
+	public void setURL(Clazz.URL url);
+	public List<Clazz.URL> getURLList();
+	public void setURLList(List<Clazz.URL> urlList);
+	public boolean hasURL();
+
+}
+EoS
+close FOUT;
+
 $out_fpath = $out1_dpath . 'NativeValueDataType.java';
 open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 binmode (FOUT, ':utf8');
@@ -885,28 +1211,28 @@ import java.time.format.DateTimeFormatter;
 public enum NativeValueDataType {
 
 	TEXT("text", String.class,
-			$pkg1_base.$cur_ver_str.core.DataType.Text.class,
+			ConsistentDataType.Text.class,
 			$pkg1_base.$prv_ver_str.core.DataType.Text.class),
 	DATE_TIME("dateTime", OffsetDateTime.class,
-			$pkg1_base.$cur_ver_str.core.DataType.DateTime.class,
+			ConsistentDataType.DateTime.class,
 			$pkg1_base.$prv_ver_str.core.DataType.DateTime.class),
 	DATE("date", LocalDate.class,
-			$pkg1_base.$cur_ver_str.core.DataType.Date.class,
+			ConsistentDataType.Date.class,
 			$pkg1_base.$prv_ver_str.core.DataType.Date.class),
 	TIME("time", LocalTime.class,
-			$pkg1_base.$cur_ver_str.core.DataType.Time.class,
+			ConsistentDataType.Time.class,
 			$pkg1_base.$prv_ver_str.core.DataType.Time.class),
 	FLOAT("fl0at", Double.class,
-			$pkg1_base.$cur_ver_str.core.Clazz.Float.class,
+			ConsistentDataType.Float.class,
 			$pkg1_base.$prv_ver_str.core.Clazz.Float.class),
 	INTEGER("integer", Long.class,
-			$pkg1_base.$cur_ver_str.core.Clazz.Integer.class,
+			ConsistentDataType.Integer.class,
 			$pkg1_base.$prv_ver_str.core.Clazz.Integer.class),
 	NUMBER("number", BigDecimal.class,
-			$pkg1_base.$cur_ver_str.core.DataType.Number.class,
+			ConsistentDataType.Number.class,
 			$pkg1_base.$prv_ver_str.core.DataType.Number.class),
 	BOOLEAN("b00lean", Boolean.class,
-			$pkg1_base.$cur_ver_str.core.DataType.Boolean.class,
+			ConsistentDataType.Boolean.class,
 			$pkg1_base.$prv_ver_str.core.DataType.Boolean.class);
 
 	private final String suffix;
@@ -955,8 +1281,8 @@ public enum NativeValueDataType {
 
 		switch(nvdt) {
 		case TEXT:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.Text) {
-				$pkg1_base.$cur_ver_str.core.DataType.Text text = ($pkg1_base.$cur_ver_str.core.DataType.Text)dt;
+			if(dt instanceof ConsistentDataType.Text) {
+				ConsistentDataType.Text text = (ConsistentDataType.Text)dt;
 				if(text.getString() == null) {
 					return "";
 				} else {
@@ -973,8 +1299,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case DATE_TIME:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.DateTime) {
-				$pkg1_base.$cur_ver_str.core.DataType.DateTime dateTime = ($pkg1_base.$cur_ver_str.core.DataType.DateTime)dt;
+			if(dt instanceof ConsistentDataType.DateTime) {
+				ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)dt;
 				if(dateTime.getDateTime() == null) {
 					return "";
 				} else {
@@ -993,8 +1319,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case DATE:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.Date) {
-				$pkg1_base.$cur_ver_str.core.DataType.Date date = ($pkg1_base.$cur_ver_str.core.DataType.Date)dt;
+			if(dt instanceof ConsistentDataType.Date) {
+				ConsistentDataType.Date date = (ConsistentDataType.Date)dt;
 				if(date.getDate() == null) {
 					return "";
 				} else {
@@ -1013,8 +1339,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case TIME:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.Time) {
-				$pkg1_base.$cur_ver_str.core.DataType.Time time = ($pkg1_base.$cur_ver_str.core.DataType.Time)dt;
+			if(dt instanceof ConsistentDataType.Time) {
+				ConsistentDataType.Time time = (ConsistentDataType.Time)dt;
 				if(time.getTime() == null) {
 					return "";
 				} else {
@@ -1033,8 +1359,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case FLOAT:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.Clazz.Float) {
-				$pkg1_base.$cur_ver_str.core.Clazz.Float fl0at = ($pkg1_base.$cur_ver_str.core.Clazz.Float)dt;
+			if(dt instanceof ConsistentDataType.Float) {
+				ConsistentDataType.Float fl0at = (ConsistentDataType.Float)dt;
 				if(fl0at.getD0uble() == null) {
 					return "";
 				} else {
@@ -1051,8 +1377,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case INTEGER:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.Clazz.Integer) {
-				$pkg1_base.$cur_ver_str.core.Clazz.Integer integer = ($pkg1_base.$cur_ver_str.core.Clazz.Integer)dt;
+			if(dt instanceof ConsistentDataType.Integer) {
+				ConsistentDataType.Integer integer = (ConsistentDataType.Integer)dt;
 				if(integer.getL0ng() == null) {
 					return "";
 				} else {
@@ -1069,8 +1395,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case NUMBER:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.Number) {
-				$pkg1_base.$cur_ver_str.core.DataType.Number number = ($pkg1_base.$cur_ver_str.core.DataType.Number)dt;
+			if(dt instanceof ConsistentDataType.Number) {
+				ConsistentDataType.Number number = (ConsistentDataType.Number)dt;
 				if(number.getNumber() == null) {
 					return "";
 				} else {
@@ -1087,8 +1413,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case BOOLEAN:
-			if(dt instanceof $pkg1_base.$cur_ver_str.core.DataType.Boolean) {
-				$pkg1_base.$cur_ver_str.core.DataType.Boolean b00lean = ($pkg1_base.$cur_ver_str.core.DataType.Boolean)dt;
+			if(dt instanceof ConsistentDataType.Boolean) {
+				ConsistentDataType.Boolean b00lean = (ConsistentDataType.Boolean)dt;
 				if(b00lean.getB00lean() == null) {
 					return "";
 				} else {
@@ -2849,20 +3175,20 @@ print FOUT << "EoS";
 			sb.append("\\"");
 			sb.append(ymdhmsSdf.format(date));
 			sb.append("\\"");
-		} else if($pkg1_base.$cur_ver_str.core.DataType.Text.class.isAssignableFrom(rc)) {
+		} else if(ConsistentDataType.Text.class.isAssignableFrom(rc)) {
 			sb.append("\\"");
-			sb.append(escapeJson((($pkg1_base.$cur_ver_str.core.DataType.Text)rv).getString()));
+			sb.append(escapeJson(((ConsistentDataType.Text)rv).getString()));
 			sb.append("\\"");
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Text.class.isAssignableFrom(rc)) {
 			sb.append("\\"");
 			sb.append(escapeJson((($pkg1_base.$prv_ver_str.core.DataType.Text)rv).getString()));
 			sb.append("\\"");
-		} else if($pkg1_base.$cur_ver_str.core.DataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$cur_ver_str.core.DataType.Boolean)rv).getB00lean().toString());
+		} else if(ConsistentDataType.Boolean.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Boolean)rv).getB00lean().toString());
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Boolean.class.isAssignableFrom(rc)) {
 			sb.append((($pkg1_base.$prv_ver_str.core.DataType.Boolean)rv).getB00lean().toString());
-		} else if($pkg1_base.$cur_ver_str.core.DataType.DateTime.class.isAssignableFrom(rc)) {
-			$pkg1_base.$cur_ver_str.core.DataType.DateTime dateTime = ($pkg1_base.$cur_ver_str.core.DataType.DateTime)rv;
+		} else if(ConsistentDataType.DateTime.class.isAssignableFrom(rc)) {
+			ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
 			if(odt == null) {
 				sb.append("null");
@@ -2883,8 +3209,8 @@ print FOUT << "EoS";
 				sb.append(odt.format(ymdhmszDtf));
 				sb.append("\\"");
 			}
-		} else if($pkg1_base.$cur_ver_str.core.DataType.Date.class.isAssignableFrom(rc)) {
-			$pkg1_base.$cur_ver_str.core.DataType.Date date = ($pkg1_base.$cur_ver_str.core.DataType.Date)rv;
+		} else if(ConsistentDataType.Date.class.isAssignableFrom(rc)) {
+			ConsistentDataType.Date date = (ConsistentDataType.Date)rv;
 			LocalDate ld = date.getDate();
 			if(ld == null) {
 				sb.append("null");
@@ -2905,8 +3231,8 @@ print FOUT << "EoS";
 				sb.append(ld.format(ymdDtf));
 				sb.append("\\"");
 			}
-		} else if($pkg1_base.$cur_ver_str.core.DataType.Time.class.isAssignableFrom(rc)) {
-			$pkg1_base.$cur_ver_str.core.DataType.Time time = ($pkg1_base.$cur_ver_str.core.DataType.Time)rv;
+		} else if(ConsistentDataType.Time.class.isAssignableFrom(rc)) {
+			ConsistentDataType.Time time = (ConsistentDataType.Time)rv;
 			LocalTime lt = time.getTime();
 			if(lt == null) {
 				sb.append("null");
@@ -2927,16 +3253,16 @@ print FOUT << "EoS";
 				sb.append(lt.format(hmsDtf));
 				sb.append("\\"");
 			}
-		} else if($pkg1_base.$cur_ver_str.core.DataType.Number.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$cur_ver_str.core.DataType.Number)rv).getNumber().toString());
+		} else if(ConsistentDataType.Number.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Number)rv).getNumber().toString());
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Number.class.isAssignableFrom(rc)) {
 			sb.append((($pkg1_base.$prv_ver_str.core.DataType.Number)rv).getNumber().toString());
-		} else if($pkg1_base.$cur_ver_str.core.Clazz.Integer.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$cur_ver_str.core.Clazz.Integer)rv).getL0ng().toString());
+		} else if(ConsistentDataType.Integer.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Integer)rv).getL0ng().toString());
 		} else if($pkg1_base.$prv_ver_str.core.Clazz.Integer.class.isAssignableFrom(rc)) {
 			sb.append((($pkg1_base.$prv_ver_str.core.Clazz.Integer)rv).getL0ng().toString());
-		} else if($pkg1_base.$cur_ver_str.core.Clazz.Float.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$cur_ver_str.core.Clazz.Float)rv).getD0uble().toString());
+		} else if(ConsistentDataType.Float.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Float)rv).getD0uble().toString());
 		} else if($pkg1_base.$prv_ver_str.core.Clazz.Float.class.isAssignableFrom(rc)) {
 			sb.append((($pkg1_base.$prv_ver_str.core.Clazz.Float)rv).getD0uble().toString());
 		} else {
@@ -3032,6 +3358,24 @@ foreach my $type_full (sort keys %type_fulls) {
 	my $has_time = 0;
 	my $has_class = 0;
 	my $has_property = 0;
+	my $has_cntn_boolean = 0;
+	my $has_cntn_date = 0;
+	my $has_cntn_date_time = 0;
+	my $has_cntn_float = 0;
+	my $has_cntn_integer = 0;
+	my $has_cntn_number = 0;
+	my $has_cntn_text = 0;
+	my $has_cntn_time = 0;
+	my $has_cntn_url = 0;
+	my $has_nvdt_boolean = 0;
+	my $has_nvdt_date = 0;
+	my $has_nvdt_date_time = 0;
+	my $has_nvdt_float = 0;
+	my $has_nvdt_integer = 0;
+	my $has_nvdt_number = 0;
+	my $has_nvdt_text = 0;
+	my $has_nvdt_time = 0;
+	my $has_cnss_dt = 0;
 	my $has_type = 0;
 	my $type_value = 1;
 
@@ -3339,30 +3683,8 @@ foreach my $type_full (sort keys %type_fulls) {
 	$out_fpath = $out2_dpath . $extension . '/' . $type_name . '.java';
 	open (FOUT, '>' . $out_fpath) or die "can't open $out_fpath: $!";
 	binmode (FOUT, ':utf8');
-	print FOUT "package $type_pkg;\n";
-	print FOUT "\n";
-	if ($has_date) {
-		print FOUT "import java.time.LocalDate;\n";
-	}
-	if ($has_time) {
-		print FOUT "import java.time.LocalTime;\n";
-	}
-	if ($has_date_time) {
-		print FOUT "import java.time.OffsetDateTime;\n";
-	}
-	if ($has_range) {
-		print FOUT "import java.util.List;\n";
-	}
-	if ($has_date_time || $has_date || $has_time || $has_range) {
-		print FOUT "\n";
-	}
-	foreach my $import (sort keys %$imports) {
-		print FOUT "import $import;\n";
-	}
-	if (keys %$imports > 0) {
-		print FOUT "\n";
-	}
 
+	my $buf1 = '';
 	my $extd_str = '';
 	my %extd_names = ();
 	if ($type_name ne 'Clazz' && $type_name ne 'Container'
@@ -3390,18 +3712,18 @@ foreach my $type_full (sort keys %type_fulls) {
 	}
 
 	if ($type2uris{$type_full} =~ /\/\/kyojo\.org\/schemaSpl\//) {
-		print FOUT '@JsonLdContext("http://kyojo.org/schemaSpl")' . "\n";
+		$buf1 .= '@JsonLdContext("http://kyojo.org/schemaSpl")' . "\n";
 	} else {
-		print FOUT '@JsonLdContext("http://schema.org")' . "\n";
+		$buf1 .= '@JsonLdContext("http://schema.org")' . "\n";
 	}
-	print FOUT '@SchemaOrgURI("' . "$type2uris{$type_full}\")\n";
+	$buf1 .= '@SchemaOrgURI("' . "$type2uris{$type_full}\")\n";
 	if ($type_domain) {
 		if (!exists $type_domain->{'http://www.w3.org/2000/01/rdf-schema#label'}) {
 			print "no label\n";
 			die Dumper $type_domain;
 		}
 		my $label = $type_domain->{'http://www.w3.org/2000/01/rdf-schema#label'};
-		print FOUT '@SchemaOrgLabel("' . "$label\")\n";
+		$buf1 .= '@SchemaOrgLabel("' . "$label\")\n";
 		if (!exists $type_domain->{'http://www.w3.org/2000/01/rdf-schema#comment'}) {
 			print "no comment\n";
 			die Dumper $type_domain;
@@ -3413,24 +3735,24 @@ foreach my $type_full (sort keys %type_fulls) {
 		$comment =~ s/\n/\\n/g;
 		my @cmnt_lns = str2ar ($comment);
 		if (@cmnt_lns == 1 && length ($cmnt_lns[0]) < 40) {
-			print FOUT '@SchemaOrgComment("' . "$cmnt_lns[0]\")\n";
+			$buf1 .= '@SchemaOrgComment("' . "$cmnt_lns[0]\")\n";
 		} else {
-			print FOUT '@SchemaOrgComment(""' . "\n";
+			$buf1 .= '@SchemaOrgComment(""' . "\n";
 			for (my $li = 0; $li < @cmnt_lns; $li++) {
 				my $tl = $li < @cmnt_lns - 1 ? '' : ')';
-				print FOUT "		+ \"$cmnt_lns[$li]\"$tl\n";
+				$buf1 .= "		+ \"$cmnt_lns[$li]\"$tl\n";
 			}
 		}
 	}
 	my $cml_name = camelize2 (tableize2 ($type_name), $type_name);
-	print FOUT '@CamelizedName("' . "$cml_name\")\n";
+	$buf1 .= '@CamelizedName("' . "$cml_name\")\n";
 	my $cst_name = constantize2 ($type_name);
-	print FOUT '@ConstantizedName("' . "$cst_name\")\n";
-	print FOUT "public interface $type_name$extd_str {\n";
-	print FOUT "\n";
+	$buf1 .= '@ConstantizedName("' . "$cst_name\")\n";
+	$buf1 .= "public interface $type_name$extd_str {\n";
+	$buf1 .= "\n";
 	if ($type_name ne 'Clazz' && $type_name ne 'Container') {
-		print FOUT "	public String value();\n";
-		print FOUT "\n";
+		$buf1 .= "	public String value();\n";
+		$buf1 .= "\n";
 	}
 
 	if (length $type_name <= 4 || $type_name =~ /[A-Z]{2,}/ || $type_name =~ /(?:id|api|pos|uri|url)/i) {
@@ -3461,6 +3783,340 @@ foreach my $type_full (sort keys %type_fulls) {
 
 		$extd_str = '';
 		%extd_names = ();
+		my $buf2 = '';
+		my $list_native_type = '';
+		my $list_native_pkg = '';
+		if (exists $domain->{'http://schema.org/rangeIncludes'}) {
+			my $rng_incs = $domain->{'http://schema.org/rangeIncludes'};
+			my @rng_inc_keys = sort keys %$rng_incs;
+			foreach my $rng_inc (@rng_inc_keys) {
+				my $p_domain = $domain_uris->{$rng_inc};
+				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				}
+				my $p_domain_type_full = $p_domain->{type_pri};
+				my $p_domain_full = $p_domain_type_full . '.' . $p_domain->{this_name};
+				my $p_domain_type_name = $type2names{$p_domain_type_full};
+				my $pre = '';
+				if ($type_pkg eq $p_domain->{this_pkg}) {
+					if ($type_name eq 'Container' && $p_domain_type_name eq 'Clazz') {
+						$pre = 'Clazz.';
+
+						if ($p_domain->{this_name} eq 'Integer') {
+							$extd_names{'ContainerInteger'} = 1;
+							$has_cntn_integer = 1;
+						} elsif ($p_domain->{this_name} eq 'Float') {
+							$extd_names{'ContainerFloat'} = 1;
+							$has_cntn_float = 1;
+						} elsif ($p_domain->{this_name} eq 'URL') {
+							$extd_names{'ContainerURL'} = 1;
+							$has_cntn_url = 1;
+						}
+					} elsif ($type_name eq 'Clazz' && $p_domain_type_name eq 'Container') {
+						$pre = 'Container.';
+					} elsif ($type_name eq 'Container' && $p_domain_type_name eq 'DataType') {
+						$pre = 'DataType.';
+
+						if ($p_domain->{this_name} eq 'Boolean') {
+							$extd_names{'ContainerBoolean'} = 1;
+							$has_cntn_boolean = 1;
+						} elsif ($p_domain->{this_name} eq 'Date') {
+							$extd_names{'ContainerDate'} = 1;
+							$has_cntn_date = 1;
+						} elsif ($p_domain->{this_name} eq 'DateTime') {
+							$extd_names{'ContainerDateTime'} = 1;
+							$has_cntn_date_time = 1;
+						} elsif ($p_domain->{this_name} eq 'Number') {
+							$extd_names{'ContainerNumber'} = 1;
+							$has_cntn_number = 1;
+						} elsif ($p_domain->{this_name} eq 'Text') {
+							$extd_names{'ContainerText'} = 1;
+							$has_cntn_text = 1;
+						} elsif ($p_domain->{this_name} eq 'Time') {
+							$extd_names{'ContainerTime'} = 1;
+							$has_cntn_time = 1;
+						}
+					}
+				}
+
+				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
+				if ($var_name eq 'boolean') {
+					$var_name = 'b00lean';
+				} elsif ($var_name eq 'class') {
+					$var_name = 'clazz';
+				} elsif ($var_name eq 'double') {
+					$var_name = 'd0uble';
+				} elsif ($var_name eq 'long') {
+					$var_name = 'l0ng';
+				} elsif ($var_name eq 'float') {
+					$var_name = 'fl0at';
+				}
+				my $msd_name = $p_domain->{this_name};
+				if ($msd_name eq 'Boolean') {
+					$msd_name = 'B00lean';
+				} elsif ($msd_name eq 'Class') {
+					$msd_name = 'Clazz';
+				} elsif ($msd_name eq 'Double') {
+					$msd_name = 'D0uble';
+				} elsif ($msd_name eq 'Long') {
+					$msd_name = 'L0ng';
+				} elsif ($msd_name eq 'Float') {
+					$msd_name = 'Fl0at';
+				}
+
+				# [個別対応] core.Clazz.Duration と pending.Container.Duration が同名
+				if ($extension eq 'pending' && $msd_name eq 'Duration') {
+					$pre = $pkg2_base . '.core.Clazz.';
+				}
+
+				# [個別対応] https://schema.org/Action と https://health-lifesci.schema.org/action が同名
+				if ($extension eq 'healthLifesci' && $msd_name eq 'Action') {
+					$pre = $pkg2_base . '.core.Clazz.';
+				}
+
+				$buf2 .= "		/**\n";
+				$buf2 .= "		 * \@see <a href=\"$rng_inc\">$rng_inc</a>\n";
+				$buf2 .= "		 */\n";
+				$buf2 .= "		public $pre$p_domain->{this_name} get${msd_name}();\n";
+				$buf2 .= "		public void set${msd_name}($pre$p_domain->{this_name} ${var_name});\n";
+				$buf2 .= "		public List<$pre$p_domain->{this_name}> get${msd_name}List();\n";
+				$buf2 .= "		public void set${msd_name}List(List<$pre$p_domain->{this_name}> ${var_name}List);\n";
+				$buf2 .= "		public boolean has${msd_name}();\n";
+				$buf2 .= "\n";
+			}
+
+			# getNativeValueに採用する型の順番にsort
+			@rng_inc_keys = sort {
+					my $pda = $domain_uris->{$a};
+					my $pdb = $domain_uris->{$b};
+					my $vna = camelize2 (tableize2 ($pda->{this_name}), $pda->{this_name});
+					my $vnb = camelize2 (tableize2 ($pdb->{this_name}), $pdb->{this_name});
+					# print "sort: $pda,$pdb,$vna,$vnb\n";
+					-($a =~ /\/Text$/) || $b =~ /\/Text$/ ||
+					-($a =~ /\/URL$/) || $b =~ /\/URL$/ ||
+					-($a =~ /\/DateTime$/) || $b =~ /\/DateTime$/ ||
+					-($a =~ /\/Date$/) || $b =~ /\/Date$/ ||
+					-($a =~ /\/Time$/) || $b =~ /\/Time$/ ||
+					-($a =~ /\/Number$/) || $b =~ /\/Number$/ ||
+					-($a =~ /\/Float$/) || $b =~ /\/Float$/ ||
+					-($a =~ /\/Integer$/) || $b =~ /\/Integer$/ ||
+					-($a =~ /\/Boolean$/) || $b =~ /\/Boolean$/ || $a cmp $b;
+				} @rng_inc_keys;
+			foreach my $rng_inc (@rng_inc_keys) {
+				my $p_domain = $domain_uris->{$rng_inc};
+				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				}
+				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
+				if ($var_name eq 'boolean') {
+					$var_name = 'b00lean';
+				} elsif ($var_name eq 'class') {
+					$var_name = 'clazz';
+				}
+
+				if ($var_name eq 'text' || $var_name eq 'url') {
+					$list_native_type = 'String';
+					$list_native_pkg = '';
+					$extd_names{'NativeValueText'} = 1;
+					$has_nvdt_text = 1;
+				} elsif ($var_name eq 'dateTime') {
+					$list_native_type = 'Date';
+					$list_native_pkg = 'java.util.';
+					$extd_names{'NativeValueDateTime'} = 1;
+					$has_nvdt_date_time = 1;
+				} elsif ($var_name eq 'date') {
+					$list_native_type = 'Date';
+					$list_native_pkg = 'java.util.';
+					$extd_names{'NativeValueDate'} = 1;
+					$has_nvdt_date = 1;
+				} elsif ($var_name eq 'time') {
+					$list_native_type = 'Date';
+					$list_native_pkg = 'java.util.';
+					$extd_names{'NativeValueTime'} = 1;
+					$has_nvdt_time = 1;
+				} elsif ($var_name eq 'integer') {
+					$list_native_type = 'Long';
+					$list_native_pkg = '';
+					$extd_names{'NativeValueInteger'} = 1;
+					$has_nvdt_integer = 1;
+				} elsif ($var_name eq 'float') {
+					$list_native_type = 'Double';
+					$list_native_pkg = '';
+					$extd_names{'NativeValueFloat'} = 1;
+					$has_nvdt_float = 1;
+				} elsif ($var_name eq 'number') {
+					$list_native_type = 'BigDecimal';
+					$list_native_pkg = 'java.math.';
+					$extd_names{'NativeValueNumber'} = 1;
+					$has_nvdt_number = 1;
+				} elsif ($var_name eq 'b00lean') {
+					$list_native_type = 'Boolean';
+					$list_native_pkg = 'java.lang.';
+					$extd_names{'NativeValueBoolean'} = 1;
+					$has_nvdt_boolean = 1;
+				} else {
+					$list_native_type = 'String';
+					$list_native_pkg = '';
+					$extd_names{'NativeValueText'} = 1;
+					$has_nvdt_text = 1;
+				}
+				print "var_name=$var_name, list_native_type=$list_native_type\n";
+				last;
+			}
+
+			print "this_name=$domain->{this_name}, list_native_type=$list_native_type\n";
+		}
+
+		if ($domain->{this_name} eq 'Value') {
+			# exit;
+		}
+
+		if (exists $domain->{'http://schema.org/domainIncludes'}) {
+			my $dom_incs = $domain->{'http://schema.org/domainIncludes'};
+			foreach my $dom_inc (sort { $domain_uris->{$a}->{this_name} cmp $domain_uris->{$b}->{this_name} } keys %$dom_incs) {
+				my $p_domain = $domain_uris->{$dom_inc};
+				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				}
+				my $p_domain_type_full = $p_domain->{type_pri};
+				my $p_domain_full = $p_domain_type_full . '.' . $p_domain->{this_name};
+				my $p_domain_type_name = $type2names{$p_domain_type_full};
+				my $pre = '';
+				if ($type_pkg eq $p_domain->{this_pkg}) {
+					if ($type_name eq 'Container' && $p_domain_type_name eq 'Clazz') {
+						$pre = 'Clazz.';
+					} elsif ($type_name eq 'Clazz' && $p_domain_type_name eq 'Container') {
+						$pre = 'Container.';
+					} elsif ($type_name eq 'Container' && $p_domain_type_name eq 'DataType') {
+						$pre = 'DataType.';
+					}
+				}
+
+				# [個別対応]
+				if ($extension eq 'core' && $type_name eq 'Clazz'
+						&& $domain->{this_name} eq 'Physician'
+						&& $p_domain->{this_name} eq 'MedicalSpecialty') {
+					# クラス検索で継承元のものが先に見えてしまうので直接指定
+					# $pre = $pkg2_base . '.healthLifesci.Container.';
+				} elsif ($extension eq 'pending' && $type_name eq 'Clazz'
+						&& $domain->{this_name} eq 'HealthInsurancePlan'
+						&& $p_domain->{this_name} eq 'ContactPoint') {
+					# クラス検索で継承元のものが先に見えてしまうので直接指定
+					# $pre = $pkg2_base . '.core.Container.';
+				} elsif ($extension eq 'bib' && $type_name eq 'Clazz'
+						&& $domain->{this_name} eq 'Audiobook'
+						&& $p_domain->{this_name} eq 'Duration') {
+					# 継承元に同じメソッドがあるので追加しない
+					next;
+				}
+
+				# [個別対応] core.Clazz.Duration と pending.Container.Duration が同名
+				if ($extension eq 'core' && $p_domain->{this_name} eq 'Duration') {
+					$pre = $pkg2_base . '.pending.Container.';
+				}
+
+				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
+				$buf2 .= "		/**\n";
+				$buf2 .= "		 * \@see <a href=\"$dom_inc\">$dom_inc</a>\n";
+				$buf2 .= "		 */\n";
+				$buf2 .= "		public $pre$p_domain->{this_name} get$p_domain->{this_name}();\n";
+				$buf2 .= "		public void set$p_domain->{this_name}($pre$p_domain->{this_name} $var_name);\n";
+				$buf2 .= "\n";
+			}
+		}
+
+		if ($list_native_type ne '') {
+			$buf2 .= "		public $list_native_pkg$list_native_type getNativeValue();\n";
+			$buf2 .= "\n";
+		} else {
+			if ($type_name eq 'DataType') {
+				if ($domain->{this_name} eq 'Boolean') {
+					$buf2 .= "		public java.lang.Boolean getB00lean();\n";
+					$buf2 .= "		public void setB00lean(java.lang.Boolean b00lean);\n";
+					$buf2 .= "		public java.lang.Boolean getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Boolean'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueBoolean'} = 1;
+					$has_nvdt_boolean = 1;
+				} elsif ($domain->{this_name} eq 'DateTime') {
+					$buf2 .= "		public OffsetDateTime getDateTime();\n";
+					$buf2 .= "		public void setDateTime(OffsetDateTime dateTime);\n";
+					$buf2 .= "		public java.util.Date getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.DateTime'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueDateTime'} = 1;
+					$has_nvdt_date_time = 1;
+				} elsif ($domain->{this_name} eq 'Date') {
+					$buf2 .= "		public LocalDate getDate();\n";
+					$buf2 .= "		public void setDate(LocalDate date);\n";
+					$buf2 .= "		public java.sql.Date getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Date'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueDate'} = 1;
+					$has_nvdt_date = 1;
+				} elsif ($domain->{this_name} eq 'Time') {
+					$buf2 .= "		public LocalTime getTime();\n";
+					$buf2 .= "		public void setTime(LocalTime time);\n";
+					$buf2 .= "		public java.sql.Time getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Time'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueTime'} = 1;
+					$has_nvdt_time = 1;
+				} elsif ($domain->{this_name} eq 'Number') {
+					$buf2 .= "		public java.math.BigDecimal getNumber();\n";
+					$buf2 .= "		public void setNumber(java.math.BigDecimal number);\n";
+					$buf2 .= "		public java.math.BigDecimal getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Number'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueNumber'} = 1;
+					$has_nvdt_number = 1;
+				} elsif ($domain->{this_name} eq 'Text') {
+					$buf2 .= "		public String getString();\n";
+					$buf2 .= "		public void setString(String string);\n";
+					$buf2 .= "		public String getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Text'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueText'} = 1;
+					$has_nvdt_text = 1;
+				}
+			} elsif ($type_name eq 'Clazz') {
+				if ($domain->{this_name} eq 'Float') {
+					$buf2 .= "		public Double getD0uble();\n";
+					$buf2 .= "		public void setD0uble(Double d0uble);\n";
+					$buf2 .= "		public Double getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Float'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueFloat'} = 1;
+					$has_nvdt_float = 1;
+				} elsif ($domain->{this_name} eq 'Integer') {
+					$buf2 .= "		public Long getL0ng();\n";
+					$buf2 .= "		public void setL0ng(Long l0ng);\n";
+					$buf2 .= "		public Long getNativeValue();\n";
+					$buf2 .= "\n";
+					$extd_names{'ConsistentDataType.Integer'} = 1;
+					$has_cnss_dt = 1;
+					$extd_names{'NativeValueInteger'} = 1;
+					$has_nvdt_integer = 1;
+				} else {
+					if ($domain->{this_name} ne 'DataType') {
+						$buf2 .= "		public String getString();\n";
+						$buf2 .= "		public void setString(String string);\n";
+						$buf2 .= "		public String getNativeValue();\n";
+						$buf2 .= "\n";
+						$extd_names{'NativeValueText'} = 1;
+						$has_nvdt_text = 1;
+					}
+				}
+			}
+		}
+
 		if (exists $domain->{super_uris}) {
 			my $super_uris = $domain->{super_uris};
 			foreach my $super_uri (sort keys %$super_uris) {
@@ -3531,14 +4187,14 @@ foreach my $type_full (sort keys %type_fulls) {
 		}
 		$extd_str = ' extends ' . join (', ', sort keys %extd_names);
 
-		print FOUT '	@JsonLdContext("http://schema.org")' . "\n";
-		print FOUT '	@SchemaOrgURI("' . "$domain_uri\")\n";
+		$buf1 .= '	@JsonLdContext("http://schema.org")' . "\n";
+		$buf1 .= '	@SchemaOrgURI("' . "$domain_uri\")\n";
 		if (!exists $domain->{'http://www.w3.org/2000/01/rdf-schema#label'}) {
 			print "no label\n";
 			die Dumper $domain;
 		}
 		my $label = $domain->{'http://www.w3.org/2000/01/rdf-schema#label'};
-		print FOUT '	@SchemaOrgLabel("' . "$label\")\n";
+		$buf1 .= '	@SchemaOrgLabel("' . "$label\")\n";
 		if (!exists $domain->{'http://www.w3.org/2000/01/rdf-schema#comment'}) {
 			print "no comment\n";
 			die Dumper $domain;
@@ -3550,283 +4206,35 @@ foreach my $type_full (sort keys %type_fulls) {
 		$comment =~ s/\n/\\n/g;
 		my @cmnt_lns = str2ar ($comment);
 		if (@cmnt_lns == 1 && length ($cmnt_lns[0]) < 40) {
-			print FOUT '	@SchemaOrgComment("' . "$cmnt_lns[0]\")\n";
+			$buf1 .= '	@SchemaOrgComment("' . "$cmnt_lns[0]\")\n";
 		} else {
-			print FOUT '	@SchemaOrgComment(""' . "\n";
+			$buf1 .= '	@SchemaOrgComment(""' . "\n";
 			for (my $li = 0; $li < @cmnt_lns; $li++) {
 				my $tl = $li < @cmnt_lns - 1 ? '' : ')';
-				print FOUT "			+ \"$cmnt_lns[$li]\"$tl\n";
+				$buf1 .= "			+ \"$cmnt_lns[$li]\"$tl\n";
 			}
 		}
 		$cml_name = camelize2 (tableize2 ($domain->{this_name}), $domain->{this_name});
-		print FOUT '	@CamelizedName("' . "$cml_name\")\n";
+		$buf1 .= '	@CamelizedName("' . "$cml_name\")\n";
 		$cst_name = constantize2 ($domain->{this_name});
-		print FOUT '	@ConstantizedName("' . "$cst_name\")\n";
+		$buf1 .= '	@ConstantizedName("' . "$cst_name\")\n";
 		if ($type_name ne 'Clazz' && $type_name ne 'Container') {
 			my $key = "$extension\t$type_name\t$domain->{this_name}";
 			if (exists $type_value_defs{$key}) {
-				print FOUT '	@SampleValue("' . $type_value_defs{$key} . "\")\n";
+				$buf1 .= '	@SampleValue("' . $type_value_defs{$key} . "\")\n";
 				print FTPO "$extension\t$type_name\t$domain->{this_name}\t$type_value_defs{$key}\n";
 			} else {
-				print FOUT '	@SampleValue("' . $type_value . "\")\n";
+				$buf1 .= '	@SampleValue("' . $type_value . "\")\n";
 				print FTPO "$extension\t$type_name\t$domain->{this_name}\t$type_value\n";
 			}
 		}
-		print FOUT "	public interface $domain->{this_name}$extd_str {\n";
-		print FOUT "\n";
+		$buf1 .= "	public interface $domain->{this_name}$extd_str {\n";
+		$buf1 .= "\n";
 
-		my $list_native_type = '';
-		my $list_native_pkg = '';
-		if (exists $domain->{'http://schema.org/rangeIncludes'}) {
-			my $rng_incs = $domain->{'http://schema.org/rangeIncludes'};
-			my @rng_inc_keys = sort keys %$rng_incs;
-			foreach my $rng_inc (@rng_inc_keys) {
-				my $p_domain = $domain_uris->{$rng_inc};
-				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
-					next;
-				}
-				my $p_domain_type_full = $p_domain->{type_pri};
-				my $p_domain_full = $p_domain_type_full . '.' . $p_domain->{this_name};
-				my $p_domain_type_name = $type2names{$p_domain_type_full};
-				my $pre = '';
-				if ($type_pkg eq $p_domain->{this_pkg}) {
-					if ($type_name eq 'Container' && $p_domain_type_name eq 'Clazz') {
-						$pre = 'Clazz.';
-					} elsif ($type_name eq 'Clazz' && $p_domain_type_name eq 'Container') {
-						$pre = 'Container.';
-					} elsif ($type_name eq 'Container' && $p_domain_type_name eq 'DataType') {
-						$pre = 'DataType.';
-					}
-				}
+		$buf1 .= $buf2;
 
-				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
-				if ($var_name eq 'boolean') {
-					$var_name = 'b00lean';
-				} elsif ($var_name eq 'class') {
-					$var_name = 'clazz';
-				} elsif ($var_name eq 'double') {
-					$var_name = 'd0uble';
-				} elsif ($var_name eq 'long') {
-					$var_name = 'l0ng';
-				} elsif ($var_name eq 'float') {
-					$var_name = 'fl0at';
-				}
-				my $msd_name = $p_domain->{this_name};
-				if ($msd_name eq 'Boolean') {
-					$msd_name = 'B00lean';
-				} elsif ($msd_name eq 'Class') {
-					$msd_name = 'Clazz';
-				} elsif ($msd_name eq 'Double') {
-					$msd_name = 'D0uble';
-				} elsif ($msd_name eq 'Long') {
-					$msd_name = 'L0ng';
-				} elsif ($msd_name eq 'Float') {
-					$msd_name = 'Fl0at';
-				}
-
-				# [個別対応] core.Clazz.Duration と pending.Container.Duration が同名
-				if ($extension eq 'pending' && $msd_name eq 'Duration') {
-					$pre = $pkg2_base . '.core.Clazz.';
-				}
-
-				# [個別対応] https://schema.org/Action と https://health-lifesci.schema.org/action が同名
-				if ($extension eq 'healthLifesci' && $msd_name eq 'Action') {
-					$pre = $pkg2_base . '.core.Clazz.';
-				}
-
-				print FOUT "		/**\n";
-				print FOUT "		 * \@see <a href=\"$rng_inc\">$rng_inc</a>\n";
-				print FOUT "		 */\n";
-				print FOUT "		public $pre$p_domain->{this_name} get${msd_name}();\n";
-				print FOUT "		public void set${msd_name}($pre$p_domain->{this_name} ${var_name});\n";
-				print FOUT "		public List<$pre$p_domain->{this_name}> get${msd_name}List();\n";
-				print FOUT "		public void set${msd_name}List(List<$pre$p_domain->{this_name}> ${var_name}List);\n";
-				print FOUT "		public boolean has${msd_name}();\n";
-				print FOUT "\n";
-			}
-
-			# getNativeValueに採用する型の順番にsort
-			@rng_inc_keys = sort {
-					my $pda = $domain_uris->{$a};
-					my $pdb = $domain_uris->{$b};
-					my $vna = camelize2 (tableize2 ($pda->{this_name}), $pda->{this_name});
-					my $vnb = camelize2 (tableize2 ($pdb->{this_name}), $pdb->{this_name});
-					# print "sort: $pda,$pdb,$vna,$vnb\n";
-					-($a =~ /\/Text$/) || $b =~ /\/Text$/ ||
-					-($a =~ /\/URL$/) || $b =~ /\/URL$/ ||
-					-($a =~ /\/DateTime$/) || $b =~ /\/DateTime$/ ||
-					-($a =~ /\/Date$/) || $b =~ /\/Date$/ ||
-					-($a =~ /\/Time$/) || $b =~ /\/Time$/ ||
-					-($a =~ /\/Number$/) || $b =~ /\/Number$/ ||
-					-($a =~ /\/Float$/) || $b =~ /\/Float$/ ||
-					-($a =~ /\/Integer$/) || $b =~ /\/Integer$/ ||
-					-($a =~ /\/Boolean$/) || $b =~ /\/Boolean$/ || $a cmp $b;
-				} @rng_inc_keys;
-			foreach my $rng_inc (@rng_inc_keys) {
-				my $p_domain = $domain_uris->{$rng_inc};
-				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
-					next;
-				}
-				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
-				if ($var_name eq 'boolean') {
-					$var_name = 'b00lean';
-				} elsif ($var_name eq 'class') {
-					$var_name = 'clazz';
-				}
-
-				if ($var_name eq 'text' || $var_name eq 'url') {
-					$list_native_type = 'String';
-					$list_native_pkg = '';
-				} elsif ($var_name eq 'dateTime') {
-					$list_native_type = 'Date';
-					$list_native_pkg = 'java.util.';
-				} elsif ($var_name eq 'date') {
-					$list_native_type = 'Date';
-					$list_native_pkg = 'java.util.';
-				} elsif ($var_name eq 'time') {
-					$list_native_type = 'Date';
-					$list_native_pkg = 'java.util.';
-				} elsif ($var_name eq 'integer') {
-					$list_native_type = 'Long';
-					$list_native_pkg = '';
-				} elsif ($var_name eq 'float') {
-					$list_native_type = 'Double';
-					$list_native_pkg = '';
-				} elsif ($var_name eq 'number') {
-					$list_native_type = 'BigDecimal';
-					$list_native_pkg = 'java.math.';
-				} elsif ($var_name eq 'b00lean') {
-					$list_native_type = 'Boolean';
-					$list_native_pkg = 'java.lang.';
-				} else {
-					$list_native_type = 'String';
-					$list_native_pkg = '';
-				}
-				print "var_name=$var_name, list_native_type=$list_native_type\n";
-				last;
-			}
-
-			print "this_name=$domain->{this_name}, list_native_type=$list_native_type\n";
-		}
-
-		if ($domain->{this_name} eq 'Value') {
-			# exit;
-		}
-
-		if (exists $domain->{'http://schema.org/domainIncludes'}) {
-			my $dom_incs = $domain->{'http://schema.org/domainIncludes'};
-			foreach my $dom_inc (sort { $domain_uris->{$a}->{this_name} cmp $domain_uris->{$b}->{this_name} } keys %$dom_incs) {
-				my $p_domain = $domain_uris->{$dom_inc};
-				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
-					next;
-				}
-				my $p_domain_type_full = $p_domain->{type_pri};
-				my $p_domain_full = $p_domain_type_full . '.' . $p_domain->{this_name};
-				my $p_domain_type_name = $type2names{$p_domain_type_full};
-				my $pre = '';
-				if ($type_pkg eq $p_domain->{this_pkg}) {
-					if ($type_name eq 'Container' && $p_domain_type_name eq 'Clazz') {
-						$pre = 'Clazz.';
-					} elsif ($type_name eq 'Clazz' && $p_domain_type_name eq 'Container') {
-						$pre = 'Container.';
-					} elsif ($type_name eq 'Container' && $p_domain_type_name eq 'DataType') {
-						$pre = 'DataType.';
-					}
-				}
-
-				# [個別対応]
-				if ($extension eq 'core' && $type_name eq 'Clazz'
-						&& $domain->{this_name} eq 'Physician'
-						&& $p_domain->{this_name} eq 'MedicalSpecialty') {
-					# クラス検索で継承元のものが先に見えてしまうので直接指定
-					# $pre = $pkg2_base . '.healthLifesci.Container.';
-				} elsif ($extension eq 'pending' && $type_name eq 'Clazz'
-						&& $domain->{this_name} eq 'HealthInsurancePlan'
-						&& $p_domain->{this_name} eq 'ContactPoint') {
-					# クラス検索で継承元のものが先に見えてしまうので直接指定
-					# $pre = $pkg2_base . '.core.Container.';
-				} elsif ($extension eq 'bib' && $type_name eq 'Clazz'
-						&& $domain->{this_name} eq 'Audiobook'
-						&& $p_domain->{this_name} eq 'Duration') {
-					# 継承元に同じメソッドがあるので追加しない
-					next;
-				}
-
-				# [個別対応] core.Clazz.Duration と pending.Container.Duration が同名
-				if ($extension eq 'core' && $p_domain->{this_name} eq 'Duration') {
-					$pre = $pkg2_base . '.pending.Container.';
-				}
-
-				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
-				print FOUT "		/**\n";
-				print FOUT "		 * \@see <a href=\"$dom_inc\">$dom_inc</a>\n";
-				print FOUT "		 */\n";
-				print FOUT "		public $pre$p_domain->{this_name} get$p_domain->{this_name}();\n";
-				print FOUT "		public void set$p_domain->{this_name}($pre$p_domain->{this_name} $var_name);\n";
-				print FOUT "\n";
-			}
-		}
-
-		if ($list_native_type ne '') {
-			print FOUT "		public $list_native_pkg$list_native_type getNativeValue();\n";
-			print FOUT "\n";
-		} else {
-			if ($type_name eq 'DataType') {
-				if ($domain->{this_name} eq 'Boolean') {
-					print FOUT "		public java.lang.Boolean getB00lean();\n";
-					print FOUT "		public void setB00lean(java.lang.Boolean b00lean);\n";
-					print FOUT "		public java.lang.Boolean getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'DateTime') {
-					print FOUT "		public OffsetDateTime getDateTime();\n";
-					print FOUT "		public void setDateTime(OffsetDateTime dateTime);\n";
-					print FOUT "		public java.util.Date getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'Date') {
-					print FOUT "		public LocalDate getDate();\n";
-					print FOUT "		public void setDate(LocalDate date);\n";
-					print FOUT "		public java.sql.Date getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'Time') {
-					print FOUT "		public LocalTime getTime();\n";
-					print FOUT "		public void setTime(LocalTime time);\n";
-					print FOUT "		public java.sql.Time getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'Number') {
-					print FOUT "		public java.math.BigDecimal getNumber();\n";
-					print FOUT "		public void setNumber(java.math.BigDecimal number);\n";
-					print FOUT "		public java.math.BigDecimal getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'Text') {
-					print FOUT "		public String getString();\n";
-					print FOUT "		public void setString(String string);\n";
-					print FOUT "		public String getNativeValue();\n";
-					print FOUT "\n";
-				}
-			} elsif ($type_name eq 'Clazz') {
-				if ($domain->{this_name} eq 'Float') {
-					print FOUT "		public Double getD0uble();\n";
-					print FOUT "		public void setD0uble(Double d0uble);\n";
-					print FOUT "		public Double getNativeValue();\n";
-					print FOUT "\n";
-				} elsif ($domain->{this_name} eq 'Integer') {
-					print FOUT "		public Long getL0ng();\n";
-					print FOUT "		public void setL0ng(Long l0ng);\n";
-					print FOUT "		public Long getNativeValue();\n";
-					print FOUT "\n";
-				} else {
-					if ($domain->{this_name} ne 'DataType') {
-						print FOUT "		public String getString();\n";
-						print FOUT "		public void setString(String string);\n";
-						print FOUT "		public String getNativeValue();\n";
-						print FOUT "\n";
-					}
-				}
-			}
-		}
-
-		print FOUT "	}\n";
-		print FOUT "\n";
+		$buf1 .= "	}\n";
+		$buf1 .= "\n";
 
 		if (length $label <= 4 || $label =~ /[A-Z]{2,}/ || $label =~ /(?:id|api|pos|uri|url)/i) {
 			print FABB "uri: $domain_uri\n";
@@ -3838,6 +4246,87 @@ foreach my $type_full (sort keys %type_fulls) {
 
 		$type_value++;
 	}
+
+	print FOUT "package $type_pkg;\n";
+	print FOUT "\n";
+	if ($has_date) {
+		print FOUT "import java.time.LocalDate;\n";
+	}
+	if ($has_time) {
+		print FOUT "import java.time.LocalTime;\n";
+	}
+	if ($has_date_time) {
+		print FOUT "import java.time.OffsetDateTime;\n";
+	}
+	if ($has_range) {
+		print FOUT "import java.util.List;\n";
+	}
+	if ($has_date_time || $has_date || $has_time || $has_range) {
+		print FOUT "\n";
+	}
+
+	if ($has_cntn_boolean) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerBoolean"} = 1;
+	}
+	if ($has_cntn_date) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerDate"} = 1;
+	}
+	if ($has_cntn_date_time) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerDateTime"} = 1;
+	}
+	if ($has_cntn_float) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerFloat"} = 1;
+	}
+	if ($has_cntn_integer) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerInteger"} = 1;
+	}
+	if ($has_cntn_number) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerNumber"} = 1;
+	}
+	if ($has_cntn_text) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerText"} = 1;
+	}
+	if ($has_cntn_time) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerTime"} = 1;
+	}
+	if ($has_cntn_url) {
+		$imports->{"$pkg1_base.$cur_ver_str.ContainerURL"} = 1;
+	}
+	if ($has_nvdt_boolean) {
+		$imports->{$pkg1_base . '.NativeValueBoolean'} = 1;
+	}
+	if ($has_nvdt_date) {
+		$imports->{$pkg1_base . '.NativeValueDate'} = 1;
+	}
+	if ($has_nvdt_date_time) {
+		$imports->{$pkg1_base . '.NativeValueDateTime'} = 1;
+	}
+	if ($has_nvdt_float) {
+		$imports->{$pkg1_base . '.NativeValueFloat'} = 1;
+	}
+	if ($has_nvdt_integer) {
+		$imports->{$pkg1_base . '.NativeValueInteger'} = 1;
+	}
+	if ($has_nvdt_number) {
+		$imports->{$pkg1_base . '.NativeValueNumber'} = 1;
+	}
+	if ($has_nvdt_text) {
+		$imports->{$pkg1_base . '.NativeValueText'} = 1;
+	}
+	if ($has_nvdt_time) {
+		$imports->{$pkg1_base . '.NativeValueTime'} = 1;
+	}
+	if ($has_cnss_dt) {
+		$imports->{$pkg1_base . '.ConsistentDataType'} = 1;
+	}
+	foreach my $import (sort keys %$imports) {
+		print FOUT "import $import;\n";
+	}
+	if (keys %$imports > 0) {
+		print FOUT "\n";
+	}
+
+	print FOUT $buf1;
 	print FOUT "}\n";
 
 	close FOUT;

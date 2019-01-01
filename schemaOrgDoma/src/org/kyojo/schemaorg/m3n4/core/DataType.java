@@ -5,8 +5,15 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 
 import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConsistentDataType;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueBoolean;
+import org.kyojo.schemaorg.NativeValueDate;
+import org.kyojo.schemaorg.NativeValueDateTime;
+import org.kyojo.schemaorg.NativeValueNumber;
+import org.kyojo.schemaorg.NativeValueText;
+import org.kyojo.schemaorg.NativeValueTime;
 import org.kyojo.schemaorg.SampleValue;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -27,7 +34,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("boolean")
 	@ConstantizedName("BOOLEAN")
 	@SampleValue("1")
-	public interface Boolean extends DataType {
+	public interface Boolean extends ConsistentDataType.Boolean, DataType, NativeValueBoolean {
 
 		public java.lang.Boolean getB00lean();
 		public void setB00lean(java.lang.Boolean b00lean);
@@ -44,7 +51,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("date")
 	@ConstantizedName("DATE")
 	@SampleValue("2")
-	public interface Date extends DataType {
+	public interface Date extends ConsistentDataType.Date, DataType, NativeValueDate {
 
 		public LocalDate getDate();
 		public void setDate(LocalDate date);
@@ -61,7 +68,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("dateTime")
 	@ConstantizedName("DATE_TIME")
 	@SampleValue("3")
-	public interface DateTime extends DataType {
+	public interface DateTime extends ConsistentDataType.DateTime, DataType, NativeValueDateTime {
 
 		public OffsetDateTime getDateTime();
 		public void setDateTime(OffsetDateTime dateTime);
@@ -76,7 +83,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("number")
 	@ConstantizedName("NUMBER")
 	@SampleValue("4")
-	public interface Number extends DataType {
+	public interface Number extends ConsistentDataType.Number, DataType, NativeValueNumber {
 
 		public java.math.BigDecimal getNumber();
 		public void setNumber(java.math.BigDecimal number);
@@ -91,7 +98,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("text")
 	@ConstantizedName("TEXT")
 	@SampleValue("5")
-	public interface Text extends DataType {
+	public interface Text extends ConsistentDataType.Text, DataType, NativeValueText {
 
 		public String getString();
 		public void setString(String string);
@@ -109,7 +116,7 @@ public interface DataType extends Clazz.DataType {
 	@CamelizedName("time")
 	@ConstantizedName("TIME")
 	@SampleValue("6")
-	public interface Time extends DataType {
+	public interface Time extends ConsistentDataType.Time, DataType, NativeValueTime {
 
 		public LocalTime getTime();
 		public void setTime(LocalTime time);

@@ -12,28 +12,28 @@ import java.time.format.DateTimeFormatter;
 public enum NativeValueDataType {
 
 	TEXT("text", String.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.Text.class,
+			ConsistentDataType.Text.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.Text.class),
 	DATE_TIME("dateTime", OffsetDateTime.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.DateTime.class,
+			ConsistentDataType.DateTime.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.DateTime.class),
 	DATE("date", LocalDate.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.Date.class,
+			ConsistentDataType.Date.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.Date.class),
 	TIME("time", LocalTime.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.Time.class,
+			ConsistentDataType.Time.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.Time.class),
 	FLOAT("fl0at", Double.class,
-			org.kyojo.schemaorg.m3n4.core.Clazz.Float.class,
+			ConsistentDataType.Float.class,
 			org.kyojo.schemaorg.m3n3.core.Clazz.Float.class),
 	INTEGER("integer", Long.class,
-			org.kyojo.schemaorg.m3n4.core.Clazz.Integer.class,
+			ConsistentDataType.Integer.class,
 			org.kyojo.schemaorg.m3n3.core.Clazz.Integer.class),
 	NUMBER("number", BigDecimal.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.Number.class,
+			ConsistentDataType.Number.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.Number.class),
 	BOOLEAN("b00lean", Boolean.class,
-			org.kyojo.schemaorg.m3n4.core.DataType.Boolean.class,
+			ConsistentDataType.Boolean.class,
 			org.kyojo.schemaorg.m3n3.core.DataType.Boolean.class);
 
 	private final String suffix;
@@ -82,8 +82,8 @@ public enum NativeValueDataType {
 
 		switch(nvdt) {
 		case TEXT:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.Text) {
-				org.kyojo.schemaorg.m3n4.core.DataType.Text text = (org.kyojo.schemaorg.m3n4.core.DataType.Text)dt;
+			if(dt instanceof ConsistentDataType.Text) {
+				ConsistentDataType.Text text = (ConsistentDataType.Text)dt;
 				if(text.getString() == null) {
 					return "";
 				} else {
@@ -100,8 +100,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case DATE_TIME:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.DateTime) {
-				org.kyojo.schemaorg.m3n4.core.DataType.DateTime dateTime = (org.kyojo.schemaorg.m3n4.core.DataType.DateTime)dt;
+			if(dt instanceof ConsistentDataType.DateTime) {
+				ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)dt;
 				if(dateTime.getDateTime() == null) {
 					return "";
 				} else {
@@ -120,8 +120,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case DATE:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.Date) {
-				org.kyojo.schemaorg.m3n4.core.DataType.Date date = (org.kyojo.schemaorg.m3n4.core.DataType.Date)dt;
+			if(dt instanceof ConsistentDataType.Date) {
+				ConsistentDataType.Date date = (ConsistentDataType.Date)dt;
 				if(date.getDate() == null) {
 					return "";
 				} else {
@@ -140,8 +140,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case TIME:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.Time) {
-				org.kyojo.schemaorg.m3n4.core.DataType.Time time = (org.kyojo.schemaorg.m3n4.core.DataType.Time)dt;
+			if(dt instanceof ConsistentDataType.Time) {
+				ConsistentDataType.Time time = (ConsistentDataType.Time)dt;
 				if(time.getTime() == null) {
 					return "";
 				} else {
@@ -160,8 +160,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case FLOAT:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.Clazz.Float) {
-				org.kyojo.schemaorg.m3n4.core.Clazz.Float fl0at = (org.kyojo.schemaorg.m3n4.core.Clazz.Float)dt;
+			if(dt instanceof ConsistentDataType.Float) {
+				ConsistentDataType.Float fl0at = (ConsistentDataType.Float)dt;
 				if(fl0at.getD0uble() == null) {
 					return "";
 				} else {
@@ -178,8 +178,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case INTEGER:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.Clazz.Integer) {
-				org.kyojo.schemaorg.m3n4.core.Clazz.Integer integer = (org.kyojo.schemaorg.m3n4.core.Clazz.Integer)dt;
+			if(dt instanceof ConsistentDataType.Integer) {
+				ConsistentDataType.Integer integer = (ConsistentDataType.Integer)dt;
 				if(integer.getL0ng() == null) {
 					return "";
 				} else {
@@ -196,8 +196,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case NUMBER:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.Number) {
-				org.kyojo.schemaorg.m3n4.core.DataType.Number number = (org.kyojo.schemaorg.m3n4.core.DataType.Number)dt;
+			if(dt instanceof ConsistentDataType.Number) {
+				ConsistentDataType.Number number = (ConsistentDataType.Number)dt;
 				if(number.getNumber() == null) {
 					return "";
 				} else {
@@ -214,8 +214,8 @@ public enum NativeValueDataType {
 				return "";
 			}
 		case BOOLEAN:
-			if(dt instanceof org.kyojo.schemaorg.m3n4.core.DataType.Boolean) {
-				org.kyojo.schemaorg.m3n4.core.DataType.Boolean b00lean = (org.kyojo.schemaorg.m3n4.core.DataType.Boolean)dt;
+			if(dt instanceof ConsistentDataType.Boolean) {
+				ConsistentDataType.Boolean b00lean = (ConsistentDataType.Boolean)dt;
 				if(b00lean.getB00lean() == null) {
 					return "";
 				} else {

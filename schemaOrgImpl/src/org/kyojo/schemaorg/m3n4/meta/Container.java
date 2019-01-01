@@ -5,6 +5,7 @@ import java.util.List;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
@@ -85,7 +86,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " expected to be used on.")
 	@CamelizedName("domainIncludes")
 	@ConstantizedName("DOMAIN_INCLUDES")
-	public interface DomainIncludes extends SchemaOrgProperty {
+	public interface DomainIncludes extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Class">http://schema.org/Class</a>
@@ -111,7 +112,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " syntax for reverse properties can be used.")
 	@CamelizedName("inverseOf")
 	@ConstantizedName("INVERSE_OF")
-	public interface InverseOf extends SchemaOrgProperty {
+	public interface InverseOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Property">http://schema.org/Property</a>
@@ -134,7 +135,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " values of the property.")
 	@CamelizedName("rangeIncludes")
 	@ConstantizedName("RANGE_INCLUDES")
-	public interface RangeIncludes extends SchemaOrgProperty {
+	public interface RangeIncludes extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Class">http://schema.org/Class</a>
@@ -157,7 +158,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " it.")
 	@CamelizedName("supersededBy")
 	@ConstantizedName("SUPERSEDED_BY")
-	public interface SupersededBy extends SchemaOrgProperty {
+	public interface SupersededBy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/ActionStatusType">http://schema.org/ActionStatusType</a>

@@ -3,6 +3,7 @@ package org.kyojo.schemaorg.m3n4.auto;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgClass;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -25,7 +26,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Coaches are luxury busses, usually in service for long distance travel.")
 	@CamelizedName("busOrCoach")
 	@ConstantizedName("BUS_OR_COACH")
-	public interface BusOrCoach extends SchemaOrgClass, Vehicle {
+	public interface BusOrCoach extends NativeValueText, SchemaOrgClass, Vehicle {
 
 		/**
 		 * @see <a href="http://schema.org/acrissCode">http://schema.org/acrissCode</a>
@@ -53,7 +54,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " school, or as a taxi.")
 	@CamelizedName("carUsageType")
 	@ConstantizedName("CAR_USAGE_TYPE")
-	public interface CarUsageType extends QualitativeValue, SchemaOrgClass {
+	public interface CarUsageType extends NativeValueText, QualitativeValue, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -68,7 +69,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.")
 	@CamelizedName("motorcycle")
 	@ConstantizedName("MOTORCYCLE")
-	public interface Motorcycle extends SchemaOrgClass, Vehicle {
+	public interface Motorcycle extends NativeValueText, SchemaOrgClass, Vehicle {
 
 		public String getString();
 		public void setString(String string);
@@ -84,7 +85,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " vehicle, or to assist with pedaling.")
 	@CamelizedName("motorizedBicycle")
 	@ConstantizedName("MOTORIZED_BICYCLE")
-	public interface MotorizedBicycle extends SchemaOrgClass, Vehicle {
+	public interface MotorizedBicycle extends NativeValueText, SchemaOrgClass, Vehicle {
 
 		public String getString();
 		public void setString(String string);

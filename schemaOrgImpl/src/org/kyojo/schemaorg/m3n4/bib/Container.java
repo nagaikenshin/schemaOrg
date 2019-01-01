@@ -5,6 +5,8 @@ import java.util.List;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueBoolean;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
@@ -324,7 +326,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Indicates whether the book is an abridged edition.")
 	@CamelizedName("abridged")
 	@ConstantizedName("ABRIDGED")
-	public interface Abridged extends SchemaOrgProperty {
+	public interface Abridged extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -348,7 +350,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " digital paints.")
 	@CamelizedName("artist")
 	@ConstantizedName("ARTIST")
-	public interface Artist extends SchemaOrgProperty {
+	public interface Artist extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -379,7 +381,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The individual who adds color to inked drawings.")
 	@CamelizedName("colorist")
 	@ConstantizedName("COLORIST")
-	public interface Colorist extends SchemaOrgProperty {
+	public interface Colorist extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -410,7 +412,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Qualification, candidature, degree, application that Thesis supports.")
 	@CamelizedName("inSupportOf")
 	@ConstantizedName("IN_SUPPORT_OF")
-	public interface InSupportOf extends SchemaOrgProperty {
+	public interface InSupportOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -433,7 +435,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " complete.")
 	@CamelizedName("inker")
 	@ConstantizedName("INKER")
-	public interface Inker extends SchemaOrgProperty {
+	public interface Inker extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -465,7 +467,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " to artwork.")
 	@CamelizedName("letterer")
 	@ConstantizedName("LETTERER")
-	public interface Letterer extends SchemaOrgProperty {
+	public interface Letterer extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -496,7 +498,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The individual who draws the primary narrative artwork.")
 	@CamelizedName("penciler")
 	@ConstantizedName("PENCILER")
-	public interface Penciler extends SchemaOrgProperty {
+	public interface Penciler extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -527,7 +529,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "An agent associated with the publication event.")
 	@CamelizedName("publishedBy")
 	@ConstantizedName("PUBLISHED_BY")
-	public interface PublishedBy extends SchemaOrgProperty {
+	public interface PublishedBy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -2088,7 +2090,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The publishing division which published the comic.")
 	@CamelizedName("publisherImprint")
 	@ConstantizedName("PUBLISHER_IMPRINT")
-	public interface PublisherImprint extends SchemaOrgProperty {
+	public interface PublisherImprint extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -3631,7 +3633,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A person who reads (performs) the audiobook.")
 	@CamelizedName("readBy")
 	@ConstantizedName("READ_BY")
-	public interface ReadBy extends Actor, SchemaOrgProperty {
+	public interface ReadBy extends Actor, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Patient">http://schema.org/Patient</a>
@@ -3663,7 +3665,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " “On the Origin of Species”")
 	@CamelizedName("translationOfWork")
 	@ConstantizedName("TRANSLATION_OF_WORK")
-	public interface TranslationOfWork extends SchemaOrgProperty {
+	public interface TranslationOfWork extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -4902,7 +4904,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " Variant\".")
 	@CamelizedName("variantCover")
 	@ConstantizedName("VARIANT_COVER")
-	public interface VariantCover extends SchemaOrgProperty {
+	public interface VariantCover extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -4926,7 +4928,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.")
 	@CamelizedName("workTranslation")
 	@ConstantizedName("WORK_TRANSLATION")
-	public interface WorkTranslation extends SchemaOrgProperty {
+	public interface WorkTranslation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>

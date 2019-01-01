@@ -1,8 +1,12 @@
 package org.kyojo.schemaorg.m3n4.core;
 
 import org.kyojo.schemaorg.CamelizedName;
+import org.kyojo.schemaorg.ConsistentDataType;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueFloat;
+import org.kyojo.schemaorg.NativeValueInteger;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgClass;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -133,7 +137,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Reference documentation for application programming interfaces (APIs).")
 	@CamelizedName("apiReference")
 	@ConstantizedName("API_REFERENCE")
-	public interface APIReference extends SchemaOrgClass, TechArticle {
+	public interface APIReference extends NativeValueText, SchemaOrgClass, TechArticle {
 
 		/**
 		 * @see <a href="http://schema.org/assemblyVersion">http://schema.org/assemblyVersion</a>
@@ -171,7 +175,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: About page.")
 	@CamelizedName("aboutPage")
 	@ConstantizedName("ABOUT_PAGE")
-	public interface AboutPage extends SchemaOrgClass, WebPage {
+	public interface AboutPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -189,7 +193,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " AcceptAction.</li>\n</ul>\n")
 	@CamelizedName("acceptAction")
 	@ConstantizedName("ACCEPT_ACTION")
-	public interface AcceptAction extends AllocateAction, SchemaOrgClass {
+	public interface AcceptAction extends AllocateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -210,7 +214,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("accommodation")
 	@ConstantizedName("ACCOMMODATION")
-	public interface Accommodation extends Place, SchemaOrgClass {
+	public interface Accommodation extends NativeValueText, Place, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/amenityFeature">http://schema.org/amenityFeature</a>
@@ -259,7 +263,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/Service\">Service</a>(s).")
 	@CamelizedName("accountingService")
 	@ConstantizedName("ACCOUNTING_SERVICE")
-	public interface AccountingService extends FinancialService, SchemaOrgClass {
+	public interface AccountingService extends FinancialService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -275,7 +279,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " action rather than an ongoing process.")
 	@CamelizedName("achieveAction")
 	@ConstantizedName("ACHIEVE_ACTION")
-	public interface AchieveAction extends Action, SchemaOrgClass {
+	public interface AchieveAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -297,7 +301,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " document</a>.")
 	@CamelizedName("action")
 	@ConstantizedName("ACTION")
-	public interface Action extends SchemaOrgClass, Thing {
+	public interface Action extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/actionStatus">http://schema.org/actionStatus</a>
@@ -377,7 +381,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The status of an Action.")
 	@CamelizedName("actionStatusType")
 	@ConstantizedName("ACTION_STATUS_TYPE")
-	public interface ActionStatusType extends Enumeration, SchemaOrgClass {
+	public interface ActionStatusType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -393,7 +397,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " or turning on a flashlight).")
 	@CamelizedName("activateAction")
 	@ConstantizedName("ACTIVATE_ACTION")
-	public interface ActivateAction extends ControlAction, SchemaOrgClass {
+	public interface ActivateAction extends ControlAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -408,7 +412,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of editing by adding an object to a collection.")
 	@CamelizedName("addAction")
 	@ConstantizedName("ADD_ACTION")
-	public interface AddAction extends SchemaOrgClass, UpdateAction {
+	public interface AddAction extends NativeValueText, SchemaOrgClass, UpdateAction {
 
 		public String getString();
 		public void setString(String string);
@@ -424,7 +428,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " government.")
 	@CamelizedName("administrativeArea")
 	@ConstantizedName("ADMINISTRATIVE_AREA")
-	public interface AdministrativeArea extends Place, SchemaOrgClass {
+	public interface AdministrativeArea extends NativeValueText, Place, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -438,7 +442,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An adult entertainment establishment.")
 	@CamelizedName("adultEntertainment")
 	@ConstantizedName("ADULT_ENTERTAINMENT")
-	public interface AdultEntertainment extends EntertainmentBusiness, SchemaOrgClass {
+	public interface AdultEntertainment extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -455,7 +459,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " used.")
 	@CamelizedName("aggregateOffer")
 	@ConstantizedName("AGGREGATE_OFFER")
-	public interface AggregateOffer extends Offer, SchemaOrgClass {
+	public interface AggregateOffer extends NativeValueText, Offer, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/highPrice">http://schema.org/highPrice</a>
@@ -494,7 +498,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The average rating based on multiple ratings or reviews.")
 	@CamelizedName("aggregateRating")
 	@ConstantizedName("AGGREGATE_RATING")
-	public interface AggregateRating extends Rating, SchemaOrgClass {
+	public interface AggregateRating extends NativeValueText, Rating, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/itemReviewed">http://schema.org/itemReviewed</a>
@@ -528,7 +532,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " to/about an object (a proposition, topic or theme) with participants.")
 	@CamelizedName("agreeAction")
 	@ConstantizedName("AGREE_ACTION")
-	public interface AgreeAction extends ReactAction, SchemaOrgClass {
+	public interface AgreeAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -543,7 +547,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An organization that provides flights for passengers.")
 	@CamelizedName("airline")
 	@ConstantizedName("AIRLINE")
-	public interface Airline extends Organization, SchemaOrgClass {
+	public interface Airline extends NativeValueText, Organization, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/boardingPolicy">http://schema.org/boardingPolicy</a>
@@ -569,7 +573,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An airport.")
 	@CamelizedName("airport")
 	@ConstantizedName("AIRPORT")
-	public interface Airport extends CivicStructure, SchemaOrgClass {
+	public interface Airport extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/iataCode">http://schema.org/iataCode</a>
@@ -597,7 +601,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " node in an educational framework.")
 	@CamelizedName("alignmentObject")
 	@ConstantizedName("ALIGNMENT_OBJECT")
-	public interface AlignmentObject extends Intangible, SchemaOrgClass {
+	public interface AlignmentObject extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/alignmentType">http://schema.org/alignmentType</a>
@@ -642,7 +646,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of organizing tasks/objects/events by associating resources to it.")
 	@CamelizedName("allocateAction")
 	@ConstantizedName("ALLOCATE_ACTION")
-	public interface AllocateAction extends OrganizeAction, SchemaOrgClass {
+	public interface AllocateAction extends NativeValueText, OrganizeAction, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/purpose">http://schema.org/purpose</a>
@@ -662,7 +666,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An amusement park.")
 	@CamelizedName("amusementPark")
 	@ConstantizedName("AMUSEMENT_PARK")
-	public interface AmusementPark extends EntertainmentBusiness, SchemaOrgClass {
+	public interface AmusementPark extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -676,7 +680,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Animal shelter.")
 	@CamelizedName("animalShelter")
 	@ConstantizedName("ANIMAL_SHELTER")
-	public interface AnimalShelter extends LocalBusiness, SchemaOrgClass {
+	public interface AnimalShelter extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -691,7 +695,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.")
 	@CamelizedName("answer")
 	@ConstantizedName("ANSWER")
-	public interface Answer extends Comment, SchemaOrgClass {
+	public interface Answer extends Comment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -709,7 +713,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://en.wikipedia.org/wiki/Apartment\">http://en.wikipedia.org/wiki/Apartment</a>).")
 	@CamelizedName("apartment")
 	@ConstantizedName("APARTMENT")
-	public interface Apartment extends Accommodation, SchemaOrgClass {
+	public interface Apartment extends Accommodation, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
@@ -735,7 +739,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Residence type: Apartment complex.")
 	@CamelizedName("apartmentComplex")
 	@ConstantizedName("APARTMENT_COMPLEX")
-	public interface ApartmentComplex extends Residence, SchemaOrgClass {
+	public interface ApartmentComplex extends NativeValueText, Residence, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -750,7 +754,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of inserting at the end if an ordered collection.")
 	@CamelizedName("appendAction")
 	@ConstantizedName("APPEND_ACTION")
-	public interface AppendAction extends InsertAction, SchemaOrgClass {
+	public interface AppendAction extends InsertAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -770,7 +774,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " accepted.</li>\n</ul>\n")
 	@CamelizedName("applyAction")
 	@ConstantizedName("APPLY_ACTION")
-	public interface ApplyAction extends OrganizeAction, SchemaOrgClass {
+	public interface ApplyAction extends NativeValueText, OrganizeAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -784,7 +788,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Aquarium.")
 	@CamelizedName("aquarium")
 	@ConstantizedName("AQUARIUM")
-	public interface Aquarium extends CivicStructure, SchemaOrgClass {
+	public interface Aquarium extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -800,7 +804,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " fromLocation, optionally with participants.")
 	@CamelizedName("arriveAction")
 	@ConstantizedName("ARRIVE_ACTION")
-	public interface ArriveAction extends MoveAction, SchemaOrgClass {
+	public interface ArriveAction extends MoveAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -814,7 +818,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An art gallery.")
 	@CamelizedName("artGallery")
 	@ConstantizedName("ART_GALLERY")
-	public interface ArtGallery extends EntertainmentBusiness, SchemaOrgClass {
+	public interface ArtGallery extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -833,7 +837,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " post</a>.")
 	@CamelizedName("article")
 	@ConstantizedName("ARTICLE")
-	public interface Article extends CreativeWork, SchemaOrgClass {
+	public interface Article extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/articleBody">http://schema.org/articleBody</a>
@@ -895,7 +899,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("AsciiDoc format source text.")
 	@CamelizedName("asciiDoc")
 	@ConstantizedName("ASCII_DOC")
-	public interface AsciiDoc extends SchemaOrgClass, Text {
+	public interface AsciiDoc extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -913,7 +917,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " response to AskAction.</li>\n</ul>\n")
 	@CamelizedName("askAction")
 	@ConstantizedName("ASK_ACTION")
-	public interface AskAction extends CommunicateAction, SchemaOrgClass {
+	public interface AskAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/question">http://schema.org/question</a>
@@ -934,7 +938,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of forming one's opinion, reaction or sentiment.")
 	@CamelizedName("assessAction")
 	@ConstantizedName("ASSESS_ACTION")
-	public interface AssessAction extends Action, SchemaOrgClass {
+	public interface AssessAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -950,7 +954,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " something).")
 	@CamelizedName("assignAction")
 	@ConstantizedName("ASSIGN_ACTION")
-	public interface AssignAction extends AllocateAction, SchemaOrgClass {
+	public interface AssignAction extends AllocateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -967,7 +971,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " more inclusive and less ambiguous.")
 	@CamelizedName("attorney")
 	@ConstantizedName("ATTORNEY")
-	public interface Attorney extends LegalService, SchemaOrgClass {
+	public interface Attorney extends LegalService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -982,7 +986,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Intended audience for an item, i.e. the group for whom the item was created.")
 	@CamelizedName("audience")
 	@ConstantizedName("AUDIENCE")
-	public interface Audience extends Intangible, SchemaOrgClass {
+	public interface Audience extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/audienceType">http://schema.org/audienceType</a>
@@ -1008,7 +1012,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An audio file.")
 	@CamelizedName("audioObject")
 	@ConstantizedName("AUDIO_OBJECT")
-	public interface AudioObject extends MediaObject, SchemaOrgClass {
+	public interface AudioObject extends MediaObject, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/transcript">http://schema.org/transcript</a>
@@ -1029,7 +1033,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of granting permission to an object.")
 	@CamelizedName("authorizeAction")
 	@ConstantizedName("AUTHORIZE_ACTION")
-	public interface AuthorizeAction extends AllocateAction, SchemaOrgClass {
+	public interface AuthorizeAction extends AllocateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
@@ -1049,7 +1053,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Auto body shop.")
 	@CamelizedName("autoBodyShop")
 	@ConstantizedName("AUTO_BODY_SHOP")
-	public interface AutoBodyShop extends AutomotiveBusiness, SchemaOrgClass {
+	public interface AutoBodyShop extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1063,7 +1067,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An car dealership.")
 	@CamelizedName("autoDealer")
 	@ConstantizedName("AUTO_DEALER")
-	public interface AutoDealer extends AutomotiveBusiness, SchemaOrgClass {
+	public interface AutoDealer extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1077,7 +1081,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An auto parts store.")
 	@CamelizedName("autoPartsStore")
 	@ConstantizedName("AUTO_PARTS_STORE")
-	public interface AutoPartsStore extends AutomotiveBusiness, SchemaOrgClass, Store {
+	public interface AutoPartsStore extends AutomotiveBusiness, NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -1091,7 +1095,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A car rental business.")
 	@CamelizedName("autoRental")
 	@ConstantizedName("AUTO_RENTAL")
-	public interface AutoRental extends AutomotiveBusiness, SchemaOrgClass {
+	public interface AutoRental extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1105,7 +1109,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Car repair business.")
 	@CamelizedName("autoRepair")
 	@ConstantizedName("AUTO_REPAIR")
-	public interface AutoRepair extends AutomotiveBusiness, SchemaOrgClass {
+	public interface AutoRepair extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1119,7 +1123,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A car wash business.")
 	@CamelizedName("autoWash")
 	@ConstantizedName("AUTO_WASH")
-	public interface AutoWash extends AutomotiveBusiness, SchemaOrgClass {
+	public interface AutoWash extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1133,7 +1137,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("ATM/cash machine.")
 	@CamelizedName("automatedTeller")
 	@ConstantizedName("AUTOMATED_TELLER")
-	public interface AutomatedTeller extends FinancialService, SchemaOrgClass {
+	public interface AutomatedTeller extends FinancialService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1147,7 +1151,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Car repair, sales, or parts.")
 	@CamelizedName("automotiveBusiness")
 	@ConstantizedName("AUTOMOTIVE_BUSINESS")
-	public interface AutomotiveBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface AutomotiveBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1161,7 +1165,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bakery.")
 	@CamelizedName("bakery")
 	@ConstantizedName("BAKERY")
-	public interface Bakery extends FoodEstablishment, SchemaOrgClass {
+	public interface Bakery extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1177,7 +1181,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " transfer money and in some cases be paid interest.")
 	@CamelizedName("bankAccount")
 	@ConstantizedName("BANK_ACCOUNT")
-	public interface BankAccount extends FinancialProduct, SchemaOrgClass {
+	public interface BankAccount extends FinancialProduct, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/accountMinimumInflow">http://schema.org/accountMinimumInflow</a>
@@ -1209,7 +1213,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Bank or credit union.")
 	@CamelizedName("bankOrCreditUnion")
 	@ConstantizedName("BANK_OR_CREDIT_UNION")
-	public interface BankOrCreditUnion extends FinancialService, SchemaOrgClass {
+	public interface BankOrCreditUnion extends FinancialService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1223,7 +1227,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bar or pub.")
 	@CamelizedName("barOrPub")
 	@ConstantizedName("BAR_OR_PUB")
-	public interface BarOrPub extends FoodEstablishment, SchemaOrgClass {
+	public interface BarOrPub extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1238,7 +1242,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An image of a visual machine-readable code such as a barcode or QR code.")
 	@CamelizedName("barcode")
 	@ConstantizedName("BARCODE")
-	public interface Barcode extends ImageObject, SchemaOrgClass {
+	public interface Barcode extends ImageObject, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1252,7 +1256,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Beach.")
 	@CamelizedName("beach")
 	@ConstantizedName("BEACH")
-	public interface Beach extends CivicStructure, SchemaOrgClass {
+	public interface Beach extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1266,7 +1270,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Beauty salon.")
 	@CamelizedName("beautySalon")
 	@ConstantizedName("BEAUTY_SALON")
-	public interface BeautySalon extends HealthAndBeautyBusiness, SchemaOrgClass {
+	public interface BeautySalon extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1283,7 +1287,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("bedAndBreakfast")
 	@ConstantizedName("BED_AND_BREAKFAST")
-	public interface BedAndBreakfast extends LodgingBusiness, SchemaOrgClass {
+	public interface BedAndBreakfast extends LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1302,7 +1306,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " development).")
 	@CamelizedName("bedDetails")
 	@ConstantizedName("BED_DETAILS")
-	public interface BedDetails extends Intangible, SchemaOrgClass {
+	public interface BedDetails extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberOfBeds">http://schema.org/numberOfBeds</a>
@@ -1333,7 +1337,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " BefriendAction implies that the connection is reciprocal.</li>\n</ul>\n")
 	@CamelizedName("befriendAction")
 	@ConstantizedName("BEFRIEND_ACTION")
-	public interface BefriendAction extends InteractAction, SchemaOrgClass {
+	public interface BefriendAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1347,7 +1351,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bike store.")
 	@CamelizedName("bikeStore")
 	@ConstantizedName("BIKE_STORE")
-	public interface BikeStore extends SchemaOrgClass, Store {
+	public interface BikeStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -1361,7 +1365,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A blog.")
 	@CamelizedName("blog")
 	@ConstantizedName("BLOG")
-	public interface Blog extends CreativeWork, SchemaOrgClass {
+	public interface Blog extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/blogPost">http://schema.org/blogPost</a>
@@ -1387,7 +1391,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A blog post.")
 	@CamelizedName("blogPosting")
 	@ConstantizedName("BLOG_POSTING")
-	public interface BlogPosting extends SchemaOrgClass, SocialMediaPosting {
+	public interface BlogPosting extends NativeValueText, SchemaOrgClass, SocialMediaPosting {
 
 		public String getString();
 		public void setString(String string);
@@ -1402,7 +1406,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A type of boarding policy used by an airline.")
 	@CamelizedName("boardingPolicyType")
 	@ConstantizedName("BOARDING_POLICY_TYPE")
-	public interface BoardingPolicyType extends Enumeration, SchemaOrgClass {
+	public interface BoardingPolicyType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1417,7 +1421,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A body of water, such as a sea, ocean, or lake.")
 	@CamelizedName("bodyOfWater")
 	@ConstantizedName("BODY_OF_WATER")
-	public interface BodyOfWater extends Landform, SchemaOrgClass {
+	public interface BodyOfWater extends Landform, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1431,7 +1435,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A book.")
 	@CamelizedName("book")
 	@ConstantizedName("BOOK")
-	public interface Book extends CreativeWork, SchemaOrgClass {
+	public interface Book extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/abridged">http://schema.org/abridged</a>
@@ -1481,7 +1485,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The publication format of the book.")
 	@CamelizedName("bookFormatType")
 	@ConstantizedName("BOOK_FORMAT_TYPE")
-	public interface BookFormatType extends Enumeration, SchemaOrgClass {
+	public interface BookFormatType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1496,7 +1500,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A series of books. Included books can be indicated with the hasPart property.")
 	@CamelizedName("bookSeries")
 	@ConstantizedName("BOOK_SERIES")
-	public interface BookSeries extends CreativeWorkSeries, SchemaOrgClass {
+	public interface BookSeries extends CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1510,7 +1514,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bookstore.")
 	@CamelizedName("bookStore")
 	@ConstantizedName("BOOK_STORE")
-	public interface BookStore extends SchemaOrgClass, Store {
+	public interface BookStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -1525,7 +1529,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An agent bookmarks/flags/labels/tags/marks an object.")
 	@CamelizedName("bookmarkAction")
 	@ConstantizedName("BOOKMARK_ACTION")
-	public interface BookmarkAction extends OrganizeAction, SchemaOrgClass {
+	public interface BookmarkAction extends NativeValueText, OrganizeAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1544,7 +1548,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " BorrowAction.</li>\n</ul>\n")
 	@CamelizedName("borrowAction")
 	@ConstantizedName("BORROW_ACTION")
-	public interface BorrowAction extends SchemaOrgClass, TransferAction {
+	public interface BorrowAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/lender">http://schema.org/lender</a>
@@ -1564,7 +1568,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bowling alley.")
 	@CamelizedName("bowlingAlley")
 	@ConstantizedName("BOWLING_ALLEY")
-	public interface BowlingAlley extends SchemaOrgClass, SportsActivityLocation {
+	public interface BowlingAlley extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -1580,7 +1584,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " product, product group, or similar.")
 	@CamelizedName("brand")
 	@ConstantizedName("BRAND")
-	public interface Brand extends Intangible, SchemaOrgClass {
+	public interface Brand extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
@@ -1626,7 +1630,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the first item in the list.")
 	@CamelizedName("breadcrumbList")
 	@ConstantizedName("BREADCRUMB_LIST")
-	public interface BreadcrumbList extends ItemList, SchemaOrgClass {
+	public interface BreadcrumbList extends ItemList, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1640,7 +1644,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Brewery.")
 	@CamelizedName("brewery")
 	@ConstantizedName("BREWERY")
-	public interface Brewery extends FoodEstablishment, SchemaOrgClass {
+	public interface Brewery extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1654,7 +1658,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bridge.")
 	@CamelizedName("bridge")
 	@ConstantizedName("BRIDGE")
-	public interface Bridge extends CivicStructure, SchemaOrgClass {
+	public interface Bridge extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1669,7 +1673,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.")
 	@CamelizedName("broadcastChannel")
 	@ConstantizedName("BROADCAST_CHANNEL")
-	public interface BroadcastChannel extends Intangible, SchemaOrgClass {
+	public interface BroadcastChannel extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/broadcastChannelId">http://schema.org/broadcastChannelId</a>
@@ -1720,7 +1724,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An over the air or online broadcast event.")
 	@CamelizedName("broadcastEvent")
 	@ConstantizedName("BROADCAST_EVENT")
-	public interface BroadcastEvent extends PublicationEvent, SchemaOrgClass {
+	public interface BroadcastEvent extends NativeValueText, PublicationEvent, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/broadcastOfEvent">http://schema.org/broadcastOfEvent</a>
@@ -1754,7 +1758,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " or online.")
 	@CamelizedName("broadcastService")
 	@ConstantizedName("BROADCAST_SERVICE")
-	public interface BroadcastService extends SchemaOrgClass, Service {
+	public interface BroadcastService extends NativeValueText, SchemaOrgClass, Service {
 
 		/**
 		 * @see <a href="http://schema.org/broadcastAffiliateOf">http://schema.org/broadcastAffiliateOf</a>
@@ -1816,7 +1820,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A Buddhist temple.")
 	@CamelizedName("buddhistTemple")
 	@ConstantizedName("BUDDHIST_TEMPLE")
-	public interface BuddhistTemple extends PlaceOfWorship, SchemaOrgClass {
+	public interface BuddhistTemple extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1834,7 +1838,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("busReservation")
 	@ConstantizedName("BUS_RESERVATION")
-	public interface BusReservation extends Reservation, SchemaOrgClass {
+	public interface BusReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1848,7 +1852,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bus station.")
 	@CamelizedName("busStation")
 	@ConstantizedName("BUS_STATION")
-	public interface BusStation extends CivicStructure, SchemaOrgClass {
+	public interface BusStation extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1862,7 +1866,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A bus stop.")
 	@CamelizedName("busStop")
 	@ConstantizedName("BUS_STOP")
-	public interface BusStop extends CivicStructure, SchemaOrgClass {
+	public interface BusStop extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1876,7 +1880,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A trip on a commercial bus line.")
 	@CamelizedName("busTrip")
 	@ConstantizedName("BUS_TRIP")
-	public interface BusTrip extends SchemaOrgClass, Trip {
+	public interface BusTrip extends NativeValueText, SchemaOrgClass, Trip {
 
 		/**
 		 * @see <a href="http://schema.org/arrivalBusStop">http://schema.org/arrivalBusStop</a>
@@ -1916,7 +1920,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " target audience.")
 	@CamelizedName("businessAudience")
 	@ConstantizedName("BUSINESS_AUDIENCE")
-	public interface BusinessAudience extends Audience, SchemaOrgClass {
+	public interface BusinessAudience extends Audience, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberOfEmployees">http://schema.org/numberOfEmployees</a>
@@ -1953,7 +1957,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#Business</li>\n<li>http://purl.org/goodrelations/v1#Enduser</li>\n<li>http://purl.org/goodrelations/v1#PublicInstitution</li>\n<li>http://purl.org/goodrelations/v1#Reseller</li>\n</ul>\n")
 	@CamelizedName("businessEntityType")
 	@ConstantizedName("BUSINESS_ENTITY_TYPE")
-	public interface BusinessEntityType extends Enumeration, SchemaOrgClass {
+	public interface BusinessEntityType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1967,7 +1971,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Business event.")
 	@CamelizedName("businessEvent")
 	@ConstantizedName("BUSINESS_EVENT")
-	public interface BusinessEvent extends Event, SchemaOrgClass {
+	public interface BusinessEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -1988,7 +1992,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ConstructionInstallation</li>\n<li>http://purl.org/goodrelations/v1#Dispose</li>\n<li>http://purl.org/goodrelations/v1#LeaseOut</li>\n<li>http://purl.org/goodrelations/v1#Maintain</li>\n<li>http://purl.org/goodrelations/v1#ProvideService</li>\n<li>http://purl.org/goodrelations/v1#Repair</li>\n<li>http://purl.org/goodrelations/v1#Sell</li>\n<li>http://purl.org/goodrelations/v1#Buy</li>\n</ul>\n")
 	@CamelizedName("businessFunction")
 	@ConstantizedName("BUSINESS_FUNCTION")
-	public interface BusinessFunction extends Enumeration, SchemaOrgClass {
+	public interface BusinessFunction extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2005,7 +2009,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Reciprocal of SellAction.")
 	@CamelizedName("buyAction")
 	@ConstantizedName("BUY_ACTION")
-	public interface BuyAction extends SchemaOrgClass, TradeAction {
+	public interface BuyAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/seller">http://schema.org/seller</a>
@@ -2027,7 +2031,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " may be via cable or satellite.")
 	@CamelizedName("cableOrSatelliteService")
 	@ConstantizedName("CABLE_OR_SATELLITE_SERVICE")
-	public interface CableOrSatelliteService extends SchemaOrgClass, Service {
+	public interface CableOrSatelliteService extends NativeValueText, SchemaOrgClass, Service {
 
 		public String getString();
 		public void setString(String string);
@@ -2041,7 +2045,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A cafe or coffee shop.")
 	@CamelizedName("cafeOrCoffeeShop")
 	@ConstantizedName("CAFE_OR_COFFEE_SHOP")
-	public interface CafeOrCoffeeShop extends FoodEstablishment, SchemaOrgClass {
+	public interface CafeOrCoffeeShop extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2066,7 +2070,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " use of schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("campground")
 	@ConstantizedName("CAMPGROUND")
-	public interface Campground extends CivicStructure, LodgingBusiness, SchemaOrgClass {
+	public interface Campground extends CivicStructure, LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2084,7 +2088,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("campingPitch")
 	@ConstantizedName("CAMPING_PITCH")
-	public interface CampingPitch extends Accommodation, SchemaOrgClass {
+	public interface CampingPitch extends Accommodation, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2098,7 +2102,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A canal, like the Panama Canal.")
 	@CamelizedName("canal")
 	@ConstantizedName("CANAL")
-	public interface Canal extends BodyOfWater, SchemaOrgClass {
+	public interface Canal extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2116,7 +2120,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " The antonym of CancelAction.</li>\n</ul>\n")
 	@CamelizedName("cancelAction")
 	@ConstantizedName("CANCEL_ACTION")
-	public interface CancelAction extends PlanAction, SchemaOrgClass {
+	public interface CancelAction extends NativeValueText, PlanAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2131,7 +2135,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A car is a wheeled, self-powered motor vehicle used for transportation.")
 	@CamelizedName("car")
 	@ConstantizedName("CAR")
-	public interface Car extends SchemaOrgClass, Vehicle {
+	public interface Car extends NativeValueText, SchemaOrgClass, Vehicle {
 
 		/**
 		 * @see <a href="http://schema.org/acrissCode">http://schema.org/acrissCode</a>
@@ -2157,7 +2161,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A casino.")
 	@CamelizedName("casino")
 	@ConstantizedName("CASINO")
-	public interface Casino extends EntertainmentBusiness, SchemaOrgClass {
+	public interface Casino extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2171,7 +2175,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A Catholic church.")
 	@CamelizedName("catholicChurch")
 	@ConstantizedName("CATHOLIC_CHURCH")
-	public interface CatholicChurch extends PlaceOfWorship, SchemaOrgClass {
+	public interface CatholicChurch extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2185,7 +2189,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A graveyard.")
 	@CamelizedName("cemetery")
 	@ConstantizedName("CEMETERY")
-	public interface Cemetery extends CivicStructure, SchemaOrgClass {
+	public interface Cemetery extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2201,7 +2205,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " accuracy, quality, condition, or state.")
 	@CamelizedName("checkAction")
 	@ConstantizedName("CHECK_ACTION")
-	public interface CheckAction extends FindAction, SchemaOrgClass {
+	public interface CheckAction extends FindAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2229,7 +2233,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " validity/existence.</li>\n</ul>\n")
 	@CamelizedName("checkInAction")
 	@ConstantizedName("CHECK_IN_ACTION")
-	public interface CheckInAction extends CommunicateAction, SchemaOrgClass {
+	public interface CheckInAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2254,7 +2258,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " previously reserved service.</li>\n</ul>\n")
 	@CamelizedName("checkOutAction")
 	@ConstantizedName("CHECK_OUT_ACTION")
-	public interface CheckOutAction extends CommunicateAction, SchemaOrgClass {
+	public interface CheckOutAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2268,7 +2272,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Checkout page.")
 	@CamelizedName("checkoutPage")
 	@ConstantizedName("CHECKOUT_PAGE")
-	public interface CheckoutPage extends SchemaOrgClass, WebPage {
+	public interface CheckoutPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -2282,7 +2286,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A Childcare center.")
 	@CamelizedName("childCare")
 	@ConstantizedName("CHILD_CARE")
-	public interface ChildCare extends LocalBusiness, SchemaOrgClass {
+	public interface ChildCare extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2296,7 +2300,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Children's event.")
 	@CamelizedName("childrensEvent")
 	@ConstantizedName("CHILDRENS_EVENT")
-	public interface ChildrensEvent extends Event, SchemaOrgClass {
+	public interface ChildrensEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2312,7 +2316,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " set of choices/options.")
 	@CamelizedName("chooseAction")
 	@ConstantizedName("CHOOSE_ACTION")
-	public interface ChooseAction extends AssessAction, SchemaOrgClass {
+	public interface ChooseAction extends AssessAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actionOption">http://schema.org/actionOption</a>
@@ -2332,7 +2336,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A church.")
 	@CamelizedName("church")
 	@ConstantizedName("CHURCH")
-	public interface Church extends PlaceOfWorship, SchemaOrgClass {
+	public interface Church extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2346,7 +2350,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A city or town.")
 	@CamelizedName("city")
 	@ConstantizedName("CITY")
-	public interface City extends AdministrativeArea, SchemaOrgClass {
+	public interface City extends AdministrativeArea, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2360,7 +2364,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A city hall.")
 	@CamelizedName("cityHall")
 	@ConstantizedName("CITY_HALL")
-	public interface CityHall extends GovernmentBuilding, SchemaOrgClass {
+	public interface CityHall extends GovernmentBuilding, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2375,7 +2379,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A public structure, such as a town hall or concert hall.")
 	@CamelizedName("civicStructure")
 	@ConstantizedName("CIVIC_STRUCTURE")
-	public interface CivicStructure extends Place, SchemaOrgClass {
+	public interface CivicStructure extends NativeValueText, Place, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/openingHours">http://schema.org/openingHours</a>
@@ -2397,7 +2401,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " (referenced via itemReviewed).")
 	@CamelizedName("claimReview")
 	@ConstantizedName("CLAIM_REVIEW")
-	public interface ClaimReview extends Review, SchemaOrgClass {
+	public interface ClaimReview extends NativeValueText, Review, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/claimReviewed">http://schema.org/claimReviewed</a>
@@ -2418,7 +2422,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A short TV or radio program or a segment/part of a program.")
 	@CamelizedName("clip")
 	@ConstantizedName("CLIP")
-	public interface Clip extends CreativeWork, SchemaOrgClass {
+	public interface Clip extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -2474,7 +2478,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A clothing store.")
 	@CamelizedName("clothingStore")
 	@ConstantizedName("CLOTHING_STORE")
-	public interface ClothingStore extends SchemaOrgClass, Store {
+	public interface ClothingStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -2488,7 +2492,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Collection page.")
 	@CamelizedName("collectionPage")
 	@ConstantizedName("COLLECTION_PAGE")
-	public interface CollectionPage extends SchemaOrgClass, WebPage {
+	public interface CollectionPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -2503,7 +2507,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A college, university, or other third-level educational institution.")
 	@CamelizedName("collegeOrUniversity")
 	@ConstantizedName("COLLEGE_OR_UNIVERSITY")
-	public interface CollegeOrUniversity extends EducationalOrganization, SchemaOrgClass {
+	public interface CollegeOrUniversity extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2517,7 +2521,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A comedy club.")
 	@CamelizedName("comedyClub")
 	@ConstantizedName("COMEDY_CLUB")
-	public interface ComedyClub extends EntertainmentBusiness, SchemaOrgClass {
+	public interface ComedyClub extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2531,7 +2535,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Comedy event.")
 	@CamelizedName("comedyEvent")
 	@ConstantizedName("COMEDY_EVENT")
-	public interface ComedyEvent extends Event, SchemaOrgClass {
+	public interface ComedyEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2550,7 +2554,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " shared with all CreativeWorks.")
 	@CamelizedName("comment")
 	@ConstantizedName("COMMENT")
-	public interface Comment extends CreativeWork, SchemaOrgClass {
+	public interface Comment extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/downvoteCount">http://schema.org/downvoteCount</a>
@@ -2583,7 +2587,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of generating a comment about a subject.")
 	@CamelizedName("commentAction")
 	@ConstantizedName("COMMENT_ACTION")
-	public interface CommentAction extends CommunicateAction, SchemaOrgClass {
+	public interface CommentAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/resultComment">http://schema.org/resultComment</a>
@@ -2605,7 +2609,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " (instrument) such as speech, email, or telephone conversation.")
 	@CamelizedName("communicateAction")
 	@ConstantizedName("COMMUNICATE_ACTION")
-	public interface CommunicateAction extends InteractAction, SchemaOrgClass {
+	public interface CommunicateAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
@@ -2641,7 +2645,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " of a price component (e.g. \"electricity\" or \"final cleaning\").")
 	@CamelizedName("compoundPriceSpecification")
 	@ConstantizedName("COMPOUND_PRICE_SPECIFICATION")
-	public interface CompoundPriceSpecification extends PriceSpecification, SchemaOrgClass {
+	public interface CompoundPriceSpecification extends NativeValueText, PriceSpecification, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/priceComponent">http://schema.org/priceComponent</a>
@@ -2665,7 +2669,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/Language\">Language</a> type.")
 	@CamelizedName("computerLanguage")
 	@ConstantizedName("COMPUTER_LANGUAGE")
-	public interface ComputerLanguage extends Intangible, SchemaOrgClass {
+	public interface ComputerLanguage extends Intangible, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2679,7 +2683,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A computer store.")
 	@CamelizedName("computerStore")
 	@ConstantizedName("COMPUTER_STORE")
-	public interface ComputerStore extends SchemaOrgClass, Store {
+	public interface ComputerStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -2697,7 +2701,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " The antonym of ConfirmAction.</li>\n</ul>\n")
 	@CamelizedName("confirmAction")
 	@ConstantizedName("CONFIRM_ACTION")
-	public interface ConfirmAction extends InformAction, SchemaOrgClass {
+	public interface ConfirmAction extends InformAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2712,7 +2716,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of ingesting information/resources/food.")
 	@CamelizedName("consumeAction")
 	@ConstantizedName("CONSUME_ACTION")
-	public interface ConsumeAction extends Action, SchemaOrgClass {
+	public interface ConsumeAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actionAccessibilityRequirement">http://schema.org/actionAccessibilityRequirement</a>
@@ -2738,7 +2742,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Contact page.")
 	@CamelizedName("contactPage")
 	@ConstantizedName("CONTACT_PAGE")
-	public interface ContactPage extends SchemaOrgClass, WebPage {
+	public interface ContactPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -2753,7 +2757,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A contact point&#x2014;for example, a Customer Complaints department.")
 	@CamelizedName("contactPoint")
 	@ConstantizedName("CONTACT_POINT")
-	public interface ContactPoint extends SchemaOrgClass, StructuredValue {
+	public interface ContactPoint extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/areaServed">http://schema.org/areaServed</a>
@@ -2822,7 +2826,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Enumerated options related to a ContactPoint.")
 	@CamelizedName("contactPointOption")
 	@ConstantizedName("CONTACT_POINT_OPTION")
-	public interface ContactPointOption extends Enumeration, SchemaOrgClass {
+	public interface ContactPointOption extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2837,7 +2841,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "One of the continents (for example, Europe or Africa).")
 	@CamelizedName("continent")
 	@ConstantizedName("CONTINENT")
-	public interface Continent extends Landform, SchemaOrgClass {
+	public interface Continent extends Landform, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2852,7 +2856,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An agent controls a device or application.")
 	@CamelizedName("controlAction")
 	@ConstantizedName("CONTROL_ACTION")
-	public interface ControlAction extends Action, SchemaOrgClass {
+	public interface ControlAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2866,7 +2870,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A convenience store.")
 	@CamelizedName("convenienceStore")
 	@ConstantizedName("CONVENIENCE_STORE")
-	public interface ConvenienceStore extends SchemaOrgClass, Store {
+	public interface ConvenienceStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -2883,7 +2887,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " properties.")
 	@CamelizedName("conversation")
 	@ConstantizedName("CONVERSATION")
-	public interface Conversation extends CreativeWork, SchemaOrgClass {
+	public interface Conversation extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2897,7 +2901,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of producing/preparing food.")
 	@CamelizedName("cookAction")
 	@ConstantizedName("COOK_ACTION")
-	public interface CookAction extends CreateAction, SchemaOrgClass {
+	public interface CookAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/foodEstablishment">http://schema.org/foodEstablishment</a>
@@ -2929,7 +2933,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Organization: A business corporation.")
 	@CamelizedName("corporation")
 	@ConstantizedName("CORPORATION")
-	public interface Corporation extends Organization, SchemaOrgClass {
+	public interface Corporation extends NativeValueText, Organization, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/tickerSymbol">http://schema.org/tickerSymbol</a>
@@ -2949,7 +2953,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A country.")
 	@CamelizedName("country")
 	@ConstantizedName("COUNTRY")
-	public interface Country extends AdministrativeArea, SchemaOrgClass {
+	public interface Country extends AdministrativeArea, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -2969,7 +2973,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " learners.")
 	@CamelizedName("course")
 	@ConstantizedName("COURSE")
-	public interface Course extends CreativeWork, SchemaOrgClass {
+	public interface Course extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/courseCode">http://schema.org/courseCode</a>
@@ -3011,7 +3015,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " different media or modes of study or to a specific section of students.")
 	@CamelizedName("courseInstance")
 	@ConstantizedName("COURSE_INSTANCE")
-	public interface CourseInstance extends Event, SchemaOrgClass {
+	public interface CourseInstance extends Event, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/courseMode">http://schema.org/courseMode</a>
@@ -3037,7 +3041,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A courthouse.")
 	@CamelizedName("courthouse")
 	@ConstantizedName("COURTHOUSE")
-	public interface Courthouse extends GovernmentBuilding, SchemaOrgClass {
+	public interface Courthouse extends GovernmentBuilding, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3053,7 +3057,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the agent.")
 	@CamelizedName("createAction")
 	@ConstantizedName("CREATE_ACTION")
-	public interface CreateAction extends Action, SchemaOrgClass {
+	public interface CreateAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3069,7 +3073,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " software programs, etc.")
 	@CamelizedName("creativeWork")
 	@ConstantizedName("CREATIVE_WORK")
-	public interface CreativeWork extends SchemaOrgClass, Thing {
+	public interface CreativeWork extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
@@ -3600,7 +3604,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A media season e.g. tv, radio, video game etc.")
 	@CamelizedName("creativeWorkSeason")
 	@ConstantizedName("CREATIVE_WORK_SEASON")
-	public interface CreativeWorkSeason extends CreativeWork, SchemaOrgClass {
+	public interface CreativeWorkSeason extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -3697,7 +3701,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " seem appropriate.")
 	@CamelizedName("creativeWorkSeries")
 	@ConstantizedName("CREATIVE_WORK_SERIES")
-	public interface CreativeWorkSeries extends CreativeWork, SchemaOrgClass, Series {
+	public interface CreativeWorkSeries extends CreativeWork, NativeValueText, SchemaOrgClass, Series {
 
 		/**
 		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
@@ -3733,7 +3737,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#AmericanExpress</li>\n<li>http://purl.org/goodrelations/v1#DinersClub</li>\n<li>http://purl.org/goodrelations/v1#Discover</li>\n<li>http://purl.org/goodrelations/v1#JCB</li>\n<li>http://purl.org/goodrelations/v1#MasterCard</li>\n<li>http://purl.org/goodrelations/v1#VISA</li>\n</ul>\n")
 	@CamelizedName("creditCard")
 	@ConstantizedName("CREDIT_CARD")
-	public interface CreditCard extends LoanOrCredit, PaymentCard, SchemaOrgClass {
+	public interface CreditCard extends LoanOrCredit, NativeValueText, PaymentCard, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/monthlyMinimumRepaymentAmount">http://schema.org/monthlyMinimumRepaymentAmount</a>
@@ -3753,7 +3757,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A crematorium.")
 	@CamelizedName("crematorium")
 	@ConstantizedName("CREMATORIUM")
-	public interface Crematorium extends CivicStructure, SchemaOrgClass {
+	public interface Crematorium extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3768,7 +3772,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A service to convert funds from one currency to another currency.")
 	@CamelizedName("currencyConversionService")
 	@ConstantizedName("CURRENCY_CONVERSION_SERVICE")
-	public interface CurrencyConversionService extends FinancialProduct, SchemaOrgClass {
+	public interface CurrencyConversionService extends FinancialProduct, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3782,7 +3786,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: A social dance.")
 	@CamelizedName("danceEvent")
 	@ConstantizedName("DANCE_EVENT")
-	public interface DanceEvent extends Event, SchemaOrgClass {
+	public interface DanceEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3797,7 +3801,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.")
 	@CamelizedName("danceGroup")
 	@ConstantizedName("DANCE_GROUP")
-	public interface DanceGroup extends PerformingGroup, SchemaOrgClass {
+	public interface DanceGroup extends NativeValueText, PerformingGroup, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -3811,7 +3815,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A collection of datasets.")
 	@CamelizedName("dataCatalog")
 	@ConstantizedName("DATA_CATALOG")
-	public interface DataCatalog extends CreativeWork, SchemaOrgClass {
+	public interface DataCatalog extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dataset">http://schema.org/dataset</a>
@@ -3837,7 +3841,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A dataset in downloadable form.")
 	@CamelizedName("dataDownload")
 	@ConstantizedName("DATA_DOWNLOAD")
-	public interface DataDownload extends MediaObject, SchemaOrgClass {
+	public interface DataDownload extends MediaObject, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/measurementTechnique">http://schema.org/measurementTechnique</a>
@@ -3859,7 +3863,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " topics.")
 	@CamelizedName("dataFeed")
 	@ConstantizedName("DATA_FEED")
-	public interface DataFeed extends Dataset, SchemaOrgClass {
+	public interface DataFeed extends Dataset, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dataFeedElement">http://schema.org/dataFeedElement</a>
@@ -3880,7 +3884,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A single item within a larger data feed.")
 	@CamelizedName("dataFeedItem")
 	@ConstantizedName("DATA_FEED_ITEM")
-	public interface DataFeedItem extends Intangible, SchemaOrgClass {
+	public interface DataFeedItem extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dateCreated">http://schema.org/dateCreated</a>
@@ -3930,7 +3934,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A body of structured information describing some topic(s) of interest.")
 	@CamelizedName("dataset")
 	@ConstantizedName("DATASET")
-	public interface Dataset extends CreativeWork, SchemaOrgClass {
+	public interface Dataset extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/distribution">http://schema.org/distribution</a>
@@ -3987,7 +3991,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " been integrated directly into schema.org.")
 	@CamelizedName("dayOfWeek")
 	@ConstantizedName("DAY_OF_WEEK")
-	public interface DayOfWeek extends Enumeration, SchemaOrgClass {
+	public interface DayOfWeek extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4001,7 +4005,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A day spa.")
 	@CamelizedName("daySpa")
 	@ConstantizedName("DAY_SPA")
-	public interface DaySpa extends HealthAndBeautyBusiness, SchemaOrgClass {
+	public interface DaySpa extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4017,7 +4021,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " timer or turning off a flashlight).")
 	@CamelizedName("deactivateAction")
 	@ConstantizedName("DEACTIVATE_ACTION")
-	public interface DeactivateAction extends ControlAction, SchemaOrgClass {
+	public interface DeactivateAction extends ControlAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4032,7 +4036,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A defence establishment, such as an army or navy base.")
 	@CamelizedName("defenceEstablishment")
 	@ConstantizedName("DEFENCE_ESTABLISHMENT")
-	public interface DefenceEstablishment extends GovernmentBuilding, SchemaOrgClass {
+	public interface DefenceEstablishment extends GovernmentBuilding, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4047,7 +4051,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of editing a recipient by removing one of its objects.")
 	@CamelizedName("deleteAction")
 	@ConstantizedName("DELETE_ACTION")
-	public interface DeleteAction extends SchemaOrgClass, UpdateAction {
+	public interface DeleteAction extends NativeValueText, SchemaOrgClass, UpdateAction {
 
 		public String getString();
 		public void setString(String string);
@@ -4062,7 +4066,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The price for the delivery of an offer using a particular delivery method.")
 	@CamelizedName("deliveryChargeSpecification")
 	@ConstantizedName("DELIVERY_CHARGE_SPECIFICATION")
-	public interface DeliveryChargeSpecification extends PriceSpecification, SchemaOrgClass {
+	public interface DeliveryChargeSpecification extends NativeValueText, PriceSpecification, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/appliesToDeliveryMethod">http://schema.org/appliesToDeliveryMethod</a>
@@ -4101,7 +4105,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An event involving the delivery of an item.")
 	@CamelizedName("deliveryEvent")
 	@ConstantizedName("DELIVERY_EVENT")
-	public interface DeliveryEvent extends Event, SchemaOrgClass {
+	public interface DeliveryEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/accessCode">http://schema.org/accessCode</a>
@@ -4145,7 +4149,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#DeliveryModeDirectDownload</li>\n<li>http://purl.org/goodrelations/v1#DeliveryModeFreight</li>\n<li>http://purl.org/goodrelations/v1#DeliveryModeMail</li>\n<li>http://purl.org/goodrelations/v1#DeliveryModeOwnFleet</li>\n<li>http://purl.org/goodrelations/v1#DeliveryModePickUp</li>\n<li>http://purl.org/goodrelations/v1#DHL</li>\n<li>http://purl.org/goodrelations/v1#FederalExpress</li>\n<li>http://purl.org/goodrelations/v1#UPS</li>\n</ul>\n")
 	@CamelizedName("deliveryMethod")
 	@ConstantizedName("DELIVERY_METHOD")
-	public interface DeliveryMethod extends Enumeration, SchemaOrgClass {
+	public interface DeliveryMethod extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4163,7 +4167,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " properties used for Offer apply.")
 	@CamelizedName("demand")
 	@ConstantizedName("DEMAND")
-	public interface Demand extends Intangible, SchemaOrgClass {
+	public interface Demand extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/acceptedPaymentMethod">http://schema.org/acceptedPaymentMethod</a>
@@ -4369,7 +4373,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A dentist.")
 	@CamelizedName("dentist")
 	@ConstantizedName("DENTIST")
-	public interface Dentist extends LocalBusiness, MedicalBusiness, MedicalOrganization, SchemaOrgClass {
+	public interface Dentist extends LocalBusiness, MedicalBusiness, MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4385,7 +4389,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " destination, optionally with participants.")
 	@CamelizedName("departAction")
 	@ConstantizedName("DEPART_ACTION")
-	public interface DepartAction extends MoveAction, SchemaOrgClass {
+	public interface DepartAction extends MoveAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4399,7 +4403,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A department store.")
 	@CamelizedName("departmentStore")
 	@ConstantizedName("DEPARTMENT_STORE")
-	public interface DepartmentStore extends SchemaOrgClass, Store {
+	public interface DepartmentStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -4415,7 +4419,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " or other benefits.")
 	@CamelizedName("depositAccount")
 	@ConstantizedName("DEPOSIT_ACCOUNT")
-	public interface DepositAccount extends BankAccount, InvestmentOrDeposit, SchemaOrgClass {
+	public interface DepositAccount extends BankAccount, InvestmentOrDeposit, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4429,7 +4433,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An electronic file or document.")
 	@CamelizedName("digitalDocument")
 	@ConstantizedName("DIGITAL_DOCUMENT")
-	public interface DigitalDocument extends CreativeWork, SchemaOrgClass {
+	public interface DigitalDocument extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/hasDigitalDocumentPermission">http://schema.org/hasDigitalDocumentPermission</a>
@@ -4450,7 +4454,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A permission for a particular person or group to access a particular file.")
 	@CamelizedName("digitalDocumentPermission")
 	@ConstantizedName("DIGITAL_DOCUMENT_PERMISSION")
-	public interface DigitalDocumentPermission extends Intangible, SchemaOrgClass {
+	public interface DigitalDocumentPermission extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/grantee">http://schema.org/grantee</a>
@@ -4477,7 +4481,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A type of permission which can be granted for accessing a digital document.")
 	@CamelizedName("digitalDocumentPermissionType")
 	@ConstantizedName("DIGITAL_DOCUMENT_PERMISSION_TYPE")
-	public interface DigitalDocumentPermissionType extends Enumeration, SchemaOrgClass {
+	public interface DigitalDocumentPermissionType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4493,7 +4497,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " disagrees to/about an object (a proposition, topic or theme) with participants.")
 	@CamelizedName("disagreeAction")
 	@ConstantizedName("DISAGREE_ACTION")
-	public interface DisagreeAction extends ReactAction, SchemaOrgClass {
+	public interface DisagreeAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4508,7 +4512,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of discovering/finding an object.")
 	@CamelizedName("discoverAction")
 	@ConstantizedName("DISCOVER_ACTION")
-	public interface DiscoverAction extends FindAction, SchemaOrgClass {
+	public interface DiscoverAction extends FindAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4522,7 +4526,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A posting to a discussion forum.")
 	@CamelizedName("discussionForumPosting")
 	@ConstantizedName("DISCUSSION_FORUM_POSTING")
-	public interface DiscussionForumPosting extends SchemaOrgClass, SocialMediaPosting {
+	public interface DiscussionForumPosting extends NativeValueText, SchemaOrgClass, SocialMediaPosting {
 
 		public String getString();
 		public void setString(String string);
@@ -4538,7 +4542,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " an object (a proposition, topic or theme) with participants.")
 	@CamelizedName("dislikeAction")
 	@ConstantizedName("DISLIKE_ACTION")
-	public interface DislikeAction extends ReactAction, SchemaOrgClass {
+	public interface DislikeAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4554,7 +4558,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " &lt;Length unit of measure&gt;'. E.g., '7 ft'.")
 	@CamelizedName("distance")
 	@ConstantizedName("DISTANCE")
-	public interface Distance extends Quantity, SchemaOrgClass {
+	public interface Distance extends NativeValueText, Quantity, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4568,7 +4572,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("DokuWiki format source text.")
 	@CamelizedName("dokuWiki")
 	@ConstantizedName("DOKU_WIKI")
-	public interface DokuWiki extends SchemaOrgClass, Text {
+	public interface DokuWiki extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -4584,7 +4588,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " philanthropic reasons.")
 	@CamelizedName("donateAction")
 	@ConstantizedName("DONATE_ACTION")
-	public interface DonateAction extends SchemaOrgClass, TradeAction {
+	public interface DonateAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
@@ -4604,7 +4608,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of downloading an object.")
 	@CamelizedName("downloadAction")
 	@ConstantizedName("DOWNLOAD_ACTION")
-	public interface DownloadAction extends SchemaOrgClass, TransferAction {
+	public interface DownloadAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		public String getString();
 		public void setString(String string);
@@ -4620,7 +4624,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " with a pen/pencil and paper as instruments.")
 	@CamelizedName("drawAction")
 	@ConstantizedName("DRAW_ACTION")
-	public interface DrawAction extends CreateAction, SchemaOrgClass {
+	public interface DrawAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4634,7 +4638,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of swallowing liquids.")
 	@CamelizedName("drinkAction")
 	@ConstantizedName("DRINK_ACTION")
-	public interface DrinkAction extends ConsumeAction, SchemaOrgClass {
+	public interface DrinkAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4649,7 +4653,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A value indicating which roadwheels will receive torque.")
 	@CamelizedName("driveWheelConfigurationValue")
 	@ConstantizedName("DRIVE_WHEEL_CONFIGURATION_VALUE")
-	public interface DriveWheelConfigurationValue extends QualitativeValue, SchemaOrgClass {
+	public interface DriveWheelConfigurationValue extends NativeValueText, QualitativeValue, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4663,7 +4667,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A dry-cleaning business.")
 	@CamelizedName("dryCleaningOrLaundry")
 	@ConstantizedName("DRY_CLEANING_OR_LAUNDRY")
-	public interface DryCleaningOrLaundry extends LocalBusiness, SchemaOrgClass {
+	public interface DryCleaningOrLaundry extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4679,7 +4683,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " 8601 duration format</a>).")
 	@CamelizedName("duration")
 	@ConstantizedName("DURATION")
-	public interface Duration extends Quantity, SchemaOrgClass {
+	public interface Duration extends NativeValueText, Quantity, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4693,7 +4697,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of swallowing solid objects.")
 	@CamelizedName("eatAction")
 	@ConstantizedName("EAT_ACTION")
-	public interface EatAction extends ConsumeAction, SchemaOrgClass {
+	public interface EatAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4707,7 +4711,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Education event.")
 	@CamelizedName("educationEvent")
 	@ConstantizedName("EDUCATION_EVENT")
-	public interface EducationEvent extends Event, SchemaOrgClass {
+	public interface EducationEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4721,7 +4725,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An EducationalAudience.")
 	@CamelizedName("educationalAudience")
 	@ConstantizedName("EDUCATIONAL_AUDIENCE")
-	public interface EducationalAudience extends Audience, SchemaOrgClass {
+	public interface EducationalAudience extends Audience, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/educationalRole">http://schema.org/educationalRole</a>
@@ -4741,7 +4745,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An educational organization.")
 	@CamelizedName("educationalOrganization")
 	@ConstantizedName("EDUCATIONAL_ORGANIZATION")
-	public interface EducationalOrganization extends Organization, SchemaOrgClass {
+	public interface EducationalOrganization extends NativeValueText, Organization, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/alumni">http://schema.org/alumni</a>
@@ -4761,7 +4765,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An electrician.")
 	@CamelizedName("electrician")
 	@ConstantizedName("ELECTRICIAN")
-	public interface Electrician extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface Electrician extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4775,7 +4779,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An electronics store.")
 	@CamelizedName("electronicsStore")
 	@ConstantizedName("ELECTRONICS_STORE")
-	public interface ElectronicsStore extends SchemaOrgClass, Store {
+	public interface ElectronicsStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -4789,7 +4793,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An elementary school.")
 	@CamelizedName("elementarySchool")
 	@ConstantizedName("ELEMENTARY_SCHOOL")
-	public interface ElementarySchool extends EducationalOrganization, SchemaOrgClass {
+	public interface ElementarySchool extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4803,7 +4807,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An email message.")
 	@CamelizedName("emailMessage")
 	@ConstantizedName("EMAIL_MESSAGE")
-	public interface EmailMessage extends Message, SchemaOrgClass {
+	public interface EmailMessage extends Message, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4817,7 +4821,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An embassy.")
 	@CamelizedName("embassy")
 	@ConstantizedName("EMBASSY")
-	public interface Embassy extends GovernmentBuilding, SchemaOrgClass {
+	public interface Embassy extends GovernmentBuilding, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4832,7 +4836,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An emergency service, such as a fire station or ER.")
 	@CamelizedName("emergencyService")
 	@ConstantizedName("EMERGENCY_SERVICE")
-	public interface EmergencyService extends LocalBusiness, SchemaOrgClass {
+	public interface EmergencyService extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4847,7 +4851,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A subclass of OrganizationRole used to describe employee relationships.")
 	@CamelizedName("employeeRole")
 	@ConstantizedName("EMPLOYEE_ROLE")
-	public interface EmployeeRole extends OrganizationRole, SchemaOrgClass {
+	public interface EmployeeRole extends NativeValueText, OrganizationRole, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/baseSalary">http://schema.org/baseSalary</a>
@@ -4873,7 +4877,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An employment agency.")
 	@CamelizedName("employmentAgency")
 	@ConstantizedName("EMPLOYMENT_AGENCY")
-	public interface EmploymentAgency extends LocalBusiness, SchemaOrgClass {
+	public interface EmploymentAgency extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4888,7 +4892,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An agent approves/certifies/likes/supports/sanction an object.")
 	@CamelizedName("endorseAction")
 	@ConstantizedName("ENDORSE_ACTION")
-	public interface EndorseAction extends ReactAction, SchemaOrgClass {
+	public interface EndorseAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/endorsee">http://schema.org/endorsee</a>
@@ -4910,7 +4914,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " unit of measure&gt;'.")
 	@CamelizedName("energy")
 	@ConstantizedName("ENERGY")
-	public interface Energy extends Quantity, SchemaOrgClass {
+	public interface Energy extends NativeValueText, Quantity, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4926,7 +4930,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " represented by multiple engine specification entities.")
 	@CamelizedName("engineSpecification")
 	@ConstantizedName("ENGINE_SPECIFICATION")
-	public interface EngineSpecification extends SchemaOrgClass, StructuredValue {
+	public interface EngineSpecification extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/engineDisplacement">http://schema.org/engineDisplacement</a>
@@ -4970,7 +4974,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A business providing entertainment.")
 	@CamelizedName("entertainmentBusiness")
 	@ConstantizedName("ENTERTAINMENT_BUSINESS")
-	public interface EntertainmentBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface EntertainmentBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -4985,7 +4989,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An entry point, within some Web-based protocol.")
 	@CamelizedName("entryPoint")
 	@ConstantizedName("ENTRY_POINT")
-	public interface EntryPoint extends Intangible, SchemaOrgClass {
+	public interface EntryPoint extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actionApplication">http://schema.org/actionApplication</a>
@@ -5036,7 +5040,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Lists or enumerations—for example, a list of cuisines or music genres, etc.")
 	@CamelizedName("enumeration")
 	@ConstantizedName("ENUMERATION")
-	public interface Enumeration extends Intangible, SchemaOrgClass {
+	public interface Enumeration extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/supersededBy">http://schema.org/supersededBy</a>
@@ -5058,7 +5062,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " season.")
 	@CamelizedName("episode")
 	@ConstantizedName("EPISODE")
-	public interface Episode extends CreativeWork, SchemaOrgClass {
+	public interface Episode extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -5124,7 +5128,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " structured as separate Event objects.")
 	@CamelizedName("event")
 	@ConstantizedName("EVENT")
-	public interface Event extends SchemaOrgClass, Thing {
+	public interface Event extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/about">http://schema.org/about</a>
@@ -5335,7 +5339,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("eventReservation")
 	@ConstantizedName("EVENT_RESERVATION")
-	public interface EventReservation extends Reservation, SchemaOrgClass {
+	public interface EventReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5351,7 +5355,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " that an Event may be in.")
 	@CamelizedName("eventStatusType")
 	@ConstantizedName("EVENT_STATUS_TYPE")
-	public interface EventStatusType extends Enumeration, SchemaOrgClass {
+	public interface EventStatusType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5365,7 +5369,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An event venue.")
 	@CamelizedName("eventVenue")
 	@ConstantizedName("EVENT_VENUE")
-	public interface EventVenue extends CivicStructure, SchemaOrgClass {
+	public interface EventVenue extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5381,7 +5385,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " health and fitness.")
 	@CamelizedName("exerciseAction")
 	@ConstantizedName("EXERCISE_ACTION")
-	public interface ExerciseAction extends PlayAction, SchemaOrgClass {
+	public interface ExerciseAction extends NativeValueText, PlayAction, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/diet">http://schema.org/diet</a>
@@ -5467,7 +5471,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A gym.")
 	@CamelizedName("exerciseGym")
 	@ConstantizedName("EXERCISE_GYM")
-	public interface ExerciseGym extends SchemaOrgClass, SportsActivityLocation {
+	public interface ExerciseGym extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -5482,7 +5486,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...")
 	@CamelizedName("exhibitionEvent")
 	@ConstantizedName("EXHIBITION_EVENT")
-	public interface ExhibitionEvent extends Event, SchemaOrgClass {
+	public interface ExhibitionEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5496,7 +5500,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A fast-food restaurant.")
 	@CamelizedName("fastFoodRestaurant")
 	@ConstantizedName("FAST_FOOD_RESTAURANT")
-	public interface FastFoodRestaurant extends FoodEstablishment, SchemaOrgClass {
+	public interface FastFoodRestaurant extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5510,7 +5514,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Festival.")
 	@CamelizedName("festival")
 	@ConstantizedName("FESTIVAL")
-	public interface Festival extends Event, SchemaOrgClass {
+	public interface Festival extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5525,7 +5529,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of capturing sound and moving images on film, video, or digitally.")
 	@CamelizedName("filmAction")
 	@ConstantizedName("FILM_ACTION")
-	public interface FilmAction extends CreateAction, SchemaOrgClass {
+	public interface FilmAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5542,7 +5546,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " investment companies which comprise the financial services industry.")
 	@CamelizedName("financialProduct")
 	@ConstantizedName("FINANCIAL_PRODUCT")
-	public interface FinancialProduct extends SchemaOrgClass, Service {
+	public interface FinancialProduct extends NativeValueText, SchemaOrgClass, Service {
 
 		/**
 		 * @see <a href="http://schema.org/annualPercentageRate">http://schema.org/annualPercentageRate</a>
@@ -5574,7 +5578,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Financial services business.")
 	@CamelizedName("financialService")
 	@ConstantizedName("FINANCIAL_SERVICE")
-	public interface FinancialService extends LocalBusiness, SchemaOrgClass {
+	public interface FinancialService extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/feesAndCommissionsSpecification">http://schema.org/feesAndCommissionsSpecification</a>
@@ -5598,7 +5602,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " generally lead by a SearchAction, but not necessarily.</li>\n</ul>\n")
 	@CamelizedName("findAction")
 	@ConstantizedName("FIND_ACTION")
-	public interface FindAction extends Action, SchemaOrgClass {
+	public interface FindAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5612,7 +5616,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A fire station. With firemen.")
 	@CamelizedName("fireStation")
 	@ConstantizedName("FIRE_STATION")
-	public interface FireStation extends CivicStructure, EmergencyService, SchemaOrgClass {
+	public interface FireStation extends CivicStructure, EmergencyService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5626,7 +5630,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An airline flight.")
 	@CamelizedName("flight")
 	@ConstantizedName("FLIGHT")
-	public interface Flight extends SchemaOrgClass, Trip {
+	public interface Flight extends NativeValueText, SchemaOrgClass, Trip {
 
 		/**
 		 * @see <a href="http://schema.org/aircraft">http://schema.org/aircraft</a>
@@ -5728,7 +5732,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("flightReservation")
 	@ConstantizedName("FLIGHT_RESERVATION")
-	public interface FlightReservation extends Reservation, SchemaOrgClass {
+	public interface FlightReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/boardingGroup">http://schema.org/boardingGroup</a>
@@ -5766,7 +5770,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Data type: Floating number.")
 	@CamelizedName("float")
 	@ConstantizedName("FLOAT")
-	public interface Float extends DataType, SchemaOrgClass {
+	public interface Float extends ConsistentDataType.Float, DataType, NativeValueFloat, SchemaOrgClass {
 
 		public Double getD0uble();
 		public void setD0uble(Double d0uble);
@@ -5780,7 +5784,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A florist.")
 	@CamelizedName("florist")
 	@ConstantizedName("FLORIST")
-	public interface Florist extends SchemaOrgClass, Store {
+	public interface Florist extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -5814,7 +5818,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " you don't follow it).</li>\n</ul>\n")
 	@CamelizedName("followAction")
 	@ConstantizedName("FOLLOW_ACTION")
-	public interface FollowAction extends InteractAction, SchemaOrgClass {
+	public interface FollowAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/followee">http://schema.org/followee</a>
@@ -5834,7 +5838,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A food-related business.")
 	@CamelizedName("foodEstablishment")
 	@ConstantizedName("FOOD_ESTABLISHMENT")
-	public interface FoodEstablishment extends LocalBusiness, SchemaOrgClass {
+	public interface FoodEstablishment extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/acceptsReservations">http://schema.org/acceptsReservations</a>
@@ -5875,7 +5879,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " HTML pages with individual confirmations of reservations.")
 	@CamelizedName("foodEstablishmentReservation")
 	@ConstantizedName("FOOD_ESTABLISHMENT_RESERVATION")
-	public interface FoodEstablishmentReservation extends Reservation, SchemaOrgClass {
+	public interface FoodEstablishmentReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/endTime">http://schema.org/endTime</a>
@@ -5907,7 +5911,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Food event.")
 	@CamelizedName("foodEvent")
 	@ConstantizedName("FOOD_EVENT")
-	public interface FoodEvent extends Event, SchemaOrgClass {
+	public interface FoodEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -5922,7 +5926,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A food service, like breakfast, lunch, or dinner.")
 	@CamelizedName("foodService")
 	@ConstantizedName("FOOD_SERVICE")
-	public interface FoodService extends SchemaOrgClass, Service {
+	public interface FoodService extends NativeValueText, SchemaOrgClass, Service {
 
 		public String getString();
 		public void setString(String string);
@@ -5936,7 +5940,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A furniture store.")
 	@CamelizedName("furnitureStore")
 	@ConstantizedName("FURNITURE_STORE")
-	public interface FurnitureStore extends SchemaOrgClass, Store {
+	public interface FurnitureStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -5953,7 +5957,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " assume the role of characters in a fictional setting.")
 	@CamelizedName("game")
 	@ConstantizedName("GAME")
-	public interface Game extends CreativeWork, SchemaOrgClass {
+	public interface Game extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/characterAttribute">http://schema.org/characterAttribute</a>
@@ -5998,7 +6002,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Indicates whether this game is multi-player, co-op or single-player.")
 	@CamelizedName("gamePlayMode")
 	@ConstantizedName("GAME_PLAY_MODE")
-	public interface GamePlayMode extends Enumeration, SchemaOrgClass {
+	public interface GamePlayMode extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6013,7 +6017,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Server that provides game interaction in a multiplayer game.")
 	@CamelizedName("gameServer")
 	@ConstantizedName("GAME_SERVER")
-	public interface GameServer extends Intangible, SchemaOrgClass {
+	public interface GameServer extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/game">http://schema.org/game</a>
@@ -6045,7 +6049,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Status of a game server.")
 	@CamelizedName("gameServerStatus")
 	@ConstantizedName("GAME_SERVER_STATUS")
-	public interface GameServerStatus extends Enumeration, SchemaOrgClass {
+	public interface GameServerStatus extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6059,7 +6063,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A garden store.")
 	@CamelizedName("gardenStore")
 	@ConstantizedName("GARDEN_STORE")
-	public interface GardenStore extends SchemaOrgClass, Store {
+	public interface GardenStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -6073,7 +6077,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A gas station.")
 	@CamelizedName("gasStation")
 	@ConstantizedName("GAS_STATION")
-	public interface GasStation extends AutomotiveBusiness, SchemaOrgClass {
+	public interface GasStation extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6087,7 +6091,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Residence type: Gated community.")
 	@CamelizedName("gatedResidenceCommunity")
 	@ConstantizedName("GATED_RESIDENCE_COMMUNITY")
-	public interface GatedResidenceCommunity extends Residence, SchemaOrgClass {
+	public interface GatedResidenceCommunity extends NativeValueText, Residence, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6101,7 +6105,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An enumeration of genders.")
 	@CamelizedName("genderType")
 	@ConstantizedName("GENDER_TYPE")
-	public interface GenderType extends Enumeration, SchemaOrgClass {
+	public interface GenderType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6115,7 +6119,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A general contractor.")
 	@CamelizedName("generalContractor")
 	@ConstantizedName("GENERAL_CONTRACTOR")
-	public interface GeneralContractor extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface GeneralContractor extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6134,7 +6138,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " approximately using 'address', 'postalCode'.")
 	@CamelizedName("geoCircle")
 	@ConstantizedName("GEO_CIRCLE")
-	public interface GeoCircle extends GeoShape, SchemaOrgClass {
+	public interface GeoCircle extends GeoShape, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/geoMidpoint">http://schema.org/geoMidpoint</a>
@@ -6161,7 +6165,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The geographic coordinates of a place or event.")
 	@CamelizedName("geoCoordinates")
 	@ConstantizedName("GEO_COORDINATES")
-	public interface GeoCoordinates extends SchemaOrgClass, StructuredValue {
+	public interface GeoCoordinates extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
@@ -6215,7 +6219,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " should be used when writing a list of several such points.")
 	@CamelizedName("geoShape")
 	@ConstantizedName("GEO_SHAPE")
-	public interface GeoShape extends SchemaOrgClass, StructuredValue {
+	public interface GeoShape extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/address">http://schema.org/address</a>
@@ -6284,7 +6288,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " laptop to you, but that doesn't mean I'm giving it to you).</li>\n</ul>\n")
 	@CamelizedName("giveAction")
 	@ConstantizedName("GIVE_ACTION")
-	public interface GiveAction extends SchemaOrgClass, TransferAction {
+	public interface GiveAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
@@ -6304,7 +6308,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A golf course.")
 	@CamelizedName("golfCourse")
 	@ConstantizedName("GOLF_COURSE")
-	public interface GolfCourse extends SchemaOrgClass, SportsActivityLocation {
+	public interface GolfCourse extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -6318,7 +6322,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A government building.")
 	@CamelizedName("governmentBuilding")
 	@ConstantizedName("GOVERNMENT_BUILDING")
-	public interface GovernmentBuilding extends CivicStructure, SchemaOrgClass {
+	public interface GovernmentBuilding extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6333,7 +6337,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A government office&#x2014;for example, an IRS or DMV office.")
 	@CamelizedName("governmentOffice")
 	@ConstantizedName("GOVERNMENT_OFFICE")
-	public interface GovernmentOffice extends LocalBusiness, SchemaOrgClass {
+	public interface GovernmentOffice extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6347,7 +6351,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A governmental organization or agency.")
 	@CamelizedName("governmentOrganization")
 	@ConstantizedName("GOVERNMENT_ORGANIZATION")
-	public interface GovernmentOrganization extends Organization, SchemaOrgClass {
+	public interface GovernmentOrganization extends NativeValueText, Organization, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6361,7 +6365,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A permit issued by a government agency.")
 	@CamelizedName("governmentPermit")
 	@ConstantizedName("GOVERNMENT_PERMIT")
-	public interface GovernmentPermit extends Permit, SchemaOrgClass {
+	public interface GovernmentPermit extends NativeValueText, Permit, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6377,7 +6381,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " benefits, etc.")
 	@CamelizedName("governmentService")
 	@ConstantizedName("GOVERNMENT_SERVICE")
-	public interface GovernmentService extends SchemaOrgClass, Service {
+	public interface GovernmentService extends NativeValueText, SchemaOrgClass, Service {
 
 		/**
 		 * @see <a href="http://schema.org/serviceOperator">http://schema.org/serviceOperator</a>
@@ -6397,7 +6401,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A grocery store.")
 	@CamelizedName("groceryStore")
 	@ConstantizedName("GROCERY_STORE")
-	public interface GroceryStore extends SchemaOrgClass, Store {
+	public interface GroceryStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -6411,7 +6415,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("HTML formatted text.")
 	@CamelizedName("html")
 	@ConstantizedName("HTML")
-	public interface HTML extends SchemaOrgClass, Text {
+	public interface HTML extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -6426,7 +6430,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A business that provide Heating, Ventilation and Air Conditioning services.")
 	@CamelizedName("hvacBusiness")
 	@ConstantizedName("HVAC_BUSINESS")
-	public interface HVACBusiness extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface HVACBusiness extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6440,7 +6444,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A hair salon.")
 	@CamelizedName("hairSalon")
 	@ConstantizedName("HAIR_SALON")
-	public interface HairSalon extends HealthAndBeautyBusiness, SchemaOrgClass {
+	public interface HairSalon extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6454,7 +6458,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A hardware store.")
 	@CamelizedName("hardwareStore")
 	@ConstantizedName("HARDWARE_STORE")
-	public interface HardwareStore extends SchemaOrgClass, Store {
+	public interface HardwareStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -6468,7 +6472,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Hatena notation source text.")
 	@CamelizedName("hatena")
 	@ConstantizedName("HATENA")
-	public interface Hatena extends SchemaOrgClass, Text {
+	public interface Hatena extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -6482,7 +6486,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Health and beauty.")
 	@CamelizedName("healthAndBeautyBusiness")
 	@ConstantizedName("HEALTH_AND_BEAUTY_BUSINESS")
-	public interface HealthAndBeautyBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface HealthAndBeautyBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6496,7 +6500,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A health club.")
 	@CamelizedName("healthClub")
 	@ConstantizedName("HEALTH_CLUB")
-	public interface HealthClub extends HealthAndBeautyBusiness, SchemaOrgClass, SportsActivityLocation {
+	public interface HealthClub extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -6510,7 +6514,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A high school.")
 	@CamelizedName("highSchool")
 	@ConstantizedName("HIGH_SCHOOL")
-	public interface HighSchool extends EducationalOrganization, SchemaOrgClass {
+	public interface HighSchool extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6524,7 +6528,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A Hindu temple.")
 	@CamelizedName("hinduTemple")
 	@ConstantizedName("HINDU_TEMPLE")
-	public interface HinduTemple extends PlaceOfWorship, SchemaOrgClass {
+	public interface HinduTemple extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6539,7 +6543,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A store that sells materials useful or necessary for various hobbies.")
 	@CamelizedName("hobbyShop")
 	@ConstantizedName("HOBBY_SHOP")
-	public interface HobbyShop extends SchemaOrgClass, Store {
+	public interface HobbyShop extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -6560,7 +6564,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Service\">Service</a>(s).")
 	@CamelizedName("homeAndConstructionBusiness")
 	@ConstantizedName("HOME_AND_CONSTRUCTION_BUSINESS")
-	public interface HomeAndConstructionBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface HomeAndConstructionBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6574,7 +6578,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A home goods store.")
 	@CamelizedName("homeGoodsStore")
 	@ConstantizedName("HOME_GOODS_STORE")
-	public interface HomeGoodsStore extends SchemaOrgClass, Store {
+	public interface HomeGoodsStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -6588,7 +6592,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A hospital.")
 	@CamelizedName("hospital")
 	@ConstantizedName("HOSPITAL")
-	public interface Hospital extends CivicStructure, EmergencyService, MedicalOrganization, SchemaOrgClass {
+	public interface Hospital extends CivicStructure, EmergencyService, MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
@@ -6617,7 +6621,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("hostel")
 	@ConstantizedName("HOSTEL")
-	public interface Hostel extends LodgingBusiness, SchemaOrgClass {
+	public interface Hostel extends LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6636,7 +6640,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("hotel")
 	@ConstantizedName("HOTEL")
-	public interface Hotel extends LodgingBusiness, SchemaOrgClass {
+	public interface Hotel extends LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6653,7 +6657,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("hotelRoom")
 	@ConstantizedName("HOTEL_ROOM")
-	public interface HotelRoom extends Room, SchemaOrgClass {
+	public interface HotelRoom extends NativeValueText, Room, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/bed">http://schema.org/bed</a>
@@ -6683,7 +6687,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://en.wikipedia.org/wiki/House\">http://en.wikipedia.org/wiki/House</a>).")
 	@CamelizedName("house")
 	@ConstantizedName("HOUSE")
-	public interface House extends Accommodation, SchemaOrgClass {
+	public interface House extends Accommodation, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
@@ -6703,7 +6707,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A house painting service.")
 	@CamelizedName("housePainter")
 	@ConstantizedName("HOUSE_PAINTER")
-	public interface HousePainter extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface HousePainter extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6719,7 +6723,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " steps.")
 	@CamelizedName("howTo")
 	@ConstantizedName("HOW_TO")
-	public interface HowTo extends CreativeWork, SchemaOrgClass {
+	public interface HowTo extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/estimatedCost">http://schema.org/estimatedCost</a>
@@ -6783,7 +6787,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " achieve a result.")
 	@CamelizedName("howToDirection")
 	@ConstantizedName("HOW_TO_DIRECTION")
-	public interface HowToDirection extends CreativeWork, ListItem, SchemaOrgClass {
+	public interface HowToDirection extends CreativeWork, ListItem, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/afterMedia">http://schema.org/afterMedia</a>
@@ -6847,7 +6851,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " to to achieve a result.")
 	@CamelizedName("howToItem")
 	@ConstantizedName("HOW_TO_ITEM")
-	public interface HowToItem extends ListItem, SchemaOrgClass {
+	public interface HowToItem extends ListItem, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/requiredQuantity">http://schema.org/requiredQuantity</a>
@@ -6869,7 +6873,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " steps for making a pie crust within a pie recipe).")
 	@CamelizedName("howToSection")
 	@ConstantizedName("HOW_TO_SECTION")
-	public interface HowToSection extends CreativeWork, ItemList, ListItem, SchemaOrgClass {
+	public interface HowToSection extends CreativeWork, ItemList, ListItem, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6885,7 +6889,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " with HowToDirection and/or HowToTip items.")
 	@CamelizedName("howToStep")
 	@ConstantizedName("HOW_TO_STEP")
-	public interface HowToStep extends CreativeWork, ItemList, ListItem, SchemaOrgClass {
+	public interface HowToStep extends CreativeWork, ItemList, ListItem, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6900,7 +6904,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A supply consumed when performing the instructions for how to achieve a result.")
 	@CamelizedName("howToSupply")
 	@ConstantizedName("HOW_TO_SUPPLY")
-	public interface HowToSupply extends HowToItem, SchemaOrgClass {
+	public interface HowToSupply extends HowToItem, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/estimatedCost">http://schema.org/estimatedCost</a>
@@ -6924,7 +6928,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " specify what should be done (see HowToDirection).")
 	@CamelizedName("howToTip")
 	@ConstantizedName("HOW_TO_TIP")
-	public interface HowToTip extends CreativeWork, ListItem, SchemaOrgClass {
+	public interface HowToTip extends CreativeWork, ListItem, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6940,7 +6944,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " result.")
 	@CamelizedName("howToTool")
 	@ConstantizedName("HOW_TO_TOOL")
-	public interface HowToTool extends HowToItem, SchemaOrgClass {
+	public interface HowToTool extends HowToItem, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6954,7 +6958,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An ice cream shop.")
 	@CamelizedName("iceCreamShop")
 	@ConstantizedName("ICE_CREAM_SHOP")
-	public interface IceCreamShop extends FoodEstablishment, SchemaOrgClass {
+	public interface IceCreamShop extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6969,7 +6973,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of intentionally disregarding the object. An agent ignores an object.")
 	@CamelizedName("ignoreAction")
 	@ConstantizedName("IGNORE_ACTION")
-	public interface IgnoreAction extends AssessAction, SchemaOrgClass {
+	public interface IgnoreAction extends AssessAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6983,7 +6987,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Image gallery page.")
 	@CamelizedName("imageGallery")
 	@ConstantizedName("IMAGE_GALLERY")
-	public interface ImageGallery extends CollectionPage, SchemaOrgClass {
+	public interface ImageGallery extends CollectionPage, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -6997,7 +7001,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An image file.")
 	@CamelizedName("imageObject")
 	@ConstantizedName("IMAGE_OBJECT")
-	public interface ImageObject extends MediaObject, SchemaOrgClass {
+	public interface ImageObject extends MediaObject, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/caption">http://schema.org/caption</a>
@@ -7037,7 +7041,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " number).")
 	@CamelizedName("individualProduct")
 	@ConstantizedName("INDIVIDUAL_PRODUCT")
-	public interface IndividualProduct extends Product, SchemaOrgClass {
+	public interface IndividualProduct extends NativeValueText, Product, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/serialNumber">http://schema.org/serialNumber</a>
@@ -7059,7 +7063,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " expectation of a response.")
 	@CamelizedName("informAction")
 	@ConstantizedName("INFORM_ACTION")
-	public interface InformAction extends CommunicateAction, SchemaOrgClass {
+	public interface InformAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
@@ -7080,7 +7084,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of adding at a specific location in an ordered collection.")
 	@CamelizedName("insertAction")
 	@ConstantizedName("INSERT_ACTION")
-	public interface InsertAction extends AddAction, SchemaOrgClass {
+	public interface InsertAction extends AddAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/toLocation">http://schema.org/toLocation</a>
@@ -7100,7 +7104,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of installing an application.")
 	@CamelizedName("installAction")
 	@ConstantizedName("INSTALL_ACTION")
-	public interface InstallAction extends ConsumeAction, SchemaOrgClass {
+	public interface InstallAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7114,7 +7118,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An Insurance agency.")
 	@CamelizedName("insuranceAgency")
 	@ConstantizedName("INSURANCE_AGENCY")
-	public interface InsuranceAgency extends FinancialService, SchemaOrgClass {
+	public interface InsuranceAgency extends FinancialService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7130,7 +7134,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " such as quantities, structured values, etc.")
 	@CamelizedName("intangible")
 	@ConstantizedName("INTANGIBLE")
-	public interface Intangible extends SchemaOrgClass, Thing {
+	public interface Intangible extends NativeValueText, SchemaOrgClass, Thing {
 
 		public String getString();
 		public void setString(String string);
@@ -7144,7 +7148,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Data type: Integer.")
 	@CamelizedName("integer")
 	@ConstantizedName("INTEGER")
-	public interface Integer extends DataType, SchemaOrgClass {
+	public interface Integer extends ConsistentDataType.Integer, DataType, NativeValueInteger, SchemaOrgClass {
 
 		public Long getL0ng();
 		public void setL0ng(Long l0ng);
@@ -7159,7 +7163,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of interacting with another person or organization.")
 	@CamelizedName("interactAction")
 	@ConstantizedName("INTERACT_ACTION")
-	public interface InteractAction extends Action, SchemaOrgClass {
+	public interface InteractAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7175,7 +7179,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " authors will use a subtype to specify the specific type of interaction.")
 	@CamelizedName("interactionCounter")
 	@ConstantizedName("INTERACTION_COUNTER")
-	public interface InteractionCounter extends SchemaOrgClass, StructuredValue {
+	public interface InteractionCounter extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/interactionService">http://schema.org/interactionService</a>
@@ -7207,7 +7211,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An internet cafe.")
 	@CamelizedName("internetCafe")
 	@ConstantizedName("INTERNET_CAFE")
-	public interface InternetCafe extends LocalBusiness, SchemaOrgClass {
+	public interface InternetCafe extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7223,7 +7227,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " to a financial service in return for potential beneficial financial return.")
 	@CamelizedName("investmentOrDeposit")
 	@ConstantizedName("INVESTMENT_OR_DEPOSIT")
-	public interface InvestmentOrDeposit extends FinancialProduct, SchemaOrgClass {
+	public interface InvestmentOrDeposit extends FinancialProduct, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/amount">http://schema.org/amount</a>
@@ -7244,7 +7248,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of asking someone to attend an event. Reciprocal of RsvpAction.")
 	@CamelizedName("inviteAction")
 	@ConstantizedName("INVITE_ACTION")
-	public interface InviteAction extends CommunicateAction, SchemaOrgClass {
+	public interface InviteAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
@@ -7265,7 +7269,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A statement of the money due for goods or services; a bill.")
 	@CamelizedName("invoice")
 	@ConstantizedName("INVOICE")
-	public interface Invoice extends Intangible, SchemaOrgClass {
+	public interface Invoice extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/accountId">http://schema.org/accountId</a>
@@ -7370,7 +7374,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A list of possible product availability options.")
 	@CamelizedName("itemAvailability")
 	@ConstantizedName("ITEM_AVAILABILITY")
-	public interface ItemAvailability extends Enumeration, SchemaOrgClass {
+	public interface ItemAvailability extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7387,7 +7391,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " used only for formatting.")
 	@CamelizedName("itemList")
 	@ConstantizedName("ITEM_LIST")
-	public interface ItemList extends Intangible, SchemaOrgClass {
+	public interface ItemList extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/itemListElement">http://schema.org/itemListElement</a>
@@ -7421,7 +7425,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " is organized.")
 	@CamelizedName("itemListOrderType")
 	@ConstantizedName("ITEM_LIST_ORDER_TYPE")
-	public interface ItemListOrderType extends Enumeration, SchemaOrgClass {
+	public interface ItemListOrderType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7436,7 +7440,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A page devoted to a single item, such as a particular product or hotel.")
 	@CamelizedName("itemPage")
 	@ConstantizedName("ITEM_PAGE")
-	public interface ItemPage extends SchemaOrgClass, WebPage {
+	public interface ItemPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -7450,7 +7454,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A jewelry store.")
 	@CamelizedName("jewelryStore")
 	@ConstantizedName("JEWELRY_STORE")
-	public interface JewelryStore extends SchemaOrgClass, Store {
+	public interface JewelryStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -7465,7 +7469,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A listing that describes a job opening in a certain organization.")
 	@CamelizedName("jobPosting")
 	@ConstantizedName("JOB_POSTING")
-	public interface JobPosting extends Intangible, SchemaOrgClass {
+	public interface JobPosting extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/baseSalary">http://schema.org/baseSalary</a>
@@ -7616,7 +7620,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " JoinAction does not imply that you'll be polling for updates.</li>\n</ul>\n")
 	@CamelizedName("joinAction")
 	@ConstantizedName("JOIN_ACTION")
-	public interface JoinAction extends InteractAction, SchemaOrgClass {
+	public interface JoinAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
@@ -7636,7 +7640,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("LaTeX format source text.")
 	@CamelizedName("latex")
 	@ConstantizedName("LATEX")
-	public interface LaTeX extends SchemaOrgClass, Text {
+	public interface LaTeX extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -7650,7 +7654,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A lake (for example, Lake Pontrachain).")
 	@CamelizedName("lakeBodyOfWater")
 	@ConstantizedName("LAKE_BODY_OF_WATER")
-	public interface LakeBodyOfWater extends BodyOfWater, SchemaOrgClass {
+	public interface LakeBodyOfWater extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7668,7 +7672,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " submersed mountain ranges, volcanoes, and the great ocean basins.")
 	@CamelizedName("landform")
 	@ConstantizedName("LANDFORM")
-	public interface Landform extends Place, SchemaOrgClass {
+	public interface Landform extends NativeValueText, Place, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7682,7 +7686,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An historical landmark or building.")
 	@CamelizedName("landmarksOrHistoricalBuildings")
 	@ConstantizedName("LANDMARKS_OR_HISTORICAL_BUILDINGS")
-	public interface LandmarksOrHistoricalBuildings extends Place, SchemaOrgClass {
+	public interface LandmarksOrHistoricalBuildings extends NativeValueText, Place, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7704,7 +7708,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/ComputerLanguage\">ComputerLanguage</a>.")
 	@CamelizedName("language")
 	@ConstantizedName("LANGUAGE")
-	public interface Language extends Intangible, SchemaOrgClass {
+	public interface Language extends Intangible, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7725,7 +7729,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " than a service.</li>\n</ul>\n")
 	@CamelizedName("leaveAction")
 	@ConstantizedName("LEAVE_ACTION")
-	public interface LeaveAction extends InteractAction, SchemaOrgClass {
+	public interface LeaveAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/event">http://schema.org/event</a>
@@ -7751,7 +7755,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/Service\">Service</a>(s).")
 	@CamelizedName("legalService")
 	@ConstantizedName("LEGAL_SERVICE")
-	public interface LegalService extends LocalBusiness, SchemaOrgClass {
+	public interface LegalService extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7766,7 +7770,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A legislative building&#x2014;for example, the state capitol.")
 	@CamelizedName("legislativeBuilding")
 	@ConstantizedName("LEGISLATIVE_BUILDING")
-	public interface LegislativeBuilding extends GovernmentBuilding, SchemaOrgClass {
+	public interface LegislativeBuilding extends GovernmentBuilding, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7785,7 +7789,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " LendAction.</li>\n</ul>\n")
 	@CamelizedName("lendAction")
 	@ConstantizedName("LEND_ACTION")
-	public interface LendAction extends SchemaOrgClass, TransferAction {
+	public interface LendAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/borrower">http://schema.org/borrower</a>
@@ -7805,7 +7809,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A library.")
 	@CamelizedName("library")
 	@ConstantizedName("LIBRARY")
-	public interface Library extends LocalBusiness, SchemaOrgClass {
+	public interface Library extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7821,7 +7825,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " object (a proposition, topic or theme) with participants.")
 	@CamelizedName("likeAction")
 	@ConstantizedName("LIKE_ACTION")
-	public interface LikeAction extends ReactAction, SchemaOrgClass {
+	public interface LikeAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7836,7 +7840,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.")
 	@CamelizedName("liquorStore")
 	@ConstantizedName("LIQUOR_STORE")
-	public interface LiquorStore extends SchemaOrgClass, Store {
+	public interface LiquorStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -7851,7 +7855,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An list item, e.g. a step in a checklist or how-to description.")
 	@CamelizedName("listItem")
 	@ConstantizedName("LIST_ITEM")
-	public interface ListItem extends Intangible, SchemaOrgClass {
+	public interface ListItem extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/item">http://schema.org/item</a>
@@ -7889,7 +7893,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of consuming audio content.")
 	@CamelizedName("listenAction")
 	@ConstantizedName("LISTEN_ACTION")
-	public interface ListenAction extends ConsumeAction, SchemaOrgClass {
+	public interface ListenAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7903,7 +7907,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Literary event.")
 	@CamelizedName("literaryEvent")
 	@ConstantizedName("LITERARY_EVENT")
-	public interface LiteraryEvent extends Event, SchemaOrgClass {
+	public interface LiteraryEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -7919,7 +7923,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " through continuous updates.")
 	@CamelizedName("liveBlogPosting")
 	@ConstantizedName("LIVE_BLOG_POSTING")
-	public interface LiveBlogPosting extends BlogPosting, SchemaOrgClass {
+	public interface LiveBlogPosting extends BlogPosting, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/coverageEndTime">http://schema.org/coverageEndTime</a>
@@ -7953,7 +7957,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " charges.")
 	@CamelizedName("loanOrCredit")
 	@ConstantizedName("LOAN_OR_CREDIT")
-	public interface LoanOrCredit extends FinancialProduct, SchemaOrgClass {
+	public interface LoanOrCredit extends FinancialProduct, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/amount">http://schema.org/amount</a>
@@ -8024,7 +8028,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " a branch of a bank, a medical practice, a club, a bowling alley, etc.")
 	@CamelizedName("localBusiness")
 	@ConstantizedName("LOCAL_BUSINESS")
-	public interface LocalBusiness extends Organization, Place, SchemaOrgClass {
+	public interface LocalBusiness extends NativeValueText, Organization, Place, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/currenciesAccepted">http://schema.org/currenciesAccepted</a>
@@ -8065,7 +8069,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " formality.")
 	@CamelizedName("locationFeatureSpecification")
 	@ConstantizedName("LOCATION_FEATURE_SPECIFICATION")
-	public interface LocationFeatureSpecification extends PropertyValue, SchemaOrgClass {
+	public interface LocationFeatureSpecification extends NativeValueText, PropertyValue, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/hoursAvailable">http://schema.org/hoursAvailable</a>
@@ -8098,7 +8102,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A DeliveryMethod in which an item is made available via locker.")
 	@CamelizedName("lockerDelivery")
 	@ConstantizedName("LOCKER_DELIVERY")
-	public interface LockerDelivery extends DeliveryMethod, SchemaOrgClass {
+	public interface LockerDelivery extends DeliveryMethod, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8112,7 +8116,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A locksmith.")
 	@CamelizedName("locksmith")
 	@ConstantizedName("LOCKSMITH")
-	public interface Locksmith extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface Locksmith extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8127,7 +8131,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A lodging business, such as a motel, hotel, or inn.")
 	@CamelizedName("lodgingBusiness")
 	@ConstantizedName("LODGING_BUSINESS")
-	public interface LodgingBusiness extends LocalBusiness, SchemaOrgClass {
+	public interface LodgingBusiness extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/amenityFeature">http://schema.org/amenityFeature</a>
@@ -8186,7 +8190,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " or HTML pages with individual confirmations of reservations.")
 	@CamelizedName("lodgingReservation")
 	@ConstantizedName("LODGING_RESERVATION")
-	public interface LodgingReservation extends Reservation, SchemaOrgClass {
+	public interface LodgingReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/checkinTime">http://schema.org/checkinTime</a>
@@ -8237,7 +8241,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of being defeated in a competitive activity.")
 	@CamelizedName("loseAction")
 	@ConstantizedName("LOSE_ACTION")
-	public interface LoseAction extends AchieveAction, SchemaOrgClass {
+	public interface LoseAction extends AchieveAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/winner">http://schema.org/winner</a>
@@ -8257,7 +8261,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A map.")
 	@CamelizedName("map")
 	@ConstantizedName("MAP")
-	public interface Map extends CreativeWork, SchemaOrgClass {
+	public interface Map extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/mapType">http://schema.org/mapType</a>
@@ -8277,7 +8281,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An enumeration of several kinds of Map.")
 	@CamelizedName("mapCategoryType")
 	@ConstantizedName("MAP_CATEGORY_TYPE")
-	public interface MapCategoryType extends Enumeration, SchemaOrgClass {
+	public interface MapCategoryType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8291,7 +8295,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Markdown format source text.")
 	@CamelizedName("markdown")
 	@ConstantizedName("MARKDOWN")
-	public interface Markdown extends SchemaOrgClass, Text {
+	public interface Markdown extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -8305,7 +8309,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of marrying a person.")
 	@CamelizedName("marryAction")
 	@ConstantizedName("MARRY_ACTION")
-	public interface MarryAction extends InteractAction, SchemaOrgClass {
+	public interface MarryAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8321,7 +8325,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " unit of measure&gt;'. E.g., '7 kg'.")
 	@CamelizedName("mass")
 	@ConstantizedName("MASS")
-	public interface Mass extends Quantity, SchemaOrgClass {
+	public interface Mass extends NativeValueText, Quantity, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8340,7 +8344,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " a high and low bandwidth audio stream (2 AudioObject's).")
 	@CamelizedName("mediaObject")
 	@ConstantizedName("MEDIA_OBJECT")
-	public interface MediaObject extends CreativeWork, SchemaOrgClass {
+	public interface MediaObject extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/associatedArticle">http://schema.org/associatedArticle</a>
@@ -8444,7 +8448,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("MediaWiki format source text.")
 	@CamelizedName("mediaWiki")
 	@ConstantizedName("MEDIA_WIKI")
-	public interface MediaWiki extends SchemaOrgClass, Text {
+	public interface MediaWiki extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -8460,7 +8464,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " clinic.")
 	@CamelizedName("medicalOrganization")
 	@ConstantizedName("MEDICAL_ORGANIZATION")
-	public interface MedicalOrganization extends Organization, SchemaOrgClass {
+	public interface MedicalOrganization extends NativeValueText, Organization, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/healthPlanNetworkId">http://schema.org/healthPlanNetworkId</a>
@@ -8498,7 +8502,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " use of schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("meetingRoom")
 	@ConstantizedName("MEETING_ROOM")
-	public interface MeetingRoom extends Room, SchemaOrgClass {
+	public interface MeetingRoom extends NativeValueText, Room, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8512,7 +8516,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A men's clothing store.")
 	@CamelizedName("mensClothingStore")
 	@ConstantizedName("MENS_CLOTHING_STORE")
-	public interface MensClothingStore extends SchemaOrgClass, Store {
+	public interface MensClothingStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -8528,7 +8532,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " FoodEstablishment.")
 	@CamelizedName("menu")
 	@ConstantizedName("MENU")
-	public interface Menu extends CreativeWork, SchemaOrgClass {
+	public interface Menu extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/hasMenuItem">http://schema.org/hasMenuItem</a>
@@ -8555,7 +8559,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A food or drink item listed in a menu or menu section.")
 	@CamelizedName("menuItem")
 	@ConstantizedName("MENU_ITEM")
-	public interface MenuItem extends Intangible, SchemaOrgClass {
+	public interface MenuItem extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/menuAddOn">http://schema.org/menuAddOn</a>
@@ -8596,7 +8600,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " etc.), or some other classification made by the menu provider.")
 	@CamelizedName("menuSection")
 	@ConstantizedName("MENU_SECTION")
-	public interface MenuSection extends CreativeWork, SchemaOrgClass {
+	public interface MenuSection extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/hasMenuItem">http://schema.org/hasMenuItem</a>
@@ -8623,7 +8627,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A single message from a sender to one or more organizations or people.")
 	@CamelizedName("message")
 	@ConstantizedName("MESSAGE")
-	public interface Message extends CreativeWork, SchemaOrgClass {
+	public interface Message extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/bccRecipient">http://schema.org/bccRecipient</a>
@@ -8693,7 +8697,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " somewhat).")
 	@CamelizedName("middleSchool")
 	@ConstantizedName("MIDDLE_SCHOOL")
-	public interface MiddleSchool extends EducationalOrganization, SchemaOrgClass {
+	public interface MiddleSchool extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8709,7 +8713,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " such as a telephone.")
 	@CamelizedName("mobileApplication")
 	@ConstantizedName("MOBILE_APPLICATION")
-	public interface MobileApplication extends SchemaOrgClass, SoftwareApplication {
+	public interface MobileApplication extends NativeValueText, SchemaOrgClass, SoftwareApplication {
 
 		/**
 		 * @see <a href="http://schema.org/carrierRequirements">http://schema.org/carrierRequirements</a>
@@ -8730,7 +8734,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A store that sells mobile phones and related accessories.")
 	@CamelizedName("mobilePhoneStore")
 	@ConstantizedName("MOBILE_PHONE_STORE")
-	public interface MobilePhoneStore extends SchemaOrgClass, Store {
+	public interface MobilePhoneStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -8744,7 +8748,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("MoinMoin format source text.")
 	@CamelizedName("moinMoin")
 	@ConstantizedName("MOIN_MOIN")
-	public interface MoinMoin extends SchemaOrgClass, Text {
+	public interface MoinMoin extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -8764,7 +8768,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " describe the price of an Offer, Invoice, etc.")
 	@CamelizedName("monetaryAmount")
 	@ConstantizedName("MONETARY_AMOUNT")
-	public interface MonetaryAmount extends SchemaOrgClass, StructuredValue {
+	public interface MonetaryAmount extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/currency">http://schema.org/currency</a>
@@ -8814,7 +8818,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A mosque.")
 	@CamelizedName("mosque")
 	@ConstantizedName("MOSQUE")
-	public interface Mosque extends PlaceOfWorship, SchemaOrgClass {
+	public interface Mosque extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8831,7 +8835,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " accommodations</a>.")
 	@CamelizedName("motel")
 	@ConstantizedName("MOTEL")
-	public interface Motel extends LodgingBusiness, SchemaOrgClass {
+	public interface Motel extends LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8845,7 +8849,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A motorcycle dealer.")
 	@CamelizedName("motorcycleDealer")
 	@ConstantizedName("MOTORCYCLE_DEALER")
-	public interface MotorcycleDealer extends AutomotiveBusiness, SchemaOrgClass {
+	public interface MotorcycleDealer extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8859,7 +8863,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A motorcycle repair shop.")
 	@CamelizedName("motorcycleRepair")
 	@ConstantizedName("MOTORCYCLE_REPAIR")
-	public interface MotorcycleRepair extends AutomotiveBusiness, SchemaOrgClass {
+	public interface MotorcycleRepair extends AutomotiveBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8874,7 +8878,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A mountain, like Mount Whitney or Mount Everest.")
 	@CamelizedName("mountain")
 	@ConstantizedName("MOUNTAIN")
-	public interface Mountain extends Landform, SchemaOrgClass {
+	public interface Mountain extends Landform, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8893,7 +8897,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " rather than an inanimate object.</li>\n</ul>\n")
 	@CamelizedName("moveAction")
 	@ConstantizedName("MOVE_ACTION")
-	public interface MoveAction extends Action, SchemaOrgClass {
+	public interface MoveAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/fromLocation">http://schema.org/fromLocation</a>
@@ -8919,7 +8923,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A movie.")
 	@CamelizedName("movie")
 	@ConstantizedName("MOVIE")
-	public interface Movie extends CreativeWork, SchemaOrgClass {
+	public interface Movie extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -8981,7 +8985,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A short segment/part of a movie.")
 	@CamelizedName("movieClip")
 	@ConstantizedName("MOVIE_CLIP")
-	public interface MovieClip extends Clip, SchemaOrgClass {
+	public interface MovieClip extends Clip, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -8995,7 +8999,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A movie rental store.")
 	@CamelizedName("movieRentalStore")
 	@ConstantizedName("MOVIE_RENTAL_STORE")
-	public interface MovieRentalStore extends SchemaOrgClass, Store {
+	public interface MovieRentalStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -9010,7 +9014,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A series of movies. Included movies can be indicated with the hasPart property.")
 	@CamelizedName("movieSeries")
 	@ConstantizedName("MOVIE_SERIES")
-	public interface MovieSeries extends CreativeWorkSeries, SchemaOrgClass {
+	public interface MovieSeries extends CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -9054,7 +9058,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A movie theater.")
 	@CamelizedName("movieTheater")
 	@ConstantizedName("MOVIE_THEATER")
-	public interface MovieTheater extends CivicStructure, EntertainmentBusiness, SchemaOrgClass {
+	public interface MovieTheater extends CivicStructure, EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/screenCount">http://schema.org/screenCount</a>
@@ -9074,7 +9078,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A moving company.")
 	@CamelizedName("movingCompany")
 	@ConstantizedName("MOVING_COMPANY")
-	public interface MovingCompany extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface MovingCompany extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9088,7 +9092,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A museum.")
 	@CamelizedName("museum")
 	@ConstantizedName("MUSEUM")
-	public interface Museum extends CivicStructure, SchemaOrgClass {
+	public interface Museum extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9102,7 +9106,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A collection of music tracks.")
 	@CamelizedName("musicAlbum")
 	@ConstantizedName("MUSIC_ALBUM")
-	public interface MusicAlbum extends MusicPlaylist, SchemaOrgClass {
+	public interface MusicAlbum extends MusicPlaylist, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/albumProductionType">http://schema.org/albumProductionType</a>
@@ -9142,7 +9146,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " studio album, etc.")
 	@CamelizedName("musicAlbumProductionType")
 	@ConstantizedName("MUSIC_ALBUM_PRODUCTION_TYPE")
-	public interface MusicAlbumProductionType extends Enumeration, SchemaOrgClass {
+	public interface MusicAlbumProductionType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9157,7 +9161,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The kind of release which this album is: single, EP or album.")
 	@CamelizedName("musicAlbumReleaseType")
 	@ConstantizedName("MUSIC_ALBUM_RELEASE_TYPE")
-	public interface MusicAlbumReleaseType extends Enumeration, SchemaOrgClass {
+	public interface MusicAlbumReleaseType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9171,7 +9175,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A musical composition.")
 	@CamelizedName("musicComposition")
 	@ConstantizedName("MUSIC_COMPOSITION")
-	public interface MusicComposition extends CreativeWork, SchemaOrgClass {
+	public interface MusicComposition extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/composer">http://schema.org/composer</a>
@@ -9245,7 +9249,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Music event.")
 	@CamelizedName("musicEvent")
 	@ConstantizedName("MUSIC_EVENT")
-	public interface MusicEvent extends Event, SchemaOrgClass {
+	public interface MusicEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9261,7 +9265,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " musician.")
 	@CamelizedName("musicGroup")
 	@ConstantizedName("MUSIC_GROUP")
-	public interface MusicGroup extends PerformingGroup, SchemaOrgClass {
+	public interface MusicGroup extends NativeValueText, PerformingGroup, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/album">http://schema.org/album</a>
@@ -9294,7 +9298,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A collection of music tracks in playlist form.")
 	@CamelizedName("musicPlaylist")
 	@ConstantizedName("MUSIC_PLAYLIST")
-	public interface MusicPlaylist extends CreativeWork, SchemaOrgClass {
+	public interface MusicPlaylist extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numTracks">http://schema.org/numTracks</a>
@@ -9321,7 +9325,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A music recording (track), usually a single song.")
 	@CamelizedName("musicRecording")
 	@ConstantizedName("MUSIC_RECORDING")
-	public interface MusicRecording extends CreativeWork, SchemaOrgClass {
+	public interface MusicRecording extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/byArtist">http://schema.org/byArtist</a>
@@ -9372,7 +9376,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A MusicRelease is a specific release of a music album.")
 	@CamelizedName("musicRelease")
 	@ConstantizedName("MUSIC_RELEASE")
-	public interface MusicRelease extends MusicPlaylist, SchemaOrgClass {
+	public interface MusicRelease extends MusicPlaylist, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/catalogNumber">http://schema.org/catalogNumber</a>
@@ -9424,7 +9428,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " digital media, LP, etc.).")
 	@CamelizedName("musicReleaseFormatType")
 	@ConstantizedName("MUSIC_RELEASE_FORMAT_TYPE")
-	public interface MusicReleaseFormatType extends Enumeration, SchemaOrgClass {
+	public interface MusicReleaseFormatType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9438,7 +9442,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A music store.")
 	@CamelizedName("musicStore")
 	@ConstantizedName("MUSIC_STORE")
-	public interface MusicStore extends SchemaOrgClass, Store {
+	public interface MusicStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -9452,7 +9456,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A music venue.")
 	@CamelizedName("musicVenue")
 	@ConstantizedName("MUSIC_VENUE")
-	public interface MusicVenue extends CivicStructure, SchemaOrgClass {
+	public interface MusicVenue extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9466,7 +9470,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A music video file.")
 	@CamelizedName("musicVideoObject")
 	@ConstantizedName("MUSIC_VIDEO_OBJECT")
-	public interface MusicVideoObject extends MediaObject, SchemaOrgClass {
+	public interface MusicVideoObject extends MediaObject, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9481,7 +9485,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Organization: Non-governmental Organization.")
 	@CamelizedName("ngo")
 	@ConstantizedName("NGO")
-	public interface NGO extends Organization, SchemaOrgClass {
+	public interface NGO extends NativeValueText, Organization, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9495,7 +9499,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A nail salon.")
 	@CamelizedName("nailSalon")
 	@ConstantizedName("NAIL_SALON")
-	public interface NailSalon extends HealthAndBeautyBusiness, SchemaOrgClass {
+	public interface NailSalon extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9513,7 +9517,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " markup</a> is also available.")
 	@CamelizedName("newsArticle")
 	@ConstantizedName("NEWS_ARTICLE")
-	public interface NewsArticle extends Article, SchemaOrgClass {
+	public interface NewsArticle extends Article, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dateline">http://schema.org/dateline</a>
@@ -9557,7 +9561,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A nightclub or discotheque.")
 	@CamelizedName("nightClub")
 	@ConstantizedName("NIGHT_CLUB")
-	public interface NightClub extends EntertainmentBusiness, SchemaOrgClass {
+	public interface NightClub extends EntertainmentBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9571,7 +9575,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A notary.")
 	@CamelizedName("notary")
 	@ConstantizedName("NOTARY")
-	public interface Notary extends LegalService, SchemaOrgClass {
+	public interface Notary extends LegalService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9586,7 +9590,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A file containing a note, primarily for the author.")
 	@CamelizedName("noteDigitalDocument")
 	@ConstantizedName("NOTE_DIGITAL_DOCUMENT")
-	public interface NoteDigitalDocument extends DigitalDocument, SchemaOrgClass {
+	public interface NoteDigitalDocument extends DigitalDocument, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9601,7 +9605,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Nutritional information about the recipe.")
 	@CamelizedName("nutritionInformation")
 	@ConstantizedName("NUTRITION_INFORMATION")
-	public interface NutritionInformation extends SchemaOrgClass, StructuredValue {
+	public interface NutritionInformation extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/calories">http://schema.org/calories</a>
@@ -9687,7 +9691,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An ocean (for example, the Pacific).")
 	@CamelizedName("oceanBodyOfWater")
 	@ConstantizedName("OCEAN_BODY_OF_WATER")
-	public interface OceanBodyOfWater extends BodyOfWater, SchemaOrgClass {
+	public interface OceanBodyOfWater extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9711,7 +9715,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " guide</a> from <a href=\"http://www.gs1.org/\">GS1</a>.")
 	@CamelizedName("offer")
 	@ConstantizedName("OFFER")
-	public interface Offer extends Intangible, SchemaOrgClass {
+	public interface Offer extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/acceptedPaymentMethod">http://schema.org/acceptedPaymentMethod</a>
@@ -9967,7 +9971,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " OfferCatalogs that are offeredBy the same provider.")
 	@CamelizedName("offerCatalog")
 	@ConstantizedName("OFFER_CATALOG")
-	public interface OfferCatalog extends ItemList, SchemaOrgClass {
+	public interface OfferCatalog extends ItemList, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9982,7 +9986,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A list of possible conditions for the item.")
 	@CamelizedName("offerItemCondition")
 	@ConstantizedName("OFFER_ITEM_CONDITION")
-	public interface OfferItemCondition extends Enumeration, SchemaOrgClass {
+	public interface OfferItemCondition extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -9996,7 +10000,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An office equipment store.")
 	@CamelizedName("officeEquipmentStore")
 	@ConstantizedName("OFFICE_EQUIPMENT_STORE")
-	public interface OfficeEquipmentStore extends SchemaOrgClass, Store {
+	public interface OfficeEquipmentStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -10012,7 +10016,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " available on-demand.")
 	@CamelizedName("onDemandEvent")
 	@ConstantizedName("ON_DEMAND_EVENT")
-	public interface OnDemandEvent extends PublicationEvent, SchemaOrgClass {
+	public interface OnDemandEvent extends NativeValueText, PublicationEvent, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10034,7 +10038,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " property then the hour range is assumed to span over the next day.")
 	@CamelizedName("openingHoursSpecification")
 	@ConstantizedName("OPENING_HOURS_SPECIFICATION")
-	public interface OpeningHoursSpecification extends SchemaOrgClass, StructuredValue {
+	public interface OpeningHoursSpecification extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/closes">http://schema.org/closes</a>
@@ -10081,7 +10085,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " customer.")
 	@CamelizedName("order")
 	@ConstantizedName("ORDER")
-	public interface Order extends Intangible, SchemaOrgClass {
+	public interface Order extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/acceptedOffer">http://schema.org/acceptedOffer</a>
@@ -10216,7 +10220,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An agent orders an object/product/service to be delivered/sent.")
 	@CamelizedName("orderAction")
 	@ConstantizedName("ORDER_ACTION")
-	public interface OrderAction extends SchemaOrgClass, TradeAction {
+	public interface OrderAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
@@ -10238,7 +10242,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " details of a bought offer.")
 	@CamelizedName("orderItem")
 	@ConstantizedName("ORDER_ITEM")
-	public interface OrderItem extends Intangible, SchemaOrgClass {
+	public interface OrderItem extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/orderDelivery">http://schema.org/orderDelivery</a>
@@ -10282,7 +10286,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Enumerated status values for Order.")
 	@CamelizedName("orderStatus")
 	@ConstantizedName("ORDER_STATUS")
-	public interface OrderStatus extends Enumeration, SchemaOrgClass {
+	public interface OrderStatus extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10297,7 +10301,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "An organization such as a school, NGO, corporation, club, etc.")
 	@CamelizedName("organization")
 	@ConstantizedName("ORGANIZATION")
-	public interface Organization extends SchemaOrgClass, Thing {
+	public interface Organization extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/actionableFeedbackPolicy">http://schema.org/actionableFeedbackPolicy</a>
@@ -10612,7 +10616,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A subclass of Role used to describe roles within organizations.")
 	@CamelizedName("organizationRole")
 	@ConstantizedName("ORGANIZATION_ROLE")
-	public interface OrganizationRole extends Role, SchemaOrgClass {
+	public interface OrganizationRole extends NativeValueText, Role, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberedPosition">http://schema.org/numberedPosition</a>
@@ -10634,7 +10638,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " objects.")
 	@CamelizedName("organizeAction")
 	@ConstantizedName("ORGANIZE_ACTION")
-	public interface OrganizeAction extends Action, SchemaOrgClass {
+	public interface OrganizeAction extends Action, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10648,7 +10652,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An outlet store.")
 	@CamelizedName("outletStore")
 	@ConstantizedName("OUTLET_STORE")
-	public interface OutletStore extends SchemaOrgClass, Store {
+	public interface OutletStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -10664,7 +10668,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " person owned a certain product.")
 	@CamelizedName("ownershipInfo")
 	@ConstantizedName("OWNERSHIP_INFO")
-	public interface OwnershipInfo extends SchemaOrgClass, StructuredValue {
+	public interface OwnershipInfo extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/acquiredFrom">http://schema.org/acquiredFrom</a>
@@ -10703,7 +10707,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of producing a painting, typically with paint and canvas as instruments.")
 	@CamelizedName("paintAction")
 	@ConstantizedName("PAINT_ACTION")
-	public interface PaintAction extends CreateAction, SchemaOrgClass {
+	public interface PaintAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10717,7 +10721,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A painting.")
 	@CamelizedName("painting")
 	@ConstantizedName("PAINTING")
-	public interface Painting extends CreativeWork, SchemaOrgClass {
+	public interface Painting extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10732,7 +10736,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The delivery of a parcel either via the postal service or a commercial service.")
 	@CamelizedName("parcelDelivery")
 	@ConstantizedName("PARCEL_DELIVERY")
-	public interface ParcelDelivery extends Intangible, SchemaOrgClass {
+	public interface ParcelDelivery extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/deliveryAddress">http://schema.org/deliveryAddress</a>
@@ -10815,7 +10819,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#DHL</li>\n<li>http://purl.org/goodrelations/v1#FederalExpress</li>\n<li>http://purl.org/goodrelations/v1#UPS</li>\n</ul>\n")
 	@CamelizedName("parcelService")
 	@ConstantizedName("PARCEL_SERVICE")
-	public interface ParcelService extends DeliveryMethod, SchemaOrgClass {
+	public interface ParcelService extends DeliveryMethod, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10831,7 +10835,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " some content.")
 	@CamelizedName("parentAudience")
 	@ConstantizedName("PARENT_AUDIENCE")
-	public interface ParentAudience extends PeopleAudience, SchemaOrgClass {
+	public interface ParentAudience extends NativeValueText, PeopleAudience, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/childMaxAge">http://schema.org/childMaxAge</a>
@@ -10857,7 +10861,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A park.")
 	@CamelizedName("park")
 	@ConstantizedName("PARK")
-	public interface Park extends CivicStructure, SchemaOrgClass {
+	public interface Park extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10872,7 +10876,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A parking lot or other parking facility.")
 	@CamelizedName("parkingFacility")
 	@ConstantizedName("PARKING_FACILITY")
-	public interface ParkingFacility extends CivicStructure, SchemaOrgClass {
+	public interface ParkingFacility extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -10888,7 +10892,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " possessions.")
 	@CamelizedName("pawnShop")
 	@ConstantizedName("PAWN_SHOP")
-	public interface PawnShop extends SchemaOrgClass, Store {
+	public interface PawnShop extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -10902,7 +10906,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An agent pays a price to a participant.")
 	@CamelizedName("payAction")
 	@ConstantizedName("PAY_ACTION")
-	public interface PayAction extends SchemaOrgClass, TradeAction {
+	public interface PayAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/purpose">http://schema.org/purpose</a>
@@ -10930,7 +10934,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " payment with an account.")
 	@CamelizedName("paymentCard")
 	@ConstantizedName("PAYMENT_CARD")
-	public interface PaymentCard extends FinancialProduct, PaymentMethod, SchemaOrgClass {
+	public interface PaymentCard extends FinancialProduct, NativeValueText, PaymentMethod, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/cashBack">http://schema.org/cashBack</a>
@@ -10963,7 +10967,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The costs of settling the payment using a particular payment method.")
 	@CamelizedName("paymentChargeSpecification")
 	@ConstantizedName("PAYMENT_CHARGE_SPECIFICATION")
-	public interface PaymentChargeSpecification extends PriceSpecification, SchemaOrgClass {
+	public interface PaymentChargeSpecification extends NativeValueText, PriceSpecification, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/appliesToDeliveryMethod">http://schema.org/appliesToDeliveryMethod</a>
@@ -10994,7 +10998,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n")
 	@CamelizedName("paymentMethod")
 	@ConstantizedName("PAYMENT_METHOD")
-	public interface PaymentMethod extends Enumeration, SchemaOrgClass {
+	public interface PaymentMethod extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11010,7 +11014,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " person or organization.")
 	@CamelizedName("paymentService")
 	@ConstantizedName("PAYMENT_SERVICE")
-	public interface PaymentService extends FinancialProduct, SchemaOrgClass {
+	public interface PaymentService extends FinancialProduct, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11025,7 +11029,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A specific payment status. For example, PaymentDue, PaymentComplete, etc.")
 	@CamelizedName("paymentStatusType")
 	@ConstantizedName("PAYMENT_STATUS_TYPE")
-	public interface PaymentStatusType extends Enumeration, SchemaOrgClass {
+	public interface PaymentStatusType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11041,7 +11045,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " audience.")
 	@CamelizedName("peopleAudience")
 	@ConstantizedName("PEOPLE_AUDIENCE")
-	public interface PeopleAudience extends Audience, SchemaOrgClass {
+	public interface PeopleAudience extends Audience, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/healthCondition">http://schema.org/healthCondition</a>
@@ -11098,7 +11102,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of participating in performance arts.")
 	@CamelizedName("performAction")
 	@ConstantizedName("PERFORM_ACTION")
-	public interface PerformAction extends PlayAction, SchemaOrgClass {
+	public interface PerformAction extends NativeValueText, PlayAction, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/entertainmentBusiness">http://schema.org/entertainmentBusiness</a>
@@ -11120,7 +11124,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " performance, e.g. in a Movie, TVSeries etc.")
 	@CamelizedName("performanceRole")
 	@ConstantizedName("PERFORMANCE_ROLE")
-	public interface PerformanceRole extends Role, SchemaOrgClass {
+	public interface PerformanceRole extends NativeValueText, Role, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/characterName">http://schema.org/characterName</a>
@@ -11141,7 +11145,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A theater or other performing art center.")
 	@CamelizedName("performingArtsTheater")
 	@ConstantizedName("PERFORMING_ARTS_THEATER")
-	public interface PerformingArtsTheater extends CivicStructure, SchemaOrgClass {
+	public interface PerformingArtsTheater extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11156,7 +11160,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A performance group, such as a band, an orchestra, or a circus.")
 	@CamelizedName("performingGroup")
 	@ConstantizedName("PERFORMING_GROUP")
-	public interface PerformingGroup extends Organization, SchemaOrgClass {
+	public interface PerformingGroup extends NativeValueText, Organization, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11175,7 +11179,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " post</a>.")
 	@CamelizedName("periodical")
 	@ConstantizedName("PERIODICAL")
-	public interface Periodical extends CreativeWorkSeries, SchemaOrgClass {
+	public interface Periodical extends CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11190,7 +11194,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A permit issued by an organization, e.g. a parking pass.")
 	@CamelizedName("permit")
 	@ConstantizedName("PERMIT")
-	public interface Permit extends Intangible, SchemaOrgClass {
+	public interface Permit extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/issuedBy">http://schema.org/issuedBy</a>
@@ -11247,7 +11251,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A person (alive, dead, undead, or fictional).")
 	@CamelizedName("person")
 	@ConstantizedName("PERSON")
-	public interface Person extends SchemaOrgClass, Thing {
+	public interface Person extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/additionalName">http://schema.org/additionalName</a>
@@ -11597,7 +11601,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A pet store.")
 	@CamelizedName("petStore")
 	@ConstantizedName("PET_STORE")
-	public interface PetStore extends SchemaOrgClass, Store {
+	public interface PetStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -11611,7 +11615,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A pharmacy or drugstore.")
 	@CamelizedName("pharmacy")
 	@ConstantizedName("PHARMACY")
-	public interface Pharmacy extends MedicalBusiness, MedicalOrganization, SchemaOrgClass {
+	public interface Pharmacy extends MedicalBusiness, MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11625,7 +11629,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A photograph.")
 	@CamelizedName("photograph")
 	@ConstantizedName("PHOTOGRAPH")
-	public interface Photograph extends CreativeWork, SchemaOrgClass {
+	public interface Photograph extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11640,7 +11644,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of capturing still images of objects using a camera.")
 	@CamelizedName("photographAction")
 	@ConstantizedName("PHOTOGRAPH_ACTION")
-	public interface PhotographAction extends CreateAction, SchemaOrgClass {
+	public interface PhotographAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11654,7 +11658,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A doctor's office.")
 	@CamelizedName("physician")
 	@ConstantizedName("PHYSICIAN")
-	public interface Physician extends MedicalBusiness, MedicalOrganization, SchemaOrgClass {
+	public interface Physician extends MedicalBusiness, MedicalOrganization, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableService">http://schema.org/availableService</a>
@@ -11687,7 +11691,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Entities that have a somewhat fixed, physical extension.")
 	@CamelizedName("place")
 	@ConstantizedName("PLACE")
-	public interface Place extends SchemaOrgClass, Thing {
+	public interface Place extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
@@ -11900,7 +11904,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Place of worship, such as a church, synagogue, or mosque.")
 	@CamelizedName("placeOfWorship")
 	@ConstantizedName("PLACE_OF_WORSHIP")
-	public interface PlaceOfWorship extends CivicStructure, SchemaOrgClass {
+	public interface PlaceOfWorship extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11916,7 +11920,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " future date.")
 	@CamelizedName("planAction")
 	@ConstantizedName("PLAN_ACTION")
-	public interface PlanAction extends OrganizeAction, SchemaOrgClass {
+	public interface PlanAction extends NativeValueText, OrganizeAction, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/scheduledTime">http://schema.org/scheduledTime</a>
@@ -11945,7 +11949,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " audience or at an event, rather than consuming visual content.</li>\n</ul>\n")
 	@CamelizedName("playAction")
 	@ConstantizedName("PLAY_ACTION")
-	public interface PlayAction extends Action, SchemaOrgClass {
+	public interface PlayAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/audience">http://schema.org/audience</a>
@@ -11971,7 +11975,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A playground.")
 	@CamelizedName("playground")
 	@ConstantizedName("PLAYGROUND")
-	public interface Playground extends CivicStructure, SchemaOrgClass {
+	public interface Playground extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11985,7 +11989,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A plumbing service.")
 	@CamelizedName("plumber")
 	@ConstantizedName("PLUMBER")
-	public interface Plumber extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface Plumber extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -11999,7 +12003,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A police station.")
 	@CamelizedName("policeStation")
 	@ConstantizedName("POLICE_STATION")
-	public interface PoliceStation extends CivicStructure, EmergencyService, SchemaOrgClass {
+	public interface PoliceStation extends CivicStructure, EmergencyService, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12013,7 +12017,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A pond.")
 	@CamelizedName("pond")
 	@ConstantizedName("POND")
-	public interface Pond extends BodyOfWater, SchemaOrgClass {
+	public interface Pond extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12027,7 +12031,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A post office.")
 	@CamelizedName("postOffice")
 	@ConstantizedName("POST_OFFICE")
-	public interface PostOffice extends GovernmentOffice, SchemaOrgClass {
+	public interface PostOffice extends GovernmentOffice, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12041,7 +12045,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The mailing address.")
 	@CamelizedName("postalAddress")
 	@ConstantizedName("POSTAL_ADDRESS")
-	public interface PostalAddress extends ContactPoint, SchemaOrgClass {
+	public interface PostalAddress extends ContactPoint, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/addressCountry">http://schema.org/addressCountry</a>
@@ -12098,7 +12102,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of inserting at the beginning if an ordered collection.")
 	@CamelizedName("prependAction")
 	@ConstantizedName("PREPEND_ACTION")
-	public interface PrependAction extends InsertAction, SchemaOrgClass {
+	public interface PrependAction extends InsertAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12112,7 +12116,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A preschool.")
 	@CamelizedName("preschool")
 	@ConstantizedName("PRESCHOOL")
-	public interface Preschool extends EducationalOrganization, SchemaOrgClass {
+	public interface Preschool extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12127,7 +12131,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A file containing slides or used for a presentation.")
 	@CamelizedName("presentationDigitalDocument")
 	@ConstantizedName("PRESENTATION_DIGITAL_DOCUMENT")
-	public interface PresentationDigitalDocument extends DigitalDocument, SchemaOrgClass {
+	public interface PresentationDigitalDocument extends DigitalDocument, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12146,7 +12150,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " independent amounts of money such as a salary, credit card limits, etc.")
 	@CamelizedName("priceSpecification")
 	@ConstantizedName("PRICE_SPECIFICATION")
-	public interface PriceSpecification extends SchemaOrgClass, StructuredValue {
+	public interface PriceSpecification extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/eligibleQuantity">http://schema.org/eligibleQuantity</a>
@@ -12216,7 +12220,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the rental of a car; a haircut; or an episode of a TV show streamed online.")
 	@CamelizedName("product")
 	@ConstantizedName("PRODUCT")
-	public interface Product extends SchemaOrgClass, Thing {
+	public interface Product extends NativeValueText, SchemaOrgClass, Thing {
 
 		/**
 		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
@@ -12424,7 +12428,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " description).")
 	@CamelizedName("productModel")
 	@ConstantizedName("PRODUCT_MODEL")
-	public interface ProductModel extends Product, SchemaOrgClass {
+	public interface ProductModel extends NativeValueText, Product, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/isVariantOf">http://schema.org/isVariantOf</a>
@@ -12479,7 +12483,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/Attorney\">Attorney</a>.")
 	@CamelizedName("professionalService")
 	@ConstantizedName("PROFESSIONAL_SERVICE")
-	public interface ProfessionalService extends LocalBusiness, SchemaOrgClass {
+	public interface ProfessionalService extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12493,7 +12497,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Profile page.")
 	@CamelizedName("profilePage")
 	@ConstantizedName("PROFILE_PAGE")
-	public interface ProfilePage extends SchemaOrgClass, WebPage {
+	public interface ProfilePage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -12509,7 +12513,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " traveler clubs (e.g. \"AAA\"), purchase clubs (\"Safeway Club\"), etc.")
 	@CamelizedName("programMembership")
 	@ConstantizedName("PROGRAM_MEMBERSHIP")
-	public interface ProgramMembership extends Intangible, SchemaOrgClass {
+	public interface ProgramMembership extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/hostingOrganization">http://schema.org/hostingOrganization</a>
@@ -12553,7 +12557,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " typically not trigger the same effect as using the original, specific property.")
 	@CamelizedName("propertyValue")
 	@ConstantizedName("PROPERTY_VALUE")
-	public interface PropertyValue extends SchemaOrgClass, StructuredValue {
+	public interface PropertyValue extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/maxValue">http://schema.org/maxValue</a>
@@ -12615,7 +12619,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A Property value specification.")
 	@CamelizedName("propertyValueSpecification")
 	@ConstantizedName("PROPERTY_VALUE_SPECIFICATION")
-	public interface PropertyValueSpecification extends Intangible, SchemaOrgClass {
+	public interface PropertyValueSpecification extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/defaultValue">http://schema.org/defaultValue</a>
@@ -12695,7 +12699,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A public swimming pool.")
 	@CamelizedName("publicSwimmingPool")
 	@ConstantizedName("PUBLIC_SWIMMING_POOL")
-	public interface PublicSwimmingPool extends SchemaOrgClass, SportsActivityLocation {
+	public interface PublicSwimmingPool extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -12712,7 +12716,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " book/journal publication via a variety of delivery media.")
 	@CamelizedName("publicationEvent")
 	@ConstantizedName("PUBLICATION_EVENT")
-	public interface PublicationEvent extends Event, SchemaOrgClass {
+	public interface PublicationEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/isAccessibleForFree">http://schema.org/isAccessibleForFree</a>
@@ -12749,7 +12753,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " post</a>.")
 	@CamelizedName("publicationIssue")
 	@ConstantizedName("PUBLICATION_ISSUE")
-	public interface PublicationIssue extends CreativeWork, SchemaOrgClass {
+	public interface PublicationIssue extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/issueNumber">http://schema.org/issueNumber</a>
@@ -12792,7 +12796,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " post&lt;/a&gt;.\n</code></pre>\n")
 	@CamelizedName("publicationVolume")
 	@ConstantizedName("PUBLICATION_VOLUME")
-	public interface PublicationVolume extends CreativeWork, SchemaOrgClass {
+	public interface PublicationVolume extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/pageEnd">http://schema.org/pageEnd</a>
@@ -12830,7 +12834,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("PukiWiki format source text.")
 	@CamelizedName("pukiWiki")
 	@ConstantizedName("PUKI_WIKI")
-	public interface PukiWiki extends SchemaOrgClass, Text {
+	public interface PukiWiki extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -12846,7 +12850,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " a question answering site or documenting Frequently Asked Questions (FAQs).")
 	@CamelizedName("qaPage")
 	@ConstantizedName("QA_PAGE")
-	public interface QAPage extends SchemaOrgClass, WebPage {
+	public interface QAPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -12862,7 +12866,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.")
 	@CamelizedName("qualitativeValue")
 	@ConstantizedName("QUALITATIVE_VALUE")
-	public interface QualitativeValue extends Enumeration, SchemaOrgClass {
+	public interface QualitativeValue extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
@@ -12925,7 +12929,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A point value or interval for product characteristics and other purposes.")
 	@CamelizedName("quantitativeValue")
 	@ConstantizedName("QUANTITATIVE_VALUE")
-	public interface QuantitativeValue extends SchemaOrgClass, StructuredValue {
+	public interface QuantitativeValue extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/additionalProperty">http://schema.org/additionalProperty</a>
@@ -12983,7 +12987,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " say Mass are entities like '3 Kg' or '4 milligrams'.")
 	@CamelizedName("quantity")
 	@ConstantizedName("QUANTITY")
-	public interface Quantity extends Intangible, SchemaOrgClass {
+	public interface Quantity extends Intangible, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -12999,7 +13003,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Frequently Asked Questions (FAQ) document.")
 	@CamelizedName("question")
 	@ConstantizedName("QUESTION")
-	public interface Question extends CreativeWork, SchemaOrgClass {
+	public interface Question extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/acceptedAnswer">http://schema.org/acceptedAnswer</a>
@@ -13045,7 +13049,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " location/store.")
 	@CamelizedName("quoteAction")
 	@ConstantizedName("QUOTE_ACTION")
-	public interface QuoteAction extends SchemaOrgClass, TradeAction {
+	public interface QuoteAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		public String getString();
 		public void setString(String string);
@@ -13059,7 +13063,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("RTF format source text.")
 	@CamelizedName("rtf")
 	@ConstantizedName("RTF")
-	public interface RTF extends SchemaOrgClass, Text {
+	public interface RTF extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -13075,7 +13079,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " the like.")
 	@CamelizedName("rvPark")
 	@ConstantizedName("RV_PARK")
-	public interface RVPark extends CivicStructure, SchemaOrgClass {
+	public interface RVPark extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13091,7 +13095,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " lineup.")
 	@CamelizedName("radioChannel")
 	@ConstantizedName("RADIO_CHANNEL")
-	public interface RadioChannel extends BroadcastChannel, SchemaOrgClass {
+	public interface RadioChannel extends BroadcastChannel, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13106,7 +13110,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A short radio program or a segment/part of a radio program.")
 	@CamelizedName("radioClip")
 	@ConstantizedName("RADIO_CLIP")
-	public interface RadioClip extends Clip, SchemaOrgClass {
+	public interface RadioClip extends Clip, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13121,7 +13125,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A radio episode which can be part of a series or season.")
 	@CamelizedName("radioEpisode")
 	@ConstantizedName("RADIO_EPISODE")
-	public interface RadioEpisode extends Episode, SchemaOrgClass {
+	public interface RadioEpisode extends Episode, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13136,7 +13140,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Season dedicated to radio broadcast and associated online delivery.")
 	@CamelizedName("radioSeason")
 	@ConstantizedName("RADIO_SEASON")
-	public interface RadioSeason extends CreativeWorkSeason, SchemaOrgClass {
+	public interface RadioSeason extends CreativeWorkSeason, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13151,7 +13155,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "CreativeWorkSeries dedicated to radio broadcast and associated online delivery.")
 	@CamelizedName("radioSeries")
 	@ConstantizedName("RADIO_SERIES")
-	public interface RadioSeries extends CreativeWorkSeries, SchemaOrgClass {
+	public interface RadioSeries extends CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -13219,7 +13223,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A radio station.")
 	@CamelizedName("radioStation")
 	@ConstantizedName("RADIO_STATION")
-	public interface RadioStation extends LocalBusiness, SchemaOrgClass {
+	public interface RadioStation extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13234,7 +13238,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.")
 	@CamelizedName("rating")
 	@ConstantizedName("RATING")
-	public interface Rating extends Intangible, SchemaOrgClass {
+	public interface Rating extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/author">http://schema.org/author</a>
@@ -13280,7 +13284,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " sentiment.")
 	@CamelizedName("reactAction")
 	@ConstantizedName("REACT_ACTION")
-	public interface ReactAction extends AssessAction, SchemaOrgClass {
+	public interface ReactAction extends AssessAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13294,7 +13298,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The act of consuming written content.")
 	@CamelizedName("readAction")
 	@ConstantizedName("READ_ACTION")
-	public interface ReadAction extends ConsumeAction, SchemaOrgClass {
+	public interface ReadAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13308,7 +13312,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A real-estate agent.")
 	@CamelizedName("realEstateAgent")
 	@ConstantizedName("REAL_ESTATE_AGENT")
-	public interface RealEstateAgent extends LocalBusiness, SchemaOrgClass {
+	public interface RealEstateAgent extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13330,7 +13334,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " receive a package, but it does not mean the package is now mine).</li>\n</ul>\n")
 	@CamelizedName("receiveAction")
 	@ConstantizedName("RECEIVE_ACTION")
-	public interface ReceiveAction extends SchemaOrgClass, TransferAction {
+	public interface ReceiveAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
@@ -13361,7 +13365,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " can also be used to add more detail.")
 	@CamelizedName("recipe")
 	@ConstantizedName("RECIPE")
-	public interface Recipe extends HowTo, SchemaOrgClass {
+	public interface Recipe extends HowTo, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/cookTime">http://schema.org/cookTime</a>
@@ -13429,7 +13433,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A recycling center.")
 	@CamelizedName("recyclingCenter")
 	@ConstantizedName("RECYCLING_CENTER")
-	public interface RecyclingCenter extends LocalBusiness, SchemaOrgClass {
+	public interface RecyclingCenter extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13443,7 +13447,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Redmine Wiki format source text.")
 	@CamelizedName("redmineWiki")
 	@ConstantizedName("REDMINE_WIKI")
-	public interface RedmineWiki extends SchemaOrgClass, Text {
+	public interface RedmineWiki extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -13467,7 +13471,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " updates from the object.</li>\n</ul>\n")
 	@CamelizedName("registerAction")
 	@ConstantizedName("REGISTER_ACTION")
-	public interface RegisterAction extends InteractAction, SchemaOrgClass {
+	public interface RegisterAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13485,7 +13489,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " RejectAction.</li>\n</ul>\n")
 	@CamelizedName("rejectAction")
 	@ConstantizedName("REJECT_ACTION")
-	public interface RejectAction extends AllocateAction, SchemaOrgClass {
+	public interface RejectAction extends AllocateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13502,7 +13506,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " from a landlord in exchange for a periodic payment.")
 	@CamelizedName("rentAction")
 	@ConstantizedName("RENT_ACTION")
-	public interface RentAction extends SchemaOrgClass, TradeAction {
+	public interface RentAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/landlord">http://schema.org/landlord</a>
@@ -13531,7 +13535,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " individual confirmations of reservations.")
 	@CamelizedName("rentalCarReservation")
 	@ConstantizedName("RENTAL_CAR_RESERVATION")
-	public interface RentalCarReservation extends Reservation, SchemaOrgClass {
+	public interface RentalCarReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dropoffLocation">http://schema.org/dropoffLocation</a>
@@ -13570,7 +13574,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of editing a recipient by replacing an old object with a new object.")
 	@CamelizedName("replaceAction")
 	@ConstantizedName("REPLACE_ACTION")
-	public interface ReplaceAction extends SchemaOrgClass, UpdateAction {
+	public interface ReplaceAction extends NativeValueText, SchemaOrgClass, UpdateAction {
 
 		/**
 		 * @see <a href="http://schema.org/replacee">http://schema.org/replacee</a>
@@ -13602,7 +13606,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " origin of a ReplyAction.</li>\n</ul>\n")
 	@CamelizedName("replyAction")
 	@ConstantizedName("REPLY_ACTION")
-	public interface ReplyAction extends CommunicateAction, SchemaOrgClass {
+	public interface ReplyAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/resultComment">http://schema.org/resultComment</a>
@@ -13623,7 +13627,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A Report generated by governmental or non-governmental organization.")
 	@CamelizedName("report")
 	@ConstantizedName("REPORT")
-	public interface Report extends Article, SchemaOrgClass {
+	public interface Report extends Article, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/reportNumber">http://schema.org/reportNumber</a>
@@ -13649,7 +13653,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("reservation")
 	@ConstantizedName("RESERVATION")
-	public interface Reservation extends Intangible, SchemaOrgClass {
+	public interface Reservation extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/bookingTime">http://schema.org/bookingTime</a>
@@ -13736,7 +13740,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A group of multiple reservations with common values for all sub-reservations.")
 	@CamelizedName("reservationPackage")
 	@ConstantizedName("RESERVATION_PACKAGE")
-	public interface ReservationPackage extends Reservation, SchemaOrgClass {
+	public interface ReservationPackage extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/subReservation">http://schema.org/subReservation</a>
@@ -13757,7 +13761,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Enumerated status values for Reservation.")
 	@CamelizedName("reservationStatusType")
 	@ConstantizedName("RESERVATION_STATUS_TYPE")
-	public interface ReservationStatusType extends Enumeration, SchemaOrgClass {
+	public interface ReservationStatusType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13776,7 +13780,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " towards a time slot / spatial allocation.</li>\n</ul>\n")
 	@CamelizedName("reserveAction")
 	@ConstantizedName("RESERVE_ACTION")
-	public interface ReserveAction extends PlanAction, SchemaOrgClass {
+	public interface ReserveAction extends NativeValueText, PlanAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13792,7 +13796,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Kariba reservoir.")
 	@CamelizedName("reservoir")
 	@ConstantizedName("RESERVOIR")
-	public interface Reservoir extends BodyOfWater, SchemaOrgClass {
+	public interface Reservoir extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13806,7 +13810,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The place where a person lives.")
 	@CamelizedName("residence")
 	@ConstantizedName("RESIDENCE")
-	public interface Residence extends Place, SchemaOrgClass {
+	public interface Residence extends NativeValueText, Place, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13827,7 +13831,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " use of schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("resort")
 	@ConstantizedName("RESORT")
-	public interface Resort extends LodgingBusiness, SchemaOrgClass {
+	public interface Resort extends LodgingBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13841,7 +13845,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A restaurant.")
 	@CamelizedName("restaurant")
 	@ConstantizedName("RESTAURANT")
-	public interface Restaurant extends FoodEstablishment, SchemaOrgClass {
+	public interface Restaurant extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13857,7 +13861,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " health or lifestyle reasons.")
 	@CamelizedName("restrictedDiet")
 	@ConstantizedName("RESTRICTED_DIET")
-	public interface RestrictedDiet extends Enumeration, SchemaOrgClass {
+	public interface RestrictedDiet extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13873,7 +13877,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " resume music playback or resume a timer).")
 	@CamelizedName("resumeAction")
 	@ConstantizedName("RESUME_ACTION")
-	public interface ResumeAction extends ControlAction, SchemaOrgClass {
+	public interface ResumeAction extends ControlAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13889,7 +13893,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " objects) or taken (ownership).")
 	@CamelizedName("returnAction")
 	@ConstantizedName("RETURN_ACTION")
-	public interface ReturnAction extends SchemaOrgClass, TransferAction {
+	public interface ReturnAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
@@ -13910,7 +13914,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A review of an item - for example, of a restaurant, movie, or store.")
 	@CamelizedName("review")
 	@ConstantizedName("REVIEW")
-	public interface Review extends CreativeWork, SchemaOrgClass {
+	public interface Review extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/itemReviewed">http://schema.org/itemReviewed</a>
@@ -13950,7 +13954,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " agent reviews an object with participants resulting in a review.")
 	@CamelizedName("reviewAction")
 	@ConstantizedName("REVIEW_ACTION")
-	public interface ReviewAction extends AssessAction, SchemaOrgClass {
+	public interface ReviewAction extends AssessAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/resultReview">http://schema.org/resultReview</a>
@@ -13971,7 +13975,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A river (for example, the broad majestic Shannon).")
 	@CamelizedName("riverBodyOfWater")
 	@ConstantizedName("RIVER_BODY_OF_WATER")
-	public interface RiverBodyOfWater extends BodyOfWater, SchemaOrgClass {
+	public interface RiverBodyOfWater extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -13992,7 +13996,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " href=\"http://blog.schema.org/2014/06/introducing-role.html\">blog post</a>.")
 	@CamelizedName("role")
 	@ConstantizedName("ROLE")
-	public interface Role extends Intangible, SchemaOrgClass {
+	public interface Role extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/endDate">http://schema.org/endDate</a>
@@ -14024,7 +14028,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A roofing contractor.")
 	@CamelizedName("roofingContractor")
 	@ConstantizedName("ROOFING_CONTRACTOR")
-	public interface RoofingContractor extends HomeAndConstructionBusiness, SchemaOrgClass {
+	public interface RoofingContractor extends HomeAndConstructionBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14044,7 +14048,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " use of schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("room")
 	@ConstantizedName("ROOM")
-	public interface Room extends Accommodation, SchemaOrgClass {
+	public interface Room extends Accommodation, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14060,7 +14064,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " event.")
 	@CamelizedName("rsvpAction")
 	@ConstantizedName("RSVP_ACTION")
-	public interface RsvpAction extends InformAction, SchemaOrgClass {
+	public interface RsvpAction extends InformAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/additionalNumberOfGuests">http://schema.org/additionalNumberOfGuests</a>
@@ -14094,7 +14098,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " an RSVP request.")
 	@CamelizedName("rsvpResponseType")
 	@ConstantizedName("RSVP_RESPONSE_TYPE")
-	public interface RsvpResponseType extends Enumeration, SchemaOrgClass {
+	public interface RsvpResponseType extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14108,7 +14112,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Sales event.")
 	@CamelizedName("saleEvent")
 	@ConstantizedName("SALE_EVENT")
-	public interface SaleEvent extends Event, SchemaOrgClass {
+	public interface SaleEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14127,7 +14131,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " etc) towards a time slot / spatial allocation.</li>\n</ul>\n")
 	@CamelizedName("scheduleAction")
 	@ConstantizedName("SCHEDULE_ACTION")
-	public interface ScheduleAction extends PlanAction, SchemaOrgClass {
+	public interface ScheduleAction extends NativeValueText, PlanAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14141,7 +14145,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A scholarly article.")
 	@CamelizedName("scholarlyArticle")
 	@ConstantizedName("SCHOLARLY_ARTICLE")
-	public interface ScholarlyArticle extends Article, SchemaOrgClass {
+	public interface ScholarlyArticle extends Article, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14155,7 +14159,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A school.")
 	@CamelizedName("school")
 	@ConstantizedName("SCHOOL")
-	public interface School extends EducationalOrganization, SchemaOrgClass {
+	public interface School extends EducationalOrganization, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14169,7 +14173,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A screening of a movie or other video.")
 	@CamelizedName("screeningEvent")
 	@ConstantizedName("SCREENING_EVENT")
-	public interface ScreeningEvent extends Event, SchemaOrgClass {
+	public interface ScreeningEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/subtitleLanguage">http://schema.org/subtitleLanguage</a>
@@ -14201,7 +14205,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A piece of sculpture.")
 	@CamelizedName("sculpture")
 	@ConstantizedName("SCULPTURE")
-	public interface Sculpture extends CreativeWork, SchemaOrgClass {
+	public interface Sculpture extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14215,7 +14219,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A sea (for example, the Caspian sea).")
 	@CamelizedName("seaBodyOfWater")
 	@ConstantizedName("SEA_BODY_OF_WATER")
-	public interface SeaBodyOfWater extends BodyOfWater, SchemaOrgClass {
+	public interface SeaBodyOfWater extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14233,7 +14237,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " leads to a FindAction, but not necessarily.</li>\n</ul>\n")
 	@CamelizedName("searchAction")
 	@ConstantizedName("SEARCH_ACTION")
-	public interface SearchAction extends Action, SchemaOrgClass {
+	public interface SearchAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/query">http://schema.org/query</a>
@@ -14253,7 +14257,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Search results page.")
 	@CamelizedName("searchResultsPage")
 	@ConstantizedName("SEARCH_RESULTS_PAGE")
-	public interface SearchResultsPage extends SchemaOrgClass, WebPage {
+	public interface SearchResultsPage extends NativeValueText, SchemaOrgClass, WebPage {
 
 		public String getString();
 		public void setString(String string);
@@ -14268,7 +14272,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Used to describe a seat, such as a reserved seat in an event reservation.")
 	@CamelizedName("seat")
 	@ConstantizedName("SEAT")
-	public interface Seat extends Intangible, SchemaOrgClass {
+	public interface Seat extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/seatNumber">http://schema.org/seatNumber</a>
@@ -14306,7 +14310,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A self-storage facility.")
 	@CamelizedName("selfStorage")
 	@ConstantizedName("SELF_STORAGE")
-	public interface SelfStorage extends LocalBusiness, SchemaOrgClass {
+	public interface SelfStorage extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14323,7 +14327,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Reciprocal of BuyAction.")
 	@CamelizedName("sellAction")
 	@ConstantizedName("SELL_ACTION")
-	public interface SellAction extends SchemaOrgClass, TradeAction {
+	public interface SellAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/buyer">http://schema.org/buyer</a>
@@ -14350,7 +14354,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " laptop, but I'm not necessarily giving it to you).</li>\n</ul>\n")
 	@CamelizedName("sendAction")
 	@ConstantizedName("SEND_ACTION")
-	public interface SendAction extends SchemaOrgClass, TransferAction {
+	public interface SendAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		/**
 		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
@@ -14380,7 +14384,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/EventSeries\">EventSeries</a>.")
 	@CamelizedName("series")
 	@ConstantizedName("SERIES")
-	public interface Series extends Intangible, SchemaOrgClass {
+	public interface Series extends Intangible, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14396,7 +14400,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " etc.")
 	@CamelizedName("service")
 	@ConstantizedName("SERVICE")
-	public interface Service extends Intangible, SchemaOrgClass {
+	public interface Service extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/aggregateRating">http://schema.org/aggregateRating</a>
@@ -14532,7 +14536,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " phone number.")
 	@CamelizedName("serviceChannel")
 	@ConstantizedName("SERVICE_CHANNEL")
-	public interface ServiceChannel extends Intangible, SchemaOrgClass {
+	public interface ServiceChannel extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
@@ -14595,7 +14599,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of distributing content to people for their amusement or edification.")
 	@CamelizedName("shareAction")
 	@ConstantizedName("SHARE_ACTION")
-	public interface ShareAction extends CommunicateAction, SchemaOrgClass {
+	public interface ShareAction extends CommunicateAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14609,7 +14613,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A shoe store.")
 	@CamelizedName("shoeStore")
 	@ConstantizedName("SHOE_STORE")
-	public interface ShoeStore extends SchemaOrgClass, Store {
+	public interface ShoeStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -14623,7 +14627,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A shopping center or mall.")
 	@CamelizedName("shoppingCenter")
 	@ConstantizedName("SHOPPING_CENTER")
-	public interface ShoppingCenter extends LocalBusiness, SchemaOrgClass {
+	public interface ShoppingCenter extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14637,7 +14641,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Simple format source text.")
 	@CamelizedName("simple")
 	@ConstantizedName("SIMPLE")
-	public interface Simple extends SchemaOrgClass, Text {
+	public interface Simple extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -14651,7 +14655,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Residence type: Single-family home.")
 	@CamelizedName("singleFamilyResidence")
 	@ConstantizedName("SINGLE_FAMILY_RESIDENCE")
-	public interface SingleFamilyResidence extends House, SchemaOrgClass {
+	public interface SingleFamilyResidence extends House, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/numberOfRooms">http://schema.org/numberOfRooms</a>
@@ -14677,7 +14681,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A navigation element of the page.")
 	@CamelizedName("siteNavigationElement")
 	@ConstantizedName("SITE_NAVIGATION_ELEMENT")
-	public interface SiteNavigationElement extends SchemaOrgClass, WebPageElement {
+	public interface SiteNavigationElement extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -14691,7 +14695,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A ski resort.")
 	@CamelizedName("skiResort")
 	@ConstantizedName("SKI_RESORT")
-	public interface SkiResort extends SchemaOrgClass, SportsActivityLocation {
+	public interface SkiResort extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -14705,7 +14709,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Social event.")
 	@CamelizedName("socialEvent")
 	@ConstantizedName("SOCIAL_EVENT")
-	public interface SocialEvent extends Event, SchemaOrgClass {
+	public interface SocialEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14721,7 +14725,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " etc.")
 	@CamelizedName("socialMediaPosting")
 	@ConstantizedName("SOCIAL_MEDIA_POSTING")
-	public interface SocialMediaPosting extends Article, SchemaOrgClass {
+	public interface SocialMediaPosting extends Article, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/sharedContent">http://schema.org/sharedContent</a>
@@ -14741,7 +14745,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A software application.")
 	@CamelizedName("softwareApplication")
 	@ConstantizedName("SOFTWARE_APPLICATION")
-	public interface SoftwareApplication extends CreativeWork, SchemaOrgClass {
+	public interface SoftwareApplication extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/applicationCategory">http://schema.org/applicationCategory</a>
@@ -14889,7 +14893,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " snippet samples, scripts, templates.")
 	@CamelizedName("softwareSourceCode")
 	@ConstantizedName("SOFTWARE_SOURCE_CODE")
-	public interface SoftwareSourceCode extends CreativeWork, SchemaOrgClass {
+	public interface SoftwareSourceCode extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/codeRepository">http://schema.org/codeRepository</a>
@@ -14934,7 +14938,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A placeholder for multiple similar products of the same kind.")
 	@CamelizedName("someProducts")
 	@ConstantizedName("SOME_PRODUCTS")
-	public interface SomeProducts extends Product, SchemaOrgClass {
+	public interface SomeProducts extends NativeValueText, Product, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/inventoryLevel">http://schema.org/inventoryLevel</a>
@@ -14956,7 +14960,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " usually after significant study, time, and effort.")
 	@CamelizedName("specialty")
 	@ConstantizedName("SPECIALTY")
-	public interface Specialty extends Enumeration, SchemaOrgClass {
+	public interface Specialty extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14970,7 +14974,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A sporting goods store.")
 	@CamelizedName("sportingGoodsStore")
 	@ConstantizedName("SPORTING_GOODS_STORE")
-	public interface SportingGoodsStore extends SchemaOrgClass, Store {
+	public interface SportingGoodsStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -14985,7 +14989,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A sports location, such as a playing field.")
 	@CamelizedName("sportsActivityLocation")
 	@ConstantizedName("SPORTS_ACTIVITY_LOCATION")
-	public interface SportsActivityLocation extends LocalBusiness, SchemaOrgClass {
+	public interface SportsActivityLocation extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -14999,7 +15003,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A sports club.")
 	@CamelizedName("sportsClub")
 	@ConstantizedName("SPORTS_CLUB")
-	public interface SportsClub extends SchemaOrgClass, SportsActivityLocation {
+	public interface SportsClub extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -15013,7 +15017,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Sports event.")
 	@CamelizedName("sportsEvent")
 	@ConstantizedName("SPORTS_EVENT")
-	public interface SportsEvent extends Event, SchemaOrgClass {
+	public interface SportsEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/awayTeam">http://schema.org/awayTeam</a>
@@ -15047,7 +15051,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " governing bodies, and sports associations.")
 	@CamelizedName("sportsOrganization")
 	@ConstantizedName("SPORTS_ORGANIZATION")
-	public interface SportsOrganization extends Organization, SchemaOrgClass {
+	public interface SportsOrganization extends NativeValueText, Organization, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/sport">http://schema.org/sport</a>
@@ -15067,7 +15071,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Organization: Sports team.")
 	@CamelizedName("sportsTeam")
 	@ConstantizedName("SPORTS_TEAM")
-	public interface SportsTeam extends SchemaOrgClass, SportsOrganization {
+	public interface SportsTeam extends NativeValueText, SchemaOrgClass, SportsOrganization {
 
 		/**
 		 * @see <a href="http://schema.org/athlete">http://schema.org/athlete</a>
@@ -15093,7 +15097,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A spreadsheet file.")
 	@CamelizedName("spreadsheetDigitalDocument")
 	@ConstantizedName("SPREADSHEET_DIGITAL_DOCUMENT")
-	public interface SpreadsheetDigitalDocument extends DigitalDocument, SchemaOrgClass {
+	public interface SpreadsheetDigitalDocument extends DigitalDocument, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15107,7 +15111,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A stadium.")
 	@CamelizedName("stadiumOrArena")
 	@ConstantizedName("STADIUM_OR_ARENA")
-	public interface StadiumOrArena extends CivicStructure, SchemaOrgClass, SportsActivityLocation {
+	public interface StadiumOrArena extends CivicStructure, NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -15121,7 +15125,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A state or province of a country.")
 	@CamelizedName("state")
 	@ConstantizedName("STATE")
-	public interface State extends AdministrativeArea, SchemaOrgClass {
+	public interface State extends AdministrativeArea, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15135,7 +15139,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A value indicating a steering position.")
 	@CamelizedName("steeringPositionValue")
 	@ConstantizedName("STEERING_POSITION_VALUE")
-	public interface SteeringPositionValue extends QualitativeValue, SchemaOrgClass {
+	public interface SteeringPositionValue extends NativeValueText, QualitativeValue, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15149,7 +15153,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A retail good store.")
 	@CamelizedName("store")
 	@ConstantizedName("STORE")
-	public interface Store extends LocalBusiness, SchemaOrgClass {
+	public interface Store extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15165,7 +15169,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " structure than simply being a textual value or a reference to another thing.")
 	@CamelizedName("structuredValue")
 	@ConstantizedName("STRUCTURED_VALUE")
-	public interface StructuredValue extends Intangible, SchemaOrgClass {
+	public interface StructuredValue extends Intangible, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15191,7 +15195,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " updates from the object.</li>\n</ul>\n")
 	@CamelizedName("subscribeAction")
 	@ConstantizedName("SUBSCRIBE_ACTION")
-	public interface SubscribeAction extends InteractAction, SchemaOrgClass {
+	public interface SubscribeAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15205,7 +15209,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A subway station.")
 	@CamelizedName("subwayStation")
 	@ConstantizedName("SUBWAY_STATION")
-	public interface SubwayStation extends CivicStructure, SchemaOrgClass {
+	public interface SubwayStation extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15225,7 +15229,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " use of schema.org for marking up hotels and other forms of accommodations</a>.")
 	@CamelizedName("suite")
 	@ConstantizedName("SUITE")
-	public interface Suite extends Accommodation, SchemaOrgClass {
+	public interface Suite extends Accommodation, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/bed">http://schema.org/bed</a>
@@ -15259,7 +15263,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " playback or pause a timer).")
 	@CamelizedName("suspendAction")
 	@ConstantizedName("SUSPEND_ACTION")
-	public interface SuspendAction extends ControlAction, SchemaOrgClass {
+	public interface SuspendAction extends ControlAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15273,7 +15277,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A synagogue.")
 	@CamelizedName("synagogue")
 	@ConstantizedName("SYNAGOGUE")
-	public interface Synagogue extends PlaceOfWorship, SchemaOrgClass {
+	public interface Synagogue extends NativeValueText, PlaceOfWorship, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15288,7 +15292,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A short TV program or a segment/part of a TV program.")
 	@CamelizedName("tvClip")
 	@ConstantizedName("TV_CLIP")
-	public interface TVClip extends Clip, SchemaOrgClass {
+	public interface TVClip extends Clip, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15303,7 +15307,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A TV episode which can be part of a series or season.")
 	@CamelizedName("tvEpisode")
 	@ConstantizedName("TV_EPISODE")
-	public interface TVEpisode extends Episode, SchemaOrgClass {
+	public interface TVEpisode extends Episode, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
@@ -15330,7 +15334,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Season dedicated to TV broadcast and associated online delivery.")
 	@CamelizedName("tvSeason")
 	@ConstantizedName("TV_SEASON")
-	public interface TVSeason extends CreativeWork, CreativeWorkSeason, SchemaOrgClass {
+	public interface TVSeason extends CreativeWork, CreativeWorkSeason, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/countryOfOrigin">http://schema.org/countryOfOrigin</a>
@@ -15351,7 +15355,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "CreativeWorkSeries dedicated to TV broadcast and associated online delivery.")
 	@CamelizedName("tvSeries")
 	@ConstantizedName("TV_SERIES")
-	public interface TVSeries extends CreativeWork, CreativeWorkSeries, SchemaOrgClass {
+	public interface TVSeries extends CreativeWork, CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -15425,7 +15429,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A table on a Web page.")
 	@CamelizedName("table")
 	@ConstantizedName("TABLE")
-	public interface Table extends SchemaOrgClass, WebPageElement {
+	public interface Table extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -15446,7 +15450,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " transfered.</li>\n</ul>\n")
 	@CamelizedName("takeAction")
 	@ConstantizedName("TAKE_ACTION")
-	public interface TakeAction extends SchemaOrgClass, TransferAction {
+	public interface TakeAction extends NativeValueText, SchemaOrgClass, TransferAction {
 
 		public String getString();
 		public void setString(String string);
@@ -15460,7 +15464,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A tattoo parlor.")
 	@CamelizedName("tattooParlor")
 	@ConstantizedName("TATTOO_PARLOR")
-	public interface TattooParlor extends HealthAndBeautyBusiness, SchemaOrgClass {
+	public interface TattooParlor extends HealthAndBeautyBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15478,7 +15482,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("taxiReservation")
 	@ConstantizedName("TAXI_RESERVATION")
-	public interface TaxiReservation extends Reservation, SchemaOrgClass {
+	public interface TaxiReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/partySize">http://schema.org/partySize</a>
@@ -15512,7 +15516,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " usually calculated based on distance traveled.")
 	@CamelizedName("taxiService")
 	@ConstantizedName("TAXI_SERVICE")
-	public interface TaxiService extends SchemaOrgClass, Service {
+	public interface TaxiService extends NativeValueText, SchemaOrgClass, Service {
 
 		public String getString();
 		public void setString(String string);
@@ -15526,7 +15530,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A taxi stand.")
 	@CamelizedName("taxiStand")
 	@ConstantizedName("TAXI_STAND")
-	public interface TaxiStand extends CivicStructure, SchemaOrgClass {
+	public interface TaxiStand extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15542,7 +15546,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " troubleshooting, specifications, etc.")
 	@CamelizedName("techArticle")
 	@ConstantizedName("TECH_ARTICLE")
-	public interface TechArticle extends Article, SchemaOrgClass {
+	public interface TechArticle extends Article, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dependencies">http://schema.org/dependencies</a>
@@ -15570,7 +15574,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " lineup.")
 	@CamelizedName("televisionChannel")
 	@ConstantizedName("TELEVISION_CHANNEL")
-	public interface TelevisionChannel extends BroadcastChannel, SchemaOrgClass {
+	public interface TelevisionChannel extends BroadcastChannel, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15584,7 +15588,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A television station.")
 	@CamelizedName("televisionStation")
 	@ConstantizedName("TELEVISION_STATION")
-	public interface TelevisionStation extends LocalBusiness, SchemaOrgClass {
+	public interface TelevisionStation extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15598,7 +15602,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A tennis complex.")
 	@CamelizedName("tennisComplex")
 	@ConstantizedName("TENNIS_COMPLEX")
-	public interface TennisComplex extends SchemaOrgClass, SportsActivityLocation {
+	public interface TennisComplex extends NativeValueText, SchemaOrgClass, SportsActivityLocation {
 
 		public String getString();
 		public void setString(String string);
@@ -15612,7 +15616,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A file composed primarily of text.")
 	@CamelizedName("textDigitalDocument")
 	@ConstantizedName("TEXT_DIGITAL_DOCUMENT")
-	public interface TextDigitalDocument extends DigitalDocument, SchemaOrgClass {
+	public interface TextDigitalDocument extends DigitalDocument, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15626,7 +15630,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Textile notation source text.")
 	@CamelizedName("textile")
 	@ConstantizedName("TEXTILE")
-	public interface Textile extends SchemaOrgClass, Text {
+	public interface Textile extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -15640,7 +15644,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Theater performance.")
 	@CamelizedName("theaterEvent")
 	@ConstantizedName("THEATER_EVENT")
-	public interface TheaterEvent extends Event, SchemaOrgClass {
+	public interface TheaterEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15656,7 +15660,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " Theatre.")
 	@CamelizedName("theaterGroup")
 	@ConstantizedName("THEATER_GROUP")
-	public interface TheaterGroup extends PerformingGroup, SchemaOrgClass {
+	public interface TheaterGroup extends NativeValueText, PerformingGroup, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15670,7 +15674,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The most generic type of item.")
 	@CamelizedName("thing")
 	@ConstantizedName("THING")
-	public interface Thing extends SchemaOrgClass {
+	public interface Thing extends NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/additionalType">http://schema.org/additionalType</a>
@@ -15769,7 +15773,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "Used to describe a ticket to an event, a flight, a bus ride, etc.")
 	@CamelizedName("ticket")
 	@ConstantizedName("TICKET")
-	public interface Ticket extends Intangible, SchemaOrgClass {
+	public interface Ticket extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/dateIssued">http://schema.org/dateIssued</a>
@@ -15832,7 +15836,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of reaching a draw in a competitive activity.")
 	@CamelizedName("tieAction")
 	@ConstantizedName("TIE_ACTION")
-	public interface TieAction extends AchieveAction, SchemaOrgClass {
+	public interface TieAction extends AchieveAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15848,7 +15852,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " rendered.")
 	@CamelizedName("tipAction")
 	@ConstantizedName("TIP_ACTION")
-	public interface TipAction extends SchemaOrgClass, TradeAction {
+	public interface TipAction extends NativeValueText, SchemaOrgClass, TradeAction {
 
 		/**
 		 * @see <a href="http://schema.org/recipient">http://schema.org/recipient</a>
@@ -15868,7 +15872,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A tire shop.")
 	@CamelizedName("tireShop")
 	@ConstantizedName("TIRE_SHOP")
-	public interface TireShop extends SchemaOrgClass, Store {
+	public interface TireShop extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -15894,7 +15898,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " attraction properties to any other type.  (See examples below)")
 	@CamelizedName("touristAttraction")
 	@ConstantizedName("TOURIST_ATTRACTION")
-	public interface TouristAttraction extends Place, SchemaOrgClass {
+	public interface TouristAttraction extends NativeValueText, Place, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/availableLanguage">http://schema.org/availableLanguage</a>
@@ -15920,7 +15924,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A tourist information center.")
 	@CamelizedName("touristInformationCenter")
 	@ConstantizedName("TOURIST_INFORMATION_CENTER")
-	public interface TouristInformationCenter extends LocalBusiness, SchemaOrgClass {
+	public interface TouristInformationCenter extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -15934,7 +15938,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A toy store.")
 	@CamelizedName("toyStore")
 	@ConstantizedName("TOY_STORE")
-	public interface ToyStore extends SchemaOrgClass, Store {
+	public interface ToyStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -15956,7 +15960,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " innanimate objects.</li>\n</ul>\n")
 	@CamelizedName("trackAction")
 	@ConstantizedName("TRACK_ACTION")
-	public interface TrackAction extends FindAction, SchemaOrgClass {
+	public interface TrackAction extends FindAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/deliveryMethod">http://schema.org/deliveryMethod</a>
@@ -15979,7 +15983,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " in exchange for a one time or periodic payment.")
 	@CamelizedName("tradeAction")
 	@ConstantizedName("TRADE_ACTION")
-	public interface TradeAction extends Action, SchemaOrgClass {
+	public interface TradeAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/price">http://schema.org/price</a>
@@ -16009,7 +16013,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " class=\"localLink\" href=\"http://schema.org/Offer\">Offer</a>.")
 	@CamelizedName("trainReservation")
 	@ConstantizedName("TRAIN_RESERVATION")
-	public interface TrainReservation extends Reservation, SchemaOrgClass {
+	public interface TrainReservation extends NativeValueText, Reservation, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16023,7 +16027,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A train station.")
 	@CamelizedName("trainStation")
 	@ConstantizedName("TRAIN_STATION")
-	public interface TrainStation extends CivicStructure, SchemaOrgClass {
+	public interface TrainStation extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16037,7 +16041,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A trip on a commercial train line.")
 	@CamelizedName("trainTrip")
 	@ConstantizedName("TRAIN_TRIP")
-	public interface TrainTrip extends SchemaOrgClass, Trip {
+	public interface TrainTrip extends NativeValueText, SchemaOrgClass, Trip {
 
 		/**
 		 * @see <a href="http://schema.org/arrivalPlatform">http://schema.org/arrivalPlatform</a>
@@ -16089,7 +16093,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " objects from one place to another.")
 	@CamelizedName("transferAction")
 	@ConstantizedName("TRANSFER_ACTION")
-	public interface TransferAction extends Action, SchemaOrgClass {
+	public interface TransferAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/fromLocation">http://schema.org/fromLocation</a>
@@ -16117,7 +16121,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " of transport, optionally with participants.")
 	@CamelizedName("travelAction")
 	@ConstantizedName("TRAVEL_ACTION")
-	public interface TravelAction extends MoveAction, SchemaOrgClass {
+	public interface TravelAction extends MoveAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/distance">http://schema.org/distance</a>
@@ -16137,7 +16141,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A travel agency.")
 	@CamelizedName("travelAgency")
 	@ConstantizedName("TRAVEL_AGENCY")
-	public interface TravelAgency extends LocalBusiness, SchemaOrgClass {
+	public interface TravelAgency extends LocalBusiness, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16152,7 +16156,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A trip or journey. An itinerary of visits to one or more places.")
 	@CamelizedName("trip")
 	@ConstantizedName("TRIP")
-	public interface Trip extends Intangible, SchemaOrgClass {
+	public interface Trip extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/arrivalTime">http://schema.org/arrivalTime</a>
@@ -16210,7 +16214,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " function of goods included in a bundle offer.")
 	@CamelizedName("typeAndQuantityNode")
 	@ConstantizedName("TYPE_AND_QUANTITY_NODE")
-	public interface TypeAndQuantityNode extends SchemaOrgClass, StructuredValue {
+	public interface TypeAndQuantityNode extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/amountOfThisGood">http://schema.org/amountOfThisGood</a>
@@ -16254,7 +16258,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Data type: URL.")
 	@CamelizedName("url")
 	@ConstantizedName("URL")
-	public interface URL extends SchemaOrgClass, Text {
+	public interface URL extends NativeValueText, SchemaOrgClass, Text {
 
 		public String getString();
 		public void setString(String string);
@@ -16276,7 +16280,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " people.</li>\n</ul>\n")
 	@CamelizedName("unRegisterAction")
 	@ConstantizedName("UN_REGISTER_ACTION")
-	public interface UnRegisterAction extends InteractAction, SchemaOrgClass {
+	public interface UnRegisterAction extends InteractAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16291,7 +16295,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The price asked for a given offer by the respective organization or person.")
 	@CamelizedName("unitPriceSpecification")
 	@ConstantizedName("UNIT_PRICE_SPECIFICATION")
-	public interface UnitPriceSpecification extends PriceSpecification, SchemaOrgClass {
+	public interface UnitPriceSpecification extends NativeValueText, PriceSpecification, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/billingIncrement">http://schema.org/billingIncrement</a>
@@ -16336,7 +16340,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of managing by changing/editing the state of the object.")
 	@CamelizedName("updateAction")
 	@ConstantizedName("UPDATE_ACTION")
-	public interface UpdateAction extends Action, SchemaOrgClass {
+	public interface UpdateAction extends Action, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/targetCollection">http://schema.org/targetCollection</a>
@@ -16357,7 +16361,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of applying an object to its intended purpose.")
 	@CamelizedName("useAction")
 	@ConstantizedName("USE_ACTION")
-	public interface UseAction extends ConsumeAction, SchemaOrgClass {
+	public interface UseAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16373,7 +16377,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " land, water, air, or through space.")
 	@CamelizedName("vehicle")
 	@ConstantizedName("VEHICLE")
-	public interface Vehicle extends Product, SchemaOrgClass {
+	public interface Vehicle extends NativeValueText, Product, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/accelerationTime">http://schema.org/accelerationTime</a>
@@ -16615,7 +16619,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web page type: Video gallery page.")
 	@CamelizedName("videoGallery")
 	@ConstantizedName("VIDEO_GALLERY")
-	public interface VideoGallery extends CollectionPage, SchemaOrgClass {
+	public interface VideoGallery extends CollectionPage, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16631,7 +16635,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " interface to generate visual feedback on a video device.")
 	@CamelizedName("videoGame")
 	@ConstantizedName("VIDEO_GAME")
-	public interface VideoGame extends Game, SchemaOrgClass, SoftwareApplication {
+	public interface VideoGame extends Game, NativeValueText, SchemaOrgClass, SoftwareApplication {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -16699,7 +16703,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A short segment/part of a video game.")
 	@CamelizedName("videoGameClip")
 	@ConstantizedName("VIDEO_GAME_CLIP")
-	public interface VideoGameClip extends Clip, SchemaOrgClass {
+	public interface VideoGameClip extends Clip, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16713,7 +16717,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A video game series.")
 	@CamelizedName("videoGameSeries")
 	@ConstantizedName("VIDEO_GAME_SERIES")
-	public interface VideoGameSeries extends CreativeWorkSeries, SchemaOrgClass {
+	public interface VideoGameSeries extends CreativeWorkSeries, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -16829,7 +16833,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A video file.")
 	@CamelizedName("videoObject")
 	@ConstantizedName("VIDEO_OBJECT")
-	public interface VideoObject extends MediaObject, SchemaOrgClass {
+	public interface VideoObject extends MediaObject, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/actor">http://schema.org/actor</a>
@@ -16892,7 +16896,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of consuming static visual content.")
 	@CamelizedName("viewAction")
 	@ConstantizedName("VIEW_ACTION")
-	public interface ViewAction extends ConsumeAction, SchemaOrgClass {
+	public interface ViewAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16906,7 +16910,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Event type: Visual arts event.")
 	@CamelizedName("visualArtsEvent")
 	@ConstantizedName("VISUAL_ARTS_EVENT")
-	public interface VisualArtsEvent extends Event, SchemaOrgClass {
+	public interface VisualArtsEvent extends Event, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -16921,7 +16925,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A work of art that is primarily visual in character.")
 	@CamelizedName("visualArtwork")
 	@ConstantizedName("VISUAL_ARTWORK")
-	public interface VisualArtwork extends CreativeWork, SchemaOrgClass {
+	public interface VisualArtwork extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/artEdition">http://schema.org/artEdition</a>
@@ -17007,7 +17011,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A volcano, like Fuji san.")
 	@CamelizedName("volcano")
 	@ConstantizedName("VOLCANO")
-	public interface Volcano extends Landform, SchemaOrgClass {
+	public interface Volcano extends Landform, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17023,7 +17027,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " choices/options.")
 	@CamelizedName("voteAction")
 	@ConstantizedName("VOTE_ACTION")
-	public interface VoteAction extends ChooseAction, SchemaOrgClass {
+	public interface VoteAction extends ChooseAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/candidate">http://schema.org/candidate</a>
@@ -17043,7 +17047,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("An advertising section of the page.")
 	@CamelizedName("wpAdBlock")
 	@ConstantizedName("WP_AD_BLOCK")
-	public interface WPAdBlock extends SchemaOrgClass, WebPageElement {
+	public interface WPAdBlock extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -17057,7 +17061,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The footer section of the page.")
 	@CamelizedName("wpFooter")
 	@ConstantizedName("WP_FOOTER")
-	public interface WPFooter extends SchemaOrgClass, WebPageElement {
+	public interface WPFooter extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -17071,7 +17075,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("The header section of the page.")
 	@CamelizedName("wpHeader")
 	@ConstantizedName("WP_HEADER")
-	public interface WPHeader extends SchemaOrgClass, WebPageElement {
+	public interface WPHeader extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -17085,7 +17089,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A sidebar section of the page.")
 	@CamelizedName("wpSideBar")
 	@ConstantizedName("WP_SIDE_BAR")
-	public interface WPSideBar extends SchemaOrgClass, WebPageElement {
+	public interface WPSideBar extends NativeValueText, SchemaOrgClass, WebPageElement {
 
 		public String getString();
 		public void setString(String string);
@@ -17100,7 +17104,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of expressing a desire about the object. An agent wants an object.")
 	@CamelizedName("wantAction")
 	@ConstantizedName("WANT_ACTION")
-	public interface WantAction extends ReactAction, SchemaOrgClass {
+	public interface WantAction extends NativeValueText, ReactAction, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17117,7 +17121,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " product.")
 	@CamelizedName("warrantyPromise")
 	@ConstantizedName("WARRANTY_PROMISE")
-	public interface WarrantyPromise extends SchemaOrgClass, StructuredValue {
+	public interface WarrantyPromise extends NativeValueText, SchemaOrgClass, StructuredValue {
 
 		/**
 		 * @see <a href="http://schema.org/durationOfWarranty">http://schema.org/durationOfWarranty</a>
@@ -17146,7 +17150,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " values:<br/><br/>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#Labor-BringIn</li>\n<li>http://purl.org/goodrelations/v1#PartsAndLabor-BringIn</li>\n<li>http://purl.org/goodrelations/v1#PartsAndLabor-PickUp</li>\n</ul>\n")
 	@CamelizedName("warrantyScope")
 	@ConstantizedName("WARRANTY_SCOPE")
-	public interface WarrantyScope extends Enumeration, SchemaOrgClass {
+	public interface WarrantyScope extends Enumeration, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17161,7 +17165,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of consuming dynamic/moving visual content.")
 	@CamelizedName("watchAction")
 	@ConstantizedName("WATCH_ACTION")
-	public interface WatchAction extends ConsumeAction, SchemaOrgClass {
+	public interface WatchAction extends ConsumeAction, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17175,7 +17179,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A waterfall, like Niagara.")
 	@CamelizedName("waterfall")
 	@ConstantizedName("WATERFALL")
-	public interface Waterfall extends BodyOfWater, SchemaOrgClass {
+	public interface Waterfall extends BodyOfWater, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17190,7 +17194,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of dressing oneself in clothing.")
 	@CamelizedName("wearAction")
 	@ConstantizedName("WEAR_ACTION")
-	public interface WearAction extends SchemaOrgClass, UseAction {
+	public interface WearAction extends NativeValueText, SchemaOrgClass, UseAction {
 
 		public String getString();
 		public void setString(String string);
@@ -17204,7 +17208,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("Web applications.")
 	@CamelizedName("webApplication")
 	@ConstantizedName("WEB_APPLICATION")
-	public interface WebApplication extends SchemaOrgClass, SoftwareApplication {
+	public interface WebApplication extends NativeValueText, SchemaOrgClass, SoftwareApplication {
 
 		/**
 		 * @see <a href="http://schema.org/browserRequirements">http://schema.org/browserRequirements</a>
@@ -17229,7 +17233,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " will be assumed to be about the page.")
 	@CamelizedName("webPage")
 	@ConstantizedName("WEB_PAGE")
-	public interface WebPage extends CreativeWork, SchemaOrgClass {
+	public interface WebPage extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/breadcrumb">http://schema.org/breadcrumb</a>
@@ -17298,7 +17302,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A web page element, like a table or an image.")
 	@CamelizedName("webPageElement")
 	@ConstantizedName("WEB_PAGE_ELEMENT")
-	public interface WebPageElement extends CreativeWork, SchemaOrgClass {
+	public interface WebPageElement extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/cssSelector">http://schema.org/cssSelector</a>
@@ -17326,7 +17330,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " single web domain and accessible via URLs.")
 	@CamelizedName("webSite")
 	@ConstantizedName("WEB_SITE")
-	public interface WebSite extends CreativeWork, SchemaOrgClass {
+	public interface WebSite extends CreativeWork, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/issn">http://schema.org/issn</a>
@@ -17346,7 +17350,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A wholesale store.")
 	@CamelizedName("wholesaleStore")
 	@ConstantizedName("WHOLESALE_STORE")
-	public interface WholesaleStore extends SchemaOrgClass, Store {
+	public interface WholesaleStore extends NativeValueText, SchemaOrgClass, Store {
 
 		public String getString();
 		public void setString(String string);
@@ -17361,7 +17365,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of achieving victory in a competitive activity.")
 	@CamelizedName("winAction")
 	@ConstantizedName("WIN_ACTION")
-	public interface WinAction extends AchieveAction, SchemaOrgClass {
+	public interface WinAction extends AchieveAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/loser">http://schema.org/loser</a>
@@ -17381,7 +17385,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A winery.")
 	@CamelizedName("winery")
 	@ConstantizedName("WINERY")
-	public interface Winery extends FoodEstablishment, SchemaOrgClass {
+	public interface Winery extends FoodEstablishment, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);
@@ -17396,7 +17400,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "The act of authoring written creative content.")
 	@CamelizedName("writeAction")
 	@ConstantizedName("WRITE_ACTION")
-	public interface WriteAction extends CreateAction, SchemaOrgClass {
+	public interface WriteAction extends CreateAction, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/inLanguage">http://schema.org/inLanguage</a>
@@ -17416,7 +17420,7 @@ public interface Clazz extends SchemaOrgClass {
 	@SchemaOrgComment("A zoo.")
 	@CamelizedName("zoo")
 	@ConstantizedName("ZOO")
-	public interface Zoo extends CivicStructure, SchemaOrgClass {
+	public interface Zoo extends CivicStructure, NativeValueText, SchemaOrgClass {
 
 		public String getString();
 		public void setString(String string);

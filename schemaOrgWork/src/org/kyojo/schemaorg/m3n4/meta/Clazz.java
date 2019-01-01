@@ -3,6 +3,7 @@ package org.kyojo.schemaorg.m3n4.meta;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgClass;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
@@ -23,7 +24,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ "A class, also often called a 'Type'; equivalent to rdfs:Class.")
 	@CamelizedName("class")
 	@ConstantizedName("CLASS")
-	public interface Class extends Intangible, SchemaOrgClass {
+	public interface Class extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/supersededBy">http://schema.org/supersededBy</a>
@@ -45,7 +46,7 @@ public interface Clazz extends SchemaOrgClass {
 			+ " equivalent to rdf:Property.")
 	@CamelizedName("property")
 	@ConstantizedName("PROPERTY")
-	public interface Property extends Intangible, SchemaOrgClass {
+	public interface Property extends Intangible, NativeValueText, SchemaOrgClass {
 
 		/**
 		 * @see <a href="http://schema.org/domainIncludes">http://schema.org/domainIncludes</a>

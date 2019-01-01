@@ -5,6 +5,10 @@ import java.util.List;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueBoolean;
+import org.kyojo.schemaorg.NativeValueDate;
+import org.kyojo.schemaorg.NativeValueNumber;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
@@ -716,7 +720,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/potentialAction\">potentialAction</a>.")
 	@CamelizedName("action")
 	@ConstantizedName("ACTION")
-	public interface Action extends SchemaOrgProperty {
+	public interface Action extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -738,7 +742,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "An active ingredient, typically chemical compounds and/or biologic substances.")
 	@CamelizedName("activeIngredient")
 	@ConstantizedName("ACTIVE_INGREDIENT")
-	public interface ActiveIngredient extends SchemaOrgProperty {
+	public interface ActiveIngredient extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -760,7 +764,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Length of time to engage in the activity.")
 	@CamelizedName("activityDuration")
 	@ConstantizedName("ACTIVITY_DURATION")
-	public interface ActivityDuration extends SchemaOrgProperty {
+	public interface ActivityDuration extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
@@ -791,7 +795,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "How often one should engage in the activity.")
 	@CamelizedName("activityFrequency")
 	@ConstantizedName("ACTIVITY_FREQUENCY")
-	public interface ActivityFrequency extends SchemaOrgProperty {
+	public interface ActivityFrequency extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -824,7 +828,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " of repetitions of movement, quantitative distance, progressions over time, etc.")
 	@CamelizedName("additionalVariable")
 	@ConstantizedName("ADDITIONAL_VARIABLE")
-	public interface AdditionalVariable extends SchemaOrgProperty {
+	public interface AdditionalVariable extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -846,7 +850,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A route by which this drug may be administered, e.g. 'oral'.")
 	@CamelizedName("administrationRoute")
 	@ConstantizedName("ADMINISTRATION_ROUTE")
-	public interface AdministrationRoute extends SchemaOrgProperty {
+	public interface AdministrationRoute extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -871,7 +875,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " immediate medical attention), tag it as a seriouseAdverseOutcome instead.")
 	@CamelizedName("adverseOutcome")
 	@ConstantizedName("ADVERSE_OUTCOME")
-	public interface AdverseOutcome extends SchemaOrgProperty {
+	public interface AdverseOutcome extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -1522,7 +1526,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Drugs that affect the test's results.")
 	@CamelizedName("affectedBy")
 	@ConstantizedName("AFFECTED_BY")
-	public interface AffectedBy extends SchemaOrgProperty {
+	public interface AffectedBy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
@@ -1545,7 +1549,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " alcohol while taking this drug.")
 	@CamelizedName("alcoholWarning")
 	@ConstantizedName("ALCOHOL_WARNING")
-	public interface AlcoholWarning extends SchemaOrgProperty {
+	public interface AlcoholWarning extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -1567,7 +1571,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The algorithm or rules to follow to compute the score.")
 	@CamelizedName("algorithm")
 	@ConstantizedName("ALGORITHM")
-	public interface Algorithm extends SchemaOrgProperty {
+	public interface Algorithm extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -1589,7 +1593,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The muscle whose action counteracts the specified muscle.")
 	@CamelizedName("antagonist")
 	@ConstantizedName("ANTAGONIST")
-	public interface Antagonist extends SchemaOrgProperty {
+	public interface Antagonist extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Muscle">http://schema.org/Muscle</a>
@@ -1611,7 +1615,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The location in which the status applies.")
 	@CamelizedName("applicableLocation")
 	@ConstantizedName("APPLICABLE_LOCATION")
-	public interface ApplicableLocation extends SchemaOrgProperty {
+	public interface ApplicableLocation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
@@ -1660,7 +1664,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The branches that comprise the arterial structure.")
 	@CamelizedName("arterialBranch")
 	@ConstantizedName("ARTERIAL_BRANCH")
-	public interface ArterialBranch extends SchemaOrgProperty {
+	public interface ArterialBranch extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -1773,7 +1777,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " entity.")
 	@CamelizedName("associatedAnatomy")
 	@ConstantizedName("ASSOCIATED_ANATOMY")
-	public interface AssociatedAnatomy extends SchemaOrgProperty {
+	public interface AssociatedAnatomy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -1905,7 +1909,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " physical, and biochemical functions of the system.")
 	@CamelizedName("associatedPathophysiology")
 	@ConstantizedName("ASSOCIATED_PATHOPHYSIOLOGY")
-	public interface AssociatedPathophysiology extends SchemaOrgProperty {
+	public interface AssociatedPathophysiology extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -1927,7 +1931,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The location in which the strength is available.")
 	@CamelizedName("availableIn")
 	@ConstantizedName("AVAILABLE_IN")
-	public interface AvailableIn extends SchemaOrgProperty {
+	public interface AvailableIn extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
@@ -1976,7 +1980,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical service available from this provider.")
 	@CamelizedName("availableService")
 	@ConstantizedName("AVAILABLE_SERVICE")
-	public interface AvailableService extends SchemaOrgProperty {
+	public interface AvailableService extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BloodTest">http://schema.org/BloodTest</a>
@@ -2142,7 +2146,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "An available dosage strength for the drug.")
 	@CamelizedName("availableStrength")
 	@ConstantizedName("AVAILABLE_STRENGTH")
-	public interface AvailableStrength extends SchemaOrgProperty {
+	public interface AvailableStrength extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugStrength">http://schema.org/DrugStrength</a>
@@ -2164,7 +2168,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A diagnostic test or procedure offered by this lab.")
 	@CamelizedName("availableTest")
 	@ConstantizedName("AVAILABLE_TEST")
-	public interface AvailableTest extends SchemaOrgProperty {
+	public interface AvailableTest extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BloodTest">http://schema.org/BloodTest</a>
@@ -2224,7 +2228,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " first came to prominence, etc.")
 	@CamelizedName("background")
 	@ConstantizedName("BACKGROUND")
-	public interface Background extends SchemaOrgProperty {
+	public interface Background extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -2246,7 +2250,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The biomechanical properties of the bone.")
 	@CamelizedName("biomechnicalClass")
 	@ConstantizedName("BIOMECHNICAL_CLASS")
-	public interface BiomechnicalClass extends SchemaOrgProperty {
+	public interface BiomechnicalClass extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -2268,7 +2272,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The blood vessel that carries blood from the heart to the muscle.")
 	@CamelizedName("bloodSupply")
 	@ConstantizedName("BLOOD_SUPPLY")
-	public interface BloodSupply extends SchemaOrgProperty {
+	public interface BloodSupply extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Artery">http://schema.org/Artery</a>
@@ -2317,7 +2321,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Location in the body of the anatomical structure.")
 	@CamelizedName("bodyLocation")
 	@ConstantizedName("BODY_LOCATION")
-	public interface BodyLocation extends SchemaOrgProperty {
+	public interface BodyLocation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -2340,7 +2344,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " breastfeeding mothers.")
 	@CamelizedName("breastfeedingWarning")
 	@ConstantizedName("BREASTFEEDING_WARNING")
-	public interface BreastfeedingWarning extends SchemaOrgProperty {
+	public interface BreastfeedingWarning extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -2364,7 +2368,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " process that eventually results in the occurrence.")
 	@CamelizedName("cause")
 	@ConstantizedName("CAUSE")
-	public interface Cause extends SchemaOrgProperty {
+	public interface Cause extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalCause">http://schema.org/MedicalCause</a>
@@ -2386,7 +2390,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The condition, complication, symptom, sign, etc. caused.")
 	@CamelizedName("causeOf")
 	@ConstantizedName("CAUSE_OF")
-	public interface CauseOf extends SchemaOrgProperty {
+	public interface CauseOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -3040,7 +3044,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " pD).")
 	@CamelizedName("clinicalPharmacology")
 	@ConstantizedName("CLINICAL_PHARMACOLOGY")
-	public interface ClinicalPharmacology extends SchemaOrgProperty {
+	public interface ClinicalPharmacology extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3063,7 +3067,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.")
 	@CamelizedName("code")
 	@ConstantizedName("CODE")
-	public interface Code extends SchemaOrgProperty {
+	public interface Code extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalCode">http://schema.org/MedicalCode</a>
@@ -3084,7 +3088,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The coding system, e.g. 'ICD-10'.")
 	@CamelizedName("codingSystem")
 	@ConstantizedName("CODING_SYSTEM")
-	public interface CodingSystem extends SchemaOrgProperty {
+	public interface CodingSystem extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3108,7 +3112,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " anatomical system.")
 	@CamelizedName("comprisedOf")
 	@ConstantizedName("COMPRISED_OF")
-	public interface ComprisedOf extends SchemaOrgProperty {
+	public interface ComprisedOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -3229,7 +3233,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Other anatomical structures to which this structure is connected.")
 	@CamelizedName("connectedTo")
 	@ConstantizedName("CONNECTED_TO")
-	public interface ConnectedTo extends SchemaOrgProperty {
+	public interface ConnectedTo extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -3340,7 +3344,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("A contraindication for this therapy.")
 	@CamelizedName("contraindication")
 	@ConstantizedName("CONTRAINDICATION")
-	public interface Contraindication extends SchemaOrgProperty {
+	public interface Contraindication extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalContraindication">http://schema.org/MedicalContraindication</a>
@@ -3371,7 +3375,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Cost per unit of the drug, as reported by the source being tagged.")
 	@CamelizedName("cost")
 	@ConstantizedName("COST")
-	public interface Cost extends SchemaOrgProperty {
+	public interface Cost extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugCost">http://schema.org/DrugCost</a>
@@ -3393,7 +3397,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The category of cost, such as wholesale, retail, reimbursement cap, etc.")
 	@CamelizedName("costCategory")
 	@ConstantizedName("COST_CATEGORY")
-	public interface CostCategory extends SchemaOrgProperty {
+	public interface CostCategory extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugCostCategory">http://schema.org/DrugCostCategory</a>
@@ -3416,7 +3420,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " http://en.wikipedia.org/wiki/ISO_4217")
 	@CamelizedName("costCurrency")
 	@ConstantizedName("COST_CURRENCY")
-	public interface CostCurrency extends SchemaOrgProperty {
+	public interface CostCurrency extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3439,7 +3443,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 'Medicare Part B'.")
 	@CamelizedName("costOrigin")
 	@ConstantizedName("COST_ORIGIN")
-	public interface CostOrigin extends SchemaOrgProperty {
+	public interface CostOrigin extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3460,7 +3464,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The cost per unit of the drug.")
 	@CamelizedName("costPerUnit")
 	@ConstantizedName("COST_PER_UNIT")
-	public interface CostPerUnit extends SchemaOrgProperty {
+	public interface CostPerUnit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -3519,7 +3523,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " process as output of a diagnosis process.")
 	@CamelizedName("diagnosis")
 	@ConstantizedName("DIAGNOSIS")
-	public interface Diagnosis extends SchemaOrgProperty {
+	public interface Diagnosis extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/InfectiousDisease">http://schema.org/InfectiousDisease</a>
@@ -3587,7 +3591,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " component substructures and/or connections with other structures.")
 	@CamelizedName("diagram")
 	@ConstantizedName("DIAGRAM")
-	public interface Diagram extends SchemaOrgProperty {
+	public interface Diagram extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Barcode">http://schema.org/Barcode</a>
@@ -3618,7 +3622,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A sub property of instrument. The diet used in this action.")
 	@CamelizedName("diet")
 	@ConstantizedName("DIET")
-	public interface Diet extends Instrument, SchemaOrgProperty {
+	public interface Diet extends Instrument, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Diet">http://schema.org/Diet</a>
@@ -3643,7 +3647,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " dietary guidelines.")
 	@CamelizedName("dietFeatures")
 	@ConstantizedName("DIET_FEATURES")
-	public interface DietFeatures extends SchemaOrgProperty {
+	public interface DietFeatures extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3669,7 +3673,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the most parsimonious diagnosis or diagnoses in a patient.")
 	@CamelizedName("differentialDiagnosis")
 	@ConstantizedName("DIFFERENTIAL_DIAGNOSIS")
-	public interface DifferentialDiagnosis extends SchemaOrgProperty {
+	public interface DifferentialDiagnosis extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DDxElement">http://schema.org/DDxElement</a>
@@ -3692,7 +3696,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " diagnosis from others in the differential diagnosis.")
 	@CamelizedName("distinguishingSign")
 	@ConstantizedName("DISTINGUISHING_SIGN")
-	public interface DistinguishingSign extends SchemaOrgProperty {
+	public interface DistinguishingSign extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalSign">http://schema.org/MedicalSign</a>
@@ -3742,7 +3746,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 'suspension', 'injection'.")
 	@CamelizedName("dosageForm")
 	@ConstantizedName("DOSAGE_FORM")
-	public interface DosageForm extends SchemaOrgProperty {
+	public interface DosageForm extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3765,7 +3769,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " recommended, or maximum dose based on the type used.")
 	@CamelizedName("doseSchedule")
 	@ConstantizedName("DOSE_SCHEDULE")
-	public interface DoseSchedule extends SchemaOrgProperty {
+	public interface DoseSchedule extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DoseSchedule">http://schema.org/DoseSchedule</a>
@@ -3813,7 +3817,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The unit of the dose, e.g. 'mg'.")
 	@CamelizedName("doseUnit")
 	@ConstantizedName("DOSE_UNIT")
-	public interface DoseUnit extends SchemaOrgProperty {
+	public interface DoseUnit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3834,7 +3838,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The value of the dose, e.g. 500.")
 	@CamelizedName("doseValue")
 	@ConstantizedName("DOSE_VALUE")
-	public interface DoseValue extends SchemaOrgProperty {
+	public interface DoseValue extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -3883,7 +3887,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The vasculature that the vein drains into.")
 	@CamelizedName("drainsTo")
 	@ConstantizedName("DRAINS_TO")
-	public interface DrainsTo extends SchemaOrgProperty {
+	public interface DrainsTo extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Artery">http://schema.org/Artery</a>
@@ -3932,7 +3936,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specifying a drug or medicine used in a medication procedure")
 	@CamelizedName("drug")
 	@ConstantizedName("DRUG")
-	public interface Drug extends SchemaOrgProperty {
+	public interface Drug extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
@@ -3954,7 +3958,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The class of drug this belongs to (e.g., statins).")
 	@CamelizedName("drugClass")
 	@ConstantizedName("DRUG_CLASS")
-	public interface DrugClass extends SchemaOrgProperty {
+	public interface DrugClass extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugClass">http://schema.org/DrugClass</a>
@@ -3976,7 +3980,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The unit in which the drug is measured, e.g. '5 mg tablet'.")
 	@CamelizedName("drugUnit")
 	@ConstantizedName("DRUG_UNIT")
-	public interface DrugUnit extends SchemaOrgProperty {
+	public interface DrugUnit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -3998,7 +4002,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A therapy that duplicates or overlaps this one.")
 	@CamelizedName("duplicateTherapy")
 	@ConstantizedName("DUPLICATE_THERAPY")
-	public interface DuplicateTherapy extends SchemaOrgProperty {
+	public interface DuplicateTherapy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
@@ -4065,7 +4069,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "People or organizations that endorse the plan.")
 	@CamelizedName("endorsers")
 	@ConstantizedName("ENDORSERS")
-	public interface Endorsers extends SchemaOrgProperty {
+	public interface Endorsers extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -5626,7 +5630,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The characteristics of associated patients, such as age, gender, race etc.")
 	@CamelizedName("epidemiology")
 	@ConstantizedName("EPIDEMIOLOGY")
-	public interface Epidemiology extends SchemaOrgProperty {
+	public interface Epidemiology extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -5648,7 +5652,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The condition, complication, or symptom whose risk is being estimated.")
 	@CamelizedName("estimatesRiskOf")
 	@ConstantizedName("ESTIMATES_RISK_OF")
-	public interface EstimatesRiskOf extends SchemaOrgProperty {
+	public interface EstimatesRiskOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -6300,7 +6304,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Strength of evidence of the data used to formulate the guideline (enumerated).")
 	@CamelizedName("evidenceLevel")
 	@ConstantizedName("EVIDENCE_LEVEL")
-	public interface EvidenceLevel extends SchemaOrgProperty {
+	public interface EvidenceLevel extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalEvidenceLevel">http://schema.org/MedicalEvidenceLevel</a>
@@ -6323,7 +6327,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " etc.")
 	@CamelizedName("evidenceOrigin")
 	@ConstantizedName("EVIDENCE_ORIGIN")
-	public interface EvidenceOrigin extends SchemaOrgProperty {
+	public interface EvidenceOrigin extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6345,7 +6349,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A sub property of instrument. The exercise plan used on this action.")
 	@CamelizedName("exercisePlan")
 	@ConstantizedName("EXERCISE_PLAN")
-	public interface ExercisePlan extends Instrument, SchemaOrgProperty {
+	public interface ExercisePlan extends Instrument, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/ExercisePlan">http://schema.org/ExercisePlan</a>
@@ -6367,7 +6371,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A sub property of instrument. The diet used in this action.")
 	@CamelizedName("exerciseRelatedDiet")
 	@ConstantizedName("EXERCISE_RELATED_DIET")
-	public interface ExerciseRelatedDiet extends Instrument, SchemaOrgProperty {
+	public interface ExerciseRelatedDiet extends Instrument, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Diet">http://schema.org/Diet</a>
@@ -6390,7 +6394,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " training, aerobics, cardiac rehabilitation, etc.")
 	@CamelizedName("exerciseType")
 	@ConstantizedName("EXERCISE_TYPE")
-	public interface ExerciseType extends SchemaOrgProperty {
+	public interface ExerciseType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6413,7 +6417,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " condition.")
 	@CamelizedName("expectedPrognosis")
 	@ConstantizedName("EXPECTED_PROGNOSIS")
-	public interface ExpectedPrognosis extends SchemaOrgProperty {
+	public interface ExpectedPrognosis extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6435,7 +6439,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Medical expert advice related to the plan.")
 	@CamelizedName("expertConsiderations")
 	@ConstantizedName("EXPERT_CONSIDERATIONS")
-	public interface ExpertConsiderations extends SchemaOrgProperty {
+	public interface ExpertConsiderations extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6457,7 +6461,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Typical or recommended followup care after the procedure is performed.")
 	@CamelizedName("followup")
 	@ConstantizedName("FOLLOWUP")
-	public interface Followup extends SchemaOrgProperty {
+	public interface Followup extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6480,7 +6484,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " specific foods while taking this drug.")
 	@CamelizedName("foodWarning")
 	@ConstantizedName("FOOD_WARNING")
-	public interface FoodWarning extends SchemaOrgProperty {
+	public interface FoodWarning extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6502,7 +6506,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "How often the dose is taken, e.g. 'daily'.")
 	@CamelizedName("frequency")
 	@ConstantizedName("FREQUENCY")
-	public interface Frequency extends SchemaOrgProperty {
+	public interface Frequency extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6523,7 +6527,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Function of the anatomical structure.")
 	@CamelizedName("function")
 	@ConstantizedName("FUNCTION")
-	public interface Function extends SchemaOrgProperty {
+	public interface Function extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6545,7 +6549,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The degree of mobility the joint allows.")
 	@CamelizedName("functionalClass")
 	@ConstantizedName("FUNCTIONAL_CLASS")
-	public interface FunctionalClass extends SchemaOrgProperty {
+	public interface FunctionalClass extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -7206,7 +7210,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical guideline related to this entity.")
 	@CamelizedName("guideline")
 	@ConstantizedName("GUIDELINE")
-	public interface Guideline extends SchemaOrgProperty {
+	public interface Guideline extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalGuideline">http://schema.org/MedicalGuideline</a>
@@ -7246,7 +7250,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Date on which this guideline's recommendation was made.")
 	@CamelizedName("guidelineDate")
 	@ConstantizedName("GUIDELINE_DATE")
-	public interface GuidelineDate extends SchemaOrgProperty {
+	public interface GuidelineDate extends NativeValueDate, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -7268,7 +7272,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The medical conditions, treatments, etc. that are the subject of the guideline.")
 	@CamelizedName("guidelineSubject")
 	@ConstantizedName("GUIDELINE_SUBJECT")
-	public interface GuidelineSubject extends SchemaOrgProperty {
+	public interface GuidelineSubject extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -7921,7 +7925,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " audience.")
 	@CamelizedName("healthCondition")
 	@ConstantizedName("HEALTH_CONDITION")
-	public interface HealthCondition extends SchemaOrgProperty {
+	public interface HealthCondition extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/InfectiousDisease">http://schema.org/InfectiousDisease</a>
@@ -7988,7 +7992,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A hospital with which the physician or office is affiliated.")
 	@CamelizedName("hospitalAffiliation")
 	@ConstantizedName("HOSPITAL_AFFILIATION")
-	public interface HospitalAffiliation extends SchemaOrgProperty {
+	public interface HospitalAffiliation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Hospital">http://schema.org/Hospital</a>
@@ -8009,7 +8013,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("How the procedure is performed.")
 	@CamelizedName("howPerformed")
 	@ConstantizedName("HOW_PERFORMED")
-	public interface HowPerformed extends SchemaOrgProperty {
+	public interface HowPerformed extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -8031,7 +8035,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A physical examination that can identify this sign.")
 	@CamelizedName("identifyingExam")
 	@ConstantizedName("IDENTIFYING_EXAM")
-	public interface IdentifyingExam extends SchemaOrgProperty {
+	public interface IdentifyingExam extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/PhysicalExam">http://schema.org/PhysicalExam</a>
@@ -8053,7 +8057,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A diagnostic test that can identify this sign.")
 	@CamelizedName("identifyingTest")
 	@ConstantizedName("IDENTIFYING_TEST")
-	public interface IdentifyingTest extends SchemaOrgProperty {
+	public interface IdentifyingTest extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BloodTest">http://schema.org/BloodTest</a>
@@ -8110,7 +8114,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Imaging technique used.")
 	@CamelizedName("imagingTechnique")
 	@ConstantizedName("IMAGING_TECHNIQUE")
-	public interface ImagingTechnique extends SchemaOrgProperty {
+	public interface ImagingTechnique extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalImagingTechnique">http://schema.org/MedicalImagingTechnique</a>
@@ -8133,7 +8137,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " age, coexisting condition.")
 	@CamelizedName("includedRiskFactor")
 	@ConstantizedName("INCLUDED_RISK_FACTOR")
-	public interface IncludedRiskFactor extends SchemaOrgProperty {
+	public interface IncludedRiskFactor extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalRiskFactor">http://schema.org/MedicalRiskFactor</a>
@@ -8155,7 +8159,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The condition, complication, etc. influenced by this factor.")
 	@CamelizedName("increasesRiskOf")
 	@ConstantizedName("INCREASES_RISK_OF")
-	public interface IncreasesRiskOf extends SchemaOrgProperty {
+	public interface IncreasesRiskOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -8810,7 +8814,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " distinguished by using the ApprovedIndication subtype of MedicalIndication.")
 	@CamelizedName("indication")
 	@ConstantizedName("INDICATION")
-	public interface Indication extends SchemaOrgProperty {
+	public interface Indication extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/ApprovedIndication">http://schema.org/ApprovedIndication</a>
@@ -8859,7 +8863,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The actual infectious agent, such as a specific bacterium.")
 	@CamelizedName("infectiousAgent")
 	@ConstantizedName("INFECTIOUS_AGENT")
-	public interface InfectiousAgent extends SchemaOrgProperty {
+	public interface InfectiousAgent extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -8881,7 +8885,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The class of infectious agent (bacteria, prion, etc.) that causes the disease.")
 	@CamelizedName("infectiousAgentClass")
 	@ConstantizedName("INFECTIOUS_AGENT_CLASS")
-	public interface InfectiousAgentClass extends SchemaOrgProperty {
+	public interface InfectiousAgentClass extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/InfectiousAgentClass">http://schema.org/InfectiousAgentClass</a>
@@ -8903,7 +8907,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The place of attachment of a muscle, or what the muscle moves.")
 	@CamelizedName("insertion")
 	@ConstantizedName("INSERTION")
-	public interface Insertion extends SchemaOrgProperty {
+	public interface Insertion extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -9016,7 +9020,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " example, heartbeats per minute. May include the velocity of the movement.")
 	@CamelizedName("intensity")
 	@ConstantizedName("INTENSITY")
-	public interface Intensity extends SchemaOrgProperty {
+	public interface Intensity extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -9049,7 +9053,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " are typically captured as contraindications.")
 	@CamelizedName("interactingDrug")
 	@ConstantizedName("INTERACTING_DRUG")
-	public interface InteractingDrug extends SchemaOrgProperty {
+	public interface InteractingDrug extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
@@ -9071,7 +9075,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "True if the drug is available in a generic form (regardless of name).")
 	@CamelizedName("isAvailableGenerically")
 	@ConstantizedName("IS_AVAILABLE_GENERICALLY")
-	public interface IsAvailableGenerically extends SchemaOrgProperty {
+	public interface IsAvailableGenerically extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -9093,7 +9097,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "True if this item's name is a proprietary/brand name (vs. generic name).")
 	@CamelizedName("isProprietary")
 	@ConstantizedName("IS_PROPRIETARY")
-	public interface IsProprietary extends SchemaOrgProperty {
+	public interface IsProprietary extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -9114,7 +9118,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Link to the drug's label details.")
 	@CamelizedName("labelDetails")
 	@ConstantizedName("LABEL_DETAILS")
-	public interface LabelDetails extends SchemaOrgProperty {
+	public interface LabelDetails extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
@@ -9137,7 +9141,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " schedules that apply.")
 	@CamelizedName("legalStatus")
 	@ConstantizedName("LEGAL_STATUS")
-	public interface LegalStatus extends SchemaOrgProperty {
+	public interface LegalStatus extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugClass">http://schema.org/DrugClass</a>
@@ -9340,7 +9344,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " specific recommending authority.")
 	@CamelizedName("maximumIntake")
 	@ConstantizedName("MAXIMUM_INTAKE")
-	public interface MaximumIntake extends SchemaOrgProperty {
+	public interface MaximumIntake extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MaximumDoseSchedule">http://schema.org/MaximumDoseSchedule</a>
@@ -9363,7 +9367,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " produces its pharmacological effect.")
 	@CamelizedName("mechanismOfAction")
 	@ConstantizedName("MECHANISM_OF_ACTION")
-	public interface MechanismOfAction extends SchemaOrgProperty {
+	public interface MechanismOfAction extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -9384,7 +9388,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("A medical specialty of the provider.")
 	@CamelizedName("medicalSpecialty")
 	@ConstantizedName("MEDICAL_SPECIALTY")
-	public interface MedicalSpecialty extends SchemaOrgProperty {
+	public interface MedicalSpecialty extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalSpecialty">http://schema.org/MedicalSpecialty</a>
@@ -9407,7 +9411,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 'evidence-based', 'homeopathic', 'chiropractic', etc.")
 	@CamelizedName("medicineSystem")
 	@ConstantizedName("MEDICINE_SYSTEM")
-	public interface MedicineSystem extends SchemaOrgProperty {
+	public interface MedicineSystem extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicineSystem">http://schema.org/MedicineSystem</a>
@@ -9428,7 +9432,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The movement the muscle generates.")
 	@CamelizedName("muscleAction")
 	@ConstantizedName("MUSCLE_ACTION")
-	public interface MuscleAction extends SchemaOrgProperty {
+	public interface MuscleAction extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -9451,7 +9455,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " progress naturally.")
 	@CamelizedName("naturalProgression")
 	@ConstantizedName("NATURAL_PROGRESSION")
-	public interface NaturalProgression extends SchemaOrgProperty {
+	public interface NaturalProgression extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -9473,7 +9477,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The underlying innervation associated with the muscle.")
 	@CamelizedName("nerve")
 	@ConstantizedName("NERVE")
-	public interface Nerve extends SchemaOrgProperty {
+	public interface Nerve extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Nerve">http://schema.org/Nerve</a>
@@ -9495,7 +9499,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The neurological pathway extension that involves muscle control.")
 	@CamelizedName("nerveMotor")
 	@ConstantizedName("NERVE_MOTOR")
-	public interface NerveMotor extends SchemaOrgProperty {
+	public interface NerveMotor extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Muscle">http://schema.org/Muscle</a>
@@ -9517,7 +9521,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The generic name of this drug or supplement.")
 	@CamelizedName("nonProprietaryName")
 	@ConstantizedName("NON_PROPRIETARY_NAME")
-	public interface NonProprietaryName extends SchemaOrgProperty {
+	public interface NonProprietaryName extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -9539,7 +9543,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Range of acceptable values for a typical patient, when applicable.")
 	@CamelizedName("normalRange")
 	@ConstantizedName("NORMAL_RANGE")
-	public interface NormalRange extends SchemaOrgProperty {
+	public interface NormalRange extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugClass">http://schema.org/DrugClass</a>
@@ -9732,7 +9736,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The place or point where a muscle arises.")
 	@CamelizedName("origin")
 	@ConstantizedName("ORIGIN")
-	public interface Origin extends SchemaOrgProperty {
+	public interface Origin extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -9844,7 +9848,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The vasculature the lymphatic structure originates, or afferents, from.")
 	@CamelizedName("originatesFrom")
 	@ConstantizedName("ORIGINATES_FROM")
-	public interface OriginatesFrom extends SchemaOrgProperty {
+	public interface OriginatesFrom extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Artery">http://schema.org/Artery</a>
@@ -9893,7 +9897,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Expected or actual outcomes of the study.")
 	@CamelizedName("outcome")
 	@ConstantizedName("OUTCOME")
-	public interface Outcome extends SchemaOrgProperty {
+	public interface Outcome extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -10555,7 +10559,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " treatments, contact information for emergency response.")
 	@CamelizedName("overdosage")
 	@ConstantizedName("OVERDOSAGE")
-	public interface Overdosage extends SchemaOrgProperty {
+	public interface Overdosage extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10579,7 +10583,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " first came to prominence, etc.")
 	@CamelizedName("overview")
 	@ConstantizedName("OVERVIEW")
-	public interface Overview extends SchemaOrgProperty {
+	public interface Overview extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10601,7 +10605,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The anatomical or organ system that this structure is part of.")
 	@CamelizedName("partOfSystem")
 	@ConstantizedName("PART_OF_SYSTEM")
-	public interface PartOfSystem extends SchemaOrgProperty {
+	public interface PartOfSystem extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalSystem">http://schema.org/AnatomicalSystem</a>
@@ -10624,7 +10628,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " associated with this activity or condition.")
 	@CamelizedName("pathophysiology")
 	@ConstantizedName("PATHOPHYSIOLOGY")
-	public interface Pathophysiology extends SchemaOrgProperty {
+	public interface Pathophysiology extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10645,7 +10649,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The phase of the clinical trial.")
 	@CamelizedName("phase")
 	@ConstantizedName("PHASE")
-	public interface Phase extends SchemaOrgProperty {
+	public interface Phase extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10667,7 +10671,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specific physiologic benefits associated to the plan.")
 	@CamelizedName("physiologicalBenefits")
 	@ConstantizedName("PHYSIOLOGICAL_BENEFITS")
-	public interface PhysiologicalBenefits extends SchemaOrgProperty {
+	public interface PhysiologicalBenefits extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10689,7 +10693,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Any characteristics of the population used in the study, e.g. 'males under 65'.")
 	@CamelizedName("population")
 	@ConstantizedName("POPULATION")
-	public interface Population extends SchemaOrgProperty {
+	public interface Population extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10713,7 +10717,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " extension of the condition to other organ systems, etc.")
 	@CamelizedName("possibleComplication")
 	@ConstantizedName("POSSIBLE_COMPLICATION")
-	public interface PossibleComplication extends SchemaOrgProperty {
+	public interface PossibleComplication extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10735,7 +10739,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A possible treatment to address this condition, sign or symptom.")
 	@CamelizedName("possibleTreatment")
 	@ConstantizedName("POSSIBLE_TREATMENT")
-	public interface PossibleTreatment extends SchemaOrgProperty {
+	public interface PossibleTreatment extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
@@ -10803,7 +10807,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " device.")
 	@CamelizedName("postOp")
 	@ConstantizedName("POST_OP")
-	public interface PostOp extends SchemaOrgProperty {
+	public interface PostOp extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10826,7 +10830,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " implanting this device.")
 	@CamelizedName("preOp")
 	@ConstantizedName("PRE_OP")
-	public interface PreOp extends SchemaOrgProperty {
+	public interface PreOp extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10847,7 +10851,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Pregnancy category of this drug.")
 	@CamelizedName("pregnancyCategory")
 	@ConstantizedName("PREGNANCY_CATEGORY")
-	public interface PregnancyCategory extends SchemaOrgProperty {
+	public interface PregnancyCategory extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugPregnancyCategory">http://schema.org/DrugPregnancyCategory</a>
@@ -10870,7 +10874,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " during pregnancy.")
 	@CamelizedName("pregnancyWarning")
 	@ConstantizedName("PREGNANCY_WARNING")
-	public interface PregnancyWarning extends SchemaOrgProperty {
+	public interface PregnancyWarning extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -10893,7 +10897,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " performed.")
 	@CamelizedName("preparation")
 	@ConstantizedName("PREPARATION")
-	public interface Preparation extends SchemaOrgProperty {
+	public interface Preparation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -11554,7 +11558,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Link to prescribing information for the drug.")
 	@CamelizedName("prescribingInfo")
 	@ConstantizedName("PRESCRIBING_INFO")
-	public interface PrescribingInfo extends SchemaOrgProperty {
+	public interface PrescribingInfo extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
@@ -11577,7 +11581,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " whether the drug is available by prescription or over-the-counter, etc.")
 	@CamelizedName("prescriptionStatus")
 	@ConstantizedName("PRESCRIPTION_STATUS")
-	public interface PrescriptionStatus extends SchemaOrgProperty {
+	public interface PrescriptionStatus extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DrugPrescriptionStatus">http://schema.org/DrugPrescriptionStatus</a>
@@ -11609,7 +11613,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " condition, such as vaccination.")
 	@CamelizedName("primaryPrevention")
 	@ConstantizedName("PRIMARY_PREVENTION")
-	public interface PrimaryPrevention extends SchemaOrgProperty {
+	public interface PrimaryPrevention extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
@@ -11677,7 +11681,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the device.")
 	@CamelizedName("procedure")
 	@ConstantizedName("PROCEDURE")
-	public interface Procedure extends SchemaOrgProperty {
+	public interface Procedure extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -11699,7 +11703,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The type of procedure, for example Surgical, Noninvasive, or Percutaneous.")
 	@CamelizedName("procedureType")
 	@ConstantizedName("PROCEDURE_TYPE")
-	public interface ProcedureType extends SchemaOrgProperty {
+	public interface ProcedureType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalProcedureType">http://schema.org/MedicalProcedureType</a>
@@ -11721,7 +11725,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Proprietary name given to the diet plan, typically by its originator or creator.")
 	@CamelizedName("proprietaryName")
 	@ConstantizedName("PROPRIETARY_NAME")
-	public interface ProprietaryName extends SchemaOrgProperty {
+	public interface ProprietaryName extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -11745,7 +11749,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " documentation</a>.")
 	@CamelizedName("publicationType")
 	@ConstantizedName("PUBLICATION_TYPE")
-	public interface PublicationType extends SchemaOrgProperty {
+	public interface PublicationType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -11767,7 +11771,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A goal towards an action is taken. Can be concrete or abstract.")
 	@CamelizedName("purpose")
 	@ConstantizedName("PURPOSE")
-	public interface Purpose extends SchemaOrgProperty {
+	public interface Purpose extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AMRadioChannel">http://schema.org/AMRadioChannel</a>
@@ -18774,7 +18778,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " of its endorsed system of medicine.")
 	@CamelizedName("recognizingAuthority")
 	@ConstantizedName("RECOGNIZING_AUTHORITY")
-	public interface RecognizingAuthority extends SchemaOrgProperty {
+	public interface RecognizingAuthority extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -20317,7 +20321,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Strength of the guideline's recommendation (e.g. 'class I').")
 	@CamelizedName("recommendationStrength")
 	@ConstantizedName("RECOMMENDATION_STRENGTH")
-	public interface RecommendationStrength extends SchemaOrgProperty {
+	public interface RecommendationStrength extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -20340,7 +20344,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " specific recommending authority.")
 	@CamelizedName("recommendedIntake")
 	@ConstantizedName("RECOMMENDED_INTAKE")
-	public interface RecommendedIntake extends SchemaOrgProperty {
+	public interface RecommendedIntake extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/RecommendedDoseSchedule">http://schema.org/RecommendedDoseSchedule</a>
@@ -20363,7 +20367,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " specific part of an organ.")
 	@CamelizedName("regionDrained")
 	@ConstantizedName("REGION_DRAINED")
-	public interface RegionDrained extends SchemaOrgProperty {
+	public interface RegionDrained extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -20484,7 +20488,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Anatomical systems or structures that relate to the superficial anatomy.")
 	@CamelizedName("relatedAnatomy")
 	@ConstantizedName("RELATED_ANATOMY")
-	public interface RelatedAnatomy extends SchemaOrgProperty {
+	public interface RelatedAnatomy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -20605,7 +20609,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical condition associated with this anatomy.")
 	@CamelizedName("relatedCondition")
 	@ConstantizedName("RELATED_CONDITION")
-	public interface RelatedCondition extends SchemaOrgProperty {
+	public interface RelatedCondition extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/InfectiousDisease">http://schema.org/InfectiousDisease</a>
@@ -20673,7 +20677,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " alternatives.")
 	@CamelizedName("relatedDrug")
 	@ConstantizedName("RELATED_DRUG")
-	public interface RelatedDrug extends SchemaOrgProperty {
+	public interface RelatedDrug extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Drug">http://schema.org/Drug</a>
@@ -20696,7 +20700,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " connect to it, such as vascular bundles associated with an organ system.")
 	@CamelizedName("relatedStructure")
 	@ConstantizedName("RELATED_STRUCTURE")
-	public interface RelatedStructure extends SchemaOrgProperty {
+	public interface RelatedStructure extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -20808,7 +20812,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical therapy related to this anatomy.")
 	@CamelizedName("relatedTherapy")
 	@ConstantizedName("RELATED_THERAPY")
-	public interface RelatedTherapy extends SchemaOrgProperty {
+	public interface RelatedTherapy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
@@ -20875,7 +20879,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "If applicable, a medical specialty in which this entity is relevant.")
 	@CamelizedName("relevantSpecialty")
 	@ConstantizedName("RELEVANT_SPECIALTY")
-	public interface RelevantSpecialty extends SchemaOrgProperty {
+	public interface RelevantSpecialty extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalSpecialty">http://schema.org/MedicalSpecialty</a>
@@ -20897,7 +20901,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Number of times one should repeat the activity.")
 	@CamelizedName("repetitions")
 	@ConstantizedName("REPETITIONS")
-	public interface Repetitions extends SchemaOrgProperty {
+	public interface Repetitions extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -20946,7 +20950,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "How often one should break from the activity.")
 	@CamelizedName("restPeriods")
 	@ConstantizedName("REST_PERIODS")
-	public interface RestPeriods extends SchemaOrgProperty {
+	public interface RestPeriods extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -20978,7 +20982,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " contracting this condition, e.g. age,  coexisting condition.")
 	@CamelizedName("riskFactor")
 	@ConstantizedName("RISK_FACTOR")
-	public interface RiskFactor extends SchemaOrgProperty {
+	public interface RiskFactor extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalRiskFactor">http://schema.org/MedicalRiskFactor</a>
@@ -21000,7 +21004,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specific physiologic risks associated to the diet plan.")
 	@CamelizedName("risks")
 	@ConstantizedName("RISKS")
-	public interface Risks extends SchemaOrgProperty {
+	public interface Risks extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -21022,7 +21026,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The vasculature the lymphatic structure runs, or efferents, to.")
 	@CamelizedName("runsTo")
 	@ConstantizedName("RUNS_TO")
-	public interface RunsTo extends SchemaOrgProperty {
+	public interface RunsTo extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Artery">http://schema.org/Artery</a>
@@ -21073,7 +21077,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " adverse reactions, and documented efficacy of the supplement.")
 	@CamelizedName("safetyConsideration")
 	@ConstantizedName("SAFETY_CONSIDERATION")
-	public interface SafetyConsideration extends SchemaOrgProperty {
+	public interface SafetyConsideration extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -21096,7 +21100,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " after an initial episode of the condition.")
 	@CamelizedName("secondaryPrevention")
 	@ConstantizedName("SECONDARY_PREVENTION")
-	public interface SecondaryPrevention extends SchemaOrgProperty {
+	public interface SecondaryPrevention extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTherapy">http://schema.org/MedicalTherapy</a>
@@ -21164,7 +21168,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " brain or spinal cord.")
 	@CamelizedName("sensoryUnit")
 	@ConstantizedName("SENSORY_UNIT")
-	public interface SensoryUnit extends SchemaOrgProperty {
+	public interface SensoryUnit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -21290,7 +21294,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " prevent one of the outcomes in this definition.")
 	@CamelizedName("seriousAdverseOutcome")
 	@ConstantizedName("SERIOUS_ADVERSE_OUTCOME")
-	public interface SeriousAdverseOutcome extends SchemaOrgProperty {
+	public interface SeriousAdverseOutcome extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -21941,7 +21945,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("A sign detected by the test.")
 	@CamelizedName("signDetected")
 	@ConstantizedName("SIGN_DETECTED")
-	public interface SignDetected extends SchemaOrgProperty {
+	public interface SignDetected extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalSign">http://schema.org/MedicalSign</a>
@@ -21974,7 +21978,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " subjective experience of the medical condition.")
 	@CamelizedName("signOrSymptom")
 	@ConstantizedName("SIGN_OR_SYMPTOM")
-	public interface SignOrSymptom extends SchemaOrgProperty {
+	public interface SignOrSymptom extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalSign">http://schema.org/MedicalSign</a>
@@ -22025,7 +22029,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " conditions or courses of treatment.")
 	@CamelizedName("significance")
 	@ConstantizedName("SIGNIFICANCE")
-	public interface Significance extends SchemaOrgProperty {
+	public interface Significance extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -22047,7 +22051,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The anatomical or organ system that the artery originates from.")
 	@CamelizedName("source")
 	@ConstantizedName("SOURCE")
-	public interface Source extends SchemaOrgProperty {
+	public interface Source extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -22159,7 +22163,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The neurological pathway that originates the neurons.")
 	@CamelizedName("sourcedFrom")
 	@ConstantizedName("SOURCED_FROM")
-	public interface SourcedFrom extends SchemaOrgProperty {
+	public interface SourcedFrom extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BrainStructure">http://schema.org/BrainStructure</a>
@@ -22181,7 +22185,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The stage of the condition, if applicable.")
 	@CamelizedName("stage")
 	@ConstantizedName("STAGE")
-	public interface Stage extends SchemaOrgProperty {
+	public interface Stage extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalConditionStage">http://schema.org/MedicalConditionStage</a>
@@ -22203,7 +22207,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The stage represented as a number, e.g. 3.")
 	@CamelizedName("stageAsNumber")
 	@ConstantizedName("STAGE_AS_NUMBER")
-	public interface StageAsNumber extends SchemaOrgProperty {
+	public interface StageAsNumber extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -22242,7 +22246,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The status of the study (enumerated).")
 	@CamelizedName("status")
 	@ConstantizedName("STATUS")
-	public interface Status extends SchemaOrgProperty {
+	public interface Status extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/EventStatusType">http://schema.org/EventStatusType</a>
@@ -22282,7 +22286,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The units of an active ingredient's strength, e.g. mg.")
 	@CamelizedName("strengthUnit")
 	@ConstantizedName("STRENGTH_UNIT")
-	public interface StrengthUnit extends SchemaOrgProperty {
+	public interface StrengthUnit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -22304,7 +22308,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The value of an active ingredient's strength, e.g. 325.")
 	@CamelizedName("strengthValue")
 	@ConstantizedName("STRENGTH_VALUE")
-	public interface StrengthValue extends SchemaOrgProperty {
+	public interface StrengthValue extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -22344,7 +22348,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The name given to how bone physically connects to each other.")
 	@CamelizedName("structuralClass")
 	@ConstantizedName("STRUCTURAL_CLASS")
-	public interface StructuralClass extends SchemaOrgProperty {
+	public interface StructuralClass extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -22366,7 +22370,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical study or trial related to this entity.")
 	@CamelizedName("study")
 	@ConstantizedName("STUDY")
-	public interface Study extends SchemaOrgProperty {
+	public interface Study extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalObservationalStudy">http://schema.org/MedicalObservationalStudy</a>
@@ -22406,7 +22410,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specifics about the observational study design (enumerated).")
 	@CamelizedName("studyDesign")
 	@ConstantizedName("STUDY_DESIGN")
-	public interface StudyDesign extends SchemaOrgProperty {
+	public interface StudyDesign extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalObservationalStudyDesign">http://schema.org/MedicalObservationalStudyDesign</a>
@@ -22428,7 +22432,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The location in which the study is taking/took place.")
 	@CamelizedName("studyLocation")
 	@ConstantizedName("STUDY_LOCATION")
-	public interface StudyLocation extends SchemaOrgProperty {
+	public interface StudyLocation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
@@ -22478,7 +22482,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " drugs, etc. investigated by the study.")
 	@CamelizedName("studySubject")
 	@ConstantizedName("STUDY_SUBJECT")
-	public interface StudySubject extends SchemaOrgProperty {
+	public interface StudySubject extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -23129,7 +23133,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The substage, e.g. 'a' for Stage IIIa.")
 	@CamelizedName("subStageSuffix")
 	@ConstantizedName("SUB_STAGE_SUFFIX")
-	public interface SubStageSuffix extends SchemaOrgProperty {
+	public interface SubStageSuffix extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23151,7 +23155,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Component (sub-)structure(s) that comprise this anatomical structure.")
 	@CamelizedName("subStructure")
 	@ConstantizedName("SUB_STRUCTURE")
-	public interface SubStructure extends SchemaOrgProperty {
+	public interface SubStructure extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -23262,7 +23266,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("A component test of the panel.")
 	@CamelizedName("subTest")
 	@ConstantizedName("SUB_TEST")
-	public interface SubTest extends SchemaOrgProperty {
+	public interface SubTest extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BloodTest">http://schema.org/BloodTest</a>
@@ -23321,7 +23325,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " Diabetes', 'Type 2 Diabetes', or 'Gestational Diabetes' for Diabetes.")
 	@CamelizedName("subtype")
 	@ConstantizedName("SUBTYPE")
-	public interface Subtype extends SchemaOrgProperty {
+	public interface Subtype extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23343,7 +23347,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The area to which the artery supplies blood.")
 	@CamelizedName("supplyTo")
 	@ConstantizedName("SUPPLY_TO")
-	public interface SupplyTo extends SchemaOrgProperty {
+	public interface SupplyTo extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -23456,7 +23460,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " uses it, e.g. 'adults'.")
 	@CamelizedName("targetPopulation")
 	@ConstantizedName("TARGET_POPULATION")
-	public interface TargetPopulation extends SchemaOrgProperty {
+	public interface TargetPopulation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23478,7 +23482,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The type of tissue sample required for the test.")
 	@CamelizedName("tissueSample")
 	@ConstantizedName("TISSUE_SAMPLE")
-	public interface TissueSample extends SchemaOrgProperty {
+	public interface TissueSample extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23501,7 +23505,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " contact', 'Aedes aegypti', etc.")
 	@CamelizedName("transmissionMethod")
 	@ConstantizedName("TRANSMISSION_METHOD")
-	public interface TransmissionMethod extends SchemaOrgProperty {
+	public interface TransmissionMethod extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23523,7 +23527,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specifics about the trial design (enumerated).")
 	@CamelizedName("trialDesign")
 	@ConstantizedName("TRIAL_DESIGN")
-	public interface TrialDesign extends SchemaOrgProperty {
+	public interface TrialDesign extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalTrialDesign">http://schema.org/MedicalTrialDesign</a>
@@ -23546,7 +23550,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the vein connects to.")
 	@CamelizedName("tributary")
 	@ConstantizedName("TRIBUTARY")
-	public interface Tributary extends SchemaOrgProperty {
+	public interface Tributary extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AnatomicalStructure">http://schema.org/AnatomicalStructure</a>
@@ -23658,7 +23662,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A medical test typically performed given this condition.")
 	@CamelizedName("typicalTest")
 	@ConstantizedName("TYPICAL_TEST")
-	public interface TypicalTest extends SchemaOrgProperty {
+	public interface TypicalTest extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BloodTest">http://schema.org/BloodTest</a>
@@ -23716,7 +23720,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A condition the test is used to diagnose.")
 	@CamelizedName("usedToDiagnose")
 	@ConstantizedName("USED_TO_DIAGNOSE")
-	public interface UsedToDiagnose extends SchemaOrgProperty {
+	public interface UsedToDiagnose extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/InfectiousDisease">http://schema.org/InfectiousDisease</a>
@@ -23782,7 +23786,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Device used to perform the test.")
 	@CamelizedName("usesDevice")
 	@ConstantizedName("USES_DEVICE")
-	public interface UsesDevice extends SchemaOrgProperty {
+	public interface UsesDevice extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MedicalDevice">http://schema.org/MedicalDevice</a>
@@ -23804,7 +23808,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Any FDA or other warnings about the drug (text or URL).")
 	@CamelizedName("warning")
 	@ConstantizedName("WARNING")
-	public interface Warning extends SchemaOrgProperty {
+	public interface Warning extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -23836,7 +23840,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " as energy expenditure.")
 	@CamelizedName("workload")
 	@ConstantizedName("WORKLOAD")
-	public interface Workload extends SchemaOrgProperty {
+	public interface Workload extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Energy">http://schema.org/Energy</a>

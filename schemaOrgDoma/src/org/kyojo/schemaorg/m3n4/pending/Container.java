@@ -5,6 +5,12 @@ import java.util.List;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueBoolean;
+import org.kyojo.schemaorg.NativeValueDate;
+import org.kyojo.schemaorg.NativeValueDateTime;
+import org.kyojo.schemaorg.NativeValueInteger;
+import org.kyojo.schemaorg.NativeValueNumber;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
@@ -759,7 +765,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A minimum amount that has to be paid in every month.")
 	@CamelizedName("accountMinimumInflow")
 	@ConstantizedName("ACCOUNT_MINIMUM_INFLOW")
-	public interface AccountMinimumInflow extends SchemaOrgProperty {
+	public interface AccountMinimumInflow extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -784,7 +790,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " allows people to borrow a set amount of money.")
 	@CamelizedName("accountOverdraftLimit")
 	@ConstantizedName("ACCOUNT_OVERDRAFT_LIMIT")
-	public interface AccountOverdraftLimit extends SchemaOrgProperty {
+	public interface AccountOverdraftLimit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -808,7 +814,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the Action to be performed.")
 	@CamelizedName("actionAccessibilityRequirement")
 	@ConstantizedName("ACTION_ACCESSIBILITY_REQUIREMENT")
-	public interface ActionAccessibilityRequirement extends SchemaOrgProperty {
+	public interface ActionAccessibilityRequirement extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/ActionAccessSpecification">http://schema.org/ActionAccessSpecification</a>
@@ -836,7 +842,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " reporting and activities after publication.")
 	@CamelizedName("actionableFeedbackPolicy")
 	@ConstantizedName("ACTIONABLE_FEEDBACK_POLICY")
-	public interface ActionableFeedbackPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface ActionableFeedbackPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -2084,7 +2090,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/CreativeWork\">CreativeWork</a>.")
 	@CamelizedName("appearance")
 	@ConstantizedName("APPEARANCE")
-	public interface Appearance extends SchemaOrgProperty, WorkExample {
+	public interface Appearance extends NativeValueText, SchemaOrgProperty, WorkExample {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -3323,7 +3329,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " your subscription before playing media.")
 	@CamelizedName("authenticator")
 	@ConstantizedName("AUTHENTICATOR")
-	public interface Authenticator extends SchemaOrgProperty {
+	public interface Authenticator extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -4866,7 +4872,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The end of the availability of the product or service included in the offer.")
 	@CamelizedName("availabilityEnds")
 	@ConstantizedName("AVAILABILITY_ENDS")
-	public interface AvailabilityEnds extends SchemaOrgProperty {
+	public interface AvailabilityEnds extends NativeValueDateTime, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DateTime">http://schema.org/DateTime</a>
@@ -4889,7 +4895,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " offer.")
 	@CamelizedName("availabilityStarts")
 	@ConstantizedName("AVAILABILITY_STARTS")
-	public interface AvailabilityStarts extends SchemaOrgProperty {
+	public interface AvailabilityStarts extends NativeValueDateTime, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DateTime">http://schema.org/DateTime</a>
@@ -4916,7 +4922,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " reporting process, methods, interviews, data sources, etc.")
 	@CamelizedName("backstory")
 	@ConstantizedName("BACKSTORY")
-	public interface Backstory extends SchemaOrgProperty {
+	public interface Backstory extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -6161,7 +6167,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The type of a bank account.")
 	@CamelizedName("bankAccountType")
 	@ConstantizedName("BANK_ACCOUNT_TYPE")
-	public interface BankAccountType extends SchemaOrgProperty {
+	public interface BankAccountType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -6194,7 +6200,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " beneficiary")
 	@CamelizedName("beneficiaryBank")
 	@ConstantizedName("BENEFICIARY_BANK")
-	public interface BeneficiaryBank extends SchemaOrgProperty {
+	public interface BeneficiaryBank extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BankOrCreditUnion">http://schema.org/BankOrCreditUnion</a>
@@ -6226,7 +6232,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " specific standard plan or plan variation.")
 	@CamelizedName("benefitsSummaryUrl")
 	@ConstantizedName("BENEFITS_SUMMARY_URL")
-	public interface BenefitsSummaryUrl extends SchemaOrgProperty {
+	public interface BenefitsSummaryUrl extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
@@ -6250,7 +6256,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " FM radio channels, e.g. \"87 FM\".")
 	@CamelizedName("broadcastFrequency")
 	@ConstantizedName("BROADCAST_FREQUENCY")
-	public interface BroadcastFrequency extends SchemaOrgProperty {
+	public interface BroadcastFrequency extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/BroadcastFrequencySpecification">http://schema.org/BroadcastFrequencySpecification</a>
@@ -6281,7 +6287,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The frequency in MHz for a particular broadcast.")
 	@CamelizedName("broadcastFrequencyValue")
 	@ConstantizedName("BROADCAST_FREQUENCY_VALUE")
-	public interface BroadcastFrequencyValue extends SchemaOrgProperty {
+	public interface BroadcastFrequencyValue extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -6349,7 +6355,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/Event\">Event</a> takes place")
 	@CamelizedName("byDay")
 	@ConstantizedName("BY_DAY")
-	public interface ByDay extends SchemaOrgProperty {
+	public interface ByDay extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DayOfWeek">http://schema.org/DayOfWeek</a>
@@ -6374,7 +6380,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 1-12. January is 1.")
 	@CamelizedName("byMonth")
 	@ConstantizedName("BY_MONTH")
-	public interface ByMonth extends SchemaOrgProperty {
+	public interface ByMonth extends NativeValueInteger, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Integer">http://schema.org/Integer</a>
@@ -6399,7 +6405,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 1-31.")
 	@CamelizedName("byMonthDay")
 	@ConstantizedName("BY_MONTH_DAY")
-	public interface ByMonthDay extends SchemaOrgProperty {
+	public interface ByMonthDay extends NativeValueInteger, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Integer">http://schema.org/Integer</a>
@@ -6422,7 +6428,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " expenditures.")
 	@CamelizedName("cashBack")
 	@ConstantizedName("CASH_BACK")
-	public interface CashBack extends SchemaOrgProperty {
+	public interface CashBack extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -6472,7 +6478,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " indicate a category hierarchy.")
 	@CamelizedName("category")
 	@ConstantizedName("CATEGORY")
-	public interface Category extends SchemaOrgProperty {
+	public interface Category extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AMRadioChannel">http://schema.org/AMRadioChannel</a>
@@ -13487,7 +13493,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A short textual code that uniquely identifies the value.")
 	@CamelizedName("codeValue")
 	@ConstantizedName("CODE_VALUE")
-	public interface CodeValue extends SchemaOrgProperty, TermCode {
+	public interface CodeValue extends NativeValueText, SchemaOrgProperty, TermCode {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -13510,7 +13516,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " or smartcards by using RFID or NFC technology.")
 	@CamelizedName("contactlessPayment")
 	@ConstantizedName("CONTACTLESS_PAYMENT")
-	public interface ContactlessPayment extends SchemaOrgProperty {
+	public interface ContactlessPayment extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -13533,7 +13539,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " objects etc.) that emphasise a particular moment within an Event.")
 	@CamelizedName("contentReferenceTime")
 	@ConstantizedName("CONTENT_REFERENCE_TIME")
-	public interface ContentReferenceTime extends SchemaOrgProperty {
+	public interface ContentReferenceTime extends NativeValueDateTime, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/DateTime">http://schema.org/DateTime</a>
@@ -13559,7 +13565,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " or in another document.")
 	@CamelizedName("correction")
 	@ConstantizedName("CORRECTION")
-	public interface Correction extends SchemaOrgProperty {
+	public interface Correction extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CorrectionComment">http://schema.org/CorrectionComment</a>
@@ -13604,7 +13610,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " policy for errors.")
 	@CamelizedName("correctionsPolicy")
 	@ConstantizedName("CORRECTIONS_POLICY")
-	public interface CorrectionsPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface CorrectionsPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -14855,7 +14861,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " page element\".")
 	@CamelizedName("cssSelector")
 	@ConstantizedName("CSS_SELECTOR")
-	public interface CssSelector extends SchemaOrgProperty {
+	public interface CssSelector extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CssSelectorType">http://schema.org/CssSelectorType</a>
@@ -14884,7 +14890,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " HOUR\".")
 	@CamelizedName("currency")
 	@ConstantizedName("CURRENCY")
-	public interface Currency extends SchemaOrgProperty {
+	public interface Currency extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -14905,7 +14911,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The current price of a currency.")
 	@CamelizedName("currentExchangeRate")
 	@ConstantizedName("CURRENT_EXCHANGE_RATE")
-	public interface CurrentExchangeRate extends SchemaOrgProperty {
+	public interface CurrentExchangeRate extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/UnitPriceSpecification">http://schema.org/UnitPriceSpecification</a>
@@ -14934,7 +14940,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " sources, typically providing staffing data.")
 	@CamelizedName("diversityPolicy")
 	@ConstantizedName("DIVERSITY_POLICY")
-	public interface DiversityPolicy extends SchemaOrgProperty {
+	public interface DiversityPolicy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -16185,7 +16191,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " example ASNE or RTDNA (US) reports, or self-reported.")
 	@CamelizedName("diversityStaffingReport")
 	@ConstantizedName("DIVERSITY_STAFFING_REPORT")
-	public interface DiversityStaffingReport extends PublishingPrinciples, SchemaOrgProperty {
+	public interface DiversityStaffingReport extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -16378,7 +16384,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Further documentation describing the Web API in more detail.")
 	@CamelizedName("documentation")
 	@ConstantizedName("DOCUMENTATION")
-	public interface Documentation extends SchemaOrgProperty {
+	public interface Documentation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -17625,7 +17631,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " located.")
 	@CamelizedName("domiciledMortgage")
 	@ConstantizedName("DOMICILED_MORTGAGE")
-	public interface DomiciledMortgage extends SchemaOrgProperty {
+	public interface DomiciledMortgage extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -17649,7 +17655,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " purchase price.")
 	@CamelizedName("downPayment")
 	@ConstantizedName("DOWN_PAYMENT")
-	public interface DownPayment extends SchemaOrgProperty {
+	public interface DownPayment extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -17699,7 +17705,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>.")
 	@CamelizedName("duration")
 	@ConstantizedName("DURATION")
-	public interface Duration extends SchemaOrgProperty {
+	public interface Duration extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
@@ -17721,7 +17727,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The amount to be paid as a penalty in the event of early payment of the loan.")
 	@CamelizedName("earlyPrepaymentPenalty")
 	@ConstantizedName("EARLY_PREPAYMENT_PENALTY")
-	public interface EarlyPrepaymentPenalty extends SchemaOrgProperty {
+	public interface EarlyPrepaymentPenalty extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -17743,7 +17749,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Educational background needed for the position.")
 	@CamelizedName("educationRequirements")
 	@ConstantizedName("EDUCATION_REQUIREMENTS")
-	public interface EducationRequirements extends SchemaOrgProperty {
+	public interface EducationRequirements extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -17767,7 +17773,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " this course.")
 	@CamelizedName("educationalCredentialAwarded")
 	@ConstantizedName("EDUCATIONAL_CREDENTIAL_AWARDED")
-	public interface EducationalCredentialAwarded extends SchemaOrgProperty {
+	public interface EducationalCredentialAwarded extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -17801,7 +17807,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/ineligibleRegion\">ineligibleRegion</a>.")
 	@CamelizedName("eligibleRegion")
 	@ConstantizedName("ELIGIBLE_REGION")
-	public interface EligibleRegion extends AreaServed, SchemaOrgProperty {
+	public interface EligibleRegion extends AreaServed, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -19758,7 +19764,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The estimated salary for this occupation in the given occupationLocation.")
 	@CamelizedName("estimatedSalary")
 	@ConstantizedName("ESTIMATED_SALARY")
-	public interface EstimatedSalary extends SchemaOrgProperty {
+	public interface EstimatedSalary extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CompoundPriceSpecification">http://schema.org/CompoundPriceSpecification</a>
@@ -19868,7 +19874,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " and corporate standards of behavior expected by the organization.")
 	@CamelizedName("ethicsPolicy")
 	@ConstantizedName("ETHICS_POLICY")
-	public interface EthicsPolicy extends SchemaOrgProperty {
+	public interface EthicsPolicy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -21130,7 +21136,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "  or seasons.")
 	@CamelizedName("eventSchedule")
 	@ConstantizedName("EVENT_SCHEDULE")
-	public interface EventSchedule extends SchemaOrgProperty {
+	public interface EventSchedule extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
@@ -21165,7 +21171,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " scheduled event.")
 	@CamelizedName("exceptDate")
 	@ConstantizedName("EXCEPT_DATE")
-	public interface ExceptDate extends SchemaOrgProperty {
+	public interface ExceptDate extends NativeValueDateTime, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -21197,7 +21203,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " and sells foreign currency.")
 	@CamelizedName("exchangeRateSpread")
 	@ConstantizedName("EXCHANGE_RATE_SPREAD")
-	public interface ExchangeRateSpread extends SchemaOrgProperty {
+	public interface ExchangeRateSpread extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -21247,7 +21253,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " example, the user may need to buy a movie before being able to watch it.")
 	@CamelizedName("expectsAcceptanceOf")
 	@ConstantizedName("EXPECTS_ACCEPTANCE_OF")
-	public interface ExpectsAcceptanceOf extends SchemaOrgProperty {
+	public interface ExpectsAcceptanceOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AggregateOffer">http://schema.org/AggregateOffer</a>
@@ -21278,7 +21284,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Description of skills and experience needed for the position.")
 	@CamelizedName("experienceRequirements")
 	@ConstantizedName("EXPERIENCE_REQUIREMENTS")
-	public interface ExperienceRequirements extends SchemaOrgProperty {
+	public interface ExperienceRequirements extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -21302,7 +21308,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/CreativeWork\">CreativeWork</a>.")
 	@CamelizedName("firstAppearance")
 	@ConstantizedName("FIRST_APPEARANCE")
-	public interface FirstAppearance extends SchemaOrgProperty, WorkExample {
+	public interface FirstAppearance extends NativeValueText, SchemaOrgProperty, WorkExample {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -22540,7 +22546,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " be authorized.")
 	@CamelizedName("floorLimit")
 	@ConstantizedName("FLOOR_LIMIT")
-	public interface FloorLimit extends SchemaOrgProperty {
+	public interface FloorLimit extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -22566,7 +22572,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyContains")
 	@ConstantizedName("GEOSPATIALLY_CONTAINS")
-	public interface GeospatiallyContains extends SchemaOrgProperty {
+	public interface GeospatiallyContains extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -24507,7 +24513,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyCoveredBy")
 	@ConstantizedName("GEOSPATIALLY_COVERED_BY")
-	public interface GeospatiallyCoveredBy extends SchemaOrgProperty {
+	public interface GeospatiallyCoveredBy extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -26449,7 +26455,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyCovers")
 	@ConstantizedName("GEOSPATIALLY_COVERS")
-	public interface GeospatiallyCovers extends SchemaOrgProperty {
+	public interface GeospatiallyCovers extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -28392,7 +28398,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyCrosses")
 	@ConstantizedName("GEOSPATIALLY_CROSSES")
-	public interface GeospatiallyCrosses extends SchemaOrgProperty {
+	public interface GeospatiallyCrosses extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -30334,7 +30340,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>)")
 	@CamelizedName("geospatiallyDisjoint")
 	@ConstantizedName("GEOSPATIALLY_DISJOINT")
-	public interface GeospatiallyDisjoint extends SchemaOrgProperty {
+	public interface GeospatiallyDisjoint extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -32278,7 +32284,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " relationship)")
 	@CamelizedName("geospatiallyEquals")
 	@ConstantizedName("GEOSPATIALLY_EQUALS")
-	public interface GeospatiallyEquals extends SchemaOrgProperty {
+	public interface GeospatiallyEquals extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -34219,7 +34225,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyIntersects")
 	@ConstantizedName("GEOSPATIALLY_INTERSECTS")
-	public interface GeospatiallyIntersects extends SchemaOrgProperty {
+	public interface GeospatiallyIntersects extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -36161,7 +36167,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyOverlaps")
 	@ConstantizedName("GEOSPATIALLY_OVERLAPS")
-	public interface GeospatiallyOverlaps extends SchemaOrgProperty {
+	public interface GeospatiallyOverlaps extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -38103,7 +38109,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a> )")
 	@CamelizedName("geospatiallyTouches")
 	@ConstantizedName("GEOSPATIALLY_TOUCHES")
-	public interface GeospatiallyTouches extends SchemaOrgProperty {
+	public interface GeospatiallyTouches extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -40045,7 +40051,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.")
 	@CamelizedName("geospatiallyWithin")
 	@ConstantizedName("GEOSPATIALLY_WITHIN")
-	public interface GeospatiallyWithin extends SchemaOrgProperty {
+	public interface GeospatiallyWithin extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -41985,7 +41991,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " obligations before a default (failure to pay) is deemed to have occurred.")
 	@CamelizedName("gracePeriod")
 	@ConstantizedName("GRACE_PERIOD")
-	public interface GracePeriod extends SchemaOrgProperty {
+	public interface GracePeriod extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
@@ -42007,7 +42013,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A broadcast channel of a broadcast service.")
 	@CamelizedName("hasBroadcastChannel")
 	@ConstantizedName("HAS_BROADCAST_CHANNEL")
-	public interface HasBroadcastChannel extends SchemaOrgProperty {
+	public interface HasBroadcastChannel extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AMRadioChannel">http://schema.org/AMRadioChannel</a>
@@ -42065,7 +42071,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A Category code contained in this code set.")
 	@CamelizedName("hasCategoryCode")
 	@ConstantizedName("HAS_CATEGORY_CODE")
-	public interface HasCategoryCode extends HasDefinedTerm, SchemaOrgProperty {
+	public interface HasCategoryCode extends HasDefinedTerm, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CategoryCode">http://schema.org/CategoryCode</a>
@@ -42096,7 +42102,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A Defined Term contained in this term set.")
 	@CamelizedName("hasDefinedTerm")
 	@ConstantizedName("HAS_DEFINED_TERM")
-	public interface HasDefinedTerm extends HasPart, SchemaOrgProperty {
+	public interface HasDefinedTerm extends HasPart, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CategoryCode">http://schema.org/CategoryCode</a>
@@ -42136,7 +42142,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The Person's occupation. For past professions, use Role for expressing dates.")
 	@CamelizedName("hasOccupation")
 	@ConstantizedName("HAS_OCCUPATION")
-	public interface HasOccupation extends SchemaOrgProperty {
+	public interface HasOccupation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Occupation">http://schema.org/Occupation</a>
@@ -42159,7 +42165,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " closed set?")
 	@CamelizedName("healthPlanCoinsuranceOption")
 	@ConstantizedName("HEALTH_PLAN_COINSURANCE_OPTION")
-	public interface HealthPlanCoinsuranceOption extends SchemaOrgProperty {
+	public interface HealthPlanCoinsuranceOption extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42181,7 +42187,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.")
 	@CamelizedName("healthPlanCoinsuranceRate")
 	@ConstantizedName("HEALTH_PLAN_COINSURANCE_RATE")
-	public interface HealthPlanCoinsuranceRate extends SchemaOrgProperty {
+	public interface HealthPlanCoinsuranceRate extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -42220,7 +42226,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Whether The copay amount.")
 	@CamelizedName("healthPlanCopay")
 	@ConstantizedName("HEALTH_PLAN_COPAY")
-	public interface HealthPlanCopay extends SchemaOrgProperty {
+	public interface HealthPlanCopay extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CompoundPriceSpecification">http://schema.org/CompoundPriceSpecification</a>
@@ -42279,7 +42285,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " set?")
 	@CamelizedName("healthPlanCopayOption")
 	@ConstantizedName("HEALTH_PLAN_COPAY_OPTION")
-	public interface HealthPlanCopayOption extends SchemaOrgProperty {
+	public interface HealthPlanCopayOption extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42301,7 +42307,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Whether The costs to the patient for services under this network or formulary.")
 	@CamelizedName("healthPlanCostSharing")
 	@ConstantizedName("HEALTH_PLAN_COST_SHARING")
-	public interface HealthPlanCostSharing extends SchemaOrgProperty {
+	public interface HealthPlanCostSharing extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -42322,7 +42328,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("TODO.")
 	@CamelizedName("healthPlanDrugOption")
 	@ConstantizedName("HEALTH_PLAN_DRUG_OPTION")
-	public interface HealthPlanDrugOption extends SchemaOrgProperty {
+	public interface HealthPlanDrugOption extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42344,7 +42350,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The tier(s) of drugs offered by this formulary or insurance plan.")
 	@CamelizedName("healthPlanDrugTier")
 	@ConstantizedName("HEALTH_PLAN_DRUG_TIER")
-	public interface HealthPlanDrugTier extends SchemaOrgProperty {
+	public interface HealthPlanDrugTier extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42367,7 +42373,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " across different markets.)")
 	@CamelizedName("healthPlanId")
 	@ConstantizedName("HEALTH_PLAN_ID")
-	public interface HealthPlanId extends SchemaOrgProperty {
+	public interface HealthPlanId extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42390,7 +42396,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " or plan variation.")
 	@CamelizedName("healthPlanMarketingUrl")
 	@ConstantizedName("HEALTH_PLAN_MARKETING_URL")
-	public interface HealthPlanMarketingUrl extends SchemaOrgProperty {
+	public interface HealthPlanMarketingUrl extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/URL">http://schema.org/URL</a>
@@ -42413,7 +42419,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " insurance plans).")
 	@CamelizedName("healthPlanNetworkId")
 	@ConstantizedName("HEALTH_PLAN_NETWORK_ID")
-	public interface HealthPlanNetworkId extends SchemaOrgProperty {
+	public interface HealthPlanNetworkId extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42434,7 +42440,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The tier(s) for this network.")
 	@CamelizedName("healthPlanNetworkTier")
 	@ConstantizedName("HEALTH_PLAN_NETWORK_TIER")
-	public interface HealthPlanNetworkTier extends SchemaOrgProperty {
+	public interface HealthPlanNetworkTier extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42456,7 +42462,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The category or type of pharmacy associated with this cost sharing.")
 	@CamelizedName("healthPlanPharmacyCategory")
 	@ConstantizedName("HEALTH_PLAN_PHARMACY_CATEGORY")
-	public interface HealthPlanPharmacyCategory extends SchemaOrgProperty {
+	public interface HealthPlanPharmacyCategory extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -42480,7 +42486,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " this catagory code.")
 	@CamelizedName("inCodeSet")
 	@ConstantizedName("IN_CODE_SET")
-	public interface InCodeSet extends InDefinedTermSet, SchemaOrgProperty {
+	public interface InCodeSet extends InDefinedTermSet, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CategoryCodeSet">http://schema.org/CategoryCodeSet</a>
@@ -42513,7 +42519,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " term.")
 	@CamelizedName("inDefinedTermSet")
 	@ConstantizedName("IN_DEFINED_TERM_SET")
-	public interface InDefinedTermSet extends IsPartOf, SchemaOrgProperty {
+	public interface InDefinedTermSet extends IsPartOf, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CategoryCodeSet">http://schema.org/CategoryCodeSet</a>
@@ -42553,7 +42559,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The insurance plans that cover this drug.")
 	@CamelizedName("includedInHealthInsurancePlan")
 	@ConstantizedName("INCLUDED_IN_HEALTH_INSURANCE_PLAN")
-	public interface IncludedInHealthInsurancePlan extends SchemaOrgProperty {
+	public interface IncludedInHealthInsurancePlan extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/HealthInsurancePlan">http://schema.org/HealthInsurancePlan</a>
@@ -42574,7 +42580,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Attraction located at destination.")
 	@CamelizedName("includesAttraction")
 	@ConstantizedName("INCLUDES_ATTRACTION")
-	public interface IncludesAttraction extends SchemaOrgProperty {
+	public interface IncludesAttraction extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/TouristAttraction">http://schema.org/TouristAttraction</a>
@@ -42595,7 +42601,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Formularies covered by this plan.")
 	@CamelizedName("includesHealthPlanFormulary")
 	@ConstantizedName("INCLUDES_HEALTH_PLAN_FORMULARY")
-	public interface IncludesHealthPlanFormulary extends SchemaOrgProperty {
+	public interface IncludesHealthPlanFormulary extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/HealthPlanFormulary">http://schema.org/HealthPlanFormulary</a>
@@ -42616,7 +42622,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Networks covered by this plan.")
 	@CamelizedName("includesHealthPlanNetwork")
 	@ConstantizedName("INCLUDES_HEALTH_PLAN_NETWORK")
-	public interface IncludesHealthPlanNetwork extends SchemaOrgProperty {
+	public interface IncludesHealthPlanNetwork extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/HealthPlanNetwork">http://schema.org/HealthPlanNetwork</a>
@@ -42638,7 +42644,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Whether the provider is accepting new patients.")
 	@CamelizedName("isAcceptingNewPatients")
 	@ConstantizedName("IS_ACCEPTING_NEW_PATIENTS")
-	public interface IsAcceptingNewPatients extends SchemaOrgProperty {
+	public interface IsAcceptingNewPatients extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -42664,7 +42670,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " examples).")
 	@CamelizedName("itinerary")
 	@ConstantizedName("ITINERARY")
-	public interface Itinerary extends SchemaOrgProperty {
+	public interface Itinerary extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Accommodation">http://schema.org/Accommodation</a>
@@ -44645,7 +44651,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/JobPosting\">JobPosting</a> descriptions.")
 	@CamelizedName("knowsAbout")
 	@ConstantizedName("KNOWS_ABOUT")
-	public interface KnowsAbout extends SchemaOrgProperty {
+	public interface KnowsAbout extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AMRadioChannel">http://schema.org/AMRadioChannel</a>
@@ -51674,7 +51680,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>.")
 	@CamelizedName("knowsLanguage")
 	@ConstantizedName("KNOWS_LANGUAGE")
-	public interface KnowsLanguage extends SchemaOrgProperty {
+	public interface KnowsLanguage extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Language">http://schema.org/Language</a>
@@ -51711,7 +51717,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " it.")
 	@CamelizedName("legislationApplies")
 	@ConstantizedName("LEGISLATION_APPLIES")
-	public interface LegislationApplies extends SchemaOrgProperty {
+	public interface LegislationApplies extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Legislation">http://schema.org/Legislation</a>
@@ -51749,7 +51755,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"/legislationConsolidates\">legislationConsolidates</a> property.")
 	@CamelizedName("legislationChanges")
 	@ConstantizedName("LEGISLATION_CHANGES")
-	public interface LegislationChanges extends SchemaOrgProperty {
+	public interface LegislationChanges extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Legislation">http://schema.org/Legislation</a>
@@ -51784,7 +51790,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " legislations making the change.")
 	@CamelizedName("legislationConsolidates")
 	@ConstantizedName("LEGISLATION_CONSOLIDATES")
-	public interface LegislationConsolidates extends SchemaOrgProperty {
+	public interface LegislationConsolidates extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Legislation">http://schema.org/Legislation</a>
@@ -51817,7 +51823,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " not even be published or in force.")
 	@CamelizedName("legislationDate")
 	@ConstantizedName("LEGISLATION_DATE")
-	public interface LegislationDate extends DateCreated, SchemaOrgProperty {
+	public interface LegislationDate extends DateCreated, NativeValueDate, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -51842,7 +51848,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " 2015\")")
 	@CamelizedName("legislationDateVersion")
 	@ConstantizedName("LEGISLATION_DATE_VERSION")
-	public interface LegislationDateVersion extends SchemaOrgProperty {
+	public interface LegislationDateVersion extends NativeValueDate, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -51866,7 +51872,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " identifier, like an ELI (European Legislation Identifier) or an URN-Lex.")
 	@CamelizedName("legislationIdentifier")
 	@ConstantizedName("LEGISLATION_IDENTIFIER")
-	public interface LegislationIdentifier extends Identifier, SchemaOrgProperty {
+	public interface LegislationIdentifier extends Identifier, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -51897,7 +51903,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The jurisdiction from which the legislation originates.")
 	@CamelizedName("legislationJurisdiction")
 	@ConstantizedName("LEGISLATION_JURISDICTION")
-	public interface LegislationJurisdiction extends SchemaOrgProperty, SpatialCoverage {
+	public interface LegislationJurisdiction extends NativeValueText, SchemaOrgProperty, SpatialCoverage {
 
 		/**
 		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
@@ -51956,7 +51962,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " force.")
 	@CamelizedName("legislationLegalForce")
 	@ConstantizedName("LEGISLATION_LEGAL_FORCE")
-	public interface LegislationLegalForce extends SchemaOrgProperty {
+	public interface LegislationLegalForce extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/LegalForceStatus">http://schema.org/LegalForceStatus</a>
@@ -51980,7 +51986,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " have a \"stronger\" legal value than the HTML file of the same act.")
 	@CamelizedName("legislationLegalValue")
 	@ConstantizedName("LEGISLATION_LEGAL_VALUE")
-	public interface LegislationLegalValue extends SchemaOrgProperty {
+	public interface LegislationLegalValue extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/LegalValueLevel">http://schema.org/LegalValueLevel</a>
@@ -52005,7 +52011,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " author.")
 	@CamelizedName("legislationPassedBy")
 	@ConstantizedName("LEGISLATION_PASSED_BY")
-	public interface LegislationPassedBy extends Creator, SchemaOrgProperty {
+	public interface LegislationPassedBy extends Creator, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -53569,7 +53575,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " it is published.")
 	@CamelizedName("legislationResponsible")
 	@ConstantizedName("LEGISLATION_RESPONSIBLE")
-	public interface LegislationResponsible extends SchemaOrgProperty {
+	public interface LegislationResponsible extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -55134,7 +55140,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the 2 legislations.")
 	@CamelizedName("legislationTransposes")
 	@ConstantizedName("LEGISLATION_TRANSPOSES")
-	public interface LegislationTransposes extends LegislationApplies, SchemaOrgProperty {
+	public interface LegislationTransposes extends LegislationApplies, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Legislation">http://schema.org/Legislation</a>
@@ -55167,7 +55173,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " organique\", \"règlement grand-ducal\", etc., depending on the country.")
 	@CamelizedName("legislationType")
 	@ConstantizedName("LEGISLATION_TYPE")
-	public interface LegislationType extends Genre, SchemaOrgProperty {
+	public interface LegislationType extends Genre, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CategoryCode">http://schema.org/CategoryCode</a>
@@ -55207,7 +55213,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Indicates the relationship type of a Web link.")
 	@CamelizedName("linkRelationship")
 	@ConstantizedName("LINK_RELATIONSHIP")
-	public interface LinkRelationship extends SchemaOrgProperty {
+	public interface LinkRelationship extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -55230,7 +55236,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " later stage.")
 	@CamelizedName("loanMortgageMandateAmount")
 	@ConstantizedName("LOAN_MORTGAGE_MANDATE_AMOUNT")
-	public interface LoanMortgageMandateAmount extends SchemaOrgProperty {
+	public interface LoanMortgageMandateAmount extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -55252,7 +55258,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The amount of money to pay in a single payment.")
 	@CamelizedName("loanPaymentAmount")
 	@ConstantizedName("LOAN_PAYMENT_AMOUNT")
-	public interface LoanPaymentAmount extends SchemaOrgProperty {
+	public interface LoanPaymentAmount extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmount">http://schema.org/MonetaryAmount</a>
@@ -55275,7 +55281,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " defined as a frequency, i.e. the reciprocal of a period of time.")
 	@CamelizedName("loanPaymentFrequency")
 	@ConstantizedName("LOAN_PAYMENT_FREQUENCY")
-	public interface LoanPaymentFrequency extends SchemaOrgProperty {
+	public interface LoanPaymentFrequency extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -55317,7 +55323,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " interest in each payment.")
 	@CamelizedName("loanRepaymentForm")
 	@ConstantizedName("LOAN_REPAYMENT_FORM")
-	public interface LoanRepaymentForm extends SchemaOrgProperty {
+	public interface LoanRepaymentForm extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/RepaymentSpecification">http://schema.org/RepaymentSpecification</a>
@@ -55338,7 +55344,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The type of a loan or credit.")
 	@CamelizedName("loanType")
 	@ConstantizedName("LOAN_TYPE")
-	public interface LoanType extends SchemaOrgProperty {
+	public interface LoanType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -55371,7 +55377,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " link to the masthead page or a page listing top editorial management.")
 	@CamelizedName("masthead")
 	@ConstantizedName("MASTHEAD")
-	public interface Masthead extends PublishingPrinciples, SchemaOrgProperty {
+	public interface Masthead extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -56645,7 +56651,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/measurementTechnique\">measurementTechnique</a>.")
 	@CamelizedName("measurementTechnique")
 	@ConstantizedName("MEASUREMENT_TECHNIQUE")
-	public interface MeasurementTechnique extends SchemaOrgProperty {
+	public interface MeasurementTechnique extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -56675,7 +56681,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The median value.")
 	@CamelizedName("median")
 	@ConstantizedName("MEDIAN")
-	public interface Median extends SchemaOrgProperty {
+	public interface Median extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -56717,7 +56723,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " containing allowed add-on menu items for this menu item.")
 	@CamelizedName("menuAddOn")
 	@ConstantizedName("MENU_ADD_ON")
-	public interface MenuAddOn extends SchemaOrgProperty {
+	public interface MenuAddOn extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MenuItem">http://schema.org/MenuItem</a>
@@ -56751,7 +56757,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " issues.")
 	@CamelizedName("missionCoveragePrioritiesPolicy")
 	@ConstantizedName("MISSION_COVERAGE_PRIORITIES_POLICY")
-	public interface MissionCoveragePrioritiesPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface MissionCoveragePrioritiesPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -57998,7 +58004,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " a credit card statement each month.")
 	@CamelizedName("monthlyMinimumRepaymentAmount")
 	@ConstantizedName("MONTHLY_MINIMUM_REPAYMENT_AMOUNT")
-	public interface MonthlyMinimumRepaymentAmount extends SchemaOrgProperty {
+	public interface MonthlyMinimumRepaymentAmount extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -58051,7 +58057,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " explaining when authors of articles are not named in bylines.")
 	@CamelizedName("noBylinesPolicy")
 	@ConstantizedName("NO_BYLINES_POLICY")
-	public interface NoBylinesPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface NoBylinesPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -59299,7 +59305,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " first payment date to the maturity date.")
 	@CamelizedName("numberOfLoanPayments")
 	@ConstantizedName("NUMBER_OF_LOAN_PAYMENTS")
-	public interface NumberOfLoanPayments extends SchemaOrgProperty {
+	public interface NumberOfLoanPayments extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -59341,7 +59347,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " jurisdictions.")
 	@CamelizedName("occupationLocation")
 	@ConstantizedName("OCCUPATION_LOCATION")
-	public interface OccupationLocation extends SchemaOrgProperty {
+	public interface OccupationLocation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AdministrativeArea">http://schema.org/AdministrativeArea</a>
@@ -59392,7 +59398,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " formal code, with the property repeated for each applicable value.")
 	@CamelizedName("occupationalCategory")
 	@ConstantizedName("OCCUPATIONAL_CATEGORY")
-	public interface OccupationalCategory extends SchemaOrgProperty {
+	public interface OccupationalCategory extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -59414,7 +59420,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Whether prescriptions can be delivered by mail.")
 	@CamelizedName("offersPrescriptionByMail")
 	@ConstantizedName("OFFERS_PRESCRIPTION_BY_MAIL")
-	public interface OffersPrescriptionByMail extends SchemaOrgProperty {
+	public interface OffersPrescriptionByMail extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -59444,7 +59450,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " to make basic funder information machine-readable.")
 	@CamelizedName("ownershipFundingInfo")
 	@ConstantizedName("OWNERSHIP_FUNDING_INFO")
-	public interface OwnershipFundingInfo extends PublishingPrinciples, SchemaOrgProperty {
+	public interface OwnershipFundingInfo extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -60698,7 +60704,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The 10th percentile value.")
 	@CamelizedName("percentile10")
 	@ConstantizedName("PERCENTILE10")
-	public interface Percentile10 extends SchemaOrgProperty {
+	public interface Percentile10 extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -60737,7 +60743,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The 25th percentile value.")
 	@CamelizedName("percentile25")
 	@ConstantizedName("PERCENTILE25")
-	public interface Percentile25 extends SchemaOrgProperty {
+	public interface Percentile25 extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -60776,7 +60782,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The 75th percentile value.")
 	@CamelizedName("percentile75")
 	@ConstantizedName("PERCENTILE75")
-	public interface Percentile75 extends SchemaOrgProperty {
+	public interface Percentile75 extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -60815,7 +60821,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The 90th percentile value.")
 	@CamelizedName("percentile90")
 	@ConstantizedName("PERCENTILE90")
-	public interface Percentile90 extends SchemaOrgProperty {
+	public interface Percentile90 extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -60855,7 +60861,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Specific qualifications required for this role.")
 	@CamelizedName("qualifications")
 	@ConstantizedName("QUALIFICATIONS")
-	public interface Qualifications extends SchemaOrgProperty {
+	public interface Qualifications extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -60879,7 +60885,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the rest of the money.")
 	@CamelizedName("recourseLoan")
 	@ConstantizedName("RECOURSE_LOAN")
-	public interface RecourseLoan extends SchemaOrgProperty {
+	public interface RecourseLoan extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -60900,7 +60906,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The Occupation for the JobPosting.")
 	@CamelizedName("relevantOccupation")
 	@ConstantizedName("RELEVANT_OCCUPATION")
-	public interface RelevantOccupation extends SchemaOrgProperty {
+	public interface RelevantOccupation extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Occupation">http://schema.org/Occupation</a>
@@ -60923,7 +60929,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " the loan.")
 	@CamelizedName("renegotiableLoan")
 	@ConstantizedName("RENEGOTIABLE_LOAN")
-	public interface RenegotiableLoan extends SchemaOrgProperty {
+	public interface RenegotiableLoan extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -60946,7 +60952,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/Event\">Event</a> will take place")
 	@CamelizedName("repeatCount")
 	@ConstantizedName("REPEAT_COUNT")
-	public interface RepeatCount extends SchemaOrgProperty {
+	public interface RepeatCount extends NativeValueInteger, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Integer">http://schema.org/Integer</a>
@@ -60972,7 +60978,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/Duration\">Duration</a> of time.")
 	@CamelizedName("repeatFrequency")
 	@ConstantizedName("REPEAT_FREQUENCY")
-	public interface RepeatFrequency extends Frequency, SchemaOrgProperty {
+	public interface RepeatFrequency extends Frequency, NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Duration">http://schema.org/Duration</a>
@@ -61005,7 +61011,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " earlier version had 'yes', 'no').")
 	@CamelizedName("requiresSubscription")
 	@ConstantizedName("REQUIRES_SUBSCRIPTION")
-	public interface RequiresSubscription extends SchemaOrgProperty {
+	public interface RequiresSubscription extends NativeValueBoolean, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Boolean">http://schema.org/Boolean</a>
@@ -61036,7 +61042,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Responsibilities associated with this role.")
 	@CamelizedName("responsibilities")
 	@ConstantizedName("RESPONSIBILITIES")
-	public interface Responsibilities extends SchemaOrgProperty {
+	public interface Responsibilities extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -61058,7 +61064,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "This Review or Rating is relevant to this part or facet of the itemReviewed.")
 	@CamelizedName("reviewAspect")
 	@ConstantizedName("REVIEW_ASPECT")
-	public interface ReviewAspect extends SchemaOrgProperty {
+	public interface ReviewAspect extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -61079,7 +61085,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("The RxCUI drug identifier from RXNORM.")
 	@CamelizedName("rxcui")
 	@ConstantizedName("RXCUI")
-	public interface Rxcui extends SchemaOrgProperty {
+	public interface Rxcui extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -61103,7 +61109,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/sdPublisher\">sdPublisher</a>")
 	@CamelizedName("sdDatePublished")
 	@ConstantizedName("SD_DATE_PUBLISHED")
-	public interface SdDatePublished extends SchemaOrgProperty {
+	public interface SdDatePublished extends NativeValueDate, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -61126,7 +61132,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " URL.")
 	@CamelizedName("sdLicense")
 	@ConstantizedName("SD_LICENSE")
-	public interface SdLicense extends SchemaOrgProperty {
+	public interface SdLicense extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -62378,7 +62384,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " property helps make such practices more explicit.")
 	@CamelizedName("sdPublisher")
 	@ConstantizedName("SD_PUBLISHER")
-	public interface SdPublisher extends SchemaOrgProperty {
+	public interface SdPublisher extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -63938,7 +63944,7 @@ public interface Container extends SchemaOrgProperty {
 	@SchemaOrgComment("Skills required to fulfill this role.")
 	@CamelizedName("skills")
 	@ConstantizedName("SKILLS")
-	public interface Skills extends SchemaOrgProperty {
+	public interface Skills extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -63980,7 +63986,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " which is defined to be a possible value of the <em>speakable</em> property.")
 	@CamelizedName("speakable")
 	@ConstantizedName("SPEAKABLE")
-	public interface Speakable extends SchemaOrgProperty {
+	public interface Speakable extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/SpeakableSpecification">http://schema.org/SpeakableSpecification</a>
@@ -64012,7 +64018,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " attributed within the containing CreativeWork.")
 	@CamelizedName("spokenByCharacter")
 	@ConstantizedName("SPOKEN_BY_CHARACTER")
-	public interface SpokenByCharacter extends SchemaOrgProperty {
+	public interface SpokenByCharacter extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/AccountingService">http://schema.org/AccountingService</a>
@@ -65573,7 +65579,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "A CreativeWork or Event about this Thing..")
 	@CamelizedName("subjectOf")
 	@ConstantizedName("SUBJECT_OF")
-	public interface SubjectOf extends SchemaOrgProperty {
+	public interface SubjectOf extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -67020,7 +67026,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/DefinedTermSet\">DefinedTermSet</a>")
 	@CamelizedName("termCode")
 	@ConstantizedName("TERM_CODE")
-	public interface TermCode extends SchemaOrgProperty {
+	public interface TermCode extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -67042,7 +67048,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Human-readable terms of service documentation.")
 	@CamelizedName("termsOfService")
 	@ConstantizedName("TERMS_OF_SERVICE")
-	public interface TermsOfService extends SchemaOrgProperty {
+	public interface TermsOfService extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -67078,7 +67084,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " required.")
 	@CamelizedName("unnamedSourcesPolicy")
 	@ConstantizedName("UNNAMED_SOURCES_POLICY")
-	public interface UnnamedSourcesPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface UnnamedSourcesPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -68325,7 +68331,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " Centers for Medicare &amp; Medicaid Services for more details.")
 	@CamelizedName("usesHealthPlanIdStandard")
 	@ConstantizedName("USES_HEALTH_PLAN_ID_STANDARD")
-	public interface UsesHealthPlanIdStandard extends SchemaOrgProperty {
+	public interface UsesHealthPlanIdStandard extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -68358,7 +68364,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " pairs of identifier and description using PropertyValue.")
 	@CamelizedName("variableMeasured")
 	@ConstantizedName("VARIABLE_MEASURED")
-	public interface VariableMeasured extends SchemaOrgProperty {
+	public interface VariableMeasured extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/LocationFeatureSpecification">http://schema.org/LocationFeatureSpecification</a>
@@ -68402,7 +68408,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/Organization\">Organization</a>.")
 	@CamelizedName("verificationFactCheckingPolicy")
 	@ConstantizedName("VERIFICATION_FACT_CHECKING_POLICY")
-	public interface VerificationFactCheckingPolicy extends PublishingPrinciples, SchemaOrgProperty {
+	public interface VerificationFactCheckingPolicy extends NativeValueText, PublishingPrinciples, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/APIReference">http://schema.org/APIReference</a>
@@ -69653,7 +69659,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " page element\".")
 	@CamelizedName("xpath")
 	@ConstantizedName("XPATH")
-	public interface Xpath extends SchemaOrgProperty {
+	public interface Xpath extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/XPathType">http://schema.org/XPathType</a>

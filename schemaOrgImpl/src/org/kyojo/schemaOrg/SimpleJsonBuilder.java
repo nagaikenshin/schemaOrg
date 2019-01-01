@@ -801,20 +801,20 @@ public class SimpleJsonBuilder {
 			sb.append("\"");
 			sb.append(ymdhmsSdf.format(date));
 			sb.append("\"");
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Text.class.isAssignableFrom(rc)) {
+		} else if(ConsistentDataType.Text.class.isAssignableFrom(rc)) {
 			sb.append("\"");
-			sb.append(escapeJson(((org.kyojo.schemaorg.m3n4.core.DataType.Text)rv).getString()));
+			sb.append(escapeJson(((ConsistentDataType.Text)rv).getString()));
 			sb.append("\"");
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(rc)) {
 			sb.append("\"");
 			sb.append(escapeJson(((org.kyojo.schemaorg.m3n3.core.DataType.Text)rv).getString()));
 			sb.append("\"");
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n4.core.DataType.Boolean)rv).getB00lean().toString());
+		} else if(ConsistentDataType.Boolean.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Boolean)rv).getB00lean().toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Boolean.class.isAssignableFrom(rc)) {
 			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Boolean)rv).getB00lean().toString());
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.DateTime.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n4.core.DataType.DateTime dateTime = (org.kyojo.schemaorg.m3n4.core.DataType.DateTime)rv;
+		} else if(ConsistentDataType.DateTime.class.isAssignableFrom(rc)) {
+			ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
 			if(odt == null) {
 				sb.append("null");
@@ -835,8 +835,8 @@ public class SimpleJsonBuilder {
 				sb.append(odt.format(ymdhmszDtf));
 				sb.append("\"");
 			}
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Date.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n4.core.DataType.Date date = (org.kyojo.schemaorg.m3n4.core.DataType.Date)rv;
+		} else if(ConsistentDataType.Date.class.isAssignableFrom(rc)) {
+			ConsistentDataType.Date date = (ConsistentDataType.Date)rv;
 			LocalDate ld = date.getDate();
 			if(ld == null) {
 				sb.append("null");
@@ -857,8 +857,8 @@ public class SimpleJsonBuilder {
 				sb.append(ld.format(ymdDtf));
 				sb.append("\"");
 			}
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Time.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n4.core.DataType.Time time = (org.kyojo.schemaorg.m3n4.core.DataType.Time)rv;
+		} else if(ConsistentDataType.Time.class.isAssignableFrom(rc)) {
+			ConsistentDataType.Time time = (ConsistentDataType.Time)rv;
 			LocalTime lt = time.getTime();
 			if(lt == null) {
 				sb.append("null");
@@ -879,16 +879,16 @@ public class SimpleJsonBuilder {
 				sb.append(lt.format(hmsDtf));
 				sb.append("\"");
 			}
-		} else if(org.kyojo.schemaorg.m3n4.core.DataType.Number.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n4.core.DataType.Number)rv).getNumber().toString());
+		} else if(ConsistentDataType.Number.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Number)rv).getNumber().toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Number.class.isAssignableFrom(rc)) {
 			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Number)rv).getNumber().toString());
-		} else if(org.kyojo.schemaorg.m3n4.core.Clazz.Integer.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n4.core.Clazz.Integer)rv).getL0ng().toString());
+		} else if(ConsistentDataType.Integer.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Integer)rv).getL0ng().toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Integer.class.isAssignableFrom(rc)) {
 			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Integer)rv).getL0ng().toString());
-		} else if(org.kyojo.schemaorg.m3n4.core.Clazz.Float.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n4.core.Clazz.Float)rv).getD0uble().toString());
+		} else if(ConsistentDataType.Float.class.isAssignableFrom(rc)) {
+			sb.append(((ConsistentDataType.Float)rv).getD0uble().toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Float.class.isAssignableFrom(rc)) {
 			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Float)rv).getD0uble().toString());
 		} else {

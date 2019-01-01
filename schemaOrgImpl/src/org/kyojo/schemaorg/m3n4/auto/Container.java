@@ -5,6 +5,9 @@ import java.util.List;
 import org.kyojo.schemaorg.CamelizedName;
 import org.kyojo.schemaorg.ConstantizedName;
 import org.kyojo.schemaorg.JsonLdContext;
+import org.kyojo.schemaorg.NativeValueDate;
+import org.kyojo.schemaorg.NativeValueNumber;
+import org.kyojo.schemaorg.NativeValueText;
 import org.kyojo.schemaorg.SchemaOrgComment;
 import org.kyojo.schemaorg.SchemaOrgLabel;
 import org.kyojo.schemaorg.SchemaOrgProperty;
@@ -45,7 +48,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " or 0..100 km/h to specify the reference speeds.</li>\n</ul>\n")
 	@CamelizedName("accelerationTime")
 	@ConstantizedName("ACCELERATION_TIME")
-	public interface AccelerationTime extends SchemaOrgProperty {
+	public interface AccelerationTime extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -87,7 +90,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " Systems and Standards.")
 	@CamelizedName("acrissCode")
 	@ConstantizedName("ACRISS_CODE")
-	public interface AcrissCode extends SchemaOrgProperty {
+	public interface AcrissCode extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Text">http://schema.org/Text</a>
@@ -110,7 +113,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " hatchback, etc.).")
 	@CamelizedName("bodyType")
 	@ConstantizedName("BODY_TYPE")
-	public interface BodyType extends SchemaOrgProperty {
+	public interface BodyType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -152,7 +155,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " UN/CEFACT Common Code for \"g/km\".")
 	@CamelizedName("emissionsCO2")
 	@ConstantizedName("EMISSIONS_CO2")
-	public interface EmissionsCO2 extends SchemaOrgProperty {
+	public interface EmissionsCO2 extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -200,7 +203,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/maxValue\">maxValue</a> to indicate ranges.")
 	@CamelizedName("engineDisplacement")
 	@ConstantizedName("ENGINE_DISPLACEMENT")
-	public interface EngineDisplacement extends SchemaOrgProperty {
+	public interface EngineDisplacement extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -251,7 +254,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("enginePower")
 	@ConstantizedName("ENGINE_POWER")
-	public interface EnginePower extends SchemaOrgProperty {
+	public interface EnginePower extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -291,7 +294,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "The type of engine or engines powering the vehicle.")
 	@CamelizedName("engineType")
 	@ConstantizedName("ENGINE_TYPE")
-	public interface EngineType extends SchemaOrgProperty {
+	public interface EngineType extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -335,7 +338,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " (for electrical vehicles).")
 	@CamelizedName("fuelCapacity")
 	@ConstantizedName("FUEL_CAPACITY")
-	public interface FuelCapacity extends SchemaOrgProperty {
+	public interface FuelCapacity extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -375,7 +378,7 @@ public interface Container extends SchemaOrgProperty {
 			+ "Indicates that the vehicle meets the respective emission standard.")
 	@CamelizedName("meetsEmissionStandard")
 	@ConstantizedName("MEETS_EMISSION_STANDARD")
-	public interface MeetsEmissionStandard extends SchemaOrgProperty {
+	public interface MeetsEmissionStandard extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/QualitativeValue">http://schema.org/QualitativeValue</a>
@@ -416,7 +419,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " same make and model).")
 	@CamelizedName("modelDate")
 	@ConstantizedName("MODEL_DATE")
-	public interface ModelDate extends SchemaOrgProperty {
+	public interface ModelDate extends NativeValueDate, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Date">http://schema.org/Date</a>
@@ -454,7 +457,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("payload")
 	@ConstantizedName("PAYLOAD")
-	public interface Payload extends SchemaOrgProperty {
+	public interface Payload extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -507,7 +510,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("roofLoad")
 	@ConstantizedName("ROOF_LOAD")
-	public interface RoofLoad extends SchemaOrgProperty {
+	public interface RoofLoad extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -549,7 +552,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " law.<br/><br/>\n\nTypical unit code(s): C62 for persons")
 	@CamelizedName("seatingCapacity")
 	@ConstantizedName("SEATING_CAPACITY")
-	public interface SeatingCapacity extends SchemaOrgProperty {
+	public interface SeatingCapacity extends NativeValueNumber, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/Float">http://schema.org/Float</a>
@@ -626,7 +629,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/valueReference\">valueReference</a> property.")
 	@CamelizedName("speed")
 	@ConstantizedName("SPEED")
-	public interface Speed extends SchemaOrgProperty {
+	public interface Speed extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -680,7 +683,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("tongueWeight")
 	@ConstantizedName("TONGUE_WEIGHT")
-	public interface TongueWeight extends SchemaOrgProperty {
+	public interface TongueWeight extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -729,7 +732,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("torque")
 	@ConstantizedName("TORQUE")
-	public interface Torque extends SchemaOrgProperty {
+	public interface Torque extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -780,7 +783,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " href=\"http://schema.org/maxValue\">maxValue</a> to indicate ranges.")
 	@CamelizedName("trailerWeight")
 	@ConstantizedName("TRAILER_WEIGHT")
-	public interface TrailerWeight extends SchemaOrgProperty {
+	public interface TrailerWeight extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -823,7 +826,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " sale.")
 	@CamelizedName("vehicleSpecialUsage")
 	@ConstantizedName("VEHICLE_SPECIAL_USAGE")
-	public interface VehicleSpecialUsage extends SchemaOrgProperty {
+	public interface VehicleSpecialUsage extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/CarUsageType">http://schema.org/CarUsageType</a>
@@ -867,7 +870,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " ranges.</li>\n</ul>\n")
 	@CamelizedName("weightTotal")
 	@ConstantizedName("WEIGHT_TOTAL")
-	public interface WeightTotal extends SchemaOrgProperty {
+	public interface WeightTotal extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
@@ -909,7 +912,7 @@ public interface Container extends SchemaOrgProperty {
 			+ " INH for inches, FOT for foot/feet")
 	@CamelizedName("wheelbase")
 	@ConstantizedName("WHEELBASE")
-	public interface Wheelbase extends SchemaOrgProperty {
+	public interface Wheelbase extends NativeValueText, SchemaOrgProperty {
 
 		/**
 		 * @see <a href="http://schema.org/MonetaryAmountDistribution">http://schema.org/MonetaryAmountDistribution</a>
