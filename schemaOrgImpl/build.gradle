@@ -7,7 +7,7 @@ dependencies {
 	compileOnly project(':schemaOrgWork')
 }
 
-archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-impl'
+archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-' + schemaOrgDetail + '-impl'
 
 jar {
 	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')

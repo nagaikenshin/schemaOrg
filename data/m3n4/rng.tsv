@@ -534,6 +534,7 @@ org.kyojo.schemaorg.m3n4.bib.Container$TranslationOfWork
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -619,6 +620,7 @@ org.kyojo.schemaorg.m3n4.bib.Container$TranslationOfWork
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -675,6 +677,7 @@ org.kyojo.schemaorg.m3n4.bib.Container$WorkTranslation
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -760,6 +763,7 @@ org.kyojo.schemaorg.m3n4.bib.Container$WorkTranslation
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -2210,6 +2214,7 @@ org.kyojo.schemaorg.m3n4.core.Container$About
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -2261,6 +2266,7 @@ org.kyojo.schemaorg.m3n4.core.Container$About
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -2733,6 +2739,7 @@ org.kyojo.schemaorg.m3n4.core.Container$About
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -2780,6 +2787,7 @@ org.kyojo.schemaorg.m3n4.core.Container$About
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -2816,7 +2824,17 @@ org.kyojo.schemaorg.m3n4.core.Container$About
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -3226,6 +3244,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ActionOption
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -3277,6 +3296,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ActionOption
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -3749,6 +3769,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ActionOption
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -3796,6 +3817,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ActionOption
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -3832,7 +3854,17 @@ org.kyojo.schemaorg.m3n4.core.Container$ActionOption
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -6292,6 +6324,16 @@ org.kyojo.schemaorg.m3n4.core.Container$BroadcastOfEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$BroadcastServiceTier
@@ -7004,6 +7046,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CharacterAttribute
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -7055,6 +7098,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CharacterAttribute
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -7527,6 +7571,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CharacterAttribute
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -7574,6 +7619,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CharacterAttribute
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -7610,7 +7656,17 @@ org.kyojo.schemaorg.m3n4.core.Container$CharacterAttribute
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -7675,6 +7731,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CheatCode
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -7760,6 +7817,7 @@ org.kyojo.schemaorg.m3n4.core.Container$CheatCode
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -7839,6 +7897,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Citation
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -7924,6 +7983,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Citation
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -9903,6 +9963,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DataFeedElement
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -9954,6 +10015,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DataFeedElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -10426,6 +10488,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DataFeedElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -10473,6 +10536,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DataFeedElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -10509,7 +10573,17 @@ org.kyojo.schemaorg.m3n4.core.Container$DataFeedElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -10944,6 +11018,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DefaultValue
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -10995,6 +11070,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DefaultValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -11467,6 +11543,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DefaultValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -11514,6 +11591,7 @@ org.kyojo.schemaorg.m3n4.core.Container$DefaultValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -11550,7 +11628,17 @@ org.kyojo.schemaorg.m3n4.core.Container$DefaultValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -11853,6 +11941,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Discusses
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -11938,6 +12027,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Discusses
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -12309,6 +12399,7 @@ org.kyojo.schemaorg.m3n4.core.Container$EncodesCreativeWork
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -12394,6 +12485,7 @@ org.kyojo.schemaorg.m3n4.core.Container$EncodesCreativeWork
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -12779,6 +12871,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Error
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -12830,6 +12923,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Error
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -13302,6 +13396,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Error
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -13349,6 +13444,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Error
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -13385,7 +13481,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Error
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -13454,6 +13560,16 @@ org.kyojo.schemaorg.m3n4.core.Container$Event
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$EventStatus
@@ -13483,6 +13599,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ExampleOfWork
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -13568,6 +13685,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ExampleOfWork
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -13875,6 +13993,16 @@ org.kyojo.schemaorg.m3n4.core.Container$FirstPerformance
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$FlightDistance
@@ -15059,6 +15187,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameItem
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -15110,6 +15239,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -15582,6 +15712,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -15629,6 +15760,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -15665,7 +15797,17 @@ org.kyojo.schemaorg.m3n4.core.Container$GameItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -16056,6 +16198,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GamePlatform
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -16107,6 +16250,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GamePlatform
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -16579,6 +16723,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GamePlatform
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -16626,6 +16771,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GamePlatform
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -16662,7 +16808,17 @@ org.kyojo.schemaorg.m3n4.core.Container$GamePlatform
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -16728,6 +16884,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameTip
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -16813,6 +16970,7 @@ org.kyojo.schemaorg.m3n4.core.Container$GameTip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -17346,6 +17504,7 @@ org.kyojo.schemaorg.m3n4.core.Container$HasPart
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -17431,6 +17590,7 @@ org.kyojo.schemaorg.m3n4.core.Container$HasPart
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -18469,6 +18629,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Instrument
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -18520,6 +18681,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Instrument
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -18992,6 +19154,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Instrument
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -19039,6 +19202,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Instrument
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -19075,7 +19239,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Instrument
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -19289,6 +19463,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsBasedOn
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -19374,6 +19549,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsBasedOn
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -19457,6 +19633,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsPartOf
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -19542,6 +19719,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsPartOf
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -19603,6 +19781,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsRelatedTo
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -19633,6 +19812,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IsSimilarTo
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -19845,6 +20025,7 @@ org.kyojo.schemaorg.m3n4.core.Container$IssuedThrough
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -19986,6 +20167,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Item
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -20037,6 +20219,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Item
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -20509,6 +20692,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Item
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -20556,6 +20740,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Item
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -20592,7 +20777,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Item
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -20777,6 +20972,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemListElement
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -20828,6 +21024,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemListElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -21300,6 +21497,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemListElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -21347,6 +21545,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemListElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -21383,7 +21582,17 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemListElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -21452,6 +21661,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemOffered
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -21590,6 +21800,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemReviewed
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -21641,6 +21852,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemReviewed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -22113,6 +22325,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemReviewed
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -22160,6 +22373,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemReviewed
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -22196,7 +22410,17 @@ org.kyojo.schemaorg.m3n4.core.Container$ItemReviewed
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -22872,6 +23096,7 @@ org.kyojo.schemaorg.m3n4.core.Container$License
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -22957,6 +23182,7 @@ org.kyojo.schemaorg.m3n4.core.Container$License
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -23487,6 +23713,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Lyrics
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -23572,6 +23799,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Lyrics
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -23745,6 +23973,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntity
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -23796,6 +24025,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntity
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -24268,6 +24498,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntity
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -24315,6 +24546,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntity
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -24351,7 +24583,17 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntity
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -24413,6 +24655,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntityOfPage
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -24498,6 +24741,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MainEntityOfPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -25225,6 +25469,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Mentions
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -25276,6 +25521,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Mentions
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -25748,6 +25994,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Mentions
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -25795,6 +26042,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Mentions
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -25831,7 +26079,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Mentions
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -25893,6 +26151,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MessageAttachment
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -25978,6 +26237,7 @@ org.kyojo.schemaorg.m3n4.core.Container$MessageAttachment
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -26321,6 +26581,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Object
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -26372,6 +26633,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Object
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -26844,6 +27106,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Object
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -26891,6 +27154,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Object
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -26927,7 +27191,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Object
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -28025,6 +28299,16 @@ org.kyojo.schemaorg.m3n4.core.Container$PerformerIn
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$PermissionType
@@ -29060,6 +29344,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ProvidesService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -29272,6 +29557,7 @@ org.kyojo.schemaorg.m3n4.core.Container$PublishingPrinciples
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -29357,6 +29643,7 @@ org.kyojo.schemaorg.m3n4.core.Container$PublishingPrinciples
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -29528,6 +29815,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Quest
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -29579,6 +29867,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Quest
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -30051,6 +30340,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Quest
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -30098,6 +30388,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Quest
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -30134,7 +30425,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Quest
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -30226,6 +30527,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RecipeInstructions
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -30311,6 +30613,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RecipeInstructions
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -30733,6 +31036,16 @@ org.kyojo.schemaorg.m3n4.core.Container$RecordedAt
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$RecordedIn
@@ -30759,6 +31072,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RecordedIn
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -30844,6 +31158,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RecordedIn
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -31259,6 +31574,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacee
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -31310,6 +31626,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacee
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -31782,6 +32099,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacee
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -31829,6 +32147,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacee
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -31865,7 +32184,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacee
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -32038,6 +32367,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacer
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -32089,6 +32419,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacer
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -32561,6 +32892,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacer
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -32608,6 +32940,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacer
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -32644,7 +32977,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Replacer
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -32827,6 +33170,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RequiredCollateral
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -32878,6 +33222,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RequiredCollateral
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -33350,6 +33695,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RequiredCollateral
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -33397,6 +33743,7 @@ org.kyojo.schemaorg.m3n4.core.Container$RequiredCollateral
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -33433,7 +33780,17 @@ org.kyojo.schemaorg.m3n4.core.Container$RequiredCollateral
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -33624,6 +33981,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ReservationFor
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -33675,6 +34033,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ReservationFor
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -34147,6 +34506,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ReservationFor
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -34194,6 +34554,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ReservationFor
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -34230,7 +34591,17 @@ org.kyojo.schemaorg.m3n4.core.Container$ReservationFor
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -34412,6 +34783,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Result
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -34463,6 +34835,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Result
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -34935,6 +35308,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Result
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -34982,6 +35356,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Result
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -35018,7 +35393,17 @@ org.kyojo.schemaorg.m3n4.core.Container$Result
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -36211,6 +36596,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ServiceOutput
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -36262,6 +36648,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ServiceOutput
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -36734,6 +37121,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ServiceOutput
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -36781,6 +37169,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ServiceOutput
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -36817,7 +37206,17 @@ org.kyojo.schemaorg.m3n4.core.Container$ServiceOutput
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -36899,6 +37298,7 @@ org.kyojo.schemaorg.m3n4.core.Container$SharedContent
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -36984,6 +37384,7 @@ org.kyojo.schemaorg.m3n4.core.Container$SharedContent
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -37059,6 +37460,7 @@ org.kyojo.schemaorg.m3n4.core.Container$SoftwareHelp
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -37144,6 +37546,7 @@ org.kyojo.schemaorg.m3n4.core.Container$SoftwareHelp
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -37817,6 +38220,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Step
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -37902,6 +38306,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Step
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -37969,6 +38374,16 @@ org.kyojo.schemaorg.m3n4.core.Container$SubEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$SubOrganization
@@ -38212,6 +38627,16 @@ org.kyojo.schemaorg.m3n4.core.Container$SuperEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.core.Container$Supply
@@ -38360,6 +38785,7 @@ org.kyojo.schemaorg.m3n4.core.Container$TargetCollection
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -38411,6 +38837,7 @@ org.kyojo.schemaorg.m3n4.core.Container$TargetCollection
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -38883,6 +39310,7 @@ org.kyojo.schemaorg.m3n4.core.Container$TargetCollection
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -38930,6 +39358,7 @@ org.kyojo.schemaorg.m3n4.core.Container$TargetCollection
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -38966,7 +39395,17 @@ org.kyojo.schemaorg.m3n4.core.Container$TargetCollection
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -39730,6 +40169,7 @@ org.kyojo.schemaorg.m3n4.core.Container$TypeOfGood
 		org.kyojo.schemaorg.m3n4.pending.Clazz$MortgageLoan
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentCard
 		org.kyojo.schemaorg.m3n4.core.Clazz$PaymentService
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.pending.Clazz$WebAPI
 
@@ -39961,6 +40401,7 @@ org.kyojo.schemaorg.m3n4.core.Container$Value
 	org.kyojo.schemaorg.m3n4.core.Clazz$StructuredValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$CompoundPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$ContactPoint
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeliveryChargeSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$EngineSpecification
 		org.kyojo.schemaorg.m3n4.pending.Clazz$ExchangeRateSpecification
@@ -40075,6 +40516,7 @@ org.kyojo.schemaorg.m3n4.core.Container$ValueReference
 	org.kyojo.schemaorg.m3n4.core.Clazz$StructuredValue
 		org.kyojo.schemaorg.m3n4.core.Clazz$CompoundPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$ContactPoint
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeliveryChargeSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$EngineSpecification
 		org.kyojo.schemaorg.m3n4.pending.Clazz$ExchangeRateSpecification
@@ -40209,6 +40651,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkExample
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -40294,6 +40737,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkExample
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -40347,6 +40791,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkFeatured
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -40432,6 +40877,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkFeatured
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -40705,6 +41151,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkPerformed
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -40790,6 +41237,7 @@ org.kyojo.schemaorg.m3n4.core.Container$WorkPerformed
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -42854,6 +43302,7 @@ org.kyojo.schemaorg.m3n4.healthLifesci.Container$Purpose
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -42905,6 +43354,7 @@ org.kyojo.schemaorg.m3n4.healthLifesci.Container$Purpose
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -43377,6 +43827,7 @@ org.kyojo.schemaorg.m3n4.healthLifesci.Container$Purpose
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -43424,6 +43875,7 @@ org.kyojo.schemaorg.m3n4.healthLifesci.Container$Purpose
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -43460,7 +43912,17 @@ org.kyojo.schemaorg.m3n4.healthLifesci.Container$Purpose
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -44575,6 +45037,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$ActionableFeedbackPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -44660,6 +45123,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$ActionableFeedbackPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -44714,6 +45178,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Appearance
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -44799,6 +45264,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Appearance
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -45030,6 +45496,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Backstory
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -45115,6 +45582,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Backstory
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -45320,6 +45788,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Category
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -45371,6 +45840,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Category
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -45843,6 +46313,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Category
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -45890,6 +46361,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Category
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -45926,7 +46398,17 @@ org.kyojo.schemaorg.m3n4.pending.Container$Category
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -46002,6 +46484,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$CorrectionsPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -46087,6 +46570,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$CorrectionsPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -46150,6 +46634,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$DiversityPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -46235,6 +46720,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$DiversityPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -46311,6 +46797,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Documentation
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -46396,6 +46883,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Documentation
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -46702,6 +47190,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$EthicsPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -46787,6 +47276,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$EthicsPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -46861,6 +47351,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$FirstAppearance
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -46946,6 +47437,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$FirstAppearance
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -49582,6 +50074,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$KnowsAbout
 		org.kyojo.schemaorg.m3n4.meta.Clazz$Class
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClothingStore
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollegeOrUniversity
@@ -49633,6 +50126,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$KnowsAbout
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeed
 		org.kyojo.schemaorg.m3n4.core.Clazz$DataFeedItem
 		org.kyojo.schemaorg.m3n4.core.Clazz$Dataset
+		org.kyojo.schemaorg.m3n4.core.Clazz$DatedMoneySpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$DayOfWeek
 		org.kyojo.schemaorg.m3n4.core.Clazz$DaySpa
 		org.kyojo.schemaorg.m3n4.core.Clazz$DeactivateAction
@@ -50105,6 +50599,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$KnowsAbout
 		org.kyojo.schemaorg.m3n4.core.Clazz$SeaBodyOfWater
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$Seat
 		org.kyojo.schemaorg.m3n4.core.Clazz$SelfStorage
 		org.kyojo.schemaorg.m3n4.core.Clazz$SellAction
@@ -50152,6 +50647,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$KnowsAbout
 		org.kyojo.schemaorg.m3n4.core.Clazz$Table
 		org.kyojo.schemaorg.m3n4.core.Clazz$TakeAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$TattooParlor
+		org.kyojo.schemaorg.m3n4.core.Clazz$Taxi
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiReservation
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiService
 		org.kyojo.schemaorg.m3n4.core.Clazz$TaxiStand
@@ -50188,7 +50684,17 @@ org.kyojo.schemaorg.m3n4.pending.Container$KnowsAbout
 		org.kyojo.schemaorg.m3n4.core.Clazz$UnitPriceSpecification
 		org.kyojo.schemaorg.m3n4.core.Clazz$UpdateAction
 		org.kyojo.schemaorg.m3n4.core.Clazz$UseAction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
 		org.kyojo.schemaorg.m3n4.pending.Clazz$UserReview
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$Vehicle
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vein
 		org.kyojo.schemaorg.m3n4.healthLifesci.Clazz$Vessel
@@ -50668,6 +51174,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Masthead
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -50753,6 +51260,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$Masthead
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -50820,6 +51328,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$MissionCoveragePrioritiesPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -50905,6 +51414,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$MissionCoveragePrioritiesPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -50965,6 +51475,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$NoBylinesPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -51050,6 +51561,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$NoBylinesPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -51122,6 +51634,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$OwnershipFundingInfo
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -51207,6 +51720,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$OwnershipFundingInfo
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -51317,6 +51831,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$SdLicense
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -51402,6 +51917,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$SdLicense
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -51811,6 +52327,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$SubjectOf
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -51896,6 +52413,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$SubjectOf
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -51946,6 +52464,16 @@ org.kyojo.schemaorg.m3n4.pending.Container$SubjectOf
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$SportsEvent
 		org.kyojo.schemaorg.m3n4.core.Clazz$TheaterEvent
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserBlocks
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserCheckins
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserComments
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserDownloads
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserInteraction
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserLikes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPageVisits
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlays
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserPlusOnes
+		org.kyojo.schemaorg.m3n4.core.Clazz$UserTweets
 		org.kyojo.schemaorg.m3n4.core.Clazz$VisualArtsEvent
 
 org.kyojo.schemaorg.m3n4.pending.Container$TermCode
@@ -51979,6 +52507,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$UnnamedSourcesPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -52064,6 +52593,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$UnnamedSourcesPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication
@@ -52127,6 +52657,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$VerificationFactCheckingPolicy
 		org.kyojo.schemaorg.m3n4.pending.Clazz$Claim
 		org.kyojo.schemaorg.m3n4.core.Clazz$ClaimReview
 		org.kyojo.schemaorg.m3n4.core.Clazz$Clip
+		org.kyojo.schemaorg.m3n4.core.Clazz$Code
 		org.kyojo.schemaorg.m3n4.bib.Clazz$Collection
 		org.kyojo.schemaorg.m3n4.core.Clazz$CollectionPage
 		org.kyojo.schemaorg.m3n4.bib.Clazz$ComicCoverArt
@@ -52212,6 +52743,7 @@ org.kyojo.schemaorg.m3n4.pending.Container$VerificationFactCheckingPolicy
 		org.kyojo.schemaorg.m3n4.core.Clazz$ScholarlyArticle
 		org.kyojo.schemaorg.m3n4.core.Clazz$Sculpture
 		org.kyojo.schemaorg.m3n4.core.Clazz$SearchResultsPage
+		org.kyojo.schemaorg.m3n4.core.Clazz$Season
 		org.kyojo.schemaorg.m3n4.core.Clazz$SiteNavigationElement
 		org.kyojo.schemaorg.m3n4.core.Clazz$SocialMediaPosting
 		org.kyojo.schemaorg.m3n4.core.Clazz$SoftwareApplication

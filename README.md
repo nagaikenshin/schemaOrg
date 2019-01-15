@@ -69,13 +69,15 @@ CreativeWork creativeWork = new CREATIVE_WORK();
 Author author = new AUTHOR(new PERSON("誰か"));
 creativeWork.setAuthor(author);
 System.out.println(SimpleJsonBuilder.toJson(creativeWork));
-System.out.println(SimpleJsonBuilder.toJsonLd(creativeWork));
+System.out.println(SimpleJsonBuilder.toJsonLd(creativeWork, CreativeWork.class));
 ```
 Results:
 ```
 {"author":{"person":{"name":{"text":"誰か"}}}}
-{"author":{"@context":"http:\/\/schema.org","@type":"Person","name":"誰か"}}
+{"@context":"http:\/\/schema.org","@type":"CreativeWork","author":{"@context":"http:\/\/schema.org","@type":"Person","name":"誰か"}}
 ```
+
+[Sample source](/schemaOrgSample/src/test/java/org/kyojo/schemaorg/sample/SimpleJsonBuilderTest.java)
 
 GSON assumed for deserialization
 --------------------------------
@@ -92,59 +94,92 @@ JSON-LD:
 ```
 {
     "@context": "http://schema.org",
-    "@type": "ItemList",
-    "url": "http://multivarki.ru?filters%5Bprice%5D%5BLTE%5D=39600",
-    "numberOfItems": "315",
-    "itemListElement": [
-        {
-            "@type": "Product",
-            "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-            "url": "http://multivarki.ru/brand_502/",
-            "name": "Brand 502"
-        },
-        {
-            "@type": "Product",
-            "name": "..."
-        }
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://google.com/article"
+    },
+    "headline": "Article headline",
+    "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
     ],
-    "offers": {
-        "@type": "Offer",
-        "price": "4399 p."
-    }
+    "datePublished": "2015-02-05",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Google",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://google.com/logo.jpg"
+        }
+    },
+    "description": "A most wonderful article"
 }
 ```
 ```
+Map<String, JsonLdThingStringGiven> thingStrModeMap = new HashMap<>();
+thingStrModeMap.put("url", JsonLdThingStringGiven.AS_URL);
+thingStrModeMap.put("image", JsonLdThingStringGiven.AS_URL);
+thingStrModeMap.put("item", JsonLdThingStringGiven.AS_THING_IDENTIFIER_URL);
 Map<String, String> jsonLdRootMap = new HashMap<>();
-String json1 = SimpleJsonWalker.jsonLdToJson(jsonLd, jsonLdRootMap, null, null);
+String json1 = SimpleJsonWalker.jsonLdToJson(jsonLd, jsonLdRootMap,
+        thingStrModeMap, JsonLdAtIdStringGiven.AS_AUTO);
 String json2 = SimpleJsonWalker.formatJson(json1, "\t");
+System.out.println(json2);
 ```
 Results:
 ```
 {
-    "offers" : {
-        "offer" : {
-            "price" : "4399 p."
-        }
-    },
-    "itemListElement" : {
-        "productList" : [
-            {
-                "image" : "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                "name" : "Brand 502",
-                "url" : "http://multivarki.ru/brand_502/"
-            },
-            {
-                "name" : "..."
-            }
+    "datePublished" : "2015-02-05",
+    "image" : {
+        "url" : [
+            "https://example.com/photos/1x1/photo.jpg",
+            "https://example.com/photos/4x3/photo.jpg",
+            "https://example.com/photos/16x9/photo.jpg"
         ]
     },
-    "numberOfItems" : "315",
-    "url" : "http://multivarki.ru?filters%5Bprice%5D%5BLTE%5D=39600"
+    "author" : {
+        "person" : {
+            "name" : "John Doe"
+        }
+    },
+    "publisher" : {
+        "organization" : {
+            "name" : "Google",
+            "logo" : {
+                "imageObject" : {
+                    "url" : {
+                        "url" : "https://google.com/logo.jpg"
+                    }
+                }
+            }
+        }
+    },
+    "description" : "A most wonderful article",
+    "dateModified" : "2015-02-05T09:20:00+08:00",
+    "mainEntityOfPage" : {
+        "webPage" : {
+            "identifier" : {
+                "url" : "https:\/\/google.com\/article"
+            }
+        }
+    },
+    "headline" : "Article headline"
 }
 ```
 
-Examples
---------
+[Sample source](/schemaOrgSample/src/test/java/org/kyojo/schemaorg/sample/SimpleJsonWalkerTest.java)
+
+Web framework integration
+-------------------------
+
+[kyojoLib](https://github.com/nagaikenshin/kyojoLib) is the web framework natively supports the data structure of schema.org.
 
 Short examples found [here](https://kyojo.org/kyojoLab/schemaOrgLab/index.html).
 
@@ -160,9 +195,17 @@ Included Projects
 Maven Repository
 ----------------
 
-* [kyojo-schemaorg-m3n4-cmn](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-cmn)
-* [kyojo-schemaorg-m3n4-impl](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-impl)
-* [kyojo-schemaorg-m3n4-gson](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-gson)
-* [kyojo-schemaorg-m3n4-doma](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-doma)
-* [kyojo-schemaorg-m3n4-domaConv](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-domaConv)
+There are two level of detail implementations `full` and `digest`. The full implementation is not suitable for realtime processing. The digest implementation is also provided, extracted important classes for general purpose.
+
+* [kyojo-schemaorg-m3n4-full-cmn](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-full-cmn)
+* [kyojo-schemaorg-m3n4-full-impl](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-full-impl)
+* [kyojo-schemaorg-m3n4-full-gson](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-full-gson)
+* [kyojo-schemaorg-m3n4-full-doma](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-full-doma)
+* [kyojo-schemaorg-m3n4-full-domaConv](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-full-domaConv)
+
+* [kyojo-schemaorg-m3n4-digest-cmn](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-digest-cmn)
+* [kyojo-schemaorg-m3n4-digest-impl](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-digest-impl)
+* [kyojo-schemaorg-m3n4-digest-gson](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-digest-gson)
+* [kyojo-schemaorg-m3n4-digest-doma](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-digest-doma)
+* [kyojo-schemaorg-m3n4-digest-domaConv](https://mvnrepository.com/artifact/org.kyojo/kyojo-schemaorg-m3n4-digest-domaConv)
 

@@ -16,7 +16,7 @@ compileJava {
 	options.compilerArgs << '-parameters'
 }
 
-archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-cmn'
+archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-' + schemaOrgDetail + '-cmn'
 
 jar {
 	include('org/kyojo/schemaorg/*.class')

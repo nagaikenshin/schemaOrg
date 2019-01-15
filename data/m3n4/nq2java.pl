@@ -5,7 +5,7 @@ use warnings;
 use utf8;
 use RDF::Trine;
 use RDF::Trine::Parser;
-use File::Path qw/mkpath/;
+use File::Path qw/mkpath rmtree/;
 use Data::Dumper;
 
 binmode (STDOUT, ':utf8');
@@ -19,16 +19,19 @@ my $out1_dpath = "$base_dpath/schemaOrgWork/src/org/kyojo/schemaorg/";
 my $out2_dpath = "$out1_dpath$cur_ver_str/";
 my $pkg1_base = 'org.kyojo.schemaorg';
 my $pkg2_base = "$pkg1_base.$cur_ver_str";
+my $is_digest = 0;
+my $extension_kyojo = 1;
 my $wrn_fpath = 'warn.txt';
 my $tpi_fpath = 'type_value_in.tsv';
 my $tpo_fpath = 'type_value_out.tsv';
-my $flt_fpath = "$base_dpath/schemaOrgGson/src/org/kyojo/schemaorg/$cur_ver_str/gson/GsonTypeAdapters.properties";
 my $abb_fpath = 'abbrev.txt';
 my $ntv_fpath = 'native_value.tsv';
 my $sup_fpath = 'sup.tsv';
 my $sub_fpath = 'sub.tsv';
 my $rng_fpath = 'rng.tsv';
 my $dmn_fpath = 'dmn.tsv';
+my $digest_fpath = 'digest.tsv';
+my $digest_template_fpath = 'digest_template.tsv';
 
 my %type_value_defs = ();
 open (FIN, $tpi_fpath) || die "cannot open $tpi_fpath: $!";
@@ -43,22 +46,43 @@ while (<FIN>) {
 }
 close FIN;
 
-my %flt_defs = ();
-open (FIN, $flt_fpath) || die "cannot open $flt_fpath: $!";
-binmode (FIN, ':utf8');
-while (<FIN>) {
-	s/[ \r\n]+$//;
+my %digests = ();
+my %digests_lc = ();
+if ($is_digest) {
+	open (FIN, $digest_fpath) || die "cannot open $digest_fpath: $!";
+	binmode (FIN, ':utf8');
+	while (<FIN>) {
+		s/[ \r\n]+$//;
 
-	if (/^#/) {
-		next;
+		my @vals = split (/\t/);
+		if (@vals == 7) {
+			$digests_lc{lc $vals[5]}{$vals[5]} = 1;
+
+			if ($vals[0] > 0) {
+				$digests{$vals[5]} = {
+					Thing => $vals[1],
+					Organization => $vals[2],
+					CreativeWork => $vals[3],
+					Event => $vals[4],
+				};
+			}
+		}
 	}
+	close FIN;
 
-	my @vals = split (/=/);
-	if (@vals == 2) {
-		$flt_defs{$vals[0]} = 1;
+	# 大文字小文字をグループ化して取得
+	foreach my $dkey (keys %digests) {
+		my $lkey = lc $dkey;
+		if (exists $digests_lc{$lkey}) {
+			my $tmp_dkeys = $digests_lc{$lkey};
+			foreach my $tmp_dkey (keys %$tmp_dkeys) {
+				unless (exists $digests{$tmp_dkey}) {
+					$digests{$tmp_dkey} = $digests{$dkey};
+				}
+			}
+		}
 	}
 }
-close FIN;
 
 open (FWRN, '>' . $wrn_fpath) or die "can't open $wrn_fpath: $!";
 binmode (FWRN, ':utf8');
@@ -204,164 +228,166 @@ sub retrieve {
 	}
 }
 
-# 日本語用にふりがなは必須
 my $domain_uris = $opts->{domain_uris};
-my $domainSrc = $domain_uris->{'http://schema.org/name'};
-my $domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'nameRuby';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Japanese furigana name and things like that.';
-$domain_uris->{'http://kyojo.org/schemaSpl/nameRuby'} = $domainDst;
+if ($extension_kyojo) {
+	# 日本語用にふりがなは必須
+	my $domainSrc = $domain_uris->{'http://schema.org/name'};
+	my $domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'nameRuby';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Japanese furigana name and things like that.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/nameRuby'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/givenName'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'givenNameRuby';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Given name. Japanese furigana and things like that.';
-$domain_uris->{'http://kyojo.org/schemaSpl/givenNameRuby'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/givenName'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'givenNameRuby';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Given name. Japanese furigana and things like that.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/givenNameRuby'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/familyName'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'familyNameRuby';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Family name. Japanese furigana and things like that.';
-$domain_uris->{'http://kyojo.org/schemaSpl/familyNameRuby'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/familyName'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'familyNameRuby';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Family name. Japanese furigana and things like that.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/familyNameRuby'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/name'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'nameFuzzy';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'The normalized name. Variant characters, the space between given and family name, etc.';
-$domain_uris->{'http://kyojo.org/schemaSpl/nameFuzzy'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/name'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'nameFuzzy';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'The normalized name. Variant characters, the space between given and family name, etc.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/nameFuzzy'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/streetAddress'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'buildingAddress';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'The building address.';
-$domain_uris->{'http://kyojo.org/schemaSpl/buildingAddress'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/streetAddress'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'buildingAddress';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'The building address.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/buildingAddress'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/URL'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'HTML';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'HTML formatted text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/HTML'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'LaTeX';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'LaTeX format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/LaTeX'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Markdown';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Markdown format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/Markdown'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'AsciiDoc';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'AsciiDoc format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/AsciiDoc'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'RTF';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'RTF format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/RTF'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Hatena';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Hatena notation source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/Hatena'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Textile';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Textile notation source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/Textile'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'DokuWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'DokuWiki format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/DokuWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'MoinMoin';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MoinMoin format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/MoinMoin'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'MediaWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MediaWiki format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/MediaWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'PukiWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'PukiWiki format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/PukiWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Simple';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Simple format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/Simple'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'RedmineWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Redmine Wiki format source text.';
-$domain_uris->{'http://kyojo.org/schemaSpl/RedmineWiki'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/URL'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'HTML';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'HTML formatted text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/HTML'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'LaTeX';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'LaTeX format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/LaTeX'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Markdown';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Markdown format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/Markdown'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'AsciiDoc';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'AsciiDoc format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/AsciiDoc'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'RTF';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'RTF format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/RTF'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Hatena';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Hatena notation source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/Hatena'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Textile';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Textile notation source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/Textile'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'DokuWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'DokuWiki format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/DokuWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'MoinMoin';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MoinMoin format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/MoinMoin'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'MediaWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MediaWiki format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/MediaWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'PukiWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'PukiWiki format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/PukiWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'Simple';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Simple format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/Simple'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'RedmineWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Redmine Wiki format source text.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/RedmineWiki'} = $domainDst;
 
-$domainSrc = $domain_uris->{'http://schema.org/url'};
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/HTML' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'html';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'HTML format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/html'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/LaTeX' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'latex';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'LaTeX format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/latex'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Markdown' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'markdown';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Markdown format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/markdown'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/AsciiDoc' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'asciiDoc';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'AsciiDoc format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/asciiDoc'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/RTF' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'rtf';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'RTF format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/rtf'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Hatena' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'hatena';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Hatena notation text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/hatena'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Textile' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'textile';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Textile notation text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/textile'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/DokuWiki' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'dokuWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'DokuWiki format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/dokuWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/MoinMoin' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'moinMoin';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MoinMoin format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/moinMoin'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/MediaWiki' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'mediaWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MediaWiki format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/mediaWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/PukiWiki' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'pukiWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'PukiWiki format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/pukiWiki'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Simple' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'simple';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Simple format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/simple'} = $domainDst;
-$domainDst = { %$domainSrc };
-$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/RedmineWiki' => 1 };
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'redmineWiki';
-$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Redmine Wiki format source text of the item.';
-$domain_uris->{'http://kyojo.org/schemaSpl/redmineWiki'} = $domainDst;
+	$domainSrc = $domain_uris->{'http://schema.org/url'};
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/HTML' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'html';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'HTML format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/html'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/LaTeX' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'latex';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'LaTeX format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/latex'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Markdown' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'markdown';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Markdown format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/markdown'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/AsciiDoc' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'asciiDoc';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'AsciiDoc format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/asciiDoc'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/RTF' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'rtf';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'RTF format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/rtf'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Hatena' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'hatena';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Hatena notation text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/hatena'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Textile' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'textile';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Textile notation text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/textile'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/DokuWiki' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'dokuWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'DokuWiki format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/dokuWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/MoinMoin' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'moinMoin';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MoinMoin format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/moinMoin'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/MediaWiki' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'mediaWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'MediaWiki format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/mediaWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/PukiWiki' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'pukiWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'PukiWiki format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/pukiWiki'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/Simple' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'simple';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Simple format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/simple'} = $domainDst;
+	$domainDst = { %$domainSrc };
+	$domainDst->{'http://schema.org/rangeIncludes'} = { 'http://kyojo.org/schemaSpl/RedmineWiki' => 1 };
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#label'} = 'redmineWiki';
+	$domainDst->{'http://www.w3.org/2000/01/rdf-schema#comment'} = 'Redmine Wiki format source text of the item.';
+	$domain_uris->{'http://kyojo.org/schemaSpl/redmineWiki'} = $domainDst;
 
-$domain_uris->{'http://schema.org/Thing'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/nameRuby'} = 1;
-$domain_uris->{'http://schema.org/Thing'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/nameFuzzy'} = 1;
-$domain_uris->{'http://schema.org/Person'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/givenNameRuby'} = 1;
-$domain_uris->{'http://schema.org/Person'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/familyNameRuby'} = 1;
-$domain_uris->{'http://schema.org/PostalAddress'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/buildingAddress'} = 1;
+	$domain_uris->{'http://schema.org/Thing'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/nameRuby'} = 1;
+	$domain_uris->{'http://schema.org/Thing'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/nameFuzzy'} = 1;
+	$domain_uris->{'http://schema.org/Person'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/givenNameRuby'} = 1;
+	$domain_uris->{'http://schema.org/Person'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/familyNameRuby'} = 1;
+	$domain_uris->{'http://schema.org/PostalAddress'}{'http://schema.org/domainIncludes'}{'http://kyojo.org/schemaSpl/buildingAddress'} = 1;
+}
 
 my %lc_names = ();
 my %type_fulls = ();
@@ -369,6 +395,12 @@ my %type2uris = ();
 my %type2names = ();
 my %full2domains = ();
 foreach my $domain_uri (sort keys %$domain_uris) {
+	if ($is_digest) {
+		unless (exists $digests{$domain_uri}) {
+			next;
+		}
+	}
+
 	print "$domain_uri\n";
 	my $domain = $domain_uris->{$domain_uri};
 	$domain->{this_uri} = $domain_uri;
@@ -517,7 +549,9 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 		print FWRN "duplicate lc_name: $lc_name\n";
 	}
 	$lc_names{$lc_name} = 1;
-	$full2domains{"$domain->{this_pkg}.$domain->{this_name}"} = $domain;
+	foreach my $type_full (sort keys %$domain_type_fulls) {
+		$full2domains{$type_full . '$' . $domain->{this_name}} = $domain;
+	}
 }
 
 foreach my $domain_uri (sort keys %$domain_uris) {
@@ -529,6 +563,9 @@ foreach my $domain_uri (sort keys %$domain_uris) {
 
 foreach my $domain_uri (sort keys %$domain_uris) {
 	my $domain = $domain_uris->{$domain_uri};
+	if (!defined $domain || !defined $domain->{this_name}) {
+		next;
+	}
 	print FSUB "$domain->{type_pri}" . '$' . "$domain->{this_name}\n";
 	if (exists $domain->{drct_subclasses}) {
 		foreach my $sub_uri (sort keys %{$domain->{drct_subclasses}}) {
@@ -574,6 +611,10 @@ sub retrieve_subclasses {
 	my $successive = shift;
 	my $depth = shift;
 
+	if (!defined $tgt_domain || !defined $tgt_domain->{this_name}) {
+		return;
+	}
+
 	print FSUP "\t" x $depth . "$tgt_domain->{type_pri}" . '$' . "$tgt_domain->{this_name}\n";
 
 	push (@$successive, $tgt_domain);
@@ -607,6 +648,9 @@ sub retrieve_subclasses {
 	pop @$successive;
 }
 
+eval {
+	rmtree $out2_dpath;
+};
 eval {
 	mkpath $out2_dpath;
 };
@@ -2525,7 +2569,7 @@ public class SimpleJsonBuilder {
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else {
 						// ToDo: le.getClass()は意図した型が取れないかもしれないがしかたないか
 						sb.append(toJson(le, le.getClass(), li, depth + 1, new LinkedList<>(stack), isJsonLd));
@@ -2563,7 +2607,7 @@ public class SimpleJsonBuilder {
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else {
 						// ToDo: val.getClass()は意図した型が取れないかもしれないがしかたないか
 						sb.append(toJson(val, val.getClass(), null, depth + 1, new LinkedList<>(stack), isJsonLd));
@@ -3067,7 +3111,7 @@ public class SimpleJsonBuilder {
 				// sb.append("\"");
 				logger.warn(ex.getMessage(), ex);
 				logger.warn("objects trace:");
-				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 			}
 		}
 		sb.append("}");
@@ -3092,7 +3136,7 @@ public class SimpleJsonBuilder {
 			} else if(depth == DEPTH_LIMIT) {
 				sb.append("null");
 				logger.warn("depth limit over:");
-				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 			} else {
 				sb.append(toJson(rv, rc, ri, depth + 1, new LinkedList<>(stack), isJsonLd));
 			}
@@ -3176,17 +3220,29 @@ print FOUT << "EoS";
 			sb.append(ymdhmsSdf.format(date));
 			sb.append("\\"");
 		} else if(ConsistentDataType.Text.class.isAssignableFrom(rc)) {
-			sb.append("\\"");
-			sb.append(escapeJson(((ConsistentDataType.Text)rv).getString()));
-			sb.append("\\"");
+			String string = ((ConsistentDataType.Text)rv).getString();
+			if(string == null) {
+				sb.append("null");
+			} else {
+				sb.append("\\"");
+				sb.append(escapeJson(string));
+				sb.append("\\"");
+			}
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Text.class.isAssignableFrom(rc)) {
-			sb.append("\\"");
-			sb.append(escapeJson((($pkg1_base.$prv_ver_str.core.DataType.Text)rv).getString()));
-			sb.append("\\"");
+			String string = (($pkg1_base.$prv_ver_str.core.DataType.Text)rv).getString();
+			if(string == null) {
+				sb.append("null");
+			} else {
+				sb.append("\\"");
+				sb.append(escapeJson(string));
+				sb.append("\\"");
+			}
 		} else if(ConsistentDataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Boolean)rv).getB00lean().toString());
+			java.lang.Boolean b00lean = ((ConsistentDataType.Boolean)rv).getB00lean();
+			sb.append(b00lean == null ? "null" : b00lean.toString());
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$prv_ver_str.core.DataType.Boolean)rv).getB00lean().toString());
+			java.lang.Boolean b00lean = (($pkg1_base.$prv_ver_str.core.DataType.Boolean)rv).getB00lean();
+			sb.append(b00lean == null ? "null" : b00lean.toString());
 		} else if(ConsistentDataType.DateTime.class.isAssignableFrom(rc)) {
 			ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
@@ -3254,17 +3310,23 @@ print FOUT << "EoS";
 				sb.append("\\"");
 			}
 		} else if(ConsistentDataType.Number.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Number)rv).getNumber().toString());
+			java.lang.Number number = ((ConsistentDataType.Number)rv).getNumber();
+			sb.append(number == null ? "null" : number.toString());
 		} else if($pkg1_base.$prv_ver_str.core.DataType.Number.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$prv_ver_str.core.DataType.Number)rv).getNumber().toString());
+			java.lang.Number number = (($pkg1_base.$prv_ver_str.core.DataType.Number)rv).getNumber();
+			sb.append(number == null ? "null" : number.toString());
 		} else if(ConsistentDataType.Integer.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Integer)rv).getL0ng().toString());
+			Long l0ng = ((ConsistentDataType.Integer)rv).getL0ng();
+			sb.append(l0ng == null ? "null" : l0ng.toString());
 		} else if($pkg1_base.$prv_ver_str.core.Clazz.Integer.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$prv_ver_str.core.Clazz.Integer)rv).getL0ng().toString());
+			Long l0ng = (($pkg1_base.$prv_ver_str.core.Clazz.Integer)rv).getL0ng();
+			sb.append(l0ng == null ? "null" : l0ng.toString());
 		} else if(ConsistentDataType.Float.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Float)rv).getD0uble().toString());
+			Double d0uble = ((ConsistentDataType.Float)rv).getD0uble();
+			sb.append(d0uble == null ? "null" : d0uble.toString());
 		} else if($pkg1_base.$prv_ver_str.core.Clazz.Float.class.isAssignableFrom(rc)) {
-			sb.append((($pkg1_base.$prv_ver_str.core.Clazz.Float)rv).getD0uble().toString());
+			Double d0uble = (($pkg1_base.$prv_ver_str.core.Clazz.Float)rv).getD0uble();
+			sb.append(d0uble == null ? "null" : d0uble.toString());
 		} else {
 			return null;
 		}
@@ -3303,7 +3365,7 @@ print FOUT << 'EoS';
 	 */
 	public static String escapeJson(String str) {
 		if(str == null) {
-			return "(null)";
+			return null;
 		}
 
 		Matcher jsonEscpMc = jsonEscpPt.matcher(str);
@@ -3321,29 +3383,6 @@ print FOUT << 'EoS';
 }
 EoS
 close FOUT;
-
-foreach my $type_full (sort keys %type_fulls) {
-	my $type_domain_uris = $type_fulls{$type_full};
-
-	foreach my $domain_uri (sort keys %$type_domain_uris) {
-		my $domain = $domain_uris->{$domain_uri};
-
-		if (!exists $domain->{this_name}) {
-			next;
-		} elsif (exists $domain->{'http://schema.org/supersededBy'}) {
-			next;
-		}
-
-		print FTREE "\n";
-		print FTREE "$type_full\n";
-		print FTREE "$domain_uri\n";
-		if (exists $domain->{all_subclasses}) {
-			foreach my $tmp_domain_uri (sort keys %{$domain->{all_subclasses}}) {
-				print FTREE " $tmp_domain_uri\n";
-			}
-		}
-	}
-}
 
 foreach my $type_full (sort keys %type_fulls) {
 	my $type_domain_uris = $type_fulls{$type_full};
@@ -3407,6 +3446,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				my $s_domain = '';
 				if (exists $domain_uris->{$super_uri}) {
 					$s_domain = $domain_uris->{$super_uri};
+				} elsif (!exists $s_domain->{this_name} || $s_domain->{this_name} eq '') {
+					next;
 				} else {
 					if ($super_uri =~ /^(.+\/\/)([a-z0-9\-\.]*)(schema\.org\/\w+)$/) {
 						my $tmp_uri = $1 . $3;
@@ -3476,9 +3517,16 @@ foreach my $type_full (sort keys %type_fulls) {
 					if (exists $ri_domain->{all_subclasses}) {
 						foreach my $ri_uri (sort keys %{$ri_domain->{all_subclasses}}) {
 							my $ri_domain_sub = $domain_uris->{$ri_uri};
-							unless (exists $flt_defs{$ri_domain_sub->{type_pri} . '$' . $ri_domain_sub->{this_name}}) {
-								# Thing下全ては多いので絞る
-								next;
+							if ($is_digest) {
+								# Thing等の詳細型は多くなるので絞る
+								if ($ri_domain->{this_name} eq 'Thing'
+										|| $ri_domain->{this_name} eq 'Organization'
+										|| $ri_domain->{this_name} eq 'CreativeWork'
+										|| $ri_domain->{this_name} eq 'Event') {
+									if ($digests{$ri_domain_sub->{this_uri}}{$ri_domain->{this_name}} == 0) {
+										next;
+									}
+								}
 							}
 							print FRNG "\t\t$ri_domain_sub->{type_pri}" . '$' . "$ri_domain_sub->{this_name}\n";
 							$rng_incs->{$ri_uri} = 1;
@@ -3496,6 +3544,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				# [個別対応] ContactPointとOrganizationに重複があるが無意味だと思う
 				my $p_domain = $domain_uris->{$rng_inc};
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				} elsif ($is_digest && (!exists $p_domain->{this_name} || $p_domain->{this_name} eq '')) {
 					next;
 				}
 				my $p_domain_type_full = $p_domain->{type_pri};
@@ -3540,6 +3590,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				}
 				my $p_domain = $domain_uris->{$dom_inc};
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				} elsif ($is_digest && (!exists $p_domain->{this_name} || $p_domain->{this_name} eq '')) {
 					next;
 				}
 				print FDMN "\t$p_domain->{type_pri}" . '$' . "$p_domain->{this_name}\n";
@@ -3605,6 +3657,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				my $s_domain = '';
 				if (exists $domain_uris->{$super_uri}) {
 					$s_domain = $domain_uris->{$super_uri};
+				} elsif (!exists $s_domain->{this_name} || $s_domain->{this_name} eq '') {
+					next;
 				} else {
 					if ($super_uri =~ /^(.+\/\/)([a-z0-9\-\.]*)(schema\.org\/\w+)$/) {
 						my $tmp_uri = $1 . $3;
@@ -3906,6 +3960,8 @@ foreach my $type_full (sort keys %type_fulls) {
 				my $p_domain = $domain_uris->{$rng_inc};
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
 					next;
+				} elsif ($is_digest && (!exists $p_domain->{this_name} || $p_domain->{this_name} eq '')) {
+					next;
 				}
 				my $var_name = camelize2 (tableize2 ($p_domain->{this_name}), $p_domain->{this_name});
 				if ($var_name eq 'boolean') {
@@ -3973,9 +4029,11 @@ foreach my $type_full (sort keys %type_fulls) {
 
 		if (exists $domain->{'http://schema.org/domainIncludes'}) {
 			my $dom_incs = $domain->{'http://schema.org/domainIncludes'};
-			foreach my $dom_inc (sort { $domain_uris->{$a}->{this_name} cmp $domain_uris->{$b}->{this_name} } keys %$dom_incs) {
+			foreach my $dom_inc (sort { if_undef ($domain_uris->{$a}->{this_name}, '') cmp if_undef ($domain_uris->{$b}->{this_name}, '') } keys %$dom_incs) {
 				my $p_domain = $domain_uris->{$dom_inc};
 				if (exists $p_domain->{'http://schema.org/supersededBy'}) {
+					next;
+				} elsif ($is_digest && (!exists $p_domain->{this_name} || $p_domain->{this_name} eq '')) {
 					next;
 				}
 				my $p_domain_type_full = $p_domain->{type_pri};
@@ -4332,6 +4390,15 @@ foreach my $type_full (sort keys %type_fulls) {
 	close FOUT;
 }
 
+unless ($is_digest) {
+	open (FOUT, '>' . $digest_template_fpath) or die "can't open $digest_template_fpath: $!";
+	binmode (FOUT, ':utf8');
+	foreach my $full (sort keys %full2domains) {
+		print FOUT "1\t1\t1\t1\t1\t$full2domains{$full}->{this_uri}\t$full\n";
+	}
+	close FOUT;
+}
+
 close FWRN;
 close FTPO;
 close FABB;
@@ -4340,6 +4407,13 @@ close FSUP;
 close FSUB;
 close FRNG;
 close FDMN;
+
+sub if_undef {
+	my $ref = shift;
+	my $def = shift;
+
+	return defined $ref ? $ref : $def;
+}
 
 sub str2ar {
 	my $str = shift;

@@ -153,7 +153,7 @@ public class SimpleJsonBuilder {
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else {
 						// ToDo: le.getClass()は意図した型が取れないかもしれないがしかたないか
 						sb.append(toJson(le, le.getClass(), li, depth + 1, new LinkedList<>(stack), isJsonLd));
@@ -191,7 +191,7 @@ public class SimpleJsonBuilder {
 					} else if(depth == DEPTH_LIMIT) {
 						sb.append("null");
 						logger.warn("depth limit over:");
-						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+						stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 					} else {
 						// ToDo: val.getClass()は意図した型が取れないかもしれないがしかたないか
 						sb.append(toJson(val, val.getClass(), null, depth + 1, new LinkedList<>(stack), isJsonLd));
@@ -695,7 +695,7 @@ public class SimpleJsonBuilder {
 				// sb.append("\"");
 				logger.warn(ex.getMessage(), ex);
 				logger.warn("objects trace:");
-				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 			}
 		}
 		sb.append("}");
@@ -720,7 +720,7 @@ public class SimpleJsonBuilder {
 			} else if(depth == DEPTH_LIMIT) {
 				sb.append("null");
 				logger.warn("depth limit over:");
-				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") " + to.toString()));
+				stack.forEach(to -> logger.warn(" (" + to.getClass() + ") "));
 			} else {
 				sb.append(toJson(rv, rc, ri, depth + 1, new LinkedList<>(stack), isJsonLd));
 			}
@@ -802,17 +802,29 @@ public class SimpleJsonBuilder {
 			sb.append(ymdhmsSdf.format(date));
 			sb.append("\"");
 		} else if(ConsistentDataType.Text.class.isAssignableFrom(rc)) {
-			sb.append("\"");
-			sb.append(escapeJson(((ConsistentDataType.Text)rv).getString()));
-			sb.append("\"");
+			String string = ((ConsistentDataType.Text)rv).getString();
+			if(string == null) {
+				sb.append("null");
+			} else {
+				sb.append("\"");
+				sb.append(escapeJson(string));
+				sb.append("\"");
+			}
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(rc)) {
-			sb.append("\"");
-			sb.append(escapeJson(((org.kyojo.schemaorg.m3n3.core.DataType.Text)rv).getString()));
-			sb.append("\"");
+			String string = ((org.kyojo.schemaorg.m3n3.core.DataType.Text)rv).getString();
+			if(string == null) {
+				sb.append("null");
+			} else {
+				sb.append("\"");
+				sb.append(escapeJson(string));
+				sb.append("\"");
+			}
 		} else if(ConsistentDataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Boolean)rv).getB00lean().toString());
+			java.lang.Boolean b00lean = ((ConsistentDataType.Boolean)rv).getB00lean();
+			sb.append(b00lean == null ? "null" : b00lean.toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Boolean.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Boolean)rv).getB00lean().toString());
+			java.lang.Boolean b00lean = ((org.kyojo.schemaorg.m3n3.core.DataType.Boolean)rv).getB00lean();
+			sb.append(b00lean == null ? "null" : b00lean.toString());
 		} else if(ConsistentDataType.DateTime.class.isAssignableFrom(rc)) {
 			ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
@@ -880,17 +892,23 @@ public class SimpleJsonBuilder {
 				sb.append("\"");
 			}
 		} else if(ConsistentDataType.Number.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Number)rv).getNumber().toString());
+			java.lang.Number number = ((ConsistentDataType.Number)rv).getNumber();
+			sb.append(number == null ? "null" : number.toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Number.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n3.core.DataType.Number)rv).getNumber().toString());
+			java.lang.Number number = ((org.kyojo.schemaorg.m3n3.core.DataType.Number)rv).getNumber();
+			sb.append(number == null ? "null" : number.toString());
 		} else if(ConsistentDataType.Integer.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Integer)rv).getL0ng().toString());
+			Long l0ng = ((ConsistentDataType.Integer)rv).getL0ng();
+			sb.append(l0ng == null ? "null" : l0ng.toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Integer.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Integer)rv).getL0ng().toString());
+			Long l0ng = ((org.kyojo.schemaorg.m3n3.core.Clazz.Integer)rv).getL0ng();
+			sb.append(l0ng == null ? "null" : l0ng.toString());
 		} else if(ConsistentDataType.Float.class.isAssignableFrom(rc)) {
-			sb.append(((ConsistentDataType.Float)rv).getD0uble().toString());
+			Double d0uble = ((ConsistentDataType.Float)rv).getD0uble();
+			sb.append(d0uble == null ? "null" : d0uble.toString());
 		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Float.class.isAssignableFrom(rc)) {
-			sb.append(((org.kyojo.schemaorg.m3n3.core.Clazz.Float)rv).getD0uble().toString());
+			Double d0uble = ((org.kyojo.schemaorg.m3n3.core.Clazz.Float)rv).getD0uble();
+			sb.append(d0uble == null ? "null" : d0uble.toString());
 		} else {
 			return null;
 		}
@@ -927,7 +945,7 @@ public class SimpleJsonBuilder {
 	 */
 	public static String escapeJson(String str) {
 		if(str == null) {
-			return "(null)";
+			return null;
 		}
 
 		Matcher jsonEscpMc = jsonEscpPt.matcher(str);

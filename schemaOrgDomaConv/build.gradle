@@ -8,7 +8,7 @@ dependencies {
 	implementation project(':schemaOrgDoma')
 }
 
-archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-domaConv'
+archivesBaseName = schemaOrgJarBase + '-' + schemaOrgVerStr + '-' + schemaOrgDetail + '-domaConv'
 
 jar {
 	include('org/kyojo/schemaorg/' + schemaOrgVerStr + '/**')
