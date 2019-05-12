@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.healthLifesci.container;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.healthLifesci.impl.AVAILABLE_SERVICE;
+import org.kyojo.schemaorg.m3n5.healthLifesci.Container.AvailableService;
+
+@ExternalDomain
+public class AvailableServiceConverter implements DomainConverter<AvailableService, String> {
+
+	@Override
+	public String fromDomainToValue(AvailableService domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public AvailableService fromValueToDomain(String value) {
+		return new AVAILABLE_SERVICE(value);
+	}
+
+}

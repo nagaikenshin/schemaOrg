@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.core.musicReleaseFormatType;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.core.musicReleaseFormatType.DIGITAL_AUDIO_TAPE_FORMAT;
+import org.kyojo.schemaorg.m3n5.core.MusicReleaseFormatType.DigitalAudioTapeFormat;
+
+@ExternalDomain
+public class DigitalAudioTapeFormatConverter implements DomainConverter<DigitalAudioTapeFormat, String> {
+
+	@Override
+	public String fromDomainToValue(DigitalAudioTapeFormat domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public DigitalAudioTapeFormat fromValueToDomain(String value) {
+		return new DIGITAL_AUDIO_TAPE_FORMAT(value);
+	}
+
+}

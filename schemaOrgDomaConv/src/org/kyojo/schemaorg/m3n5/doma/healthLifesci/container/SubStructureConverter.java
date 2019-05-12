@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.healthLifesci.container;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.healthLifesci.impl.SUB_STRUCTURE;
+import org.kyojo.schemaorg.m3n5.healthLifesci.Container.SubStructure;
+
+@ExternalDomain
+public class SubStructureConverter implements DomainConverter<SubStructure, String> {
+
+	@Override
+	public String fromDomainToValue(SubStructure domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public SubStructure fromValueToDomain(String value) {
+		return new SUB_STRUCTURE(value);
+	}
+
+}

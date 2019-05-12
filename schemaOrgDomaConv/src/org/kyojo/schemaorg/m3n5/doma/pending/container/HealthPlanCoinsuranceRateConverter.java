@@ -1,0 +1,23 @@
+package org.kyojo.schemaorg.m3n5.doma.pending.container;
+
+import java.math.BigDecimal;
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.pending.impl.HEALTH_PLAN_COINSURANCE_RATE;
+import org.kyojo.schemaorg.m3n5.pending.Container.HealthPlanCoinsuranceRate;
+
+@ExternalDomain
+public class HealthPlanCoinsuranceRateConverter implements DomainConverter<HealthPlanCoinsuranceRate, BigDecimal> {
+
+	@Override
+	public BigDecimal fromDomainToValue(HealthPlanCoinsuranceRate domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public HealthPlanCoinsuranceRate fromValueToDomain(BigDecimal value) {
+		return new HEALTH_PLAN_COINSURANCE_RATE(value);
+	}
+
+}

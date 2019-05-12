@@ -33,7 +33,7 @@ public class GenerateImpl {
 	// gradle install
 	// を繰り返す。
 	public static String basePath = "..";
-	public static String verStr = "m3n4"; // Libにもバージョンを見ているところあり
+	public static String verStr = "m3n5"; // Libにも見ているところあり
 	public static String defDPath = basePath + "/schemaOrgWork/src/";
 	public static String implDPath = basePath + "/schemaOrgImpl/src/";
 	public static String sqlDPath = basePath + "/sql/" + verStr + "/";
@@ -1133,9 +1133,7 @@ public class GenerateImpl {
 								exmc.find();
 								ntvGSIfcExt = exmc.group(1);
 								if(!implSmplName2.equals("URL") && !implSmplName2.equals("HTML")
-										&& !implSmplName2.equals("RTF")
-										// [個別対応] 同名クラスのため直接指定
-										&& !(extension.equals("pending") && ifcSmplName.equals("Duration"))) {
+										&& !implSmplName2.equals("RTF")) {
 									if(!ent2.getValue().getName().startsWith(pkg2Base + "." + extension)) {
 										imptList.add(ntvGSIfcExt + ".impl." + implSmplName2);
 									}
@@ -1172,12 +1170,7 @@ public class GenerateImpl {
 								} else {
 									ntvGSIfcSmpl = smc.getSimpleName();
 									ntvGSIfcCml = smc.getAnnotation(CamelizedName.class).value().toString();
-									if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
-										// [個別対応] 同名クラスのため直接指定
-										ntvGSIfcImpl = pkg2Base + ".core.impl.DURATION";
-									} else {
-										ntvGSIfcImpl = implSmplName2;
-									}
+									ntvGSIfcImpl = implSmplName2;
 									ntvGSNtvSmpl = "String";
 									ntvGSNtvName = ntvGSNtvSmpl;
 									ntvGSNtvCml = "string";
@@ -1232,6 +1225,7 @@ public class GenerateImpl {
 					ntvGSNtvSmpl = "String";
 					ntvGSNtvName = ntvGSNtvSmpl;
 					ntvGSNtvCml = "string";
+					imptList.add(pkg2Base + ".pending.impl.CSS_SELECTOR_TYPE");
 				} else if(gsMap.containsKey("xPathTypeList".toLowerCase())) {
 					ntvGSIfcCase = 2;
 					ntvGSIfcSmpl = "XPathType";
@@ -1240,6 +1234,7 @@ public class GenerateImpl {
 					ntvGSNtvSmpl = "String";
 					ntvGSNtvName = ntvGSNtvSmpl;
 					ntvGSNtvCml = "string";
+					imptList.add(pkg2Base + ".pending.impl.X_PATH_TYPE");
 				// } else if(gsMap.containsKey("b00leanList".toLowerCase())) {
 				} else if(gsMap.containsKey("numberList".toLowerCase())) {
 					ntvGSIfcCase = 2;
@@ -1324,6 +1319,13 @@ public class GenerateImpl {
 				}
 				if(gsMap.containsKey("number") || gsMap.containsKey("numberlist")) {
 					imptList.add(pkg2Base + ".core.impl.NUMBER");
+				}
+			}
+
+			// [個別対応]
+			if(ntvGSIfcCase == 3) {
+				if(ntvGSIfcImpl.equals("GEOSPATIAL_GEOMETRY")) {
+					imptList.add(pkg2Base + ".pending.impl.GEOSPATIAL_GEOMETRY");
 				}
 			}
 
@@ -1544,9 +1546,6 @@ public class GenerateImpl {
 						} else {
 							pre2 = pkg2Base + ".healthLifesci.Clazz.";
 						}
-					} else if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
-						// [個別対応] 同名クラスのため直接指定
-						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
 					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
@@ -2009,9 +2008,6 @@ public class GenerateImpl {
 							pre2 = pkg2Base + ".healthLifesci.Clazz.";
 							pre3 = pkg2Base + ".healthLifesci.Container.";
 						}
-					} else if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
-						// [個別対応] 同名クラスのため直接指定
-						pre2 = "";
 					} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 						pre2 = "Clazz.";
 					} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
@@ -2284,10 +2280,7 @@ public class GenerateImpl {
 							smplName = "Time";
 						}
 						String pre2 = pre;
-						if(extension.equals("pending") && ifcSmplName.equals("Duration")) {
-							// [個別対応] 同名クラスのため直接指定
-							pre2 = "";
-						} else if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
+						if(smc.getSimpleName().equals(ifcSmplName) && !orgTypes.contains("DataType")) {
 							pre2 = "Clazz.";
 						} else if(orgTypes.contains("DataType") && ifcSmplName.equals("Text")
 								&& !coreTextSubMap.containsKey(smc.getSimpleName())) {

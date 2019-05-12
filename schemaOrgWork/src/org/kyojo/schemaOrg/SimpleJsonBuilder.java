@@ -810,34 +810,11 @@ public class SimpleJsonBuilder {
 				sb.append(escapeJson(string));
 				sb.append("\"");
 			}
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(rc)) {
-			String string = ((org.kyojo.schemaorg.m3n3.core.DataType.Text)rv).getString();
-			if(string == null) {
-				sb.append("null");
-			} else {
-				sb.append("\"");
-				sb.append(escapeJson(string));
-				sb.append("\"");
-			}
 		} else if(ConsistentDataType.Boolean.class.isAssignableFrom(rc)) {
 			java.lang.Boolean b00lean = ((ConsistentDataType.Boolean)rv).getB00lean();
 			sb.append(b00lean == null ? "null" : b00lean.toString());
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Boolean.class.isAssignableFrom(rc)) {
-			java.lang.Boolean b00lean = ((org.kyojo.schemaorg.m3n3.core.DataType.Boolean)rv).getB00lean();
-			sb.append(b00lean == null ? "null" : b00lean.toString());
 		} else if(ConsistentDataType.DateTime.class.isAssignableFrom(rc)) {
 			ConsistentDataType.DateTime dateTime = (ConsistentDataType.DateTime)rv;
-			OffsetDateTime odt = dateTime.getDateTime();
-			if(odt == null) {
-				sb.append("null");
-			} else {
-				DateTimeFormatter ymdhmszDtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
-				sb.append("\"");
-				sb.append(odt.format(ymdhmszDtf));
-				sb.append("\"");
-			}
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.DateTime.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n3.core.DataType.DateTime dateTime = (org.kyojo.schemaorg.m3n3.core.DataType.DateTime)rv;
 			OffsetDateTime odt = dateTime.getDateTime();
 			if(odt == null) {
 				sb.append("null");
@@ -858,30 +835,8 @@ public class SimpleJsonBuilder {
 				sb.append(ld.format(ymdDtf));
 				sb.append("\"");
 			}
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Date.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n3.core.DataType.Date date = (org.kyojo.schemaorg.m3n3.core.DataType.Date)rv;
-			LocalDate ld = date.getDate();
-			if(ld == null) {
-				sb.append("null");
-			} else {
-				DateTimeFormatter ymdDtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-				sb.append("\"");
-				sb.append(ld.format(ymdDtf));
-				sb.append("\"");
-			}
 		} else if(ConsistentDataType.Time.class.isAssignableFrom(rc)) {
 			ConsistentDataType.Time time = (ConsistentDataType.Time)rv;
-			LocalTime lt = time.getTime();
-			if(lt == null) {
-				sb.append("null");
-			} else {
-				DateTimeFormatter hmsDtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-				sb.append("\"");
-				sb.append(lt.format(hmsDtf));
-				sb.append("\"");
-			}
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Time.class.isAssignableFrom(rc)) {
-			org.kyojo.schemaorg.m3n3.core.DataType.Time time = (org.kyojo.schemaorg.m3n3.core.DataType.Time)rv;
 			LocalTime lt = time.getTime();
 			if(lt == null) {
 				sb.append("null");
@@ -894,20 +849,11 @@ public class SimpleJsonBuilder {
 		} else if(ConsistentDataType.Number.class.isAssignableFrom(rc)) {
 			java.lang.Number number = ((ConsistentDataType.Number)rv).getNumber();
 			sb.append(number == null ? "null" : number.toString());
-		} else if(org.kyojo.schemaorg.m3n3.core.DataType.Number.class.isAssignableFrom(rc)) {
-			java.lang.Number number = ((org.kyojo.schemaorg.m3n3.core.DataType.Number)rv).getNumber();
-			sb.append(number == null ? "null" : number.toString());
 		} else if(ConsistentDataType.Integer.class.isAssignableFrom(rc)) {
 			Long l0ng = ((ConsistentDataType.Integer)rv).getL0ng();
 			sb.append(l0ng == null ? "null" : l0ng.toString());
-		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Integer.class.isAssignableFrom(rc)) {
-			Long l0ng = ((org.kyojo.schemaorg.m3n3.core.Clazz.Integer)rv).getL0ng();
-			sb.append(l0ng == null ? "null" : l0ng.toString());
 		} else if(ConsistentDataType.Float.class.isAssignableFrom(rc)) {
 			Double d0uble = ((ConsistentDataType.Float)rv).getD0uble();
-			sb.append(d0uble == null ? "null" : d0uble.toString());
-		} else if(org.kyojo.schemaorg.m3n3.core.Clazz.Float.class.isAssignableFrom(rc)) {
-			Double d0uble = ((org.kyojo.schemaorg.m3n3.core.Clazz.Float)rv).getD0uble();
 			sb.append(d0uble == null ? "null" : d0uble.toString());
 		} else {
 			return null;

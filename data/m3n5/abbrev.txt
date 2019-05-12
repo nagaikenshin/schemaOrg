@@ -1,0 +1,1122 @@
+uri: http://schema.org/emissionsCO2
+label: emissionsCO2
+camel: emissionsCO2
+const: EMISSIONS_CO2
+
+uri: http://schema.org/abridged
+label: abridged
+camel: abridged
+const: ABRIDGED
+
+uri: http://schema.org/True
+label: True
+camel: true
+const: TRUE
+
+uri: http://schema.org/EBook
+label: EBook
+camel: eBook
+const: E_BOOK
+
+uri: http://schema.org/AMRadioChannel
+label: AMRadioChannel
+camel: amRadioChannel
+const: AM_RADIO_CHANNEL
+
+uri: http://schema.org/APIReference
+label: APIReference
+camel: apiReference
+const: API_REFERENCE
+
+uri: http://kyojo.org/schemaSpl/AsciiDoc
+label: AsciiDoc
+camel: asciiDoc
+const: ASCII_DOC
+
+uri: http://schema.org/Blog
+label: Blog
+camel: blog
+const: BLOG
+
+uri: http://schema.org/BlogPosting
+label: BlogPosting
+camel: blogPosting
+const: BLOG_POSTING
+
+uri: http://schema.org/Book
+label: Book
+camel: book
+const: BOOK
+
+uri: http://schema.org/Bridge
+label: Bridge
+camel: bridge
+const: BRIDGE
+
+uri: http://schema.org/Car
+label: Car
+camel: car
+const: CAR
+
+uri: http://schema.org/City
+label: City
+camel: city
+const: CITY
+
+uri: http://schema.org/Clip
+label: Clip
+camel: clip
+const: CLIP
+
+uri: http://schema.org/DepositAccount
+label: DepositAccount
+camel: depositAccount
+const: DEPOSIT_ACCOUNT
+
+uri: http://schema.org/DiscussionForumPosting
+label: DiscussionForumPosting
+camel: discussionForumPosting
+const: DISCUSSION_FORUM_POSTING
+
+uri: http://schema.org/FAQPage
+label: FAQPage
+camel: faqPage
+const: FAQ_PAGE
+
+uri: http://schema.org/FMRadioChannel
+label: FMRadioChannel
+camel: fmRadioChannel
+const: FM_RADIO_CHANNEL
+
+uri: http://schema.org/Game
+label: Game
+camel: game
+const: GAME
+
+uri: http://schema.org/GatedResidenceCommunity
+label: GatedResidenceCommunity
+camel: gatedResidenceCommunity
+const: GATED_RESIDENCE_COMMUNITY
+
+uri: http://kyojo.org/schemaSpl/HTML
+label: HTML
+camel: html
+const: HTML
+
+uri: http://schema.org/HVACBusiness
+label: HVACBusiness
+camel: hvacBusiness
+const: HVAC_BUSINESS
+
+uri: http://schema.org/IndividualProduct
+label: IndividualProduct
+camel: individualProduct
+const: INDIVIDUAL_PRODUCT
+
+uri: http://schema.org/InvestmentOrDeposit
+label: InvestmentOrDeposit
+camel: investmentOrDeposit
+const: INVESTMENT_OR_DEPOSIT
+
+uri: http://schema.org/JobPosting
+label: JobPosting
+camel: jobPosting
+const: JOB_POSTING
+
+uri: http://schema.org/LiveBlogPosting
+label: LiveBlogPosting
+camel: liveBlogPosting
+const: LIVE_BLOG_POSTING
+
+uri: http://schema.org/Map
+label: Map
+camel: map
+const: MAP
+
+uri: http://schema.org/Mass
+label: Mass
+camel: mass
+const: MASS
+
+uri: http://schema.org/Menu
+label: Menu
+camel: menu
+const: MENU
+
+uri: http://schema.org/MiddleSchool
+label: MiddleSchool
+camel: middleSchool
+const: MIDDLE_SCHOOL
+
+uri: http://schema.org/MusicComposition
+label: MusicComposition
+camel: musicComposition
+const: MUSIC_COMPOSITION
+
+uri: http://schema.org/MusicVideoObject
+label: MusicVideoObject
+camel: musicVideoObject
+const: MUSIC_VIDEO_OBJECT
+
+uri: http://schema.org/NGO
+label: NGO
+camel: ngo
+const: NGO
+
+uri: http://schema.org/Park
+label: Park
+camel: park
+const: PARK
+
+uri: http://schema.org/Pond
+label: Pond
+camel: pond
+const: POND
+
+uri: http://schema.org/PostOffice
+label: PostOffice
+camel: postOffice
+const: POST_OFFICE
+
+uri: http://schema.org/PostalAddress
+label: PostalAddress
+camel: postalAddress
+const: POSTAL_ADDRESS
+
+uri: http://schema.org/QAPage
+label: QAPage
+camel: qaPage
+const: QA_PAGE
+
+uri: http://kyojo.org/schemaSpl/RTF
+label: RTF
+camel: rtf
+const: RTF
+
+uri: http://schema.org/RVPark
+label: RVPark
+camel: rvPark
+const: RV_PARK
+
+uri: http://schema.org/Residence
+label: Residence
+camel: residence
+const: RESIDENCE
+
+uri: http://schema.org/Role
+label: Role
+camel: role
+const: ROLE
+
+uri: http://schema.org/Room
+label: Room
+camel: room
+const: ROOM
+
+uri: http://schema.org/Seat
+label: Seat
+camel: seat
+const: SEAT
+
+uri: http://schema.org/SingleFamilyResidence
+label: SingleFamilyResidence
+camel: singleFamilyResidence
+const: SINGLE_FAMILY_RESIDENCE
+
+uri: http://schema.org/SocialMediaPosting
+label: SocialMediaPosting
+camel: socialMediaPosting
+const: SOCIAL_MEDIA_POSTING
+
+uri: http://schema.org/SteeringPositionValue
+label: SteeringPositionValue
+camel: steeringPositionValue
+const: STEERING_POSITION_VALUE
+
+uri: http://schema.org/TVClip
+label: TVClip
+camel: tvClip
+const: TV_CLIP
+
+uri: http://schema.org/TVEpisode
+label: TVEpisode
+camel: tvEpisode
+const: TV_EPISODE
+
+uri: http://schema.org/TVSeason
+label: TVSeason
+camel: tvSeason
+const: TV_SEASON
+
+uri: http://schema.org/TVSeries
+label: TVSeries
+camel: tvSeries
+const: TV_SERIES
+
+uri: http://schema.org/TouristAttraction
+label: TouristAttraction
+camel: touristAttraction
+const: TOURIST_ATTRACTION
+
+uri: http://schema.org/TouristInformationCenter
+label: TouristInformationCenter
+camel: touristInformationCenter
+const: TOURIST_INFORMATION_CENTER
+
+uri: http://schema.org/Trip
+label: Trip
+camel: trip
+const: TRIP
+
+uri: http://schema.org/URL
+label: URL
+camel: url
+const: URL
+
+uri: http://schema.org/VideoGallery
+label: VideoGallery
+camel: videoGallery
+const: VIDEO_GALLERY
+
+uri: http://schema.org/VideoGame
+label: VideoGame
+camel: videoGame
+const: VIDEO_GAME
+
+uri: http://schema.org/VideoGameClip
+label: VideoGameClip
+camel: videoGameClip
+const: VIDEO_GAME_CLIP
+
+uri: http://schema.org/VideoGameSeries
+label: VideoGameSeries
+camel: videoGameSeries
+const: VIDEO_GAME_SERIES
+
+uri: http://schema.org/VideoObject
+label: VideoObject
+camel: videoObject
+const: VIDEO_OBJECT
+
+uri: http://schema.org/WPAdBlock
+label: WPAdBlock
+camel: wpAdBlock
+const: WP_AD_BLOCK
+
+uri: http://schema.org/WPFooter
+label: WPFooter
+camel: wpFooter
+const: WP_FOOTER
+
+uri: http://schema.org/WPHeader
+label: WPHeader
+camel: wpHeader
+const: WP_HEADER
+
+uri: http://schema.org/WPSideBar
+label: WPSideBar
+camel: wpSideBar
+const: WP_SIDE_BAR
+
+uri: http://schema.org/Zoo
+label: Zoo
+camel: zoo
+const: ZOO
+
+uri: http://schema.org/accessibilityAPI
+label: accessibilityAPI
+camel: accessibilityAPI
+const: ACCESSIBILITY_API
+
+uri: http://schema.org/accountId
+label: accountId
+camel: accountId
+const: ACCOUNT_ID
+
+uri: http://kyojo.org/schemaSpl/asciiDoc
+label: asciiDoc
+camel: asciiDoc
+const: ASCII_DOC
+
+uri: http://schema.org/bed
+label: bed
+camel: bed
+const: BED
+
+uri: http://schema.org/blogPost
+label: blogPost
+camel: blogPost
+const: BLOG_POST
+
+uri: http://schema.org/box
+label: box
+camel: box
+const: BOX
+
+uri: http://schema.org/broadcastChannelId
+label: broadcastChannelId
+camel: broadcastChannelId
+const: BROADCAST_CHANNEL_ID
+
+uri: http://schema.org/candidate
+label: candidate
+camel: candidate
+const: CANDIDATE
+
+uri: http://schema.org/codeRepository
+label: codeRepository
+camel: codeRepository
+const: CODE_REPOSITORY
+
+uri: http://schema.org/composer
+label: composer
+camel: composer
+const: COMPOSER
+
+uri: http://schema.org/contentUrl
+label: contentUrl
+camel: contentUrl
+const: CONTENT_URL
+
+uri: http://schema.org/datePosted
+label: datePosted
+camel: datePosted
+const: DATE_POSTED
+
+uri: http://schema.org/discussionUrl
+label: discussionUrl
+camel: discussionUrl
+const: DISCUSSION_URL
+
+uri: http://schema.org/downloadUrl
+label: downloadUrl
+camel: downloadUrl
+const: DOWNLOAD_URL
+
+uri: http://schema.org/duns
+label: duns
+camel: duns
+const: DUNS
+
+uri: http://schema.org/duringMedia
+label: duringMedia
+camel: duringMedia
+const: DURING_MEDIA
+
+uri: http://schema.org/embedUrl
+label: embedUrl
+camel: embedUrl
+const: EMBED_URL
+
+uri: http://schema.org/game
+label: game
+camel: game
+const: GAME
+
+uri: http://schema.org/geo
+label: geo
+camel: geo
+const: GEO
+
+uri: http://schema.org/geoMidpoint
+label: geoMidpoint
+camel: geoMidpoint
+const: GEO_MIDPOINT
+
+uri: http://schema.org/hasPOS
+label: hasPOS
+camel: hasPOS
+const: HAS_POS
+
+uri: http://kyojo.org/schemaSpl/html
+label: html
+camel: html
+const: HTML
+
+uri: http://schema.org/identifier
+label: identifier
+camel: identifier
+const: IDENTIFIER
+
+uri: http://schema.org/includedComposition
+label: includedComposition
+camel: includedComposition
+const: INCLUDED_COMPOSITION
+
+uri: http://schema.org/installUrl
+label: installUrl
+camel: installUrl
+const: INSTALL_URL
+
+uri: http://schema.org/isbn
+label: isbn
+camel: isbn
+const: ISBN
+
+uri: http://schema.org/issn
+label: issn
+camel: issn
+const: ISSN
+
+uri: http://schema.org/item
+label: item
+camel: item
+const: ITEM
+
+uri: http://schema.org/line
+label: line
+camel: line
+const: LINE
+
+uri: http://schema.org/logo
+label: logo
+camel: logo
+const: LOGO
+
+uri: http://schema.org/mpn
+label: mpn
+camel: mpn
+const: MPN
+
+uri: http://schema.org/musicCompositionForm
+label: musicCompositionForm
+camel: musicCompositionForm
+const: MUSIC_COMPOSITION_FORM
+
+uri: http://schema.org/name
+label: name
+camel: name
+const: NAME
+
+uri: http://schema.org/numberedPosition
+label: numberedPosition
+camel: numberedPosition
+const: NUMBERED_POSITION
+
+uri: http://schema.org/owns
+label: owns
+camel: owns
+const: OWNS
+
+uri: http://schema.org/paymentMethodId
+label: paymentMethodId
+camel: paymentMethodId
+const: PAYMENT_METHOD_ID
+
+uri: http://schema.org/paymentUrl
+label: paymentUrl
+camel: paymentUrl
+const: PAYMENT_URL
+
+uri: http://schema.org/position
+label: position
+camel: position
+const: POSITION
+
+uri: http://schema.org/postOfficeBoxNumber
+label: postOfficeBoxNumber
+camel: postOfficeBoxNumber
+const: POST_OFFICE_BOX_NUMBER
+
+uri: http://schema.org/postalCode
+label: postalCode
+camel: postalCode
+const: POSTAL_CODE
+
+uri: http://schema.org/priceValidUntil
+label: priceValidUntil
+camel: priceValidUntil
+const: PRICE_VALID_UNTIL
+
+uri: http://schema.org/productID
+label: productID
+camel: productID
+const: PRODUCT_ID
+
+uri: http://schema.org/propertyID
+label: propertyID
+camel: propertyID
+const: PROPERTY_ID
+
+uri: http://schema.org/provider
+label: provider
+camel: provider
+const: PROVIDER
+
+uri: http://schema.org/providerMobility
+label: providerMobility
+camel: providerMobility
+const: PROVIDER_MOBILITY
+
+uri: http://schema.org/providesBroadcastService
+label: providesBroadcastService
+camel: providesBroadcastService
+const: PROVIDES_BROADCAST_SERVICE
+
+uri: http://schema.org/providesService
+label: providesService
+camel: providesService
+const: PROVIDES_SERVICE
+
+uri: http://schema.org/replyToUrl
+label: replyToUrl
+camel: replyToUrl
+const: REPLY_TO_URL
+
+uri: http://schema.org/reservationId
+label: reservationId
+camel: reservationId
+const: RESERVATION_ID
+
+uri: http://kyojo.org/schemaSpl/rtf
+label: rtf
+camel: rtf
+const: RTF
+
+uri: http://schema.org/securityScreening
+label: securityScreening
+camel: securityScreening
+const: SECURITY_SCREENING
+
+uri: http://schema.org/servicePostalAddress
+label: servicePostalAddress
+camel: servicePostalAddress
+const: SERVICE_POSTAL_ADDRESS
+
+uri: http://schema.org/serviceUrl
+label: serviceUrl
+camel: serviceUrl
+const: SERVICE_URL
+
+uri: http://schema.org/sku
+label: sku
+camel: sku
+const: SKU
+
+uri: http://schema.org/steeringPosition
+label: steeringPosition
+camel: steeringPosition
+const: STEERING_POSITION
+
+uri: http://schema.org/step
+label: step
+camel: step
+const: STEP
+
+uri: http://schema.org/targetUrl
+label: targetUrl
+camel: targetUrl
+const: TARGET_URL
+
+uri: http://schema.org/taxID
+label: taxID
+camel: taxID
+const: TAX_ID
+
+uri: http://schema.org/text
+label: text
+camel: text
+const: TEXT
+
+uri: http://schema.org/thumbnailUrl
+label: thumbnailUrl
+camel: thumbnailUrl
+const: THUMBNAIL_URL
+
+uri: http://schema.org/tool
+label: tool
+camel: tool
+const: TOOL
+
+uri: http://schema.org/touristType
+label: touristType
+camel: touristType
+const: TOURIST_TYPE
+
+uri: http://schema.org/trackingUrl
+label: trackingUrl
+camel: trackingUrl
+const: TRACKING_URL
+
+uri: http://schema.org/url
+label: url
+camel: url
+const: URL
+
+uri: http://schema.org/urlTemplate
+label: urlTemplate
+camel: urlTemplate
+const: URL_TEMPLATE
+
+uri: http://schema.org/validFor
+label: validFor
+camel: validFor
+const: VALID_FOR
+
+uri: http://schema.org/validFrom
+label: validFrom
+camel: validFrom
+const: VALID_FROM
+
+uri: http://schema.org/validIn
+label: validIn
+camel: validIn
+const: VALID_IN
+
+uri: http://schema.org/validThrough
+label: validThrough
+camel: validThrough
+const: VALID_THROUGH
+
+uri: http://schema.org/validUntil
+label: validUntil
+camel: validUntil
+const: VALID_UNTIL
+
+uri: http://schema.org/vatID
+label: vatID
+camel: vatID
+const: VAT_ID
+
+uri: http://schema.org/vehicleIdentificationNumber
+label: vehicleIdentificationNumber
+camel: vehicleIdentificationNumber
+const: VEHICLE_IDENTIFICATION_NUMBER
+
+uri: http://schema.org/video
+label: video
+camel: video
+const: VIDEO
+
+uri: http://schema.org/videoFormat
+label: videoFormat
+camel: videoFormat
+const: VIDEO_FORMAT
+
+uri: http://schema.org/videoFrameSize
+label: videoFrameSize
+camel: videoFrameSize
+const: VIDEO_FRAME_SIZE
+
+uri: http://schema.org/videoQuality
+label: videoQuality
+camel: videoQuality
+const: VIDEO_QUALITY
+
+uri: http://schema.org/width
+label: width
+camel: width
+const: WIDTH
+
+uri: http://schema.org/Date
+label: Date
+camel: date
+const: DATE
+
+uri: http://schema.org/Text
+label: Text
+camel: text
+const: TEXT
+
+uri: http://schema.org/Time
+label: Time
+camel: time
+const: TIME
+
+uri: http://schema.org/Friday
+label: Friday
+camel: friday
+const: FRIDAY
+
+uri: http://schema.org/PublicHolidays
+label: PublicHolidays
+camel: publicHolidays
+const: PUBLIC_HOLIDAYS
+
+uri: http://schema.org/EventPostponed
+label: EventPostponed
+camel: eventPostponed
+const: EVENT_POSTPONED
+
+uri: http://schema.org/CoOp
+label: CoOp
+camel: coOp
+const: CO_OP
+
+uri: http://schema.org/Male
+label: Male
+camel: male
+const: MALE
+
+uri: http://schema.org/DJMixAlbum
+label: DJMixAlbum
+camel: djMixAlbum
+const: DJ_MIX_ALBUM
+
+uri: http://schema.org/EPRelease
+label: EPRelease
+camel: epRelease
+const: EP_RELEASE
+
+uri: http://schema.org/CDFormat
+label: CDFormat
+camel: cdFormat
+const: CD_FORMAT
+
+uri: http://schema.org/DVDFormat
+label: DVDFormat
+camel: dvdFormat
+const: DVD_FORMAT
+
+uri: http://schema.org/SteeringPositionValue
+camel: steeringPositionValue
+const: STEERING_POSITION_VALUE
+
+uri: http://schema.org/Bone
+label: Bone
+camel: bone
+const: BONE
+
+uri: http://schema.org/DDxElement
+label: DDxElement
+camel: ddxElement
+const: DDX_ELEMENT
+
+uri: http://schema.org/Diet
+label: Diet
+camel: diet
+const: DIET
+
+uri: http://schema.org/Drug
+label: Drug
+camel: drug
+const: DRUG
+
+uri: http://schema.org/MedicalDevicePurpose
+label: MedicalDevicePurpose
+camel: medicalDevicePurpose
+const: MEDICAL_DEVICE_PURPOSE
+
+uri: http://schema.org/MedicalEvidenceLevel
+label: MedicalEvidenceLevel
+camel: medicalEvidenceLevel
+const: MEDICAL_EVIDENCE_LEVEL
+
+uri: http://schema.org/MedicalGuideline
+label: MedicalGuideline
+camel: medicalGuideline
+const: MEDICAL_GUIDELINE
+
+uri: http://schema.org/MedicalGuidelineContraindication
+label: MedicalGuidelineContraindication
+camel: medicalGuidelineContraindication
+const: MEDICAL_GUIDELINE_CONTRAINDICATION
+
+uri: http://schema.org/MedicalGuidelineRecommendation
+label: MedicalGuidelineRecommendation
+camel: medicalGuidelineRecommendation
+const: MEDICAL_GUIDELINE_RECOMMENDATION
+
+uri: http://schema.org/Vein
+label: Vein
+camel: vein
+const: VEIN
+
+uri: http://schema.org/code
+label: code
+camel: code
+const: CODE
+
+uri: http://schema.org/cost
+label: cost
+camel: cost
+const: COST
+
+uri: http://schema.org/diet
+label: diet
+camel: diet
+const: DIET
+
+uri: http://schema.org/drug
+label: drug
+camel: drug
+const: DRUG
+
+uri: http://schema.org/epidemiology
+label: epidemiology
+camel: epidemiology
+const: EPIDEMIOLOGY
+
+uri: http://schema.org/evidenceLevel
+label: evidenceLevel
+camel: evidenceLevel
+const: EVIDENCE_LEVEL
+
+uri: http://schema.org/evidenceOrigin
+label: evidenceOrigin
+camel: evidenceOrigin
+const: EVIDENCE_ORIGIN
+
+uri: http://schema.org/expertConsiderations
+label: expertConsiderations
+camel: expertConsiderations
+const: EXPERT_CONSIDERATIONS
+
+uri: http://schema.org/guideline
+label: guideline
+camel: guideline
+const: GUIDELINE
+
+uri: http://schema.org/guidelineDate
+label: guidelineDate
+camel: guidelineDate
+const: GUIDELINE_DATE
+
+uri: http://schema.org/guidelineSubject
+label: guidelineSubject
+camel: guidelineSubject
+const: GUIDELINE_SUBJECT
+
+uri: http://schema.org/identifyingExam
+label: identifyingExam
+camel: identifyingExam
+const: IDENTIFYING_EXAM
+
+uri: http://schema.org/identifyingTest
+label: identifyingTest
+camel: identifyingTest
+const: IDENTIFYING_TEST
+
+uri: http://schema.org/possibleComplication
+label: possibleComplication
+camel: possibleComplication
+const: POSSIBLE_COMPLICATION
+
+uri: http://schema.org/possibleTreatment
+label: possibleTreatment
+camel: possibleTreatment
+const: POSSIBLE_TREATMENT
+
+uri: http://schema.org/postOp
+label: postOp
+camel: postOp
+const: POST_OP
+
+uri: http://schema.org/purpose
+label: purpose
+camel: purpose
+const: PURPOSE
+
+uri: http://schema.org/safetyConsideration
+label: safetyConsideration
+camel: safetyConsideration
+const: SAFETY_CONSIDERATION
+
+uri: http://schema.org/FDAcategoryA
+label: FDAcategoryA
+camel: fdaCategoryA
+const: FDA_CATEGORY_A
+
+uri: http://schema.org/FDAcategoryB
+label: FDAcategoryB
+camel: fdaCategoryB
+const: FDA_CATEGORY_B
+
+uri: http://schema.org/FDAcategoryC
+label: FDAcategoryC
+camel: fdaCategoryC
+const: FDA_CATEGORY_C
+
+uri: http://schema.org/FDAcategoryD
+label: FDAcategoryD
+camel: fdaCategoryD
+const: FDA_CATEGORY_D
+
+uri: http://schema.org/FDAcategoryX
+label: FDAcategoryX
+camel: fdaCategoryX
+const: FDA_CATEGORY_X
+
+uri: http://schema.org/FDAnotEvaluated
+label: FDAnotEvaluated
+camel: fdaNotEvaluated
+const: FDA_NOT_EVALUATED
+
+uri: http://schema.org/OTC
+label: OTC
+camel: otc
+const: OTC
+
+uri: http://schema.org/MedicalDevicePurpose
+camel: medicalDevicePurpose
+const: MEDICAL_DEVICE_PURPOSE
+
+uri: http://schema.org/MedicalEvidenceLevel
+camel: medicalEvidenceLevel
+const: MEDICAL_EVIDENCE_LEVEL
+
+uri: http://schema.org/EvidenceLevelA
+label: EvidenceLevelA
+camel: evidenceLevelA
+const: EVIDENCE_LEVEL_A
+
+uri: http://schema.org/EvidenceLevelB
+label: EvidenceLevelB
+camel: evidenceLevelB
+const: EVIDENCE_LEVEL_B
+
+uri: http://schema.org/EvidenceLevelC
+label: EvidenceLevelC
+camel: evidenceLevelC
+const: EVIDENCE_LEVEL_C
+
+uri: http://schema.org/CT
+label: CT
+camel: ct
+const: CT
+
+uri: http://schema.org/MRI
+label: MRI
+camel: mri
+const: MRI
+
+uri: http://schema.org/PET
+label: PET
+camel: pet
+const: PET
+
+uri: http://schema.org/XRay
+label: XRay
+camel: xRay
+const: X_RAY
+
+uri: http://schema.org/Midwifery
+label: Midwifery
+camel: midwifery
+const: MIDWIFERY
+
+uri: http://schema.org/Ear
+label: Ear
+camel: ear
+const: EAR
+
+uri: http://schema.org/Eye
+label: Eye
+camel: eye
+const: EYE
+
+uri: http://schema.org/Genitourinary
+label: Genitourinary
+camel: genitourinary
+const: GENITOURINARY
+
+uri: http://schema.org/Head
+label: Head
+camel: head
+const: HEAD
+
+uri: http://schema.org/Lung
+label: Lung
+camel: lung
+const: LUNG
+
+uri: http://schema.org/Neck
+label: Neck
+camel: neck
+const: NECK
+
+uri: http://schema.org/Nose
+label: Nose
+camel: nose
+const: NOSE
+
+uri: http://schema.org/Skin
+label: Skin
+camel: skin
+const: SKIN
+
+uri: http://schema.org/Play
+label: Play
+camel: play
+const: PLAY
+
+uri: http://schema.org/Poster
+label: Poster
+camel: poster
+const: POSTER
+
+uri: http://schema.org/3DModel
+label: 3DModel
+camel: threeDimensionalModel
+const: THREE_DIMENSIONAL_MODEL
+
+uri: http://schema.org/TouristDestination
+label: TouristDestination
+camel: touristDestination
+const: TOURIST_DESTINATION
+
+uri: http://schema.org/TouristTrip
+label: TouristTrip
+camel: touristTrip
+const: TOURIST_TRIP
+
+uri: http://schema.org/WebAPI
+label: WebAPI
+camel: webAPI
+const: WEB_API
+
+uri: http://schema.org/XPathType
+label: XPathType
+camel: xPathType
+const: X_PATH_TYPE
+
+uri: http://schema.org/benefitsSummaryUrl
+label: benefitsSummaryUrl
+camel: benefitsSummaryUrl
+const: BENEFITS_SUMMARY_URL
+
+uri: http://schema.org/healthPlanId
+label: healthPlanId
+camel: healthPlanId
+const: HEALTH_PLAN_ID
+
+uri: http://schema.org/healthPlanMarketingUrl
+label: healthPlanMarketingUrl
+camel: healthPlanMarketingUrl
+const: HEALTH_PLAN_MARKETING_URL
+
+uri: http://schema.org/healthPlanNetworkId
+label: healthPlanNetworkId
+camel: healthPlanNetworkId
+const: HEALTH_PLAN_NETWORK_ID
+
+uri: http://schema.org/legislationConsolidates
+label: legislationConsolidates
+camel: legislationConsolidates
+const: LEGISLATION_CONSOLIDATES
+
+uri: http://schema.org/legislationIdentifier
+label: legislationIdentifier
+camel: legislationIdentifier
+const: LEGISLATION_IDENTIFIER
+
+uri: http://schema.org/legislationJurisdiction
+label: legislationJurisdiction
+camel: legislationJurisdiction
+const: LEGISLATION_JURISDICTION
+
+uri: http://schema.org/legislationTransposes
+label: legislationTransposes
+camel: legislationTransposes
+const: LEGISLATION_TRANSPOSES
+
+uri: http://schema.org/nsn
+label: nsn
+camel: nsn
+const: NSN
+
+uri: http://schema.org/usesHealthPlanIdStandard
+label: usesHealthPlanIdStandard
+camel: usesHealthPlanIdStandard
+const: USES_HEALTH_PLAN_ID_STANDARD
+

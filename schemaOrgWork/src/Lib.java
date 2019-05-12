@@ -158,8 +158,7 @@ public class Lib {
 
 	private static void addPropertyList(Class<?> cls, Method mtd,
 			Map<String, Class<?>> pMap) throws ClassNotFoundException {
-		if((!org.kyojo.schemaorg.m3n4.core.DataType.Text.class.isAssignableFrom(cls)
-				&& !org.kyojo.schemaorg.m3n3.core.DataType.Text.class.isAssignableFrom(cls)
+		if((!org.kyojo.schemaorg.m3n5.core.DataType.Text.class.isAssignableFrom(cls)
 				&& (mtd.getName().equals("getString") || mtd.getName().equals("setString")))
 			|| mtd.getName().equals("getNativeValue")) {
 		} else if(mtd.getName().equals("getNativeValue")) {

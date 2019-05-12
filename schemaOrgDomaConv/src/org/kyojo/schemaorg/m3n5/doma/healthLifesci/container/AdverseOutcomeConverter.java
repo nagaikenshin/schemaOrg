@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.healthLifesci.container;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.healthLifesci.impl.ADVERSE_OUTCOME;
+import org.kyojo.schemaorg.m3n5.healthLifesci.Container.AdverseOutcome;
+
+@ExternalDomain
+public class AdverseOutcomeConverter implements DomainConverter<AdverseOutcome, String> {
+
+	@Override
+	public String fromDomainToValue(AdverseOutcome domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public AdverseOutcome fromValueToDomain(String value) {
+		return new ADVERSE_OUTCOME(value);
+	}
+
+}

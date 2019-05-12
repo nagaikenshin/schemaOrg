@@ -1,0 +1,165 @@
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.asciidoc
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.dokuwiki
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.hatena
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.html
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.latex
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.markdown
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.mediawiki
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.moinmoin
+subClassOf is not schema.org. ignored: rdfs:label
+$VAR1 = {
+          'this_pkg' => 'org.kyojo.schemaorg.m3n5.core',
+          'type_fulls' => {
+                            'org.kyojo.schemaorg.m3n5.core.Container' => 1
+                          },
+          'http://www.w3.org/2000/01/rdf-schema#subPropertyOf' => [
+                                                                    'rdfs:label'
+                                                                  ],
+          'http://www.w3.org/2000/01/rdf-schema#label' => 'nameFuzzy',
+          'extension' => 'core',
+          'http://schema.org/rangeIncludes' => {
+                                                 'http://schema.org/Text' => 1
+                                               },
+          'this_name' => 'NameFuzzy',
+          'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' => [
+                                                                 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+                                                               ],
+          'http://www.w3.org/2000/01/rdf-schema#comment' => 'The normalized name. Variant characters, the space between given and family name, etc.',
+          'this_uri' => 'http://kyojo.org/schemaSpl/nameFuzzy'
+        };
+subClassOf is not schema.org. ignored: rdfs:label
+$VAR1 = {
+          'extension' => 'core',
+          'http://www.w3.org/2000/01/rdf-schema#label' => 'nameRuby',
+          'http://www.w3.org/2000/01/rdf-schema#subPropertyOf' => [
+                                                                    'rdfs:label'
+                                                                  ],
+          'type_fulls' => {
+                            'org.kyojo.schemaorg.m3n5.core.Container' => 1
+                          },
+          'this_pkg' => 'org.kyojo.schemaorg.m3n5.core',
+          'this_uri' => 'http://kyojo.org/schemaSpl/nameRuby',
+          'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' => [
+                                                                 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+                                                               ],
+          'http://www.w3.org/2000/01/rdf-schema#comment' => 'Japanese furigana name and things like that.',
+          'this_name' => 'NameRuby',
+          'http://schema.org/rangeIncludes' => {
+                                                 'http://schema.org/Text' => 1
+                                               }
+        };
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.pukiwiki
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.redminewiki
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.rtf
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.simple
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.textile
+subClassOf is not schema.org. ignored: http://www.w3.org/2000/01/rdf-schema#Class
+$VAR1 = {
+          'type_fulls' => {
+                            'org.kyojo.schemaorg.m3n5.core.Clazz' => 1
+                          },
+          'this_pkg' => 'org.kyojo.schemaorg.m3n5.core',
+          'extension' => 'core',
+          'http://www.w3.org/2000/01/rdf-schema#label' => 'DataType',
+          'this_name' => 'DataType',
+          'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' => [
+                                                                 'http://www.w3.org/2000/01/rdf-schema#Class'
+                                                               ],
+          'http://www.w3.org/2000/01/rdf-schema#comment' => 'The basic data types such as Integers, Strings, etc.',
+          'http://www.w3.org/2000/01/rdf-schema#subClassOf' => [
+                                                                 'http://www.w3.org/2000/01/rdf-schema#Class'
+                                                               ],
+          'this_uri' => 'http://schema.org/DataType'
+        };
+subClassOf is not schema.org. ignored: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+$VAR1 = {
+          'http://www.w3.org/2000/01/rdf-schema#label' => 'additionalType',
+          'extension' => 'core',
+          'this_pkg' => 'org.kyojo.schemaorg.m3n5.core',
+          'type_fulls' => {
+                            'org.kyojo.schemaorg.m3n5.core.Container' => 1
+                          },
+          'http://www.w3.org/2000/01/rdf-schema#subPropertyOf' => [
+                                                                    'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+                                                                  ],
+          'this_uri' => 'http://schema.org/additionalType',
+          'http://www.w3.org/2000/01/rdf-schema#comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the \'typeof\' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.',
+          'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' => [
+                                                                 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+                                                               ],
+          'http://schema.org/rangeIncludes' => {
+                                                 'http://schema.org/URL' => 1
+                                               },
+          'this_name' => 'AdditionalType'
+        };
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.aggregaterating
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.albumrelease
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.audience
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.brand
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.businessfunction
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.comment
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.contactpoint
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.course
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.dataset
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.dayofweek
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.deliverymethod
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.diet
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.distance
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.doseschedule
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.drug
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.drugclass
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.duration
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.entertainmentbusiness
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.episode
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.event
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.exerciseplan
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.foodestablishment
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.foodevent
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.game
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.gameserver
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.infectiousagentclass
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.language
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.map
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.medicalspecialty
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.medicinesystem
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.menu
+subClassOf is not schema.org. ignored: rdfs:label
+$VAR1 = {
+          'this_name' => 'Name',
+          'http://schema.org/rangeIncludes' => {
+                                                 'http://schema.org/Text' => 1
+                                               },
+          'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' => [
+                                                                 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+                                                               ],
+          'http://www.w3.org/2000/01/rdf-schema#comment' => 'The name of the item.',
+          'this_uri' => 'http://schema.org/name',
+          'http://www.w3.org/2000/01/rdf-schema#subPropertyOf' => [
+                                                                    'rdfs:label'
+                                                                  ],
+          'type_fulls' => {
+                            'org.kyojo.schemaorg.m3n5.core.Container' => 1
+                          },
+          'this_pkg' => 'org.kyojo.schemaorg.m3n5.core',
+          'extension' => 'core',
+          'http://www.w3.org/2000/01/rdf-schema#label' => 'name'
+        };
+duplicate lc_name: org.kyojo.schemaorg.m3n5.healthlifesci.nerve
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.openinghoursspecification
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.orderstatus
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.paymentdue
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.paymentmethod
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.pricespecification
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.question
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.realestateagent
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.recipe
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.review
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.season
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.specialty
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.sportsactivitylocation
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.sportsevent
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.sportsteam
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.text
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.url
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.warrantypromise
+duplicate lc_name: org.kyojo.schemaorg.m3n5.core.warrantyscope

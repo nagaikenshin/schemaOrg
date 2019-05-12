@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.core.clazz;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.core.impl.MENS_CLOTHING_STORE;
+import org.kyojo.schemaorg.m3n5.core.Clazz.MensClothingStore;
+
+@ExternalDomain
+public class MensClothingStoreConverter implements DomainConverter<MensClothingStore, String> {
+
+	@Override
+	public String fromDomainToValue(MensClothingStore domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public MensClothingStore fromValueToDomain(String value) {
+		return new MENS_CLOTHING_STORE(value);
+	}
+
+}

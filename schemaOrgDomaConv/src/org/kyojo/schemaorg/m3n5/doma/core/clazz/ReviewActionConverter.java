@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.core.clazz;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.core.impl.REVIEW_ACTION;
+import org.kyojo.schemaorg.m3n5.core.Clazz.ReviewAction;
+
+@ExternalDomain
+public class ReviewActionConverter implements DomainConverter<ReviewAction, String> {
+
+	@Override
+	public String fromDomainToValue(ReviewAction domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public ReviewAction fromValueToDomain(String value) {
+		return new REVIEW_ACTION(value);
+	}
+
+}

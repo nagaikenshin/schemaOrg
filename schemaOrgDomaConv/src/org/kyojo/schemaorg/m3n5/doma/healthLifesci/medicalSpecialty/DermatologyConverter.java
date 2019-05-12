@@ -1,0 +1,22 @@
+package org.kyojo.schemaorg.m3n5.doma.healthLifesci.medicalSpecialty;
+
+import org.seasar.doma.ExternalDomain;
+import org.seasar.doma.jdbc.domain.DomainConverter;
+
+import org.kyojo.schemaorg.m3n5.healthLifesci.medicalSpecialty.DERMATOLOGY;
+import org.kyojo.schemaorg.m3n5.healthLifesci.MedicalSpecialty.Dermatology;
+
+@ExternalDomain
+public class DermatologyConverter implements DomainConverter<Dermatology, String> {
+
+	@Override
+	public String fromDomainToValue(Dermatology domain) {
+		return domain.getNativeValue();
+	}
+
+	@Override
+	public Dermatology fromValueToDomain(String value) {
+		return new DERMATOLOGY(value);
+	}
+
+}
